@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Teams
-Module Guid: ad2186e2-5daf-4023-ac91-b2050ec82f89
+Module Guid: e991b581-6934-45d4-9a44-a158ea66b125
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1192,7 +1192,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaChatMessage](New-MgBetaChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
 
 ### [New-MgBetaChatMessageHostedContent](New-MgBetaChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1228,7 +1229,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgBetaGroupTeamChannelMessage](New-MgBetaGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgBetaGroupTeamChannelMessageHostedContent](New-MgBetaGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1262,7 +1263,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgBetaGroupTeamPrimaryChannelMessage](New-MgBetaGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgBetaGroupTeamPrimaryChannelMessageHostedContent](New-MgBetaGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1339,7 +1340,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgBetaTeamChannelMessage](New-MgBetaTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgBetaTeamChannelMessageHostedContent](New-MgBetaTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1379,7 +1380,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgBetaTeamPrimaryChannelMessage](New-MgBetaTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgBetaTeamPrimaryChannelMessageHostedContent](New-MgBetaTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1453,7 +1454,7 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgBetaTeamworkDeletedTeamChannelMessage](New-MgBetaTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent](New-MgBetaTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1495,7 +1496,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaUserChatMessage](New-MgBetaUserChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
 
 ### [New-MgBetaUserChatMessageHostedContent](New-MgBetaUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users

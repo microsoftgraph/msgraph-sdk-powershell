@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaSitePageCanvaLayoutHorizontalSection
 
 ## SYNOPSIS
-Update the navigation property horizontalSections in sites
+Update the properties of a horizontalSection object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgBetaSitePageCanvaLayoutHorizontalSection -InputObject <ISitesIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property horizontalSections in sites
+Update the properties of a horizontalSection object.
 
 ## EXAMPLES
 

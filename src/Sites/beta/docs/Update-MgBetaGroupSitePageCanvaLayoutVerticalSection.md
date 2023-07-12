@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgBetaGroupSitePageCanvaLayoutVerticalSection
 
 ## SYNOPSIS
-Update the navigation property verticalSection in groups
+Create a verticalSection object in a given sitePage.
+A sitePage can only have one vertical section.
+If a vertical section already exists, this method returns a `409 Conflict` response code.
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ Update-MgBetaGroupSitePageCanvaLayoutVerticalSection -InputObject <ISitesIdentit
 ```
 
 ## DESCRIPTION
-Update the navigation property verticalSection in groups
+Create a verticalSection object in a given sitePage.
+A sitePage can only have one vertical section.
+If a vertical section already exists, this method returns a `409 Conflict` response code.
 
 ## EXAMPLES
 

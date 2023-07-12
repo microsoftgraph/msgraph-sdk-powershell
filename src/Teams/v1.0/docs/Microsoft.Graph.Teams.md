@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 67d682c1-6196-43f5-a831-b360fc223968
+Module Guid: c2ca0572-b52c-4c84-afd4-7209c9fb1056
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -957,7 +957,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -978,15 +978,16 @@ If you're creating a private channel, you can add a maximum of 200 members.
 
 ### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1009,15 +1010,16 @@ Create new navigation property to operations for groups
 
 ### [New-MgGroupTeamPrimaryChannelMember](New-MgGroupTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1080,15 +1082,16 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamChannelMember](New-MgTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1117,15 +1120,16 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamPrimaryChannelMember](New-MgTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1185,15 +1189,16 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamworkDeletedTeamChannelMember](New-MgTeamworkDeletedTeamChannelMember.md)
 Add a conversationMember to a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1225,7 +1230,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users

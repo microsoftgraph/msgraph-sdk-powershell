@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportDailyPrintUsageByPrinter
 
 ## SYNOPSIS
-Get dailyPrintUsageByPrinter from reports
+Retrieve a list of daily print usage summaries, grouped by printer.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaReportDailyPrintUsageByPrinter -InputObject <IReportsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get dailyPrintUsageByPrinter from reports
+Retrieve a list of daily print usage summaries, grouped by printer.
 
 ## EXAMPLES
 

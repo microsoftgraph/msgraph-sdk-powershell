@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: f090e174-fc04-4ec5-8ffe-b41c0102ee1b
+Module Guid: 521f3081-748a-4366-824a-eb6195b361dd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -90,6 +90,9 @@ Supports $expand.
 ### [Get-MgUserMemberOfAsAdministrativeUnit](Get-MgUserMemberOfAsAdministrativeUnit.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
 
+### [Get-MgUserMemberOfAsDirectoryRole](Get-MgUserMemberOfAsDirectoryRole.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+
 ### [Get-MgUserMemberOfAsGroup](Get-MgUserMemberOfAsGroup.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
@@ -97,6 +100,9 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 Get the number of the resource
 
 ### [Get-MgUserMemberOfCountAsAdministrativeUnit](Get-MgUserMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgUserMemberOfCountAsDirectoryRole](Get-MgUserMemberOfCountAsDirectoryRole.md)
 Get the number of the resource
 
 ### [Get-MgUserMemberOfCountAsGroup](Get-MgUserMemberOfCountAsGroup.md)
@@ -276,6 +282,9 @@ Nullable.
 ### [Get-MgUserTransitiveMemberOfAsAdministrativeUnit](Get-MgUserTransitiveMemberOfAsAdministrativeUnit.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
 
+### [Get-MgUserTransitiveMemberOfAsDirectoryRole](Get-MgUserTransitiveMemberOfAsDirectoryRole.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+
 ### [Get-MgUserTransitiveMemberOfAsGroup](Get-MgUserTransitiveMemberOfAsGroup.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
@@ -283,6 +292,9 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 Get the number of the resource
 
 ### [Get-MgUserTransitiveMemberOfCountAsAdministrativeUnit](Get-MgUserTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgUserTransitiveMemberOfCountAsDirectoryRole](Get-MgUserTransitiveMemberOfCountAsDirectoryRole.md)
 Get the number of the resource
 
 ### [Get-MgUserTransitiveMemberOfCountAsGroup](Get-MgUserTransitiveMemberOfCountAsGroup.md)

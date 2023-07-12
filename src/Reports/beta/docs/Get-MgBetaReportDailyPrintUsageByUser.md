@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportDailyPrintUsageByUser
 
 ## SYNOPSIS
-Get dailyPrintUsageByUser from reports
+Retrieve a list of daily print usage summaries, grouped by user.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaReportDailyPrintUsageByUser -InputObject <IReportsIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get dailyPrintUsageByUser from reports
+Retrieve a list of daily print usage summaries, grouped by user.
 
 ## EXAMPLES
 

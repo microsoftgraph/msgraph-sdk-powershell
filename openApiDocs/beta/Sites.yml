@@ -8873,11 +8873,11 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get metadata for a list
-      description: 'Return the metadata for a [list][].'
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
       operationId: group.site_GetList
       parameters:
         - name: group-id
@@ -27365,7 +27365,11 @@ paths:
     post:
       tags:
         - groups.site
-      summary: Create new navigation property to horizontalSections for groups
+      summary: Create horizontalSection
+      description: Create a horizontalSection object in a given sitePage.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sitepage-post-horizontalsection?view=graph-rest-1.0
       operationId: group.site.page.canvasLayout_CreateHorizontalSection
       parameters:
         - name: group-id
@@ -27493,7 +27497,11 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update the navigation property horizontalSections in groups
+      summary: Update horizontalSection
+      description: Update the properties of a horizontalSection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/horizontalsection-update?view=graph-rest-1.0
       operationId: group.site.page.canvasLayout_UpdateHorizontalSection
       parameters:
         - name: group-id
@@ -28563,7 +28571,11 @@ paths:
     patch:
       tags:
         - groups.site
-      summary: Update the navigation property verticalSection in groups
+      summary: Create verticalSection
+      description: 'Create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sitepage-post-verticalsection?view=graph-rest-1.0
       operationId: group.site.page.canvasLayout_UpdateVerticalSection
       parameters:
         - name: group-id
@@ -55864,11 +55876,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get metadata for a list
-      description: 'Return the metadata for a [list][].'
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -67484,7 +67496,11 @@ paths:
     post:
       tags:
         - sites.sitePage
-      summary: Create new navigation property to horizontalSections for sites
+      summary: Create horizontalSection
+      description: Create a horizontalSection object in a given sitePage.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sitepage-post-horizontalsection?view=graph-rest-1.0
       operationId: site.page.canvasLayout_CreateHorizontalSection
       parameters:
         - name: site-id
@@ -67596,7 +67612,11 @@ paths:
     patch:
       tags:
         - sites.sitePage
-      summary: Update the navigation property horizontalSections in sites
+      summary: Update horizontalSection
+      description: Update the properties of a horizontalSection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/horizontalsection-update?view=graph-rest-1.0
       operationId: site.page.canvasLayout_UpdateHorizontalSection
       parameters:
         - name: site-id
@@ -68598,7 +68618,11 @@ paths:
     patch:
       tags:
         - sites.sitePage
-      summary: Update the navigation property verticalSection in sites
+      summary: Create verticalSection
+      description: 'Create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sitepage-post-verticalsection?view=graph-rest-1.0
       operationId: site.page.canvasLayout_UpdateVerticalSection
       parameters:
         - name: site-id
@@ -97951,11 +97975,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -98647,11 +98671,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -105949,6 +105973,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -110499,6 +110525,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

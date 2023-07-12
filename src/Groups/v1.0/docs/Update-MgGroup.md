@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgGroup
 
 ## SYNOPSIS
-Add a member to a security or Microsoft 365 group through the **members** navigation property.
-The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+Update the properties of a group object.
 
 ## SYNTAX
 
@@ -94,8 +93,7 @@ Update-MgGroup -InputObject <IGroupsIdentity> [-AcceptedSenders <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-Add a member to a security or Microsoft 365 group through the **members** navigation property.
-The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+Update the properties of a group object.
 
 ## EXAMPLES
 

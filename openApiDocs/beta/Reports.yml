@@ -2331,6 +2331,7 @@ paths:
                 - authenticationMethods
                 - credentialUserRegistrationDetails
                 - servicePrincipalSignInActivities
+                - sla
                 - userCredentialUsageDetails
                 - dailyPrintUsage
                 - dailyPrintUsageByPrinter
@@ -2359,6 +2360,7 @@ paths:
                 - authenticationMethods
                 - credentialUserRegistrationDetails
                 - servicePrincipalSignInActivities
+                - sla
                 - userCredentialUsageDetails
                 - dailyPrintUsage
                 - dailyPrintUsageByPrinter
@@ -3066,7 +3068,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: List userRegistrationDetails
-      description: Get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
+      description: Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0
@@ -3815,6 +3817,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get dailyPrintUsageByPrinter from reports
+      description: 'Retrieve a list of daily print usage summaries, grouped by printer.'
       operationId: report_ListDailyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3931,6 +3934,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get dailyPrintUsageByPrinter from reports
+      description: 'Retrieve a list of daily print usage summaries, grouped by printer.'
       operationId: report_GetDailyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
@@ -4063,6 +4067,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get dailyPrintUsageByUser from reports
+      description: 'Retrieve a list of daily print usage summaries, grouped by user.'
       operationId: report_ListDailyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4179,6 +4184,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get dailyPrintUsageByUser from reports
+      description: 'Retrieve a list of daily print usage summaries, grouped by user.'
       operationId: report_GetDailyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
@@ -9787,6 +9793,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageByPrinter from reports
+      description: 'Retrieve a list of monthly print usage summaries, grouped by printer.'
       operationId: report_ListMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9903,6 +9910,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageByPrinter from reports
+      description: 'Retrieve a list of monthly print usage summaries, grouped by printer.'
       operationId: report_GetMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
@@ -10035,6 +10043,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get monthlyPrintUsageByUser from reports
+      description: 'Retrieve a list of monthly print usage summaries, grouped by user.'
       operationId: report_ListMonthlyPrintUsageGraphBPreUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10151,6 +10160,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get monthlyPrintUsageByUser from reports
+      description: 'Retrieve a list of monthly print usage summaries, grouped by user.'
       operationId: report_GetMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
@@ -11265,6 +11275,176 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /reports/sla:
+    get:
+      tags:
+        - reports.serviceLevelAgreementRoot
+      summary: Get sla from reports
+      description: A placeholder to allow for the desired URL path for SLA.
+      operationId: report_GetSla
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - azureADAuthentication
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - azureADAuthentication
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceLevelAgreementRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.serviceLevelAgreementRoot
+      summary: Update the navigation property sla in reports
+      operationId: report_UpdateSla
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.serviceLevelAgreementRoot'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.serviceLevelAgreementRoot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.serviceLevelAgreementRoot
+      summary: Delete navigation property sla for reports
+      operationId: report_DeleteSla
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/sla/azureADAuthentication:
+    get:
+      tags:
+        - reports.serviceLevelAgreementRoot
+      summary: Get azureADAuthentication
+      description: 'Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/azureadauthentication-get?view=graph-rest-1.0
+      operationId: report.sla_GetAzureADAuthentication
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attainments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.azureADAuthentication'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.serviceLevelAgreementRoot
+      summary: Update the navigation property azureADAuthentication in reports
+      operationId: report.sla_UpdateAzureADAuthentication
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.azureADAuthentication'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.azureADAuthentication'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.serviceLevelAgreementRoot
+      summary: Delete navigation property azureADAuthentication for reports
+      operationId: report.sla_DeleteAzureADAuthentication
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/userCredentialUsageDetails:
     get:
       tags:
@@ -12095,6 +12275,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipalSignInActivity'
               description: Represents a collection of sign-in activities of service principals.
               x-ms-navigationProperty: true
+            sla:
+              $ref: '#/components/schemas/microsoft.graph.serviceLevelAgreementRoot'
             userCredentialUsageDetails:
               type: array
               items:
@@ -12110,11 +12292,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+              description: 'Retrieve a list of daily print usage summaries, grouped by printer.'
               x-ms-navigationProperty: true
             dailyPrintUsageByUser:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+              description: 'Retrieve a list of daily print usage summaries, grouped by user.'
               x-ms-navigationProperty: true
             dailyPrintUsageSummariesByPrinter:
               type: array
@@ -12130,11 +12314,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+              description: 'Retrieve a list of monthly print usage summaries, grouped by printer.'
               x-ms-navigationProperty: true
             monthlyPrintUsageByUser:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+              description: 'Retrieve a list of monthly print usage summaries, grouped by user.'
               x-ms-navigationProperty: true
             monthlyPrintUsageSummariesByPrinter:
               type: array
@@ -12243,13 +12429,13 @@ components:
       properties:
         totalUserCount:
           type: integer
-          description: 'Total number of users accounts, excluding those that are blocked'
+          description: 'Total number of users accounts, excluding those that are blocked.'
           format: int64
         userRegistrationFeatureCounts:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userRegistrationFeatureCount'
-          description: 'Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.'
+          description: 'Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.'
         userRoles:
           $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
         userTypes:
@@ -12302,26 +12488,26 @@ components:
               $ref: '#/components/schemas/microsoft.graph.defaultMfaMethodType'
             isAdmin:
               type: boolean
-              description: Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
+              description: Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
               nullable: true
             isMfaCapable:
               type: boolean
-              description: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+              description: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             isMfaRegistered:
               type: boolean
-              description: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
+              description: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             isPasswordlessCapable:
               type: boolean
-              description: 'Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).'
+              description: 'Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).'
             isSsprCapable:
               type: boolean
-              description: Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
+              description: Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
             isSsprEnabled:
               type: boolean
-              description: Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
+              description: Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
             isSsprRegistered:
               type: boolean
-              description: Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
+              description: Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
             isSystemPreferredAuthenticationMethodEnabled:
               type: boolean
               description: 'Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).'
@@ -13290,6 +13476,29 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInActivity'
           additionalProperties:
             type: object
+    microsoft.graph.serviceLevelAgreementRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: serviceLevelAgreementRoot
+          type: object
+          properties:
+            azureADAuthentication:
+              $ref: '#/components/schemas/microsoft.graph.azureADAuthentication'
+          additionalProperties:
+            type: object
+    microsoft.graph.azureADAuthentication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: azureADAuthentication
+          type: object
+          properties:
+            attainments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceLevelAgreementAttainment'
+              description: A list of monthly serviceLevelAgreementAttainment objects.
+          additionalProperties:
+            type: object
     microsoft.graph.userCredentialUsageDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -13334,11 +13543,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -14067,7 +14276,7 @@ components:
       properties:
         authenticationMethod:
           type: string
-          description: Name of authentication method.
+          description: Name of the authentication method.
         userCount:
           type: integer
           description: Number of users registered.
@@ -14247,6 +14456,26 @@ components:
           type: string
           description: Value for this key-value pair
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceLevelAgreementAttainment:
+      title: serviceLevelAgreementAttainment
+      type: object
+      properties:
+        endDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: The end date for the calendar month for which SLA attainment is measured.
+          format: date
+        score:
+          type: number
+          description: 'The level of SLA attainment achieved by the tenant for the calendar month identified, as described in Azure Active Directory SLA performance. Values are truncated, not rounded, so the actual value is always equal to or higher than the displayed value. Values are expressed as a percentage of availability for the tenant.'
+          format: double
+        startDate:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+          type: string
+          description: The start date for the calendar month for which SLA attainment is measured.
+          format: date
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -14507,11 +14736,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

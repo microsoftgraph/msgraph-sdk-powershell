@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get azureADDevice
-      description: Read the properties of an azureADDevice object.
+      summary: Get updatableAsset
+      description: Read the properties and relationships of an updatableAsset object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -4479,11 +4479,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete azureADDevice
-      description: 'Delete an azureADDevice object. When an Azure AD device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
+      summary: Delete updatableAssetGroup
+      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6583,11 +6583,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get contentApproval
-      description: Read the properties and relationships of a contentApproval object.
+      summary: Get complianceChange
+      description: Read the properties and relationships of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -7668,11 +7668,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

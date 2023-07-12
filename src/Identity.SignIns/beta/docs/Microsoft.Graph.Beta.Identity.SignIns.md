@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 0d5baa15-2147-4ee4-ba17-efbe5a9d751d
+Module Guid: 2b2d67d4-7ed1-41c5-9923-12667ae4d2af
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -609,7 +609,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a **riskDetection** object.
+Retrieve the properties of a collection of **riskDetection** objects.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -1210,7 +1210,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete an ipNamedLocation object.
+Delete a namedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1594,7 +1594,7 @@ Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they are the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of an ipNamedLocation object.
+Update the properties of a countryNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -1705,7 +1705,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Create a cross-tenant user synchronization policy for a partner-specific configuration.
+Update the user synchronization policy of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyDefaultAppManagementPolicy](Update-MgBetaPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

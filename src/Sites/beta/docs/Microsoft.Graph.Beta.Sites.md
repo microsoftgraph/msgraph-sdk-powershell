@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 68220875-5566-491f-bb6a-cbca1d3150e8
+Module Guid: fe4fea0f-addd-4233-a5ce-b2769cdd6e3a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -296,7 +296,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1175,7 +1175,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1905,7 +1905,7 @@ Create new navigation property to operations for groups
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
 ### [New-MgBetaGroupSitePageCanvaLayoutHorizontalSection](New-MgBetaGroupSitePageCanvaLayoutHorizontalSection.md)
-Create new navigation property to horizontalSections for groups
+Create a horizontalSection object in a given sitePage.
 
 ### [New-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn](New-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
 Create new navigation property to columns for groups
@@ -2063,7 +2063,7 @@ Create new navigation property to operations for sites
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
 ### [New-MgBetaSitePageCanvaLayoutHorizontalSection](New-MgBetaSitePageCanvaLayoutHorizontalSection.md)
-Create new navigation property to horizontalSections for sites
+Create a horizontalSection object in a given sitePage.
 
 ### [New-MgBetaSitePageCanvaLayoutHorizontalSectionColumn](New-MgBetaSitePageCanvaLayoutHorizontalSectionColumn.md)
 Create new navigation property to columns for sites
@@ -2849,7 +2849,7 @@ Update the properties of a sitePage object.
 Update the navigation property canvasLayout in groups
 
 ### [Update-MgBetaGroupSitePageCanvaLayoutHorizontalSection](Update-MgBetaGroupSitePageCanvaLayoutHorizontalSection.md)
-Update the navigation property horizontalSections in groups
+Update the properties of a horizontalSection object.
 
 ### [Update-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn](Update-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
 Update the navigation property columns in groups
@@ -2858,7 +2858,9 @@ Update the navigation property columns in groups
 Update the navigation property webparts in groups
 
 ### [Update-MgBetaGroupSitePageCanvaLayoutVerticalSection](Update-MgBetaGroupSitePageCanvaLayoutVerticalSection.md)
-Update the navigation property verticalSection in groups
+Create a verticalSection object in a given sitePage.
+A sitePage can only have one vertical section.
+If a vertical section already exists, this method returns a `409 Conflict` response code.
 
 ### [Update-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart](Update-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
 Update the navigation property webparts in groups
@@ -3062,7 +3064,7 @@ Update the properties of a sitePage object.
 Update the navigation property canvasLayout in sites
 
 ### [Update-MgBetaSitePageCanvaLayoutHorizontalSection](Update-MgBetaSitePageCanvaLayoutHorizontalSection.md)
-Update the navigation property horizontalSections in sites
+Update the properties of a horizontalSection object.
 
 ### [Update-MgBetaSitePageCanvaLayoutHorizontalSectionColumn](Update-MgBetaSitePageCanvaLayoutHorizontalSectionColumn.md)
 Update the navigation property columns in sites
@@ -3071,7 +3073,9 @@ Update the navigation property columns in sites
 Update the navigation property webparts in sites
 
 ### [Update-MgBetaSitePageCanvaLayoutVerticalSection](Update-MgBetaSitePageCanvaLayoutVerticalSection.md)
-Update the navigation property verticalSection in sites
+Create a verticalSection object in a given sitePage.
+A sitePage can only have one vertical section.
+If a vertical section already exists, this method returns a `409 Conflict` response code.
 
 ### [Update-MgBetaSitePageCanvaLayoutVerticalSectionWebpart](Update-MgBetaSitePageCanvaLayoutVerticalSectionWebpart.md)
 Update the navigation property webparts in sites

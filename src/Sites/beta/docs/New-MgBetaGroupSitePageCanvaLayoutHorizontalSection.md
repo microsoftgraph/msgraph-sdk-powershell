@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaGroupSitePageCanvaLayoutHorizontalSection
 
 ## SYNOPSIS
-Create new navigation property to horizontalSections for groups
+Create a horizontalSection object in a given sitePage.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgBetaGroupSitePageCanvaLayoutHorizontalSection -InputObject <ISitesIdentity
 ```
 
 ## DESCRIPTION
-Create new navigation property to horizontalSections for groups
+Create a horizontalSection object in a given sitePage.
 
 ## EXAMPLES
 

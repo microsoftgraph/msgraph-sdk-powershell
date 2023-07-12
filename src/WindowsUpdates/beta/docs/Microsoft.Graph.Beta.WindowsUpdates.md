@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 5d86c6d9-4a84-40c1-a5ef-723f101b8974
+Module Guid: 5f2410b1-19ae-4c57-aebf-4cbc64104c5a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,7 +99,7 @@ Specifies the assets to include in the audience.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChange](Get-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Read the properties and relationships of a contentApproval object.
+Read the properties and relationships of a complianceChange object.
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount](Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount.md)
 Get the number of the resource
@@ -117,7 +117,7 @@ Read the properties and relationships of an operationalInsightsConnection object
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties of an azureADDevice object.
+Read the properties and relationships of an updatableAsset object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -234,8 +234,8 @@ Delete a contentApproval object.
 Delete a resourceConnection object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
-Delete an azureADDevice object.
-When an Azure AD device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
+Delete an updatableAssetGroup object.
+When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAssetMember](Remove-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Remove members from an updatableAssetGroup.

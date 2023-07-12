@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaSitePageCanvaLayoutHorizontalSection
 
 ## SYNOPSIS
-Create new navigation property to horizontalSections for sites
+Create a horizontalSection object in a given sitePage.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgBetaSitePageCanvaLayoutHorizontalSection -InputObject <ISitesIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to horizontalSections for sites
+Create a horizontalSection object in a given sitePage.
 
 ## EXAMPLES
 

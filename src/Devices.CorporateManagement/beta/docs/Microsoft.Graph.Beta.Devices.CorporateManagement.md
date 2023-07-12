@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: a410fe8f-5347-4e60-9ece-d6843a52686f
+Module Guid: 2dc84d70-4256-45b6-833b-1024274af5a4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -352,7 +352,7 @@ Invoke function getLicensesForApp
 The collection of Windows Defender Application Control Supplemental Policies.
 
 ### [Get-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment](Get-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment.md)
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+The associated group assignments for the Windows Defender Application Control Supplemental Policy.
 
 ### [Get-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignmentCount](Get-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignmentCount.md)
 Get the number of the resource

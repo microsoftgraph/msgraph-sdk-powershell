@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsAdmin
-Whether the user has an admin role in the tenant.
+Indicates whether the user has an admin role in the tenant.
 This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
 
 ```yaml
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsMfaCapable
-Whether the user has registered a strong authentication method for multi-factor authentication.
+Indicates whether the user has registered a strong authentication method for multi-factor authentication.
 The method must be allowed by the authentication methods policy.
 Supports $filter (eq).
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsMfaRegistered
-Whether the user has registered a strong authentication method for multi-factor authentication.
+Indicates whether the user has registered a strong authentication method for multi-factor authentication.
 The method may not necessarily be allowed by the authentication methods policy.
 Supports $filter (eq).
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsPasswordlessCapable
-Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy.
+Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy.
 Supports $filter (eq).
 
 ```yaml
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsSsprCapable
-Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy.
+Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy.
 Supports $filter (eq).
 
 ```yaml
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsSsprEnabled
-Whether the user is allowed to perform self-service password reset by policy.
+Indicates whether the user is allowed to perform self-service password reset by policy.
 The user may not necessarily have registered the required number of authentication methods for self-service password reset.
 Supports $filter (eq).
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsSsprRegistered
-Whether the user has registered the required number of authentication methods for self-service password reset.
+Indicates whether the user has registered the required number of authentication methods for self-service password reset.
 The user may not necessarily be allowed to perform self-service password reset by policy.
 Supports $filter (eq).
 
@@ -412,13 +412,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DefaultMfaMethod <String>]`: defaultMfaMethodType
-  - `[IsAdmin <Boolean?>]`: Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
-  - `[IsMfaCapable <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
-  - `[IsMfaRegistered <Boolean?>]`: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
-  - `[IsPasswordlessCapable <Boolean?>]`: Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
-  - `[IsSsprCapable <Boolean?>]`: Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
-  - `[IsSsprEnabled <Boolean?>]`: Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
-  - `[IsSsprRegistered <Boolean?>]`: Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
+  - `[IsAdmin <Boolean?>]`: Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
+  - `[IsMfaCapable <Boolean?>]`: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+  - `[IsMfaRegistered <Boolean?>]`: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+  - `[IsPasswordlessCapable <Boolean?>]`: Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
+  - `[IsSsprCapable <Boolean?>]`: Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
+  - `[IsSsprEnabled <Boolean?>]`: Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
+  - `[IsSsprRegistered <Boolean?>]`: Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
   - `[IsSystemPreferredAuthenticationMethodEnabled <Boolean?>]`: Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).
   - `[LastUpdatedDateTime <DateTime?>]`: The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[MethodsRegistered <String[]>]`: Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).

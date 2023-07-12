@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: feabb027-c433-4c0a-8cc5-c0247fb59244
+Module Guid: 41183679-1897-4ebd-9bb9-058ad7be282d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -132,8 +132,7 @@ Use this API to create a new mail folder in the root folder of the user's mailbo
 If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create a new mailSearchFolder in the specified user's mailbox.
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
@@ -251,7 +250,7 @@ If an override exists for a sender and the sender changes his/her display name, 
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
-Update the properties of mailfolder object.
+Update the writable properties of a mailSearchFolder object.
 
 ### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users
@@ -275,7 +274,7 @@ Update the navigation property extensions in users
 Change writable properties on a messageRule object and save the changes.
 
 ### [Update-MgUserMessage](Update-MgUserMessage.md)
-Update the properties of a message object.
+Update the properties of an eventMessage object.
 
 ### [Update-MgUserMessageExtension](Update-MgUserMessageExtension.md)
 Update the navigation property extensions in users

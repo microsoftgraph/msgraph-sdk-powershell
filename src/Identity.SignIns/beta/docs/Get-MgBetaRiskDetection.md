@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaRiskDetection
 
 ## SYNOPSIS
-Retrieve the properties of a **riskDetection** object.
+Retrieve the properties of a collection of **riskDetection** objects.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Retrieve the properties of a **riskDetection** object.
+Retrieve the properties of a collection of **riskDetection** objects.
 
 ## EXAMPLES
 

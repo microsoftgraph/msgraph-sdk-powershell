@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -Assignments
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+The associated group assignments for the Windows Defender Application Control Supplemental Policy.
 To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentFileName
-The WindowsDefenderApplicationControl supplemental policy content's file name.
+Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentInputFile
-Input File for Content (The WindowsDefenderApplicationControl supplemental policy content in byte array format.)
+Input File for Content (Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.)
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreationDateTime
-The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
+Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
 
 ```yaml
 Type: System.DateTime
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The description of WindowsDefenderApplicationControl supplemental policy.
+The description of the Windows Defender Application Control Supplemental Policy.
 
 ```yaml
 Type: System.String
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of WindowsDefenderApplicationControl supplemental policy.
+The display name of the Windows Defender Application Control Supplemental Policy.
 
 ```yaml
 Type: System.String
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
+Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
 
 ```yaml
 Type: System.DateTime
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleScopeTagIds
-List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
+List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
 
 ```yaml
 Type: System.String[]
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -Version
-The WindowsDefenderApplicationControl supplemental policy's version.
+Indicates the Windows Defender Application Control Supplemental Policy's version.
 
 ```yaml
 Type: System.String
@@ -320,7 +320,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`ASSIGNMENTS <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>`: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+`ASSIGNMENTS <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>`: The associated group assignments for the Windows Defender Application Control Supplemental Policy.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -330,21 +330,21 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicy>`: windowsDefenderApplicationControlSupplementalPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Assignments <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>]`: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+  - `[Assignments <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>]`: The associated group assignments for the Windows Defender Application Control Supplemental Policy.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
       - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
-  - `[Content <Byte[]>]`: The WindowsDefenderApplicationControl supplemental policy content in byte array format.
-  - `[ContentFileName <String>]`: The WindowsDefenderApplicationControl supplemental policy content's file name.
-  - `[CreationDateTime <DateTime?>]`: The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
+  - `[Content <Byte[]>]`: Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.
+  - `[ContentFileName <String>]`: Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
+  - `[CreationDateTime <DateTime?>]`: Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
   - `[DeploySummary <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>]`: Contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeployedDeviceCount <Int32?>]`: Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
     - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
-  - `[Description <String>]`: The description of WindowsDefenderApplicationControl supplemental policy.
+  - `[Description <String>]`: The description of the Windows Defender Application Control Supplemental Policy.
   - `[DeviceStatuses <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus[]>]`: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeploymentStatus <WindowsDefenderApplicationControlSupplementalPolicyStatuses?>]`: Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
@@ -357,10 +357,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[PolicyVersion <String>]`: Human readable version of the WindowsDefenderApplicationControl supplemental policy.
     - `[UserName <String>]`: The name of the user of this device.
     - `[UserPrincipalName <String>]`: User Principal Name.
-  - `[DisplayName <String>]`: The display name of WindowsDefenderApplicationControl supplemental policy.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
-  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
-  - `[Version <String>]`: The WindowsDefenderApplicationControl supplemental policy's version.
+  - `[DisplayName <String>]`: The display name of the Windows Defender Application Control Supplemental Policy.
+  - `[LastModifiedDateTime <DateTime?>]`: Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
+  - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
+  - `[Version <String>]`: Indicates the Windows Defender Application Control Supplemental Policy's version.
 
 `DEPLOYSUMMARY <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>`: Contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -379,26 +379,26 @@ To create the parameters described below, construct a hash table containing the 
   - `[Policy <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicy>]`: windowsDefenderApplicationControlSupplementalPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Assignments <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>]`: The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+    - `[Assignments <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyAssignment[]>]`: The associated group assignments for the Windows Defender Application Control Supplemental Policy.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
         - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
-    - `[Content <Byte[]>]`: The WindowsDefenderApplicationControl supplemental policy content in byte array format.
-    - `[ContentFileName <String>]`: The WindowsDefenderApplicationControl supplemental policy content's file name.
-    - `[CreationDateTime <DateTime?>]`: The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
+    - `[Content <Byte[]>]`: Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.
+    - `[ContentFileName <String>]`: Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
+    - `[CreationDateTime <DateTime?>]`: Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
     - `[DeploySummary <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>]`: Contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DeployedDeviceCount <Int32?>]`: Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
       - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
-    - `[Description <String>]`: The description of WindowsDefenderApplicationControl supplemental policy.
+    - `[Description <String>]`: The description of the Windows Defender Application Control Supplemental Policy.
     - `[DeviceStatuses <IMicrosoftGraphWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus[]>]`: The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-    - `[DisplayName <String>]`: The display name of WindowsDefenderApplicationControl supplemental policy.
-    - `[LastModifiedDateTime <DateTime?>]`: The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
-    - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
-    - `[Version <String>]`: The WindowsDefenderApplicationControl supplemental policy's version.
+    - `[DisplayName <String>]`: The display name of the Windows Defender Application Control Supplemental Policy.
+    - `[LastModifiedDateTime <DateTime?>]`: Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
+    - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
+    - `[Version <String>]`: Indicates the Windows Defender Application Control Supplemental Policy's version.
   - `[PolicyVersion <String>]`: Human readable version of the WindowsDefenderApplicationControl supplemental policy.
   - `[UserName <String>]`: The name of the user of this device.
   - `[UserPrincipalName <String>]`: User Principal Name.

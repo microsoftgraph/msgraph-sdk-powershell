@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
 
 ## SYNOPSIS
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+The associated group assignments for the Windows Defender Application Control Supplemental Policy.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgBetaDeviceAppManagementWdacSupplementalPolicyAssignment
 ```
 
 ## DESCRIPTION
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+The associated group assignments for the Windows Defender Application Control Supplemental Policy.
 
 ## EXAMPLES
 
