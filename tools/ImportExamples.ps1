@@ -313,7 +313,7 @@ function Update-ExampleFile {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             $CodeValue = $ExampleList[$d].Trim()
-            if($CodeValue-match "\b$CommandPattern\b"){
+            if ($CodeValue -match "\b$CommandPattern\b") {
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
