@@ -6,6 +6,5 @@ Import-Module Microsoft.Graph.Beta.Education
 Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 This example shows how to use the Get-MgBetaEducationClassAssignmentSubmissionSubmittedResource Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

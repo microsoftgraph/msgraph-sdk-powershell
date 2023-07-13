@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	isMembershipLimitedToOwners = $true

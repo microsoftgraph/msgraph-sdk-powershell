@@ -1,18 +1,17 @@
-### Example 1: List all the tabs in the channel along with associated Teams app
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
-
-Get-MgBetaTeamChannelTab -TeamId $teamId -ChannelId $channelId -ExpandProperty "teamsApp"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaBetaTeamChannelTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: List all the tabs belonging to a specific app in a channel
+{{ Add description here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannelTab -TeamId $teamId -ChannelId $channelId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.planner'"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaBetaTeamChannelTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}

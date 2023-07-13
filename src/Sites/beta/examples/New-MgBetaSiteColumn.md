@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Sites
+```powershell
+Import-Module Microsoft.Graph.Beta.Sites
 
 $params = @{
 	description = "test"

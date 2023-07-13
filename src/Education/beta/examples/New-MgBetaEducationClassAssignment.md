@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	dueDateTime = [System.DateTime]::Parse("2022-09-16T00:00:00Z")

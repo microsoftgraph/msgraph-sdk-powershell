@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Security
+```powershell
+Import-Module Microsoft.Graph.Security
 
 $params = @{
 	displayName = "My Case 1 - Renamed"

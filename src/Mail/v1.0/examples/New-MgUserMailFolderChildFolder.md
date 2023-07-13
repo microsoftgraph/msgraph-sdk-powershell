@@ -3,8 +3,13 @@
 ```powershellImport-Module Microsoft.Graph.Mail
 
 $params = @{
-	displayName = "displayName-value"
-	isHidden = $true
+	"@odata.type" = "microsoft.graph.mailSearchFolder"
+	displayName = "Weekly digests"
+	includeNestedFolders = $true
+	sourceFolderIds = @(
+		"AQMkADYAAAIBDAAAAA=="
+	)
+	filterQuery = "contains(subject, 'weekly digest')"
 }
 
 # A UPN can also be used as -UserId.

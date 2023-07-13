@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationClass"

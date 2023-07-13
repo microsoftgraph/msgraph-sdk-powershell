@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Groups
+```powershell
+Import-Module Microsoft.Graph.Beta.Groups
 
 $params = @{
 	topic = "Take your wellness days and rest"

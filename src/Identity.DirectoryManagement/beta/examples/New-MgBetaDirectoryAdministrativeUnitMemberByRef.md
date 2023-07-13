@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/groups/{id}"

@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Search
+```powershell
+Import-Module Microsoft.Graph.Beta.Search
 
 $params = @{
 	displayName = "Contoso Marketing"

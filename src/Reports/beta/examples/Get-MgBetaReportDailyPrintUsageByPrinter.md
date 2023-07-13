@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Reports
+```powershell
+Import-Module Microsoft.Graph.Beta.Reports
 
 Get-MgBetaReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
 ```

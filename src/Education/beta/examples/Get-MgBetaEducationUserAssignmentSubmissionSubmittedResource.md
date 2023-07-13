@@ -9,3 +9,8 @@ This example shows how to use the Get-MgBetaEducationUserAssignmentSubmissionSub
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+
+```
+This example shows how to use the Get-MgBetaEducationUserAssignmentSubmissionSubmittedResource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

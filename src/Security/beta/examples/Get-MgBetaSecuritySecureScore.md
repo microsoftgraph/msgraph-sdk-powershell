@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
+```powershell
+Import-Module Microsoft.Graph.Beta.Security
 
 Get-MgBetaSecuritySecureScore -SecureScoreId $secureScoreId
 ```

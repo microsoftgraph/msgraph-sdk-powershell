@@ -3,12 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Mail
 
 $params = @{
-	subject = "subject-value"
-	body = @{
-		contentType = ""
-		content = "content-value"
-	}
-	inferenceClassification = "other"
+	isRead = $true
 }
 
 # A UPN can also be used as -UserId.

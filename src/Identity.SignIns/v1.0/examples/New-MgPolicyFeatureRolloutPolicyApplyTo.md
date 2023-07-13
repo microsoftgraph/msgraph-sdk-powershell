@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Identity.SignIns
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/2441b489-4f12-4882-b039-8f6006bd66da"
@@ -9,5 +10,12 @@ $params = @{
 New-MgPolicyFeatureRolloutPolicyApplyToByRef -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
 ```
 This example shows how to use the New-MgPolicyFeatureRolloutPolicyApplyTo Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+
+```
+This example shows how to use the New-MgPolicyFeatureRolloutPolicyApplyTo Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
