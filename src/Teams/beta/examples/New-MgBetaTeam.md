@@ -3,7 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
 	description = "My Sample Team???s Description"
 }
@@ -18,7 +18,7 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
 	description = "My Sample Team???s Description"
 	members = @(
@@ -27,7 +27,7 @@ $params = @{
 			roles = @(
 				"owner"
 			)
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('0040b377-61d8-43db-94f5-81374122dc7e')"
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('0040b377-61d8-43db-94f5-81374122dc7e')"
 		}
 	)
 }
@@ -42,7 +42,7 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	visibility = "Private"
 	displayName = "Sample Engineering Team"
 	description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
@@ -108,6 +108,9 @@ $params = @{
 		allowTeamMentions = $true
 		allowChannelMentions = $true
 	}
+	discoverySettings = @{
+		showInTeamsSearchAndSuggestions = $true
+	}
 	installedApps = @(
 		@{
 			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
@@ -128,8 +131,8 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	"group@odata.bind" = "https://graph.microsoft.com/v1.0/groups('71392b2f-1765-406e-86af-5907d9bdb2ab')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
+	"group@odata.bind" = "https://graph.microsoft.com/beta/groups('71392b2f-1765-406e-86af-5907d9bdb2ab')"
 }
 
 New-MgBetaTeam -BodyParameter $params
@@ -142,8 +145,8 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	"group@odata.bind" = "https://graph.microsoft.com/v1.0/groups('dbd8de4f-5d47-48da-87f1-594bed003375')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
+	"group@odata.bind" = "https://graph.microsoft.com/beta/groups('dbd8de4f-5d47-48da-87f1-594bed003375')"
 	channels = @(
 		@{
 			displayName = "Class Announcements ????"
@@ -181,7 +184,7 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('educationClass')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('educationClass')"
 	displayName = "My Class Team"
 	description = "My Class Team???s Description"
 }
@@ -196,7 +199,7 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('educationClass')"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('educationClass')"
 	displayName = "My Class Team"
 	description = "My Class Team???s Description"
 	channels = @(
@@ -236,7 +239,24 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	"@microsoft.graph.teamCreationMode" = "migration"
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
+	displayName = "My Sample Team"
+	description = "My Sample Team???s Description"
+	createdDateTime = [System.DateTime]::Parse("2020-03-14T11:22:17.067Z")
+}
+
+New-MgBetaTeam -BodyParameter $params
+```
+This example shows how to use the New-MgBetaTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 9: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
 	description = "My Sample Team???s Description"
 	members = @(
@@ -245,7 +265,7 @@ $params = @{
 			roles = @(
 				"owner"
 			)
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
 		}
 	)
 }

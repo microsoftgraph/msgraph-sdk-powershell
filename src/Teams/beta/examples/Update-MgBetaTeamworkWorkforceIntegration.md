@@ -11,7 +11,7 @@ $params = @{
 	}
 	isActive = $true
 	url = "url-value"
-	supportedEntities = "supportedEntities-value"
+	supports = "supports-value"
 }
 
 Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params

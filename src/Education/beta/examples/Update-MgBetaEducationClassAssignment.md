@@ -10,6 +10,7 @@ $params = @{
 	}
 	dueDateTime = [System.DateTime]::Parse("2021-09-10T00:00:00Z")
 	addedStudentAction = "none"
+	addToCalendarAction = "studentsAndPublisher"
 }
 
 Update-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params

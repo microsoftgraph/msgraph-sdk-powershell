@@ -3,7 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
 
 $params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/users/{id}"
+	"@odata.id" = "https://graph.microsoft.com/beta/users/{id}"
 }
 
 New-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorByRef -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params

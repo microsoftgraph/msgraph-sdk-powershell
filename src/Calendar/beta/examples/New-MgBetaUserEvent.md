@@ -82,7 +82,6 @@ $params = @{
 			type = "required"
 		}
 	)
-	allowNewTimeProposals = $true
 }
 
 # A UPN can also be used as -UserId.
@@ -92,6 +91,55 @@ This example shows how to use the New-MgBetaUserEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Calendar
+
+$params = @{
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does noon work for you?"
+	}
+	start = @{
+		dateTime = "2020-02-25T12:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	end = @{
+		dateTime = "2020-02-25T14:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	location = @{
+		displayName = "Harry's Bar"
+	}
+	attendees = @(
+		@{
+			emailAddress = @{
+				address = "AlexW@contoso.OnMicrosoft.com"
+				name = "Alex Wilbur"
+			}
+			type = "required"
+		}
+	)
+	recurrence = @{
+		pattern = @{
+			type = "daily"
+			interval = 1
+		}
+		range = @{
+			type = "numbered"
+			startDate = "2020-02-25"
+			numberOfOccurrences = 2
+		}
+	}
+}
+
+# A UPN can also be used as -UserId.
+New-MgBetaUserEvent -UserId $userId -BodyParameter $params
+```
+This example shows how to use the New-MgBetaUserEvent Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Calendar
 

@@ -16,6 +16,9 @@ This example shows how to use the Update-MgBetaDevice Cmdlet.
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 $params = @{
+	extensionAttributes = @{
+		extensionAttribute1 = "BYOD-Device"
+	}
 }
 
 Update-MgBetaDevice -DeviceId $deviceId -BodyParameter $params

@@ -7,12 +7,22 @@ $params = @{
 	surname = "Bansky"
 	emailAddresses = @(
 		@{
+			address = "pavelb@contoso.onmicrosoft.com"
+			name = "Pavel Bansky"
+			type = "personal"
+		}
+		@{
 			address = "pavelb@fabrikam.onmicrosoft.com"
 			name = "Pavel Bansky"
+			type = "other"
+			otherLabel = "Volunteer work"
 		}
 	)
-	businessPhones = @(
-		"+1 732 555 0102"
+	phones = @(
+		@{
+			number = "+1 732 555 0102"
+			type = "business"
+		}
 	)
 }
 
