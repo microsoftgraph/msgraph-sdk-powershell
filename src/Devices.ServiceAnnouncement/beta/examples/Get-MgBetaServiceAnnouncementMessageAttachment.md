@@ -1,4 +1,4 @@
-### Example 1: Get an attachment message ID
+### Example 1: Get an attachment with message ID
 
 ```powershellImport-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
 

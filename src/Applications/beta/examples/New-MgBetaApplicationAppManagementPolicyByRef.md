@@ -3,7 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Beta.Applications
 
 $params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/policies/appManagementPolicies/{id}"
+	"@odata.id" = "https://graph.microsoft.com/beta/policies/appManagementPolicies/{id}"
 }
 
 New-MgBetaApplicationAppManagementPolicyByRef -ApplicationId $applicationId -BodyParameter $params

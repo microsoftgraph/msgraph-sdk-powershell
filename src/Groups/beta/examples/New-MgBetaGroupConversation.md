@@ -1,17 +1,40 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
- PS C:\> {{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Groups
 
-{{ Add output here }}
+$params = @{
+	Topic = "Does anyone have a second?"
+	Threads = @(
+		@{
+			Posts = @(
+				@{
+					Body = @{
+						ContentType = "HTML"
+						Content = "This is urgent!"
+					}
+					Extensions = @(
+						@{
+							"@odata.type" = "microsoft.graph.openTypeExtension"
+							extensionName = "Com.Contoso.Benefits"
+							companyName = "Contoso"
+							expirationDate = "2016-08-03T11:00:00.000Z"
+							topPicks = @(
+								"Employees only"
+								"Add spouse or guest"
+								"Add family"
+							)
+						}
+					)
+				}
+			)
+		}
+	)
+}
+
+New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
 ```
+This example shows how to use the New-MgBetaGroupConversation Cmdlet.
 
-{{ Add description here }}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}

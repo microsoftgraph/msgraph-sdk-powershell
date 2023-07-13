@@ -5,6 +5,7 @@
 $params = @{
 	allowedCloudEndpoints = @(
 		"microsoftonline.us"
+		"partner.microsoftonline.cn"
 	)
 }
 

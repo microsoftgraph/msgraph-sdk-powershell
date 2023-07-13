@@ -134,6 +134,10 @@ $params = @{
 		}
 	)
 	backupReviewers = @(
+		@{
+			query = "/groups/072ac5f4-3f13-4088-ab30-0a276f3e6322/transitiveMembers"
+			queryType = "MicrosoftGraph"
+		}
 	)
 	fallbackReviewers = @(
 		@{
@@ -222,11 +226,6 @@ $params = @{
 		}
 	)
 	settings = @{
-		mailNotificationsEnabled = $true
-		reminderNotificationsEnabled = $true
-		justificationRequiredOnApproval = $true
-		defaultDecisionEnabled = $false
-		defaultDecision = "None"
 		instanceDurationInDays = 4
 		recurrence = @{
 			pattern = @{
@@ -239,6 +238,55 @@ $params = @{
 			}
 		}
 		decisionHistoriesForReviewersEnabled = $true
+	}
+}
+
+New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
+```
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Create an access review on a group with insights about user-to-group affiliation and user sign in for recommendations
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+
+$params = @{
+	displayName = "Test create"
+	descriptionForAdmins = "New scheduled access review"
+	descriptionForReviewers = "If you have any questions, contact jerry@contoso.com"
+	scope = @{
+		"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
+		query = "/groups/02f3bafb-448c-487c-88c2-5fd65ce49a41/transitiveMembers"
+		queryType = "MicrosoftGraph"
+	}
+	reviewers = @(
+		@{
+			query = "/users/398164b1-5196-49dd-ada2-364b49f99b27"
+			queryType = "MicrosoftGraph"
+		}
+	)
+	settings = @{
+		instanceDurationInDays = 1
+		recurrence = @{
+			pattern = @{
+				type = "weekly"
+				interval = 1
+			}
+			range = @{
+				type = "noEnd"
+				startDate = "2020-09-08T12:02:30.667Z"
+			}
+		}
+		recommendationInsightSettings = @(
+			@{
+				"@odata.type" = "#microsoft.graph.userLastSignInRecommendationInsightSetting"
+				recommendationLookBackDuration = "P30D"
+				signInScope = "tenant"
+			}
+			@{
+				"@odata.type" = "#microsoft.graph.groupPeerOutlierRecommendationInsightSettings"
+			}
+		)
 	}
 }
 

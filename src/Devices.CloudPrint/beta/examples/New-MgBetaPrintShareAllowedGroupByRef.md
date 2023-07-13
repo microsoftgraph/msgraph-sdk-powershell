@@ -3,7 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Beta.Devices.CloudPrint
 
 $params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/groups/{groupId}"
+	"@odata.id" = "https://graph.microsoft.com/beta/groups/{id}"
 }
 
 New-MgBetaPrintShareAllowedGroupByRef -PrinterShareId $printerShareId -BodyParameter $params

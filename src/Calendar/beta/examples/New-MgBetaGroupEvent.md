@@ -9,11 +9,11 @@ $params = @{
 		content = "Does late morning work for you?"
 	}
 	start = @{
-		dateTime = "2019-06-16T12:00:00"
+		dateTime = "2019-06-15T12:00:00"
 		timeZone = "Pacific Standard Time"
 	}
 	end = @{
-		dateTime = "2019-06-16T14:00:00"
+		dateTime = "2019-06-15T14:00:00"
 		timeZone = "Pacific Standard Time"
 	}
 	location = @{

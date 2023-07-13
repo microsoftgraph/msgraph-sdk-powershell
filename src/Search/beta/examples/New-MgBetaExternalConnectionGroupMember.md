@@ -18,7 +18,7 @@ This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet
 
 $params = @{
 	id = "e5477431-1038-484e-bf69-1dfedb97a110"
-	type = "group"
+	type = "externalGroup"
 }
 
 New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
