@@ -56,6 +56,10 @@ directive:
       parameter-name: Count1
     set:
       parameter-name: ItemCount
+  - where:
+      subject: Io(Lob|Managed)
+    set:
+      subject: iOS$1
 # Alias DeviceAppManagement* cmdlets to DeviceAppMgt*.
   - where:
       subject: ^(DeviceAppManagement)(.*)
@@ -69,4 +73,5 @@ directive:
       subject: ^(DeviceAppMgt)(.*)
     set:
       subject: DeviceAppManagement$2
+# End alias
 ```
