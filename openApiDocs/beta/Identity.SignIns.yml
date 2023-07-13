@@ -7900,11 +7900,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -7935,11 +7935,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9737,11 +9737,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a **riskDetection** object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of **riskDetection** objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -10505,11 +10505,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List riskyUsers
-      description: Retrieve the properties and relationships of a collection of **riskyUser** objects.
+      summary: Get riskyUser
+      description: Retrieve the properties and relationships of a **riskyUser** object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19254,11 +19254,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -41005,11 +41005,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -49738,11 +49738,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -49785,6 +49785,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -55507,6 +55509,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

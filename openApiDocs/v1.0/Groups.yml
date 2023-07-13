@@ -750,11 +750,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Add members
-      description: Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+      summary: Update group
+      description: Update the properties of a group object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-update?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -4991,11 +4991,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -5432,10 +5432,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -29288,11 +29288,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
+      summary: Delete conversationThread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -29328,10 +29328,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
