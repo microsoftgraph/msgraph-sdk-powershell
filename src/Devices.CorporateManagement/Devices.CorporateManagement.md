@@ -68,7 +68,7 @@ directive:
   - where:
       subject: ^DeviceAppMgt.*
     set:
-      alias: ${verb}-${subject-prefix}${subject}
+      alias: ${verb}-Mg${subject-prefix}${subject}
   - where:
       subject: ^(DeviceAppMgt)(.*)
     set:
