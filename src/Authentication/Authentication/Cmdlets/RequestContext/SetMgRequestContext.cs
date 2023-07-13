@@ -15,12 +15,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets.RequestContext
     {
         [Parameter(ValueFromPipelineByPropertyName = true, HelpMessage = "Sets the waiting time in seconds before retrying a request with a maximum value of 180 seconds. This defaults to 3 seconds.")]
         [ValidateNotNullOrEmpty]
-        [ValidateRange(0, Constants.MaxRetryDelayInSeconds)]
+        [ValidateRange(0, Constants.MAX_RETRY_DELAY_IN_SECONDS)]
         public int RetryDelay { get; set; }
 
         [Parameter(ValueFromPipelineByPropertyName = true, HelpMessage = "Sets the maximum number of retries for a request with a maximum value of 10. This defaults to 3.")]
         [ValidateNotNullOrEmpty]
-        [ValidateRange(0, Constants.MaxNumberOfRetry)]
+        [ValidateRange(0, Constants.MAX_NUMBER_OF_RETRY)]
         public int MaxRetry { get; set; }
 
         [Parameter(ValueFromPipelineByPropertyName = true, HelpMessage = "Sets the maximum time in seconds allowed for request retries.")]
@@ -40,9 +40,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets.RequestContext
         {
             base.ProcessRecord();
             var requestContext = GraphSession.Instance.RequestContext;
-            if (MyInvocation.BoundParameters.ContainsKey(nameof(RetryDelay))) { requestContext.RetryOptions.Delay = RetryDelay; }
-            if (MyInvocation.BoundParameters.ContainsKey(nameof(MaxRetry))) { requestContext.RetryOptions.MaxRetry = MaxRetry; }
-            if (MyInvocation.BoundParameters.ContainsKey(nameof(RetriesTimeLimit))) { requestContext.RetryOptions.RetriesTimeLimit = TimeSpan.FromSeconds(RetriesTimeLimit); }
+            if (MyInvocation.BoundParameters.ContainsKey(nameof(RetryDelay))) { requestContext.RetryDelay = RetryDelay; }
+            if (MyInvocation.BoundParameters.ContainsKey(nameof(MaxRetry))) { requestContext.MaxRetry = MaxRetry; }
+            if (MyInvocation.BoundParameters.ContainsKey(nameof(RetriesTimeLimit))) { requestContext.RetriesTimeLimit = TimeSpan.FromSeconds(RetriesTimeLimit); }
             if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout))) { requestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout); }
             GraphSession.Instance.RequestContext = requestContext;
             // Reset HTTP client to use new request options.

@@ -40,10 +40,8 @@ Describe "Microsoft.Graph.Authentication module" {
                     "Disconnect-MgGraph",
                     "Get-MgContext",
                     "Get-MgEnvironment",
-                    "Get-MgProfile",
                     "Invoke-MgGraphRequest",
                     "Remove-MgEnvironment",
-                    "Select-MgProfile",
                     "Set-MgEnvironment",
                     "Find-MgGraphCommand",
                     "Connect-Graph",
@@ -52,7 +50,9 @@ Describe "Microsoft.Graph.Authentication module" {
                     "Find-MgGraphPermission",
                     "Invoke-MgRestMethod",
                     "Get-MgRequestContext",
-                    "Set-MgRequestContext"
+                    "Set-MgRequestContext",
+                    "Set-MgGraphOption",
+                    "Get-MgGraphOption"
                 )
 
                 $PSModuleInfo.ExportedCommands.Keys | Should -BeIn $ExpectedCommands

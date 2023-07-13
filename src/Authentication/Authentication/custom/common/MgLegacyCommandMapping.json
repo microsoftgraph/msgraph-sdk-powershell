@@ -1,0 +1,1199 @@
+[
+  {
+    "Command": "Add-MgApplicationKey",
+    "LegacyMapping": [
+      "New-AzureADApplicationKeyCredential",
+      "New-AzureADMSApplicationKey"
+    ]
+  },
+  {
+    "Command": "Add-MgApplicationPassword",
+    "LegacyMapping": [
+      "New-AzureADApplicationPasswordCredential",
+      "New-AzureADMSApplicationPassword"
+    ]
+  },
+  {
+    "Command": "Add-MgServicePrincipalKey",
+    "LegacyMapping": [
+      "New-AzureADServicePrincipalKeyCredential",
+      "New-MsolServicePrincipalCredential"
+    ]
+  },
+  {
+    "Command": "Add-MgServicePrincipalPassword",
+    "LegacyMapping": [
+      "New-AzureADServicePrincipalPasswordCredential"
+    ]
+  },
+  {
+    "Command": "Clear-MgApplicationVerifiedPublisher",
+    "LegacyMapping": [
+      "Remove-AzureADMSApplicationVerifiedPublisher"
+    ]
+  },
+  {
+    "Command": "Confirm-MgDomain",
+    "LegacyMapping": [
+      "Get-CrossCloudVerificationCode",
+      "Confirm-AzureADDomain",
+      "Confirm-MsolDomain"
+    ]
+  },
+  {
+    "Command": "Connect-MgGraph",
+    "LegacyMapping": [
+      "Connect-AzureAD",
+      "Connect-MsolService"
+    ]
+  },
+  {
+    "Command": "Disconnect-MgGraph",
+    "LegacyMapping": [
+      "Disconnect-AzureAD"
+    ]
+  },
+  {
+    "Command": "Get-MgApplication",
+    "LegacyMapping": [
+      "Get-AzureADApplication",
+      "Get-AzureADApplicationKeyCredential",
+      "Get-AzureADApplicationPasswordCredential",
+      "Get-AzureADMSApplication"
+    ]
+  },
+  {
+    "Command": "Get-MgApplicationExtensionProperty",
+    "LegacyMapping": [
+      "Get-AzureADApplicationExtensionProperty",
+      "Get-AzureADMSApplicationExtensionProperty"
+    ]
+  },
+  {
+    "Command": "Get-MgApplicationLogo",
+    "LegacyMapping": [
+      "Get-AzureADApplicationLogo"
+    ]
+  },
+  {
+    "Command": "Get-MgApplicationOwner",
+    "LegacyMapping": [
+      "Get-AzureADApplicationOwner",
+      "Get-AzureADMSApplicationOwner"
+    ]
+  },
+  {
+    "Command": "Get-MgContact",
+    "LegacyMapping": [
+      "Get-AzureADContact",
+      "Get-MsolContact",
+      "Get-MsolDirSyncProvisioningError"
+    ]
+  },
+  {
+    "Command": "Get-MgContactDirectReport",
+    "LegacyMapping": [
+      "Get-AzureADContactDirectReport"
+    ]
+  },
+  {
+    "Command": "Get-MgContactManager",
+    "LegacyMapping": [
+      "Get-AzureADContactManager"
+    ]
+  },
+  {
+    "Command": "Get-MgContactMemberOf",
+    "LegacyMapping": [
+      "Get-AzureADContactMembership",
+      "Select-AzureADGroupIdsContactIsMemberOf"
+    ]
+  },
+  {
+    "Command": "Get-MgContext",
+    "LegacyMapping": [
+      "Get-AzureADCurrentSessionInfo"
+    ]
+  },
+  {
+    "Command": "Get-MgContract",
+    "LegacyMapping": [
+      "Get-AzureADContract",
+      "Get-MsolPartnerContract"
+    ]
+  },
+  {
+    "Command": "Get-MgDevice",
+    "LegacyMapping": [
+      "Get-AzureADDevice",
+      "Get-MsolDevice"
+    ]
+  },
+  {
+    "Command": "Get-MgDeviceManagementDeviceConfiguration",
+    "LegacyMapping": [
+      "Get-AzureADDeviceConfiguration"
+    ]
+  },
+  {
+    "Command": "Get-MgDeviceRegisteredOwner",
+    "LegacyMapping": [
+      "Get-AzureADDeviceRegisteredOwner"
+    ]
+  },
+  {
+    "Command": "Get-MgDeviceRegisteredUser",
+    "LegacyMapping": [
+      "Get-AzureADDeviceRegisteredUser"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryAdministrativeUnit",
+    "LegacyMapping": [
+      "Get-AzureADMSAdministrativeUnit",
+      "Get-MsolAdministrativeUnit"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryAdministrativeUnitMember",
+    "LegacyMapping": [
+      "Get-AzureADMSAdministrativeUnitMember",
+      "Get-MsolAdministrativeUnitMember"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryDeletedItem",
+    "LegacyMapping": [
+      "Get-AzureADDeletedApplication",
+      "Get-AzureADMSDeletedDirectoryObject",
+      "Get-AzureADMSDeletedGroup"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryObjectAvailableExtensionProperty",
+    "LegacyMapping": [
+      "Get-AzureADExtensionProperty"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryObjectById",
+    "LegacyMapping": [
+      "Get-AzureADObjectByObjectId"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryRole",
+    "LegacyMapping": [
+      "Get-AzureADDirectoryRole",
+      "Get-MsolRole"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryRoleMember",
+    "LegacyMapping": [
+      "Get-AzureADDirectoryRoleMember",
+      "Get-MsolRoleMember"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryRoleScopedMember",
+    "LegacyMapping": [
+      "Get-MsolScopedRoleMember"
+    ]
+  },
+  {
+    "Command": "Get-MgDirectoryRoleTemplate",
+    "LegacyMapping": [
+      "Get-AzureADDirectoryRoleTemplate"
+    ]
+  },
+  {
+    "Command": "Get-MgDomain",
+    "LegacyMapping": [
+      "Get-AzureADDomain",
+      "Get-MsolDomain",
+      "Get-MsolPasswordPolicy"
+    ]
+  },
+  {
+    "Command": "Get-MgDomainFederationConfiguration",
+    "LegacyMapping": [
+      "Get-MsolDomainFederationSettings"
+    ]
+  },
+  {
+    "Command": "Get-MgDomainNameReference",
+    "LegacyMapping": [
+      "Get-AzureADDomainNameReference"
+    ]
+  },
+  {
+    "Command": "Get-MgDomainServiceConfigurationRecord",
+    "LegacyMapping": [
+      "Get-AzureADDomainServiceConfigurationRecord"
+    ]
+  },
+  {
+    "Command": "Get-MgDomainVerificationDnsRecord",
+    "LegacyMapping": [
+      "Get-AzureADDomainVerificationDnsRecord",
+      "Get-MsolDomainVerificationDns"
+    ]
+  },
+  {
+    "Command": "Get-MgGroup",
+    "LegacyMapping": [
+      "Get-AzureADGroup",
+      "Get-AzureADMSGroup",
+      "Get-MsolDirSyncProvisioningError",
+      "Get-MsolGroup"
+    ]
+  },
+  {
+    "Command": "Get-MgGroupAppRoleAssignment",
+    "LegacyMapping": [
+      "Get-AzureADGroupAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Get-MgGroupLifecyclePolicy",
+    "LegacyMapping": [
+      "Get-AzureADMSGroupLifecyclePolicy",
+      "Get-AzureADMSLifecyclePolicyGroup"
+    ]
+  },
+  {
+    "Command": "Get-MgGroupMember",
+    "LegacyMapping": [
+      "Get-AzureADGroupMember",
+      "Get-MsolGroupMember"
+    ]
+  },
+  {
+    "Command": "Get-MgGroupMemberOf",
+    "LegacyMapping": [
+      "Select-AzureADGroupIdsGroupIsMemberOf"
+    ]
+  },
+  {
+    "Command": "Get-MgGroupOwner",
+    "LegacyMapping": [
+      "Get-AzureADGroupOwner"
+    ]
+  },
+  {
+    "Command": "Get-MgIdentityConditionalAccessNamedLocation",
+    "LegacyMapping": [
+      "Get-AzureADMSNamedLocationPolicy"
+    ]
+  },
+  {
+    "Command": "Get-MgIdentityConditionalAccessPolicy",
+    "LegacyMapping": [
+      "Get-AzureADMSConditionalAccessPolicy"
+    ]
+  },
+  {
+    "Command": "Get-MgIdentityProvider",
+    "LegacyMapping": [
+      "Get-AzureADMSIdentityProvider"
+    ]
+  },
+  {
+    "Command": "Get-MgOauth2PermissionGrant",
+    "LegacyMapping": [
+      "Get-AzureADOAuth2PermissionGrant"
+    ]
+  },
+  {
+    "Command": "Get-MgOrganization",
+    "LegacyMapping": [
+      "Get-AzureADTenantDetail",
+      "Get-MsolCompanyInformation"
+    ]
+  },
+  {
+    "Command": "Get-MgOrganizationCertificateBasedAuthConfiguration",
+    "LegacyMapping": [
+      "Get-AzureADTrustedCertificateAuthority"
+    ]
+  },
+  {
+    "Command": "Get-MgPolicyAuthorizationPolicy",
+    "LegacyMapping": [
+      "Get-AzureADMSAuthorizationPolicy"
+    ]
+  },
+  {
+    "Command": "Get-MgPolicyDeviceRegistrationPolicy",
+    "LegacyMapping": [
+      "Get-MsolDeviceRegistrationServicePolicy"
+    ]
+  },
+  {
+    "Command": "Get-MgPolicyPermissionGrantPolicy",
+    "LegacyMapping": [
+      "Get-AzureADMSPermissionGrantPolicy"
+    ]
+  },
+  {
+    "Command": "Get-MgPolicyPermissionGrantPolicyExclude",
+    "LegacyMapping": [
+      "Get-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "Get-MgPolicyPermissionGrantPolicyInclude",
+    "LegacyMapping": [
+      "Get-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "Get-MgRoleManagementDirectoryRoleAssignment",
+    "LegacyMapping": [
+      "Get-AzureADMSRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Get-MgRoleManagementDirectoryRoleAssignmentScheduleRequest",
+    "LegacyMapping": [
+      "Get-MsolUserByStrongAuthentication"
+    ]
+  },
+  {
+    "Command": "Get-MgRoleManagementDirectoryRoleDefinition",
+    "LegacyMapping": [
+      "Get-AzureADMSRoleDefinition"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipal",
+    "LegacyMapping": [
+      "Get-AzureADServicePrincipal",
+      "Get-AzureADServicePrincipalKeyCredential",
+      "Get-AzureADServicePrincipalPasswordCredential",
+      "Get-MsolServicePrincipal",
+      "Get-MsolServicePrincipalCredential"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalAppRoleAssignedTo",
+    "LegacyMapping": [
+      "Get-AzureADServiceAppRoleAssignedTo"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalAppRoleAssignment",
+    "LegacyMapping": [
+      "Get-AzureADServiceAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalCreatedObject",
+    "LegacyMapping": [
+      "Get-AzureADServicePrincipalCreatedObject"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalDelegatedPermissionClassification",
+    "LegacyMapping": [
+      "Get-AzureADMSServicePrincipalDelegatedPermissionClassification"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalEndpoint",
+    "LegacyMapping": [
+      "Get-AzureADApplicationServiceEndpoint"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalMemberOf",
+    "LegacyMapping": [
+      "Select-AzureADGroupIdsServicePrincipalIsMemberOf"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalOauth2PermissionGrant",
+    "LegacyMapping": [
+      "Get-AzureADServicePrincipalOAuth2PermissionGrant"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalOwnedObject",
+    "LegacyMapping": [
+      "Get-AzureADServicePrincipalOwnedObject"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalOwner",
+    "LegacyMapping": [
+      "Get-AzureADServicePrincipalOwner"
+    ]
+  },
+  {
+    "Command": "Get-MgServicePrincipalTransitiveMemberOf",
+    "LegacyMapping": [
+      "Get-AzureADServicePrincipalMembership"
+    ]
+  },
+  {
+    "Command": "Get-MgSubscribedSku",
+    "LegacyMapping": [
+      "Get-AzureADSubscribedSku",
+      "Get-MsolAccountSku",
+      "Get-MsolSubscription"
+    ]
+  },
+  {
+    "Command": "Get-MgUser",
+    "LegacyMapping": [
+      "Get-AzureADUser",
+      "Get-MsolDirSyncProvisioningError",
+      "Get-MsolUser"
+    ]
+  },
+  {
+    "Command": "Get-MgUserAppRoleAssignment",
+    "LegacyMapping": [
+      "Get-AzureADUserAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Get-MgUserCreatedObject",
+    "LegacyMapping": [
+      "Get-AzureADUserCreatedObject"
+    ]
+  },
+  {
+    "Command": "Get-MgUserDirectReport",
+    "LegacyMapping": [
+      "Get-AzureADUserDirectReport"
+    ]
+  },
+  {
+    "Command": "Get-MgUserExtension",
+    "LegacyMapping": [
+      "Get-AzureADUserExtension"
+    ]
+  },
+  {
+    "Command": "Get-MgUserLicenseDetail",
+    "LegacyMapping": [
+      "Get-AzureADUserLicenseDetail"
+    ]
+  },
+  {
+    "Command": "Get-MgUserManager",
+    "LegacyMapping": [
+      "Get-AzureADUserManager"
+    ]
+  },
+  {
+    "Command": "Get-MgUserMemberOf",
+    "LegacyMapping": [
+      "Get-AzureADUserMembership",
+      "Select-AzureADGroupIdsUserIsMemberOf",
+      "Get-MsolUserRole"
+    ]
+  },
+  {
+    "Command": "Get-MgUserOauth2PermissionGrant",
+    "LegacyMapping": [
+      "Get-AzureADUserOAuth2PermissionGrant"
+    ]
+  },
+  {
+    "Command": "Get-MgUserOwnedDevice",
+    "LegacyMapping": [
+      "Get-AzureADUserOwnedDevice"
+    ]
+  },
+  {
+    "Command": "Get-MgUserOwnedObject",
+    "LegacyMapping": [
+      "Get-AzureADUserOwnedObject"
+    ]
+  },
+  {
+    "Command": "Get-MgUserPhoto",
+    "LegacyMapping": [
+      "Get-AzureADUserThumbnailPhoto"
+    ]
+  },
+  {
+    "Command": "Get-MgUserRegisteredDevice",
+    "LegacyMapping": [
+      "Get-AzureADUserRegisteredDevice"
+    ]
+  },
+  {
+    "Command": "Get-MgUserScopedRoleMemberOf",
+    "LegacyMapping": [
+      "Get-AzureADMSScopedRoleMembership"
+    ]
+  },
+  {
+    "Command": "Invoke-MgInvalidateUserRefreshToken",
+    "LegacyMapping": [
+      "Revoke-AzureADSignedInUserAllRefreshToken",
+      "Revoke-AzureADUserAllRefreshToken"
+    ]
+  },
+  {
+    "Command": "Invoke-MgRenewGroup",
+    "LegacyMapping": [
+      "Reset-AzureADMSLifeCycleGroup"
+    ]
+  },
+  {
+    "Command": "New-MgApplication",
+    "LegacyMapping": [
+      "New-AzureADApplication",
+      "New-AzureADMSApplication"
+    ]
+  },
+  {
+    "Command": "New-MgApplicationExtensionProperty",
+    "LegacyMapping": [
+      "New-AzureADApplicationExtensionProperty",
+      "New-AzureADMSApplicationExtensionProperty"
+    ]
+  },
+  {
+    "Command": "New-MgApplicationOwnerByRef",
+    "LegacyMapping": [
+      "Add-AzureADApplicationOwner",
+      "Add-AzureADMSApplicationOwner"
+    ]
+  },
+  {
+    "Command": "New-MgDevice",
+    "LegacyMapping": [
+      "New-AzureADDevice"
+    ]
+  },
+  {
+    "Command": "New-MgDeviceRegisteredOwnerByRef",
+    "LegacyMapping": [
+      "Add-AzureADDeviceRegisteredOwner"
+    ]
+  },
+  {
+    "Command": "New-MgDirectoryAdministrativeUnit",
+    "LegacyMapping": [
+      "New-AzureADMSAdministrativeUnit",
+      "New-MsolAdministrativeUnit"
+    ]
+  },
+  {
+    "Command": "New-MgDirectoryAdministrativeUnitMemberByRef",
+    "LegacyMapping": [
+      "Add-AzureADMSAdministrativeUnitMember",
+      "Add-MsolAdministrativeUnitMember"
+    ]
+  },
+  {
+    "Command": "New-MgDirectoryRoleMemberByRef",
+    "LegacyMapping": [
+      "Add-AzureADDirectoryRoleMember",
+      "Add-MsolRoleMember"
+    ]
+  },
+  {
+    "Command": "New-MgDirectoryRoleScopedMember",
+    "LegacyMapping": [
+      "Add-AzureADMSScopedRoleMembership",
+      "Add-MsolScopedRoleMember"
+    ]
+  },
+  {
+    "Command": "New-MgDirectoryRoleTemplate",
+    "LegacyMapping": [
+      "Enable-AzureADDirectoryRole"
+    ]
+  },
+  {
+    "Command": "New-MgDomain",
+    "LegacyMapping": [
+      "New-AzureADDomain",
+      "New-MsolDomain"
+    ]
+  },
+  {
+    "Command": "New-MgDomainFederationConfiguration",
+    "LegacyMapping": [
+      "Convert-MsolDomainToFederated",
+      "Set-MsolDomainAuthentication",
+      "Set-MsolDomainFederationSettings"
+    ]
+  },
+  {
+    "Command": "New-MgGroup",
+    "LegacyMapping": [
+      "New-AzureADGroup",
+      "New-AzureADMSGroup",
+      "New-MsolGroup"
+    ]
+  },
+  {
+    "Command": "New-MgGroupAppRoleAssignment",
+    "LegacyMapping": [
+      "New-AzureADGroupAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "New-MgGroupLifecyclePolicy",
+    "LegacyMapping": [
+      "Add-AzureADMSLifecyclePolicyGroup",
+      "New-AzureADMSGroupLifecyclePolicy"
+    ]
+  },
+  {
+    "Command": "New-MgGroupMember",
+    "LegacyMapping": [
+      "Add-AzureADGroupMember",
+      "Add-MsolGroupMember"
+    ]
+  },
+  {
+    "Command": "New-MgGroupOwnerByRef",
+    "LegacyMapping": [
+      "Add-AzureADGroupOwner"
+    ]
+  },
+  {
+    "Command": "New-MgIdentityConditionalAccessNamedLocation",
+    "LegacyMapping": [
+      "New-AzureADMSNamedLocationPolicy"
+    ]
+  },
+  {
+    "Command": "New-MgIdentityConditionalAccessPolicy",
+    "LegacyMapping": [
+      "New-AzureADMSConditionalAccessPolicy"
+    ]
+  },
+  {
+    "Command": "New-MgIdentityProvider",
+    "LegacyMapping": [
+      "New-AzureADMSIdentityProvider"
+    ]
+  },
+  {
+    "Command": "New-MgInvitation",
+    "LegacyMapping": [
+      "New-AzureADMSInvitation"
+    ]
+  },
+  {
+    "Command": "New-MgPolicyPermissionGrantPolicy",
+    "LegacyMapping": [
+      "New-AzureADMSPermissionGrantPolicy"
+    ]
+  },
+  {
+    "Command": "New-MgPolicyPermissionGrantPolicyExclude",
+    "LegacyMapping": [
+      "New-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "New-MgPolicyPermissionGrantPolicyInclude",
+    "LegacyMapping": [
+      "New-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "New-MgRoleManagementDirectoryRoleAssignment",
+    "LegacyMapping": [
+      "New-AzureADMSRoleAssignment"
+    ]
+  },
+  {
+    "Command": "New-MgRoleManagementDirectoryRoleDefinition",
+    "LegacyMapping": [
+      "New-AzureADMSRoleDefinition"
+    ]
+  },
+  {
+    "Command": "New-MgServicePrincipal",
+    "LegacyMapping": [
+      "New-AzureADServicePrincipal",
+      "New-MsolServicePrincipal",
+      "New-MsolServicePrincipalAddresses"
+    ]
+  },
+  {
+    "Command": "New-MgServicePrincipalAppRoleAssignment",
+    "LegacyMapping": [
+      "New-AzureADServiceAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "New-MgServicePrincipalDelegatedPermissionClassification",
+    "LegacyMapping": [
+      "Add-AzureADMSServicePrincipalDelegatedPermissionClassification"
+    ]
+  },
+  {
+    "Command": "New-MgServicePrincipalOwnerByRef",
+    "LegacyMapping": [
+      "Add-AzureADServicePrincipalOwner"
+    ]
+  },
+  {
+    "Command": "New-MgUser",
+    "LegacyMapping": [
+      "New-AzureADUser",
+      "New-MsolUser"
+    ]
+  },
+  {
+    "Command": "New-MgUserAppRoleAssignment",
+    "LegacyMapping": [
+      "New-AzureADUserAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Remove-MgApplication",
+    "LegacyMapping": [
+      "Remove-AzureADApplication",
+      "Remove-AzureADMSApplication"
+    ]
+  },
+  {
+    "Command": "Remove-MgApplicationExtensionProperty",
+    "LegacyMapping": [
+      "Remove-AzureADApplicationExtensionProperty",
+      "Remove-AzureADMSApplicationExtensionProperty"
+    ]
+  },
+  {
+    "Command": "Remove-MgApplicationKey",
+    "LegacyMapping": [
+      "Remove-AzureADApplicationKeyCredential",
+      "Remove-AzureADMSApplicationKey"
+    ]
+  },
+  {
+    "Command": "Remove-MgApplicationOwnerByRef",
+    "LegacyMapping": [
+      "Remove-AzureADApplicationOwner",
+      "Remove-AzureADMSApplicationOwner"
+    ]
+  },
+  {
+    "Command": "Remove-MgApplicationPassword",
+    "LegacyMapping": [
+      "Remove-AzureADApplicationPasswordCredential",
+      "Remove-AzureADMSApplicationPassword",
+      "Remove-MsolApplicationPassword"
+    ]
+  },
+  {
+    "Command": "Remove-MgContact",
+    "LegacyMapping": [
+      "Remove-AzureADContact",
+      "Remove-MsolContact"
+    ]
+  },
+  {
+    "Command": "Remove-MgDevice",
+    "LegacyMapping": [
+      "Remove-AzureADDevice",
+      "Remove-MsolDevice"
+    ]
+  },
+  {
+    "Command": "Remove-MgDeviceRegisteredOwnerByRef",
+    "LegacyMapping": [
+      "Remove-AzureADDeviceRegisteredOwner"
+    ]
+  },
+  {
+    "Command": "Remove-MgDirectoryAdministrativeUnit",
+    "LegacyMapping": [
+      "Remove-AzureADMSAdministrativeUnit",
+      "Remove-MsolAdministrativeUnit"
+    ]
+  },
+  {
+    "Command": "Remove-MgDirectoryAdministrativeUnitScopedRoleMember",
+    "LegacyMapping": [
+      "Remove-AzureADMSAdministrativeUnitMember",
+      "Remove-MsolAdministrativeUnitMember"
+    ]
+  },
+  {
+    "Command": "Remove-MgDirectoryDeletedItem",
+    "LegacyMapping": [
+      "Remove-AzureADDeletedApplication"
+    ]
+  },
+  {
+    "Command": "Remove-MgDirectoryObject",
+    "LegacyMapping": [
+      "Remove-AzureADMSDeletedDirectoryObject"
+    ]
+  },
+  {
+    "Command": "Remove-MgDirectoryRoleScopedMember",
+    "LegacyMapping": [
+      "Remove-AzureADDirectoryRoleMember",
+      "Remove-MsolScopedRoleMember"
+    ]
+  },
+  {
+    "Command": "Remove-MgDomain",
+    "LegacyMapping": [
+      "Remove-AzureADDomain",
+      "Remove-MsolDomain"
+    ]
+  },
+  {
+    "Command": "Remove-MgDomainFederationConfiguration",
+    "LegacyMapping": [
+      "Convert-MsolDomainToStandard"
+    ]
+  },
+  {
+    "Command": "Remove-MgGroup",
+    "LegacyMapping": [
+      "Remove-AzureADGroup",
+      "Remove-AzureADMSGroup",
+      "Remove-MsolGroup"
+    ]
+  },
+  {
+    "Command": "Remove-MgGroupAppRoleAssignment",
+    "LegacyMapping": [
+      "Remove-AzureADGroupAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Remove-MgGroupFromLifecyclePolicy",
+    "LegacyMapping": [
+      "Remove-AzureADMSLifecyclePolicyGroup"
+    ]
+  },
+  {
+    "Command": "Remove-MgGroupLifecyclePolicy",
+    "LegacyMapping": [
+      "Remove-AzureADMSGroupLifecyclePolicy"
+    ]
+  },
+  {
+    "Command": "Remove-MgGroupMemberByRef",
+    "LegacyMapping": [
+      "Remove-AzureADGroupMember",
+      "Remove-MsolGroupMember"
+    ]
+  },
+  {
+    "Command": "Remove-MgGroupOwnerByRef",
+    "LegacyMapping": [
+      "Remove-AzureADGroupOwner"
+    ]
+  },
+  {
+    "Command": "Remove-MgIdentityConditionalAccessNamedLocation",
+    "LegacyMapping": [
+      "Remove-AzureADMSNamedLocationPolicy"
+    ]
+  },
+  {
+    "Command": "Remove-MgIdentityConditionalAccessPolicy",
+    "LegacyMapping": [
+      "Remove-AzureADMSConditionalAccessPolicy"
+    ]
+  },
+  {
+    "Command": "Remove-MgIdentityProvider",
+    "LegacyMapping": [
+      "Remove-AzureADMSIdentityProvider"
+    ]
+  },
+  {
+    "Command": "Remove-MgOauth2PermissionGrant",
+    "LegacyMapping": [
+      "Remove-AzureADOAuth2PermissionGrant"
+    ]
+  },
+  {
+    "Command": "Remove-MgPolicyPermissionGrantPolicy",
+    "LegacyMapping": [
+      "Remove-AzureADMSPermissionGrantPolicy"
+    ]
+  },
+  {
+    "Command": "Remove-MgPolicyPermissionGrantPolicyExclude",
+    "LegacyMapping": [
+      "Remove-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "Remove-MgPolicyPermissionGrantPolicyInclude",
+    "LegacyMapping": [
+      "Remove-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "Remove-MgRoleManagementDirectoryRoleAssignment",
+    "LegacyMapping": [
+      "Remove-AzureADMSRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Remove-MgRoleManagementDirectoryRoleDefinition",
+    "LegacyMapping": [
+      "Remove-AzureADMSRoleDefinition"
+    ]
+  },
+  {
+    "Command": "Remove-MgServicePrincipal",
+    "LegacyMapping": [
+      "Remove-AzureADServicePrincipal",
+      "Remove-MsolServicePrincipal"
+    ]
+  },
+  {
+    "Command": "Remove-MgServicePrincipalAppRoleAssignment",
+    "LegacyMapping": [
+      "Remove-AzureADServiceAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Remove-MgServicePrincipalDelegatedPermissionClassification",
+    "LegacyMapping": [
+      "Remove-AzureADMSServicePrincipalDelegatedPermissionClassification"
+    ]
+  },
+  {
+    "Command": "Remove-MgServicePrincipalKey",
+    "LegacyMapping": [
+      "Remove-AzureADServicePrincipalKeyCredential",
+      "Remove-MsolServicePrincipalCredential"
+    ]
+  },
+  {
+    "Command": "Remove-MgServicePrincipalOwnerByRef",
+    "LegacyMapping": [
+      "Remove-AzureADServicePrincipalOwner"
+    ]
+  },
+  {
+    "Command": "Remove-MgServicePrincipalPassword",
+    "LegacyMapping": [
+      "Remove-AzureADServicePrincipalPasswordCredential"
+    ]
+  },
+  {
+    "Command": "Remove-MgUser",
+    "LegacyMapping": [
+      "Remove-AzureADUser",
+      "Remove-MsolUser"
+    ]
+  },
+  {
+    "Command": "Remove-MgUserAppRoleAssignment",
+    "LegacyMapping": [
+      "Remove-AzureADUserAppRoleAssignment"
+    ]
+  },
+  {
+    "Command": "Remove-MgUserExtension",
+    "LegacyMapping": [
+      "Remove-AzureADUserExtension"
+    ]
+  },
+  {
+    "Command": "Remove-MgUserManagerByRef",
+    "LegacyMapping": [
+      "Remove-AzureADUserManager"
+    ]
+  },
+  {
+    "Command": "Remove-MgUserScopedRoleMemberOf",
+    "LegacyMapping": [
+      "Remove-AzureADMSScopedRoleMembership"
+    ]
+  },
+  {
+    "Command": "Reset-MgUserAuthenticationMethodPassword",
+    "LegacyMapping": [
+      "Set-MsolUserPassword"
+    ]
+  },
+  {
+    "Command": "Restore-MgDirectoryDeletedItem",
+    "LegacyMapping": [
+      "Restore-AzureADMSDeletedDirectoryObject",
+      "Restore-AzureADDeletedApplication",
+      "Restore-MsolUser"
+    ]
+  },
+  {
+    "Command": "Set-MgApplicationLogo",
+    "LegacyMapping": [
+      "Set-AzureADApplicationLogo",
+      "Set-AzureADMSApplicationLogo"
+    ]
+  },
+  {
+    "Command": "Set-MgApplicationVerifiedPublisher",
+    "LegacyMapping": [
+      "Set-AzureADMSApplicationVerifiedPublisher"
+    ]
+  },
+  {
+    "Command": "Set-MgUserLicense",
+    "LegacyMapping": [
+      "Set-AzureADUserLicense",
+      "New-MsolLicenseOptions",
+      "Set-MsolUserLicense"
+    ]
+  },
+  {
+    "Command": "Set-MgUserManagerByRef",
+    "LegacyMapping": [
+      "Set-AzureADUserManager"
+    ]
+  },
+  {
+    "Command": "Set-MgUserPhotoContent",
+    "LegacyMapping": [
+      "Set-AzureADUserThumbnailPhoto"
+    ]
+  },
+  {
+    "Command": "Update-MgApplication",
+    "LegacyMapping": [
+      "Set-AzureADApplication",
+      "Set-AzureADMSApplication"
+    ]
+  },
+  {
+    "Command": "Update-MgDevice",
+    "LegacyMapping": [
+      "Set-AzureADDevice",
+      "Disable-MsolDevice",
+      "Enable-MsolDevice"
+    ]
+  },
+  {
+    "Command": "Update-MgDirectoryAdministrativeUnit",
+    "LegacyMapping": [
+      "Set-AzureADMSAdministrativeUnit",
+      "Set-MsolAdministrativeUnit"
+    ]
+  },
+  {
+    "Command": "Update-MgDomain",
+    "LegacyMapping": [
+      "Set-AzureADDomain",
+      "Set-MsolDomain"
+    ]
+  },
+  {
+    "Command": "Update-MgGroup",
+    "LegacyMapping": [
+      "Set-AzureADGroup",
+      "Set-AzureADMSGroup",
+      "Set-MsolGroup"
+    ]
+  },
+  {
+    "Command": "Update-MgGroupLifecyclePolicy",
+    "LegacyMapping": [
+      "Set-AzureADMSGroupLifecyclePolicy"
+    ]
+  },
+  {
+    "Command": "Update-MgIdentityConditionalAccessNamedLocation",
+    "LegacyMapping": [
+      "Set-AzureADMSNamedLocationPolicy"
+    ]
+  },
+  {
+    "Command": "Update-MgIdentityConditionalAccessPolicy",
+    "LegacyMapping": [
+      "Set-AzureADMSConditionalAccessPolicy"
+    ]
+  },
+  {
+    "Command": "Update-MgIdentityProvider",
+    "LegacyMapping": [
+      "Set-AzureADMSIdentityProvider"
+    ]
+  },
+  {
+    "Command": "Update-MgOrganization",
+    "LegacyMapping": [
+      "Set-AzureADTenantDetail",
+      "Set-MsolCompanyContactInformation",
+      "Set-MsolCompanySecurityComplianceContactInformation",
+      "Set-MsolCompanySettings",
+      "Set-MsolDirSyncEnabled"
+    ]
+  },
+  {
+    "Command": "Update-MgPolicyAuthorizationPolicy",
+    "LegacyMapping": [
+      "Set-AzureADMSAuthorizationPolicy",
+      "Set-MsolCompanySettings"
+    ]
+  },
+  {
+    "Command": "Update-MgPolicyPermissionGrantPolicy",
+    "LegacyMapping": [
+      "Set-AzureADMSPermissionGrantPolicy"
+    ]
+  },
+  {
+    "Command": "Update-MgPolicyPermissionGrantPolicyExclude",
+    "LegacyMapping": [
+      "Set-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "Update-MgPolicyPermissionGrantPolicyInclude",
+    "LegacyMapping": [
+      "Set-AzureADMSPermissionGrantConditionSet"
+    ]
+  },
+  {
+    "Command": "Update-MgRoleManagementDirectoryRoleDefinition",
+    "LegacyMapping": [
+      "Set-AzureADMSRoleDefinition"
+    ]
+  },
+  {
+    "Command": "Update-MgServicePrincipal",
+    "LegacyMapping": [
+      "New-AzureADServicePrincipalKeyCredential",
+      "Set-AzureADServicePrincipal",
+      "Set-MsolServicePrincipal"
+    ]
+  },
+  {
+    "Command": "Update-MgUser",
+    "LegacyMapping": [
+      "Set-AzureADUser",
+      "Set-AzureADUserPassword",
+      "Set-MsolUser",
+      "Set-MsolUserPrincipalName"
+    ]
+  },
+  {
+    "Command": "Update-MgUserExtension",
+    "LegacyMapping": [
+      "Set-AzureADUserExtension"
+    ]
+  },
+  {
+    "Command": "Update-MgUserPassword",
+    "LegacyMapping": [
+      "Update-AzureADSignedInUserPassword"
+    ]
+  }
+]

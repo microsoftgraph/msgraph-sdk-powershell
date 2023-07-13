@@ -11,7 +11,7 @@ paths:
       tags:
         - external.external
       summary: Get external
-      operationId: external.external_GetExternal
+      operationId: external_GetExternal
       parameters:
         - name: $select
           in: query
@@ -41,7 +41,7 @@ paths:
                 - connections
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -54,7 +54,7 @@ paths:
       tags:
         - external.external
       summary: Update external
-      operationId: external.external_UpdateExternal
+      operationId: external_UpdateExternal
       requestBody:
         description: New property values
         content:
@@ -63,8 +63,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.external'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -72,8 +76,12 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connections from external
-      operationId: external_ListConnections
+      summary: List connections
+      description: Retrieve a list of externalConnections.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -158,7 +166,7 @@ paths:
                 - schema
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalConnectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -169,8 +177,12 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to connections for external
-      operationId: external_CreateConnections
+      summary: Create connection
+      description: Create a new externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      operationId: external_CreateConnection
       requestBody:
         description: New navigation property
         content:
@@ -179,7 +191,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -192,8 +204,12 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connections from external
-      operationId: external_GetConnections
+      summary: Get connection
+      description: Retrieve the properties and relationships of an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
+      operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -248,7 +264,7 @@ paths:
                 - schema
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -260,8 +276,12 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property connections in external
-      operationId: external_UpdateConnections
+      summary: Update connection
+      description: Update the properties of an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
+      operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -279,16 +299,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property connections for external
-      operationId: external_DeleteConnections
+      summary: Delete externalConnection
+      description: Delete an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
+      operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
           in: path
@@ -305,7 +333,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -315,7 +343,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connections_ListGroups
+      operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -376,7 +404,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -387,8 +415,12 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to groups for external
-      operationId: external.connections_CreateGroups
+      summary: Create externalGroup
+      description: Create a new externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -406,7 +438,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -420,7 +452,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get groups from external
-      operationId: external.connections_GetGroups
+      operationId: external.connection_GetGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -467,7 +499,7 @@ paths:
                 - members
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -480,7 +512,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property groups in external
-      operationId: external.connections_UpdateGroups
+      operationId: external.connection_UpdateGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -506,16 +538,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property groups for external
-      operationId: external.connections_DeleteGroups
+      summary: Delete externalGroup
+      description: Delete an externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
+      operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
           in: path
@@ -540,7 +580,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -551,7 +591,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
-      operationId: external.connections.groups_ListMembers
+      operationId: external.connection.group_ListMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -615,7 +655,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.identityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -626,8 +666,12 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create new navigation property to members for external
-      operationId: external.connections.groups_CreateMembers
+      summary: Create externalGroupMember
+      description: Create a new externalGroupMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -653,7 +697,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -668,7 +712,7 @@ paths:
         - external.externalConnection
       summary: Get members from external
       description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
-      operationId: external.connections.groups_GetMembers
+      operationId: external.connection.group_GetMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -720,7 +764,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -733,7 +777,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property members in external
-      operationId: external.connections.groups_UpdateMembers
+      operationId: external.connection.group_UpdateMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -767,16 +811,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property members for external
-      operationId: external.connections.groups_DeleteMembers
+      summary: Delete externalGroupMember
+      description: Delete an externalGroupMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
+      operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
           in: path
@@ -809,17 +861,70 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.group.member_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: The unique identifier of externalGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/external/connections/{externalConnection-id}/groups/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.group_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/items':
     get:
       tags:
         - external.externalConnection
-      summary: Get items from external
-      operationId: external.connections_ListItems
+      summary: Get externalItem
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in `429` HTTP errors.
+      operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -883,7 +988,7 @@ paths:
                 - activities
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -895,7 +1000,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to items for external
-      operationId: external.connections_CreateItems
+      operationId: external.connection_CreateItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -913,7 +1018,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -926,8 +1031,12 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get items from external
-      operationId: external.connections_GetItems
+      summary: Get externalItem
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in `429` HTTP errors.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
+      operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -975,7 +1084,7 @@ paths:
                 - activities
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -988,7 +1097,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property items in external
-      operationId: external.connections_SetItems
+      operationId: external.connection_SetItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1014,16 +1123,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property items for external
-      operationId: external.connections_DeleteItems
+      summary: Delete externalItem
+      description: Delete an externalitem.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
+      operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
           in: path
@@ -1048,7 +1165,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1058,8 +1175,8 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
-      description: Write-only property. Returns results.
-      operationId: external.connections.items_ListActivities
+      description: Returns a list of activities performed on the item. Write-only.
+      operationId: external.connection.item_ListActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1128,7 +1245,7 @@ paths:
                 - performedBy
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.externalActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1140,7 +1257,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to activities for external
-      operationId: external.connections.items_CreateActivities
+      operationId: external.connection.item_CreateActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1166,7 +1283,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1180,8 +1297,8 @@ paths:
       tags:
         - external.externalConnection
       summary: Get activities from external
-      description: Write-only property. Returns results.
-      operationId: external.connections.items_GetActivities
+      description: Returns a list of activities performed on the item. Write-only.
+      operationId: external.connection.item_GetActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1236,7 +1353,7 @@ paths:
                 - performedBy
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1249,7 +1366,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property activities in external
-      operationId: external.connections.items_UpdateActivities
+      operationId: external.connection.item_UpdateActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1283,8 +1400,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1292,7 +1413,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property activities for external
-      operationId: external.connections.items_DeleteActivities
+      operationId: external.connection.item_DeleteActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1325,7 +1446,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1336,7 +1457,7 @@ paths:
         - external.externalConnection
       summary: Get performedBy from external
       description: Represents an identity used to identify who is responsible for the activity.
-      operationId: external.connections.items.activities_GetPerformedGraphBPre
+      operationId: external.connection.item.activity_GetPerformedGraphBPre
       parameters:
         - name: externalConnection-id
           in: path
@@ -1388,7 +1509,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1397,12 +1518,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/items/{externalItem-id}/activities/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.item.activity_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalItem-id
+          in: path
+          description: The unique identifier of externalItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/items/{externalItem-id}/microsoft.graph.externalConnectors.addActivities':
     post:
       tags:
         - external.Actions
       summary: Invoke action addActivities
-      operationId: external.connections.items_addActivities
+      operationId: external.connection.item_addActivity
       parameters:
         - name: externalConnection-id
           in: path
@@ -1435,7 +1586,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1458,12 +1609,34 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/external/connections/{externalConnection-id}/items/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.item_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/operations':
     get:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connections_ListOperations
+      operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1522,7 +1695,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.externalConnectors.connectionOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1534,7 +1707,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create new navigation property to operations for external
-      operationId: external.connections_CreateOperations
+      operationId: external.connection_CreateOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1552,7 +1725,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1566,7 +1739,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get operations from external
-      operationId: external.connections_GetOperations
+      operationId: external.connection_GetOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1611,7 +1784,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1624,7 +1797,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property operations in external
-      operationId: external.connections_UpdateOperations
+      operationId: external.connection_UpdateOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1650,8 +1823,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1659,7 +1836,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property operations for external
-      operationId: external.connections_DeleteOperations
+      operationId: external.connection_DeleteOperation
       parameters:
         - name: externalConnection-id
           in: path
@@ -1684,17 +1861,43 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/operations/$count':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection.operation_GetCount
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: The unique identifier of externalConnection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/connections/{externalConnection-id}/quota':
     get:
       tags:
         - external.externalConnection
-      summary: Get quota from external
-      operationId: external.connections_GetQuota
+      summary: Get connectionQuota
+      description: Retrieve the properties and relationships of a connectionQuota object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
+      operationId: external.connection_GetQuota
       parameters:
         - name: externalConnection-id
           in: path
@@ -1730,7 +1933,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1743,7 +1946,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property quota in external
-      operationId: external.connections_UpdateQuota
+      operationId: external.connection_UpdateQuota
       parameters:
         - name: externalConnection-id
           in: path
@@ -1761,8 +1964,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1770,7 +1977,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property quota for external
-      operationId: external.connections_DeleteQuota
+      operationId: external.connection_DeleteQuota
       parameters:
         - name: externalConnection-id
           in: path
@@ -1787,7 +1994,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1796,8 +2003,12 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema from external
-      operationId: external.connections_GetSchema
+      summary: Get schema
+      description: Retrieve the properties of a schema for an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
           in: path
@@ -1834,7 +2045,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1846,8 +2057,12 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property schema in external
-      operationId: external.connections_UpdateSchema
+      summary: Update schema
+      description: Update the properties of a schema for an externalConnection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
+      operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
           in: path
@@ -1865,8 +2080,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1874,7 +2093,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property schema for external
-      operationId: external.connections_DeleteSchema
+      operationId: external.connection_DeleteSchema
       parameters:
         - name: externalConnection-id
           in: path
@@ -1891,11 +2110,25 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/connections/$count:
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get the number of the resource
+      operationId: external.connection_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData:
     get:
       tags:
@@ -1944,7 +2177,7 @@ paths:
                 - years
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1957,9 +2190,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get dataConnectors from external
-      description: Set of connectors for importing data from source systems.
-      operationId: external.industryData_ListDataConnectors
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the **dataConnector** navigation property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
+      operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2009,7 +2245,7 @@ paths:
                 - sourceSystem
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.industryDataConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2020,8 +2256,12 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to dataConnectors for external
-      operationId: external.industryData_CreateDataConnectors
+      summary: Create azureDataLakeConnector
+      description: Create a new azureDataLakeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
         content:
@@ -2030,7 +2270,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2043,9 +2283,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get dataConnectors from external
-      description: Set of connectors for importing data from source systems.
-      operationId: external.industryData_GetDataConnectors
+      summary: Get azureDataLakeConnector
+      description: Read the properties and relationships of an azureDataLakeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
+      operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2083,7 +2326,7 @@ paths:
                 - sourceSystem
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2095,8 +2338,12 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property dataConnectors in external
-      operationId: external.industryData_UpdateDataConnectors
+      summary: Update azureDataLakeConnector
+      description: Update the properties of an azureDataLakeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
+      operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2114,16 +2361,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.industryDataConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property dataConnectors for external
-      operationId: external.industryData_DeleteDataConnectors
+      summary: Delete industryDataConnector
+      description: Delete an industryDataConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
+      operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2140,7 +2395,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2150,7 +2405,11 @@ paths:
       tags:
         - external.Actions
       summary: Invoke action validate
-      operationId: external.industryData.dataConnectors_validate
+      description: Perform validations applicable for the specific instance of the data connector.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
+      operationId: external.industryData.dataConnector_validate
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2161,7 +2420,7 @@ paths:
             type: string
           x-ms-docs-key-type: industryDataConnector
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2172,7 +2431,7 @@ paths:
         - external.industryDataRoot
       summary: Get sourceSystem from external
       description: The sourceSystemDefinition this connector is connected to.
-      operationId: external.industryData.dataConnectors_GetSourceSystem
+      operationId: external.industryData.dataConnector_GetSourceSystem
       parameters:
         - name: industryDataConnector-id
           in: path
@@ -2210,7 +2469,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2219,13 +2478,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/dataConnectors/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.dataConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/inboundFlows:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlows from external
-      description: Set of data import flow activities to bring data into the canonical store via a connector.
-      operationId: external.industryData_ListInboundFlows
+      summary: List inboundFlows
+      description: Get a list of the inboundFlow objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
+      operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2289,7 +2565,7 @@ paths:
                 - year
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.inboundFlowCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2300,8 +2576,12 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to inboundFlows for external
-      operationId: external.industryData_CreateInboundFlows
+      summary: Create inboundFlow
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
         content:
@@ -2310,7 +2590,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2323,9 +2603,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlows from external
-      description: Set of data import flow activities to bring data into the canonical store via a connector.
-      operationId: external.industryData_GetInboundFlows
+      summary: Get inboundFileFlow
+      description: Read the properties and relationships of an inboundFileFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+      operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2369,7 +2652,7 @@ paths:
                 - year
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2381,8 +2664,12 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property inboundFlows in external
-      operationId: external.industryData_UpdateInboundFlows
+      summary: Update inboundFlow
+      description: Update the properties of an inboundFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
+      operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2400,16 +2687,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.inboundFlow'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property inboundFlows for external
-      operationId: external.industryData_DeleteInboundFlows
+      summary: Delete inboundFlow
+      description: Delete an inboundFlow object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
+      operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2426,7 +2721,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2437,7 +2732,7 @@ paths:
         - external.industryDataRoot
       summary: Get dataConnector from external
       description: The data connector in the context of which this flow pulls in data from a source system.
-      operationId: external.industryData.inboundFlows_GetDataConnector
+      operationId: external.industryData.inboundFlow_GetDataConnector
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2475,7 +2770,7 @@ paths:
                 - sourceSystem
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2490,7 +2785,7 @@ paths:
         - external.industryDataRoot
       summary: Get year from external
       description: The year that the data brought in via this flow applies to.
-      operationId: external.industryData.inboundFlows_GetYear
+      operationId: external.industryData.inboundFlow_GetYear
       parameters:
         - name: inboundFlow-id
           in: path
@@ -2529,7 +2824,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2538,13 +2833,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/inboundFlows/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.inboundFlow_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/operations:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get operations from external
-      description: Set of ephemeral operations that the system runs currently. Read-only.
-      operationId: external.industryData_ListOperations
+      summary: List fileValidateOperations
+      description: Get a list of long-running file validation operations and their statuses.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
+      operationId: external.industryData_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2604,7 +2916,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.longRunningOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2616,7 +2928,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to operations for external
-      operationId: external.industryData_CreateOperations
+      operationId: external.industryData_CreateOperation
       requestBody:
         description: New navigation property
         content:
@@ -2625,7 +2937,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2638,9 +2950,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get operations from external
-      description: Set of ephemeral operations that the system runs currently. Read-only.
-      operationId: external.industryData_GetOperations
+      summary: Get fileValidateOperations
+      description: Read the properties and relationships of a fileValidateOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-1.0
+      operationId: external.industryData_GetOperation
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2680,7 +2995,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2693,7 +3008,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property operations in external
-      operationId: external.industryData_UpdateOperations
+      operationId: external.industryData_UpdateOperation
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2711,8 +3026,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2720,7 +3039,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property operations for external
-      operationId: external.industryData_DeleteOperations
+      operationId: external.industryData_DeleteOperation
       parameters:
         - name: longRunningOperation-id
           in: path
@@ -2737,18 +3056,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/operations/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.operation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/referenceDefinitions:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get referenceDefinitions from external
-      description: Set of user modifiable system picker types.
-      operationId: external.industryData_ListReferenceDefinitions
+      summary: List referenceDefinitions
+      description: Get a list of the referenceDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
+      operationId: external.industryData_ListReferenceDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2814,7 +3150,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.referenceDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2826,7 +3162,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to referenceDefinitions for external
-      operationId: external.industryData_CreateReferenceDefinitions
+      operationId: external.industryData_CreateReferenceDefinition
       requestBody:
         description: New navigation property
         content:
@@ -2835,7 +3171,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2848,9 +3184,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get referenceDefinitions from external
-      description: Set of user modifiable system picker types.
-      operationId: external.industryData_GetReferenceDefinitions
+      summary: Get referenceDefinition
+      description: Read the properties and relationships of a referenceDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-get?view=graph-rest-1.0
+      operationId: external.industryData_GetReferenceDefinition
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -2892,7 +3231,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2905,7 +3244,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property referenceDefinitions in external
-      operationId: external.industryData_UpdateReferenceDefinitions
+      operationId: external.industryData_UpdateReferenceDefinition
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -2923,8 +3262,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.referenceDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2932,7 +3275,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property referenceDefinitions for external
-      operationId: external.industryData_DeleteReferenceDefinitions
+      operationId: external.industryData_DeleteReferenceDefinition
       parameters:
         - name: referenceDefinition-id
           in: path
@@ -2949,18 +3292,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/referenceDefinitions/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.referenceDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/roleGroups:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get roleGroups from external
-      description: Set of groups of individual roles that makes role-based admin simpler.
-      operationId: external.industryData_ListRoleGroups
+      summary: List roleGroups
+      description: Get a list of the roleGroup objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
+      operationId: external.industryData_ListRoleGroup
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3011,7 +3371,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.roleGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3023,7 +3383,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create new navigation property to roleGroups for external
-      operationId: external.industryData_CreateRoleGroups
+      operationId: external.industryData_CreateRoleGroup
       requestBody:
         description: New navigation property
         content:
@@ -3032,7 +3392,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3045,9 +3405,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get roleGroups from external
-      description: Set of groups of individual roles that makes role-based admin simpler.
-      operationId: external.industryData_GetRoleGroups
+      summary: Get roleGroup
+      description: Read the properties and relationships of a roleGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
+      operationId: external.industryData_GetRoleGroup
       parameters:
         - name: roleGroup-id
           in: path
@@ -3084,7 +3447,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3097,7 +3460,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update the navigation property roleGroups in external
-      operationId: external.industryData_UpdateRoleGroups
+      operationId: external.industryData_UpdateRoleGroup
       parameters:
         - name: roleGroup-id
           in: path
@@ -3115,8 +3478,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.roleGroup'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3124,7 +3491,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete navigation property roleGroups for external
-      operationId: external.industryData_DeleteRoleGroups
+      operationId: external.industryData_DeleteRoleGroup
       parameters:
         - name: roleGroup-id
           in: path
@@ -3141,18 +3508,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/roleGroups/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.roleGroup_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/runs:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get runs from external
-      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
-      operationId: external.industryData_ListRuns
+      summary: List industryDataRuns
+      description: Get a list of the industryDataRun objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
+      operationId: external.industryData_ListRun
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3214,7 +3598,7 @@ paths:
                 - activities
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.industryDataRunCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3226,9 +3610,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get runs from external
-      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
-      operationId: external.industryData_GetRuns
+      summary: Get industryDataRun
+      description: Read the properties and relationships of an industryDataRun object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
+      operationId: external.industryData_GetRun
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3270,7 +3657,7 @@ paths:
                 - activities
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3285,7 +3672,7 @@ paths:
         - external.industryDataRoot
       summary: Get activities from external
       description: The set of activities performed during the run.
-      operationId: external.industryData.runs_ListActivities
+      operationId: external.industryData.run_ListActivity
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3349,7 +3736,7 @@ paths:
                 - activity
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.industryDataRunActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3363,7 +3750,7 @@ paths:
         - external.industryDataRoot
       summary: Get activities from external
       description: The set of activities performed during the run.
-      operationId: external.industryData.runs_GetActivities
+      operationId: external.industryData.run_GetActivity
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3411,7 +3798,7 @@ paths:
                 - activity
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3426,7 +3813,7 @@ paths:
         - external.industryDataRoot
       summary: Get activity from external
       description: The flow that was run by this activity.
-      operationId: external.industryData.runs.activities_GetActivity
+      operationId: external.industryData.run.activity_GetActivity
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3471,7 +3858,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3480,12 +3867,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/industryData/runs/{industryDataRun-id}/activities/$count':
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.run.activity_GetCount
+      parameters:
+        - name: industryDataRun-id
+          in: path
+          description: The unique identifier of industryDataRun
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: industryDataRun
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/external/industryData/runs/{industryDataRun-id}/microsoft.graph.industryData.getStatistics()':
     get:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryData.runs_getStatistics
+      operationId: external.industryData.run_getStatistics
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3496,7 +3905,7 @@ paths:
             type: string
           x-ms-docs-key-type: industryDataRun
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3505,14 +3914,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /external/industryData/runs/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.run_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/runs/microsoft.graph.industryData.getStatistics():
     get:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryData.runs_getStatistics
+      operationId: external.industryData.run_getStatistics
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3525,9 +3948,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get sourceSystems from external
-      description: Set of source definitions that represents real-world external systems.
-      operationId: external.industryData_ListSourceSystems
+      summary: List sourceSystemDefinitions
+      description: Get a list of the sourceSystemDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
+      operationId: external.industryData_ListSourceSystem
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3581,7 +4007,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.sourceSystemDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3592,8 +4018,12 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to sourceSystems for external
-      operationId: external.industryData_CreateSourceSystems
+      summary: Create sourceSystemDefinition
+      description: Create a new sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateSourceSystem
       requestBody:
         description: New navigation property
         content:
@@ -3602,7 +4032,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3615,9 +4045,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get sourceSystems from external
-      description: Set of source definitions that represents real-world external systems.
-      operationId: external.industryData_GetSourceSystems
+      summary: Get sourceSystemDefinition
+      description: Read the properties and relationships of a sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
+      operationId: external.industryData_GetSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -3655,7 +4088,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3667,8 +4100,12 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property sourceSystems in external
-      operationId: external.industryData_UpdateSourceSystems
+      summary: Update sourceSystemDefinition
+      description: Update the properties of a sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
+      operationId: external.industryData_UpdateSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -3686,16 +4123,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.sourceSystemDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property sourceSystems for external
-      operationId: external.industryData_DeleteSourceSystems
+      summary: Delete sourceSystemDefinition
+      description: Delete a sourceSystemDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
+      operationId: external.industryData_DeleteSourceSystem
       parameters:
         - name: sourceSystemDefinition-id
           in: path
@@ -3712,18 +4157,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/sourceSystems/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.sourceSystem_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/industryData/years:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get years from external
-      description: Set of years represented in the system.
-      operationId: external.industryData_ListYears
+      summary: List yearTimePeriodDefinitions
+      description: Get a list of the yearTimePeriodDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
+      operationId: external.industryData_ListYear
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3780,7 +4242,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.industryData.yearTimePeriodDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3791,8 +4253,12 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create new navigation property to years for external
-      operationId: external.industryData_CreateYears
+      summary: Create yearTimePeriodDefinition
+      description: Create a new yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
+      operationId: external.industryData_CreateYear
       requestBody:
         description: New navigation property
         content:
@@ -3801,7 +4267,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3814,9 +4280,12 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get years from external
-      description: Set of years represented in the system.
-      operationId: external.industryData_GetYears
+      summary: Get yearTimePeriodDefinition
+      description: Read the properties and relationships of a yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0
+      operationId: external.industryData_GetYear
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -3855,7 +4324,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3867,8 +4336,12 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update the navigation property years in external
-      operationId: external.industryData_UpdateYears
+      summary: Update yearTimePeriodDefinition
+      description: Update the properties of a yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0
+      operationId: external.industryData_UpdateYear
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -3886,16 +4359,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.industryData.yearTimePeriodDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete navigation property years for external
-      operationId: external.industryData_DeleteYears
+      summary: Delete yearTimePeriodDefinition
+      description: Delete a yearTimePeriodDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0
+      operationId: external.industryData_DeleteYear
       parameters:
         - name: yearTimePeriodDefinition-id
           in: path
@@ -3912,11 +4393,25 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/industryData/years/$count:
+    get:
+      tags:
+        - external.industryDataRoot
+      summary: Get the number of the resource
+      operationId: external.industryData.year_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search:
     get:
       tags:
@@ -3955,7 +4450,7 @@ paths:
                 - qnas
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -3977,8 +4472,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.searchEntity'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.searchEntity'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3986,9 +4485,12 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
-      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
-      operationId: search_ListAcronyms
+      summary: List acronyms
+      description: Get a list of the acronym objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
+      operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4054,7 +4556,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.search.acronymCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4065,8 +4567,12 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create new navigation property to acronyms for search
-      operationId: search_CreateAcronyms
+      summary: Create acronym
+      description: Create a new acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
+      operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
         content:
@@ -4075,7 +4581,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.search.acronym'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4088,9 +4594,12 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: Get acronyms from search
-      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
-      operationId: search_GetAcronyms
+      summary: Get acronym
+      description: Read the properties and relationships of an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
+      operationId: search_GetAcronym
       parameters:
         - name: acronym-id
           in: path
@@ -4132,7 +4641,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4144,8 +4653,12 @@ paths:
     patch:
       tags:
         - search.acronym
-      summary: Update the navigation property acronyms in search
-      operationId: search_UpdateAcronyms
+      summary: Update acronym
+      description: Update the properties of an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
+      operationId: search_UpdateAcronym
       parameters:
         - name: acronym-id
           in: path
@@ -4163,16 +4676,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.search.acronym'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.acronym'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - search.acronym
-      summary: Delete navigation property acronyms for search
-      operationId: search_DeleteAcronyms
+      summary: Delete acronym
+      description: Deletes an acronym object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
+      operationId: search_DeleteAcronym
       parameters:
         - name: acronym-id
           in: path
@@ -4189,18 +4710,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/acronyms/$count:
+    get:
+      tags:
+        - search.acronym
+      summary: Get the number of the resource
+      operationId: search.acronym_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search/bookmarks:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
-      description: Administrative answer in Microsoft Search results for common search queries in an organization.
-      operationId: search_ListBookmarks
+      summary: List bookmarks
+      description: Get a list of bookmark objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
+      operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4293,7 +4831,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.search.bookmarkCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4304,8 +4842,12 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create new navigation property to bookmarks for search
-      operationId: search_CreateBookmarks
+      summary: Create bookmark
+      description: Create a new bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
+      operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
         content:
@@ -4314,7 +4856,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.search.bookmark'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4327,9 +4869,12 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: Get bookmarks from search
-      description: Administrative answer in Microsoft Search results for common search queries in an organization.
-      operationId: search_GetBookmarks
+      summary: Get bookmark
+      description: Read the properties and relationships of a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
+      operationId: search_GetBookmark
       parameters:
         - name: bookmark-id
           in: path
@@ -4380,7 +4925,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4392,8 +4937,12 @@ paths:
     patch:
       tags:
         - search.bookmark
-      summary: Update the navigation property bookmarks in search
-      operationId: search_UpdateBookmarks
+      summary: Update bookmark
+      description: Update the properties of a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
+      operationId: search_UpdateBookmark
       parameters:
         - name: bookmark-id
           in: path
@@ -4411,16 +4960,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.search.bookmark'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.bookmark'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - search.bookmark
-      summary: Delete navigation property bookmarks for search
-      operationId: search_DeleteBookmarks
+      summary: Delete bookmark
+      description: Delete a bookmark object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
+      operationId: search_DeleteBookmark
       parameters:
         - name: bookmark-id
           in: path
@@ -4437,16 +4994,34 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/bookmarks/$count:
+    get:
+      tags:
+        - search.bookmark
+      summary: Get the number of the resource
+      operationId: search.bookmark_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /search/microsoft.graph.query:
     post:
       tags:
         - search.Actions
       summary: Invoke action query
+      description: Run a specified search query. Search results are provided in the response.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -4463,7 +5038,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4489,9 +5064,12 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
-      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-      operationId: search_ListQnas
+      summary: List qnas
+      description: Get a list of the qna objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
+      operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4578,7 +5156,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.search.qnaCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4589,8 +5167,12 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create new navigation property to qnas for search
-      operationId: search_CreateQnas
+      summary: Create qna
+      description: Create a new qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
+      operationId: search_CreateQna
       requestBody:
         description: New navigation property
         content:
@@ -4599,7 +5181,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.search.qna'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4612,9 +5194,12 @@ paths:
     get:
       tags:
         - search.qna
-      summary: Get qnas from search
-      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
-      operationId: search_GetQnas
+      summary: Get qna
+      description: Read the properties and relationships of a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
+      operationId: search_GetQna
       parameters:
         - name: qna-id
           in: path
@@ -4663,7 +5248,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4675,8 +5260,12 @@ paths:
     patch:
       tags:
         - search.qna
-      summary: Update the navigation property qnas in search
-      operationId: search_UpdateQnas
+      summary: Update qna
+      description: Update the properties of a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
+      operationId: search_UpdateQna
       parameters:
         - name: qna-id
           in: path
@@ -4694,16 +5283,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.search.qna'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.qna'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - search.qna
-      summary: Delete navigation property qnas for search
-      operationId: search_DeleteQnas
+      summary: Delete qna
+      description: Delete a qna object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
+      operationId: search_DeleteQna
       parameters:
         - name: qna-id
           in: path
@@ -4720,11 +5317,25 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /search/qnas/$count:
+    get:
+      tags:
+        - search.qna
+      summary: Get the number of the resource
+      operationId: search.qna_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.externalConnectors.external:
@@ -4847,7 +5458,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivity'
-              description: Write-only property. Returns results.
+              description: Returns a list of activities performed on the item. Write-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -4860,7 +5471,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: When the particular activity occurred.
+              description: 'The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             type:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalActivityType'
@@ -5392,7 +6003,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The size of the page to be retrieved. Optional.
+          description: The size of the page to be retrieved. The maximum value is 500. Optional.
           format: int32
         sortProperties:
           type: array
@@ -6187,6 +6798,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
@@ -6648,7 +7262,7 @@ components:
           nullable: true
         isCollapsed:
           type: boolean
-          description: Indicates whether the current result is collapses when the collapseProperties property is used.
+          description: Indicates whether the current result is collapses when the collapseProperties property in the searchRequest is used.
           nullable: true
         rank:
           maximum: 2147483647
@@ -6731,7 +7345,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -6908,6 +7522,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       description: Retrieved collection
       content:

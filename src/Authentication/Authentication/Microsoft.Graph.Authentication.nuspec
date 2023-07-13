@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>1.9.5</version>
+    <version>2.0.0</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/features/2.0/docs/images/graph_color256.png</iconUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <tags>Microsoft Office365 Graph PowerShell GraphServiceClient Outlook OneDrive AzureAD GraphAPI Productivity SharePoint Intune SDK PSModule PSIncludes_Cmdlet</tags>
@@ -22,19 +22,46 @@
     <file src="artifacts\Microsoft.Graph.Authentication.psd1" />
     <file src="artifacts\Microsoft.Graph.Authentication.dll" />
     <file src="artifacts\Microsoft.Graph.Authentication.Core.dll" />
-    <file src="artifacts\Microsoft.Graph.Core.dll" />
     <file src="artifacts\StartupScripts\" target="StartupScripts" />
     <file src="artifacts\custom\" target="custom" />
-    <file src="artifacts\Dependencies\Newtonsoft.Json.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Microsoft.Graph.Auth.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Microsoft.IdentityModel.JsonWebTokens.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Microsoft.IdentityModel.Tokens.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Microsoft.IdentityModel.Logging.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\System.IdentityModel.Tokens.Jwt.dll" target="Dependencies" />
     <!-- Copy framework dependent assemblies to respective framework directory. -->
+    <!-- Shared -->
+    <file src="artifacts\Dependencies\Azure.Identity.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Azure.Identity.BrokeredAuthentication.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Identity.Client.Broker.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Identity.Client.NativeInterop.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Bcl.AsyncInterfaces.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.IdentityModel.Abstractions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Buffers.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Memory.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Text.Json.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Threading.Tasks.Extensions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Abstractions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Authentication.Azure.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Http.HttpClientLibrary.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Serialization.Form.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Serialization.Json.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Serialization.Text.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-x64\native\msalruntime.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-x86\native\msalruntime_x86.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-arm64\native\msalruntime_arm64.dll" target="Dependencies" />
+    <!-- Core-->
+    <file src="artifacts\Dependencies\Core\Azure.Core.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\Microsoft.Graph.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
-    <file src="artifacts\Dependencies\Core\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\Newtonsoft.Json.dll" target="Dependencies\Core" />
+    <!-- Desktop -->
+    <file src="artifacts\Dependencies\Desktop\Azure.Core.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\Newtonsoft.Json.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Diagnostics.DiagnosticSource.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Numerics.Vectors.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Runtime.CompilerServices.Unsafe.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Text.Encodings.Web.dll" target="Dependencies\Desktop" />
+    <file src="artifacts\Dependencies\Desktop\System.Net.Http.WinHttpHandler.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Desktop" />
   </files>
 </package>

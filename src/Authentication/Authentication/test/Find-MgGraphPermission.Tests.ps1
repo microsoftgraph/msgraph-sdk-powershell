@@ -9,14 +9,14 @@ Describe "The Find-MgGraphPermission Command" {
         . (Join-Path $PSScriptRoot  .\Find-MgGraphPermissionTestfile.ps1)
     }
 
-    Context "When executing the command with empty service principal results from MS Graph"  {
+    Context "When executing the command with empty service principal results from MS Graph" {
         BeforeAll {
 
             Mock Invoke-MgGraphRequest {
                 [PSCustomObject] @{
                     Value = [PSCustomObject] @{
                         oauth2PermissionScopes = @()
-                        appRoles = @()
+                        appRoles               = @()
                     }
                 }
             }
@@ -33,7 +33,7 @@ Describe "The Find-MgGraphPermission Command" {
     Context "When executing the command using a constrained set of permissions returned by MS Graph and there is a connection" {
         BeforeEach {
             _Permissions_Initialize
-            Mock Invoke-MgGraphRequest {$permissionData}
+            Mock Invoke-MgGraphRequest { $permissionData }
         }
 
         It 'Executes successfully with the All parameter' {
@@ -137,8 +137,8 @@ Describe "The Find-MgGraphPermission Command" {
 
         It "Should return exactly the permission specified" {
             Find-MgGraphPermission Group.read.basic |
-              Select-Object -ExpandProperty Name |
-              Should -Be 'Group.Read.Basic'
+            Select-Object -ExpandProperty Name |
+            Should -Be 'Group.Read.Basic'
         }
 
         It "It allows the PermissionType to be specified when the All parameter is specified and returns the filtered results" {
@@ -227,7 +227,7 @@ Describe "The Find-MgGraphPermission Command" {
         BeforeEach {
             _Permissions_Initialize
             Mock Invoke-MgGraphRequest {
-                Throw [System.Management.Automation.ValidationMetadataException]::new('mock connection error message')
+                Throw [Microsoft.Graph.PowerShell.AuthenticationException]::new('mock connection error message')
             }
         }
 
@@ -280,7 +280,7 @@ Describe "The Find-MgGraphPermission Command" {
             { Find-MgGraphPermission -Online | Out-Null } | Should -Throw 'mock connection error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
-            Mock Invoke-MgGraphRequest{
+            Mock Invoke-MgGraphRequest {
                 $permissionData
             }
 
@@ -303,7 +303,7 @@ Describe "The Find-MgGraphPermission Command" {
             { Find-MgGraphPermission 'ReadWrite' -Online | Out-Null } | Should -Throw 'mock connection error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
-            Mock Invoke-MgGraphRequest{
+            Mock Invoke-MgGraphRequest {
                 $permissionData
             }
 
@@ -325,7 +325,7 @@ Describe "The Find-MgGraphPermission Command" {
             { Find-MgGraphPermission 'Nigeria has the best jollof' -Online | Out-Null } | Should -Throw 'mock connection error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
-            Mock Invoke-MgGraphRequest{
+            Mock Invoke-MgGraphRequest {
                 $permissionData
             }
 
@@ -355,7 +355,7 @@ Describe "The Find-MgGraphPermission Command" {
             { Find-MgGraphPermission -All -Online | Out-Null } | Should -Throw 'mock authentication error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
-            Mock Invoke-MgGraphRequest{
+            Mock Invoke-MgGraphRequest {
                 $permissionData
             }
 
@@ -378,7 +378,7 @@ Describe "The Find-MgGraphPermission Command" {
             { Find-MgGraphPermission 'ReadWrite' -Online | Out-Null } | Should -Throw 'mock authentication error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
-            Mock Invoke-MgGraphRequest{
+            Mock Invoke-MgGraphRequest {
                 $permissionData
             }
 
@@ -401,7 +401,7 @@ Describe "The Find-MgGraphPermission Command" {
             { Find-MgGraphPermission 'Nigeria has the best jollof' -Online | Out-Null } | Should -Throw 'mock authentication error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
-            Mock Invoke-MgGraphRequest{
+            Mock Invoke-MgGraphRequest {
                 $permissionData
             }
 

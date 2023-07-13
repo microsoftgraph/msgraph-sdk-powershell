@@ -2,20 +2,19 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+using System.Linq;
+using System.Management.Automation;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System;
-    using System.Globalization;
-    using System.Linq;
-    using System.Management.Automation;
-
     /// <summary>
     /// Removes Microsoft Graph environment to the settings file..
     /// </summary>
-    [Cmdlet(VerbsCommon.Remove, "MgEnvironment", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsCommon.Remove, "MgEnvironment", SupportsShouldProcess = true, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-get-mgenvironment")]
     [OutputType(typeof(GraphEnvironment))]
     public class RemoveMgEnvironment : PSCmdlet
     {

@@ -1,31 +1,30 @@
-# Switch to beta profile. This loads cmdlets that call MS Graph beta endpoint.
-Select-MgProfile -Name beta
+# Install Microsoft.Graph.Beta module. The following samples call the Microsoft Graph beta endpoint.
 
 # Create a new team.
 $TeamName = "2020 Interns"
-New-MgTeam -DisplayName $TeamName -Description $TeamName `
+New-MgBetaTeam -DisplayName $TeamName -Description $TeamName `
     -AdditionalProperties @{
         "template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
     }
 
 # Filter groups by displayName and resourceProvisioningOptions to find team.
-$InternsTeam = Get-MgGroup -Filter "StartsWith(DisplayName, '$TeamName')" `
+$InternsTeam = Get-MgBetaGroup -Filter "StartsWith(DisplayName, '$TeamName')" `
                | Where-Object { $_.ResourceProvisioningOptions -Contains "Team" }
 
 # Add team owner.
-$teamOwner = Get-MgUser -UserId "{TEAM_OWNER_UPN}"
-New-MgTeamMember -TeamId $InternsTeam.Id -Roles "owner" `
+$teamOwner = Get-MgBetaUser -UserId "{TEAM_OWNER_UPN}"
+New-MgBetaTeamMember -TeamId $InternsTeam.Id -Roles "owner" `
     -AdditionalProperties @{ 
         "@odata.type" = "#microsoft.graph.aadUserConversationMember"; 
         "user@odata.bind" = "https://graph.microsoft.com/beta/users/" + $teamOwner.Id
     }
 
 # Filter users to find users who have a UPN that starts with 't-'.
-$TeamMembers = Get-MgUser -Filter "startswith(userPrincipalName, 't-')"
+$TeamMembers = Get-MgBetaUser -Filter "startswith(userPrincipalName, 't-')"
 
 # Add team members.
 foreach ($teamMember in $TeamMembers) {
-    New-MgTeamMember -TeamId $InternsTeam.Id -Roles "member" `
+    New-MgBetaTeamMember -TeamId $InternsTeam.Id -Roles "member" `
         -AdditionalProperties @{
             "@odata.type" = "#microsoft.graph.aadUserConversationMember";
             "user@odata.bind" = "https://graph.microsoft.com/beta/users/" + $teamMember.Id
@@ -33,36 +32,36 @@ foreach ($teamMember in $TeamMembers) {
 }
 
 # Send a welcome message to the channel.
-$PrimaryChannel = Get-MgTeamPrimaryChannel -TeamId $InternsTeam.Id
-New-MgTeamChannelMessage -TeamId $InternsTeam.Id `
+$PrimaryChannel = Get-MgBetaTeamPrimaryChannel -TeamId $InternsTeam.Id
+New-MgBetaTeamChannelMessage -TeamId $InternsTeam.Id `
                          -ChannelId $PrimaryChannel.Id `
                          -Body @{
                              Content = "Welcome to Teams!"
                             }
 
 # Delete team.
-Remove-MgGroup -GroupId $InternsTeam.Id
+Remove-MgBetaGroup -GroupId $InternsTeam.Id
 
 # Teams Chat snippets
 
 # Get list of 1:1 chats
-Get-MgChat
+Get-MgBetaChat
 
 # Get Messages from Chat
-Get-MgChatMessage -chatId $chatId 
+Get-MgBetaChatMessage -chatId $chatId 
 
 # Send a message in that 1:1 chat
-New-MgChatMessage -chatId $chatId -Body @{ Content = "Hi from VSCode again!" }
+New-MgBetaChatMessage -chatId $chatId -Body @{ Content = "Hi from VSCode again!" }
 
 # Mention a user in a channel message.
-$User = Get-MgUser -UserId $userUPN | select id, displayName, userIdentityType
+$User = Get-MgBetaUser -UserId $userUPN | select id, displayName, userIdentityType
 $UserToMention  = @{
     Id = $User.Id;
     DisplayName = $User.DisplayName;
     UserIdentityType = "aadUser";
 }
 
-New-MgTeamChannelMessage -ChannelId $ChannelId -TeamId $TeamId `
+New-MgBetaTeamChannelMessage -ChannelId $ChannelId -TeamId $TeamId `
     -Body @{ `
         ContentType = "html"; `
         Content = "Welcome to the channel! <at id='0'>$($UserToMention.DisplayName)</at>" `

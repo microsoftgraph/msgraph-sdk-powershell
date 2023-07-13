@@ -2,21 +2,21 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+using System.Linq;
+using System.Management.Automation;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.PowerShell.Authentication.Extensions;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System;
-    using System.Linq;
-    using System.Management.Automation;
-
     /// <summary>
     /// Adds Microsoft Graph environment to the settings file.
     /// </summary>
-    [Cmdlet(VerbsCommon.Add, "MgEnvironment", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsCommon.Add, "MgEnvironment", SupportsShouldProcess = true, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-get-mgenvironment")]
     [OutputType(typeof(GraphEnvironment))]
     public class AddMgEnvironment : PSCmdlet
     {

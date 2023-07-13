@@ -1,0 +1,10 @@
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Users
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
+```
+This example shows how to use the Get-MgBetaUserOutlookMasterCategory Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -14,7 +14,7 @@ paths:
       description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_downloadApplePushNotificationCertificateSigningRequest
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -34,7 +34,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedProperties
-      operationId: deviceManagement.assignmentFilters_getSupportedProperties
+      operationId: deviceManagement.assignmentFilter_getSupportedProperty
       parameters:
         - name: deviceAndAppManagementAssignmentFilter-id
           in: path
@@ -50,7 +50,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -77,7 +77,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPlatformSupportedProperties
-      operationId: deviceManagement.assignmentFilters_getPlatformSupportedProperties
+      operationId: deviceManagement.assignmentFilter_getPlatformSupportedProperty
       parameters:
         - name: platform
           in: path
@@ -92,7 +92,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -119,9 +119,9 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getState
-      operationId: deviceManagement.assignmentFilters_getState
+      operationId: deviceManagement.assignmentFilter_getState
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -135,7 +135,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvents_getAuditActivityTypes
+      operationId: deviceManagement.auditEvent_getAuditActivityType
       parameters:
         - name: category
           in: path
@@ -151,7 +151,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -179,7 +179,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditCategories
-      operationId: deviceManagement.auditEvents_getAuditCategories
+      operationId: deviceManagement.auditEvent_getAuditCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -187,7 +187,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -215,7 +215,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: deviceManagement.comanagedDevices_getCloudPcRemoteActionResults
+      operationId: deviceManagement.comanagedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: managedDevice-id
           in: path
@@ -231,7 +231,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -258,7 +258,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcReviewStatus
-      operationId: deviceManagement.comanagedDevices_getCloudPcReviewStatus
+      operationId: deviceManagement.comanagedDevice_getCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
@@ -269,7 +269,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -283,7 +283,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.comanagedDevices_getFileVaultKey
+      operationId: deviceManagement.comanagedDevice_getFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -294,7 +294,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -314,7 +314,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.comanagedDevices_getNonCompliantSettings
+      operationId: deviceManagement.comanagedDevice_getNonCompliantSetting
       parameters:
         - name: managedDevice-id
           in: path
@@ -330,7 +330,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -352,37 +352,12 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getOemWarranty
-      operationId: deviceManagement.comanagedDevices_getOemWarranty
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/comanagedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
         - deviceManagement.Functions
       summary: Invoke function appDiagnostics
-      operationId: deviceManagement.comanagedDevices_appDiagnostics
+      operationId: deviceManagement.comanagedDevice_appDiagnostic
       parameters:
         - name: upn
           in: path
@@ -398,7 +373,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -425,7 +400,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPolicySummary
-      operationId: deviceManagement.configManagerCollections_getPolicySummary
+      operationId: deviceManagement.configManagerCollection_getPolicySummary
       parameters:
         - name: policyId
           in: path
@@ -436,7 +411,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -451,7 +426,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function exportMobileConfig
       description: Exports the mobile configuration
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_exportMobileConfig
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_exportMobileConfig
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -470,7 +445,7 @@ paths:
             type: string
           x-ms-docs-key-type: enrollmentProfile
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -491,7 +466,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getEncryptionPublicKey
       description: Get a public key to use to encrypt the Apple device enrollment program token
-      operationId: deviceManagement.depOnboardingSettings_getEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSetting_getEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -502,7 +477,7 @@ paths:
             type: string
           x-ms-docs-key-type: depOnboardingSetting
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -522,7 +497,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getExpiringVppTokenCount
-      operationId: deviceManagement.depOnboardingSettings_getExpiringVppTokenCount
+      operationId: deviceManagement.depOnboardingSetting_getExpiringVppTokenCount
       parameters:
         - name: expiringBeforeDateTime
           in: path
@@ -533,7 +508,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -555,7 +530,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getDevicesScheduledToRetire
-      operationId: deviceManagement.deviceCompliancePolicies_getDevicesScheduledToRetire
+      operationId: deviceManagement.deviceCompliancePolicy_getDevicesScheduledToRetire
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -563,7 +538,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -590,7 +565,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getOmaSettingPlainTextValue
-      operationId: deviceManagement.deviceConfigurations_getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfiguration_getOmaSettingPlainTextValue
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -609,7 +584,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -629,7 +604,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getIosAvailableUpdateVersions
-      operationId: deviceManagement.deviceConfigurations_getIosAvailableUpdateVersions
+      operationId: deviceManagement.deviceConfiguration_getIosAvailableUpdateVersion
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -637,7 +612,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -665,7 +640,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getRemediationHistory
       description: Function to get the number of remediations by a device health scripts
-      operationId: deviceManagement.deviceHealthScripts_getRemediationHistory
+      operationId: deviceManagement.deviceHealthScript_getRemediationHistory
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -676,7 +651,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceHealthScript
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -690,9 +665,9 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function areGlobalScriptsAvailable
-      operationId: deviceManagement.deviceHealthScripts_areGlobalScriptsAvailable
+      operationId: deviceManagement.deviceHealthScript_areGlobalScriptsAvailable
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -706,9 +681,9 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRemediationSummary
-      operationId: deviceManagement.deviceHealthScripts_getRemediationSummary
+      operationId: deviceManagement.deviceHealthScript_getRemediationSummary
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -722,7 +697,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.intents_compare
+      operationId: deviceManagement.intent_compare
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -746,7 +721,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -773,7 +748,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCustomizedSettings
-      operationId: deviceManagement.intents_getCustomizedSettings
+      operationId: deviceManagement.intent_getCustomizedSetting
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -789,7 +764,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -816,7 +791,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcRemoteActionResults
-      operationId: deviceManagement.managedDevices_getCloudPcRemoteActionResults
+      operationId: deviceManagement.managedDevice_getCloudPcRemoteActionResult
       parameters:
         - name: managedDevice-id
           in: path
@@ -832,7 +807,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -859,7 +834,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcReviewStatus
-      operationId: deviceManagement.managedDevices_getCloudPcReviewStatus
+      operationId: deviceManagement.managedDevice_getCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
@@ -870,7 +845,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -884,7 +859,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getFileVaultKey
-      operationId: deviceManagement.managedDevices_getFileVaultKey
+      operationId: deviceManagement.managedDevice_getFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -895,7 +870,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -915,7 +890,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getNonCompliantSettings
-      operationId: deviceManagement.managedDevices_getNonCompliantSettings
+      operationId: deviceManagement.managedDevice_getNonCompliantSetting
       parameters:
         - name: managedDevice-id
           in: path
@@ -931,7 +906,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -953,37 +928,12 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getOemWarranty
-      operationId: deviceManagement.managedDevices_getOemWarranty
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/managedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
         - deviceManagement.Functions
       summary: Invoke function appDiagnostics
-      operationId: deviceManagement.managedDevices_appDiagnostics
+      operationId: deviceManagement.managedDevice_appDiagnostic
       parameters:
         - name: upn
           in: path
@@ -999,7 +949,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1027,9 +977,9 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getAssignedRoleDetails
       description: Retrieves the assigned role definitions and role assignments of the currently authenticated user.
-      operationId: deviceManagement_getAssignedRoleDetails
+      operationId: deviceManagement_getAssignedRoleDetail
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1045,7 +995,7 @@ paths:
       summary: Invoke function getComanagedDevicesSummary
       operationId: deviceManagement_getComanagedDevicesSummary
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1061,7 +1011,7 @@ paths:
       summary: Invoke function getComanagementEligibleDevicesSummary
       operationId: deviceManagement_getComanagementEligibleDevicesSummary
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1075,7 +1025,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1083,7 +1033,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1111,7 +1061,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - name: scope
           in: path
@@ -1127,7 +1077,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1154,7 +1104,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRoleScopeTagsByIds
-      operationId: deviceManagement_getRoleScopeTagsGraphBPreIds
+      operationId: deviceManagement_getRoleScopeTagsGraphBPreId
       parameters:
         - name: ids
           in: path
@@ -1206,7 +1156,7 @@ paths:
                 - isBuiltIn desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1285,7 +1235,7 @@ paths:
                 - isBuiltIn desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1324,7 +1274,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1349,7 +1299,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1369,9 +1319,9 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function userExperienceAnalyticsSummarizedDeviceScopes
-      operationId: deviceManagement_userExperienceAnalyticsSummarizedDeviceScopes
+      operationId: deviceManagement_userExperienceAnalyticsSummarizedDeviceScope
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1385,9 +1335,9 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
-      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevices
+      operationId: deviceManagement_userExperienceAnalyticsSummarizeWorkFromAnywhereDevice
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1412,7 +1362,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1432,7 +1382,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getPortalNotifications
-      operationId: deviceManagement.monitoring.alertRecords_getPortalNotifications
+      operationId: deviceManagement.monitoring.alertRecord_getPortalNotification
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1440,7 +1390,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1467,7 +1417,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getScopesForUser
-      operationId: deviceManagement.resourceOperations_getScopesGraphFPreUser
+      operationId: deviceManagement.resourceOperation_getScopesGraphFPreUser
       parameters:
         - name: resourceOperation-id
           in: path
@@ -1491,7 +1441,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1519,9 +1469,9 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function hasCustomRoleScopeTag
-      operationId: deviceManagement.roleScopeTags_hasCustomRoleScopeTag
+      operationId: deviceManagement.roleScopeTag_hasCustomRoleScopeTag
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1541,7 +1491,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.templates_compare
+      operationId: deviceManagement.template_compare
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -1565,7 +1515,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1592,7 +1542,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function compare
-      operationId: deviceManagement.templates.migratableTo_compare
+      operationId: deviceManagement.template.migratableTo_compare
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -1624,7 +1574,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1653,7 +1603,7 @@ paths:
       summary: Invoke function getState
       operationId: deviceManagement.tenantAttachRBAC_getState
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1667,7 +1617,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function summarizeDevicePerformanceDevices
-      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevices
+      operationId: deviceManagement.userExperienceAnalyticsDevicePerformance_summarizeDevicePerformanceDevice
       parameters:
         - name: summarizeBy
           in: path
@@ -1767,7 +1717,7 @@ paths:
                 - startupPerformanceScore desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1874,7 +1824,7 @@ paths:
                 - virtualNetwork desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1981,7 +1931,7 @@ paths:
                 - ramSpikeTimeScore desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2009,7 +1959,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.virtualEndpoint.auditEvents_getAuditActivityTypes
+      operationId: deviceManagement.virtualEndpoint.auditEvent_getAuditActivityType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2017,7 +1967,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2045,7 +1995,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcConnectivityHistory
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getCloudPcConnectivityHistory
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getCloudPcConnectivityHistory
       parameters:
         - name: cloudPC-id
           in: path
@@ -2061,7 +2011,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2088,7 +2038,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getCloudPcLaunchInfo
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getCloudPcLaunchInfo
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getCloudPcLaunchInfo
       parameters:
         - name: cloudPC-id
           in: path
@@ -2099,7 +2049,7 @@ paths:
             type: string
           x-ms-docs-key-type: cloudPC
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2113,7 +2063,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getShiftWorkCloudPcAccessState
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getShiftWorkCloudPcAccessState
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getShiftWorkCloudPcAccessState
       parameters:
         - name: cloudPC-id
           in: path
@@ -2124,7 +2074,7 @@ paths:
             type: string
           x-ms-docs-key-type: cloudPC
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2138,7 +2088,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSupportedCloudPcRemoteActions
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getSupportedCloudPcRemoteActions
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getSupportedCloudPcRemoteAction
       parameters:
         - name: cloudPC-id
           in: path
@@ -2154,7 +2104,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2181,7 +2131,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getProvisionedCloudPCs
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_getProvisionedCloudPCs
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getProvisionedCloudPC
       parameters:
         - name: groupId
           in: path
@@ -2305,7 +2255,7 @@ paths:
                 - userPrincipalName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2333,7 +2283,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSourceImages
-      operationId: deviceManagement.virtualEndpoint.deviceImages_getSourceImages
+      operationId: deviceManagement.virtualEndpoint.deviceImage_getSourceImage
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2341,7 +2291,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2368,7 +2318,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement.virtualEndpoint_getEffectivePermissions
+      operationId: deviceManagement.virtualEndpoint_getEffectivePermission
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2376,7 +2326,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2404,7 +2354,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRealTimeRemoteConnectionLatency
-      operationId: deviceManagement.virtualEndpoint.reports_getRealTimeRemoteConnectionLatency
+      operationId: deviceManagement.virtualEndpoint.report_getRealTimeRemoteConnectionLatency
       parameters:
         - name: cloudPcId
           in: path
@@ -2415,7 +2365,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -2436,7 +2386,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getRealTimeRemoteConnectionStatus
-      operationId: deviceManagement.virtualEndpoint.reports_getRealTimeRemoteConnectionStatus
+      operationId: deviceManagement.virtualEndpoint.report_getRealTimeRemoteConnectionStatus
       parameters:
         - name: cloudPcId
           in: path
@@ -2447,7 +2397,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -2468,7 +2418,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getStorageAccounts
-      operationId: deviceManagement.virtualEndpoint.snapshots_getStorageAccounts
+      operationId: deviceManagement.virtualEndpoint.snapshot_getStorageAccount
       parameters:
         - name: subscriptionId
           in: path
@@ -2484,7 +2434,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2511,7 +2461,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getSubscriptions
-      operationId: deviceManagement.virtualEndpoint.snapshots_getSubscriptions
+      operationId: deviceManagement.virtualEndpoint.snapshot_getSubscription
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2519,7 +2469,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2782,31 +2732,6 @@ components:
       additionalProperties:
         type: object
       description: Device Compilance Policy Setting State for a given device.
-    microsoft.graph.oemWarranty:
-      title: oemWarranty
-      type: object
-      properties:
-        additionalWarranties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.warrantyOffer'
-          description: List of additional warranty offers. This collection can contain a maximum of 100 elements.
-        baseWarranties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.warrantyOffer'
-          description: List of base warranty offers. This collection can contain a maximum of 100 elements.
-        deviceConfigurationUrl:
-          type: string
-          description: Device configuration page URL
-          nullable: true
-        deviceWarrantyUrl:
-          type: string
-          description: Device warranty page URL
-          nullable: true
-      additionalProperties:
-        type: object
-      description: OEM Warranty information for a given device
     microsoft.graph.powerliftIncidentMetadata:
       title: powerliftIncidentMetadata
       type: object
@@ -3310,55 +3235,55 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total number of co-managed devices. Valid values -2147483648 to 2147483647
+          description: Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesNotAutopilotRegistered:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesWithoutAutopilotProfileAssigned:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices not autopilot profile assigned. Valid values -2147483648 to 2147483647
+          description: The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesWithoutCloudIdentity:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of devices that are not cloud identity. Valid values -2147483648 to 2147483647
+          description: The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         intuneDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         tenantAttachDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total count of tenant attach devices. Valid values -2147483648 to 2147483647
+          description: Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         totalDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The total count of devices. Valid values -2147483648 to 2147483647
+          description: The total count of devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         unsupportedOSversionDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         windows10Devices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of windows 10 devices. Valid values -2147483648 to 2147483647
+          description: The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         windows10DevicesSummary:
           $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary'
@@ -3366,7 +3291,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647
           format: int32
       additionalProperties:
         type: object
@@ -3422,7 +3347,34 @@ components:
         - modelRegression
         - manufacturerRegression
         - operatingSystemVersionRegression
+        - unknownFutureValue
       type: string
+      description: 'Indicates type of summarization. Possible values are: None, Model, AllRegressions, ModelRegression, ManufacturerRegression, OperatingSystemVersionRegression.'
+      x-ms-enum:
+        name: userExperienceAnalyticsSummarizedBy
+        modelAsString: false
+        values:
+          - value: none
+            description: Indicates that the summarization is none.
+            name: none
+          - value: model
+            description: Indicates that the summarization is by model.
+            name: model
+          - value: allRegressions
+            description: Indicates that the summarization is by all regressions.
+            name: allRegressions
+          - value: modelRegression
+            description: Indicates that the summarization is by model regression.
+            name: modelRegression
+          - value: manufacturerRegression
+            description: Indicates that the summarization is by manufacturer regression.
+            name: manufacturerRegression
+          - value: operatingSystemVersionRegression
+            description: Indicates that the summarization is by operating system version regression.
+            name: operatingSystemVersionRegression
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsDevicePerformance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3987,29 +3939,6 @@ components:
         - conflict
         - notAssigned
       type: string
-    microsoft.graph.warrantyOffer:
-      title: warrantyOffer
-      type: object
-      properties:
-        description:
-          type: string
-          description: Warranty offer description
-          nullable: true
-        endDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: Warranty offer end date
-          format: date-time
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: Warranty offer start date
-          format: date-time
-        type:
-          $ref: '#/components/schemas/microsoft.graph.warrantyType'
-      additionalProperties:
-        type: object
-      description: Models and Manufactures meatadata for managed devices in the account
     microsoft.graph.deviceType:
       title: deviceType
       enum:
@@ -4219,6 +4148,12 @@ components:
           type: string
           description: The date on which devices were remediated by the device health script.
           format: date
+        detectFailedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices for which the detection script found an issue.
+          format: int32
         noIssueDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
@@ -4310,19 +4245,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd.
+          description: The count of intune devices that are not autopilot registerd. Read-only.
           format: int32
         devicesWithoutAutopilotProfileAssigned:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices not autopilot profile assigned.
+          description: The count of intune devices not autopilot profile assigned. Read-only.
           format: int32
         totalWindows10DevicesWithoutTenantAttached:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of windows 10 devices that are Intune and Comanaged.
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4335,7 +4270,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of devices that are not cloud identity.
+          description: The count of devices that are not cloud identity. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4348,19 +4283,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total number of  co-managed devices.
+          description: Total number of  co-managed devices. Read-only.
           format: int32
         intuneDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd.
+          description: The count of intune devices that are not autopilot registerd. Read-only.
           format: int32
         tenantAttachDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total count of tenant attach devices.
+          description: Total count of tenant attach devices. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4373,7 +4308,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of Windows 10 devices that have unsupported OS versions.
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4428,16 +4363,16 @@ components:
         modelAsString: false
         values:
           - value: unknown
-            description: Enum member for unknown or default diskType
+            description: Enum member for unknown or default diskType.
             name: unknown
           - value: hdd
-            description: Enum member for HDD devices
+            description: Enum member for HDD devices.
             name: hdd
           - value: ssd
-            description: Enum member for SSD devices
+            description: Enum member for SSD devices.
             name: ssd
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value.Do not use.
             name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsHealthState:
       title: userExperienceAnalyticsHealthState
@@ -4452,8 +4387,20 @@ components:
         name: userExperienceAnalyticsHealthState
         modelAsString: false
         values:
+          - value: unknown
+            description: Indicates that the health state is unknown.
+            name: unknown
+          - value: insufficientData
+            description: Indicates that the health state is insufficient data.
+            name: insufficientData
+          - value: needsAttention
+            description: Indicates that the health state needs attention.
+            name: needsAttention
+          - value: meetingGoals
+            description: Indicates that the health state is meeting goals.
+            name: meetingGoals
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.cloudPcConnectivityEventResult:
       title: cloudPcConnectivityEventResult
@@ -4630,31 +4577,6 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
-    microsoft.graph.warrantyType:
-      title: warrantyType
-      enum:
-        - unknown
-        - manufacturer
-        - contractual
-        - unknownFutureValue
-      type: string
-      description: Models and Manufactures meatadata for managed devices in the account
-      x-ms-enum:
-        name: warrantyType
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Unknown warranty type
-            name: unknown
-          - value: manufacturer
-            description: Manufacturer warranty
-            name: manufacturer
-          - value: contractual
-            description: Contractual warranty
-            name: contractual
-          - value: unknownFutureValue
-            description: Unknown future value
-            name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -4741,7 +4663,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

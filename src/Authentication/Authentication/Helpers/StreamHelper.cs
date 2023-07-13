@@ -43,14 +43,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             return responseStream;
         }
 
-        internal static string StreamToString(this Stream stream, Encoding encoding)
-        {
-            using (var reader = new StreamReader(stream, encoding))
-            {
-                return reader.ReadToEnd();
-            }
-        }
-
         internal static void SaveStreamToFile(this Stream baseResponseStream, string filePath,
             InvokeMgGraphRequest invokeGraphRequest, CancellationToken token)
         {

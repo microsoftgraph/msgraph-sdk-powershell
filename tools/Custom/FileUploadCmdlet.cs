@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
+namespace NamespacePrefixPlaceholder.PowerShell.Cmdlets.Custom
 {
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using System.IO;

@@ -78,10 +78,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 noToAll = nta;
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -115,10 +115,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // set the output variables
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 noToAll = nta;
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -194,10 +194,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // set the output variables
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -231,10 +231,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // set the output variables
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -269,10 +269,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // set the output variables
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -312,10 +312,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 shouldProcessReason = reason;
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -345,10 +345,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -380,10 +380,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // set the output variables
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -413,10 +413,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -446,10 +446,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -479,10 +479,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -512,10 +512,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -545,10 +545,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -578,10 +578,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -611,10 +611,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -644,10 +644,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -677,10 +677,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -710,10 +710,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                 // return
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
 
@@ -760,7 +760,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             _semaphore?.Release();
         }
 
-        public void Wait(Task ProcessRecordAsyncTask, CancellationToken cancellationToken)
+        public void Wait(Task ProcessRecordAsyncTask)
         {
             do
             {
@@ -811,10 +811,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 // return
                 return result;
             }
-            catch (OperationCanceledException exception)
+            catch (OperationCanceledException)
             {
                 // maybe don't even worry?
-                throw exception;
+                throw;
             }
         }
     }

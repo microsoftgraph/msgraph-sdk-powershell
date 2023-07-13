@@ -35,7 +35,7 @@ function GraphUri_ConvertRelativeUriToAbsoluteUri {
         $UriBuilder.Path = $Uri
     }
     else {
-        if ([System.String]::IsNullOrWhiteSpace($ApiVersion)) { $CurrentAPIVersion = (Get-MgProfile).Name } else { $CurrentAPIVersion = $ApiVersion }
+        if ([System.String]::IsNullOrWhiteSpace($ApiVersion)) { $CurrentAPIVersion = "v1.0" } else { $CurrentAPIVersion = $ApiVersion }
         $UriBuilder.Path = "$CurrentAPIVersion/$Uri"
     }
     return New-Object -TypeName Uri -ArgumentList ([System.Uri]::UnescapeDataString($UriBuilder.Uri))

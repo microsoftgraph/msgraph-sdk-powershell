@@ -11,7 +11,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCompliancePolicies_assign
+      operationId: deviceManagement.deviceCompliancePolicy_assign
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -36,7 +36,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -64,7 +64,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsGraphFPreRules
+      operationId: deviceManagement.deviceCompliancePolicy_scheduleActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -89,7 +89,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -99,7 +99,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations_assign
+      operationId: deviceManagement.deviceConfiguration_assign
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -124,7 +124,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -152,7 +152,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations_assign
+      operationId: deviceManagement.deviceEnrollmentConfiguration_assign
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -177,7 +177,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -187,7 +187,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations_setPriority
+      operationId: deviceManagement.deviceEnrollmentConfiguration_setPriority
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -213,7 +213,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -223,7 +223,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action terminate
-      operationId: deviceManagement.deviceManagementPartners_terminate
+      operationId: deviceManagement.deviceManagementPartner_terminate
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -234,7 +234,7 @@ paths:
             type: string
           x-ms-docs-key-type: deviceManagementPartner
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -244,7 +244,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
-      operationId: deviceManagement.exchangeConnectors_sync
+      operationId: deviceManagement.exchangeConnector_sync
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -267,7 +267,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -277,7 +277,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action import
-      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities_import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_import
       requestBody:
         description: Action parameters
         content:
@@ -293,7 +293,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -316,13 +316,52 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createDownloadUrl
+      operationId: deviceManagement.managedDevice.logCollectionRequest_createDownloadUrl
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      operationId: deviceManagement.managedDevices_bypassActivationLock
+      operationId: deviceManagement.managedDevice_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -333,7 +372,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -344,7 +383,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      operationId: deviceManagement.managedDevices_cleanWindowsDevice
+      operationId: deviceManagement.managedDevice_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -368,7 +407,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -379,7 +418,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -403,7 +442,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -414,7 +453,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      operationId: deviceManagement.managedDevices_disableLostMode
+      operationId: deviceManagement.managedDevice_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -425,7 +464,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -436,7 +475,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
       description: Locate a device
-      operationId: deviceManagement.managedDevices_locateDevice
+      operationId: deviceManagement.managedDevice_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -447,7 +486,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -458,7 +497,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
@@ -469,7 +508,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -480,7 +519,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
       description: Reboot device
-      operationId: deviceManagement.managedDevices_rebootNow
+      operationId: deviceManagement.managedDevice_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
@@ -491,7 +530,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -502,7 +541,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      operationId: deviceManagement.managedDevices_recoverPasscode
+      operationId: deviceManagement.managedDevice_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -513,7 +552,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -524,7 +563,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       description: Remote lock
-      operationId: deviceManagement.managedDevices_remoteLock
+      operationId: deviceManagement.managedDevice_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -535,7 +574,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -546,7 +585,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      operationId: deviceManagement.managedDevices_requestRemoteAssistance
+      operationId: deviceManagement.managedDevice_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
@@ -557,7 +596,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -568,7 +607,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
       description: Reset passcode
-      operationId: deviceManagement.managedDevices_resetPasscode
+      operationId: deviceManagement.managedDevice_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -579,7 +618,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -590,7 +629,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action retire
       description: Retire a device
-      operationId: deviceManagement.managedDevices_retire
+      operationId: deviceManagement.managedDevice_retire
       parameters:
         - name: managedDevice-id
           in: path
@@ -601,7 +640,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -612,7 +651,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action shutDown
       description: Shut down device
-      operationId: deviceManagement.managedDevices_shutDown
+      operationId: deviceManagement.managedDevice_shutDown
       parameters:
         - name: managedDevice-id
           in: path
@@ -623,7 +662,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -633,7 +672,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.managedDevices_syncDevice
+      operationId: deviceManagement.managedDevice_syncDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -644,7 +683,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -654,7 +693,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.managedDevices_updateWindowsDeviceAccount
+      operationId: deviceManagement.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: managedDevice-id
           in: path
@@ -677,7 +716,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -687,7 +726,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.managedDevices_windowsDefenderScan
+      operationId: deviceManagement.managedDevice_windowsDefenderScan
       parameters:
         - name: managedDevice-id
           in: path
@@ -711,7 +750,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -721,7 +760,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevices_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevice_windowsDefenderUpdateSignature
       parameters:
         - name: managedDevice-id
           in: path
@@ -732,7 +771,7 @@ paths:
             type: string
           x-ms-docs-key-type: managedDevice
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -743,7 +782,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action wipe
       description: Wipe a device
-      operationId: deviceManagement.managedDevices_wipe
+      operationId: deviceManagement.managedDevice_wipe
       parameters:
         - name: managedDevice-id
           in: path
@@ -779,8 +818,41 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createDownloadUrl
+      operationId: deviceManagement.mobileAppTroubleshootingEvent.appLogCollectionRequest_createDownloadUrl
+      parameters:
+        - name: mobileAppTroubleshootingEvent-id
+          in: path
+          description: The unique identifier of mobileAppTroubleshootingEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppTroubleshootingEvent
+        - name: appLogCollectionRequest-id
+          in: path
+          description: The unique identifier of appLogCollectionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appLogCollectionRequest
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appLogCollectionDownloadDetails'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -790,7 +862,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
       description: Sends test message using the specified notificationMessageTemplate in the default locale
-      operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
+      operationId: deviceManagement.notificationMessageTemplate_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
           in: path
@@ -801,7 +873,7 @@ paths:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -812,7 +884,10 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
       description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-      operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0
+      operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -823,7 +898,7 @@ paths:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -834,7 +909,10 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disconnect
       description: A request to remove the active TeamViewer connector
-      operationId: deviceManagement.remoteAssistancePartners_disconnect
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
+      operationId: deviceManagement.remoteAssistancePartner_disconnect
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -845,7 +923,7 @@ paths:
             type: string
           x-ms-docs-key-type: remoteAssistancePartner
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -855,7 +933,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCachedReport
-      operationId: deviceManagement.reports_getCachedReport
+      operationId: deviceManagement.report_getCachedReport
       requestBody:
         description: Action parameters
         content:
@@ -900,7 +978,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -921,7 +999,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePolicyNonComplianceReport
-      operationId: deviceManagement.reports_getCompliancePolicyNonComplianceReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -972,7 +1050,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -993,7 +1071,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports_getCompliancePolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -1044,7 +1122,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1065,7 +1143,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingNonComplianceReport
-      operationId: deviceManagement.reports_getComplianceSettingNonComplianceReport
+      operationId: deviceManagement.report_getComplianceSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1116,7 +1194,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1137,7 +1215,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicyNonComplianceReport
-      operationId: deviceManagement.reports_getConfigurationPolicyNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1188,7 +1266,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1209,7 +1287,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports_getConfigurationPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -1260,7 +1338,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1281,7 +1359,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationSettingNonComplianceReport
-      operationId: deviceManagement.reports_getConfigurationSettingNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1332,7 +1410,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1353,7 +1431,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-      operationId: deviceManagement.reports_getDeviceManagementIntentPerSettingContributingProfiles
+      operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
       requestBody:
         description: Action parameters
         content:
@@ -1404,7 +1482,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1425,7 +1503,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceManagementIntentSettingsReport
-      operationId: deviceManagement.reports_getDeviceManagementIntentSettingsReport
+      operationId: deviceManagement.report_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -1476,7 +1554,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1497,7 +1575,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceNonComplianceReport
-      operationId: deviceManagement.reports_getDeviceNonComplianceReport
+      operationId: deviceManagement.report_getDeviceNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1548,7 +1626,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1569,7 +1647,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDevicesWithoutCompliancePolicyReport
-      operationId: deviceManagement.reports_getDevicesWithoutCompliancePolicyReport
+      operationId: deviceManagement.report_getDevicesWithoutCompliancePolicyReport
       requestBody:
         description: Action parameters
         content:
@@ -1620,7 +1698,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1641,7 +1719,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHistoricalReport
-      operationId: deviceManagement.reports_getHistoricalReport
+      operationId: deviceManagement.report_getHistoricalReport
       requestBody:
         description: Action parameters
         content:
@@ -1689,7 +1767,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1710,7 +1788,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getNoncompliantDevicesAndSettingsReport
-      operationId: deviceManagement.reports_getNoncompliantDevicesAndSettingsReport
+      operationId: deviceManagement.report_getNoncompliantDevicesAndSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -1761,7 +1839,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1782,7 +1860,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceMetadata
-      operationId: deviceManagement.reports_getPolicyNonComplianceMetadata
+      operationId: deviceManagement.report_getPolicyNonComplianceMetadata
       requestBody:
         description: Action parameters
         content:
@@ -1833,7 +1911,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1854,7 +1932,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceReport
-      operationId: deviceManagement.reports_getPolicyNonComplianceReport
+      operationId: deviceManagement.report_getPolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -1905,7 +1983,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1926,7 +2004,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports_getPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -1977,7 +2055,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -1998,7 +2076,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getReportFilters
-      operationId: deviceManagement.reports_getReportFilters
+      operationId: deviceManagement.report_getReportFilter
       requestBody:
         description: Action parameters
         content:
@@ -2049,7 +2127,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -2070,7 +2148,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getSettingNonComplianceReport
-      operationId: deviceManagement.reports_getSettingNonComplianceReport
+      operationId: deviceManagement.report_getSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -2121,7 +2199,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/octet-stream:
@@ -2143,7 +2221,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -2170,7 +2248,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2181,7 +2259,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -2192,7 +2270,7 @@ paths:
             type: string
           x-ms-docs-key-type: windowsAutopilotDeviceIdentity
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2203,7 +2281,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperty
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -2236,7 +2314,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2376,6 +2454,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appLogCollectionDownloadDetails:
+      title: appLogCollectionDownloadDetails
+      type: object
+      properties:
+        appLogDecryptionAlgorithm:
+          $ref: '#/components/schemas/microsoft.graph.appLogDecryptionAlgorithm'
+        decryptionKey:
+          type: string
+          description: Decryption key that used to decrypt the log.
+          nullable: true
+        downloadUrl:
+          type: string
+          description: Download SAS (Shared Access Signature) Url for completed app log request.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2450,6 +2544,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appLogDecryptionAlgorithm:
+      title: appLogDecryptionAlgorithm
+      enum:
+        - aes256
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: appLogDecryptionAlgorithm
+        modelAsString: false
+        values:
+          - value: aes256
+            description: decrypting using Aes256.
+            name: aes256
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -2541,7 +2651,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

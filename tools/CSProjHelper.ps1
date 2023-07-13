@@ -4,6 +4,7 @@
 function Set-CSProjValues(
     [parameter(Mandatory = $true)][string] $ModuleCsProj,
     [parameter(Mandatory = $true)][string] $ModuleVersion,
+    [string] $PreRelease,
     [string] $Copyright,
     [string] $AssemblyOriginatorKeyFile) {
     $NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
@@ -28,7 +29,16 @@ function Set-CSProjValues(
     if (![string]::IsNullOrWhiteSpace($Copyright)) {
         Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $Copyright
     }
-    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Version" -ElementValue $ModuleVersion
+
+    if ($PreRelease) {
+        Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "VersionPrefix" -ElementValue $ModuleVersion
+        Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "VersionSuffix" -ElementValue $PreRelease
+        Remove-Element -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Version"
+    } else {
+        Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Version" -ElementValue $ModuleVersion
+        Remove-Element -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "VersionSuffix"
+        Remove-Element -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "VersionPrefix"
+    }
 
     $ModuleProjDoc.Save($ModuleCsProj)
     Write-Host "Updated the $ModuleCsProj."

@@ -1,0 +1,62 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: Test
+    type: boolean
+    default: true
+  - name: Pack
+    type: boolean
+    default: true
+  - name: Sign
+    type: boolean
+    default: true
+
+steps:
+  - task: PowerShell@2
+    displayName: Generate Authentication Module
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -EnableSigning:$${{ parameters.Sign }} -Build
+
+  - ${{ if eq(parameters.Test, true) }}:
+      - task: PowerShell@2
+        displayName: Test Authentication Module
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Test
+
+  - ${{ if eq(parameters.Sign, true) }}:
+      - template: ../common-templates/esrp/strongname.yml
+        parameters:
+          FolderPath: "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication"
+          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll"
+
+      - template: ../common-templates/esrp/codesign.yml
+        parameters:
+          FolderPath: "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication"
+          Pattern: "Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.psm1, *.psd1, *.format.ps1xml, *.ps1"
+
+      - task: PowerShell@2
+        displayName: "Validate Authenticode Signature"
+        inputs:
+          targetType: "inline"
+          pwsh: true
+          script: |
+            $ModulePsd1 = "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/Microsoft.Graph.Authentication.psd1"
+            $ModulePsm1 = "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/Microsoft.Graph.Authentication.psm1"
+            ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+            ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+
+  - ${{ if eq(parameters.Pack, true) }}:
+      - task: PowerShell@2
+        displayName: Pack Authentication Module
+        inputs:
+          targetType: inline
+          pwsh: true
+          script: |
+            . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)

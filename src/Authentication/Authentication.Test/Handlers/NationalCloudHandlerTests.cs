@@ -1,14 +1,14 @@
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Handlers;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
+
 namespace Microsoft.Graph.Authentication.Test
 {
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Handlers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Xunit;
-
     public class NationalCloudHandlerTests : IDisposable
     {
         private HttpMessageInvoker _invoker;
