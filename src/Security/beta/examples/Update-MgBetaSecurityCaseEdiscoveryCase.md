@@ -1,14 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
-
-$params = @{
-	displayName = "My Case 1 - Renamed"
-	description = "Updated description"
-}
-
-Update-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaSecurityCaseEdiscoveryCase Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
