@@ -24,7 +24,7 @@ function Start-Generator {
     )
 
     $GraphMapping = @{
-        #"v1.0" = "v1.0\examples"
+        "v1.0" = "v1.0\examples"
         "beta" = "beta\examples"
     }
     if ($GenerationMode -eq "auto") {
@@ -478,8 +478,15 @@ function Retain-ExistingCorrectExamples {
     Set-Content -Path $File -Value $RetainedContent
     #Remove the last two empty lines at the end of the file
     $Stream = [IO.File]::OpenWrite($ExampleFile)
-    $Stream.SetLength($stream.Length - 2)
-    $Stream.Close()
+    try
+    {
+        $Stream.SetLength($stream.Length - 2)
+        $Stream.Close()
+    }
+    catch
+    {
+        Write-Error "Error in removing empty lines at the end of the file: $File"
+    }
     $Stream.Dispose()
     $RetainedExamples.Clear()
 }
@@ -590,4 +597,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0" -GraphCommand "New-MgBetaUserEventAttachment" -GraphModule "Calendar" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/identitygovernance-run-get?view=graph-rest-beta&tabs=http" -GraphCommand "Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun" -GraphModule "Identity.Governance" -Profile "beta"
