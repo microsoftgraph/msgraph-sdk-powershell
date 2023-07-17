@@ -300,16 +300,15 @@ function Update-ExampleFile {
             $H = $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
         }
     }
-    if (($Content | Select-String -pattern $SearchTextForNewImports)) {
+    $EmptyFile = Test-FileEmpty $ExampleFile
+    if ($EmptyFile -or ($Content | Select-String -pattern $SearchTextForNewImports)) {
         $ReplaceEverything = $True
     }
-
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
     $SkippedExample = -1
     $ContainsRightExamples = $False
-
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
@@ -367,11 +366,6 @@ function Update-ExampleFile {
             if ($Content | Select-String -pattern $CommandPattern) {
                 Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $CommandPattern
             }
-            else {
-                #Replace everything with boiler plate code
-                $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
-                Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
-            }
         }
         
     }
@@ -413,8 +407,6 @@ function Update-ExampleFile {
     #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
     if (($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)) {
         Clear-Content $ExampleFile -Force
-        $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
-        Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
         #Log api path api version and equivalent external doc url giving wron examples
         #Create folder and file if it doesn't exist
         #The artifact below will be ignored on git.
@@ -439,7 +431,7 @@ function Test-FileEmpty {
 
     Param ([Parameter(Mandatory = $true)][string]$File)
   
-    if ((Test-Path -LiteralPath $file) -and !((Get-Content -LiteralPath $file -Raw) -match '\S')) { return $true } else { return $false }
+    if ((Test-Path -LiteralPath $File) -and !((Get-Content -LiteralPath $File -Raw) -match '\S')) { return $true } else { return $false }
   
 }
 
@@ -597,4 +589,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/identitygovernance-run-get?view=graph-rest-beta&tabs=http" -GraphCommand "Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun" -GraphModule "Identity.Governance" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/identitygovernance-run-get?view=graph-rest-beta&tabs=http" -GraphCommand "Get-MgBetaGroupCalendarPermission" -GraphModule "Calendar" -Profile "beta"
