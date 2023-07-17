@@ -1,17 +1,10 @@
-### Example 1: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.CrossDeviceExperiences
+
+# A UPN can also be used as -UserId.
+Get-MgUserActivity -UserId $userId
 ```
+This example shows how to use the Get-MgUserActivity Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}

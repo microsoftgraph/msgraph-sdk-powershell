@@ -1,28 +1,11 @@
-### Example 1: Update a decision on an accessReviewInstance
+### Example 1: Retrieve a decision from a stage of a multi-stage access review
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-$params = @{
-	decision = "Approve"
-	justification = "This person is still on my team"
-}
-
-Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
+Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId
 ```
-This example shows how to use the Get-MgBetaBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 
-### Example 2: Update a decision on an stage in a multi-stage access review
-
-```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
-
-$params = @{
-	decision = "Approve"
-	justification = "This person is still on my team"
-}
-
-Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
-```
-This example shows how to use the Get-MgBetaBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
