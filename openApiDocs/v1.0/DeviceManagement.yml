@@ -1239,7 +1239,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/intune-gpanalyticsservice-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -33114,6 +33114,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamsApp:
@@ -35192,6 +35193,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object

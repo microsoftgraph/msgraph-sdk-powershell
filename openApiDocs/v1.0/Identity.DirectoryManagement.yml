@@ -6980,6 +6980,158 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/devices(deviceId=''{deviceId}'')':
+    get:
+      tags:
+        - devices.device
+      summary: Get device
+      description: Get the properties and relationships of a device object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+      operationId: device_GetDeviceGraphBPreDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          description: Alternate key of device
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - accountEnabled
+                - alternativeSecurityIds
+                - approximateLastSignInDateTime
+                - complianceExpirationDateTime
+                - deviceCategory
+                - deviceId
+                - deviceMetadata
+                - deviceOwnership
+                - deviceVersion
+                - displayName
+                - enrollmentProfileName
+                - isCompliant
+                - isManaged
+                - mdmAppId
+                - onPremisesLastSyncDateTime
+                - onPremisesSyncEnabled
+                - operatingSystem
+                - operatingSystemVersion
+                - physicalIds
+                - profileType
+                - registrationDateTime
+                - systemLabels
+                - trustType
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - devices.device
+      summary: Update device
+      description: Update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+      operationId: device_UpdateDeviceGraphBPreDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          description: Alternate key of device
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.device'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.device
+      summary: Delete device
+      description: Delete a registered device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+      operationId: device_DeleteDeviceGraphBPreDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          description: Alternate key of device
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /devices/$count:
     get:
       tags:
@@ -14215,6 +14367,124 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/directoryRoles(roleTemplateId=''{roleTemplateId}'')':
+    get:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Get directoryRole
+      description: 'Retrieve the properties of a directoryRole object. The role must be activated in tenant for a successful response. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
+      operationId: directoryRole_GetDirectoryRoleGraphBPreRoleTemplateId
+      parameters:
+        - name: roleTemplateId
+          in: path
+          description: Alternate key of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - roleTemplateId
+                - members
+                - scopedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - scopedMembers
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Update entity in directoryRoles by roleTemplateId
+      operationId: directoryRole_UpdateDirectoryRoleGraphBPreRoleTemplateId
+      parameters:
+        - name: roleTemplateId
+          in: path
+          description: Alternate key of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Delete entity from directoryRoles by roleTemplateId
+      operationId: directoryRole_DeleteDirectoryRoleGraphBPreRoleTemplateId
+      parameters:
+        - name: roleTemplateId
+          in: path
+          description: Alternate key of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /directoryRoles/$count:
     get:
       tags:
@@ -21364,7 +21634,7 @@ components:
           properties:
             authenticationType:
               type: string
-              description: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+              description: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
             availabilityStatus:
               type: string
               description: 'This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.'

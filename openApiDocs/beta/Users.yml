@@ -4185,6 +4185,73 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/memberOf/{directoryObject-id}/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+      operationId: user_GetMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/memberOf/{directoryObject-id}/microsoft.graph.group':
     get:
       tags:
@@ -4368,6 +4435,116 @@ paths:
         - users.directoryObject
       summary: Get the number of the resource
       operationId: user.MemberOf_GetCountAsAdministrativeUnit
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/memberOf/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
+      operationId: user_ListMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryRoleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/memberOf/microsoft.graph.directoryRole/$count':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get the number of the resource
+      operationId: user.MemberOf_GetCountAsDirectoryRole
       parameters:
         - name: user-id
           in: path
@@ -14554,6 +14731,73 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+      operationId: user_GetTransitiveMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group':
     get:
       tags:
@@ -14737,6 +14981,116 @@ paths:
         - users.directoryObject
       summary: Get the number of the resource
       operationId: user.TransitiveMemberOf_GetCountAsAdministrativeUnit
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/transitiveMemberOf/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
+      operationId: user_ListTransitiveMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryRoleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/users/{user-id}/transitiveMemberOf/microsoft.graph.directoryRole/$count':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get the number of the resource
+      operationId: user.TransitiveMemberOf_GetCountAsDirectoryRole
       parameters:
         - name: user-id
           in: path
@@ -16313,6 +16667,38 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for this administrative unit. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: directoryRole
+          type: object
+          properties:
+            description:
+              type: string
+              description: 'The description for the directory role. Read-only. Supports $filter (eq), $search, $select.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.'
+              nullable: true
+            roleTemplateId:
+              type: string
+              description: 'The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.'
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+              x-ms-navigationProperty: true
+            scopedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
+              description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22570,6 +22956,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.directoryRoleCollectionResponse:
+      title: Collection of directoryRole
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.groupCollectionResponse:
       title: Collection of group
       type: object
@@ -23197,11 +23596,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -28937,11 +29336,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -29036,6 +29435,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -34656,6 +35057,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -40455,6 +40863,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.administrativeUnitCollectionResponse'
+    microsoft.graph.directoryRoleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryRoleCollectionResponse'
     microsoft.graph.groupCollectionResponse:
       description: Retrieved collection
       content:

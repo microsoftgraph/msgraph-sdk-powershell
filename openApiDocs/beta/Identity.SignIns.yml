@@ -19254,11 +19254,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantIdentitySyncPolicyPartner
-      description: Update the user synchronization policy of a partner-specific configuration.
+      summary: Create identitySynchronization
+      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
