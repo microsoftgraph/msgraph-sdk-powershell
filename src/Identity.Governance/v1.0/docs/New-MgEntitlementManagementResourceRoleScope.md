@@ -1,0 +1,311 @@
+---
+external help file:
+Module Name: Microsoft.Graph.Identity.Governance
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementresourcerolescope
+schema: 2.0.0
+---
+
+# New-MgEntitlementManagementResourceRoleScope
+
+## SYNOPSIS
+Create new navigation property to resourceRoleScopes for identityGovernance
+
+## SYNTAX
+
+### CreateExpanded (Default)
+```
+New-MgEntitlementManagementResourceRoleScope [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
+ [-Id <String>] [-Role <IMicrosoftGraphAccessPackageResourceRole>]
+ [-Scope <IMicrosoftGraphAccessPackageResourceScope>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Create
+```
+New-MgEntitlementManagementResourceRoleScope -BodyParameter <IMicrosoftGraphAccessPackageResourceRoleScope>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Create new navigation property to resourceRoleScopes for identityGovernance
+
+## EXAMPLES
+
+### -------------------------- EXAMPLE 1 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
+
+## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+accessPackageResourceRoleScope
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRoleScope
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CreatedDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+The unique idenfier for an entity.
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Role
+accessPackageResourceRole
+To construct, see NOTES section for ROLE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRole
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Scope
+accessPackageResourceScope
+To construct, see NOTES section for SCOPE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceScope
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRoleScope
+
+## OUTPUTS
+
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRoleScope
+
+## NOTES
+
+ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>`: accessPackageResourceRoleScope
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Role <IMicrosoftGraphAccessPackageResourceRole>]`: accessPackageResourceRole
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[OriginId <String>]`: 
+    - `[OriginSystem <String>]`: 
+    - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[Environment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[CreatedDateTime <DateTime?>]`: 
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[IsDefaultEnvironment <Boolean?>]`: 
+        - `[ModifiedDateTime <DateTime?>]`: 
+        - `[OriginId <String>]`: 
+        - `[OriginSystem <String>]`: 
+        - `[Resources <IMicrosoftGraphAccessPackageResource[]>]`: 
+      - `[ModifiedDateTime <DateTime?>]`: 
+      - `[OriginId <String>]`: 
+      - `[OriginSystem <String>]`: 
+      - `[Roles <IMicrosoftGraphAccessPackageResourceRole[]>]`: 
+      - `[Scopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Description <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[IsRootScope <Boolean?>]`: 
+        - `[OriginId <String>]`: 
+        - `[OriginSystem <String>]`: 
+        - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
+  - `[Scope <IMicrosoftGraphAccessPackageResourceScope>]`: accessPackageResourceScope
+
+`ROLE <IMicrosoftGraphAccessPackageResourceRole>`: accessPackageResourceRole
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[OriginId <String>]`: 
+  - `[OriginSystem <String>]`: 
+  - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Environment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[IsDefaultEnvironment <Boolean?>]`: 
+      - `[ModifiedDateTime <DateTime?>]`: 
+      - `[OriginId <String>]`: 
+      - `[OriginSystem <String>]`: 
+      - `[Resources <IMicrosoftGraphAccessPackageResource[]>]`: 
+    - `[ModifiedDateTime <DateTime?>]`: 
+    - `[OriginId <String>]`: 
+    - `[OriginSystem <String>]`: 
+    - `[Roles <IMicrosoftGraphAccessPackageResourceRole[]>]`: 
+    - `[Scopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[IsRootScope <Boolean?>]`: 
+      - `[OriginId <String>]`: 
+      - `[OriginSystem <String>]`: 
+      - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
+
+`SCOPE <IMicrosoftGraphAccessPackageResourceScope>`: accessPackageResourceScope
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[IsRootScope <Boolean?>]`: 
+  - `[OriginId <String>]`: 
+  - `[OriginSystem <String>]`: 
+  - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Environment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[IsDefaultEnvironment <Boolean?>]`: 
+      - `[ModifiedDateTime <DateTime?>]`: 
+      - `[OriginId <String>]`: 
+      - `[OriginSystem <String>]`: 
+      - `[Resources <IMicrosoftGraphAccessPackageResource[]>]`: 
+    - `[ModifiedDateTime <DateTime?>]`: 
+    - `[OriginId <String>]`: 
+    - `[OriginSystem <String>]`: 
+    - `[Roles <IMicrosoftGraphAccessPackageResourceRole[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[OriginId <String>]`: 
+      - `[OriginSystem <String>]`: 
+      - `[Resource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
+    - `[Scopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: 
+
+## RELATED LINKS
+
