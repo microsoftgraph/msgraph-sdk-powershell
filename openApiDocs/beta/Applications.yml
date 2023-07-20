@@ -3008,7 +3008,7 @@ paths:
       description: List existing jobs for a given application instance (service principal).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
       operationId: application.synchronization_ListJob
       parameters:
         - name: application-id
@@ -3060,6 +3060,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -3073,6 +3074,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -3091,7 +3093,7 @@ paths:
       description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
       operationId: application.synchronization_CreateJob
       parameters:
         - name: application-id
@@ -3161,6 +3163,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -3174,6 +3177,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -3262,6 +3266,232 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get bulkUpload from applications
+      description: The bulk upload operation for the job.
+      operationId: application.synchronization.job_GetBulkUpload
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.synchronization
+      summary: Update the navigation property bulkUpload in applications
+      operationId: application.synchronization.job_UpdateBulkUpload
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.synchronization
+      summary: Delete navigation property bulkUpload for applications
+      operationId: application.synchronization.job_DeleteBulkUpload
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload/$value':
+    get:
+      tags:
+        - applications.synchronization
+      summary: Get media content for the navigation property bulkUpload from applications
+      operationId: application.synchronization.job_GetBulkUploadContent
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - applications.synchronization
+      summary: Update media content for the navigation property bulkUpload in applications
+      operationId: application.synchronization.job_SetBulkUploadContent
+      parameters:
+        - name: application-id
+          in: path
+          description: The unique identifier of application
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
       x-ms-docs-operation-type: operation
   '/applications/{application-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
@@ -3925,7 +4155,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: application.synchronization.job.schema.directory_discover
       parameters:
         - name: application-id
@@ -4414,7 +4644,7 @@ paths:
       description: List the synchronization templates associated with a given application or service principal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
       operationId: application.synchronization_ListTemplate
       parameters:
         - name: application-id
@@ -5106,7 +5336,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: application.synchronization.template.schema.directory_discover
       parameters:
         - name: application-id
@@ -9161,10 +9391,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a connectorGroup object.
+      description: Create a new connectorGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_CreateConnectorGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -14531,6 +14761,73 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+      operationId: servicePrincipal_GetMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/memberOf/{directoryObject-id}/microsoft.graph.group':
     get:
       tags:
@@ -14714,6 +15011,116 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
       operationId: servicePrincipal.MemberOf_GetCountAsAdministrativeUnit
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/memberOf/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
+      operationId: servicePrincipal_ListMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryRoleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/servicePrincipals/{servicePrincipal-id}/memberOf/microsoft.graph.directoryRole/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.MemberOf_GetCountAsDirectoryRole
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -17122,7 +17529,7 @@ paths:
       description: List existing jobs for a given application instance (service principal).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_ListJob
       parameters:
         - name: servicePrincipal-id
@@ -17174,6 +17581,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -17187,6 +17595,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -17205,7 +17614,7 @@ paths:
       description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_CreateJob
       parameters:
         - name: servicePrincipal-id
@@ -17275,6 +17684,7 @@ paths:
                 - status
                 - synchronizationJobSettings
                 - templateId
+                - bulkUpload
                 - schema
               type: string
         - name: $expand
@@ -17288,6 +17698,7 @@ paths:
             items:
               enum:
                 - '*'
+                - bulkUpload
                 - schema
               type: string
       responses:
@@ -17376,6 +17787,232 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get bulkUpload from servicePrincipals
+      description: The bulk upload operation for the job.
+      operationId: servicePrincipal.synchronization.job_GetBulkUpload
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Update the navigation property bulkUpload in servicePrincipals
+      operationId: servicePrincipal.synchronization.job_UpdateBulkUpload
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bulkUpload'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Delete navigation property bulkUpload for servicePrincipals
+      operationId: servicePrincipal.synchronization.job_DeleteBulkUpload
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/bulkUpload/$value':
+    get:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Get media content for the navigation property bulkUpload from servicePrincipals
+      operationId: servicePrincipal.synchronization.job_GetBulkUploadContent
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - servicePrincipals.synchronization
+      summary: Update media content for the navigation property bulkUpload in servicePrincipals
+      operationId: servicePrincipal.synchronization.job_SetBulkUploadContent
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: synchronizationJob-id
+          in: path
+          description: The unique identifier of synchronizationJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: synchronizationJob
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-06-14T00:00:00.0000000+00:00'
+        date: '2022-10-04T00:00:00.0000000+00:00'
+        version: 2022-10/PrivatePreview:HRInboundPushApi
       x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/synchronization/jobs/{synchronizationJob-id}/microsoft.graph.pause':
     post:
@@ -18039,7 +18676,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
@@ -18528,7 +19165,7 @@ paths:
       description: List the synchronization templates associated with a given application or service principal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_ListTemplate
       parameters:
         - name: servicePrincipal-id
@@ -19220,7 +19857,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorydefinition-discover?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.template.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
@@ -20088,6 +20725,73 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+      operationId: servicePrincipal_GetTransitiveMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
   '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group':
     get:
       tags:
@@ -20271,6 +20975,116 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get the number of the resource
       operationId: servicePrincipal.TransitiveMemberOf_GetCountAsAdministrativeUnit
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/microsoft.graph.directoryRole':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
+      operationId: servicePrincipal_ListTransitiveMemberGraphOPreAsDirectoryRole
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryRoleCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/servicePrincipals/{servicePrincipal-id}/transitiveMemberOf/microsoft.graph.directoryRole/$count':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get the number of the resource
+      operationId: servicePrincipal.TransitiveMemberOf_GetCountAsDirectoryRole
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -22466,8 +23280,17 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          additionalProperties:
+            type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.synchronizationJobApplicationParameters:
@@ -23070,6 +23893,38 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
               description: The collection of open extensions defined for this administrative unit. Nullable.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryRole:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: directoryRole
+          type: object
+          properties:
+            description:
+              type: string
+              description: 'The description for the directory role. Read-only. Supports $filter (eq), $search, $select.'
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.'
+              nullable: true
+            roleTemplateId:
+              type: string
+              description: 'The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.'
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+              x-ms-navigationProperty: true
+            scopedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
+              description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -28653,6 +29508,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.directoryRoleCollectionResponse:
+      title: Collection of directoryRole
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.groupCollectionResponse:
       title: Collection of group
       type: object
@@ -28870,11 +29738,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -29362,11 +30230,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -46960,6 +47828,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.administrativeUnitCollectionResponse'
+    microsoft.graph.directoryRoleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryRoleCollectionResponse'
     microsoft.graph.groupCollectionResponse:
       description: Retrieved collection
       content:

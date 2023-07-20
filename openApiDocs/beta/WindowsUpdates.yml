@@ -4263,11 +4263,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete resourceConnection
-      description: Delete a resourceConnection object.
+      summary: Delete operationalInsightsConnection
+      description: Delete an operationalInsightsConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAsset
-      description: Read the properties and relationships of an updatableAsset object.
+      summary: Get updatableAssetGroup
+      description: Read the properties and relationships of an updatableAssetGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6583,11 +6583,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get complianceChange
-      description: Read the properties and relationships of a complianceChange object.
+      summary: Get contentApproval
+      description: Read the properties and relationships of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_GetComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -6648,11 +6648,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update complianceChange
-      description: Update the properties of a complianceChange object.
+      summary: Update contentApproval
+      description: Update the properties of a contentApproval object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id

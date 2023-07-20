@@ -4017,11 +4017,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get ipNamedLocation
+      description: Retrieve the properties and relationships of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4107,11 +4107,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6241,11 +6241,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List history
-      description: Get the riskyUserHistoryItems from the history navigation property.
+      summary: Get history
+      description: Read the properties and relationships of a riskyUserHistoryItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_ListHistory
       parameters:
         - name: riskyUser-id
@@ -32347,6 +32347,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamsApp:
@@ -34904,6 +34905,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object

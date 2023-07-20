@@ -26757,6 +26757,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markAsJunk
+      description: 'Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_markAsJunk
       parameters:
         - name: user-id
@@ -26819,6 +26823,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markAsNotJunk
+      description: 'Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_markAsNotJunk
       parameters:
         - name: user-id
@@ -27644,6 +27652,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markAsJunk
+      description: 'Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-1.0
       operationId: user.mailFolder.message_markAsJunk
       parameters:
         - name: user-id
@@ -27698,6 +27710,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markAsNotJunk
+      description: 'Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-1.0
       operationId: user.mailFolder.message_markAsNotJunk
       parameters:
         - name: user-id
@@ -30245,6 +30261,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markAsJunk
+      description: 'Mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-markasjunk?view=graph-rest-1.0
       operationId: user.message_markAsJunk
       parameters:
         - name: user-id
@@ -30291,6 +30311,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markAsNotJunk
+      description: 'Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-1.0
       operationId: user.message_markAsNotJunk
       parameters:
         - name: user-id
@@ -37572,11 +37596,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -52715,11 +52739,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -53301,6 +53325,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -57282,6 +57308,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
