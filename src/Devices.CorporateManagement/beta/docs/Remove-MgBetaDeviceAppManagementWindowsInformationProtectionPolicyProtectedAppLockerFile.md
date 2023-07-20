@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Remove-BetaDeviceAppMgtWindowInformationProtectionPolicyProtectedAppLockerFile
+Remove-MgBetaDeviceAppMgtWindowInformationProtectionPolicyProtectedAppLockerFile
 
 COMPLEX PARAMETER PROPERTIES
 

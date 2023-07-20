@@ -262,7 +262,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-BetaDeviceAppMgtMobileAppRelationship
+New-MgBetaDeviceAppMgtMobileAppRelationship
 
 COMPLEX PARAMETER PROPERTIES
 

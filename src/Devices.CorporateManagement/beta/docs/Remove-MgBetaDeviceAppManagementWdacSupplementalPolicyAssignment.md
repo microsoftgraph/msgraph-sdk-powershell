@@ -170,7 +170,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Remove-BetaDeviceAppMgtWdacSupplementalPolicyAssignment
+Remove-MgBetaDeviceAppMgtWdacSupplementalPolicyAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

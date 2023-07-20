@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
-Get jobs from servicePrincipals
+Retrieve the existing synchronization job and its properties.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity> [-
 ```
 
 ## DESCRIPTION
-Get jobs from servicePrincipals
+Retrieve the existing synchronization job and its properties.
 
 ## EXAMPLES
 
@@ -270,6 +270,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application

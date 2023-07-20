@@ -8,9 +8,8 @@ schema: 2.0.0
 # New-MgBetaUserMessageAttachment
 
 ## SYNOPSIS
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ## SYNTAX
 
@@ -41,9 +40,8 @@ New-MgBetaUserMessageAttachment -InputObject <IMailIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ## EXAMPLES
 
@@ -53,12 +51,12 @@ Import-Module Microsoft.Graph.Beta.Mail
 ```
 
 $params = @{
-	"@odata.type" = "microsoft.graph.fileAttachment"
+	"@odata.type" = "#Microsoft.OutlookServices.FileAttachment"
 	name = "name-value"
 	contentType = "contentType-value"
 	isInline = $false
 	contentLocation = "contentLocation-value"
-	contentBytes = "base64-contentBytes-value"
+	contentBytes = "contentBytes-value"
 }
 
 # A UPN can also be used as -UserId.

@@ -249,7 +249,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-MgDirectoryDeletedApplication
+Get-MgBetaDirectoryDeletedApplication
 
 COMPLEX PARAMETER PROPERTIES
 

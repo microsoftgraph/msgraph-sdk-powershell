@@ -47,7 +47,7 @@ Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
 $params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/{id}"
+	"@odata.id" = "https://graph.microsoft.com/beta/directoryObjects/{id}"
 }
 
 New-MgBetaDeviceRegisteredOwnerByRef -DeviceId $deviceId -BodyParameter $params

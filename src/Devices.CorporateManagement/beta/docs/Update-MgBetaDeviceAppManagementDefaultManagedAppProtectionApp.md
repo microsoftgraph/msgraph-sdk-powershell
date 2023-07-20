@@ -232,7 +232,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-BetaDeviceAppMgtDefaultManagedAppProtectionApp
+Update-MgBetaDeviceAppMgtDefaultManagedAppProtectionApp
 
 COMPLEX PARAMETER PROPERTIES
 

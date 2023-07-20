@@ -263,7 +263,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-DeviceAppMgtManagedEBookUserStateSummary
+New-MgDeviceAppMgtManagedEBookUserStateSummary
 
 COMPLEX PARAMETER PROPERTIES
 

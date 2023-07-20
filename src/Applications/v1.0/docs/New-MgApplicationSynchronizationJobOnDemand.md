@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgApplicationSynchronizationJobOnDemand
 
 ## SYNOPSIS
-Invoke action provisionOnDemand
+Select a user and provision the account on-demand.
+The rate limit for this API is 5 requests per 10 seconds.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ New-MgApplicationSynchronizationJobOnDemand -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action provisionOnDemand
+Select a user and provision the account on-demand.
+The rate limit for this API is 5 requests per 10 seconds.
 
 ## EXAMPLES
 
@@ -210,17 +212,18 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IPaths1A5O87GApplicationsApplicationIdSynchronizationJobsSynchronizationjobIdMicrosoftGraphProvisionondemandPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Parameters <IMicrosoftGraphSynchronizationJobApplicationParameters[]>]`: 
-    - `[RuleId <String>]`: 
-    - `[Subjects <IMicrosoftGraphSynchronizationJobSubject[]>]`: 
+    - `[RuleId <String>]`: The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
+    - `[Subjects <IMicrosoftGraphSynchronizationJobSubject[]>]`: The identifiers of one or more objects to which a synchronizationJob is to be applied.
       - `[Links <IMicrosoftGraphSynchronizationLinkedObjects>]`: synchronizationLinkedObjects
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Manager <IMicrosoftGraphSynchronizationJobSubject>]`: synchronizationJobSubject
-        - `[Members <IMicrosoftGraphSynchronizationJobSubject[]>]`: 
+        - `[Members <IMicrosoftGraphSynchronizationJobSubject[]>]`: All group members that you would like to provision.
         - `[Owners <IMicrosoftGraphSynchronizationJobSubject[]>]`: 
-      - `[ObjectId <String>]`: 
-      - `[ObjectTypeName <String>]`: 
+      - `[ObjectId <String>]`: The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
+      - `[ObjectTypeName <String>]`: The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application
@@ -243,15 +246,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 `PARAMETERS <IMicrosoftGraphSynchronizationJobApplicationParameters[]>`: .
-  - `[RuleId <String>]`: 
-  - `[Subjects <IMicrosoftGraphSynchronizationJobSubject[]>]`: 
+  - `[RuleId <String>]`: The identifier of the synchronizationRule to be applied. This rule ID is defined in the schema for a given synchronization job or template.
+  - `[Subjects <IMicrosoftGraphSynchronizationJobSubject[]>]`: The identifiers of one or more objects to which a synchronizationJob is to be applied.
     - `[Links <IMicrosoftGraphSynchronizationLinkedObjects>]`: synchronizationLinkedObjects
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Manager <IMicrosoftGraphSynchronizationJobSubject>]`: synchronizationJobSubject
-      - `[Members <IMicrosoftGraphSynchronizationJobSubject[]>]`: 
+      - `[Members <IMicrosoftGraphSynchronizationJobSubject[]>]`: All group members that you would like to provision.
       - `[Owners <IMicrosoftGraphSynchronizationJobSubject[]>]`: 
-    - `[ObjectId <String>]`: 
-    - `[ObjectTypeName <String>]`: 
+    - `[ObjectId <String>]`: The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
+    - `[ObjectTypeName <String>]`: The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
 
 ## RELATED LINKS
 

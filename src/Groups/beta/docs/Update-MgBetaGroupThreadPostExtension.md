@@ -49,7 +49,7 @@ Import-Module Microsoft.Graph.Beta.Groups
 ```
 
 $params = @{
-	"@odata.type" = "Microsoft.OutlookServices.OpenTypeExtension"
+	"@odata.type" = "#microsoft.outlookServices.openTypeExtension"
 	extensionName = "Com.Contoso.Estimate"
 	companyName = "Contoso"
 	expirationDate = "2016-07-30T11:00:00.000Z"

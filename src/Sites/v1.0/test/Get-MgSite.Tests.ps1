@@ -15,7 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgSite'))
 }
 
 Describe 'Get-MgSite' {
-    It 'Get2' -skip {
+    It 'List' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
@@ -24,10 +24,6 @@ Describe 'Get-MgSite' {
     }
 
     It 'GetViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'List' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -454,7 +454,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-BetaDeviceAppMgtVppToken
+Update-MgBetaDeviceAppMgtVppToken
 
 COMPLEX PARAMETER PROPERTIES
 

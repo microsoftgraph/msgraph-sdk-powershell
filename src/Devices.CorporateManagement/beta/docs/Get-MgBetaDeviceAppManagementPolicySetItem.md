@@ -264,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-BetaDeviceAppMgtPolicySetItem
+Get-MgBetaDeviceAppMgtPolicySetItem
 
 COMPLEX PARAMETER PROPERTIES
 

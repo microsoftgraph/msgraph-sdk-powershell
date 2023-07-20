@@ -52,7 +52,23 @@ Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
 # A UPN can also be used as -UserId.
+Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview"
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
+```
+
+# A UPN can also be used as -UserId.
 Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,locations"
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,start,end,occurrenceId,exceptionOccurrences,cancelledOccurrences" -ExpandProperty "exceptionOccurrences"
 
 ## PARAMETERS
 

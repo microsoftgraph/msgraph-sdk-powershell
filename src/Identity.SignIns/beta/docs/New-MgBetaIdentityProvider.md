@@ -54,6 +54,25 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
 $params = @{
+	"@odata.type" = "microsoft.graph.openIdConnectIdentityProvider"
+	displayName = "Login with the Contoso identity provider"
+	clientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
+	clientSecret = "12345"
+	domainHint = "mycustomoidc"
+	metadataUrl = "https://mycustomoidc.com/.well-known/openid-configuration"
+	responseMode = "form_post"
+	responseType = "code"
+	scope = "openid"
+}
+
+New-MgBetaIdentityProvider -BodyParameter $params
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
+$params = @{
 	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
 	displayName = "Sign in with Apple"
 	developerId = "UBF8T346G9"

@@ -402,7 +402,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-BetaDeviceAppMgtVppToken
+New-MgBetaDeviceAppMgtVppToken
 
 COMPLEX PARAMETER PROPERTIES
 

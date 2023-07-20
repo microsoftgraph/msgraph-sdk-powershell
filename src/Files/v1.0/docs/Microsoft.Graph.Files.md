@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: 2e514bd9-3e2b-47e4-9df6-cd15c180bc5a
+Module Guid: 4b9fd292-725f-4feb-9a66-215b9cb34778
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -2047,6 +2047,9 @@ Delete navigation property versions for drives
 ### [Remove-MgDriveItemListItemVersionField](Remove-MgDriveItemListItemVersionField.md)
 Delete navigation property fields for drives
 
+### [Remove-MgDriveItemPermanent](Remove-MgDriveItemPermanent.md)
+Invoke action permanentDelete
+
 ### [Remove-MgDriveItemPermission](Remove-MgDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
@@ -2128,6 +2131,9 @@ Delete navigation property versions for drives
 
 ### [Remove-MgDriveRootListItemVersionField](Remove-MgDriveRootListItemVersionField.md)
 Delete navigation property fields for drives
+
+### [Remove-MgDriveRootPermanent](Remove-MgDriveRootPermanent.md)
+Invoke action permanentDelete
 
 ### [Remove-MgDriveRootPermission](Remove-MgDriveRootPermission.md)
 Remove access to a DriveItem.

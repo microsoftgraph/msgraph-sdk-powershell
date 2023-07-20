@@ -49,17 +49,18 @@ The table in the Permissions section lists the resources that support open exten
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "microsoft.graph.openTypeExtension"
+	extensionName = "Com.Contoso.Deal"
+	companyName = "Alpine Skis"
+	dealValue = 
+	expirationDate = "2015-07-03T13:04:00.000Z"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgBetaGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
 
 ## PARAMETERS
 

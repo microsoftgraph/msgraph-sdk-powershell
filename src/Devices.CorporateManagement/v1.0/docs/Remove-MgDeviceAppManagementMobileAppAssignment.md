@@ -167,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Remove-DeviceAppMgtMobileAppAssignment
+Remove-MgDeviceAppMgtMobileAppAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

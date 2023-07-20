@@ -249,7 +249,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-BetaDeviceAppMgtVppToken
+Get-MgBetaDeviceAppMgtVppToken
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaMarkUserMailFolderMessageAsNotJunk
 
 ## SYNOPSIS
-Invoke action markAsNotJunk
+Mark a message as not junk.
+This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Invoke-MgBetaMarkUserMailFolderMessageAsNotJunk -InputObject <IUsersActionsIdent
 ```
 
 ## DESCRIPTION
-Invoke action markAsNotJunk
+Mark a message as not junk.
+This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
 
 ## EXAMPLES
 

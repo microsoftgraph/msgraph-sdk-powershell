@@ -442,7 +442,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-DeviceAppMgt
+Update-MgDeviceAppMgt
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -750,11 +750,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Update group
-      description: Update the properties of a group object.
+      summary: Add members
+      description: Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -4991,11 +4991,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      summary: Create conversation
+      description: Use reply thread or reply post to further post to that conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -5085,7 +5085,7 @@ paths:
       description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -5432,10 +5432,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -7509,10 +7509,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -7636,10 +7636,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -9361,6 +9361,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action permanentDelete
+      operationId: group.drive.item_permanentDelete
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.preview':
     post:
       tags:
@@ -12728,6 +12765,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/drives/{drive-id}/root/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action permanentDelete
+      operationId: group.drive.root_permanentDelete
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/root/microsoft.graph.preview':
     post:
       tags:
@@ -29189,11 +29255,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -29288,11 +29354,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
+      summary: Delete conversation thread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -29328,10 +29394,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -31173,10 +31239,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -31284,10 +31350,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -37351,6 +37417,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamVisibilityType:
@@ -39631,15 +39698,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+              description: Represents a collection of credentials to access provisioned cloud applications.
             jobs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+              description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
               x-ms-navigationProperty: true
             templates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+              description: Pre-configured synchronization settings for a particular application.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -41942,6 +42012,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object
@@ -43930,6 +44001,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationSecret'
         value:
           type: string
+          description: The value of the secret.
           nullable: true
       additionalProperties:
         type: object
@@ -43947,8 +44019,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+              description: Settings associated with the job. Some settings are inherited from the template.
             templateId:
               type: string
+              description: Identifier of the synchronization template this job is based on.
               nullable: true
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
@@ -43963,21 +44037,27 @@ components:
             applicationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: Identifier of the application this template belongs to.
               format: uuid
             default:
               type: boolean
+              description: true if this template is recommended to be the default for the application.
             description:
               type: string
+              description: Description of the template.
               nullable: true
             discoverable:
               type: boolean
+              description: true if this template should appear in the collection of templates available for the application instance (service principal).
             factoryTag:
               type: string
+              description: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
               nullable: true
             metadata:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationMetadataEntry'
+              description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -47091,11 +47171,13 @@ components:
         expiration:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -47109,9 +47191,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationStatusCode'
         countSuccessiveCompleteFailures:
           type: integer
+          description: Number of consecutive times this job failed.
           format: int64
         escrowsPruned:
           type: boolean
+          description: 'true if the job''s escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job''s errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.'
         lastExecution:
           $ref: '#/components/schemas/microsoft.graph.synchronizationTaskExecution'
         lastSuccessfulExecution:
@@ -47122,22 +47206,27 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.synchronizationProgress'
+          description: Details of the progress of a job toward completion.
         quarantine:
           $ref: '#/components/schemas/microsoft.graph.synchronizationQuarantine'
         steadyStateFirstAchievedTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         steadyStateLastAchievedTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         synchronizedEntryCountByType:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyLongValuePair'
+          description: 'Count of synchronized objects, listed by object type.'
         troubleshootingUrl:
           type: string
+          description: 'In the event of an error, the URL with the troubleshooting steps for the issue.'
           nullable: true
       additionalProperties:
         type: object
@@ -47151,13 +47240,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationRule'
+              description: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
             version:
               type: string
+              description: 'The version of the schema, updated automatically with every schema change.'
               nullable: true
             directories:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+              description: Contains the collection of directories and all of their objects.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -47169,6 +47261,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -49047,33 +49140,43 @@ components:
       properties:
         activityIdentifier:
           type: string
+          description: Identifier of the job run.
           nullable: true
         countEntitled:
           type: integer
+          description: Count of processed entries that were assigned for this application.
           format: int64
         countEntitledForProvisioning:
           type: integer
+          description: Count of processed entries that were assigned for provisioning.
           format: int64
         countEscrowed:
           type: integer
+          description: Count of entries that were escrowed (errors).
           format: int64
         countEscrowedRaw:
           type: integer
+          description: 'Count of entries that were escrowed, including system-generated escrows.'
           format: int64
         countExported:
           type: integer
+          description: Count of exported entries.
           format: int64
         countExports:
           type: integer
+          description: Count of entries that were expected to be exported.
           format: int64
         countImported:
           type: integer
+          description: Count of imported entries.
           format: int64
         countImportedDeltas:
           type: integer
+          description: Count of imported delta-changes.
           format: int64
         countImportedReferenceDeltas:
           type: integer
+          description: Count of imported delta-changes pertaining to reference changes.
           format: int64
         error:
           $ref: '#/components/schemas/microsoft.graph.synchronizationError'
@@ -49082,10 +49185,12 @@ components:
         timeBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         timeEnded:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
       additionalProperties:
         type: object
@@ -49095,16 +49200,20 @@ components:
       properties:
         completedUnits:
           type: integer
+          description: The numerator of a progress ratio; the number of units of changes already processed.
           format: int64
         progressObservationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The time of a progress observation as an offset in minutes from UTC.
           format: date-time
         totalUnits:
           type: integer
+          description: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
           format: int64
         units:
           type: string
+          description: An optional description of the units.
           nullable: true
       additionalProperties:
         type: object
@@ -49115,21 +49224,25 @@ components:
         currentBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         error:
           $ref: '#/components/schemas/microsoft.graph.synchronizationError'
         nextAttempt:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         reason:
           $ref: '#/components/schemas/microsoft.graph.quarantineReason'
         seriesBegan:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         seriesCount:
           type: integer
+          description: 'Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).'
           format: int64
       additionalProperties:
         type: object
@@ -49139,9 +49252,11 @@ components:
       properties:
         key:
           type: string
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -49153,32 +49268,40 @@ components:
           $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
+          description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
         groupFilter:
           $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
+          description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
           nullable: true
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
+          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.'
         name:
           type: string
+          description: Human-readable name of the synchronization rule. Not nullable.
           nullable: true
         objectMappings:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectMapping'
+          description: Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
         priority:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
           format: int32
         sourceDirectoryName:
           type: string
+          description: Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
           nullable: true
         targetDirectoryName:
           type: string
+          description: Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
           nullable: true
       additionalProperties:
         type: object
@@ -49193,19 +49316,24 @@ components:
             discoveryDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             name:
               type: string
+              description: Name of the directory. Must be unique within the synchronization schema. Not nullable.
               nullable: true
             objects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectDefinition'
+              description: Collection of objects supported by the directory.
             readOnly:
               type: boolean
+              description: Whether this object is read-only.
             version:
               type: string
+              description: Read only value that indicates version discovered. null if discovery has not yet occurred.
               nullable: true
           additionalProperties:
             type: object
@@ -50523,12 +50651,15 @@ components:
       properties:
         code:
           type: string
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -50578,9 +50709,11 @@ components:
       properties:
         key:
           type: string
+          description: Key.
           nullable: true
         value:
           type: string
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -50592,24 +50725,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeMapping'
+          description: Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
         enabled:
           type: boolean
+          description: 'When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.'
         flowTypes:
           $ref: '#/components/schemas/microsoft.graph.objectFlowTypes'
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectMappingMetadataEntry'
+          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
         name:
           type: string
+          description: Human-friendly name of the object mapping.
           nullable: true
         scope:
           $ref: '#/components/schemas/microsoft.graph.filter'
         sourceObjectName:
           type: string
+          description: Name of the object in the source directory. Must match the object name from the source directory definition.
           nullable: true
         targetObjectName:
           type: string
+          description: Name of the object in target directory. Must match the object name from the target directory definition.
           nullable: true
       additionalProperties:
         type: object
@@ -50631,18 +50770,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.printColorMode:
@@ -51850,9 +51993,11 @@ components:
       properties:
         defaultValue:
           type: string
+          description: Default value to be used in case the source property was evaluated to null. Optional.
           nullable: true
         exportMissingReferences:
           type: boolean
+          description: For internal use only.
         flowBehavior:
           $ref: '#/components/schemas/microsoft.graph.attributeFlowBehavior'
         flowType:
@@ -51861,11 +52006,13 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.'
           format: int32
         source:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
         targetAttributeName:
           type: string
+          description: Name of the attribute on the target object.
           nullable: true
       additionalProperties:
         type: object
@@ -51885,6 +52032,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -51896,14 +52044,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
+          description: '*Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         groups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
+          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         inputFilterGroups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
+          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
       additionalProperties:
         type: object
     microsoft.graph.attributeDefinition:
@@ -51912,34 +52063,42 @@ components:
       properties:
         anchor:
           type: boolean
+          description: 'true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object''s attributes must be designated as the anchor to support synchronization.'
         apiExpressions:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
         caseExact:
           type: boolean
+          description: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         defaultValue:
           type: string
           nullable: true
         flowNullValues:
           type: boolean
+          description: '''true'' to allow null values for attributes.'
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
+          description: true if an attribute can have multiple values. Default is false.
         mutability:
           $ref: '#/components/schemas/microsoft.graph.mutability'
         name:
           type: string
+          description: Name of the attribute. Must be unique within the object definition. Not nullable.
           nullable: true
         referencedObjects:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.referencedObject'
+          description: 'For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).'
         required:
           type: boolean
+          description: 'true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
       additionalProperties:
@@ -51952,6 +52111,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -52088,14 +52248,17 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:
@@ -52119,8 +52282,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterClause'
+          description: Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
         name:
           type: string
+          description: Human-readable name of the filter group.
           nullable: true
       additionalProperties:
         type: object
@@ -52132,6 +52297,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -52149,9 +52315,11 @@ components:
       properties:
         referencedObjectName:
           type: string
+          description: Name of the referenced object. Must match one of the objects in the directory definition.
           nullable: true
         referencedProperty:
           type: string
+          description: 'Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.'
           nullable: true
       additionalProperties:
         type: object
@@ -52191,6 +52359,7 @@ components:
       properties:
         key:
           type: string
+          description: The name of the parameter.
           nullable: true
         value:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
@@ -52209,9 +52378,11 @@ components:
       properties:
         operatorName:
           type: string
+          description: Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
           nullable: true
         sourceOperandName:
           type: string
+          description: Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
           nullable: true
         targetOperand:
           $ref: '#/components/schemas/microsoft.graph.filterOperand'
@@ -52239,6 +52410,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Collection of values.
       additionalProperties:
         type: object
   responses:

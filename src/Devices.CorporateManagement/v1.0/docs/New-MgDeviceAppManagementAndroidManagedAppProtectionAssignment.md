@@ -201,7 +201,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-DeviceAppMgtAndroidManagedAppProtectionAssignment
+New-MgDeviceAppMgtAndroidManagedAppProtectionAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

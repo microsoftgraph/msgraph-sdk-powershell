@@ -298,7 +298,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-DeviceAppMgtMobileAppConfigurationUserStatusSummary
+Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary
 
 COMPLEX PARAMETER PROPERTIES
 

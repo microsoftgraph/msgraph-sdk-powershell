@@ -340,7 +340,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-BetaDeviceAppMgtTask
+Update-MgBetaDeviceAppMgtTask
 
 COMPLEX PARAMETER PROPERTIES
 

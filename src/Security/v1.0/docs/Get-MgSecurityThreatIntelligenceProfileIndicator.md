@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityThreatIntelligenceProfileIndicator
 
 ## SYNOPSIS
-Get intelligenceProfileIndicators from security
+Read the properties and relationships of a intelligenceProfileIndicator object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityThreatIntelligenceProfileIndicator -InputObject <ISecurityIdentity
 ```
 
 ## DESCRIPTION
-Get intelligenceProfileIndicators from security
+Read the properties and relationships of a intelligenceProfileIndicator object.
 
 ## EXAMPLES
 

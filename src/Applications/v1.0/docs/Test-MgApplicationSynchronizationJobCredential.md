@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-MgApplicationSynchronizationJobCredential
 
 ## SYNOPSIS
-Invoke action validateCredentials
+Validate that the credentials are valid in the tenant.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Test-MgApplicationSynchronizationJobCredential -InputObject <IApplicationsIdenti
 ```
 
 ## DESCRIPTION
-Invoke action validateCredentials
+Validate that the credentials are valid in the tenant.
 
 ## EXAMPLES
 
@@ -274,15 +274,16 @@ To create the parameters described below, construct a hash table containing the 
   - `[ApplicationIdentifier <String>]`: 
   - `[Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
     - `[Key <String>]`: synchronizationSecret
-    - `[Value <String>]`: 
+    - `[Value <String>]`: The value of the secret.
   - `[TemplateId <String>]`: 
   - `[UseSavedCredentials <Boolean?>]`: 
 
 `CREDENTIALS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>`: .
   - `[Key <String>]`: synchronizationSecret
-  - `[Value <String>]`: 
+  - `[Value <String>]`: The value of the secret.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application

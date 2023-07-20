@@ -265,7 +265,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-DeviceAppMgtManagedAppRegistrationAppliedPolicy
+Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

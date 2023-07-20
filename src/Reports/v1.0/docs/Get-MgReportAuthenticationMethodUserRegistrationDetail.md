@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportAuthenticationMethodUserRegistrationDetail
 
 ## SYNOPSIS
-Get userRegistrationDetails from reports
+Read the properties and relationships of a userRegistrationDetails object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIde
 ```
 
 ## DESCRIPTION
-Get userRegistrationDetails from reports
+Read the properties and relationships of a userRegistrationDetails object.
 
 ## EXAMPLES
 

@@ -48,7 +48,7 @@ Get-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssig
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-Get-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId $unifiedRoleManagementPolicyAssignmentId -ExpandProperty "policy(`$expand=rules)"
+Get-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId $unifiedRoleManagementPolicyAssignmentId
 
 ## PARAMETERS
 

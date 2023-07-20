@@ -68,6 +68,13 @@ Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
+Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
 Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -ExpandProperty "*"
 
 ## PARAMETERS

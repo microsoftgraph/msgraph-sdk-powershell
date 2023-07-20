@@ -1324,162 +1324,162 @@ To create the parameters described below, construct a hash table containing the 
   - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: 
+    - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Expiration <DateTime?>]`: 
-        - `[Interval <TimeSpan?>]`: 
+        - `[Expiration <DateTime?>]`: Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[Interval <TimeSpan?>]`: The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
         - `[State <String>]`: synchronizationScheduleState
       - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: 
+        - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: Contains the collection of directories and all of their objects.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
-          - `[DiscoveryDateTime <DateTime?>]`: 
-          - `[Name <String>]`: 
-          - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: 
-            - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-              - `[Anchor <Boolean?>]`: 
+          - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
+          - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
+            - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
+              - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
               - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-                - `[Key <String>]`: 
-                - `[Value <String>]`: 
-              - `[CaseExact <Boolean?>]`: 
+                - `[Key <String>]`: Key.
+                - `[Value <String>]`: Value.
+              - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
               - `[DefaultValue <String>]`: 
-              - `[FlowNullValues <Boolean?>]`: 
-              - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+              - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+              - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                 - `[Key <String>]`: attributeDefinitionMetadata
-                - `[Value <String>]`: 
-              - `[Multivalued <Boolean?>]`: 
+                - `[Value <String>]`: Value of the metadata property.
+              - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
               - `[Mutability <String>]`: mutability
-              - `[Name <String>]`: 
-              - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-                - `[ReferencedObjectName <String>]`: 
-                - `[ReferencedProperty <String>]`: 
-              - `[Required <Boolean?>]`: 
+              - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+              - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+                - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+                - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+              - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
               - `[Type <String>]`: attributeType
-            - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+            - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
               - `[Key <String>]`: objectDefinitionMetadata
-              - `[Value <String>]`: 
-            - `[Name <String>]`: 
-            - `[SupportedApis <String[]>]`: 
-          - `[ReadOnly <Boolean?>]`: 
-          - `[Version <String>]`: 
-        - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
+              - `[Value <String>]`: Value of the metadata property.
+            - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+            - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
+          - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
+          - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
+        - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
           - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[IncludedContainers <String[]>]`: 
-          - `[Editable <Boolean?>]`: 
+          - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
           - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[IncludedGroups <String[]>]`: 
-          - `[Id <String>]`: 
-          - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-          - `[Name <String>]`: 
-          - `[ObjectMappings <IMicrosoftGraphObjectMapping[]>]`: 
-            - `[AttributeMappings <IMicrosoftGraphAttributeMapping[]>]`: 
-              - `[DefaultValue <String>]`: 
-              - `[ExportMissingReferences <Boolean?>]`: 
+          - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
+          - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+          - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
+          - `[ObjectMappings <IMicrosoftGraphObjectMapping[]>]`: Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
+            - `[AttributeMappings <IMicrosoftGraphAttributeMapping[]>]`: Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
+              - `[DefaultValue <String>]`: Default value to be used in case the source property was evaluated to null. Optional.
+              - `[ExportMissingReferences <Boolean?>]`: For internal use only.
               - `[FlowBehavior <String>]`: attributeFlowBehavior
               - `[FlowType <String>]`: attributeFlowType
-              - `[MatchingPriority <Int32?>]`: 
+              - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
               - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Expression <String>]`: 
-                - `[Name <String>]`: 
-                - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
-                  - `[Key <String>]`: 
+                - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+                  - `[Key <String>]`: The name of the parameter.
                   - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                 - `[Type <String>]`: attributeMappingSourceType
-              - `[TargetAttributeName <String>]`: 
-            - `[Enabled <Boolean?>]`: 
+              - `[TargetAttributeName <String>]`: Name of the attribute on the target object.
+            - `[Enabled <Boolean?>]`: When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
             - `[FlowTypes <String>]`: objectFlowTypes
-            - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: 
+            - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
               - `[Key <String>]`: objectMappingMetadata
-              - `[Value <String>]`: 
-            - `[Name <String>]`: 
+              - `[Value <String>]`: Value of the metadata property.
+            - `[Name <String>]`: Human-friendly name of the object mapping.
             - `[Scope <IMicrosoftGraphFilter>]`: filter
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[CategoryFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
-                - `[Clauses <IMicrosoftGraphFilterClause[]>]`: 
-                  - `[OperatorName <String>]`: 
-                  - `[SourceOperandName <String>]`: 
+              - `[CategoryFilterGroups <IMicrosoftGraphFilterGroup[]>]`: *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
+                - `[Clauses <IMicrosoftGraphFilterClause[]>]`: Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
+                  - `[OperatorName <String>]`: Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
+                  - `[SourceOperandName <String>]`: Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
                   - `[TargetOperand <IMicrosoftGraphFilterOperand>]`: filterOperand
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Values <String[]>]`: 
-                - `[Name <String>]`: 
-              - `[Groups <IMicrosoftGraphFilterGroup[]>]`: 
-              - `[InputFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
-            - `[SourceObjectName <String>]`: 
-            - `[TargetObjectName <String>]`: 
-          - `[Priority <Int32?>]`: 
-          - `[SourceDirectoryName <String>]`: 
-          - `[TargetDirectoryName <String>]`: 
-        - `[Version <String>]`: 
+                    - `[Values <String[]>]`: Collection of values.
+                - `[Name <String>]`: Human-readable name of the filter group.
+              - `[Groups <IMicrosoftGraphFilterGroup[]>]`: Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
+              - `[InputFilterGroups <IMicrosoftGraphFilterGroup[]>]`: *Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
+            - `[SourceObjectName <String>]`: Name of the object in the source directory. Must match the object name from the source directory definition.
+            - `[TargetObjectName <String>]`: Name of the object in target directory. Must match the object name from the target directory definition.
+          - `[Priority <Int32?>]`: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
+          - `[SourceDirectoryName <String>]`: Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
+          - `[TargetDirectoryName <String>]`: Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
+        - `[Version <String>]`: The version of the schema, updated automatically with every schema change.
       - `[Status <IMicrosoftGraphSynchronizationStatus>]`: synchronizationStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Code <String>]`: synchronizationStatusCode
-        - `[CountSuccessiveCompleteFailures <Int64?>]`: 
-        - `[EscrowsPruned <Boolean?>]`: 
+        - `[CountSuccessiveCompleteFailures <Int64?>]`: Number of consecutive times this job failed.
+        - `[EscrowsPruned <Boolean?>]`: true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
         - `[LastExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[ActivityIdentifier <String>]`: 
-          - `[CountEntitled <Int64?>]`: 
-          - `[CountEntitledForProvisioning <Int64?>]`: 
-          - `[CountEscrowed <Int64?>]`: 
-          - `[CountEscrowedRaw <Int64?>]`: 
-          - `[CountExported <Int64?>]`: 
-          - `[CountExports <Int64?>]`: 
-          - `[CountImported <Int64?>]`: 
-          - `[CountImportedDeltas <Int64?>]`: 
-          - `[CountImportedReferenceDeltas <Int64?>]`: 
+          - `[ActivityIdentifier <String>]`: Identifier of the job run.
+          - `[CountEntitled <Int64?>]`: Count of processed entries that were assigned for this application.
+          - `[CountEntitledForProvisioning <Int64?>]`: Count of processed entries that were assigned for provisioning.
+          - `[CountEscrowed <Int64?>]`: Count of entries that were escrowed (errors).
+          - `[CountEscrowedRaw <Int64?>]`: Count of entries that were escrowed, including system-generated escrows.
+          - `[CountExported <Int64?>]`: Count of exported entries.
+          - `[CountExports <Int64?>]`: Count of entries that were expected to be exported.
+          - `[CountImported <Int64?>]`: Count of imported entries.
+          - `[CountImportedDeltas <Int64?>]`: Count of imported delta-changes.
+          - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
           - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Code <String>]`: 
-            - `[Message <String>]`: 
-            - `[TenantActionable <Boolean?>]`: 
+            - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+            - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+            - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
           - `[State <String>]`: synchronizationTaskExecutionResult
-          - `[TimeBegan <DateTime?>]`: 
-          - `[TimeEnded <DateTime?>]`: 
+          - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[LastSuccessfulExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
         - `[LastSuccessfulExecutionWithExports <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
-        - `[Progress <IMicrosoftGraphSynchronizationProgress[]>]`: 
-          - `[CompletedUnits <Int64?>]`: 
-          - `[ProgressObservationDateTime <DateTime?>]`: 
-          - `[TotalUnits <Int64?>]`: 
-          - `[Units <String>]`: 
+        - `[Progress <IMicrosoftGraphSynchronizationProgress[]>]`: Details of the progress of a job toward completion.
+          - `[CompletedUnits <Int64?>]`: The numerator of a progress ratio; the number of units of changes already processed.
+          - `[ProgressObservationDateTime <DateTime?>]`: The time of a progress observation as an offset in minutes from UTC.
+          - `[TotalUnits <Int64?>]`: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
+          - `[Units <String>]`: An optional description of the units.
         - `[Quarantine <IMicrosoftGraphSynchronizationQuarantine>]`: synchronizationQuarantine
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[CurrentBegan <DateTime?>]`: 
+          - `[CurrentBegan <DateTime?>]`: Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
-          - `[NextAttempt <DateTime?>]`: 
+          - `[NextAttempt <DateTime?>]`: Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[Reason <String>]`: quarantineReason
-          - `[SeriesBegan <DateTime?>]`: 
-          - `[SeriesCount <Int64?>]`: 
-        - `[SteadyStateFirstAchievedTime <DateTime?>]`: 
-        - `[SteadyStateLastAchievedTime <DateTime?>]`: 
-        - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: 
-          - `[Key <String>]`: 
-          - `[Value <Int64?>]`: 
-        - `[TroubleshootingUrl <String>]`: 
-      - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: 
+          - `[SeriesBegan <DateTime?>]`: Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[SeriesCount <Int64?>]`: Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
+        - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
+          - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+          - `[Value <Int64?>]`: Total number of synchronized objects.
+        - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
+      - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
         - `[Name <String>]`: Name for this key-value pair
         - `[Value <String>]`: Value for this key-value pair
-      - `[TemplateId <String>]`: 
-    - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
+      - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
+    - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
       - `[Key <String>]`: synchronizationSecret
-      - `[Value <String>]`: 
-    - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: 
+      - `[Value <String>]`: The value of the secret.
+    - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: Pre-configured synchronization settings for a particular application.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[ApplicationId <String>]`: 
-      - `[Default <Boolean?>]`: 
-      - `[Description <String>]`: 
-      - `[Discoverable <Boolean?>]`: 
-      - `[FactoryTag <String>]`: 
-      - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: 
+      - `[ApplicationId <String>]`: Identifier of the application this template belongs to.
+      - `[Default <Boolean?>]`: true if this template is recommended to be the default for the application.
+      - `[Description <String>]`: Description of the template.
+      - `[Discoverable <Boolean?>]`: true if this template should appear in the collection of templates available for the application instance (service principal).
+      - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
+      - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         - `[Key <String>]`: synchronizationMetadata
-        - `[Value <String>]`: 
+        - `[Value <String>]`: Value of the metadata property.
       - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
   - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
   - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -1564,6 +1564,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[TermsOfServiceUrl <String>]`: Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application
@@ -1649,162 +1650,162 @@ To create the parameters described below, construct a hash table containing the 
 `SYNCHRONIZATION <IMicrosoftGraphSynchronization>`: synchronization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: 
+  - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Expiration <DateTime?>]`: 
-      - `[Interval <TimeSpan?>]`: 
+      - `[Expiration <DateTime?>]`: Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Interval <TimeSpan?>]`: The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
       - `[State <String>]`: synchronizationScheduleState
     - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: 
+      - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: Contains the collection of directories and all of their objects.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
-        - `[DiscoveryDateTime <DateTime?>]`: 
-        - `[Name <String>]`: 
-        - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: 
-          - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-            - `[Anchor <Boolean?>]`: 
+        - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
+        - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
+          - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
+            - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
             - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-              - `[Key <String>]`: 
-              - `[Value <String>]`: 
-            - `[CaseExact <Boolean?>]`: 
+              - `[Key <String>]`: Key.
+              - `[Value <String>]`: Value.
+            - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
             - `[DefaultValue <String>]`: 
-            - `[FlowNullValues <Boolean?>]`: 
-            - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+            - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+            - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
               - `[Key <String>]`: attributeDefinitionMetadata
-              - `[Value <String>]`: 
-            - `[Multivalued <Boolean?>]`: 
+              - `[Value <String>]`: Value of the metadata property.
+            - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
             - `[Mutability <String>]`: mutability
-            - `[Name <String>]`: 
-            - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-              - `[ReferencedObjectName <String>]`: 
-              - `[ReferencedProperty <String>]`: 
-            - `[Required <Boolean?>]`: 
+            - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+            - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+              - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+              - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+            - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
             - `[Type <String>]`: attributeType
-          - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+          - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
             - `[Key <String>]`: objectDefinitionMetadata
-            - `[Value <String>]`: 
-          - `[Name <String>]`: 
-          - `[SupportedApis <String[]>]`: 
-        - `[ReadOnly <Boolean?>]`: 
-        - `[Version <String>]`: 
-      - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
+            - `[Value <String>]`: Value of the metadata property.
+          - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+          - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
+        - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
+        - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
+      - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
         - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IncludedContainers <String[]>]`: 
-        - `[Editable <Boolean?>]`: 
+        - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
         - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IncludedGroups <String[]>]`: 
-        - `[Id <String>]`: 
-        - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-        - `[Name <String>]`: 
-        - `[ObjectMappings <IMicrosoftGraphObjectMapping[]>]`: 
-          - `[AttributeMappings <IMicrosoftGraphAttributeMapping[]>]`: 
-            - `[DefaultValue <String>]`: 
-            - `[ExportMissingReferences <Boolean?>]`: 
+        - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
+        - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+        - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
+        - `[ObjectMappings <IMicrosoftGraphObjectMapping[]>]`: Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.
+          - `[AttributeMappings <IMicrosoftGraphAttributeMapping[]>]`: Attribute mappings define which attributes to map from the source object into the target object and how they should flow. A number of functions are available to support the transformation of the original source values.
+            - `[DefaultValue <String>]`: Default value to be used in case the source property was evaluated to null. Optional.
+            - `[ExportMissingReferences <Boolean?>]`: For internal use only.
             - `[FlowBehavior <String>]`: attributeFlowBehavior
             - `[FlowType <String>]`: attributeFlowType
-            - `[MatchingPriority <Int32?>]`: 
+            - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
             - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Expression <String>]`: 
-              - `[Name <String>]`: 
-              - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
-                - `[Key <String>]`: 
+              - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+              - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+              - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+                - `[Key <String>]`: The name of the parameter.
                 - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
               - `[Type <String>]`: attributeMappingSourceType
-            - `[TargetAttributeName <String>]`: 
-          - `[Enabled <Boolean?>]`: 
+            - `[TargetAttributeName <String>]`: Name of the attribute on the target object.
+          - `[Enabled <Boolean?>]`: When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
           - `[FlowTypes <String>]`: objectFlowTypes
-          - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: 
+          - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
             - `[Key <String>]`: objectMappingMetadata
-            - `[Value <String>]`: 
-          - `[Name <String>]`: 
+            - `[Value <String>]`: Value of the metadata property.
+          - `[Name <String>]`: Human-friendly name of the object mapping.
           - `[Scope <IMicrosoftGraphFilter>]`: filter
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[CategoryFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
-              - `[Clauses <IMicrosoftGraphFilterClause[]>]`: 
-                - `[OperatorName <String>]`: 
-                - `[SourceOperandName <String>]`: 
+            - `[CategoryFilterGroups <IMicrosoftGraphFilterGroup[]>]`: *Experimental* Filter group set used to decide whether given object belongs and should be processed as part of this object mapping. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
+              - `[Clauses <IMicrosoftGraphFilterClause[]>]`: Filter clauses (conditions) of this group. All clauses in a group must be satisfied in order for the filter group to evaluate to true.
+                - `[OperatorName <String>]`: Name of the operator to be applied to the source and target operands. Must be one of the supported operators. Supported operators can be discovered.
+                - `[SourceOperandName <String>]`: Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.
                 - `[TargetOperand <IMicrosoftGraphFilterOperand>]`: filterOperand
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Values <String[]>]`: 
-              - `[Name <String>]`: 
-            - `[Groups <IMicrosoftGraphFilterGroup[]>]`: 
-            - `[InputFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
-          - `[SourceObjectName <String>]`: 
-          - `[TargetObjectName <String>]`: 
-        - `[Priority <Int32?>]`: 
-        - `[SourceDirectoryName <String>]`: 
-        - `[TargetDirectoryName <String>]`: 
-      - `[Version <String>]`: 
+                  - `[Values <String[]>]`: Collection of values.
+              - `[Name <String>]`: Human-readable name of the filter group.
+            - `[Groups <IMicrosoftGraphFilterGroup[]>]`: Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned'. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
+            - `[InputFilterGroups <IMicrosoftGraphFilterGroup[]>]`: *Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn't satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.
+          - `[SourceObjectName <String>]`: Name of the object in the source directory. Must match the object name from the source directory definition.
+          - `[TargetObjectName <String>]`: Name of the object in target directory. Must match the object name from the target directory definition.
+        - `[Priority <Int32?>]`: Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.
+        - `[SourceDirectoryName <String>]`: Name of the source directory. Must match one of the directory definitions in synchronizationSchema.
+        - `[TargetDirectoryName <String>]`: Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
+      - `[Version <String>]`: The version of the schema, updated automatically with every schema change.
     - `[Status <IMicrosoftGraphSynchronizationStatus>]`: synchronizationStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Code <String>]`: synchronizationStatusCode
-      - `[CountSuccessiveCompleteFailures <Int64?>]`: 
-      - `[EscrowsPruned <Boolean?>]`: 
+      - `[CountSuccessiveCompleteFailures <Int64?>]`: Number of consecutive times this job failed.
+      - `[EscrowsPruned <Boolean?>]`: true if the job's escrows (object-level errors) were pruned during initial synchronization. Escrows can be pruned if during the initial synchronization, you reach the threshold of errors that would normally put the job in quarantine. Instead of going into quarantine, the synchronization process clears the job's errors and continues until the initial synchronization is completed. When the initial synchronization is completed, the job will pause and wait for the customer to clean up the errors.
       - `[LastExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[ActivityIdentifier <String>]`: 
-        - `[CountEntitled <Int64?>]`: 
-        - `[CountEntitledForProvisioning <Int64?>]`: 
-        - `[CountEscrowed <Int64?>]`: 
-        - `[CountEscrowedRaw <Int64?>]`: 
-        - `[CountExported <Int64?>]`: 
-        - `[CountExports <Int64?>]`: 
-        - `[CountImported <Int64?>]`: 
-        - `[CountImportedDeltas <Int64?>]`: 
-        - `[CountImportedReferenceDeltas <Int64?>]`: 
+        - `[ActivityIdentifier <String>]`: Identifier of the job run.
+        - `[CountEntitled <Int64?>]`: Count of processed entries that were assigned for this application.
+        - `[CountEntitledForProvisioning <Int64?>]`: Count of processed entries that were assigned for provisioning.
+        - `[CountEscrowed <Int64?>]`: Count of entries that were escrowed (errors).
+        - `[CountEscrowedRaw <Int64?>]`: Count of entries that were escrowed, including system-generated escrows.
+        - `[CountExported <Int64?>]`: Count of exported entries.
+        - `[CountExports <Int64?>]`: Count of entries that were expected to be exported.
+        - `[CountImported <Int64?>]`: Count of imported entries.
+        - `[CountImportedDeltas <Int64?>]`: Count of imported delta-changes.
+        - `[CountImportedReferenceDeltas <Int64?>]`: Count of imported delta-changes pertaining to reference changes.
         - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Code <String>]`: 
-          - `[Message <String>]`: 
-          - `[TenantActionable <Boolean?>]`: 
+          - `[Code <String>]`: The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
+          - `[Message <String>]`: The error message. For example, Policy permitting auto-redemption of invitations not configured.
+          - `[TenantActionable <Boolean?>]`: The action to take to resolve the error. For example, false.
         - `[State <String>]`: synchronizationTaskExecutionResult
-        - `[TimeBegan <DateTime?>]`: 
-        - `[TimeEnded <DateTime?>]`: 
+        - `[TimeBegan <DateTime?>]`: Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[TimeEnded <DateTime?>]`: Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[LastSuccessfulExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
       - `[LastSuccessfulExecutionWithExports <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
-      - `[Progress <IMicrosoftGraphSynchronizationProgress[]>]`: 
-        - `[CompletedUnits <Int64?>]`: 
-        - `[ProgressObservationDateTime <DateTime?>]`: 
-        - `[TotalUnits <Int64?>]`: 
-        - `[Units <String>]`: 
+      - `[Progress <IMicrosoftGraphSynchronizationProgress[]>]`: Details of the progress of a job toward completion.
+        - `[CompletedUnits <Int64?>]`: The numerator of a progress ratio; the number of units of changes already processed.
+        - `[ProgressObservationDateTime <DateTime?>]`: The time of a progress observation as an offset in minutes from UTC.
+        - `[TotalUnits <Int64?>]`: The denominator of a progress ratio; a number of units of changes to be processed to accomplish synchronization.
+        - `[Units <String>]`: An optional description of the units.
       - `[Quarantine <IMicrosoftGraphSynchronizationQuarantine>]`: synchronizationQuarantine
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[CurrentBegan <DateTime?>]`: 
+        - `[CurrentBegan <DateTime?>]`: Date and time when the quarantine was last evaluated and imposed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
-        - `[NextAttempt <DateTime?>]`: 
+        - `[NextAttempt <DateTime?>]`: Date and time when the next attempt to re-evaluate the quarantine will be made. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[Reason <String>]`: quarantineReason
-        - `[SeriesBegan <DateTime?>]`: 
-        - `[SeriesCount <Int64?>]`: 
-      - `[SteadyStateFirstAchievedTime <DateTime?>]`: 
-      - `[SteadyStateLastAchievedTime <DateTime?>]`: 
-      - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: 
-        - `[Key <String>]`: 
-        - `[Value <Int64?>]`: 
-      - `[TroubleshootingUrl <String>]`: 
-    - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: 
+        - `[SeriesBegan <DateTime?>]`: Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[SeriesCount <Int64?>]`: Number of times in this series the quarantine was re-evaluated and left in effect (a series starts when quarantine is first imposed, and is reset as soon as quarantine is lifted).
+      - `[SteadyStateFirstAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[SteadyStateLastAchievedTime <DateTime?>]`: The time when steady state (no more changes to the process) was last achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: Count of synchronized objects, listed by object type.
+        - `[Key <String>]`: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+        - `[Value <Int64?>]`: Total number of synchronized objects.
+      - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
+    - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
-    - `[TemplateId <String>]`: 
-  - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
+    - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
+  - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
     - `[Key <String>]`: synchronizationSecret
-    - `[Value <String>]`: 
-  - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: 
+    - `[Value <String>]`: The value of the secret.
+  - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: Pre-configured synchronization settings for a particular application.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ApplicationId <String>]`: 
-    - `[Default <Boolean?>]`: 
-    - `[Description <String>]`: 
-    - `[Discoverable <Boolean?>]`: 
-    - `[FactoryTag <String>]`: 
-    - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: 
+    - `[ApplicationId <String>]`: Identifier of the application this template belongs to.
+    - `[Default <Boolean?>]`: true if this template is recommended to be the default for the application.
+    - `[Description <String>]`: Description of the template.
+    - `[Discoverable <Boolean?>]`: true if this template should appear in the collection of templates available for the application instance (service principal).
+    - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
+    - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
       - `[Key <String>]`: synchronizationMetadata
-      - `[Value <String>]`: 
+      - `[Value <String>]`: Value of the metadata property.
     - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
 
 `TOKENISSUANCEPOLICIES <IMicrosoftGraphTokenIssuancePolicy[]>`: The tokenIssuancePolicies assigned to this service principal.

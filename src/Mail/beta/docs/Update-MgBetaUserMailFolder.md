@@ -63,8 +63,7 @@ Import-Module Microsoft.Graph.Beta.Mail
 ```
 
 $params = @{
-	"@odata.type" = "microsoft.graph.mailSearchFolder"
-	filterQuery = "contains(subject, 'Analytics')"
+	displayName = "displayName-value"
 }
 
 # A UPN can also be used as -UserId.

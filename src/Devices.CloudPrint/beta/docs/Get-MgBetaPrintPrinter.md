@@ -43,13 +43,6 @@ Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 
 Get-MgBetaPrintPrinter -PrinterId $printerId
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
-```
-
-Get-MgBetaPrintPrinter -PrinterId $printerId -Property "id,displayName,capabilities"
-
 ## PARAMETERS
 
 ### -All

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: e45ab622-7f7c-48c5-88eb-8356fd60875a
+Module Guid: 9b20cc9a-8949-4e8b-86e9-71f11b268db7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -92,6 +92,9 @@ Get sharepoint from admin
 
 ### [Get-MgAdminSharepointSetting](Get-MgAdminSharepointSetting.md)
 Get the tenant-level settings for SharePoint and OneDrive.
+
+### [Get-MgAllSite](Get-MgAllSite.md)
+Invoke function getAllSites
 
 ### [Get-MgGroupSite](Get-MgGroupSite.md)
 The list of SharePoint sites in this group.
@@ -222,7 +225,7 @@ You can get or update settings for sending automatic replies to incoming message
 Returned only on $select.
 
 ### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
-Returns the metadata for a [list][].
+Get a list of rich long-running operations associated with a list.
 
 ### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
 The collection of field definitions for this list.
@@ -1022,7 +1025,7 @@ You can get or update settings for sending automatic replies to incoming message
 Returned only on $select.
 
 ### [Get-MgSiteList](Get-MgSiteList.md)
-Returns the metadata for a [list][].
+Get a list of rich long-running operations associated with a list.
 
 ### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
 The collection of field definitions for this list.

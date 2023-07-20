@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronizationTemplateSchema
 
 ## SYNOPSIS
-Get schema from servicePrincipals
+Default synchronization schema for the jobs based on this template.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgServicePrincipalSynchronizationTemplateSchema -InputObject <IApplicationsI
 ```
 
 ## DESCRIPTION
-Get schema from servicePrincipals
+Default synchronization schema for the jobs based on this template.
 
 ## EXAMPLES
 
@@ -142,6 +142,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application

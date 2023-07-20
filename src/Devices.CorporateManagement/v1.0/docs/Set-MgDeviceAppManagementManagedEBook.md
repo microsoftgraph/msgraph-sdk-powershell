@@ -202,7 +202,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Set-DeviceAppMgtManagedEBook
+Set-MgDeviceAppMgtManagedEBook
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -90,7 +90,10 @@ Import-Module Microsoft.Graph.Beta.Files
 ```
 
 $params = @{
-	name = "new-file-name.docx"
+	parentReference = @{
+		id = "new-parent-folder-id"
+	}
+	name = "new-item-name.txt"
 }
 
 Update-MgBetaDriveItem -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params

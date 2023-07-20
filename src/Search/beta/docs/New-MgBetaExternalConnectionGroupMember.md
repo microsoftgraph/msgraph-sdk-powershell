@@ -60,18 +60,6 @@ Import-Module Microsoft.Graph.Beta.Search
 
 $params = @{
 	id = "e5477431-1038-484e-bf69-1dfedb97a110"
-	type = "group"
-}
-
-New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Search
-```
-
-$params = @{
-	id = "1431b9c38ee647f6a"
 	type = "externalGroup"
 }
 

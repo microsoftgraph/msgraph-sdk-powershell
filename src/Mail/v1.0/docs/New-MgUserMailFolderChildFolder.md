@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserMailFolderChildFolder
 
 ## SYNOPSIS
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ## SYNTAX
 
@@ -49,7 +50,8 @@ New-MgUserMailFolderChildFolder -InputObject <IMailIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ## EXAMPLES
 

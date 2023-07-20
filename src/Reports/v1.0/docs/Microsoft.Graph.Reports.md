@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: 33734c84-af57-4601-8d6f-1de58d4ebfea
+Module Guid: da8911bc-844e-4068-8833-8652ba767a74
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,10 +41,10 @@ Entity representing a job to export a report
 Get the number of the resource
 
 ### [Get-MgReportAuthenticationMethod](Get-MgReportAuthenticationMethod.md)
-Get authenticationMethods from reports
+Container for navigation properties for Azure AD authentication methods resources.
 
 ### [Get-MgReportAuthenticationMethodUserRegistrationDetail](Get-MgReportAuthenticationMethodUserRegistrationDetail.md)
-Get userRegistrationDetails from reports
+Read the properties and relationships of a userRegistrationDetails object.
 
 ### [Get-MgReportAuthenticationMethodUserRegistrationDetailCount](Get-MgReportAuthenticationMethodUserRegistrationDetailCount.md)
 Get the number of the resource
@@ -121,13 +121,13 @@ Invoke function managedDeviceEnrollmentFailureDetails
 Invoke function managedDeviceEnrollmentTopFailures
 
 ### [Get-MgReportMonthlyPrintUsageByPrinter](Get-MgReportMonthlyPrintUsageByPrinter.md)
-Get monthlyPrintUsageByPrinter from reports
+Retrieve a list of monthly print usage summaries, grouped by printer.
 
 ### [Get-MgReportMonthlyPrintUsageByPrinterCount](Get-MgReportMonthlyPrintUsageByPrinterCount.md)
 Get the number of the resource
 
 ### [Get-MgReportMonthlyPrintUsageByUser](Get-MgReportMonthlyPrintUsageByUser.md)
-Get monthlyPrintUsageByUser from reports
+Retrieve a list of monthly print usage summaries, grouped by user.
 
 ### [Get-MgReportMonthlyPrintUsageByUserCount](Get-MgReportMonthlyPrintUsageByUserCount.md)
 Get the number of the resource
@@ -190,7 +190,7 @@ Invoke function getOneDriveUsageStorage
 Invoke function getPrinterArchivedPrintJobs
 
 ### [Get-MgReportSecurity](Get-MgReportSecurity.md)
-Get security from reports
+Represents an abstract type that contains resources for attack simulation and training reports.
 
 ### [Get-MgReportSecurityAttackSimulationRepeatOffender](Get-MgReportSecurityAttackSimulationRepeatOffender.md)
 Invoke function getAttackSimulationRepeatOffenders

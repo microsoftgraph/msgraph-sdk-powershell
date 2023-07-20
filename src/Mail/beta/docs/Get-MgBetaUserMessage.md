@@ -46,7 +46,39 @@ Import-Module Microsoft.Graph.Beta.Mail
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "singleValueExtendedProperties(`$filter=id eq 'String {66f5a359-4659-4830-9070-00047ec6ac6e} Name Color')"
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "mentions"
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -Property "subject,body,bodyPreview,uniqueBody"
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -Property "internetMessageHeaders"
+
+### -------------------------- EXAMPLE 5 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessageContent -UserId $userId -MessageId $messageId -OutFile $outFileId
 
 ## PARAMETERS
 

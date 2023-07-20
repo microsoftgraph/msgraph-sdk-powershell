@@ -80,7 +80,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-BetaDeviceAppMgtManagedAppStatusCount
+Get-MgBetaDeviceAppMgtManagedAppStatusCount
 
 ## RELATED LINKS
 

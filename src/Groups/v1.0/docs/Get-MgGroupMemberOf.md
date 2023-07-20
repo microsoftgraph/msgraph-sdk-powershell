@@ -51,6 +51,13 @@ Import-Module Microsoft.Graph.Groups
 
 Get-MgGroupMemberOf -GroupId $groupId
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Groups
+```
+
+Get-MgGroupMemberOfAsGroup -GroupId $groupId -CountVariable CountVar -Sort "displayName" -Filter "startswith(displayName, 'A')" -ConsistencyLevel eventual
+
 ## PARAMETERS
 
 ### -All

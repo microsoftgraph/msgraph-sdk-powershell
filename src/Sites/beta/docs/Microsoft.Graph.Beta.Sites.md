@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: fe4fea0f-addd-4233-a5ce-b2769cdd6e3a
+Module Guid: 91828bdd-a07b-4d5a-b9d0-d01f0ecb7aa0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -105,6 +105,9 @@ Get sharepoint from admin
 
 ### [Get-MgBetaAdminSharepointSetting](Get-MgBetaAdminSharepointSetting.md)
 Get the tenant-level settings for SharePoint and OneDrive.
+
+### [Get-MgBetaAllSite](Get-MgBetaAllSite.md)
+Invoke function getAllSites
 
 ### [Get-MgBetaGroupSite](Get-MgBetaGroupSite.md)
 The list of SharePoint sites in this group.
@@ -296,7 +299,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1175,7 +1178,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.

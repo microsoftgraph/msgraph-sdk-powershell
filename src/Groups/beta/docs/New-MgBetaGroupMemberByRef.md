@@ -49,7 +49,7 @@ Import-Module Microsoft.Graph.Beta.Groups
 ```
 
 $params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/{id}"
+	"@odata.id" = "https://graph.microsoft.com/beta/directoryObjects/{id}"
 }
 
 New-MgBetaGroupMemberByRef -GroupId $groupId -BodyParameter $params

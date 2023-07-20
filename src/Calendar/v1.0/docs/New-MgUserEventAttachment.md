@@ -53,10 +53,25 @@ Import-Module Microsoft.Graph.Calendar
 ```
 
 $params = @{
-	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
-	name = "name-value"
+	"@odata.type" = "#microsoft.graph.fileAttachment"
+	name = "menu.txt"
+	contentBytes = "base64bWFjIGFuZCBjaGVlc2UgdG9kYXk="
+}
+
+# A UPN can also be used as -UserId.
+New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Calendar
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.itemAttachment"
+	name = "Holiday event"
 	item = @{
-		"@odata.type" = "microsoft.graph.message"
+		"@odata.type" = "microsoft.graph.event"
+		subject = "Discuss gifts for children"
 	}
 }
 

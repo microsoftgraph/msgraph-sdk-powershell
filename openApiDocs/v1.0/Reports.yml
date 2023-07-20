@@ -1300,6 +1300,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: report_GetAuthenticationMethod
       parameters:
         - name: $select
@@ -1476,7 +1477,11 @@ paths:
     get:
       tags:
         - reports.authenticationMethodsRoot
-      summary: Get userRegistrationDetails from reports
+      summary: List userRegistrationDetails
+      description: Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0
       operationId: report.authenticationMethod_ListUserRegistrationDetail
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1601,7 +1606,11 @@ paths:
     get:
       tags:
         - reports.authenticationMethodsRoot
-      summary: Get userRegistrationDetails from reports
+      summary: Get userRegistrationDetails
+      description: Read the properties and relationships of a userRegistrationDetails object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/userregistrationdetails-get?view=graph-rest-1.0
       operationId: report.authenticationMethod_GetUserRegistrationDetail
       parameters:
         - name: userRegistrationDetails-id
@@ -5471,6 +5480,7 @@ paths:
       tags:
         - reports.printUsageByPrinter
       summary: Get monthlyPrintUsageByPrinter from reports
+      description: 'Retrieve a list of monthly print usage summaries, grouped by printer.'
       operationId: report_GetMonthlyPrintUsageGraphBPrePrinter
       parameters:
         - name: printUsageByPrinter-id
@@ -5723,6 +5733,7 @@ paths:
       tags:
         - reports.printUsageByUser
       summary: Get monthlyPrintUsageByUser from reports
+      description: 'Retrieve a list of monthly print usage summaries, grouped by user.'
       operationId: report_GetMonthlyPrintUsageGraphBPreUser
       parameters:
         - name: printUsageByUser-id
@@ -5855,6 +5866,7 @@ paths:
       tags:
         - reports.securityReportsRoot
       summary: Get security from reports
+      description: Represents an abstract type that contains resources for attack simulation and training reports.
       operationId: report_GetSecurity
       parameters:
         - name: $select
@@ -6074,7 +6086,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
+              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For a list of activities logged, refer to Azure AD audit log categories and activities.'
             additionalDetails:
               type: array
               items:
@@ -6082,7 +6094,7 @@ components:
               description: Indicates additional details on the activity.
             category:
               type: string
-              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.'
+              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.'
             correlationId:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
@@ -6331,21 +6343,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+          description: 'Retrieve a list of daily print usage summaries, grouped by printer.'
           x-ms-navigationProperty: true
         dailyPrintUsageByUser:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+          description: 'Retrieve a list of daily print usage summaries, grouped by user.'
           x-ms-navigationProperty: true
         monthlyPrintUsageByPrinter:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+          description: 'Retrieve a list of monthly print usage summaries, grouped by printer.'
           x-ms-navigationProperty: true
         monthlyPrintUsageByUser:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+          description: 'Retrieve a list of monthly print usage summaries, grouped by user.'
           x-ms-navigationProperty: true
         security:
           $ref: '#/components/schemas/microsoft.graph.securityReportsRoot'
@@ -6361,6 +6377,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+              description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6370,11 +6387,13 @@ components:
       properties:
         totalUserCount:
           type: integer
+          description: 'Total number of users accounts, excluding those that are blocked.'
           format: int64
         userRegistrationFeatureCounts:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userRegistrationFeatureCount'
+          description: 'Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.'
         userRoles:
           $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
         userTypes:
@@ -6404,11 +6423,13 @@ components:
       properties:
         totalUserCount:
           type: integer
+          description: Total number of users in the tenant.
           format: int64
         userRegistrationMethodCounts:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.userRegistrationMethodCount'
+          description: Number of users registered for each authentication method.
         userRoles:
           $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
         userTypes:
@@ -6423,42 +6444,55 @@ components:
           properties:
             isAdmin:
               type: boolean
+              description: Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
               nullable: true
             isMfaCapable:
               type: boolean
+              description: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             isMfaRegistered:
               type: boolean
+              description: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             isPasswordlessCapable:
               type: boolean
+              description: 'Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).'
             isSsprCapable:
               type: boolean
+              description: Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
             isSsprEnabled:
               type: boolean
+              description: Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
             isSsprRegistered:
               type: boolean
+              description: Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
             isSystemPreferredAuthenticationMethodEnabled:
               type: boolean
+              description: 'Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).'
               nullable: true
             lastUpdatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             methodsRegistered:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).'
             systemPreferredAuthenticationMethods:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).'
             userDisplayName:
               type: string
+              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.'
             userPreferredMethodForSecondaryAuthentication:
               $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethod'
             userPrincipalName:
               type: string
+              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.'
             userType:
               $ref: '#/components/schemas/microsoft.graph.signInUserType'
           additionalProperties:
@@ -7028,6 +7062,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodFeature'
         userCount:
           type: integer
+          description: Number of users.
           format: int64
       additionalProperties:
         type: object
@@ -7037,8 +7072,10 @@ components:
       properties:
         authenticationMethod:
           type: string
+          description: Name of the authentication method.
         userCount:
           type: integer
+          description: Number of users registered.
           format: int64
       additionalProperties:
         type: object

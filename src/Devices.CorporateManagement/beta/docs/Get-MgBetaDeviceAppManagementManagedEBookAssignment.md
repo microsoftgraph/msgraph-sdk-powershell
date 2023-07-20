@@ -264,7 +264,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-BetaDeviceAppMgtManagedEBookAssignment
+Get-MgBetaDeviceAppMgtManagedEBookAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

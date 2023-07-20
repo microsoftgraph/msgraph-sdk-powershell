@@ -57,7 +57,6 @@ $params = @{
 	isExpirationRequired = $true
 	maximumDuration = "PT1H45M"
 	target = @{
-		"@odata.type" = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget"
 		caller = "EndUser"
 		operations = @(
 			"All"

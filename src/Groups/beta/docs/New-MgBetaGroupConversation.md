@@ -8,10 +8,8 @@ schema: 2.0.0
 # New-MgBetaGroupConversation
 
 ## SYNOPSIS
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create a new conversation by including a thread and a post.
+Use reply thread or reply post to further post to that conversation.
 
 ## SYNTAX
 
@@ -44,26 +42,46 @@ New-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create a new conversation by including a thread and a post.
+Use reply thread or reply post to further post to that conversation.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Groups
 ```
 
-{{ Add output here }}
+$params = @{
+	Topic = "Does anyone have a second?"
+	Threads = @(
+		@{
+			Posts = @(
+				@{
+					Body = @{
+						ContentType = "HTML"
+						Content = "This is urgent!"
+					}
+					Extensions = @(
+						@{
+							"@odata.type" = "microsoft.graph.openTypeExtension"
+							extensionName = "Com.Contoso.Benefits"
+							companyName = "Contoso"
+							expirationDate = "2016-08-03T11:00:00.000Z"
+							topPicks = @(
+								"Employees only"
+								"Add spouse or guest"
+								"Add family"
+							)
+						}
+					)
+				}
+			)
+		}
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
 
 ## PARAMETERS
 

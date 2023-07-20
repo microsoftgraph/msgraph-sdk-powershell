@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: be67cdcb-5126-4a33-b2ed-e16c8895b981
+Module Guid: b530df08-1731-457a-8a24-a41bb6802686
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1076,7 +1076,7 @@ Update the navigation property errors in education
 Update the navigation property profileStatus in education
 
 ### [Update-MgBetaEducationUser](Update-MgBetaEducationUser.md)
-Update the relatedContact collection of an educationUser object.
+Update the properties of an **educationuser** object.
 
 ### [Update-MgBetaEducationUserAssignment](Update-MgBetaEducationUserAssignment.md)
 Update the navigation property assignments in education

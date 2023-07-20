@@ -47,17 +47,18 @@ Update the properties of a remoteAssistancePartner object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DeviceManagement.Administration
 ```
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "#microsoft.graph.remoteAssistancePartner"
+	displayName = "Display Name value"
+	onboardingUrl = "https://example.com/onboardingUrl/"
+	onboardingStatus = "onboarding"
+	lastConnectionDateTime = [System.DateTime]::Parse("2016-12-31T23:58:36.6670033-08:00")
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgDeviceManagementRemoteAssistancePartner -RemoteAssistancePartnerId $remoteAssistancePartnerId -BodyParameter $params
 
 ## PARAMETERS
 

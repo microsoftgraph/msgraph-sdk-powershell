@@ -57,17 +57,13 @@ This API specifically updates an app published to your organization's app catalo
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-{{ Add output here }}
+$params = [Zip file containing a Teams app package]
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
 
-{{ Add output here }}
+New-MgBetaAppCatalogTeamAppDefinition -TeamsAppId $teamsAppId -Requiresreview true  -BodyParameter $params
 
 ## PARAMETERS
 

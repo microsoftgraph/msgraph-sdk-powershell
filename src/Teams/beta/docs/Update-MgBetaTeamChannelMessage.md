@@ -110,7 +110,7 @@ $params = @{
 		device = $null
 		user = @{
 			id = "3b102402-813e-4e17-a6b2-f841aef1fdfc"
-			displayName = "Lam Cong"
+			displayName = "Sumit Gupta"
 			userIdentityType = "aadUser"
 		}
 		conversation = $null
@@ -149,7 +149,7 @@ $params = @{
 		conversation = $null
 		user = @{
 			id = "6b3f3c54-d09c-4fdd-b146-9b514a8a4f40"
-			displayName = "Lam Cong"
+			displayName = "Sumit Gupta"
 			userIdentityType = "aadUser"
 		}
 	}
@@ -173,7 +173,7 @@ $params = @{
 				conversation = $null
 				user = @{
 					id = "f1b66449-b46d-49b0-9c3c-53c10234c818e"
-					displayName = "Lam Cong"
+					displayName = "Raghav Mankad"
 					userIdentityType = "aadUser"
 				}
 			}
@@ -217,7 +217,7 @@ $params = @{
 		device = $null
 		user = @{
 			id = "3b102402-813e-4e17-a6b2-f841aef1fdfc"
-			displayName = "Lam Cong"
+			displayName = "Sumit Gupta"
 			userIdentityType = "aadUser"
 		}
 		conversation = $null
@@ -317,7 +317,7 @@ $params = @{
 		device = $null
 		user = @{
 			id = "3b102402-813e-4e17-a6b2-f841aef1fdfc"
-			displayName = "Lam Cong"
+			displayName = "Sumit Gupta"
 			userIdentityType = "aadUser"
 		}
 		conversation = $null

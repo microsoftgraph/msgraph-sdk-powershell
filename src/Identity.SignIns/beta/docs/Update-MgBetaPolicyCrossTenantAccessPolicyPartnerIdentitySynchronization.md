@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 
 ## SYNOPSIS
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 ```
 
 ## DESCRIPTION
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ## EXAMPLES
 

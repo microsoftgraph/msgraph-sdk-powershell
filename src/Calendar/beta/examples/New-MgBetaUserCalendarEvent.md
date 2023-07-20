@@ -6,14 +6,14 @@ $params = @{
 	subject = "Let's go for lunch"
 	body = @{
 		contentType = "HTML"
-		content = "Does mid month work for you?"
+		content = "Does next month work for you?"
 	}
 	start = @{
-		dateTime = "2019-03-15T12:00:00"
+		dateTime = "2019-03-10T12:00:00"
 		timeZone = "Pacific Standard Time"
 	}
 	end = @{
-		dateTime = "2019-03-15T14:00:00"
+		dateTime = "2019-03-10T14:00:00"
 		timeZone = "Pacific Standard Time"
 	}
 	location = @{

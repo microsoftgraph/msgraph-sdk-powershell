@@ -85,9 +85,10 @@ $params = @{
 	originalEndTimeZone = "originalEndTimeZone-value"
 	responseStatus = @{
 		response = ""
-		time = [System.DateTime]::Parse("datetime-value")
+		time = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
 	}
 	recurrence = $null
+	uid = "iCalUId-value"
 	reminderMinutesBeforeStart = 99
 	isOnlineMeeting = $true
 	onlineMeetingProvider = "teamsForBusiness"

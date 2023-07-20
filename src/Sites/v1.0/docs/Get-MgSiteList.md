@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSiteList
 
 ## SYNOPSIS
-Returns the metadata for a [list][].
+Get a list of rich long-running operations associated with a list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Prop
 ```
 
 ## DESCRIPTION
-Returns the metadata for a [list][].
+Get a list of rich long-running operations associated with a list.
 
 ## EXAMPLES
 
@@ -42,6 +42,20 @@ Import-Module Microsoft.Graph.Sites
 ```
 
 Get-MgSiteList -SiteId $siteId -ListId $listId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Sites
+```
+
+Get-MgSiteList -SiteId $siteId -ListId $listId
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Sites
+```
+
+Get-MgSiteList -SiteId $siteId -ListId $listId -Property "id,name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)"
 
 ## PARAMETERS
 

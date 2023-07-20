@@ -5,7 +5,7 @@
 $params = @{
 	originalStartTimeZone = "originalStartTimeZone-value"
 	originalEndTimeZone = "originalEndTimeZone-value"
-	iCalUId = "iCalUId-value"
+	uid = "iCalUId-value"
 	reminderMinutesBeforeStart = 
 	isReminderOn = $true
 }

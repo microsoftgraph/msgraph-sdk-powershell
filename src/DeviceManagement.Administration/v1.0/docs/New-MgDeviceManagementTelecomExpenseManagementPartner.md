@@ -32,17 +32,19 @@ Create a new telecomExpenseManagementPartner object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DeviceManagement.Administration
 ```
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "#microsoft.graph.telecomExpenseManagementPartner"
+	displayName = "Display Name value"
+	url = "Url value"
+	appAuthorized = $true
+	enabled = $true
+	lastConnectionDateTime = [System.DateTime]::Parse("2016-12-31T23:58:36.6670033-08:00")
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgDeviceManagementTelecomExpenseManagementPartner -BodyParameter $params
 
 ## PARAMETERS
 

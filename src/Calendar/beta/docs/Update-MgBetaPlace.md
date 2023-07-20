@@ -63,6 +63,22 @@ $params = @{
 
 Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Calendar
+```
+
+$params = @{
+	"@odata.type" = "microsoft.graph.workspace"
+	nickname = "Conf Room"
+	building = "1"
+	label = "100"
+	capacity = 
+	isWheelChairAccessible = $false
+}
+
+Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
+
 ## PARAMETERS
 
 ### -AdditionalProperties

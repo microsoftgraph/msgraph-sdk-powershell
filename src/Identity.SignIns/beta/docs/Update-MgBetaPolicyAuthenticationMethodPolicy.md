@@ -56,6 +56,14 @@ $params = @{
 			)
 		}
 	}
+	reportSuspiciousActivitySettings = @{
+		state = "enabled"
+		includeTarget = @{
+			targetType = "group"
+			id = "all_users"
+		}
+		voiceReportingCode = 0
+	}
 }
 
 Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter $params

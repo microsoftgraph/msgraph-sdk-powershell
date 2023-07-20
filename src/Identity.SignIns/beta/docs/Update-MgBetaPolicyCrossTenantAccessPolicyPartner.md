@@ -91,6 +91,36 @@ $params = @{
 
 Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
 
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
+$params = @{
+	tenantRestrictions = @{
+		usersAndGroups = @{
+			accessType = "allowed"
+			targets = @(
+				@{
+					target = "AllUsers"
+					targetType = "user"
+				}
+			)
+		}
+		applications = @{
+			accessType = "allowed"
+			targets = @(
+				@{
+					target = "Office365"
+					targetType = "application"
+				}
+			)
+		}
+	}
+}
+
+Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
+
 ## PARAMETERS
 
 ### -AdditionalProperties

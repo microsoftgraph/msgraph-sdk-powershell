@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceTermsOfUseAgreementFile
 
 ## SYNOPSIS
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Retrieve the details of an agreement file, including the language and version information.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 
 ## SYNTAX
 
@@ -33,8 +33,8 @@ Get-MgIdentityGovernanceTermsOfUseAgreementFile -AgreementId <String> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Retrieve the details of an agreement file, including the language and version information.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 
 ## EXAMPLES
 
@@ -266,6 +266,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[AccessPackageId <String>]`: The unique identifier of accessPackage
   - `[AccessPackageId1 <String>]`: The unique identifier of accessPackage
   - `[AccessPackageQuestionId <String>]`: The unique identifier of accessPackageQuestion
+  - `[AccessPackageResourceEnvironmentId <String>]`: The unique identifier of accessPackageResourceEnvironment
+  - `[AccessPackageResourceId <String>]`: The unique identifier of accessPackageResource
+  - `[AccessPackageResourceRequestId <String>]`: The unique identifier of accessPackageResourceRequest
+  - `[AccessPackageResourceRoleId <String>]`: The unique identifier of accessPackageResourceRole
+  - `[AccessPackageResourceRoleId1 <String>]`: The unique identifier of accessPackageResourceRole
+  - `[AccessPackageResourceRoleScopeId <String>]`: The unique identifier of accessPackageResourceRoleScope
+  - `[AccessPackageResourceScopeId <String>]`: The unique identifier of accessPackageResourceScope
+  - `[AccessPackageResourceScopeId1 <String>]`: The unique identifier of accessPackageResourceScope
   - `[AccessReviewHistoryDefinitionId <String>]`: The unique identifier of accessReviewHistoryDefinition
   - `[AccessReviewHistoryInstanceId <String>]`: The unique identifier of accessReviewHistoryInstance
   - `[AccessReviewInstanceDecisionItemId <String>]`: The unique identifier of accessReviewInstanceDecisionItem

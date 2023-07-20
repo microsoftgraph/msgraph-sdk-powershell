@@ -154,7 +154,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Remove-DeviceAppMgtMobileAppConfigurationUserStatusSummary
+Remove-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary
 
 COMPLEX PARAMETER PROPERTIES
 

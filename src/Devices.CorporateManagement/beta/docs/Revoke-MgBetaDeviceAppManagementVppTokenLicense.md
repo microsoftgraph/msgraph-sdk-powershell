@@ -215,7 +215,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Revoke-BetaDeviceAppMgtVppTokenLicense
+Revoke-MgBetaDeviceAppMgtVppTokenLicense
 
 COMPLEX PARAMETER PROPERTIES
 

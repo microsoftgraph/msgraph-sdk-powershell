@@ -374,7 +374,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-DeviceAppMgtManagedAppRegistration
+New-MgDeviceAppMgtManagedAppRegistration
 
 COMPLEX PARAMETER PROPERTIES
 

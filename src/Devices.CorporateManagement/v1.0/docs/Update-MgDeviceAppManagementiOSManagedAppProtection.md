@@ -836,7 +836,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-DeviceAppMgtIoManagedAppProtection
+Update-MgDeviceAppMgtiOSManagedAppProtection
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 53630d2e-3245-4e3d-832e-1280c840d6f0
+Module Guid: 8d2d602b-b1b0-4092-8933-9b7c639188da
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -26,8 +26,8 @@ Information about acceptances of this agreement.
 Get the number of the resource
 
 ### [Get-MgAgreementFile](Get-MgAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Retrieve the details of an agreement file, including the language and version information.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 
 ### [Get-MgAgreementFileCount](Get-MgAgreementFileCount.md)
 Get the number of the resource
@@ -153,6 +153,75 @@ Get customWorkflowExtensions from identityGovernance
 ### [Get-MgEntitlementManagementCatalogCustomWorkflowExtensionCount](Get-MgEntitlementManagementCatalogCustomWorkflowExtensionCount.md)
 Get the number of the resource
 
+### [Get-MgEntitlementManagementCatalogResource](Get-MgEntitlementManagementCatalogResource.md)
+Get resources from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceCount](Get-MgEntitlementManagementCatalogResourceCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementCatalogResourceEnvironment](Get-MgEntitlementManagementCatalogResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRole](Get-MgEntitlementManagementCatalogResourceRole.md)
+Get resourceRoles from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleCount](Get-MgEntitlementManagementCatalogResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResource](Get-MgEntitlementManagementCatalogResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment](Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceScope](Get-MgEntitlementManagementCatalogResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeCount](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResource](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRoleCount](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementCatalogResourceScope](Get-MgEntitlementManagementCatalogResourceScope.md)
+Get resourceScopes from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeCount](Get-MgEntitlementManagementCatalogResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResource](Get-MgEntitlementManagementCatalogResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment](Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceRole](Get-MgEntitlementManagementCatalogResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleCount](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResource](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScopeCount](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
 ### [Get-MgEntitlementManagementConnectedOrganization](Get-MgEntitlementManagementConnectedOrganization.md)
 Retrieve the properties and relationships of a connectedOrganization object.
 
@@ -194,6 +263,335 @@ Get the number of the resource
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta.md)
 Invoke function delta
+
+### [Get-MgEntitlementManagementResource](Get-MgEntitlementManagementResource.md)
+Get resources from identityGovernance
+
+### [Get-MgEntitlementManagementResourceCount](Get-MgEntitlementManagementResourceCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironment](Get-MgEntitlementManagementResourceEnvironment.md)
+Get resourceEnvironments from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentCount](Get-MgEntitlementManagementResourceEnvironmentCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironmentResource](Get-MgEntitlementManagementResourceEnvironmentResource.md)
+Get resources from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceCount](Get-MgEntitlementManagementResourceEnvironmentResourceCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRole](Get-MgEntitlementManagementResourceEnvironmentResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleCount](Get-MgEntitlementManagementResourceEnvironmentResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResource](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResource](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScope](Get-MgEntitlementManagementResourceEnvironmentResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeCount](Get-MgEntitlementManagementResourceEnvironmentResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResource](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResource](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequest](Get-MgEntitlementManagementResourceRequest.md)
+Get resourceRequests from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalog](Get-MgEntitlementManagementResourceRequestCatalog.md)
+Get catalog from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogAccessPackage](Get-MgEntitlementManagementResourceRequestCatalogAccessPackage.md)
+The access packages in this catalog.
+Read-only.
+Nullable.
+
+### [Get-MgEntitlementManagementResourceRequestCatalogAccessPackageCount](Get-MgEntitlementManagementResourceRequestCatalogAccessPackageCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
+Get customWorkflowExtensions from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtensionCount](Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtensionCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResource](Get-MgEntitlementManagementResourceRequestCatalogResource.md)
+Get resources from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceCount](Get-MgEntitlementManagementResourceRequestCatalogResourceCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRole](Get-MgEntitlementManagementResourceRequestCatalogResourceRole.md)
+Get resourceRoles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleCount](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResource](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScope](Get-MgEntitlementManagementResourceRequestCatalogResourceScope.md)
+Get resourceScopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeCount](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResource](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestCount](Get-MgEntitlementManagementResourceRequestCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestResource](Get-MgEntitlementManagementResourceRequestResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceRole](Get-MgEntitlementManagementResourceRequestResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleCount](Get-MgEntitlementManagementResourceRequestResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleResource](Get-MgEntitlementManagementResourceRequestResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScope](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResource](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceScope](Get-MgEntitlementManagementResourceRequestResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeCount](Get-MgEntitlementManagementResourceRequestResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeResource](Get-MgEntitlementManagementResourceRequestResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRole](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResource](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRole](Get-MgEntitlementManagementResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleCount](Get-MgEntitlementManagementResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleResource](Get-MgEntitlementManagementResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleResourceScope](Get-MgEntitlementManagementResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleResourceScopeResource](Get-MgEntitlementManagementResourceRoleResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRoleResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScope](Get-MgEntitlementManagementResourceRoleScope.md)
+Get resourceRoleScopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeCount](Get-MgEntitlementManagementResourceRoleScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleScopeResource](Get-MgEntitlementManagementResourceRoleScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceRole](Get-MgEntitlementManagementResourceRoleScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleCount](Get-MgEntitlementManagementResourceRoleScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResource](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceScope](Get-MgEntitlementManagementResourceRoleScopeResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeResourceScopeCount](Get-MgEntitlementManagementResourceRoleScopeResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleScopeRole](Get-MgEntitlementManagementResourceRoleScopeRole.md)
+Get role from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResource](Get-MgEntitlementManagementResourceRoleScopeRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeRoleResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceRole](Get-MgEntitlementManagementResourceRoleScopeRoleResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceRoleCount](Get-MgEntitlementManagementResourceRoleScopeRoleResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScope](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeCount](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResource](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceScope](Get-MgEntitlementManagementResourceScope.md)
+Get scopes from identityGovernance
+
+### [Get-MgEntitlementManagementResourceScopeCount](Get-MgEntitlementManagementResourceScopeCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceScopeResource](Get-MgEntitlementManagementResourceScopeResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceScopeResourceEnvironment.md)
+Get environment from identityGovernance
+
+### [Get-MgEntitlementManagementResourceScopeResourceRole](Get-MgEntitlementManagementResourceScopeResourceRole.md)
+Get roles from identityGovernance
+
+### [Get-MgEntitlementManagementResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceScopeResourceRoleCount.md)
+Get the number of the resource
+
+### [Get-MgEntitlementManagementResourceScopeResourceRoleResource](Get-MgEntitlementManagementResourceScopeResourceRoleResource.md)
+Get resource from identityGovernance
+
+### [Get-MgEntitlementManagementResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceScopeResourceRoleResourceEnvironment.md)
+Get environment from identityGovernance
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
 Retrieve the properties of an entitlementManagementSettings object.
@@ -575,8 +973,8 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementFile](Get-MgIdentityGovernanceTermsOfUseAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Retrieve the details of an agreement file, including the language and version information.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementFileCount](Get-MgIdentityGovernanceTermsOfUseAgreementFileCount.md)
 Get the number of the resource
@@ -1156,6 +1554,9 @@ Add an accessPackage to the list of access packages that have been marked as inc
 ### [New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](New-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.
 
+### [New-MgEntitlementManagementAccessPackageResourceRoleScope](New-MgEntitlementManagementAccessPackageResourceRoleScope.md)
+Create new navigation property to resourceRoleScopes for identityGovernance
+
 ### [New-MgEntitlementManagementAssignment](New-MgEntitlementManagementAssignment.md)
 Create new navigation property to assignments for identityGovernance
 
@@ -1179,6 +1580,27 @@ Create a new accessPackageCatalog object.
 ### [New-MgEntitlementManagementCatalogCustomWorkflowExtension](New-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
 Create new navigation property to customWorkflowExtensions for identityGovernance
 
+### [New-MgEntitlementManagementCatalogResource](New-MgEntitlementManagementCatalogResource.md)
+Create new navigation property to resources for identityGovernance
+
+### [New-MgEntitlementManagementCatalogResourceRole](New-MgEntitlementManagementCatalogResourceRole.md)
+Create new navigation property to resourceRoles for identityGovernance
+
+### [New-MgEntitlementManagementCatalogResourceRoleResourceScope](New-MgEntitlementManagementCatalogResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole](New-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementCatalogResourceScope](New-MgEntitlementManagementCatalogResourceScope.md)
+Create new navigation property to resourceScopes for identityGovernance
+
+### [New-MgEntitlementManagementCatalogResourceScopeResourceRole](New-MgEntitlementManagementCatalogResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope](New-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
 ### [New-MgEntitlementManagementConnectedOrganization](New-MgEntitlementManagementConnectedOrganization.md)
 Create a new connectedOrganization object.
 
@@ -1189,6 +1611,99 @@ The external sponsors are a set of users who can approve requests on behalf of o
 ### [New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Add a user or a group to the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+
+### [New-MgEntitlementManagementResource](New-MgEntitlementManagementResource.md)
+Create new navigation property to resources for identityGovernance
+
+### [New-MgEntitlementManagementResourceEnvironment](New-MgEntitlementManagementResourceEnvironment.md)
+Create new navigation property to resourceEnvironments for identityGovernance
+
+### [New-MgEntitlementManagementResourceEnvironmentResource](New-MgEntitlementManagementResourceEnvironmentResource.md)
+Create new navigation property to resources for identityGovernance
+
+### [New-MgEntitlementManagementResourceEnvironmentResourceRole](New-MgEntitlementManagementResourceEnvironmentResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope](New-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceEnvironmentResourceScope](New-MgEntitlementManagementResourceEnvironmentResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole](New-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequest](New-MgEntitlementManagementResourceRequest.md)
+Create new navigation property to resourceRequests for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
+Create new navigation property to customWorkflowExtensions for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResource](New-MgEntitlementManagementResourceRequestCatalogResource.md)
+Create new navigation property to resources for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResourceRole](New-MgEntitlementManagementResourceRequestCatalogResourceRole.md)
+Create new navigation property to resourceRoles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope](New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole](New-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResourceScope](New-MgEntitlementManagementResourceRequestCatalogResourceScope.md)
+Create new navigation property to resourceScopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole](New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope](New-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestResourceRole](New-MgEntitlementManagementResourceRequestResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestResourceRoleResourceScope](New-MgEntitlementManagementResourceRequestResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestResourceScope](New-MgEntitlementManagementResourceRequestResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRequestResourceScopeResourceRole](New-MgEntitlementManagementResourceRequestResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRole](New-MgEntitlementManagementResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleResourceScope](New-MgEntitlementManagementResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScope](New-MgEntitlementManagementResourceRoleScope.md)
+Create new navigation property to resourceRoleScopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScopeResourceRole](New-MgEntitlementManagementResourceRoleScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope](New-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScopeResourceScope](New-MgEntitlementManagementResourceRoleScopeResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScopeRoleResourceRole](New-MgEntitlementManagementResourceRoleScopeRoleResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScopeRoleResourceScope](New-MgEntitlementManagementResourceRoleScopeRoleResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole](New-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
+
+### [New-MgEntitlementManagementResourceScope](New-MgEntitlementManagementResourceScope.md)
+Create new navigation property to scopes for identityGovernance
+
+### [New-MgEntitlementManagementResourceScopeResourceRole](New-MgEntitlementManagementResourceScopeResourceRole.md)
+Create new navigation property to roles for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewDefinition](New-MgIdentityGovernanceAccessReviewDefinition.md)
 Create a new accessReviewScheduleDefinition object.
@@ -1385,6 +1900,9 @@ Remove an access package from the list of access packages that have been marked 
 ### [Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Remove-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.
 
+### [Remove-MgEntitlementManagementAccessPackageResourceRoleScope](Remove-MgEntitlementManagementAccessPackageResourceRoleScope.md)
+Delete navigation property resourceRoleScopes for identityGovernance
+
 ### [Remove-MgEntitlementManagementAssignment](Remove-MgEntitlementManagementAssignment.md)
 Delete navigation property assignments for identityGovernance
 
@@ -1408,6 +1926,39 @@ Delete an accessPackageCatalog.
 ### [Remove-MgEntitlementManagementCatalogCustomWorkflowExtension](Remove-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
 Delete navigation property customWorkflowExtensions for identityGovernance
 
+### [Remove-MgEntitlementManagementCatalogResource](Remove-MgEntitlementManagementCatalogResource.md)
+Delete navigation property resources for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceRole](Remove-MgEntitlementManagementCatalogResourceRole.md)
+Delete navigation property resourceRoles for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceRoleResource](Remove-MgEntitlementManagementCatalogResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceRoleResourceScope](Remove-MgEntitlementManagementCatalogResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResource](Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole](Remove-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceScope](Remove-MgEntitlementManagementCatalogResourceScope.md)
+Delete navigation property resourceScopes for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceScopeResource](Remove-MgEntitlementManagementCatalogResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceScopeResourceRole](Remove-MgEntitlementManagementCatalogResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResource](Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope](Remove-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
 ### [Remove-MgEntitlementManagementConnectedOrganization](Remove-MgEntitlementManagementConnectedOrganization.md)
 Delete a connectedOrganization object.
 
@@ -1418,6 +1969,168 @@ The external sponsors are a set of users who can approve requests on behalf of o
 ### [Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Remove-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
 Remove a user or a group from the connected organization's internal sponsors.
 The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+
+### [Remove-MgEntitlementManagementResource](Remove-MgEntitlementManagementResource.md)
+Delete navigation property resources for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironment](Remove-MgEntitlementManagementResourceEnvironment.md)
+Delete navigation property resourceEnvironments for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResource](Remove-MgEntitlementManagementResourceEnvironmentResource.md)
+Delete navigation property resources for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceRole](Remove-MgEntitlementManagementResourceEnvironmentResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceRoleResource](Remove-MgEntitlementManagementResourceEnvironmentResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope](Remove-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResource](Remove-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceScope](Remove-MgEntitlementManagementResourceEnvironmentResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceScopeResource](Remove-MgEntitlementManagementResourceEnvironmentResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole](Remove-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResource](Remove-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequest](Remove-MgEntitlementManagementResourceRequest.md)
+Delete navigation property resourceRequests for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalog](Remove-MgEntitlementManagementResourceRequestCatalog.md)
+Delete navigation property catalog for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Remove-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
+Delete navigation property customWorkflowExtensions for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResource](Remove-MgEntitlementManagementResourceRequestCatalogResource.md)
+Delete navigation property resources for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceRole](Remove-MgEntitlementManagementResourceRequestCatalogResourceRole.md)
+Delete navigation property resourceRoles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResource](Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope](Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource](Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole](Remove-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceScope](Remove-MgEntitlementManagementResourceRequestCatalogResourceScope.md)
+Delete navigation property resourceScopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResource](Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole](Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource](Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope](Remove-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResource](Remove-MgEntitlementManagementResourceRequestResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceRole](Remove-MgEntitlementManagementResourceRequestResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceRoleResource](Remove-MgEntitlementManagementResourceRequestResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceRoleResourceScope](Remove-MgEntitlementManagementResourceRequestResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResource](Remove-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceScope](Remove-MgEntitlementManagementResourceRequestResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceScopeResource](Remove-MgEntitlementManagementResourceRequestResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceScopeResourceRole](Remove-MgEntitlementManagementResourceRequestResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResource](Remove-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRole](Remove-MgEntitlementManagementResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleResource](Remove-MgEntitlementManagementResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleResourceScope](Remove-MgEntitlementManagementResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleResourceScopeResource](Remove-MgEntitlementManagementResourceRoleResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScope](Remove-MgEntitlementManagementResourceRoleScope.md)
+Delete navigation property resourceRoleScopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeResource](Remove-MgEntitlementManagementResourceRoleScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeResourceRole](Remove-MgEntitlementManagementResourceRoleScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeResourceRoleResource](Remove-MgEntitlementManagementResourceRoleScopeResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope](Remove-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeResourceScope](Remove-MgEntitlementManagementResourceRoleScopeResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeRole](Remove-MgEntitlementManagementResourceRoleScopeRole.md)
+Delete navigation property role for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeRoleResource](Remove-MgEntitlementManagementResourceRoleScopeRoleResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeRoleResourceRole](Remove-MgEntitlementManagementResourceRoleScopeRoleResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeRoleResourceScope](Remove-MgEntitlementManagementResourceRoleScopeRoleResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResource](Remove-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole](Remove-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceScope](Remove-MgEntitlementManagementResourceScope.md)
+Delete navigation property scopes for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceScopeResource](Remove-MgEntitlementManagementResourceScopeResource.md)
+Delete navigation property resource for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceScopeResourceRole](Remove-MgEntitlementManagementResourceScopeResourceRole.md)
+Delete navigation property roles for identityGovernance
+
+### [Remove-MgEntitlementManagementResourceScopeResourceRoleResource](Remove-MgEntitlementManagementResourceScopeResourceRoleResource.md)
+Delete navigation property resource for identityGovernance
 
 ### [Remove-MgIdentityGovernanceAccessReviewDefinition](Remove-MgIdentityGovernanceAccessReviewDefinition.md)
 Deletes an accessReviewScheduleDefinition object.
@@ -1717,6 +2430,9 @@ In Azure AD entitlement management, approve or deny an approvalStage object in a
 ### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
 
+### [Update-MgEntitlementManagementAccessPackageResourceRoleScope](Update-MgEntitlementManagementAccessPackageResourceRoleScope.md)
+Update the navigation property resourceRoleScopes in identityGovernance
+
 ### [Update-MgEntitlementManagementAssignment](Update-MgEntitlementManagementAssignment.md)
 In Azure AD entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package.
 The **state** of the access package assignment must be `Delivered` for the administrator to reprocess the user's assignment.
@@ -1740,8 +2456,203 @@ Update an existing accessPackageCatalog object to change one or more of its prop
 ### [Update-MgEntitlementManagementCatalogCustomWorkflowExtension](Update-MgEntitlementManagementCatalogCustomWorkflowExtension.md)
 Update the navigation property customWorkflowExtensions in identityGovernance
 
+### [Update-MgEntitlementManagementCatalogResource](Update-MgEntitlementManagementCatalogResource.md)
+Update the navigation property resources in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceRole](Update-MgEntitlementManagementCatalogResourceRole.md)
+Update the navigation property resourceRoles in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceRoleResource](Update-MgEntitlementManagementCatalogResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceRoleResourceScope](Update-MgEntitlementManagementCatalogResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceRoleResourceScopeResource](Update-MgEntitlementManagementCatalogResourceRoleResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole](Update-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceScope](Update-MgEntitlementManagementCatalogResourceScope.md)
+Update the navigation property resourceScopes in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceScopeResource](Update-MgEntitlementManagementCatalogResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceScopeResourceRole](Update-MgEntitlementManagementCatalogResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceScopeResourceRoleResource](Update-MgEntitlementManagementCatalogResourceScopeResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope](Update-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
 ### [Update-MgEntitlementManagementConnectedOrganization](Update-MgEntitlementManagementConnectedOrganization.md)
 Update a connectedOrganization object to change one or more of its properties.
+
+### [Update-MgEntitlementManagementResource](Update-MgEntitlementManagementResource.md)
+Update the navigation property resources in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironment](Update-MgEntitlementManagementResourceEnvironment.md)
+Update the navigation property resourceEnvironments in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResource](Update-MgEntitlementManagementResourceEnvironmentResource.md)
+Update the navigation property resources in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceRole](Update-MgEntitlementManagementResourceEnvironmentResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceRoleResource](Update-MgEntitlementManagementResourceEnvironmentResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope](Update-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResource](Update-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceScope](Update-MgEntitlementManagementResourceEnvironmentResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceScopeResource](Update-MgEntitlementManagementResourceEnvironmentResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole](Update-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResource](Update-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequest](Update-MgEntitlementManagementResourceRequest.md)
+Update the navigation property resourceRequests in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalog](Update-MgEntitlementManagementResourceRequestCatalog.md)
+Update the navigation property catalog in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](Update-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
+Update the navigation property customWorkflowExtensions in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResource](Update-MgEntitlementManagementResourceRequestCatalogResource.md)
+Update the navigation property resources in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceRole](Update-MgEntitlementManagementResourceRequestCatalogResourceRole.md)
+Update the navigation property resourceRoles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResource](Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope](Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource](Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole](Update-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceScope](Update-MgEntitlementManagementResourceRequestCatalogResourceScope.md)
+Update the navigation property resourceScopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResource](Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole](Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource](Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope](Update-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResource](Update-MgEntitlementManagementResourceRequestResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceRole](Update-MgEntitlementManagementResourceRequestResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceRoleResource](Update-MgEntitlementManagementResourceRequestResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceRoleResourceScope](Update-MgEntitlementManagementResourceRequestResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResource](Update-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceScope](Update-MgEntitlementManagementResourceRequestResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceScopeResource](Update-MgEntitlementManagementResourceRequestResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceScopeResourceRole](Update-MgEntitlementManagementResourceRequestResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResource](Update-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRole](Update-MgEntitlementManagementResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleResource](Update-MgEntitlementManagementResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleResourceScope](Update-MgEntitlementManagementResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleResourceScopeResource](Update-MgEntitlementManagementResourceRoleResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScope](Update-MgEntitlementManagementResourceRoleScope.md)
+Update the navigation property resourceRoleScopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeResource](Update-MgEntitlementManagementResourceRoleScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeResourceRole](Update-MgEntitlementManagementResourceRoleScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeResourceRoleResource](Update-MgEntitlementManagementResourceRoleScopeResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope](Update-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeResourceScope](Update-MgEntitlementManagementResourceRoleScopeResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeRole](Update-MgEntitlementManagementResourceRoleScopeRole.md)
+Update the navigation property role in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeRoleResource](Update-MgEntitlementManagementResourceRoleScopeRoleResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeRoleResourceRole](Update-MgEntitlementManagementResourceRoleScopeRoleResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeRoleResourceScope](Update-MgEntitlementManagementResourceRoleScopeRoleResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResource](Update-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole](Update-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceScope](Update-MgEntitlementManagementResourceScope.md)
+Update the navigation property scopes in identityGovernance
+
+### [Update-MgEntitlementManagementResourceScopeResource](Update-MgEntitlementManagementResourceScopeResource.md)
+Update the navigation property resource in identityGovernance
+
+### [Update-MgEntitlementManagementResourceScopeResourceRole](Update-MgEntitlementManagementResourceScopeResourceRole.md)
+Update the navigation property roles in identityGovernance
+
+### [Update-MgEntitlementManagementResourceScopeResourceRoleResource](Update-MgEntitlementManagementResourceScopeResourceRoleResource.md)
+Update the navigation property resource in identityGovernance
 
 ### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
 Update an existing entitlementManagementSettings object to change one or more of its properties.

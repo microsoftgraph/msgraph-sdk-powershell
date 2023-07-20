@@ -7669,11 +7669,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteRegistration
       parameters:
         - name: virtualEvent-id
@@ -11950,11 +11950,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteRegistration
       parameters:
         - name: virtualEventWebinar-id

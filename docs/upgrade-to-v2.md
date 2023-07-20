@@ -72,6 +72,14 @@ We've dropped support for `-ForceRefresh` on `Connect-MgGraph` command. `-ForceR
 
 Directory role and entitlement management commands that were in `DeviceManagement.Enrollment` module have been moved to `Identity.Governance` to align with the [API reference](https://learn.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0).
 
+### Product Name Change in Certain Command
+
+Pluralized product names, such as Windows, were wrongly named to their singular forms (e.g., Window) in the v1 SDK. In the v2 SDK, these names have been restored to their original plural forms. Therefore, commands that used to have `Window` in their name now have `Windows` instead. For example:
+| v1 SDK | v2 SDK |
+| - | - |
+| Get-MgDeviceManagement**Window**AutopilotDeviceIdentity | Get-MgDeviceManagement**Windows**AutopilotDeviceIdentity |
+| Get-MgDeviceManagement**Window**InformationProtectionAppLearningSummary | Get-MgDeviceManagement**Windows**InformationProtectionAppLearningSummary |
+
 ## New Features and Improvements
 
 The following new features and improvements have been added to the module in v2.

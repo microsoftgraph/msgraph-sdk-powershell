@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgParseServicePrincipalSynchronizationTemplateSchemaExpression
 
 ## SYNOPSIS
-Invoke action parseExpression
+Parse a given string expression into an attributeMappingSource object.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Invoke-MgParseServicePrincipalSynchronizationTemplateSchemaExpression -InputObje
 ```
 
 ## DESCRIPTION
-Invoke action parseExpression
+Parse a given string expression into an attributeMappingSource object.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 
 ## EXAMPLES
 
@@ -246,38 +248,39 @@ To create the parameters described below, construct a hash table containing the 
   - `[Expression <String>]`: 
   - `[TargetAttributeDefinition <IMicrosoftGraphAttributeDefinition>]`: attributeDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Anchor <Boolean?>]`: 
+    - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
     - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-      - `[Key <String>]`: 
-      - `[Value <String>]`: 
-    - `[CaseExact <Boolean?>]`: 
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
+    - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
     - `[DefaultValue <String>]`: 
-    - `[FlowNullValues <Boolean?>]`: 
-    - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+    - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+    - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
       - `[Key <String>]`: attributeDefinitionMetadata
-      - `[Value <String>]`: 
-    - `[Multivalued <Boolean?>]`: 
+      - `[Value <String>]`: Value of the metadata property.
+    - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
     - `[Mutability <String>]`: mutability
-    - `[Name <String>]`: 
-    - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-      - `[ReferencedObjectName <String>]`: 
-      - `[ReferencedProperty <String>]`: 
-    - `[Required <Boolean?>]`: 
+    - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+    - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+      - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+      - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+    - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     - `[Type <String>]`: attributeType
   - `[TestInputObject <IMicrosoftGraphExpressionInputObject>]`: expressionInputObject
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Definition <IMicrosoftGraphObjectDefinition>]`: objectDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+      - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
+      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
         - `[Key <String>]`: objectDefinitionMetadata
-        - `[Value <String>]`: 
-      - `[Name <String>]`: 
-      - `[SupportedApis <String[]>]`: 
-    - `[Properties <IMicrosoftGraphStringKeyObjectValuePair[]>]`: 
-      - `[Key <String>]`: 
+        - `[Value <String>]`: Value of the metadata property.
+      - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+      - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
+    - `[Properties <IMicrosoftGraphStringKeyObjectValuePair[]>]`: Property values of the test object.
+      - `[Key <String>]`: Key.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application
@@ -301,55 +304,55 @@ To create the parameters described below, construct a hash table containing the 
 
 `TARGETATTRIBUTEDEFINITION <IMicrosoftGraphAttributeDefinition>`: attributeDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Anchor <Boolean?>]`: 
+  - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
   - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-    - `[Key <String>]`: 
-    - `[Value <String>]`: 
-  - `[CaseExact <Boolean?>]`: 
+    - `[Key <String>]`: Key.
+    - `[Value <String>]`: Value.
+  - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
   - `[DefaultValue <String>]`: 
-  - `[FlowNullValues <Boolean?>]`: 
-  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+  - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
     - `[Key <String>]`: attributeDefinitionMetadata
-    - `[Value <String>]`: 
-  - `[Multivalued <Boolean?>]`: 
+    - `[Value <String>]`: Value of the metadata property.
+  - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
   - `[Mutability <String>]`: mutability
-  - `[Name <String>]`: 
-  - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-    - `[ReferencedObjectName <String>]`: 
-    - `[ReferencedProperty <String>]`: 
-  - `[Required <Boolean?>]`: 
+  - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+  - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+    - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+    - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+  - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
   - `[Type <String>]`: attributeType
 
 `TESTINPUTOBJECT <IMicrosoftGraphExpressionInputObject>`: expressionInputObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Definition <IMicrosoftGraphObjectDefinition>]`: objectDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-      - `[Anchor <Boolean?>]`: 
+    - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
+      - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
       - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
-        - `[Key <String>]`: 
-        - `[Value <String>]`: 
-      - `[CaseExact <Boolean?>]`: 
+        - `[Key <String>]`: Key.
+        - `[Value <String>]`: Value.
+      - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
       - `[DefaultValue <String>]`: 
-      - `[FlowNullValues <Boolean?>]`: 
-      - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+      - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
+      - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
         - `[Key <String>]`: attributeDefinitionMetadata
-        - `[Value <String>]`: 
-      - `[Multivalued <Boolean?>]`: 
+        - `[Value <String>]`: Value of the metadata property.
+      - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
       - `[Mutability <String>]`: mutability
-      - `[Name <String>]`: 
-      - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
-        - `[ReferencedObjectName <String>]`: 
-        - `[ReferencedProperty <String>]`: 
-      - `[Required <Boolean?>]`: 
+      - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
+      - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).
+        - `[ReferencedObjectName <String>]`: Name of the referenced object. Must match one of the objects in the directory definition.
+        - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
+      - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
       - `[Type <String>]`: attributeType
-    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
       - `[Key <String>]`: objectDefinitionMetadata
-      - `[Value <String>]`: 
-    - `[Name <String>]`: 
-    - `[SupportedApis <String[]>]`: 
-  - `[Properties <IMicrosoftGraphStringKeyObjectValuePair[]>]`: 
-    - `[Key <String>]`: 
+      - `[Value <String>]`: Value of the metadata property.
+    - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+    - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
+  - `[Properties <IMicrosoftGraphStringKeyObjectValuePair[]>]`: Property values of the test object.
+    - `[Key <String>]`: Key.
 
 ## RELATED LINKS
 

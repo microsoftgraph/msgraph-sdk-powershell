@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Devices.CloudPrint
+```powershell
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 
 $params = @{
 	status = @{
@@ -12,5 +13,6 @@ $params = @{
 Update-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaPrintTaskDefinitionTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

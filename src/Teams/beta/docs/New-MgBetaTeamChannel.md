@@ -78,14 +78,14 @@ Import-Module Microsoft.Graph.Beta.Teams
 ```
 
 $params = @{
-	"@odata.type" = "#Microsoft.Graph.Beta.channel"
+	"@odata.type" = "#Microsoft.Graph.channel"
 	membershipType = "private"
 	displayName = "My First Private Channel"
 	description = "This is my first private channels"
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('62855810-484b-4823-9e01-60667f8b12ae')"
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('62855810-484b-4823-9e01-60667f8b12ae')"
 			roles = @(
 				"owner"
 			)
@@ -115,14 +115,33 @@ Import-Module Microsoft.Graph.Beta.Teams
 ```
 
 $params = @{
-	"@odata.type" = "#Microsoft.Graph.Beta.channel"
+	displayName = "TestChannelModeration"
+	description = "Test channel moderation."
+	membershipType = "standard"
+	moderationSettings = @{
+		userNewMessageRestriction = "everyoneExceptGuests"
+		replyRestriction = "everyone"
+		allowNewMessageFromBots = $true
+		allowNewMessageFromConnectors = $true
+	}
+}
+
+New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
+
+### -------------------------- EXAMPLE 5 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+```
+
+$params = @{
+	"@odata.type" = "#Microsoft.Graph.channel"
 	membershipType = "private"
 	displayName = "My First Private Channel"
 	description = "This is my first private channels"
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
 			roles = @(
 				"owner"
 			)
@@ -132,7 +151,7 @@ $params = @{
 
 New-MgBetaTeamChannel -TeamId $teamId -BodyParameter $params
 
-### -------------------------- EXAMPLE 5 --------------------------
+### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
 ```
@@ -144,7 +163,7 @@ $params = @{
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('7640023f-fe43-573f-9ff4-84a9efe4acd6')"
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('7640023f-fe43-gv3f-9gg4-84a9efe4acd6')"
 			roles = @(
 				"owner"
 			)

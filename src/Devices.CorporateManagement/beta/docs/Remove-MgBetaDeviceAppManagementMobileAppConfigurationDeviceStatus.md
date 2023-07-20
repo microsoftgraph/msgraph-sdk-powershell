@@ -169,7 +169,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Remove-BetaDeviceAppMgtMobileAppConfigurationDeviceStatus
+Remove-MgBetaDeviceAppMgtMobileAppConfigurationDeviceStatus
 
 COMPLEX PARAMETER PROPERTIES
 

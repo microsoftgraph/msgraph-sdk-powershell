@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaEducationUser
 
 ## SYNOPSIS
-Update the relatedContact collection of an educationUser object.
+Update the properties of an **educationuser** object.
 
 ## SYNTAX
 
@@ -66,7 +66,7 @@ Update-MgBetaEducationUser -InputObject <IEducationIdentity> [-AccountEnabled]
 ```
 
 ## DESCRIPTION
-Update the relatedContact collection of an educationUser object.
+Update the properties of an **educationuser** object.
 
 ## EXAMPLES
 

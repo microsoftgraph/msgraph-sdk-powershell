@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 4eac45f5-9da5-4622-98bc-5ed12b954dcd
+Module Guid: f0661d35-e4b2-4520-9b0a-2d77d4670425
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -480,22 +480,28 @@ Mark a chat as read for a user.
 Mark a chat as unread for a user.
 
 ### [Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsJunk](Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsJunk.md)
-Invoke action markAsJunk
+Mark a message as junk.
+This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
 
 ### [Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsNotJunk](Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsNotJunk.md)
-Invoke action markAsNotJunk
+Mark a message as not junk.
+This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
 
 ### [Invoke-MgBetaMarkUserMailFolderMessageAsJunk](Invoke-MgBetaMarkUserMailFolderMessageAsJunk.md)
-Invoke action markAsJunk
+Mark a message as junk.
+This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
 
 ### [Invoke-MgBetaMarkUserMailFolderMessageAsNotJunk](Invoke-MgBetaMarkUserMailFolderMessageAsNotJunk.md)
-Invoke action markAsNotJunk
+Mark a message as not junk.
+This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
 
 ### [Invoke-MgBetaMarkUserMessageAsJunk](Invoke-MgBetaMarkUserMessageAsJunk.md)
-Invoke action markAsJunk
+Mark a message as junk.
+This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
 
 ### [Invoke-MgBetaMarkUserMessageAsNotJunk](Invoke-MgBetaMarkUserMessageAsNotJunk.md)
-Invoke action markAsNotJunk
+Mark a message as not junk.
+This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
 
 ### [Invoke-MgBetaOverrideUserManagedDeviceComplianceState](Invoke-MgBetaOverrideUserManagedDeviceComplianceState.md)
 Invoke action overrideComplianceState

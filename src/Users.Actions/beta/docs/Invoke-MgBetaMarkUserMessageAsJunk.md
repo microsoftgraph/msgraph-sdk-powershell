@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaMarkUserMessageAsJunk
 
 ## SYNOPSIS
-Invoke action markAsJunk
+Mark a message as junk.
+This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Invoke-MgBetaMarkUserMessageAsJunk -InputObject <IUsersActionsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Invoke action markAsJunk
+Mark a message as junk.
+This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
 
 ## EXAMPLES
 

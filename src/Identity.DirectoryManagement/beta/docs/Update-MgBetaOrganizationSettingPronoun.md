@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgBetaOrganizationSettingPronoun
 
 ## SYNOPSIS
-Update the properties of a pronounsSettings in an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Update the navigation property pronouns in organization
 
 ## SYNTAX
 
@@ -39,8 +38,7 @@ Update-MgBetaOrganizationSettingPronoun -InputObject <IIdentityDirectoryManageme
 ```
 
 ## DESCRIPTION
-Update the properties of a pronounsSettings in an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Update the navigation property pronouns in organization
 
 ## EXAMPLES
 

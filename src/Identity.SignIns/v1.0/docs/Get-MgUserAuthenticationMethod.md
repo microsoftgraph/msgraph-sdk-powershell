@@ -42,7 +42,7 @@ Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationMethod -UserId $userId
+Get-MgUserAuthenticationMethod -UserId $userId -AuthenticationMethodId $authenticationMethodId
 
 ## PARAMETERS
 

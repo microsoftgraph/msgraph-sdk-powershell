@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportMonthlyPrintUsageByPrinter
 
 ## SYNOPSIS
-Get monthlyPrintUsageByPrinter from reports
+Retrieve a list of monthly print usage summaries, grouped by printer.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgReportMonthlyPrintUsageByPrinter -InputObject <IReportsIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get monthlyPrintUsageByPrinter from reports
+Retrieve a list of monthly print usage summaries, grouped by printer.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 48336a40-476d-49e7-ac36-a25a40017ad0
+Module Guid: ae211058-1e50-4d4a-a5bb-805ee184fdbe
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -550,6 +550,12 @@ Publishes a [contentType][] present in the content type hub site.
 
 ### [Remove-MgUserDeviceFromManagement](Remove-MgUserDeviceFromManagement.md)
 Retire all devices from management for this user
+
+### [Remove-MgUserDriveItemPermanent](Remove-MgUserDriveItemPermanent.md)
+Invoke action permanentDelete
+
+### [Remove-MgUserDriveRootPermanent](Remove-MgUserDriveRootPermanent.md)
+Invoke action permanentDelete
 
 ### [Remove-MgUserManagedDeviceUserFromSharedAppleDevice](Remove-MgUserManagedDeviceUserFromSharedAppleDevice.md)
 Delete user from shared Apple device

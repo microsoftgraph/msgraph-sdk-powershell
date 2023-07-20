@@ -39,6 +39,16 @@ Admins can approve or reject these apps via this API or the Microsoft Teams admi
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
+$params = [Zip file containing a Teams app package]
+
+
+New-MgBetaAppCatalogTeamApp -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+```
+
 New-MgBetaAppCatalogTeamApp -Requiresreview true
 
 ## PARAMETERS

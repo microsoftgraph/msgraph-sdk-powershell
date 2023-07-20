@@ -3,8 +3,8 @@
 ```powershellImport-Module Microsoft.Graph.Beta.Mail
 
 $params = @{
-	receivedDateTime = [System.DateTime]::Parse("datetime-value")
-	sentDateTime = [System.DateTime]::Parse("datetime-value")
+	receivedDateTime = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
+	sentDateTime = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
 	hasAttachments = $true
 	subject = "subject-value"
 	body = @{

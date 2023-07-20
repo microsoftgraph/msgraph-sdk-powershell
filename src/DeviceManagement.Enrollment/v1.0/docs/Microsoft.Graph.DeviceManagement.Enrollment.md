@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: 556615ea-3fd1-43eb-a3b7-2bf117c7a0c9
+Module Guid: aab11d21-5c9c-4025-966f-01c7ef67f5f8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US

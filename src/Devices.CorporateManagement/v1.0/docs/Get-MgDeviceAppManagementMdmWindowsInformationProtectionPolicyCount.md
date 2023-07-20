@@ -81,7 +81,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-DeviceAppMgtMdmWindowInformationProtectionPolicyCount
+Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicyCount
 
 ## RELATED LINKS
 

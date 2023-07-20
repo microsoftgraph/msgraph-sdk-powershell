@@ -283,7 +283,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-BetaDeviceAppMgtEnterpriseCodeSigningCertificate
+New-MgBetaDeviceAppMgtEnterpriseCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

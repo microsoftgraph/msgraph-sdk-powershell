@@ -115,7 +115,7 @@ $params = @{
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#microsoft.graph.participantInfo"
 			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
 				user = @{
@@ -133,6 +133,7 @@ $params = @{
 		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
 		removeFromDefaultAudioGroup = $false
 	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
 
 New-MgBetaCommunicationCall -BodyParameter $params
@@ -147,7 +148,7 @@ This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	direction = "outgoing"
-	subject = "Create a group call with application hosted media"
+	subject = "Create a group call with app hosted media"
 	callbackUri = "https://bot.contoso.com/callback"
 	source = @{
 		"@odata.type" = "#microsoft.graph.participantInfo"
@@ -173,7 +174,7 @@ $params = @{
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#microsoft.graph.participantInfo"
 			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
 				user = @{
@@ -189,8 +190,10 @@ $params = @{
 	)
 	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "&lt;Media Session Configuration&gt;"
 		removeFromDefaultAudioGroup = $false
 	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
 
 New-MgBetaCommunicationCall -BodyParameter $params
@@ -225,8 +228,8 @@ $params = @{
 			user = @{
 				"@odata.type" = "#microsoft.graph.identity"
 				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "9f386a15-f9cc-445b-8106-ac85e314a07b"
 				displayName = "Bob"
-				tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 			}
 		}
 		allowConversationWithoutHost = $true
@@ -239,47 +242,7 @@ New-MgBetaCommunicationCall -BodyParameter $params
 This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Join scheduled meeting with application hosted media
-
-```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	direction = "outgoing"
-	callbackUri = "https://bot.contoso.com/callback"
-	requestedModalities = @(
-		"audio"
-	)
-	mediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-	}
-	chatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
-		threadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
-		messageId = "0"
-	}
-	meetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
-		organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			user = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-				displayName = "Bob"
-			}
-		}
-		allowConversationWithoutHost = $true
-	}
-	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-}
-
-New-MgBetaCommunicationCall -BodyParameter $params
-```
-This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 7: Join a scheduled meeting with joinMeetingId and passcode
+### Example 6: Join a scheduled meeting with joinMeetingId and passcode
 
 ```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
 
@@ -307,7 +270,7 @@ New-MgBetaCommunicationCall -BodyParameter $params
 This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 8: Join a scheduled meeting with joinMeetingId
+### Example 7: Join a scheduled meeting with joinMeetingId
 
 ```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
 
@@ -335,7 +298,139 @@ New-MgBetaCommunicationCall -BodyParameter $params
 This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 9: Create peer-to-peer PSTN call with service hosted media
+### Example 8: Join scheduled meeting with app hosted media
+
+```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	direction = "outgoing"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "&lt;Media Session Configuration&gt;"
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
+		messageId = "0"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+}
+
+New-MgBetaCommunicationCall -BodyParameter $params
+```
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 9: Join channel meeting with service hosted media
+
+```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
+		messageId = "1533758867081"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+}
+
+New-MgBetaCommunicationCall -BodyParameter $params
+```
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 10: Join channel meeting as a guest with service hosted media
+
+```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
+		"@odata.type" = "#microsoft.graph.participantInfo"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			guest = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				displayName = "Guest User"
+				id = "d7a3b999-17ac-4bca-9e77-e6a730d2ec2e"
+			}
+		}
+	}
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
+		messageId = "1533758867081"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+}
+
+New-MgBetaCommunicationCall -BodyParameter $params
+```
+This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 11: Create peer-to-peer PSTN call with service hosted media
 
 ```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
 
@@ -383,7 +478,7 @@ New-MgBetaCommunicationCall -BodyParameter $params
 This example shows how to use the New-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 10: Create peer-to-peer PSTN call with application hosted media
+### Example 12: Create peer-to-peer PSTN call with application hosted media
 
 ```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
 

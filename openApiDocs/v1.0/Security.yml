@@ -5182,6 +5182,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/microsoft.graph.security.export':
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action export
+      description: 'Initiate an export from a ediscoveryReviewSet. For details, see Export documents from a review set in eDiscovery (Premium).'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-export?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_export
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                outputName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                exportOptions:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportOptions'
+                exportStructure:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportFileStructure'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries':
     get:
       tags:
@@ -5547,6 +5600,67 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries/{ediscoveryReviewSetQuery-id}/microsoft.graph.security.export':
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action export
+      description: 'Initiate an export from a microsoft.graph.security.ediscoveryReviewSetQuery. For details, see Export documents from a review set in eDiscovery (Premium).'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-export?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet.query_export
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+        - name: ediscoveryReviewSetQuery-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSetQuery
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSetQuery
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                outputName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+                exportOptions:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportOptions'
+                exportStructure:
+                  $ref: '#/components/schemas/microsoft.graph.security.exportFileStructure'
               additionalProperties:
                 type: object
         required: true
@@ -11711,7 +11825,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get intelligenceProfileIndicators from security
+      summary: Get intelligenceProfileIndicator
+      description: Read the properties and relationships of a intelligenceProfileIndicator object.
       operationId: security.threatIntelligence_ListIntelligenceProfileIndicator
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11802,7 +11917,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get intelligenceProfileIndicators from security
+      summary: Get intelligenceProfileIndicator
+      description: Read the properties and relationships of a intelligenceProfileIndicator object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-intelligenceprofileindicator-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetIntelligenceProfileIndicator
       parameters:
         - name: intelligenceProfileIndicator-id
@@ -15362,6 +15481,23 @@ components:
         - linkedFiles
         - unknownFutureValue
       type: string
+    microsoft.graph.security.exportOptions:
+      title: exportOptions
+      enum:
+        - originalFiles
+        - text
+        - pdfReplacement
+        - tags
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.exportFileStructure:
+      title: exportFileStructure
+      enum:
+        - none
+        - directory
+        - pst
+        - unknownFutureValue
+      type: string
     microsoft.graph.security.ediscoveryReviewSetQuery:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.security.search'
@@ -18636,10 +18772,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.certificationControl'
-          description: Collection of the certification controls associated with certification
+          description: Collection of the certification controls associated with the certification.
         certificationName:
           type: string
-          description: 'Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)'
+          description: 'The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.'
           nullable: true
       additionalProperties:
         type: object
@@ -25476,6 +25612,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.teamsApp:
@@ -28547,6 +28684,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object

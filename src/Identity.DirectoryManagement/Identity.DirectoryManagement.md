@@ -53,7 +53,7 @@ directive:
   - where:
       subject: ^DirectoryDeleted(application|administrativeUnit|appRoleAssignment|directoryObject|directoryRole|device|group|orgContact|servicePrincipal|user)$
     set:
-      alias: ${verb}-Mg${subject}
+      alias: ${verb}-Mg${subject-prefix}${subject}
   - where:
       subject: ^(DirectoryDeleted)(application|administrativeUnit|appRoleAssignment|directoryObject|directoryRole|device|group|orgContact|servicePrincipal|user)$
     set:

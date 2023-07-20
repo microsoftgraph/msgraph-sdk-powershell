@@ -438,7 +438,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-BetaDeviceAppMgtManagedAppRegistration
+New-MgBetaDeviceAppMgtManagedAppRegistration
 
 COMPLEX PARAMETER PROPERTIES
 

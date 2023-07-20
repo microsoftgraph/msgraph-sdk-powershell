@@ -112,7 +112,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Remove-BetaDeviceAppMgtSymantecCodeSigningCertificate
+Remove-MgBetaDeviceAppMgtSymantecCodeSigningCertificate
 
 ## RELATED LINKS
 

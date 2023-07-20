@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaUserMessage
 
 ## SYNOPSIS
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
-For example, you can delete a specific @-mention of the specified user in the message.
+Delete eventMessage.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaUserMessage -InputObject <IMailIdentity> [-IfMatch <String>] [-Pass
 ```
 
 ## DESCRIPTION
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
-For example, you can delete a specific @-mention of the specified user in the message.
+Delete eventMessage.
 
 ## EXAMPLES
 
@@ -38,6 +36,14 @@ Import-Module Microsoft.Graph.Beta.Mail
 
 # A UPN can also be used as -UserId.
 Remove-MgBetaUserMessage -UserId $userId -MessageId $messageId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Remove-MgBetaUserMessageMention -UserId $userId -MessageId $messageId -MentionId $mentionId
 
 ## PARAMETERS
 

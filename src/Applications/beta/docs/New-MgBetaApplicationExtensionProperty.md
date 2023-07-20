@@ -53,6 +53,7 @@ Import-Module Microsoft.Graph.Beta.Applications
 $params = @{
 	name = "jobGroup"
 	dataType = "String"
+	isMultiValued = $true
 	targetObjects = @(
 		"User"
 	)

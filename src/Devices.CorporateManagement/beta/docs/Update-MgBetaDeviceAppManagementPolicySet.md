@@ -342,7 +342,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-BetaDeviceAppMgtPolicySet
+Update-MgBetaDeviceAppMgtPolicySet
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Test-BetaDeviceAppMgtMobileAppXml
+Test-MgBetaDeviceAppMgtMobileAppXml
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgChatMessageReply
 
 ## SYNOPSIS
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ## SYNTAX
 
@@ -55,7 +55,7 @@ New-MgChatMessageReply -InputObject <ITeamsIdentity> [-ChatId <String>] [-Additi
 ```
 
 ## DESCRIPTION
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ## EXAMPLES
 

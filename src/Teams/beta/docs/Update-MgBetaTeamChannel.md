@@ -58,7 +58,18 @@ Update the properties of the specified channel.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Update-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId
+$params = @{
+	displayName = "UpdateChannelModeration"
+	description = "Update channel moderation."
+	moderationSettings = @{
+		userNewMessageRestriction = "moderators"
+		replyRestriction = "everyone"
+		allowNewMessageFromBots = $true
+		allowNewMessageFromConnectors = $true
+	}
+}
+
+Update-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ## PARAMETERS
 

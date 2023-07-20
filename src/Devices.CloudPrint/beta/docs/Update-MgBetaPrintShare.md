@@ -63,9 +63,9 @@ Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
 $params = @{
-	displayName = "PrinterShare Name"
-	"printer@odata.bind" = "https://graph.microsoft.com/v1.0/print/printers/{printerId}"
-	allowAllUsers = $false
+	displayName = "ShareName"
+	allowAllUsers = $true
+	"printer@odata.bind" = "https://graph.microsoft.com/beta/print/printers/{id}"
 }
 
 Update-MgBetaPrintShare -PrinterShareId $printerShareId -BodyParameter $params

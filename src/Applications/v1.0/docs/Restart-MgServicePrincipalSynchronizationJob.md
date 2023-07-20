@@ -8,7 +8,8 @@ schema: 2.0.0
 # Restart-MgServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
-Invoke action restart
+Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
+Optionally clears existing the synchronization state and previous errors.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Restart-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity
 ```
 
 ## DESCRIPTION
-Invoke action restart
+Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
+Optionally clears existing the synchronization state and previous errors.
 
 ## EXAMPLES
 
@@ -233,6 +235,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ResetScope <String>]`: synchronizationJobRestartScope
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application

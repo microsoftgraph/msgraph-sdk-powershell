@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronizationAccessToken
 
 ## SYNOPSIS
-Invoke action acquireAccessToken
+Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Get-MgServicePrincipalSynchronizationAccessToken -InputObject <IApplicationsIden
 ```
 
 ## DESCRIPTION
-Invoke action acquireAccessToken
+Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
 
 ## EXAMPLES
 
@@ -211,13 +211,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Credentials <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
     - `[Key <String>]`: synchronizationSecret
-    - `[Value <String>]`: 
+    - `[Value <String>]`: The value of the secret.
 
 `CREDENTIALS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>`: .
   - `[Key <String>]`: synchronizationSecret
-  - `[Value <String>]`: 
+  - `[Value <String>]`: The value of the secret.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application

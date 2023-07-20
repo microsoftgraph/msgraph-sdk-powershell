@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 37526a13-8ce7-45af-b047-71a2efdf7d3a
+Module Guid: 9038e189-7e22-4f78-a197-16da64356b1e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -40,6 +40,14 @@ For more information about purging Teams messages, see:\n- eDiscovery solution s
 ### [Close-MgSecurityCaseEdiscoveryCase](Close-MgSecurityCaseEdiscoveryCase.md)
 Close an eDiscovery case.
 For details, see Close a case.
+
+### [Export-MgSecurityCaseEdiscoveryCaseReviewSet](Export-MgSecurityCaseEdiscoveryCaseReviewSet.md)
+Initiate an export from a ediscoveryReviewSet.
+For details, see Export documents from a review set in eDiscovery (Premium).
+
+### [Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
+Initiate an export from a microsoft.graph.security.ediscoveryReviewSetQuery.
+For details, see Export documents from a review set in eDiscovery (Premium).
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
 Retrieve the properties and relationships of an alert object.
@@ -313,7 +321,7 @@ The parent host related to this passiveDnsRecord entry.
 Generally, this is the value that you can search to discover this passiveDnsRecord value.
 
 ### [Get-MgSecurityThreatIntelligenceProfileIndicator](Get-MgSecurityThreatIntelligenceProfileIndicator.md)
-Get intelligenceProfileIndicators from security
+Read the properties and relationships of a intelligenceProfileIndicator object.
 
 ### [Get-MgSecurityThreatIntelligenceProfileIndicatorArtifact](Get-MgSecurityThreatIntelligenceProfileIndicatorArtifact.md)
 The artifact related to this indicator.

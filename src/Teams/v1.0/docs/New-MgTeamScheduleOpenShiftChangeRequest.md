@@ -47,17 +47,15 @@ Create instance of an openShiftChangeRequest object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
 ```
 
-{{ Add output here }}
+$params = @{
+	senderMessage = "Can I take this shift?"
+	openShiftId = "577b75d2-a927-48c0-a5d1-dc984894e7b8"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgTeamScheduleOpenShiftChangeRequest -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: 87d212a0-6ce5-4a57-b167-a31e8bf8bbaa
+Module Guid: 4fc5ed7a-63d1-4fb9-9e79-2820b8e089fb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1074,8 +1074,7 @@ The profileCardProperty is identified by its **directoryPropertyName** property.
 Get the number of the resource
 
 ### [Get-MgBetaOrganizationSettingPronoun](Get-MgBetaOrganizationSettingPronoun.md)
-Get the properties of the pronounsSettings resource for an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Get pronouns from organization
 
 ### [Get-MgBetaOrganizationUserOwnedObject](Get-MgBetaOrganizationUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
@@ -1900,8 +1899,7 @@ To learn more about customizing insights privacy for your organization, see:\n- 
 Update the navigation property profileCardProperties in organization
 
 ### [Update-MgBetaOrganizationSettingPronoun](Update-MgBetaOrganizationSettingPronoun.md)
-Update the properties of a pronounsSettings in an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Update the navigation property pronouns in organization
 
 ### [Update-MgBetaSubscribedSku](Update-MgBetaSubscribedSku.md)
 Update entity in subscribedSkus

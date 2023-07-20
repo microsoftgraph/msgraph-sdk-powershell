@@ -166,7 +166,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-BetaDeviceAppMgtVppTokenLicenseGraphFPreApp
+Get-MgBetaDeviceAppMgtVppTokenLicenseGraphFPreApp
 
 COMPLEX PARAMETER PROPERTIES
 

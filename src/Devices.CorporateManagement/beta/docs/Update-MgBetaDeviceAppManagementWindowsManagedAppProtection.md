@@ -682,7 +682,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-BetaDeviceAppMgtWindowManagedAppProtection
+Update-MgBetaDeviceAppMgtWindowManagedAppProtection
 
 COMPLEX PARAMETER PROPERTIES
 

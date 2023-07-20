@@ -83,7 +83,10 @@ Import-Module Microsoft.Graph.Files
 ```
 
 $params = @{
-	name = "new-file-name.docx"
+	parentReference = @{
+		id = '{new-parent-folder-id}'
+	}
+	name = "new-item-name.txt"
 }
 
 Update-MgDriveItem -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params

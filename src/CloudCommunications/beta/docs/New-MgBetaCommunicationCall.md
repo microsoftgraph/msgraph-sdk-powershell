@@ -156,7 +156,7 @@ $params = @{
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#microsoft.graph.participantInfo"
 			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
 				user = @{
@@ -174,6 +174,7 @@ $params = @{
 		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
 		removeFromDefaultAudioGroup = $false
 	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
 
 New-MgBetaCommunicationCall -BodyParameter $params
@@ -186,7 +187,7 @@ Import-Module Microsoft.Graph.Beta.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	direction = "outgoing"
-	subject = "Create a group call with application hosted media"
+	subject = "Create a group call with app hosted media"
 	callbackUri = "https://bot.contoso.com/callback"
 	source = @{
 		"@odata.type" = "#microsoft.graph.participantInfo"
@@ -212,7 +213,7 @@ $params = @{
 			}
 		}
 		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			"@odata.type" = "#microsoft.graph.participantInfo"
 			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
 				user = @{
@@ -228,8 +229,10 @@ $params = @{
 	)
 	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "&lt;Media Session Configuration&gt;"
 		removeFromDefaultAudioGroup = $false
 	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
 
 New-MgBetaCommunicationCall -BodyParameter $params
@@ -262,8 +265,8 @@ $params = @{
 			user = @{
 				"@odata.type" = "#microsoft.graph.identity"
 				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "9f386a15-f9cc-445b-8106-ac85e314a07b"
 				displayName = "Bob"
-				tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
 			}
 		}
 		allowConversationWithoutHost = $true
@@ -274,44 +277,6 @@ $params = @{
 New-MgBetaCommunicationCall -BodyParameter $params
 
 ### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	direction = "outgoing"
-	callbackUri = "https://bot.contoso.com/callback"
-	requestedModalities = @(
-		"audio"
-	)
-	mediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-	}
-	chatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
-		threadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
-		messageId = "0"
-	}
-	meetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
-		organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			user = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-				displayName = "Bob"
-			}
-		}
-		allowConversationWithoutHost = $true
-	}
-	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-}
-
-New-MgBetaCommunicationCall -BodyParameter $params
-
-### -------------------------- EXAMPLE 7 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
@@ -337,7 +302,7 @@ $params = @{
 
 New-MgBetaCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 8 --------------------------
+### -------------------------- EXAMPLE 7 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
@@ -363,7 +328,133 @@ $params = @{
 
 New-MgBetaCommunicationCall -BodyParameter $params
 
+### -------------------------- EXAMPLE 8 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	direction = "outgoing"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "&lt;Media Session Configuration&gt;"
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
+		messageId = "0"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+}
+
+New-MgBetaCommunicationCall -BodyParameter $params
+
 ### -------------------------- EXAMPLE 9 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
+		messageId = "1533758867081"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+}
+
+New-MgBetaCommunicationCall -BodyParameter $params
+
+### -------------------------- EXAMPLE 10 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
+		"@odata.type" = "#microsoft.graph.participantInfo"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			guest = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				displayName = "Guest User"
+				id = "d7a3b999-17ac-4bca-9e77-e6a730d2ec2e"
+			}
+		}
+	}
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
+		messageId = "1533758867081"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+}
+
+New-MgBetaCommunicationCall -BodyParameter $params
+
+### -------------------------- EXAMPLE 11 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
@@ -409,7 +500,7 @@ $params = @{
 
 New-MgBetaCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 10 --------------------------
+### -------------------------- EXAMPLE 12 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
@@ -1037,8 +1128,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1065,8 +1156,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1189,8 +1280,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Original <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1212,8 +1303,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[SourceParticipantId <String>]`: The id of the participant that triggered the incoming call. Read-only.
@@ -1257,8 +1348,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1305,8 +1396,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1322,8 +1413,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.

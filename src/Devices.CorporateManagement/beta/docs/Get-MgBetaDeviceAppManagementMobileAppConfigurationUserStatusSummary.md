@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-BetaDeviceAppMgtMobileAppConfigurationUserStatusSummary
+Get-MgBetaDeviceAppMgtMobileAppConfigurationUserStatusSummary
 
 COMPLEX PARAMETER PROPERTIES
 

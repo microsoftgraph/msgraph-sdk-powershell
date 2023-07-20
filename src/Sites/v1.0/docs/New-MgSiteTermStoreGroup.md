@@ -74,17 +74,14 @@ Create a new group object in a term store.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Sites
 ```
 
-{{ Add output here }}
+$params = @{
+	displayName = "myGroup"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgSiteTermStoreGroup -SiteId $siteId -BodyParameter $params
 
 ## PARAMETERS
 

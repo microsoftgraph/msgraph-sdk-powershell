@@ -39,34 +39,9 @@ Read the properties and relationships of an attributeSet object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```
+
 Get-MgBetaDirectoryAttributeSet -AttributeSetId $attributeSetId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaDirectoryAttributeSet
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaDirectoryAttributeSet -Sort "id"
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaDirectoryAttributeSet -Top 10
-```
-
-
 
 ## PARAMETERS
 

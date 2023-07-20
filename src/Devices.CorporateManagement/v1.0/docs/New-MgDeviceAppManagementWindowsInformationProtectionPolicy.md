@@ -842,7 +842,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-DeviceAppMgtWindowInformationProtectionPolicy
+New-MgDeviceAppMgtWindowInformationProtectionPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

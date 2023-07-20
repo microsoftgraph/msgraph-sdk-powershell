@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
-Delete navigation property jobs for servicePrincipals
+Stop the synchronization job, and permanently delete all the state associated with it.
+Synchronized accounts are left as-is.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Delete navigation property jobs for servicePrincipals
+Stop the synchronization job, and permanently delete all the state associated with it.
+Synchronized accounts are left as-is.
 
 ## EXAMPLES
 
@@ -173,6 +175,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
+  - `[AppId <String>]`: Alternate key of application
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
   - `[AppRoleAssignmentId <String>]`: The unique identifier of appRoleAssignment
   - `[ApplicationId <String>]`: The unique identifier of application
