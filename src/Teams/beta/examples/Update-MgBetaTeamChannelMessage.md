@@ -1,27 +1,4 @@
-### Example 1: Update policyViolation property using application permissions
-
-```powershellImport-Module Microsoft.Graph.Beta.Teams
-
-$params = @{
-	policyViolation = @{
-		policyTip = @{
-			generalText = "This item has been blocked by the administrator."
-			complianceUrl = "https://contoso.com/dlp-policy-page"
-			matchedConditionDescriptions = @(
-				"Credit Card Number"
-			)
-		}
-		verdictDetails = "AllowOverrideWithoutJustification,AllowFalsePositiveOverride"
-		dlpAction = "BlockAccess"
-	}
-}
-
-Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
-```
-This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 2: Update any property of a message using delegated permissions
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -60,7 +37,7 @@ Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessa
 This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Update the mentions of a message using delegated permissions
+### Example 2: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -132,7 +109,7 @@ Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessa
 This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Update the content with attachments of a message using delegated permissions
+### Example 3: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -234,7 +211,7 @@ Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessa
 This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Update the reactions in a message using delegated permissions
+### Example 4: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 

@@ -1,4 +1,4 @@
-### Example 1: Update a feedback outcome
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Education
 
@@ -11,24 +11,7 @@ Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educat
 This example shows how to use the Update-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Update a points outcome
-
-```powershellImport-Module Microsoft.Graph.Beta.Education
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
-	points = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
-		points = 
-	}
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
-```
-This example shows how to use the Update-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: Update a rubric outcome
+### Example 2: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Education
 
