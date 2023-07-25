@@ -2,6 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using System;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
@@ -25,6 +26,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public Version PSHostVersion { get; set; }
         public string ManagedIdentityId { get; set; }
         public SecureString ClientSecret { get; set; }
+        public string Environment { get; set; } = GraphEnvironmentConstants.EnvironmentName.Global;
 
         public AuthContext()
         {
