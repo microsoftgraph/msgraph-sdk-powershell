@@ -90,10 +90,16 @@ function Get-Files {
                 $CommandValue = $null
                 if ($GraphProfile -eq "beta") {
                     $CommandValue = $BetaCommandGetVariantList[$Command]
+                    if(-not($CommandValue)){
+                        $CommandValue = $BetaCommandListVariantList[$Command]
+                    }
                         
                 }
                 else {
                     $CommandValue = $V1CommandGetVariantList[$Command]
+                    if(-not($CommandValue)){
+                        $CommandValue = $V1CommandListVariantList[$Command]
+                    }
                 }
                         
                 if ($CommandValue) {
