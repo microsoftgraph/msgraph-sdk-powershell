@@ -2166,6 +2166,7 @@ paths:
               enum:
                 - id
                 - aadDeviceId
+                - connectionSettings
                 - connectivityResult
                 - diskEncryptionState
                 - displayName
@@ -2205,6 +2206,8 @@ paths:
                 - id desc
                 - aadDeviceId
                 - aadDeviceId desc
+                - connectionSettings
+                - connectionSettings desc
                 - connectivityResult
                 - connectivityResult desc
                 - diskEncryptionState
@@ -3687,6 +3690,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -4335,6 +4340,7 @@ components:
         - cloudPcImageUploadScenario
         - cloudPcOnPremiseNetworkConnectionCheckScenario
         - unknownFutureValue
+        - cloudPcInGracePeriodScenario
       type: string
     microsoft.graph.deviceManagement.ruleSeverityType:
       title: ruleSeverityType
@@ -4440,6 +4446,14 @@ components:
         - placeUnderReview
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -4541,6 +4555,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcUserAccountType:
       title: cloudPcUserAccountType

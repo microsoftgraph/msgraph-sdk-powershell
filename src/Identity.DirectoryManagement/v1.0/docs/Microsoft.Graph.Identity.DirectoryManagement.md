@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: e9a53a89-5498-4fe0-8dae-c331fc625381
+Module Guid: 8487c2f0-0e91-4c9d-9c27-c85e3ce2c7b3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1205,9 +1205,7 @@ Update the navigation property serviceConfigurationRecords in domains
 Update the navigation property verificationDnsRecords in domains
 
 ### [Update-MgOrganization](Update-MgOrganization.md)
-Update the properties of the currently authenticated organization.
-In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.
-The **ID** is also known as the **tenantId** of the organization.
+Update the properties of a organization object.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.

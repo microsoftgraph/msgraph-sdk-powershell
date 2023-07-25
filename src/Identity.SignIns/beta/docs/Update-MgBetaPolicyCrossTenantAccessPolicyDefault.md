@@ -372,7 +372,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Devices <IMicrosoftGraphDevicesFilter>]`: devicesFilter
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Mode <String>]`: crossTenantAccessPolicyTargetConfigurationAccessType
-      - `[Rule <String>]`: Defines the rule to filter the devices. An example would be device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation' Not implemented yet
+      - `[Rule <String>]`: Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
 
 `INBOUNDTRUST <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>`: crossTenantAccessPolicyInboundTrust
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -392,7 +392,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Devices <IMicrosoftGraphDevicesFilter>]`: devicesFilter
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Mode <String>]`: crossTenantAccessPolicyTargetConfigurationAccessType
-    - `[Rule <String>]`: Defines the rule to filter the devices. An example would be device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation' Not implemented yet
+    - `[Rule <String>]`: Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
 
 ## RELATED LINKS
 

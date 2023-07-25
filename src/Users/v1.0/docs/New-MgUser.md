@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgUser
 
 ## SYNOPSIS
-Create a new user.\nThe request body contains the user to create.
-At a minimum, you must specify the required properties for the user.
-You can optionally specify any other writable properties.
+Create a new user object.
 
 ## SYNTAX
 
@@ -78,9 +76,7 @@ New-MgUser -BodyParameter <IMicrosoftGraphUser> [-Confirm] [-WhatIf] [<CommonPar
 ```
 
 ## DESCRIPTION
-Create a new user.\nThe request body contains the user to create.
-At a minimum, you must specify the required properties for the user.
-You can optionally specify any other writable properties.
+Create a new user object.
 
 ## EXAMPLES
 

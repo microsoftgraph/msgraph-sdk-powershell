@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgScanUserManagedDeviceWindowsDefender
 
 ## SYNOPSIS
-Invoke action windowsDefenderScan
+Not yet documented
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgScanUserManagedDeviceWindowsDefender -InputObject <IUsersActionsIdentit
 ```
 
 ## DESCRIPTION
-Invoke action windowsDefenderScan
+Not yet documented
 
 ## EXAMPLES
 

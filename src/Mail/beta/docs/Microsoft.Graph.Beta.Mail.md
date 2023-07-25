@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: b26fea97-5103-4280-9ab8-984e4f4cd2cd
+Module Guid: e8f3a996-64a4-4734-863a-b3466d113d83
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -208,10 +208,12 @@ Create a messageRule object by specifying a set of conditions and actions.
 Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ### [New-MgBetaUserMessage](New-MgBetaUserMessage.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create a draft of a new message in either JSON or MIME format.
+When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the **body** or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
+By default, this operation saves the draft in the Drafts folder.
+Send the draft message in a subsequent operation.
+Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message.
 
 ### [New-MgBetaUserMessageAttachment](New-MgBetaUserMessageAttachment.md)
 Use this API to create a new Attachment.
@@ -272,7 +274,8 @@ For example, you can delete a specific @-mention of the specified user in the me
 Delete the specified messageRule object.
 
 ### [Remove-MgBetaUserMessage](Remove-MgBetaUserMessage.md)
-Delete eventMessage.
+Delete a message in the specified user's mailbox, or delete a relationship of the message.
+For example, you can delete a specific @-mention of the specified user in the message.
 
 ### [Remove-MgBetaUserMessageAttachment](Remove-MgBetaUserMessageAttachment.md)
 Delete navigation property attachments for users

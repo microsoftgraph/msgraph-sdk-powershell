@@ -13,8 +13,8 @@ Get the number of the resource
 ## SYNTAX
 
 ```
-Get-MgBetaRoleManagementDirectoryTransitiveRoleAssignmentCount [-Filter <String>] [-Search <String>]
- [<CommonParameters>]
+Get-MgBetaRoleManagementDirectoryTransitiveRoleAssignmentCount -ConsistencyLevel <String> [-Filter <String>]
+ [-Search <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,6 +37,22 @@ Get the number of the resource
 
 
 ## PARAMETERS
+
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Filter
 Filter items by property values

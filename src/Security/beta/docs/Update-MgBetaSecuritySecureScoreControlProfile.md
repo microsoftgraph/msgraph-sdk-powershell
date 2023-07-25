@@ -519,10 +519,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActionUrl <String>]`: URL to where the control can be actioned.
   - `[AzureTenantId <String>]`: GUID string for tenant ID.
   - `[ComplianceInformation <IMicrosoftGraphComplianceInformation[]>]`: The collection of compliance information associated with secure score control
-    - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: 
+    - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: Collection of the certification controls associated with the certification.
       - `[Name <String>]`: 
       - `[Url <String>]`: 
-    - `[CertificationName <String>]`: 
+    - `[CertificationName <String>]`: The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
   - `[ControlCategory <String>]`: Control action category (Account, Data, Device, Apps, Infrastructure).
   - `[ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>]`: Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
     - `[AssignedTo <String>]`: 
@@ -550,10 +550,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[Vendor <String>]`: Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required
 
 `COMPLIANCEINFORMATION <IMicrosoftGraphComplianceInformation[]>`: The collection of compliance information associated with secure score control
-  - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: 
+  - `[CertificationControls <IMicrosoftGraphCertificationControl[]>]`: Collection of the certification controls associated with the certification.
     - `[Name <String>]`: 
     - `[Url <String>]`: 
-  - `[CertificationName <String>]`: 
+  - `[CertificationName <String>]`: The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
 
 `CONTROLSTATEUPDATES <IMicrosoftGraphSecureScoreControlStateUpdate[]>`: Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
   - `[AssignedTo <String>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaCommunicationOnlineMeetingVirtualAppointment
 
 ## SYNOPSIS
-Update the properties of a virtualAppointment object.
+Create a new virtualAppointment object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgBetaCommunicationOnlineMeetingVirtualAppointment -InputObject <ICloudCo
 ```
 
 ## DESCRIPTION
-Update the properties of a virtualAppointment object.
+Create a new virtualAppointment object.
 
 ## EXAMPLES
 

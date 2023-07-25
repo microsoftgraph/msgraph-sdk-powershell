@@ -51,17 +51,15 @@ Update the properties of the userSettings object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Users
 ```
 
-{{ Add output here }}
+$params = @{
+	contributionToContentDiscoveryDisabled = $true
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+# A UPN can also be used as -UserId.
+Update-MgUserSetting -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

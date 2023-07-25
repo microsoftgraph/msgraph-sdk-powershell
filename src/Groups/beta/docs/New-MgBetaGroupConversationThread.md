@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgBetaGroupConversationThread
 
 ## SYNOPSIS
-Create new navigation property to threads for groups
+Create a new thread in the specified conversation.
+A thread and post are created as specified.
+Use reply thread to further post\nto that thread.
+Or, if you get the post ID, you can also reply to that post in that thread.
+Note: You can also start a new conversation by first creating a thread.
 
 ## SYNTAX
 
@@ -43,7 +47,11 @@ New-MgBetaGroupConversationThread -InputObject <IGroupsIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Create new navigation property to threads for groups
+Create a new thread in the specified conversation.
+A thread and post are created as specified.
+Use reply thread to further post\nto that thread.
+Or, if you get the post ID, you can also reply to that post in that thread.
+Note: You can also start a new conversation by first creating a thread.
 
 ## EXAMPLES
 
@@ -445,8 +453,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
-  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
   - `[ListId <String>]`: The unique identifier of list
@@ -466,13 +472,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
   - `[SiteId <String>]`: The unique identifier of site
-  - `[SitePageId <String>]`: The unique identifier of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
   - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: The unique identifier of user
-  - `[WebPartId <String>]`: The unique identifier of webPart
 
 `POSTS <IMicrosoftGraphPost[]>`: .
   - `[Categories <String[]>]`: 

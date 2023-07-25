@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectorySubscription
 
 ## SYNOPSIS
-Get subscriptions from directory
+Get a specific commercial subscription that an organization has acquired.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaDirectorySubscription -InputObject <IIdentityDirectoryManagementIdenti
 ```
 
 ## DESCRIPTION
-Get subscriptions from directory
+Get a specific commercial subscription that an organization has acquired.
 
 ## EXAMPLES
 
@@ -287,6 +287,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutboundSharedUserProfileUserId <String>]`: The unique identifier of outboundSharedUserProfile
   - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RecommendationId <String>]`: The unique identifier of recommendation
+  - `[RoleTemplateId <String>]`: Alternate key of directoryRole
   - `[ScopedRoleMembershipId <String>]`: The unique identifier of scopedRoleMembership
   - `[SharedEmailDomainId <String>]`: The unique identifier of sharedEmailDomain
   - `[SharedEmailDomainInvitationId <String>]`: The unique identifier of sharedEmailDomainInvitation

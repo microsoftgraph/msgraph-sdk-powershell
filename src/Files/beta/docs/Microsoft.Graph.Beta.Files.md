@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 81c2a78c-4dca-4b9a-bd04-2ed7e9eef3f0
+Module Guid: 619434a9-12e2-402b-ba70-87c82e3464de
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -2153,6 +2153,9 @@ Delete navigation property versions for drives
 ### [Remove-MgBetaDriveItemListItemVersionField](Remove-MgBetaDriveItemListItemVersionField.md)
 Delete navigation property fields for drives
 
+### [Remove-MgBetaDriveItemPermanent](Remove-MgBetaDriveItemPermanent.md)
+Invoke action permanentDelete
+
 ### [Remove-MgBetaDriveItemPermission](Remove-MgBetaDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
@@ -2237,6 +2240,9 @@ Delete navigation property versions for drives
 
 ### [Remove-MgBetaDriveRootListItemVersionField](Remove-MgBetaDriveRootListItemVersionField.md)
 Delete navigation property fields for drives
+
+### [Remove-MgBetaDriveRootPermanent](Remove-MgBetaDriveRootPermanent.md)
+Invoke action permanentDelete
 
 ### [Remove-MgBetaDriveRootPermission](Remove-MgBetaDriveRootPermission.md)
 Remove access to a DriveItem.

@@ -313,7 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -Subscriptions
-.
+List of commercial subscriptions that an organization has acquired.
 To construct, see NOTES section for SUBSCRIPTIONS properties and create a hash table.
 
 ```yaml
@@ -396,8 +396,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 `ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>`: Group of related custom security attribute definitions.
@@ -425,8 +425,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -577,21 +577,25 @@ To create the parameters described below, construct a hash table containing the 
   - `[SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ProvisioningStatus <String>]`: 
-  - `[Subscriptions <IMicrosoftGraphCompanySubscription[]>]`: 
+  - `[Subscriptions <IMicrosoftGraphCompanySubscription[]>]`: List of commercial subscriptions that an organization has acquired.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[IsTrial <Boolean?>]`: 
-    - `[NextLifecycleDateTime <DateTime?>]`: 
+    - `[CommerceSubscriptionId <String>]`: The ID of this subscription in the commerce system. Alternate key.
+    - `[CreatedDateTime <DateTime?>]`: The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[IsTrial <Boolean?>]`: Whether the subscription is a free trial or purchased.
+    - `[NextLifecycleDateTime <DateTime?>]`: The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[OcpSubscriptionId <String>]`: 
-    - `[ServiceStatus <IMicrosoftGraphServicePlanInfo[]>]`: 
+    - `[OwnerId <String>]`: The object ID of the account admin.
+    - `[OwnerTenantId <String>]`: The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.
+    - `[OwnerType <String>]`: Indicates the entity that ownerId belongs to, for example, 'User'.
+    - `[ServiceStatus <IMicrosoftGraphServicePlanInfo[]>]`: The provisioning status of each service that's included in this subscription.
       - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
       - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
       - `[ServicePlanId <String>]`: The unique identifier of the service plan.
       - `[ServicePlanName <String>]`: The name of the service plan.
-    - `[SkuId <String>]`: 
-    - `[SkuPartNumber <String>]`: 
-    - `[Status <String>]`: 
-    - `[TotalLicenses <Int32?>]`: 
+    - `[SkuId <String>]`: The object ID of the SKU associated with this subscription.
+    - `[SkuPartNumber <String>]`: The SKU associated with this subscription.
+    - `[Status <String>]`: The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+    - `[TotalLicenses <Int32?>]`: The number of seats included in this subscription.
 
 `CERTIFICATEAUTHORITIES <IMicrosoftGraphCertificateAuthorityPath>`: certificateAuthorityPath
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -770,21 +774,25 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ProvisioningStatus <String>]`: 
 
-`SUBSCRIPTIONS <IMicrosoftGraphCompanySubscription[]>`: .
+`SUBSCRIPTIONS <IMicrosoftGraphCompanySubscription[]>`: List of commercial subscriptions that an organization has acquired.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[IsTrial <Boolean?>]`: 
-  - `[NextLifecycleDateTime <DateTime?>]`: 
+  - `[CommerceSubscriptionId <String>]`: The ID of this subscription in the commerce system. Alternate key.
+  - `[CreatedDateTime <DateTime?>]`: The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[IsTrial <Boolean?>]`: Whether the subscription is a free trial or purchased.
+  - `[NextLifecycleDateTime <DateTime?>]`: The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[OcpSubscriptionId <String>]`: 
-  - `[ServiceStatus <IMicrosoftGraphServicePlanInfo[]>]`: 
+  - `[OwnerId <String>]`: The object ID of the account admin.
+  - `[OwnerTenantId <String>]`: The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.
+  - `[OwnerType <String>]`: Indicates the entity that ownerId belongs to, for example, 'User'.
+  - `[ServiceStatus <IMicrosoftGraphServicePlanInfo[]>]`: The provisioning status of each service that's included in this subscription.
     - `[AppliesTo <String>]`: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
     - `[ProvisioningStatus <String>]`: The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
     - `[ServicePlanId <String>]`: The unique identifier of the service plan.
     - `[ServicePlanName <String>]`: The name of the service plan.
-  - `[SkuId <String>]`: 
-  - `[SkuPartNumber <String>]`: 
-  - `[Status <String>]`: 
-  - `[TotalLicenses <Int32?>]`: 
+  - `[SkuId <String>]`: The object ID of the SKU associated with this subscription.
+  - `[SkuPartNumber <String>]`: The SKU associated with this subscription.
+  - `[Status <String>]`: The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+  - `[TotalLicenses <Int32?>]`: The number of seats included in this subscription.
 
 ## RELATED LINKS
 

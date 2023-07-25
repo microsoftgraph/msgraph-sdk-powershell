@@ -9,8 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a user object.
-Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
-Compare member and guest default permissions to see properties they can manage.
 
 ## SYNTAX
 
@@ -143,8 +141,6 @@ Update-MgUser -InputObject <IUsersIdentity> [-AboutMe <String>] [-AccountEnabled
 
 ## DESCRIPTION
 Update the properties of a user object.
-Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
-Compare member and guest default permissions to see properties they can manage.
 
 ## EXAMPLES
 

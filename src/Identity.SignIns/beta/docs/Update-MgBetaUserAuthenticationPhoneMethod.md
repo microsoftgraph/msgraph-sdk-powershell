@@ -59,7 +59,6 @@ $params = @{
 	phoneType = "mobile"
 }
 
-# A UPN can also be used as -UserId.
 Update-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
 
 ## PARAMETERS

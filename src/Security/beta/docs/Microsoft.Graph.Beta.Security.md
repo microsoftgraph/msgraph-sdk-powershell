@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 6c429512-7e16-4323-aaa4-5fa237d32f67
+Module Guid: 6a873b96-58e9-44b1-9805-d1c5670a4f73
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -46,7 +46,7 @@ Initiate an export from a **reviewSet**.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
 ### [Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
-Initiate an export from a **reviewSet** query.
+Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
 ### [Get-MgBetaSecurityAction](Get-MgBetaSecurityAction.md)
@@ -599,7 +599,7 @@ The parent host related to this passiveDnsRecord entry.
 Generally, this is the value that you can search to discover this passiveDnsRecord value.
 
 ### [Get-MgBetaSecurityThreatIntelligenceProfileIndicator](Get-MgBetaSecurityThreatIntelligenceProfileIndicator.md)
-Get intelligenceProfileIndicators from security
+Read the properties and relationships of a intelligenceProfileIndicator object.
 
 ### [Get-MgBetaSecurityThreatIntelligenceProfileIndicatorArtifact](Get-MgBetaSecurityThreatIntelligenceProfileIndicatorArtifact.md)
 The artifact related to this indicator.
@@ -754,8 +754,14 @@ Create new navigation property to runs for security
 ### [New-MgBetaSecurityAttackSimulationEndUserNotification](New-MgBetaSecurityAttackSimulationEndUserNotification.md)
 Create new navigation property to endUserNotifications for security
 
+### [New-MgBetaSecurityAttackSimulationEndUserNotificationDetail](New-MgBetaSecurityAttackSimulationEndUserNotificationDetail.md)
+Create new navigation property to details for security
+
 ### [New-MgBetaSecurityAttackSimulationLandingPage](New-MgBetaSecurityAttackSimulationLandingPage.md)
 Create new navigation property to landingPages for security
+
+### [New-MgBetaSecurityAttackSimulationLandingPageDetail](New-MgBetaSecurityAttackSimulationLandingPageDetail.md)
+Create new navigation property to details for security
 
 ### [New-MgBetaSecurityAttackSimulationLoginPage](New-MgBetaSecurityAttackSimulationLoginPage.md)
 Create new navigation property to loginPages for security
@@ -768,6 +774,9 @@ Create new navigation property to payloads for security
 
 ### [New-MgBetaSecurityAttackSimulationTraining](New-MgBetaSecurityAttackSimulationTraining.md)
 Create new navigation property to trainings for security
+
+### [New-MgBetaSecurityAttackSimulationTrainingLanguageDetail](New-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
+Create new navigation property to languageDetails for security
 
 ### [New-MgBetaSecurityCaseEdiscoveryCase](New-MgBetaSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
@@ -966,8 +975,14 @@ Delete navigation property runs for security
 ### [Remove-MgBetaSecurityAttackSimulationEndUserNotification](Remove-MgBetaSecurityAttackSimulationEndUserNotification.md)
 Delete navigation property endUserNotifications for security
 
+### [Remove-MgBetaSecurityAttackSimulationEndUserNotificationDetail](Remove-MgBetaSecurityAttackSimulationEndUserNotificationDetail.md)
+Delete navigation property details for security
+
 ### [Remove-MgBetaSecurityAttackSimulationLandingPage](Remove-MgBetaSecurityAttackSimulationLandingPage.md)
 Delete navigation property landingPages for security
+
+### [Remove-MgBetaSecurityAttackSimulationLandingPageDetail](Remove-MgBetaSecurityAttackSimulationLandingPageDetail.md)
+Delete navigation property details for security
 
 ### [Remove-MgBetaSecurityAttackSimulationLoginPage](Remove-MgBetaSecurityAttackSimulationLoginPage.md)
 Delete navigation property loginPages for security
@@ -980,6 +995,9 @@ Delete navigation property payloads for security
 
 ### [Remove-MgBetaSecurityAttackSimulationTraining](Remove-MgBetaSecurityAttackSimulationTraining.md)
 Delete navigation property trainings for security
+
+### [Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Remove-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
+Delete navigation property languageDetails for security
 
 ### [Remove-MgBetaSecurityCase](Remove-MgBetaSecurityCase.md)
 Delete navigation property cases for security
@@ -1280,8 +1298,14 @@ Update the navigation property runs in security
 ### [Update-MgBetaSecurityAttackSimulationEndUserNotification](Update-MgBetaSecurityAttackSimulationEndUserNotification.md)
 Update the navigation property endUserNotifications in security
 
+### [Update-MgBetaSecurityAttackSimulationEndUserNotificationDetail](Update-MgBetaSecurityAttackSimulationEndUserNotificationDetail.md)
+Update the navigation property details in security
+
 ### [Update-MgBetaSecurityAttackSimulationLandingPage](Update-MgBetaSecurityAttackSimulationLandingPage.md)
 Update the navigation property landingPages in security
+
+### [Update-MgBetaSecurityAttackSimulationLandingPageDetail](Update-MgBetaSecurityAttackSimulationLandingPageDetail.md)
+Update the navigation property details in security
 
 ### [Update-MgBetaSecurityAttackSimulationLoginPage](Update-MgBetaSecurityAttackSimulationLoginPage.md)
 Update the navigation property loginPages in security
@@ -1294,6 +1318,9 @@ Update the navigation property payloads in security
 
 ### [Update-MgBetaSecurityAttackSimulationTraining](Update-MgBetaSecurityAttackSimulationTraining.md)
 Update the navigation property trainings in security
+
+### [Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Update-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
+Update the navigation property languageDetails in security
 
 ### [Update-MgBetaSecurityCase](Update-MgBetaSecurityCase.md)
 Update the navigation property cases in security

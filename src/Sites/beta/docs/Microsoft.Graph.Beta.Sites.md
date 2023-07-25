@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 91828bdd-a07b-4d5a-b9d0-d01f0ecb7aa0
+Module Guid: 54a1316c-d473-409a-8bef-9d966f74ae67
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -299,7 +299,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -650,37 +650,7 @@ Read the properties of a richLongRunningOperation object.
 Get the number of the resource
 
 ### [Get-MgBetaGroupSitePage](Get-MgBetaGroupSitePage.md)
-Returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
-
-### [Get-MgBetaGroupSitePageCanvaLayout](Get-MgBetaGroupSitePageCanvaLayout.md)
-Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
-
-### [Get-MgBetaGroupSitePageCanvaLayoutHorizontalSection](Get-MgBetaGroupSitePageCanvaLayoutHorizontalSection.md)
-Read the properties and relationships of a horizontalSection object.
-
-### [Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn](Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
-Read the properties and relationships of a horizontalSectionColumn object.
-
-### [Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnCount](Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-The collection of WebParts in this column.
-
-### [Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpartCount](Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionCount](Get-MgBetaGroupSitePageCanvaLayoutHorizontalSectionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupSitePageCanvaLayoutVerticalSection](Get-MgBetaGroupSitePageCanvaLayoutVerticalSection.md)
-Read the properties and relationships of a verticalSection object.
-
-### [Get-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart](Get-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
-The set of web parts in this section.
-
-### [Get-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpartCount](Get-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpartCount.md)
-Get the number of the resource
+Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
 
 ### [Get-MgBetaGroupSitePageCount](Get-MgBetaGroupSitePageCount.md)
 Get the number of the resource
@@ -702,12 +672,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
-
-### [Get-MgBetaGroupSitePageWebPart](Get-MgBetaGroupSitePageWebPart.md)
-Read the properties and relationships of a webPart object.
-
-### [Get-MgBetaGroupSitePageWebPartCount](Get-MgBetaGroupSitePageWebPartCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaGroupSitePermission](Get-MgBetaGroupSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
@@ -1178,7 +1142,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1322,78 +1286,6 @@ Read the properties of a richLongRunningOperation object.
 
 ### [Get-MgBetaSiteOperationCount](Get-MgBetaSiteOperationCount.md)
 Get the number of the resource
-
-### [Get-MgBetaSitePage](Get-MgBetaSitePage.md)
-Returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
-
-### [Get-MgBetaSitePageCanvaLayout](Get-MgBetaSitePageCanvaLayout.md)
-Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSection](Get-MgBetaSitePageCanvaLayoutHorizontalSection.md)
-Read the properties and relationships of a horizontalSection object.
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumn](Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumn.md)
-Read the properties and relationships of a horizontalSectionColumn object.
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnCount](Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart](Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-The collection of WebParts in this column.
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpartCount](Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart](Get-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaSitePageCanvaLayoutHorizontalSectionCount](Get-MgBetaSitePageCanvaLayoutHorizontalSectionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCanvaLayoutVerticalSection](Get-MgBetaSitePageCanvaLayoutVerticalSection.md)
-Read the properties and relationships of a verticalSection object.
-
-### [Get-MgBetaSitePageCanvaLayoutVerticalSectionWebpart](Get-MgBetaSitePageCanvaLayoutVerticalSectionWebpart.md)
-The set of web parts in this section.
-
-### [Get-MgBetaSitePageCanvaLayoutVerticalSectionWebpartCount](Get-MgBetaSitePageCanvaLayoutVerticalSectionWebpartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart](Get-MgBetaSitePageCanvaLayoutVerticalSectionWebpartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
-
-### [Get-MgBetaSitePageCount](Get-MgBetaSitePageCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCreatedByUser](Get-MgBetaSitePageCreatedByUser.md)
-Get createdByUser from sites
-
-### [Get-MgBetaSitePageCreatedByUserMailboxSetting](Get-MgBetaSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaSitePageLastModifiedByUser](Get-MgBetaSitePageLastModifiedByUser.md)
-Get lastModifiedByUser from sites
-
-### [Get-MgBetaSitePageLastModifiedByUserMailboxSetting](Get-MgBetaSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaSitePageWebPart](Get-MgBetaSitePageWebPart.md)
-Read the properties and relationships of a webPart object.
-
-### [Get-MgBetaSitePageWebPartByPosition](Get-MgBetaSitePageWebPartByPosition.md)
-Invoke action getWebPartsByPosition
-
-### [Get-MgBetaSitePageWebPartCount](Get-MgBetaSitePageWebPartCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageWebPartPositionOfWebPart](Get-MgBetaSitePageWebPartPositionOfWebPart.md)
-Invoke action getPositionOfWebPart
 
 ### [Get-MgBetaSitePermission](Get-MgBetaSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
@@ -1907,21 +1799,6 @@ Create new navigation property to operations for groups
 ### [New-MgBetaGroupSitePage](New-MgBetaGroupSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
-### [New-MgBetaGroupSitePageCanvaLayoutHorizontalSection](New-MgBetaGroupSitePageCanvaLayoutHorizontalSection.md)
-Create a horizontalSection object in a given sitePage.
-
-### [New-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn](New-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
-Create new navigation property to columns for groups
-
-### [New-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Create new navigation property to webparts for groups
-
-### [New-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart](New-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
-Create new navigation property to webparts for groups
-
-### [New-MgBetaGroupSitePageWebPart](New-MgBetaGroupSitePageWebPart.md)
-Create new navigation property to webParts for groups
-
 ### [New-MgBetaGroupSitePermission](New-MgBetaGroupSitePermission.md)
 Create a new permission object on a site.
 
@@ -2062,24 +1939,6 @@ Create new navigation property to subscriptions for sites
 ### [New-MgBetaSiteOperation](New-MgBetaSiteOperation.md)
 Create new navigation property to operations for sites
 
-### [New-MgBetaSitePage](New-MgBetaSitePage.md)
-Create a new [sitePage][] in the site pages [list][] in a [site][].
-
-### [New-MgBetaSitePageCanvaLayoutHorizontalSection](New-MgBetaSitePageCanvaLayoutHorizontalSection.md)
-Create a horizontalSection object in a given sitePage.
-
-### [New-MgBetaSitePageCanvaLayoutHorizontalSectionColumn](New-MgBetaSitePageCanvaLayoutHorizontalSectionColumn.md)
-Create new navigation property to columns for sites
-
-### [New-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart](New-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Create new navigation property to webparts for sites
-
-### [New-MgBetaSitePageCanvaLayoutVerticalSectionWebpart](New-MgBetaSitePageCanvaLayoutVerticalSectionWebpart.md)
-Create new navigation property to webparts for sites
-
-### [New-MgBetaSitePageWebPart](New-MgBetaSitePageWebPart.md)
-Create new navigation property to webParts for sites
-
 ### [New-MgBetaSitePermission](New-MgBetaSitePermission.md)
 Create a new permission object on a site.
 
@@ -2163,9 +2022,6 @@ Publishes a [contentType][] present in a content type hub site.
 
 ### [Publish-MgBetaSiteListContentType](Publish-MgBetaSiteListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
-
-### [Publish-MgBetaSitePage](Publish-MgBetaSitePage.md)
-Invoke action publish
 
 ### [Remove-MgBetaAdminSharepoint](Remove-MgBetaAdminSharepoint.md)
 Delete navigation property sharepoint for admin
@@ -2313,27 +2169,6 @@ Delete navigation property operations for groups
 
 ### [Remove-MgBetaGroupSitePage](Remove-MgBetaGroupSitePage.md)
 Delete navigation property pages for groups
-
-### [Remove-MgBetaGroupSitePageCanvaLayout](Remove-MgBetaGroupSitePageCanvaLayout.md)
-Delete navigation property canvasLayout for groups
-
-### [Remove-MgBetaGroupSitePageCanvaLayoutHorizontalSection](Remove-MgBetaGroupSitePageCanvaLayoutHorizontalSection.md)
-Delete navigation property horizontalSections for groups
-
-### [Remove-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
-Delete navigation property columns for groups
-
-### [Remove-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Delete navigation property webparts for groups
-
-### [Remove-MgBetaGroupSitePageCanvaLayoutVerticalSection](Remove-MgBetaGroupSitePageCanvaLayoutVerticalSection.md)
-Delete navigation property verticalSection for groups
-
-### [Remove-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
-Delete navigation property webparts for groups
-
-### [Remove-MgBetaGroupSitePageWebPart](Remove-MgBetaGroupSitePageWebPart.md)
-Delete navigation property webParts for groups
 
 ### [Remove-MgBetaGroupSitePermission](Remove-MgBetaGroupSitePermission.md)
 Delete navigation property permissions for groups
@@ -2487,30 +2322,6 @@ Delete navigation property subscriptions for sites
 
 ### [Remove-MgBetaSiteOperation](Remove-MgBetaSiteOperation.md)
 Delete navigation property operations for sites
-
-### [Remove-MgBetaSitePage](Remove-MgBetaSitePage.md)
-Delete navigation property pages for sites
-
-### [Remove-MgBetaSitePageCanvaLayout](Remove-MgBetaSitePageCanvaLayout.md)
-Delete navigation property canvasLayout for sites
-
-### [Remove-MgBetaSitePageCanvaLayoutHorizontalSection](Remove-MgBetaSitePageCanvaLayoutHorizontalSection.md)
-Delete navigation property horizontalSections for sites
-
-### [Remove-MgBetaSitePageCanvaLayoutHorizontalSectionColumn](Remove-MgBetaSitePageCanvaLayoutHorizontalSectionColumn.md)
-Delete navigation property columns for sites
-
-### [Remove-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart](Remove-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Delete navigation property webparts for sites
-
-### [Remove-MgBetaSitePageCanvaLayoutVerticalSection](Remove-MgBetaSitePageCanvaLayoutVerticalSection.md)
-Delete navigation property verticalSection for sites
-
-### [Remove-MgBetaSitePageCanvaLayoutVerticalSectionWebpart](Remove-MgBetaSitePageCanvaLayoutVerticalSectionWebpart.md)
-Delete navigation property webparts for sites
-
-### [Remove-MgBetaSitePageWebPart](Remove-MgBetaSitePageWebPart.md)
-Delete navigation property webParts for sites
 
 ### [Remove-MgBetaSitePermission](Remove-MgBetaSitePermission.md)
 Delete navigation property permissions for sites
@@ -2846,36 +2657,13 @@ Update the navigation property pages in groups
 Update the navigation property operations in groups
 
 ### [Update-MgBetaGroupSitePage](Update-MgBetaGroupSitePage.md)
-Update the properties of a sitePage object.
-
-### [Update-MgBetaGroupSitePageCanvaLayout](Update-MgBetaGroupSitePageCanvaLayout.md)
-Update the navigation property canvasLayout in groups
-
-### [Update-MgBetaGroupSitePageCanvaLayoutHorizontalSection](Update-MgBetaGroupSitePageCanvaLayoutHorizontalSection.md)
-Update the properties of a horizontalSection object.
-
-### [Update-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn](Update-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumn.md)
-Update the navigation property columns in groups
-
-### [Update-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgBetaGroupSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Update the navigation property webparts in groups
-
-### [Update-MgBetaGroupSitePageCanvaLayoutVerticalSection](Update-MgBetaGroupSitePageCanvaLayoutVerticalSection.md)
-Create a verticalSection object in a given sitePage.
-A sitePage can only have one vertical section.
-If a vertical section already exists, this method returns a `409 Conflict` response code.
-
-### [Update-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart](Update-MgBetaGroupSitePageCanvaLayoutVerticalSectionWebpart.md)
-Update the navigation property webparts in groups
+Update the navigation property pages in groups
 
 ### [Update-MgBetaGroupSitePageCreatedByUserMailboxSetting](Update-MgBetaGroupSitePageCreatedByUserMailboxSetting.md)
 Update property mailboxSettings value.
 
 ### [Update-MgBetaGroupSitePageLastModifiedByUserMailboxSetting](Update-MgBetaGroupSitePageLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
-
-### [Update-MgBetaGroupSitePageWebPart](Update-MgBetaGroupSitePageWebPart.md)
-Update the navigation property webParts in groups
 
 ### [Update-MgBetaGroupSitePermission](Update-MgBetaGroupSitePermission.md)
 Update the permission object on a site.
@@ -3059,38 +2847,6 @@ Invoke action onenotePatchContent
 
 ### [Update-MgBetaSiteOperation](Update-MgBetaSiteOperation.md)
 Update the navigation property operations in sites
-
-### [Update-MgBetaSitePage](Update-MgBetaSitePage.md)
-Update the properties of a sitePage object.
-
-### [Update-MgBetaSitePageCanvaLayout](Update-MgBetaSitePageCanvaLayout.md)
-Update the navigation property canvasLayout in sites
-
-### [Update-MgBetaSitePageCanvaLayoutHorizontalSection](Update-MgBetaSitePageCanvaLayoutHorizontalSection.md)
-Update the properties of a horizontalSection object.
-
-### [Update-MgBetaSitePageCanvaLayoutHorizontalSectionColumn](Update-MgBetaSitePageCanvaLayoutHorizontalSectionColumn.md)
-Update the navigation property columns in sites
-
-### [Update-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart](Update-MgBetaSitePageCanvaLayoutHorizontalSectionColumnWebpart.md)
-Update the navigation property webparts in sites
-
-### [Update-MgBetaSitePageCanvaLayoutVerticalSection](Update-MgBetaSitePageCanvaLayoutVerticalSection.md)
-Create a verticalSection object in a given sitePage.
-A sitePage can only have one vertical section.
-If a vertical section already exists, this method returns a `409 Conflict` response code.
-
-### [Update-MgBetaSitePageCanvaLayoutVerticalSectionWebpart](Update-MgBetaSitePageCanvaLayoutVerticalSectionWebpart.md)
-Update the navigation property webparts in sites
-
-### [Update-MgBetaSitePageCreatedByUserMailboxSetting](Update-MgBetaSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaSitePageLastModifiedByUserMailboxSetting](Update-MgBetaSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaSitePageWebPart](Update-MgBetaSitePageWebPart.md)
-Update the navigation property webParts in sites
 
 ### [Update-MgBetaSitePermission](Update-MgBetaSitePermission.md)
 Update the permission object on a site.

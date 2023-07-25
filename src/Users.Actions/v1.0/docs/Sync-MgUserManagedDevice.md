@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgUserManagedDevice
 
 ## SYNOPSIS
-Invoke action syncDevice
+Not yet documented
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Sync-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-Invoke action syncDevice
+Not yet documented
 
 ## EXAMPLES
 

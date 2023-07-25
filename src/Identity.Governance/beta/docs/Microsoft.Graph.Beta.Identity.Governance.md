@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 11134a19-1d54-4587-86b4-34e1fcfa08fb
+Module Guid: bd1efb33-b359-4f51-acf4-1447f1ed2675
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -113,8 +113,8 @@ Information about acceptances of this agreement.
 Get the number of the resource
 
 ### [Get-MgBetaAgreementFile](Get-MgBetaAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Retrieve the details of an agreement file, including the language and version information.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 
 ### [Get-MgBetaAgreementFileCount](Get-MgBetaAgreementFileCount.md)
 Get the number of the resource
@@ -951,8 +951,8 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFile](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Retrieve the details of an agreement file, including the language and version information.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileCount](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileCount.md)
 Get the number of the resource

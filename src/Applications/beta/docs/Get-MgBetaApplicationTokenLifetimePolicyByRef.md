@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaApplicationTokenLifetimePolicyByRef
 
 ## SYNOPSIS
-List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal.
+Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId <String> [-Filter <
 ```
 
 ## DESCRIPTION
-List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal.
+Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
 
 ## EXAMPLES
 

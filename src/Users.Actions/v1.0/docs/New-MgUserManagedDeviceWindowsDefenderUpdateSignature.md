@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserManagedDeviceWindowsDefenderUpdateSignature
 
 ## SYNOPSIS
-Invoke action windowsDefenderUpdateSignatures
+Not yet documented
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgUserManagedDeviceWindowsDefenderUpdateSignature -InputObject <IUsersAction
 ```
 
 ## DESCRIPTION
-Invoke action windowsDefenderUpdateSignatures
+Not yet documented
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery
 
 ## SYNOPSIS
-Initiate an export from a **reviewSet** query.
+Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
 ## SYNTAX
@@ -45,7 +45,7 @@ Export-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery -InputObject <ISecurityIde
 ```
 
 ## DESCRIPTION
-Initiate an export from a **reviewSet** query.
+Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
 ## EXAMPLES

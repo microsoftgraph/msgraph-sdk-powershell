@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: d83c3680-305f-404b-92ae-8c85503c2b9d
+Module Guid: dfd1c793-2e48-4b76-a9e0-cf6b8bf012dc
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -78,6 +78,9 @@ The appManagementPolicy applied to this application.
 
 ### [Get-MgBetaApplicationAppManagementPolicyCount](Get-MgBetaApplicationAppManagementPolicyCount.md)
 Get the number of the resource
+
+### [Get-MgBetaApplicationByAppId](Get-MgBetaApplicationByAppId.md)
+Get the properties and relationships of an application object.
 
 ### [Get-MgBetaApplicationById](Get-MgBetaApplicationById.md)
 Return the directory objects specified in a list of IDs.
@@ -224,10 +227,12 @@ List the tokenIssuancePolicy objects that are assigned to an application.
 Get the number of the resource
 
 ### [Get-MgBetaApplicationTokenLifetimePolicy](Get-MgBetaApplicationTokenLifetimePolicy.md)
-List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal.
+Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
 
 ### [Get-MgBetaApplicationTokenLifetimePolicyByRef](Get-MgBetaApplicationTokenLifetimePolicyByRef.md)
-List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal.
+Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
 
 ### [Get-MgBetaApplicationTokenLifetimePolicyCount](Get-MgBetaApplicationTokenLifetimePolicyCount.md)
 Get the number of the resource
@@ -377,6 +382,9 @@ Supports $expand.
 
 ### [Get-MgBetaServicePrincipalAppRoleAssignmentCount](Get-MgBetaServicePrincipalAppRoleAssignmentCount.md)
 Get the number of the resource
+
+### [Get-MgBetaServicePrincipalByAppId](Get-MgBetaServicePrincipalByAppId.md)
+Retrieve the properties and relationships of a servicePrincipal object.
 
 ### [Get-MgBetaServicePrincipalById](Get-MgBetaServicePrincipalById.md)
 Return the directory objects specified in a list of IDs.
@@ -735,6 +743,7 @@ Assign a tokenIssuancePolicy to an application.
 
 ### [New-MgBetaApplicationTokenLifetimePolicyByRef](New-MgBetaApplicationTokenLifetimePolicyByRef.md)
 Assign a tokenLifetimePolicy to an application or servicePrincipal.
+You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
 
 ### [New-MgBetaGroupAppRoleAssignment](New-MgBetaGroupAppRoleAssignment.md)
 Use this API to assign an app role to a security group.
@@ -862,6 +871,11 @@ After that time, they are permanently deleted.
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
+### [Remove-MgBetaApplicationByAppId](Remove-MgBetaApplicationByAppId.md)
+Deletes an application.
+When deleted, apps are moved to a temporary container and can be restored within 30 days.
+After that time, they are permanently deleted.
+
 ### [Remove-MgBetaApplicationConnectorGroupByRef](Remove-MgBetaApplicationConnectorGroupByRef.md)
 Delete ref of navigation property connectorGroup for applications
 
@@ -972,6 +986,9 @@ Deletes an appRoleAssignment that a user, group, or client service principal has
 Deletes an appRoleAssignment that a service principal has been granted.
 App roles which are assigned to service principals are also known as application permissions.
 Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
+
+### [Remove-MgBetaServicePrincipalByAppId](Remove-MgBetaServicePrincipalByAppId.md)
+Delete a servicePrincipal object.
 
 ### [Remove-MgBetaServicePrincipalClaimMappingPolicyByRef](Remove-MgBetaServicePrincipalClaimMappingPolicyByRef.md)
 Remove a claimsMappingPolicy from a servicePrincipal.
@@ -1117,6 +1134,9 @@ Validate that the credentials are valid in the tenant.
 ### [Update-MgBetaApplication](Update-MgBetaApplication.md)
 Update the properties of an application object.
 
+### [Update-MgBetaApplicationByAppId](Update-MgBetaApplicationByAppId.md)
+Update the properties of an application object.
+
 ### [Update-MgBetaApplicationExtensionProperty](Update-MgBetaApplicationExtensionProperty.md)
 Update the navigation property extensionProperties in applications
 
@@ -1182,6 +1202,9 @@ Update the navigation property appRoleAssignedTo in servicePrincipals
 
 ### [Update-MgBetaServicePrincipalAppRoleAssignment](Update-MgBetaServicePrincipalAppRoleAssignment.md)
 Update the navigation property appRoleAssignments in servicePrincipals
+
+### [Update-MgBetaServicePrincipalByAppId](Update-MgBetaServicePrincipalByAppId.md)
+Update the properties of servicePrincipal object.
 
 ### [Update-MgBetaServicePrincipalDelegatedPermissionClassification](Update-MgBetaServicePrincipalDelegatedPermissionClassification.md)
 Update the navigation property delegatedPermissionClassifications in servicePrincipals

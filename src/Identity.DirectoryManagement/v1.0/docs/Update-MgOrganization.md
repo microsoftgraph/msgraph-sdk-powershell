@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgOrganization
 
 ## SYNOPSIS
-Update the properties of the currently authenticated organization.
-In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.
-The **ID** is also known as the **tenantId** of the organization.
+Update the properties of a organization object.
 
 ## SYNTAX
 
@@ -61,9 +59,7 @@ Update-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the properties of the currently authenticated organization.
-In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.
-The **ID** is also known as the **tenantId** of the organization.
+Update the properties of a organization object.
 
 ## EXAMPLES
 
