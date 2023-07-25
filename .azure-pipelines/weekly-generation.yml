@@ -93,6 +93,13 @@ jobs:
           Test: ${{ parameters.Test }}
           Pack: ${{ parameters.Pack }}
           Sign: ${{ parameters.Sign }}
+      - task: PowerShell@2
+        name: "FindDuplicateCommands"
+        displayName: "Find Duplicate Commands Across Modules"
+        inputs:
+          targetType: inline
+          script: |
+            . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/" -Debug
       - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
           - template: ./common-templates/esrp/codesign-nuget.yml
             parameters:
@@ -158,6 +165,7 @@ jobs:
         inputs:
           targetType: inline
           script: |
+            git pull origin $(GenerationBranch)
             git merge $(GenerationBranch) -s ours
             git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
             git status
