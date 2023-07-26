@@ -158,7 +158,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             using (NoSynchronizationContext)
             {
-                IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
+                IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version, Environment = environment?.Name };
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
                     GraphSession.Instance.RequestContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
 
