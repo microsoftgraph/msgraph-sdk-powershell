@@ -11618,11 +11618,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      summary: Create conversation
+      description: Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -11655,10 +11655,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Get a conversation object.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -11709,10 +11709,10 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete a conversation object.
+      description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -11849,7 +11849,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create new navigation property to threads for groups
+      summary: Create thread
+      description: "Create a new thread in the specified conversation. A thread and post are created as specified. Use reply thread to further post\nto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
       operationId: group.conversation_CreateThread
       parameters:
         - name: group-id
@@ -16650,6 +16654,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action permanentDelete
+      operationId: group.drive.item_permanentDelete
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.preview':
     post:
       tags:
@@ -20231,6 +20272,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/drives/{drive-id}/root/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action permanentDelete
+      operationId: group.drive.root_permanentDelete
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/drives/{drive-id}/root/microsoft.graph.preview':
     post:
       tags:
@@ -38328,296 +38398,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/horizontalSections/{horizontalSection-id}/columns/{horizontalSectionColumn-id}/webparts/{webPart-id}/microsoft.graph.getPositionOfWebPart':
-    post:
-      tags:
-        - groups.Actions
-      summary: Invoke action getPositionOfWebPart
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/webpart-getposition?view=graph-rest-1.0
-      operationId: group.site.page.canvasLayout.horizontalSection.column.webpart_getPositionGraphOPreWebPart
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: sitePage-id
-          in: path
-          description: The unique identifier of sitePage
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: sitePage
-        - name: horizontalSection-id
-          in: path
-          description: The unique identifier of horizontalSection
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: horizontalSection
-        - name: horizontalSectionColumn-id
-          in: path
-          description: The unique identifier of horizontalSectionColumn
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: horizontalSectionColumn
-        - name: webPart-id
-          in: path
-          description: The unique identifier of webPart
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: webPart
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.webPartPosition'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/canvasLayout/verticalSection/webparts/{webPart-id}/microsoft.graph.getPositionOfWebPart':
-    post:
-      tags:
-        - groups.Actions
-      summary: Invoke action getPositionOfWebPart
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/webpart-getposition?view=graph-rest-1.0
-      operationId: group.site.page.canvasLayout.verticalSection.webpart_getPositionGraphOPreWebPart
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: sitePage-id
-          in: path
-          description: The unique identifier of sitePage
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: sitePage
-        - name: webPart-id
-          in: path
-          description: The unique identifier of webPart
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: webPart
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.webPartPosition'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.getWebPartsByPosition':
-    post:
-      tags:
-        - groups.Actions
-      summary: Invoke action getWebPartsByPosition
-      operationId: group.site.page_getWebPartsGraphBPrePosition
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: sitePage-id
-          in: path
-          description: The unique identifier of sitePage
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: sitePage
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                webPartIndex:
-                  type: number
-                  format: double
-                  nullable: true
-                horizontalSectionId:
-                  type: number
-                  format: double
-                  nullable: true
-                isInVerticalSection:
-                  type: boolean
-                  default: false
-                  nullable: true
-                columnId:
-                  type: number
-                  format: double
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of webPart
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.webPart'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/microsoft.graph.publish':
-    post:
-      tags:
-        - groups.Actions
-      summary: Invoke action publish
-      operationId: group.site.page_publish
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: sitePage-id
-          in: path
-          description: The unique identifier of sitePage
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: sitePage
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/groups/{group-id}/sites/{site-id}/pages/{sitePage-id}/webParts/{webPart-id}/microsoft.graph.getPositionOfWebPart':
-    post:
-      tags:
-        - groups.Actions
-      summary: Invoke action getPositionOfWebPart
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/webpart-getposition?view=graph-rest-1.0
-      operationId: group.site.page.webPart_getPositionGraphOPreWebPart
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: sitePage-id
-          in: path
-          description: The unique identifier of sitePage
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: sitePage
-        - name: webPart-id
-          in: path
-          description: The unique identifier of webPart
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: webPart
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.webPartPosition'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/groups/{group-id}/sites/{site-id}/permissions/{permission-id}/microsoft.graph.grant':
     post:
       tags:
@@ -50366,6 +50146,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
@@ -51300,8 +51081,8 @@ components:
             pages:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sitePage'
-              description: The collection of pages in the SitePages list in this site.
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -51319,38 +51100,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.store'
             onenote:
               $ref: '#/components/schemas/microsoft.graph.onenote'
-          additionalProperties:
-            type: object
-    microsoft.graph.webPartPosition:
-      title: webPartPosition
-      type: object
-      properties:
-        columnId:
-          type: number
-          description: Indicates the identifier of the column where the web part is located.
-          format: double
-          nullable: true
-        horizontalSectionId:
-          type: number
-          description: Indicates the horizontal section where the web part is located.
-          format: double
-          nullable: true
-        isInVerticalSection:
-          type: boolean
-          description: Indicates whether the web part is located in the vertical section.
-          nullable: true
-        webPartIndex:
-          type: number
-          description: Index of the current web part. Represents the order of the web part in this column or section.
-          format: double
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
           additionalProperties:
             type: object
     microsoft.graph.conversationMember:
@@ -53582,7 +53331,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
+          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
       additionalProperties:
@@ -54789,6 +54538,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -57547,48 +57298,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sitePage:
+    microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: sitePage
+        - title: baseSitePage
           type: object
           properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             pageLayout:
               $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
-            promotionKind:
-              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
-            reactions:
-              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
-            showComments:
-              type: boolean
-              description: Determines whether or not to show comments at the bottom of the page.
-              nullable: true
-            showRecommendedPages:
-              type: boolean
-              description: Determines whether or not to show recommended pages at the bottom of the page.
-              nullable: true
-            thumbnailWebUrl:
-              type: string
-              description: Url of the sitePage's thumbnail image
-              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
-            titleArea:
-              $ref: '#/components/schemas/microsoft.graph.titleArea'
-            canvasLayout:
-              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
-            webParts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: Collection of webparts on the SharePoint page
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.termStore.store:
@@ -60105,6 +59828,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -60206,11 +59931,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -60388,6 +60113,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -60523,6 +60256,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -65135,97 +64869,6 @@ components:
         - home
         - unknownFutureValue
       type: string
-    microsoft.graph.pagePromotionType:
-      title: pagePromotionType
-      enum:
-        - microsoftReserved
-        - page
-        - newsPost
-        - unknownFutureValue
-      type: string
-    microsoft.graph.reactionsFacet:
-      title: reactionsFacet
-      type: object
-      properties:
-        commentCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of comments.
-          format: int32
-          nullable: true
-        likeCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of likes.
-          format: int32
-          nullable: true
-        shareCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of shares.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.titleArea:
-      title: titleArea
-      type: object
-      properties:
-        alternativeText:
-          type: string
-          description: Alternative text on the title area.
-          nullable: true
-        enableGradientEffect:
-          type: boolean
-          description: Indicates whether the title area has a gradient effect enabled.
-          nullable: true
-        imageWebUrl:
-          type: string
-          description: URL of the image in the title area.
-          nullable: true
-        layout:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
-        serverProcessedContent:
-          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
-        showAuthor:
-          type: boolean
-          description: Indicates whether the author should be shown in title area.
-          nullable: true
-        showPublishedDate:
-          type: boolean
-          description: Indicates whether the published date should be shown in title area.
-          nullable: true
-        showTextBlockAboveTitle:
-          type: boolean
-          description: Indicates whether the text block above title should be shown in title area.
-          nullable: true
-        textAboveTitle:
-          type: string
-          description: The text above title line.
-          nullable: true
-        textAlignment:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.canvasLayout:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: canvasLayout
-          type: object
-          properties:
-            horizontalSections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
-              description: Collection of horizontal sections on the SharePoint page.
-              x-ms-navigationProperty: true
-            verticalSection:
-              $ref: '#/components/schemas/microsoft.graph.verticalSection'
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.group:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -66565,6 +66208,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -69389,92 +69039,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.titleAreaLayoutType:
-      title: titleAreaLayoutType
-      enum:
-        - imageAndTitle
-        - plain
-        - colorBlock
-        - overlap
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serverProcessedContent:
-      title: serverProcessedContent
-      type: object
-      properties:
-        componentDependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-        customMetadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
-          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
-        htmlStrings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
-        imageSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-        searchablePlainTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-      additionalProperties:
-        type: object
-    microsoft.graph.titleAreaTextAlignmentType:
-      title: titleAreaTextAlignmentType
-      enum:
-        - left
-        - center
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            layout:
-              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
-            columns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
-              description: The set of vertical columns in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.verticalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: verticalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The set of web parts in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.termGroupScope:
       title: termGroupScope
       enum:
@@ -71650,74 +71214,6 @@ components:
         - blockAccess
         - deviceRestriction
       type: string
-    microsoft.graph.metaDataKeyStringPair:
-      title: metaDataKeyStringPair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the meta data.
-          nullable: true
-        value:
-          type: string
-          description: Value of the meta data.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.metaDataKeyValuePair:
-      title: metaDataKeyValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the metadata.
-          nullable: true
-        value:
-          $ref: '#/components/schemas/microsoft.graph.Json'
-      additionalProperties:
-        type: object
-    microsoft.graph.sectionEmphasisType:
-      title: sectionEmphasisType
-      enum:
-        - none
-        - neutral
-        - soft
-        - strong
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionLayoutType:
-      title: horizontalSectionLayoutType
-      enum:
-        - none
-        - oneColumn
-        - twoColumns
-        - threeColumns
-        - oneThirdLeftColumn
-        - oneThirdRightColumn
-        - fullWidth
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionColumn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSectionColumn
-          type: object
-          properties:
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
-              format: int32
-              nullable: true
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The collection of WebParts in this column.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

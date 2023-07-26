@@ -300,16 +300,15 @@ function Update-ExampleFile {
             $H = $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
         }
     }
-    if (($Content | Select-String -pattern $SearchTextForNewImports)) {
+    $EmptyFile = Test-FileEmpty $ExampleFile
+    if ($EmptyFile -or ($Content | Select-String -pattern $SearchTextForNewImports)) {
         $ReplaceEverything = $True
     }
-
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
     $SkippedExample = -1
     $ContainsRightExamples = $False
-
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
@@ -365,12 +364,7 @@ function Update-ExampleFile {
         else {
             Clear-Content $ExampleFile -Force
             if ($Content | Select-String -pattern $CommandPattern) {
-                Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
-            }
-            else {
-                #Replace everything with boiler plate code
-                $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
-                Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
+                Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $CommandPattern
             }
         }
         
@@ -378,7 +372,7 @@ function Update-ExampleFile {
     $CheckIfFileEmpty = Test-FileEmpty $ExampleFile
     if ($CheckIfFileEmpty) {
         if ($Content) {
-            Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
+            Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile -CommandPattern $CommandPattern
         }
     }
     #----------------------------------------------------------------------------------------------#
@@ -413,8 +407,6 @@ function Update-ExampleFile {
     #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
     if (($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)) {
         Clear-Content $ExampleFile -Force
-        $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
-        Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
         #Log api path api version and equivalent external doc url giving wron examples
         #Create folder and file if it doesn't exist
         #The artifact below will be ignored on git.
@@ -439,36 +431,105 @@ function Test-FileEmpty {
 
     Param ([Parameter(Mandatory = $true)][string]$File)
   
-    if ((Test-Path -LiteralPath $file) -and !((Get-Content -LiteralPath $file -Raw) -match '\S')) { return $true } else { return $false }
+    if ((Test-Path -LiteralPath $File) -and !((Get-Content -LiteralPath $File -Raw) -match '\S')) { return $true } else { return $false }
   
 }
+
 function Retain-ExistingCorrectExamples {
-
-    Param ([Parameter(Mandatory = $true)][object]$Content, [Parameter(Mandatory = $true)][string]$File)
-    $CorrectMaintainableHeaderCount = 1;
-    $LineCounter = 0;
-    $Header = $null
-    foreach ($Line in $Content) {
-            
-        if ($Line.StartsWith("$CommandPattern ")) {
-            $CorrectMaintainableHeaderCount++
-            break
+    Param (
+        [object]$Content,
+        [string]$File,
+        [string]$CommandPattern
+    ) 
+    $RetainedExamples = New-Object Collections.Generic.List[string] 
+    $End = 0
+    $NoOfExamples = 0
+    foreach ($C in $Content) {
+        if ($C.StartsWith("### Example")) {
+            $NoOfExamples++
         }
-        $LineCounter++
+        $End++  
     }
+    Get-ExistingCorrectExamples -Content $Content -File $File -CommandPattern $CommandPattern -start 0 -end $End -NoOfExamples $NoOfExamples
+    $TitleCount = 1
+    $RetainedContent = $null
+    foreach ($Ex in $RetainedExamples) {
+        $ContentBody = $Ex.Split("|")[0]
+        $ContentTitle = $Ex.Split("|")[1]
+        $ContentDescription = $Ex.Split("|")[2]
+        if ($ContentBody -match "\b$CommandPattern\b") {
+            $Val = $ContentTitle.Split("### Example ")
+            $ToBeReplaced = $Val[1].Substring(0, 1)
+            $ModifiedTitle = $ContentTitle.Replace($ToBeReplaced, $TitleCount)
+            $ContentBody = $ContentBody.Replace($ContentTitle, $ModifiedTitle)
+            $RetainedContent += "$ContentBody$ContentDescription"
+            $TitleCount++
+        }
+                    
+    }
+    Set-Content -Path $File -Value $RetainedContent
+    #Remove the last two empty lines at the end of the file
+    $Stream = [IO.File]::OpenWrite($ExampleFile)
+    try
+    {
+        $Stream.SetLength($stream.Length - 2)
+        $Stream.Close()
+    }
+    catch
+    {
+        Write-Error "Error in removing empty lines at the end of the file: $File"
+    }
+    $Stream.Dispose()
+    $RetainedExamples.Clear()
+}
+function Get-ExistingCorrectExamples {
 
-    for ($j = 0; $j -lt $LineCounter + 1; $j++) {
-        $Val = $Content[$j]
-        $Header += "$Val`r`n"
+    Param (
+        [object]$Content,
+        [string]$File,
+        [string]$CommandPattern,
+        [int]$Start,
+        [int]$End,
+        [int]$NoOfExamples
+    )
+    $Title = $null
+    $ContentBlock = $null
+ 
+    for ($i = $Start; $i -lt $End; $i++) {
+        $Value = $Content[$i]
+        $ContentBlock += "$Value`n" 
+        if ($Content[$i].StartsWith("### Example")) {
+            $Title = $Content[$i]
+        }   
+        if ($Content[$i].EndsWith("``")) {
+            $Start = $i
+            break;
+        }
     }
-    if (($Null -eq $Header) -or ($Header -eq "")) {
-        $Header = "### Example " + $CorrectMaintainableHeaderCount + ": Code snippet"
+    $RetainedDescription = $null
+    for ($j = $Start + 1; $j -lt $end; $j++) {
+       
+        if ($Content[$j].StartsWith("### Example")) {
+            break;
+        }
+        $DescVal = $Content[$j]
+        $RetainedDescription += "$DescVal`n"
     }
-            
-    $MaintainedCorrectExample = "$Header```````n$Description`r`n"
-    $CorrectMaintainableHeaderCount++
-    Add-Content -Path $File -Value $MaintainedCorrectExample        
-}       
+    $RetainedExamples.Add("$ContentBlock|$Title|$RetainedDescription")
+    if ($NoOfExamples -gt 1) {
+        $NoOfExamples--
+        for ($k = $Start; $k -lt $End; $k++) {
+            if ($Content[$k].StartsWith("### Example")) {
+                $Start = $k
+                break;
+            }
+        }
+      
+        Get-ExistingCorrectExamples -Content $Content -File $File -CommandPattern $CommandPattern -start $Start -end $End -NoOfExamples $NoOfExamples
+    }
+   
+}
+$RetainedExamples = New-Object Collections.Generic.List[string]      
 $JsonContent = Get-Content -Path $MetaDataJsonFile
 $DeserializedContent = $JsonContent | ConvertFrom-Json
 foreach ($Data in $DeserializedContent) {
@@ -508,7 +569,7 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-#Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
+Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
 #This is for scenarios where the correponding external docs url to the uri path gotten from Find-MgGraph command, is missing on the openapi.yml file for a particular module.
@@ -528,4 +589,4 @@ if ($ModulesToGenerate.Count -eq 0) {
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0" -GraphCommand "Update-MgBetaUserSettingShiftPreference" -GraphModule "Users" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/identitygovernance-run-get?view=graph-rest-beta&tabs=http" -GraphCommand "Get-MgBetaGroupCalendarPermission" -GraphModule "Calendar" -Profile "beta"

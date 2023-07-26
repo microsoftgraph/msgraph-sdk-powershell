@@ -6694,6 +6694,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
@@ -7770,8 +7771,8 @@ components:
             pages:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sitePage'
-              description: The collection of pages in the SitePages list in this site.
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -8709,6 +8710,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -12081,48 +12084,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sitePage:
+    microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: sitePage
+        - title: baseSitePage
           type: object
           properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             pageLayout:
               $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
-            promotionKind:
-              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
-            reactions:
-              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
-            showComments:
-              type: boolean
-              description: Determines whether or not to show comments at the bottom of the page.
-              nullable: true
-            showRecommendedPages:
-              type: boolean
-              description: Determines whether or not to show recommended pages at the bottom of the page.
-              nullable: true
-            thumbnailWebUrl:
-              type: string
-              description: Url of the sitePage's thumbnail image
-              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
-            titleArea:
-              $ref: '#/components/schemas/microsoft.graph.titleArea'
-            canvasLayout:
-              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
-            webParts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: Collection of webparts on the SharePoint page
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -12965,11 +12940,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -13088,6 +13063,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -13293,6 +13270,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -13428,6 +13413,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -19345,104 +19331,6 @@ components:
         - home
         - unknownFutureValue
       type: string
-    microsoft.graph.pagePromotionType:
-      title: pagePromotionType
-      enum:
-        - microsoftReserved
-        - page
-        - newsPost
-        - unknownFutureValue
-      type: string
-    microsoft.graph.reactionsFacet:
-      title: reactionsFacet
-      type: object
-      properties:
-        commentCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of comments.
-          format: int32
-          nullable: true
-        likeCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of likes.
-          format: int32
-          nullable: true
-        shareCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of shares.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.titleArea:
-      title: titleArea
-      type: object
-      properties:
-        alternativeText:
-          type: string
-          description: Alternative text on the title area.
-          nullable: true
-        enableGradientEffect:
-          type: boolean
-          description: Indicates whether the title area has a gradient effect enabled.
-          nullable: true
-        imageWebUrl:
-          type: string
-          description: URL of the image in the title area.
-          nullable: true
-        layout:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
-        serverProcessedContent:
-          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
-        showAuthor:
-          type: boolean
-          description: Indicates whether the author should be shown in title area.
-          nullable: true
-        showPublishedDate:
-          type: boolean
-          description: Indicates whether the published date should be shown in title area.
-          nullable: true
-        showTextBlockAboveTitle:
-          type: boolean
-          description: Indicates whether the text block above title should be shown in title area.
-          nullable: true
-        textAboveTitle:
-          type: string
-          description: The text above title line.
-          nullable: true
-        textAlignment:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.canvasLayout:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: canvasLayout
-          type: object
-          properties:
-            horizontalSections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
-              description: Collection of horizontal sections on the SharePoint page.
-              x-ms-navigationProperty: true
-            verticalSection:
-              $ref: '#/components/schemas/microsoft.graph.verticalSection'
-          additionalProperties:
-            type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -20402,6 +20290,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24150,92 +24045,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.titleAreaLayoutType:
-      title: titleAreaLayoutType
-      enum:
-        - imageAndTitle
-        - plain
-        - colorBlock
-        - overlap
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serverProcessedContent:
-      title: serverProcessedContent
-      type: object
-      properties:
-        componentDependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-        customMetadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
-          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
-        htmlStrings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
-        imageSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-        searchablePlainTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-      additionalProperties:
-        type: object
-    microsoft.graph.titleAreaTextAlignmentType:
-      title: titleAreaTextAlignmentType
-      enum:
-        - left
-        - center
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            layout:
-              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
-            columns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
-              description: The set of vertical columns in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.verticalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: verticalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The set of web parts in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -26785,74 +26594,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.metaDataKeyStringPair:
-      title: metaDataKeyStringPair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the meta data.
-          nullable: true
-        value:
-          type: string
-          description: Value of the meta data.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.metaDataKeyValuePair:
-      title: metaDataKeyValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the metadata.
-          nullable: true
-        value:
-          $ref: '#/components/schemas/microsoft.graph.Json'
-      additionalProperties:
-        type: object
-    microsoft.graph.sectionEmphasisType:
-      title: sectionEmphasisType
-      enum:
-        - none
-        - neutral
-        - soft
-        - strong
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionLayoutType:
-      title: horizontalSectionLayoutType
-      enum:
-        - none
-        - oneColumn
-        - twoColumns
-        - threeColumns
-        - oneThirdLeftColumn
-        - oneThirdRightColumn
-        - fullWidth
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionColumn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSectionColumn
-          type: object
-          properties:
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
-              format: int32
-              nullable: true
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The collection of WebParts in this column.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

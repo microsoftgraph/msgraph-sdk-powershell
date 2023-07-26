@@ -8011,6 +8011,43 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action permanentDelete
+      operationId: user.drive.item_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.preview':
     post:
       tags:
@@ -9380,6 +9417,35 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/drives/{drive-id}/root/microsoft.graph.permanentDelete':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action permanentDelete
+      operationId: user.drive.root_permanentDelete
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/drives/{drive-id}/root/microsoft.graph.preview':
     post:
       tags:
@@ -13182,6 +13248,9 @@ paths:
         - users.Actions
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-bypassactivationlock?view=graph-rest-1.0
       operationId: user.managedDevice_bypassActivationLock
       parameters:
         - name: user-id
@@ -13212,6 +13281,9 @@ paths:
         - users.Actions
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-cleanwindowsdevice?view=graph-rest-1.0
       operationId: user.managedDevice_cleanWindowsDevice
       parameters:
         - name: user-id
@@ -13255,6 +13327,9 @@ paths:
         - users.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-deleteuserfromsharedappledevice?view=graph-rest-1.0
       operationId: user.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: user-id
@@ -13298,6 +13373,9 @@ paths:
         - users.Actions
       summary: Invoke action disableLostMode
       description: Disable lost mode
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-disablelostmode?view=graph-rest-1.0
       operationId: user.managedDevice_disableLostMode
       parameters:
         - name: user-id
@@ -13328,6 +13406,9 @@ paths:
         - users.Actions
       summary: Invoke action locateDevice
       description: Locate a device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-locatedevice?view=graph-rest-1.0
       operationId: user.managedDevice_locateDevice
       parameters:
         - name: user-id
@@ -13358,6 +13439,9 @@ paths:
         - users.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-logoutsharedappledeviceactiveuser?view=graph-rest-1.0
       operationId: user.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: user-id
@@ -13388,6 +13472,9 @@ paths:
         - users.Actions
       summary: Invoke action rebootNow
       description: Reboot device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-rebootnow?view=graph-rest-1.0
       operationId: user.managedDevice_rebootNow
       parameters:
         - name: user-id
@@ -13418,6 +13505,9 @@ paths:
         - users.Actions
       summary: Invoke action recoverPasscode
       description: Recover passcode
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-recoverpasscode?view=graph-rest-1.0
       operationId: user.managedDevice_recoverPasscode
       parameters:
         - name: user-id
@@ -13448,6 +13538,9 @@ paths:
         - users.Actions
       summary: Invoke action remoteLock
       description: Remote lock
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-remotelock?view=graph-rest-1.0
       operationId: user.managedDevice_remoteLock
       parameters:
         - name: user-id
@@ -13478,6 +13571,9 @@ paths:
         - users.Actions
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-requestremoteassistance?view=graph-rest-1.0
       operationId: user.managedDevice_requestRemoteAssistance
       parameters:
         - name: user-id
@@ -13508,6 +13604,9 @@ paths:
         - users.Actions
       summary: Invoke action resetPasscode
       description: Reset passcode
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-resetpasscode?view=graph-rest-1.0
       operationId: user.managedDevice_resetPasscode
       parameters:
         - name: user-id
@@ -13538,6 +13637,9 @@ paths:
         - users.Actions
       summary: Invoke action retire
       description: Retire a device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-retire?view=graph-rest-1.0
       operationId: user.managedDevice_retire
       parameters:
         - name: user-id
@@ -13568,6 +13670,9 @@ paths:
         - users.Actions
       summary: Invoke action shutDown
       description: Shut down device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-shutdown?view=graph-rest-1.0
       operationId: user.managedDevice_shutDown
       parameters:
         - name: user-id
@@ -13597,6 +13702,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action syncDevice
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-syncdevice?view=graph-rest-1.0
       operationId: user.managedDevice_syncDevice
       parameters:
         - name: user-id
@@ -13626,6 +13735,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action updateWindowsDeviceAccount
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-updatewindowsdeviceaccount?view=graph-rest-1.0
       operationId: user.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: user-id
@@ -13667,6 +13780,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action windowsDefenderScan
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderscan?view=graph-rest-1.0
       operationId: user.managedDevice_windowsDefenderScan
       parameters:
         - name: user-id
@@ -13709,6 +13826,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-windowsdefenderupdatesignatures?view=graph-rest-1.0
       operationId: user.managedDevice_windowsDefenderUpdateSignature
       parameters:
         - name: user-id
@@ -13739,6 +13860,9 @@ paths:
         - users.Actions
       summary: Invoke action wipe
       description: Wipe a device
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-manageddevice-wipe?view=graph-rest-1.0
       operationId: user.managedDevice_wipe
       parameters:
         - name: user-id
@@ -14640,6 +14764,9 @@ paths:
         - users.Actions
       summary: Invoke action removeAllDevicesFromManagement
       description: Retire all devices from management for this user
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-user-removealldevicesfrommanagement?view=graph-rest-1.0
       operationId: user_removeAllDevicesFromManagement
       parameters:
         - name: user-id
@@ -14798,6 +14925,9 @@ paths:
         - users.Actions
       summary: Invoke action wipeManagedAppRegistrationsByDeviceTag
       description: Issues a wipe operation on an app registration with specified device tag.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-user-wipemanagedappregistrationsbydevicetag?view=graph-rest-1.0
       operationId: user_wipeManagedAppRegistrationsGraphBPreDeviceTag
       parameters:
         - name: user-id
@@ -16703,6 +16833,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
       additionalProperties:
         type: object
     microsoft.graph.conversationMember:
@@ -17754,6 +17885,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
         permissionValue:
           type: string
+          description: The name of the resource-specific permission.
           nullable: true
       additionalProperties:
         type: object

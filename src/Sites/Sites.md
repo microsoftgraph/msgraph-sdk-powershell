@@ -71,6 +71,12 @@ directive:
       subject: ^(Site)OnenoteNotebook(RecentNotebook$)
     set:
       subject: $1$2
+  - where:
+      verb: Get
+      variant: Get2
+      subject: ^(Site)$
+    set:
+      subject: All$1
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update

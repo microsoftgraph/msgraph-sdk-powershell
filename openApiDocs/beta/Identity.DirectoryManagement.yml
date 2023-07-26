@@ -6,6 +6,389 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
+  /admin/people:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get people from admin
+      operationId: admin_GetPerson
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - profileCardProperties
+                - pronouns
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - profileCardProperties
+                - pronouns
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.peopleAdminSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update the navigation property people in admin
+      operationId: admin_UpdatePerson
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.peopleAdminSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.peopleAdminSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete navigation property people for admin
+      operationId: admin_DeletePerson
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/people/profileCardProperties:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profileCardProperties from admin
+      operationId: admin.person_ListProfileCardProperty
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - annotations
+                - annotations desc
+                - directoryPropertyName
+                - directoryPropertyName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - annotations
+                - directoryPropertyName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.profileCardPropertyCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Create new navigation property to profileCardProperties for admin
+      operationId: admin.person_CreateProfileCardProperty
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/admin/people/profileCardProperties/{profileCardProperty-id}':
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get profileCardProperties from admin
+      operationId: admin.person_GetProfileCardProperty
+      parameters:
+        - name: profileCardProperty-id
+          in: path
+          description: The unique identifier of profileCardProperty
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileCardProperty
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - annotations
+                - directoryPropertyName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update the navigation property profileCardProperties in admin
+      operationId: admin.person_UpdateProfileCardProperty
+      parameters:
+        - name: profileCardProperty-id
+          in: path
+          description: The unique identifier of profileCardProperty
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileCardProperty
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete navigation property profileCardProperties for admin
+      operationId: admin.person_DeleteProfileCardProperty
+      parameters:
+        - name: profileCardProperty-id
+          in: path
+          description: The unique identifier of profileCardProperty
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: profileCardProperty
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/people/profileCardProperties/$count:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Get the number of the resource
+      operationId: admin.person.profileCardProperty_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /admin/people/pronouns:
+    get:
+      tags:
+        - admin.peopleAdminSettings
+      summary: List pronounsSettings
+      description: 'Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
+      operationId: admin.person_GetPronoun
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isEnabledInOrganization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Update pronounsSettings
+      description: 'Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
+      operationId: admin.person_UpdatePronoun
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.peopleAdminSettings
+      summary: Delete navigation property pronouns for admin
+      operationId: admin.person_DeletePronoun
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /administrativeUnits:
     get:
       tags:
@@ -10025,6 +10408,175 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/devices(deviceId=''{deviceId}'')':
+    get:
+      tags:
+        - devices.device
+      summary: Get device
+      description: 'Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+      operationId: device_GetDeviceGraphBPreDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          description: Alternate key of device
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - accountEnabled
+                - alternativeSecurityIds
+                - approximateLastSignInDateTime
+                - complianceExpirationDateTime
+                - deviceCategory
+                - deviceId
+                - deviceMetadata
+                - deviceOwnership
+                - deviceVersion
+                - displayName
+                - domainName
+                - enrollmentProfileName
+                - enrollmentType
+                - extensionAttributes
+                - hostnames
+                - isCompliant
+                - isManaged
+                - isManagementRestricted
+                - isRooted
+                - managementType
+                - mdmAppId
+                - onPremisesLastSyncDateTime
+                - onPremisesSyncEnabled
+                - operatingSystem
+                - operatingSystemVersion
+                - physicalIds
+                - profileType
+                - registrationDateTime
+                - systemLabels
+                - trustType
+                - kind
+                - manufacturer
+                - model
+                - name
+                - platform
+                - status
+                - usageRights
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - usageRights
+                - memberOf
+                - registeredOwners
+                - registeredUsers
+                - transitiveMemberOf
+                - extensions
+                - commands
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - devices.device
+      summary: Update device
+      description: Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+      operationId: device_UpdateDeviceGraphBPreDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          description: Alternate key of device
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.device'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - devices.device
+      summary: Delete device
+      description: Delete a registered device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+      operationId: device_DeleteDeviceGraphBPreDeviceId
+      parameters:
+        - name: deviceId
+          in: path
+          description: Alternate key of device
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /devices/$count:
     get:
       tags:
@@ -19251,7 +19803,11 @@ paths:
     get:
       tags:
         - directory.companySubscription
-      summary: Get subscriptions from directory
+      summary: List subscriptions
+      description: Get the list of commercial subscriptions that an organization has acquired.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0
       operationId: directory_ListSubscription
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19271,6 +19827,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - commerceSubscriptionId
+                - commerceSubscriptionId desc
                 - createdDateTime
                 - createdDateTime desc
                 - isTrial
@@ -19279,6 +19837,12 @@ paths:
                 - nextLifecycleDateTime desc
                 - ocpSubscriptionId
                 - ocpSubscriptionId desc
+                - ownerId
+                - ownerId desc
+                - ownerTenantId
+                - ownerTenantId desc
+                - ownerType
+                - ownerType desc
                 - serviceStatus
                 - serviceStatus desc
                 - skuId
@@ -19301,10 +19865,14 @@ paths:
             items:
               enum:
                 - id
+                - commerceSubscriptionId
                 - createdDateTime
                 - isTrial
                 - nextLifecycleDateTime
                 - ocpSubscriptionId
+                - ownerId
+                - ownerTenantId
+                - ownerType
                 - serviceStatus
                 - skuId
                 - skuPartNumber
@@ -19358,7 +19926,11 @@ paths:
     get:
       tags:
         - directory.companySubscription
-      summary: Get subscriptions from directory
+      summary: Get companySubscription
+      description: Get a specific commercial subscription that an organization has acquired.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0
       operationId: directory_GetSubscription
       parameters:
         - name: companySubscription-id
@@ -19380,10 +19952,14 @@ paths:
             items:
               enum:
                 - id
+                - commerceSubscriptionId
                 - createdDateTime
                 - isTrial
                 - nextLifecycleDateTime
                 - ocpSubscriptionId
+                - ownerId
+                - ownerTenantId
+                - ownerType
                 - serviceStatus
                 - skuId
                 - skuPartNumber
@@ -21522,6 +22098,124 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/directoryRoles(roleTemplateId=''{roleTemplateId}'')':
+    get:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Get directoryRole
+      description: 'Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
+      operationId: directoryRole_GetDirectoryRoleGraphBPreRoleTemplateId
+      parameters:
+        - name: roleTemplateId
+          in: path
+          description: Alternate key of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - roleTemplateId
+                - members
+                - scopedMembers
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+                - scopedMembers
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Update entity in directoryRoles by roleTemplateId
+      operationId: directoryRole_UpdateDirectoryRoleGraphBPreRoleTemplateId
+      parameters:
+        - name: roleTemplateId
+          in: path
+          description: Alternate key of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryRole'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directoryRoles.directoryRole
+      summary: Delete entity from directoryRoles by roleTemplateId
+      operationId: directoryRole_DeleteDirectoryRoleGraphBPreRoleTemplateId
+      parameters:
+        - name: roleTemplateId
+          in: path
+          description: Alternate key of directoryRole
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /directoryRoles/$count:
     get:
       tags:
@@ -27938,11 +28632,7 @@ paths:
     get:
       tags:
         - organization.organizationSettings
-      summary: List pronounsSettings
-      description: 'Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-list-pronounssettings?view=graph-rest-1.0
+      summary: Get pronouns from organization
       operationId: organization.setting_GetPronoun
       parameters:
         - name: organization-id
@@ -27991,11 +28681,7 @@ paths:
     patch:
       tags:
         - organization.organizationSettings
-      summary: Update pronounsSettings
-      description: 'Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
+      summary: Update the navigation property pronouns in organization
       operationId: organization.setting_UpdatePronoun
       parameters:
         - name: organization-id
@@ -29283,6 +29969,49 @@ paths:
           $ref: '#/components/responses/error'
 components:
   schemas:
+    microsoft.graph.peopleAdminSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: peopleAdminSettings
+          type: object
+          properties:
+            profileCardProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+              x-ms-navigationProperty: true
+            pronouns:
+              $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
+          additionalProperties:
+            type: object
+    microsoft.graph.profileCardProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: profileCardProperty
+          type: object
+          properties:
+            annotations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.profileCardAnnotation'
+              description: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
+            directoryPropertyName:
+              type: string
+              description: 'Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.pronounsSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: pronounsSettings
+          type: object
+          properties:
+            isEnabledInOrganization:
+              type: boolean
+              description: 'true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.'
+          additionalProperties:
+            type: object
     microsoft.graph.administrativeUnit:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -30915,6 +31644,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
@@ -31343,6 +32073,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.companySubscription'
+              description: List of commercial subscriptions that an organization has acquired.
               x-ms-navigationProperty: true
             featureRolloutPolicies:
               type: array
@@ -31649,39 +32380,63 @@ components:
         - title: companySubscription
           type: object
           properties:
+            commerceSubscriptionId:
+              type: string
+              description: The ID of this subscription in the commerce system. Alternate key.
+              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             isTrial:
               type: boolean
+              description: Whether the subscription is a free trial or purchased.
               nullable: true
             nextLifecycleDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             ocpSubscriptionId:
               type: string
               nullable: true
+            ownerId:
+              type: string
+              description: The object ID of the account admin.
+              nullable: true
+            ownerTenantId:
+              type: string
+              description: The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.
+              nullable: true
+            ownerType:
+              type: string
+              description: 'Indicates the entity that ownerId belongs to, for example, ''User''.'
+              nullable: true
             serviceStatus:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
+              description: The provisioning status of each service that's included in this subscription.
             skuId:
               type: string
+              description: The object ID of the SKU associated with this subscription.
               nullable: true
             skuPartNumber:
               type: string
+              description: The SKU associated with this subscription.
               nullable: true
             status:
               type: string
+              description: 'The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.'
               nullable: true
             totalLicenses:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of seats included in this subscription.
               format: int32
               nullable: true
           additionalProperties:
@@ -31763,7 +32518,7 @@ components:
           properties:
             authenticationType:
               type: string
-              description: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+              description: Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
             availabilityStatus:
               type: string
               description: 'This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.'
@@ -32126,34 +32881,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.profileCardProperty:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: profileCardProperty
-          type: object
-          properties:
-            annotations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.profileCardAnnotation'
-              description: Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.
-            directoryPropertyName:
-              type: string
-              description: 'Identifies a profileCardProperty resource in Get, Update, or Delete operations. Allows an administrator to surface hidden Azure Active Directory (Azure AD) properties on the Microsoft 365 profile card within their tenant. When present, the Azure AD field referenced in this field will be visible to all users in your tenant on the contact pane of the profile card. Allowed values for this field are: UserPrincipalName, Fax, StreetAddress, PostalCode, StateOrProvince, Alias, CustomAttribute1,  CustomAttribute2, CustomAttribute3, CustomAttribute4, CustomAttribute5, CustomAttribute6, CustomAttribute7, CustomAttribute8, CustomAttribute9, CustomAttribute10, CustomAttribute11, CustomAttribute12, CustomAttribute13, CustomAttribute14, CustomAttribute15.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.pronounsSettings:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: pronounsSettings
-          type: object
-          properties:
-            isEnabledInOrganization:
-              type: boolean
-              description: 'true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.'
-          additionalProperties:
-            type: object
     microsoft.graph.directorySetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32183,17 +32910,19 @@ components:
           properties:
             accountId:
               type: string
+              description: The unique ID of the account this SKU belongs to.
               nullable: true
             accountName:
               type: string
+              description: The name of the account this SKU belongs to.
               nullable: true
             appliesTo:
               type: string
-              description: 'For example, ''User'' or ''Company''.'
+              description: 'The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: User, Company.'
               nullable: true
             capabilityStatus:
               type: string
-              description: 'Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.'
+              description: 'Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.'
               nullable: true
             consumedUnits:
               maximum: 2147483647
@@ -32217,7 +32946,7 @@ components:
               nullable: true
             skuPartNumber:
               type: string
-              description: 'The SKU part number; for example: ''AAD_PREMIUM'' or ''RMSBASIC''. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.'
+              description: 'The SKU part number; for example, AAD_PREMIUM or RMSBASIC. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.'
               nullable: true
             subscriptionIds:
               type: array
@@ -32476,6 +33205,21 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.profileCardAnnotation:
+      title: profileCardAnnotation
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'If present, the value of this field is used by the profile card as the default property label in the experience (for example, ''Cost Center'').'
+          nullable: true
+        localizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.displayNameLocalization'
+          description: 'Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets ''Kostnads Senter'' as the attribute label, rather than ''Cost Center.'''
+      additionalProperties:
+        type: object
     microsoft.graph.apiApplication:
       title: apiApplication
       type: object
@@ -32506,7 +33250,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
+          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
       additionalProperties:
@@ -33850,8 +34594,8 @@ components:
             pages:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sitePage'
-              description: The collection of pages in the SitePages list in this site.
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -34572,6 +35316,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -36838,11 +37584,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -37503,21 +38249,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.profileCardAnnotation:
-      title: profileCardAnnotation
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'If present, the value of this field is used by the profile card as the default property label in the experience (for example, ''Cost Center'').'
-          nullable: true
-        localizations:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.displayNameLocalization'
-          description: 'Each resource in this collection represents the localized value of the attribute name for a given language, used as the default label for that locale. For example, a user with a no-NB client gets ''Kostnads Senter'' as the attribute label, rather than ''Cost Center.'''
-      additionalProperties:
-        type: object
     microsoft.graph.settingValue:
       title: settingValue
       type: object
@@ -37547,6 +38278,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of units that are locked out because the customer cancelled their subscription of the service SKU.
           format: int32
           nullable: true
         suspended:
@@ -38003,6 +38735,31 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.profileCardPropertyCollectionResponse:
+      title: Collection of profileCardProperty
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.administrativeUnitCollectionResponse:
       title: Collection of administrativeUnit
       type: object
@@ -38014,15 +38771,6 @@ components:
         '@odata.nextLink':
           type: string
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     microsoft.graph.extensionCollectionResponse:
@@ -38038,9 +38786,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    ODataCountResponse:
-      type: integer
-      format: int32
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
       type: object
@@ -38522,19 +39267,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.profileCardPropertyCollectionResponse:
-      title: Collection of profileCardProperty
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.directorySettingCollectionResponse:
       title: Collection of directorySetting
       type: object
@@ -38558,6 +39290,20 @@ components:
             $ref: '#/components/schemas/microsoft.graph.subscribedSku'
         '@odata.nextLink':
           type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.displayNameLocalization:
+      title: displayNameLocalization
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.'
+          nullable: true
+        languageTag:
+          type: string
+          description: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
           nullable: true
       additionalProperties:
         type: object
@@ -38846,6 +39592,8 @@ components:
               type: string
               description: Identifier of the synchronization template this job is based on.
               nullable: true
+            bulkUpload:
+              $ref: '#/components/schemas/microsoft.graph.bulkUpload'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -39864,48 +40612,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sitePage:
+    microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: sitePage
+        - title: baseSitePage
           type: object
           properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             pageLayout:
               $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
-            promotionKind:
-              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
-            reactions:
-              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
-            showComments:
-              type: boolean
-              description: Determines whether or not to show comments at the bottom of the page.
-              nullable: true
-            showRecommendedPages:
-              type: boolean
-              description: Determines whether or not to show recommended pages at the bottom of the page.
-              nullable: true
-            thumbnailWebUrl:
-              type: string
-              description: Url of the sitePage's thumbnail image
-              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
-            titleArea:
-              $ref: '#/components/schemas/microsoft.graph.titleArea'
-            canvasLayout:
-              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
-            webParts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: Collection of webparts on the SharePoint page
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -40931,6 +41651,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -41066,6 +41794,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -45888,20 +46617,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.displayNameLocalization:
-      title: displayNameLocalization
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.'
-          nullable: true
-        languageTag:
-          type: string
-          description: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.managedTenants.alertLogContent:
       title: alertLogContent
       type: object
@@ -46360,6 +47075,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.bulkUpload:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bulkUpload
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSchema:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -47798,104 +48520,6 @@ components:
         - home
         - unknownFutureValue
       type: string
-    microsoft.graph.pagePromotionType:
-      title: pagePromotionType
-      enum:
-        - microsoftReserved
-        - page
-        - newsPost
-        - unknownFutureValue
-      type: string
-    microsoft.graph.reactionsFacet:
-      title: reactionsFacet
-      type: object
-      properties:
-        commentCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of comments.
-          format: int32
-          nullable: true
-        likeCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of likes.
-          format: int32
-          nullable: true
-        shareCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of shares.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.titleArea:
-      title: titleArea
-      type: object
-      properties:
-        alternativeText:
-          type: string
-          description: Alternative text on the title area.
-          nullable: true
-        enableGradientEffect:
-          type: boolean
-          description: Indicates whether the title area has a gradient effect enabled.
-          nullable: true
-        imageWebUrl:
-          type: string
-          description: URL of the image in the title area.
-          nullable: true
-        layout:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
-        serverProcessedContent:
-          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
-        showAuthor:
-          type: boolean
-          description: Indicates whether the author should be shown in title area.
-          nullable: true
-        showPublishedDate:
-          type: boolean
-          description: Indicates whether the published date should be shown in title area.
-          nullable: true
-        showTextBlockAboveTitle:
-          type: boolean
-          description: Indicates whether the text block above title should be shown in title area.
-          nullable: true
-        textAboveTitle:
-          type: string
-          description: The text above title line.
-          nullable: true
-        textAlignment:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.canvasLayout:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: canvasLayout
-          type: object
-          properties:
-            horizontalSections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
-              description: Collection of horizontal sections on the SharePoint page.
-              x-ms-navigationProperty: true
-            verticalSection:
-              $ref: '#/components/schemas/microsoft.graph.verticalSection'
-          additionalProperties:
-            type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -52768,92 +53392,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.titleAreaLayoutType:
-      title: titleAreaLayoutType
-      enum:
-        - imageAndTitle
-        - plain
-        - colorBlock
-        - overlap
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serverProcessedContent:
-      title: serverProcessedContent
-      type: object
-      properties:
-        componentDependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-        customMetadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
-          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
-        htmlStrings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
-        imageSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-        searchablePlainTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-      additionalProperties:
-        type: object
-    microsoft.graph.titleAreaTextAlignmentType:
-      title: titleAreaTextAlignmentType
-      enum:
-        - left
-        - center
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            layout:
-              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
-            columns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
-              description: The set of vertical columns in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.verticalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: verticalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The set of web parts in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -55399,74 +55937,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.metaDataKeyStringPair:
-      title: metaDataKeyStringPair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the meta data.
-          nullable: true
-        value:
-          type: string
-          description: Value of the meta data.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.metaDataKeyValuePair:
-      title: metaDataKeyValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the metadata.
-          nullable: true
-        value:
-          $ref: '#/components/schemas/microsoft.graph.Json'
-      additionalProperties:
-        type: object
-    microsoft.graph.sectionEmphasisType:
-      title: sectionEmphasisType
-      enum:
-        - none
-        - neutral
-        - soft
-        - strong
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionLayoutType:
-      title: horizontalSectionLayoutType
-      enum:
-        - none
-        - oneColumn
-        - twoColumns
-        - threeColumns
-        - oneThirdLeftColumn
-        - oneThirdRightColumn
-        - fullWidth
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionColumn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSectionColumn
-          type: object
-          properties:
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
-              format: int32
-              nullable: true
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The collection of WebParts in this column.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:
@@ -57828,30 +58298,36 @@ components:
           additionalProperties:
             type: object
   responses:
-    microsoft.graph.administrativeUnitCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.administrativeUnitCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
-    microsoft.graph.extensionCollectionResponse:
+    microsoft.graph.profileCardPropertyCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+            $ref: '#/components/schemas/microsoft.graph.profileCardPropertyCollectionResponse'
     ODataCountResponse:
       description: The count of the resource
       content:
         text/plain:
           schema:
             $ref: '#/components/schemas/ODataCountResponse'
+    microsoft.graph.administrativeUnitCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.administrativeUnitCollectionResponse'
+    microsoft.graph.extensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
     microsoft.graph.directoryObjectCollectionResponse:
       description: Retrieved collection
       content:
@@ -58074,12 +58550,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.organizationalBrandingLocalizationCollectionResponse'
-    microsoft.graph.profileCardPropertyCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.profileCardPropertyCollectionResponse'
     microsoft.graph.directorySettingCollectionResponse:
       description: Retrieved collection
       content:

@@ -6668,11 +6668,11 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: communication.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -10842,11 +10842,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: user.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: user-id
@@ -10958,11 +10958,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id

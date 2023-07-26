@@ -7554,11 +7554,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetRegistration
       parameters:
         - name: virtualEvent-id
@@ -7669,11 +7669,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteRegistration
       parameters:
         - name: virtualEvent-id
@@ -8918,11 +8918,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -11835,11 +11835,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11950,11 +11950,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete externalMeetingRegistration
-      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      summary: Delete meetingRegistration
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -13199,11 +13199,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -15129,11 +15129,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
