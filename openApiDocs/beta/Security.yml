@@ -1246,6 +1246,37 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.attackSimulationRoot
+      summary: Create new navigation property to details for security
+      operationId: security.attackSimulation.endUserNotification_CreateDetail
+      parameters:
+        - name: endUserNotification-id
+          in: path
+          description: The unique identifier of endUserNotification
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: endUserNotification
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.endUserNotificationDetail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.endUserNotificationDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/attackSimulation/endUserNotifications/{endUserNotification-id}/details/{endUserNotificationDetail-id}':
     get:
       tags:
@@ -1306,6 +1337,79 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.endUserNotificationDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.attackSimulationRoot
+      summary: Update the navigation property details in security
+      operationId: security.attackSimulation.endUserNotification_UpdateDetail
+      parameters:
+        - name: endUserNotification-id
+          in: path
+          description: The unique identifier of endUserNotification
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: endUserNotification
+        - name: endUserNotificationDetail-id
+          in: path
+          description: The unique identifier of endUserNotificationDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: endUserNotificationDetail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.endUserNotificationDetail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.endUserNotificationDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.attackSimulationRoot
+      summary: Delete navigation property details for security
+      operationId: security.attackSimulation.endUserNotification_DeleteDetail
+      parameters:
+        - name: endUserNotification-id
+          in: path
+          description: The unique identifier of endUserNotification
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: endUserNotification
+        - name: endUserNotificationDetail-id
+          in: path
+          description: The unique identifier of endUserNotificationDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: endUserNotificationDetail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1650,6 +1754,37 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.attackSimulationRoot
+      summary: Create new navigation property to details for security
+      operationId: security.attackSimulation.landingPage_CreateDetail
+      parameters:
+        - name: landingPage-id
+          in: path
+          description: The unique identifier of landingPage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: landingPage
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.landingPageDetail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.landingPageDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/attackSimulation/landingPages/{landingPage-id}/details/{landingPageDetail-id}':
     get:
       tags:
@@ -1707,6 +1842,79 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.landingPageDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.attackSimulationRoot
+      summary: Update the navigation property details in security
+      operationId: security.attackSimulation.landingPage_UpdateDetail
+      parameters:
+        - name: landingPage-id
+          in: path
+          description: The unique identifier of landingPage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: landingPage
+        - name: landingPageDetail-id
+          in: path
+          description: The unique identifier of landingPageDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: landingPageDetail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.landingPageDetail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.landingPageDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.attackSimulationRoot
+      summary: Delete navigation property details for security
+      operationId: security.attackSimulation.landingPage_DeleteDetail
+      parameters:
+        - name: landingPage-id
+          in: path
+          description: The unique identifier of landingPage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: landingPage
+        - name: landingPageDetail-id
+          in: path
+          description: The unique identifier of landingPageDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: landingPageDetail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3877,6 +4085,37 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.attackSimulationRoot
+      summary: Create new navigation property to languageDetails for security
+      operationId: security.attackSimulation.training_CreateLanguageDetail
+      parameters:
+        - name: training-id
+          in: path
+          description: The unique identifier of training
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: training
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/attackSimulation/trainings/{training-id}/languageDetails/{trainingLanguageDetail-id}':
     get:
       tags:
@@ -3940,6 +4179,79 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.attackSimulationRoot
+      summary: Update the navigation property languageDetails in security
+      operationId: security.attackSimulation.training_UpdateLanguageDetail
+      parameters:
+        - name: training-id
+          in: path
+          description: The unique identifier of training
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: training
+        - name: trainingLanguageDetail-id
+          in: path
+          description: The unique identifier of trainingLanguageDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: trainingLanguageDetail
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.attackSimulationRoot
+      summary: Delete navigation property languageDetails for security
+      operationId: security.attackSimulation.training_DeleteLanguageDetail
+      parameters:
+        - name: training-id
+          in: path
+          description: The unique identifier of training
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: training
+        - name: trainingLanguageDetail-id
+          in: path
+          description: The unique identifier of trainingLanguageDetail
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: trainingLanguageDetail
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9934,7 +10246,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action export
-      description: 'Initiate an export from a **reviewSet** query.  For details, see Export documents from a review set in eDiscovery (Premium).'
+      description: 'Initiate an export from a ediscoveryReviewSetQuery.  For details, see Export documents from a review set in eDiscovery (Premium).'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-export?view=graph-rest-1.0
@@ -23952,7 +24264,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get intelligenceProfileIndicators from security
+      summary: Get intelligenceProfileIndicator
+      description: Read the properties and relationships of a intelligenceProfileIndicator object.
       operationId: security.threatIntelligence_ListIntelligenceProfileIndicator
       parameters:
         - $ref: '#/components/parameters/top'
@@ -24043,7 +24356,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get intelligenceProfileIndicators from security
+      summary: Get intelligenceProfileIndicator
+      description: Read the properties and relationships of a intelligenceProfileIndicator object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-intelligenceprofileindicator-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetIntelligenceProfileIndicator
       parameters:
         - name: intelligenceProfileIndicator-id
@@ -30701,8 +31018,8 @@ components:
             pages:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sitePage'
-              description: The collection of pages in the SitePages list in this site.
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -33070,6 +33387,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
@@ -36125,48 +36443,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sitePage:
+    microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: sitePage
+        - title: baseSitePage
           type: object
           properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             pageLayout:
               $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
-            promotionKind:
-              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
-            reactions:
-              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
-            showComments:
-              type: boolean
-              description: Determines whether or not to show comments at the bottom of the page.
-              nullable: true
-            showRecommendedPages:
-              type: boolean
-              description: Determines whether or not to show recommended pages at the bottom of the page.
-              nullable: true
-            thumbnailWebUrl:
-              type: string
-              description: Url of the sitePage's thumbnail image
-              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
-            titleArea:
-              $ref: '#/components/schemas/microsoft.graph.titleArea'
-            canvasLayout:
-              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
-            webParts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: Collection of webparts on the SharePoint page
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -37569,8 +37859,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.certificationControl'
+          description: Collection of the certification controls associated with the certification.
         certificationName:
           type: string
+          description: 'The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.'
           nullable: true
       additionalProperties:
         type: object
@@ -37678,11 +37970,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -38118,6 +38410,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -43952,14 +44246,6 @@ components:
         - home
         - unknownFutureValue
       type: string
-    microsoft.graph.pagePromotionType:
-      title: pagePromotionType
-      enum:
-        - microsoftReserved
-        - page
-        - newsPost
-        - unknownFutureValue
-      type: string
     microsoft.graph.publicationFacet:
       title: publicationFacet
       type: object
@@ -43974,96 +44260,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.reactionsFacet:
-      title: reactionsFacet
-      type: object
-      properties:
-        commentCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of comments.
-          format: int32
-          nullable: true
-        likeCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of likes.
-          format: int32
-          nullable: true
-        shareCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of shares.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.titleArea:
-      title: titleArea
-      type: object
-      properties:
-        alternativeText:
-          type: string
-          description: Alternative text on the title area.
-          nullable: true
-        enableGradientEffect:
-          type: boolean
-          description: Indicates whether the title area has a gradient effect enabled.
-          nullable: true
-        imageWebUrl:
-          type: string
-          description: URL of the image in the title area.
-          nullable: true
-        layout:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
-        serverProcessedContent:
-          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
-        showAuthor:
-          type: boolean
-          description: Indicates whether the author should be shown in title area.
-          nullable: true
-        showPublishedDate:
-          type: boolean
-          description: Indicates whether the published date should be shown in title area.
-          nullable: true
-        showTextBlockAboveTitle:
-          type: boolean
-          description: Indicates whether the text block above title should be shown in title area.
-          nullable: true
-        textAboveTitle:
-          type: string
-          description: The text above title line.
-          nullable: true
-        textAlignment:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.canvasLayout:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: canvasLayout
-          type: object
-          properties:
-            horizontalSections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
-              description: Collection of horizontal sections on the SharePoint page.
-              x-ms-navigationProperty: true
-            verticalSection:
-              $ref: '#/components/schemas/microsoft.graph.verticalSection'
-          additionalProperties:
-            type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -45013,6 +45209,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -45148,6 +45352,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -51818,92 +52023,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.titleAreaLayoutType:
-      title: titleAreaLayoutType
-      enum:
-        - imageAndTitle
-        - plain
-        - colorBlock
-        - overlap
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serverProcessedContent:
-      title: serverProcessedContent
-      type: object
-      properties:
-        componentDependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-        customMetadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
-          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
-        htmlStrings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
-        imageSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-        searchablePlainTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-      additionalProperties:
-        type: object
-    microsoft.graph.titleAreaTextAlignmentType:
-      title: titleAreaTextAlignmentType
-      enum:
-        - left
-        - center
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            layout:
-              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
-            columns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
-              description: The set of vertical columns in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.verticalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: verticalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The set of web parts in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -56279,74 +56398,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.metaDataKeyStringPair:
-      title: metaDataKeyStringPair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the meta data.
-          nullable: true
-        value:
-          type: string
-          description: Value of the meta data.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.metaDataKeyValuePair:
-      title: metaDataKeyValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the metadata.
-          nullable: true
-        value:
-          $ref: '#/components/schemas/microsoft.graph.Json'
-      additionalProperties:
-        type: object
-    microsoft.graph.sectionEmphasisType:
-      title: sectionEmphasisType
-      enum:
-        - none
-        - neutral
-        - soft
-        - strong
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionLayoutType:
-      title: horizontalSectionLayoutType
-      enum:
-        - none
-        - oneColumn
-        - twoColumns
-        - threeColumns
-        - oneThirdLeftColumn
-        - oneThirdRightColumn
-        - fullWidth
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionColumn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSectionColumn
-          type: object
-          properties:
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
-              format: int32
-              nullable: true
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The collection of WebParts in this column.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

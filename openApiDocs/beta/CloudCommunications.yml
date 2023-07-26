@@ -3392,10 +3392,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -5512,11 +5512,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -6668,11 +6668,11 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: communication.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -9478,11 +9478,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
@@ -10842,11 +10842,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: user.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: user-id
@@ -10958,11 +10958,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -12962,11 +12962,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
