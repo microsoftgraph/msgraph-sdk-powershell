@@ -15,8 +15,8 @@ if (!(Test-Path $SourcePath)) {
     Write-Error "SourcePath is not valid or does not exist. Please ensure that $SourcePath exists then try again."
 }
 
-$psd1s = Get-ChildItem -Path $SourcePath -Filter "Microsoft.Graph.*.psd1" -Recurse | where { $_.BaseName -ne "Microsoft.Graph.Authentication" }
-$allModules = (Invoke-Expression (($psd1s.FullName | ForEach-Object{ Get-Content $_}) | Out-String ))
+$psd1s = Get-ChildItem -Path $SourcePath -Filter "Microsoft.Graph.*.psd1" -Recurse | Where-Object { $_.BaseName -ne "Microsoft.Graph.Authentication" }
+$allModules = $psd1s.FullName | ForEach-Object { Import-PowerShellDataFile -Path $_ }
 $unique = $allModules.FunctionsToExport | Select-Object -unique
 $duplicates = Compare-object -ReferenceObject $unique -DifferenceObject $allModules.FunctionsToExport
 

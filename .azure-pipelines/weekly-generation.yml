@@ -96,7 +96,7 @@ jobs:
       - task: PowerShell@2
         name: "FindDuplicateCommands"
         displayName: "Find Duplicate Commands Across Modules"
-        enabled: false
+        enabled: true
         inputs:
           targetType: inline
           script: |
