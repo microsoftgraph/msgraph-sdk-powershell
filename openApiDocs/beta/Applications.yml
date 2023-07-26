@@ -5887,7 +5887,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+      description: List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
@@ -6042,7 +6042,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+      description: List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
@@ -6097,7 +6097,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Assign tokenLifetimePolicy
-      description: Assign a tokenLifetimePolicy to an application or servicePrincipal.
+      description: Assign a tokenLifetimePolicy to an application or servicePrincipal. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
@@ -6113,6 +6113,182 @@ paths:
           x-ms-docs-key-type: application
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications(appId=''{appId}'')':
+    get:
+      tags:
+        - applications.application
+      summary: Get application
+      description: Get the properties and relationships of an application object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+      operationId: application_GetApplicationGraphBPreAppId
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - api
+                - appId
+                - appRoles
+                - authenticationBehaviors
+                - certification
+                - createdDateTime
+                - defaultRedirectUri
+                - description
+                - disabledByMicrosoftStatus
+                - displayName
+                - groupMembershipClaims
+                - identifierUris
+                - info
+                - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
+                - keyCredentials
+                - logo
+                - notes
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publicClient
+                - publisherDomain
+                - requestSignatureVerification
+                - requiredResourceAccess
+                - samlMetadataUrl
+                - serviceManagementReference
+                - servicePrincipalLockConfiguration
+                - signInAudience
+                - spa
+                - tags
+                - tokenEncryptionKeyId
+                - uniqueName
+                - verifiedPublisher
+                - web
+                - windows
+                - onPremisesPublishing
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.application
+      summary: Update application
+      description: Update the properties of an application object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+      operationId: application_UpdateApplicationGraphBPreAppId
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.application'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.application
+      summary: Delete application
+      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+      operationId: application_DeleteApplicationGraphBPreAppId
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
       responses:
         2XX:
           description: Success
@@ -21221,6 +21397,199 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/servicePrincipals(appId=''{appId}'')':
+    get:
+      tags:
+        - servicePrincipals.servicePrincipal
+      summary: Get servicePrincipal
+      description: Retrieve the properties and relationships of a servicePrincipal object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
+      operationId: servicePrincipal_GetServicePrincipalGraphBPreAppId
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - passwordSingleSignOnSettings
+                - accountEnabled
+                - addIns
+                - alternativeNames
+                - appDescription
+                - appDisplayName
+                - appId
+                - applicationTemplateId
+                - appOwnerOrganizationId
+                - appRoleAssignmentRequired
+                - appRoles
+                - customSecurityAttributes
+                - description
+                - disabledByMicrosoftStatus
+                - displayName
+                - errorUrl
+                - homepage
+                - info
+                - keyCredentials
+                - loginUrl
+                - logoutUrl
+                - notes
+                - notificationEmailAddresses
+                - passwordCredentials
+                - preferredSingleSignOnMode
+                - preferredTokenSigningKeyEndDateTime
+                - preferredTokenSigningKeyThumbprint
+                - publishedPermissionScopes
+                - publisherName
+                - replyUrls
+                - samlMetadataUrl
+                - samlSingleSignOnSettings
+                - servicePrincipalNames
+                - servicePrincipalType
+                - signInAudience
+                - tags
+                - tokenEncryptionKeyId
+                - verifiedPublisher
+                - appManagementPolicies
+                - appRoleAssignedTo
+                - appRoleAssignments
+                - claimsMappingPolicies
+                - createdObjects
+                - delegatedPermissionClassifications
+                - endpoints
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - licenseDetails
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedObjects
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - transitiveMemberOf
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appManagementPolicies
+                - appRoleAssignedTo
+                - appRoleAssignments
+                - claimsMappingPolicies
+                - createdObjects
+                - delegatedPermissionClassifications
+                - endpoints
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - licenseDetails
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedObjects
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - transitiveMemberOf
+                - synchronization
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - servicePrincipals.servicePrincipal
+      summary: Update servicePrincipal
+      description: Update the properties of servicePrincipal object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0
+      operationId: servicePrincipal_UpdateServicePrincipalGraphBPreAppId
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.servicePrincipal
+      summary: Delete servicePrincipal
+      description: Delete a servicePrincipal object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
+      operationId: servicePrincipal_DeleteServicePrincipalGraphBPreAppId
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /servicePrincipals/$count:
     get:
       tags:
@@ -23006,6 +23375,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
@@ -24460,7 +24830,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
+          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
       additionalProperties:
@@ -25348,6 +25718,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -26444,8 +26816,8 @@ components:
             pages:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sitePage'
-              description: The collection of pages in the SitePages list in this site.
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -29913,6 +30285,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -30048,6 +30428,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -30230,11 +30611,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -31529,48 +31910,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sitePage:
+    microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: sitePage
+        - title: baseSitePage
           type: object
           properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             pageLayout:
               $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
-            promotionKind:
-              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
-            reactions:
-              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
-            showComments:
-              type: boolean
-              description: Determines whether or not to show comments at the bottom of the page.
-              nullable: true
-            showRecommendedPages:
-              type: boolean
-              description: Determines whether or not to show recommended pages at the bottom of the page.
-              nullable: true
-            thumbnailWebUrl:
-              type: string
-              description: Url of the sitePage's thumbnail image
-              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
-            titleArea:
-              $ref: '#/components/schemas/microsoft.graph.titleArea'
-            canvasLayout:
-              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
-            webParts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: Collection of webparts on the SharePoint page
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -39005,104 +39358,6 @@ components:
         - home
         - unknownFutureValue
       type: string
-    microsoft.graph.pagePromotionType:
-      title: pagePromotionType
-      enum:
-        - microsoftReserved
-        - page
-        - newsPost
-        - unknownFutureValue
-      type: string
-    microsoft.graph.reactionsFacet:
-      title: reactionsFacet
-      type: object
-      properties:
-        commentCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of comments.
-          format: int32
-          nullable: true
-        likeCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of likes.
-          format: int32
-          nullable: true
-        shareCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of shares.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.titleArea:
-      title: titleArea
-      type: object
-      properties:
-        alternativeText:
-          type: string
-          description: Alternative text on the title area.
-          nullable: true
-        enableGradientEffect:
-          type: boolean
-          description: Indicates whether the title area has a gradient effect enabled.
-          nullable: true
-        imageWebUrl:
-          type: string
-          description: URL of the image in the title area.
-          nullable: true
-        layout:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
-        serverProcessedContent:
-          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
-        showAuthor:
-          type: boolean
-          description: Indicates whether the author should be shown in title area.
-          nullable: true
-        showPublishedDate:
-          type: boolean
-          description: Indicates whether the published date should be shown in title area.
-          nullable: true
-        showTextBlockAboveTitle:
-          type: boolean
-          description: Indicates whether the text block above title should be shown in title area.
-          nullable: true
-        textAboveTitle:
-          type: string
-          description: The text above title line.
-          nullable: true
-        textAlignment:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.canvasLayout:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: canvasLayout
-          type: object
-          properties:
-            horizontalSections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
-              description: Collection of horizontal sections on the SharePoint page.
-              x-ms-navigationProperty: true
-            verticalSection:
-              $ref: '#/components/schemas/microsoft.graph.verticalSection'
-          additionalProperties:
-            type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -43733,92 +43988,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.titleAreaLayoutType:
-      title: titleAreaLayoutType
-      enum:
-        - imageAndTitle
-        - plain
-        - colorBlock
-        - overlap
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serverProcessedContent:
-      title: serverProcessedContent
-      type: object
-      properties:
-        componentDependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-        customMetadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
-          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
-        htmlStrings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
-        imageSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-        searchablePlainTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-      additionalProperties:
-        type: object
-    microsoft.graph.titleAreaTextAlignmentType:
-      title: titleAreaTextAlignmentType
-      enum:
-        - left
-        - center
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            layout:
-              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
-            columns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
-              description: The set of vertical columns in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.verticalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: verticalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The set of web parts in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -46769,74 +46938,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.metaDataKeyStringPair:
-      title: metaDataKeyStringPair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the meta data.
-          nullable: true
-        value:
-          type: string
-          description: Value of the meta data.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.metaDataKeyValuePair:
-      title: metaDataKeyValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the metadata.
-          nullable: true
-        value:
-          $ref: '#/components/schemas/microsoft.graph.Json'
-      additionalProperties:
-        type: object
-    microsoft.graph.sectionEmphasisType:
-      title: sectionEmphasisType
-      enum:
-        - none
-        - neutral
-        - soft
-        - strong
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionLayoutType:
-      title: horizontalSectionLayoutType
-      enum:
-        - none
-        - oneColumn
-        - twoColumns
-        - threeColumns
-        - oneThirdLeftColumn
-        - oneThirdRightColumn
-        - fullWidth
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionColumn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSectionColumn
-          type: object
-          properties:
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
-              format: int32
-              nullable: true
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The collection of WebParts in this column.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

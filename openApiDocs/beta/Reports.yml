@@ -3414,6 +3414,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-06-30T00:00:00.0000000+00:00'
+        date: '2023-06-21T00:00:00.0000000+00:00'
+        version: 2023-06/credentialUserRegistrationDetails
+        description: 'The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3439,6 +3445,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-06-30T00:00:00.0000000+00:00'
+        date: '2023-06-21T00:00:00.0000000+00:00'
+        version: 2023-06/credentialUserRegistrationDetails
+        description: 'The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.'
       x-ms-docs-operation-type: operation
   '/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails-id}':
     get:
@@ -3496,6 +3508,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-06-30T00:00:00.0000000+00:00'
+        date: '2023-06-21T00:00:00.0000000+00:00'
+        version: 2023-06/credentialUserRegistrationDetails
+        description: 'The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3527,6 +3545,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-06-30T00:00:00.0000000+00:00'
+        date: '2023-06-21T00:00:00.0000000+00:00'
+        version: 2023-06/credentialUserRegistrationDetails
+        description: 'The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3553,6 +3577,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-06-30T00:00:00.0000000+00:00'
+        date: '2023-06-21T00:00:00.0000000+00:00'
+        version: 2023-06/credentialUserRegistrationDetails
+        description: 'The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.'
       x-ms-docs-operation-type: operation
   /reports/credentialUserRegistrationDetails/$count:
     get:
@@ -3568,6 +3598,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2024-06-30T00:00:00.0000000+00:00'
+        date: '2023-06-21T00:00:00.0000000+00:00'
+        version: 2023-06/credentialUserRegistrationDetails
+        description: 'The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.'
   /reports/dailyPrintUsage:
     get:
       tags:
@@ -3861,6 +3897,8 @@ paths:
                 - usageDate desc
                 - printerId
                 - printerId desc
+                - printerName
+                - printerName desc
               type: string
         - name: $select
           in: query
@@ -3885,6 +3923,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -3968,6 +4007,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -4360,6 +4400,8 @@ paths:
                 - usageDate desc
                 - printerId
                 - printerId desc
+                - printerName
+                - printerName desc
               type: string
         - name: $select
           in: query
@@ -4384,6 +4426,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -4478,6 +4521,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -9837,6 +9881,8 @@ paths:
                 - usageDate desc
                 - printerId
                 - printerId desc
+                - printerName
+                - printerName desc
               type: string
         - name: $select
           in: query
@@ -9861,6 +9907,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -9944,6 +9991,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -10336,6 +10384,8 @@ paths:
                 - usageDate desc
                 - printerId
                 - printerId desc
+                - printerName
+                - printerName desc
               type: string
         - name: $select
           in: query
@@ -10360,6 +10410,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -10454,6 +10505,7 @@ paths:
                 - singleSidedSheetCount
                 - usageDate
                 - printerId
+                - printerName
               type: string
         - name: $expand
           in: query
@@ -11778,7 +11830,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure Ad activity list.'
+              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure AD audit log categories and activities.'
             additionalDetails:
               type: array
               items:
@@ -11786,7 +11838,7 @@ components:
               description: Indicates additional details on the activity.
             category:
               type: string
-              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.'
+              description: 'Indicates which resource category that''s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.'
             correlationId:
               type: string
               description: Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
@@ -12629,6 +12681,10 @@ components:
           properties:
             printerId:
               type: string
+            printerName:
+              type: string
+              description: The name of the printer represented by these statistics.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.printUsageByUser:
@@ -12842,6 +12898,10 @@ components:
         printerId:
           type: string
           description: The printer ID that the job was queued for. Read-only.
+          nullable: true
+        printerName:
+          type: string
+          description: The printer name that the job was queued for. Read-only.
           nullable: true
         processingState:
           $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
@@ -14736,11 +14796,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
