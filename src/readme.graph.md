@@ -361,9 +361,17 @@ directive:
       {
         return $;
       } else {
+        // Add using namespaces to class.
+        let namespaceRegex = /(namespace.*.Models\n\{)/gm
+        $ = $.replace(namespaceRegex,'$1\n\tusing System.Linq;');
+
         // Change XmlDateTimeSerializationMode from Unspecified to Utc.
         let strToDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
         $ = $.replace(strToDateTimeRegex, '$1Utc');
+
+        // Use case-insensitive dictionary when deserializing from dictionaries/OrderedHashtables.
+        let deserializeFromDictionaryRegex = /(.*DeserializeFromDictionary\(.*IDictionary.*\n.*\{.*\n.*new.*\()content(\);)/gm
+        $ = $.replace(deserializeFromDictionaryRegex, '$1(content.Cast<global::System.Collections.DictionaryEntry>().ToDictionary(kvp => kvp.Key as string, kvp => kvp.Value, global::System.StringComparer.OrdinalIgnoreCase))$2');
 
         return $;
       }
