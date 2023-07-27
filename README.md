@@ -13,16 +13,7 @@
 The Microsoft Graph PowerShell SDK is made up of a set of modules that enable you to interact with the Microsoft Graph API using PowerShell commands. The modules consist of commands that act as wrappers for the API, allowing you to access all the features and functionality of the API through PowerShell.
 </p>
 
-<p align="center">
-  <a href="#modules">Modules</a> |
-  <a href="#getting-started">Getting Started</a> |
-  <a href="#api-version">API Version</a> |
-  <a href="#notes">Notes</a> |
-  <a href="#troubleshooting">Troubleshooting</a> |
-  <a href="#known-issues">Known Issues</a> |
-  <a href="#feedback">Feedback</a> |
-  <a href="#license">License</a>
-</p>
+
 
 ## Modules
 
