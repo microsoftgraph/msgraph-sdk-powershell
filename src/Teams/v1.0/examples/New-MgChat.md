@@ -1,4 +1,4 @@
-### Example 1: Create a one-on-one chat
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -27,7 +27,7 @@ New-MgChat -BodyParameter $params
 This example shows how to use the New-MgChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Create a group chat
+### Example 2: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -64,36 +64,7 @@ New-MgChat -BodyParameter $params
 This example shows how to use the New-MgChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Create a one-on-one chat using user principal name
-
-```powershellImport-Module Microsoft.Graph.Teams
-
-$params = @{
-	chatType = "oneOnOne"
-	members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			roles = @(
-				"owner"
-			)
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
-		}
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			roles = @(
-				"owner"
-			)
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('alex@contoso.com')"
-		}
-	)
-}
-
-New-MgChat -BodyParameter $params
-```
-This example shows how to use the New-MgChat Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 4: Create a group chat with tenant guest user
+### Example 3: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -130,7 +101,7 @@ New-MgChat -BodyParameter $params
 This example shows how to use the New-MgChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Create a one-on-one chat with a federated user (outside of own organization)
+### Example 4: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 

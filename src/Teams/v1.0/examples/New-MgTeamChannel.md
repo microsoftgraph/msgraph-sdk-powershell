@@ -1,4 +1,4 @@
-### Example 1: Create a standard channel
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -13,7 +13,7 @@ New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 This example shows how to use the New-MgTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Create private channel on behalf of user
+### Example 2: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -38,7 +38,7 @@ New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 This example shows how to use the New-MgTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Create a channel in migration mode
+### Example 3: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -54,7 +54,7 @@ New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 This example shows how to use the New-MgTeamChannel Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Create private channel on behalf of user using user principal name
+### Example 4: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -67,30 +67,6 @@ $params = @{
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
 			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
-			roles = @(
-				"owner"
-			)
-		}
-	)
-}
-
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
-```
-This example shows how to use the New-MgTeamChannel Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 5: Create a shared channel on behalf of a user
-
-```powershellImport-Module Microsoft.Graph.Teams
-
-$params = @{
-	displayName = "My First Shared Channel"
-	description = "This is my first shared channel"
-	membershipType = "shared"
-	members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('7640023f-fe43-573f-9ff4-84a9efe4acd6')"
 			roles = @(
 				"owner"
 			)
