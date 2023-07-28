@@ -546,9 +546,18 @@ directive:
       {
         return $;
       } else {
+        // Add using namespaces to class.
+        let namespaceRegex = /(namespace.*.Runtime\n\{)/gm
+        $ = $.replace(namespaceRegex,'$1\n\tusing System.Linq;');
+
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+
+        // Serialize OrderedDictionary
+        let enumerableRegex = /(if.*\(value.*IEnumerable.*\))/gm
+        let orderedSerializerImpl = 'if (value is System.Collections.Specialized.OrderedDictionary ovalue) { return JsonSerializable.ToJson((ovalue?.Cast<global::System.Collections.DictionaryEntry>().ToDictionary(kvp => kvp.Key as string, kvp => kvp.Value, global::System.StringComparer.OrdinalIgnoreCase)), null);}';
+        $ = $.replace(enumerableRegex, `${orderedSerializerImpl}\n\n$1`)
 
         return $;
       }
