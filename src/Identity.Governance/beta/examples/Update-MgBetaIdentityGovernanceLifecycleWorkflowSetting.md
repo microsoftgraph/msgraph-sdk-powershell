@@ -1,11 +1,18 @@
-### Example 1: Using the Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+
 $params = @{
 	"@odata.context" = "https://graph.microsoft.com/beta/$metadata#identityGovernance/lifecycleWorkflows/settings/$entity"
-	WorkflowScheduleIntervalInHours = 3
+	workflowScheduleIntervalInHours = 3
+	emailSettings = @{
+		senderDomain = "ContosoIndustries.net"
+		useCompanyBranding = $true
+	}
 }
+
 Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaIdentityGovernanceLifecycleWorkflowSetting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
