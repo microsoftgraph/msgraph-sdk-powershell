@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // Assert
             Assert.IsType<AzureIdentityAccessTokenProvider>(authProvider);
             Assert.Equal(dummyAccessToken, accessToken);
+            Assert.Equal(GraphEnvironmentConstants.EnvironmentName.Global, userProvidedAuthContext.Environment);
 
             // reset static instance.
             GraphSession.Reset();
