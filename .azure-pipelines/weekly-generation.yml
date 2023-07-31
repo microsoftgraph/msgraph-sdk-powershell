@@ -166,7 +166,7 @@ jobs:
         inputs:
           targetType: inline
           script: |
-            git pull "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(GenerationBranch)
+            git fetch "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(GenerationBranch)
             git merge $(GenerationBranch) -s ours
             git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
             git status
