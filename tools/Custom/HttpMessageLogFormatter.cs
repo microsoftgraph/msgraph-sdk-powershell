@@ -34,26 +34,33 @@ namespace NamespacePrefixPlaceholder.PowerShell
             // Set Content if previous requestClone had one.
             if (originalRequest.Content != null)
             {
-                // HttpClient doesn't rewind streams and we have to explicitly do so.
-                var ms = new MemoryStream();
-                await originalRequest.Content.CopyToAsync(ms);
-                ms.Position = 0;
-                newRequest.Content = new StreamContent(ms);
-                // Attempt to copy request content headers with a single retry.
-                // HttpHeaders dictionary is not thread-safe when targeting anything below .NET 7. For more information, see https://github.com/dotnet/runtime/issues/61798.
-                int retryCount = 0;
-                int maxRetryCount = 2;
-                while (retryCount < maxRetryCount)
+                // Try cloning request content; otherwise, skip due to https://github.com/dotnet/corefx/pull/19082 in .NET 4.x.
+                try
                 {
-                    try
+                    // HttpClient doesn't rewind streams and we have to explicitly do so.
+                    var ms = new MemoryStream();
+                    await originalRequest.Content.CopyToAsync(ms).ConfigureAwait(false);
+                    ms.Position = 0;
+                    newRequest.Content = new StreamContent(ms);
+                    // Attempt to copy request content headers with a single retry.
+                    // HttpHeaders dictionary is not thread-safe when targeting anything below .NET 7. For more information, see https://github.com/dotnet/runtime/issues/61798.
+                    int retryCount = 0;
+                    int maxRetryCount = 2;
+                    while (retryCount < maxRetryCount)
                     {
-                        originalRequest.Content.Headers?.ToList().ForEach(header => newRequest.Content.Headers.TryAddWithoutValidation(header.Key, header.Value));
-                        retryCount = maxRetryCount;
+                        try
+                        {
+                            originalRequest.Content?.Headers?.ToList().ForEach(header => newRequest.Content?.Headers.TryAddWithoutValidation(header.Key, header.Value));
+                            retryCount = maxRetryCount;
+                        }
+                        catch (InvalidOperationException)
+                        {
+                            retryCount++;
+                        }
                     }
-                    catch (InvalidOperationException)
-                    {
-                        retryCount++;
-                    }
+                }
+                catch
+                {
                 }
             }
             return newRequest;
