@@ -1,10 +1,15 @@
-### Example 1: Using the Get-MgDirectoryObjectMemberGroup Cmdlet
+### Example 1: Check group memberships for a directory object
+
 ```powershell
+
 Import-Module Microsoft.Graph.DirectoryObjects
+
 $params = @{
-	SecurityEnabledOnly = $false
+	securityEnabledOnly = $false
 }
+
 Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
+
 ```
-This example shows how to use the Get-MgDirectoryObjectMemberGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will check group memberships for a directory object
+
