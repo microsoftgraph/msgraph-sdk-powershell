@@ -34,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             {
                 Directory.CreateDirectory(Core.Constants.GraphDirectoryPath);
             }
-            finally
+            catch (Exception)
             {
             }
             if (File.Exists(Constants.GraphOptionsFilePath))
