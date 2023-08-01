@@ -3,10 +3,6 @@
 Param(
     $ModulesToGenerate = @(),
     $Available = @(),
-    [hashtable]$V1CommandGetVariantList = @{},
-    [hashtable]$BetaCommandGetVariantList = @{},
-    [hashtable]$V1CommandListVariantList = @{},
-    [hashtable]$BetaCommandListVariantList = @{},
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $FolderForExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport"),
     [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv",
@@ -87,28 +83,20 @@ function Get-Files {
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
                 #Extract URI path
-                $CommandValue = $null
-                if ($GraphProfile -eq "beta") {
-                    $CommandValue = $BetaCommandGetVariantList[$Command]
-                    if(-not($CommandValue)){
-                        $CommandValue = $BetaCommandListVariantList[$Command]
+                $CommandDetails = Find-MgGraphCommand -Command $Command
+                if ($CommandDetails) {
+                    foreach ($CommandDetail in $CommandDetails) {
+                        $ApiPath = $CommandDetail.URI
+                        $Method = $CommandDetails.Method
+                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
                     }
-                        
                 }
                 else {
-                    $CommandValue = $V1CommandGetVariantList[$Command]
-                    if(-not($CommandValue)){
-                        $CommandValue = $V1CommandListVariantList[$Command]
+                    #Clear any content in that file as long as its not a readme file
+                    if ($Command -ine "README") {
+                        Clear-Content $File -Force
                     }
                 }
-                        
-                if ($CommandValue) {
-                    $CommandValueParams = $CommandValue.Split(",")
-                    $ApiPath = $CommandValueParams[0]
-                    $Method = $CommandValueParams[1]
-                    Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module           
-                }
-
             }
         }
     }
@@ -153,47 +141,42 @@ function Get-ExternalDocsUrl {
                         "GET" {
                             $ExternalDocUrl = $path[$UriPath].get.externalDocs.url
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $GETApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
-                                if (-not([string]::IsNullOrEmpty($GETApiPath))) {
-                                    $ExternalDocUrl = $Path[$GETApiPath].get.externalDocs.url
-                                }      
+                                #Try with microsoft.graph prefix on the last path segment
+                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
+                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].get.externalDocs.url
                             }
                         }
                         "POST" {
-                            $ExternalDocUrl = $Path[$UriPath].post.externalDocs.url
+                            $ExternalDocUrl = $Path[$UriPath].post.externalDocs.url 
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $POSTApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
-                                if (-not([string]::IsNullOrEmpty($POSTApiPath))) {
-                                    $ExternalDocUrl = $Path[$POSTApiPath].post.externalDocs.url
-                                }      
-                            }  
+                                #Try with microsoft.graph prefix on the last path segment
+                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
+                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].post.externalDocs.url
+                            }
                         }
                         "PATCH" {
-                            $ExternalDocUrl = $Path[$UriPath].patch.externalDocs.url 
+                            $ExternalDocUrl = $Path[$UriPath].patch.externalDocs.url
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $PATCHApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
-                                if (-not([string]::IsNullOrEmpty($PATCHApiPath))) {
-                                    $ExternalDocUrl = $Path[$PATCHApiPath].patch.externalDocs.url
-                                }      
-                            }
+                                #Try with microsoft.graph prefix on the last path segment
+                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
+                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].patch.externalDocs.url
+                            } 
                         }
                         "DELETE" {
                             $ExternalDocUrl = $Path[$UriPath].delete.externalDocs.url
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $DELETEApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
-                                if (-not([string]::IsNullOrEmpty($DELETEApiPath))) {
-                                    $ExternalDocUrl = $Path[$DELETEApiPath].delete.externalDocs.url
-                                }      
+                                #Try with microsoft.graph prefix on the last path segment
+                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
+                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].delete.externalDocs.url
                             }
                         }
                         "PUT" {
                             $ExternalDocUrl = $Path[$UriPath].put.externalDocs.url
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $PUTApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
-                                if (-not([string]::IsNullOrEmpty($PUTApiPath))) {
-                                    $ExternalDocUrl = $Path[$PUTApiPath].put.externalDocs.url
-                                }      
-                            } 
+                                #Try with microsoft.graph prefix on the last path segment
+                                $UriPathWithGraphPrefix = Append-GraphPrefix -UriPath $UriPath
+                                $ExternalDocUrl = $path[$UriPathWithGraphPrefix].put.externalDocs.url
+                            }
                         }
 
                     }
@@ -207,25 +190,15 @@ function Get-ExternalDocsUrl {
     }
 
 }
-function Extract-PathFromListVariant {
+
+function Append-GraphPrefix {
     param(
-        [ValidateSet("beta", "v1.0")]
-        [string] $GraphProfile = "v1.0", 
-        [string] $Command = "Get-MgUser"
+        [string] $UriPath
     )
-    $ListApiPath = $null
-    $ListCommandValue = $null
-    if ($GraphProfile -eq "beta") {
-        $ListCommandValue = $BetaCommandListVariantList[$Command]
-    }
-    else {
-        $ListCommandValue = $V1CommandListVariantList[$Command]
-    } 
-    if (-not([string]::IsNullOrEmpty($ListCommandValue))) {
-        $ListCommandValueParams = $ListCommandValue.Split(",")
-        $ListApiPath = $ListCommandValueParams[0]
-    }
-    return $ListApiPath
+    $UriPathSegments = $UriPath.Split("/")
+    $LastUriPathSegment = $UriPathSegments[$UriPathSegments.Length - 1]
+    $UriPath = $UriPath.Replace($LastUriPathSegment, "microsoft.graph." + $LastUriPathSegment)
+    return $UriPath
 }
 function Start-WebScrapping {
     param(
@@ -238,42 +211,79 @@ function Start-WebScrapping {
         [string] $UriPath,
         [string] $Module = "Users",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
-    )  
+    )
+    
+    $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
+    $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
+    $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
+
+    $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
+    Write-Host $GraphDocsUrl
+    $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
+    $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
+    $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
+    $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
+    $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
+    ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
+
+    while (-not $readStream.EndOfStream) {
+        $Line = $readStream.ReadLine()
+        if ($Line -match "^### Example") {
+            $H = $HeaderList.Add($Line)
+        }
+        if ($Line -match "/includes/snippets/powershell/") {
+            $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
+            $SnippetPath = $Line.Replace(")", "").Replace("]", "")
+            $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
+            $E = $ExampleLinks.Add($SnippetUrl)
+        }
+    }
+    $HttpWebResponse.Close() 
+    $readStream.Close()
+
+    foreach ($Link in $ExampleLinks) {
+        $ConstructedSnippet = "";
+            ($Rs, $HttpResponse) = FetchStream -GraphDocsUrl $Link
+        while (-not $Rs.EndOfStream) {
+            $Snippet = $Rs.ReadLine()
+            
+            #Write-Host $desc
+            $Snippet = $Snippet.Replace("---", "")
+            $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
+            $ConstructedSnippet += $Snippet + "`n"
+                
+        }
+        $S = $Snippets.Add($ConstructedSnippet)
+    }
+    if ($HeaderList.Count -ne $Snippets.Count) {
+        $HeaderList.Clear()
+        for ($d = 0; $d -lt $Snippets.Count; $d++) {
+            $sum = $d + 1
+            $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+        }
+    }
+
     $ExampleFile = "$GraphProfilePath/$Command.md"
     $url = $ExternalDocUrl
     if ($GraphProfile -eq "beta") {
         $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
     }
     $DescriptionCommand = $Command  
-    $Description = "This example shows how to use the $DescriptionCommand Cmdlet.`r`n`r`To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference)."
-    $WebResponse = Invoke-WebRequest -Uri $url
-    $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
-    $ExampleList = New-Object -TypeName 'System.Collections.ArrayList';
-    $htmlDom = ConvertFrom-Html $WebResponse
-    $nodes = $htmlDom.SelectNodes('//pre/code')
-    $headers = $htmlDom.SelectNodes('//h3')
-    foreach ($node in $nodes) {
-        $checkPowershell = $node.OuterHtml
-        
-        if ($checkPowershell.Contains('lang-powershell')) {
-            $result = $node.InnerHtml
-            $result = $result.Replace('&quot;', '"')
-            $EL = $ExampleList.Add($result)
-        }
-    }
-    foreach ($header in $headers) {
-        $checkPowershell = $header.OuterHtml
-        
-        if ($checkPowershell.Contains('Example')) {
-            $result = $header.InnerHtml
-            $HL = $HeaderList.Add($result)
-        }
-        
-    }
+    $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
   
-    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
 }
-
+function FetchStream {
+    param(
+        [string]$GraphDocsUrl
+    )
+    $HttpWebRequest = [System.Net.WebRequest]::Create($GraphDocsUrl)
+    $HttpWebResponse = $HttpWebRequest.GetResponse()
+    $ReceiveStream = $HttpWebResponse.GetResponseStream()
+    $Encode = [System.Text.Encoding]::GetEncoding("utf-8")
+    $ReadStream = [System.IO.StreamReader]::new($ReceiveStream, $Encode)
+    return ($ReadStream, $HttpWebResponse)
+}
 function Update-ExampleFile {
     param(
         [ValidateSet("beta", "v1.0")]
@@ -296,14 +306,14 @@ function Update-ExampleFile {
     if ($HeaderList.Count -eq 0) {
         for ($d = 0; $d -lt $ExampleList.Count; $d++) {
             $sum = $d + 1
-            $HL = $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
+            $HL = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
         }
     }
     if ($HeaderList.Count -ne $ExampleList.Count) {
         $HeaderList.Clear()
         for ($d = 0; $d -lt $ExampleList.Count; $d++) {
             $sum = $d + 1
-            $H = $HeaderList.Add("Example " + $sum + ": Code snippet".Trim())
+            $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
         }
     }
     $EmptyFile = Test-FileEmpty $ExampleFile
@@ -315,15 +325,33 @@ function Update-ExampleFile {
     $WrongExamplesCount = 0;
     $SkippedExample = -1
     $ContainsRightExamples = $False
+    $SearchString = "### Example \d:"
+    $Option = [System.Text.RegularExpressions.RegexOptions]::Multiline
+    $DescriptionRegex = [regex]::new($SearchString, $Option)
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             $CodeValue = $ExampleList[$d].Trim()
             if ($CodeValue -match "\b$CommandPattern\b") {
-                $TitleValue = "### " + $HeaderList[$d].Trim()
-                $Code = "``````powershell`r$CodeValue`r`n``````"	
-                $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
+                $TitleValue = $HeaderList[$d].Trim()
+                $TitleDesc = $TitleValue
+                if (-not($TitleValue.Contains("Code snippet"))) {
+                    if ($TitleDesc -match $DescriptionRegex) {
+                        $TitleDesc = $TitleDesc -replace $DescriptionRegex, ''
+                    }
+                    $DescriptionPrefix = "This example will"
+                    $FirstDescriptionString = $TitleDesc.Split(" ")[1]
+                    if ($FirstDescriptionString.EndsWith("s")) {
+                        $DescriptionPrefix = "This example"
+                    }
+                    elseif ($FirstDescriptionString.EndsWith("ing")) {
+                        $DescriptionPrefix = "This example shows"
+                    }
+                   
+                    $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                }
+                $TotalText = "$TitleValue`r`n`n$CodeValue`r`n$Description`r`n"
                 Add-Content -Path $ExampleFile -Value $TotalText
                 $ContainsRightExamples = $True
             }
@@ -353,9 +381,24 @@ function Update-ExampleFile {
                 #We should only add the correct examples from external docs link
                 if ($ExampleList[$d] -match "\b$CommandPattern\b") {
                     $CodeValue = $ExampleList[$d].Trim()
-                    $TitleValue = "### " + $HeaderList[$d].Trim()
-                    $Code = "``````powershell`r$CodeValue`r`n``````"       
-                    $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
+                    $TitleValue = $HeaderList[$d].Trim()
+                    $TitleDesc = $TitleValue
+                    if (-not($TitleValue.Contains("Code snippet"))) {
+                        if ($TitleDesc -match $DescriptionRegex) {
+                            $TitleDesc = $TitleDesc -replace $DescriptionRegex, ''
+                        }
+                        $DescriptionPrefix = "This example will"
+                        $FirstDescriptionString = $TitleDesc.Split(" ")[1]
+                        if ($FirstDescriptionString.EndsWith("s")) {
+                            $DescriptionPrefix = "This example"
+                        }
+                        elseif ($FirstDescriptionString.EndsWith("ing")) {
+                            $DescriptionPrefix = "This example shows"
+                        }
+                       
+                        $Description = $DescriptionPrefix + $TitleDesc.ToLower()
+                    }      
+                    $TotalText = "$TitleValue`r`n`n$CodeValue`r`n$Description`r`n"
                     Add-Content -Path $ExampleFile -Value $TotalText
                 }
                 else {
@@ -476,13 +519,11 @@ function Retain-ExistingCorrectExamples {
     Set-Content -Path $File -Value $RetainedContent
     #Remove the last two empty lines at the end of the file
     $Stream = [IO.File]::OpenWrite($ExampleFile)
-    try
-    {
+    try {
         $Stream.SetLength($stream.Length - 2)
         $Stream.Close()
     }
-    catch
-    {
+    catch {
         Write-Error "Error in removing empty lines at the end of the file: $File"
     }
     $Stream.Dispose()
@@ -535,30 +576,8 @@ function Get-ExistingCorrectExamples {
     }
    
 }
-$RetainedExamples = New-Object Collections.Generic.List[string]      
-$JsonContent = Get-Content -Path $MetaDataJsonFile
-$DeserializedContent = $JsonContent | ConvertFrom-Json
-foreach ($Data in $DeserializedContent) {
-    if ($Data.ApiVersion -eq "beta") {        
-        if ((-not($Data.Variants[0].Contains("List")))) {
-            $BetaAPIPathAndMethod = $Data.Uri, $Data.Method -join ","
-            $Beta = $BetaCommandGetVariantList.Add($Data.Command, $BetaAPIPathAndMethod)        
-        }
-        else {
-            $Beta1 = $BetaCommandListVariantList.Add($Data.Command, $BetaAPIPathAndMethod) 
-        }   
-    }
+$RetainedExamples = New-Object Collections.Generic.List[string]
 
-    if ($Data.ApiVersion -eq "v1.0") {
-        $V1APIPathAndMethod = $Data.Uri, $Data.Method -join ","
-        if ((-not($Data.Variants[0].Contains("List")))) {
-            $V1 = $V1CommandGetVariantList.Add($Data.Command, $V1APIPathAndMethod)        
-        }
-        else {
-            $V11 = $V1CommandListVariantList.Add($Data.Command, $V1APIPathAndMethod)
-        }   
-    }
-}
 if (!(Get-Module "powershell-yaml" -ListAvailable -ErrorAction SilentlyContinue)) {
     Install-Module "powershell-yaml" -AcceptLicense -Scope CurrentUser -Force
 }
