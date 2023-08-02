@@ -1,34 +1,44 @@
-### Example 1: Using the Add-MgServicePrincipalKey Cmdlet
+### Example 1: Adding a new key credential to a servicePrincipal
+
 ```powershell
+
 Import-Module Microsoft.Graph.Applications
+
 $params = @{
-	KeyCredential = @{
-		Type = "AsymmetricX509Cert"
-		Usage = "Verify"
-		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	keyCredential = @{
+		type = "AsymmetricX509Cert"
+		usage = "Verify"
+		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
 	}
-	PasswordCredential = $null
-	Proof = "eyJ0eXAiOiJ..."
+	passwordCredential = $null
+	proof = "eyJ0eXAiOiJ..."
 }
+
 Add-MgServicePrincipalKey -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+
 ```
-This example shows how to use the Add-MgServicePrincipalKey Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Add-MgServicePrincipalKey Cmdlet
+This example shows adding a new key credential to a serviceprincipal
+
+### Example 2: Adding a key credential and an associated password for the key
+
 ```powershell
+
 Import-Module Microsoft.Graph.Applications
+
 $params = @{
-	KeyCredential = @{
-		Type = "X509CertAndPassword"
-		Usage = "Sign"
-		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	keyCredential = @{
+		type = "X509CertAndPassword"
+		usage = "Sign"
+		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
 	}
-	PasswordCredential = @{
-		SecretText = "MKTr0w1..."
+	passwordCredential = @{
+		secretText = "MKTr0w1..."
 	}
-	Proof = "eyJ0eXAiOiJ..."
+	proof = "eyJ0eXAiOiJ..."
 }
+
 Add-MgServicePrincipalKey -ServicePrincipalId $servicePrincipalId -BodyParameter $params
+
 ```
-This example shows how to use the Add-MgServicePrincipalKey Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows adding a key credential and an associated password for the key
+

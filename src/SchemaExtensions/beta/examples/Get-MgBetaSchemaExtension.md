@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
+```powershell
 
-Get-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
+Import-Module Microsoft.Graph.Beta.SchemaExtensions
+
+Get-MgBetaSchemaExtension -Filter "id eq 'graphlearn_test'" 
+
 ```
 This example shows how to use the Get-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

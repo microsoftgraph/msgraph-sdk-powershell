@@ -1,18 +1,60 @@
-### Example 1: {{ Add title here }}
+### Example 1: Basic call to perform a search request
+
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Search
+
+$params = @{
+	requests = @(
+		@{
+			entityTypes = @(
+				"externalItem"
+			)
+			contentSources = @(
+				"/external/connections/connectionfriendlyname"
+			)
+			query = @{
+				queryString = "contoso product"
+			}
+			from = 0
+			size = 25
+			fields = @(
+				"title"
+				"description"
+			)
+		}
+	)
+}
+
+Invoke-MgQuerySearch -BodyParameter $params
+
 ```
+This example will basic call to perform a search request
 
-{{ Add description here }}
+### Example 2: Basic call to use queryTemplate
 
-### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Search
+
+$params = @{
+	requests = @(
+		@{
+			entityTypes = @(
+				"listItem"
+			)
+			query = @{
+				queryString = "contoso"
+				queryTemplate = '{searchTerms} CreatedBy:Bob"
+			}
+			from = 0
+			size = 25
+		}
+	)
+}
+
+Invoke-MgQuerySearch -BodyParameter $params
+
 ```
-
-{{ Add description here }}
+This example will basic call to use querytemplate
 

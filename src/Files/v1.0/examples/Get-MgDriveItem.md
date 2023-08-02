@@ -1,11 +1,11 @@
 ### Example 1: Get a bundle and its children in a single call
 
 ```powershell
+
 Import-Module Microsoft.Graph.Files
 
-Get-MgDriveItem -DriveId $driveId -DriveItemId $driveItemId -ExpandProperty "children"
-```
-This example shows how to use the Get-MgDriveItem Cmdlet.
+Get-MgDriveItem -DriveId $driveId -DriveItemId $driveItemId -ExpandProperty "children" 
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will get a bundle and its children in a single call
 

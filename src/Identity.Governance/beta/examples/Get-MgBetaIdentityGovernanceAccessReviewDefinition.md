@@ -1,9 +1,22 @@
-### Example 1: Code snippet
+### Example 1: List the first one hundred access review definitions
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+```powershell
 
-Get-MgBetaIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+
+Get-MgBetaIdentityGovernanceAccessReviewDefinition -Top 100 -Skip 0 
+
 ```
-This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list the first one hundred access review definitions
+
+### Example 2: Retrieve all access review definitions scoped to all Microsoft 365 groups in a tenant
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+
+Get-MgBetaIdentityGovernanceAccessReviewDefinition -Filter "contains(scope/microsoft.graph.accessReviewQueryScope/query, './members')" 
+
+```
+This example will retrieve all access review definitions scoped to all microsoft 365 groups in a tenant
 

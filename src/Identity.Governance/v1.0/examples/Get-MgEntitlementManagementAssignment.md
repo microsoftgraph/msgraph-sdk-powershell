@@ -1,9 +1,11 @@
-### Example 1: Code snippet
+### Example scenarios for using query parameters
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
 
-Get-MgEntitlementManagementAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
+Import-Module Microsoft.Graph.Identity.Governance
+
+Get-MgEntitlementManagementAssignment
+
 ```
-This example shows how to use the Get-MgEntitlementManagementAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will### example scenarios for using query parameters
 
