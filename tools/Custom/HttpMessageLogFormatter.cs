@@ -73,7 +73,14 @@ namespace NamespacePrefixPlaceholder.PowerShell
             string body = string.Empty;
             try
             {
-                body = (requestClone.Content == null) ? string.Empty : FormatString(await requestClone.Content.ReadAsStringAsync());
+                if (requestClone.Content != null)
+                {
+                    body = FormatString(await requestClone.Content.ReadAsStringAsync());
+                }
+                else if (requestClone.Content == null && request.Content != null)
+                {
+                    body = "Skipped: Content body was disposed before the logger could access it.";
+                }
             }
             catch { }
 
