@@ -1,20 +1,30 @@
-### Example 1: Using the Invoke-MgBetaRejectCommunicationCall Cmdlet
+### Example 1: Reject an incoming call with 'Busy' reason
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+
 $params = @{
-	Reason = "none"
+	reason = "busy"
 }
+
 Invoke-MgBetaRejectCommunicationCall -CallId $callId -BodyParameter $params
+
 ```
-This example shows how to use the Invoke-MgBetaRejectCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgBetaRejectCommunicationCall Cmdlet
+This example will reject an incoming call with 'busy' reason
+
+### Example 2: Reject an incoming call with 'None' reason
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+
 $params = @{
-	Reason = "busy"
+	reason = "none"
 }
+
 Invoke-MgBetaRejectCommunicationCall -CallId $callId -BodyParameter $params
+
 ```
-This example shows how to use the Invoke-MgBetaRejectCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will reject an incoming call with 'none' reason
+

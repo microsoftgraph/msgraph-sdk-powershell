@@ -1,11 +1,22 @@
-### Example 1: Get a bundle
+### Example 1: List all bundles in a drive
 
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Files
 
-Get-MgBetaDriveBundle -DriveId $driveId -DriveItemId $driveItemId
-```
-This example shows how to use the Get-MgBetaDriveBundle Cmdlet.
+Get-MgBetaDriveBundle -DriveId $driveId
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will list all bundles in a drive
+
+### Example 2: List all photo albums in a drive
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Files
+
+Get-MgBetaDriveBundle -DriveId $driveId -Filter "bundle/album ne null" 
+
+```
+This example will list all photo albums in a drive
 

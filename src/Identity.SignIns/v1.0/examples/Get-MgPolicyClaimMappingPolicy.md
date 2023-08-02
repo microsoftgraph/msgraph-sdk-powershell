@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Identity.SignIns
+```powershell
 
-Get-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
+Import-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgPolicyClaimMappingPolicy
+
 ```
 This example shows how to use the Get-MgPolicyClaimMappingPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

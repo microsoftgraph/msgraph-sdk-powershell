@@ -1,16 +1,36 @@
-### Example 1: Using the Get-MgBetaUserMailFolderChildFolder Cmdlet
+### Example 1: List mail folders
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Mail
+
 # A UPN can also be used as -UserId.
 Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
+
 ```
-This example shows how to use the Get-MgBetaUserMailFolderChildFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaUserMailFolderChildFolder Cmdlet
+This example will list mail folders
+
+### Example 2: List mail search folders
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Mail
+
 # A UPN can also be used as -UserId.
 Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
+
 ```
-This example shows how to use the Get-MgBetaUserMailFolderChildFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list mail search folders
+
+### Example 3: Include hidden child folders under a specified mail folder
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Mail
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -Includehiddenfolders true 
+
+```
+This example will include hidden child folders under a specified mail folder
+

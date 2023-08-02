@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Reports
+```powershell
 
-Get-MgReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
+Import-Module Microsoft.Graph.Reports
+
+Get-MgReportDailyPrintUsageByPrinter
+
 ```
 This example shows how to use the Get-MgReportDailyPrintUsageByPrinter Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
