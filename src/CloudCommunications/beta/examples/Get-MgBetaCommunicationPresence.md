@@ -1,4 +1,4 @@
-### Example 1: Get the presence information of another user
+### Example 1: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications

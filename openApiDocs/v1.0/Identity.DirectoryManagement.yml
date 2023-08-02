@@ -16810,11 +16810,11 @@ paths:
     get:
       tags:
         - organization.organization
-      summary: List organization
-      description: Retrieve a list of organization objects.
+      summary: List organizations
+      description: List properties and relationships of the organization objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17059,10 +17059,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: 'Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.'
+      description: Update the properties of a organization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -19083,6 +19083,9 @@ paths:
         - organization.Actions
       summary: Invoke action setMobileDeviceManagementAuthority
       description: Set mobile device management authority
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0
       operationId: organization_setMobileDeviceManagementAuthority
       parameters:
         - name: organization-id
@@ -21917,17 +21920,19 @@ components:
           properties:
             accountId:
               type: string
+              description: The unique ID of the account this SKU belongs to.
               nullable: true
             accountName:
               type: string
+              description: The name of the account this SKU belongs to.
               nullable: true
             appliesTo:
               type: string
-              description: 'For example, ''User'' or ''Company''.'
+              description: 'The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: ''User'', ''Company''.'
               nullable: true
             capabilityStatus:
               type: string
-              description: 'Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.'
+              description: 'Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.'
               nullable: true
             consumedUnits:
               maximum: 2147483647
@@ -21942,7 +21947,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
-              description: Information about the service plans that are available with the SKU. Not nullable
+              description: Information about the service plans that are available with the SKU. Not nullable.
             skuId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -24912,7 +24917,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
+          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
       additionalProperties:
@@ -25459,6 +25464,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The number of units that are locked out because the customer cancelled their subscription of the service SKU.
           format: int32
           nullable: true
         suspended:

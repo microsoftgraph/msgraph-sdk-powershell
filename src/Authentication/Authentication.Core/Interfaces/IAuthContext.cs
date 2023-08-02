@@ -42,6 +42,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         string[] Scopes { get; set; }
         AuthenticationType AuthType { get; set; }
         TokenCredentialType TokenCredentialType { get; set; }
+        string Environment { get; set; }
         string AppName { get; set; }
         string Account { get; set; }
         string CertificateThumbprint { get; set; }
