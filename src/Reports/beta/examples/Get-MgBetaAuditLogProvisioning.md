@@ -1,14 +1,22 @@
-### Example 1: Using the Get-MgBetaAuditLogProvisioning Cmdlet
+### Example 1: Successful request
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Reports
+
 Get-MgBetaAuditLogProvisioning
+
 ```
-This example shows how to use the Get-MgBetaAuditLogProvisioning Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaAuditLogProvisioning Cmdlet
+This example will successful request
+
+### Example 2: Error reponse
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Reports
+
 Get-MgBetaAuditLogProvisioning
+
 ```
-This example shows how to use the Get-MgBetaAuditLogProvisioning Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will error reponse
+
