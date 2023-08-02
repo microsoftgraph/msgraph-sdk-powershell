@@ -218,7 +218,6 @@ function Start-WebScrapping {
     $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
 
     $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
-    Write-Host $GraphDocsUrl
     $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
     $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
     $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
@@ -524,7 +523,7 @@ function Retain-ExistingCorrectExamples {
         $Stream.Close()
     }
     catch {
-        Write-Error "Error in removing empty lines at the end of the file: $File"
+
     }
     $Stream.Dispose()
     $RetainedExamples.Clear()
