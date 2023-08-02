@@ -1,17 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
- PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Files
+
+Get-MgBetaDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
+
 ```
+This example shows how to use the Get-MgBetaDriveItemChild Cmdlet.
 
-{{ Add description here }}
+### Example 2: Code snippet
 
-### Example 2: {{ Add title here }}
 ```powershell
- PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+Import-Module Microsoft.Graph.Beta.Files
+
+Get-MgBetaDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
+
 ```
+This example shows how to use the Get-MgBetaDriveItemChild Cmdlet.
 
-{{ Add description here }}
