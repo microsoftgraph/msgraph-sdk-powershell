@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Search
+```powershell
+
+Import-Module Microsoft.Graph.Search
 
 $params = @{
 	id = "contosohr"
@@ -9,7 +11,7 @@ $params = @{
 }
 
 New-MgExternalConnection -BodyParameter $params
+
 ```
 This example shows how to use the New-MgExternalConnection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

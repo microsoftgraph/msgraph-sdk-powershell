@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
 
-Get-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
+Import-Module Microsoft.Graph.Identity.Governance
+
+Get-MgEntitlementManagementCatalog
+
 ```
 This example shows how to use the Get-MgEntitlementManagementCatalog Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

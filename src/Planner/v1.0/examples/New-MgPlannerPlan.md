@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Planner
+```powershell
+
+Import-Module Microsoft.Graph.Planner
 
 $params = @{
 	container = @{
@@ -10,7 +12,7 @@ $params = @{
 }
 
 New-MgPlannerPlan -BodyParameter $params
+
 ```
 This example shows how to use the New-MgPlannerPlan Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

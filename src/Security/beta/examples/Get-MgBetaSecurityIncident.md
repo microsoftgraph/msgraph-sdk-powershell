@@ -1,9 +1,22 @@
-### Example 1: Code snippet
+### Example 1: List all incidents
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
+```powershell
 
-Get-MgBetaSecurityIncident -IncidentId $incidentId
+Import-Module Microsoft.Graph.Beta.Security
+
+Get-MgBetaSecurityIncident
+
 ```
-This example shows how to use the Get-MgBetaSecurityIncident Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list all incidents
+
+### Example 2: List all incidents with their alerts
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Security
+
+Get-MgBetaSecurityIncident -ExpandProperty "alerts" 
+
+```
+This example will list all incidents with their alerts
 

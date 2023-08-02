@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Education
+```powershell
+
+Import-Module Microsoft.Graph.Education
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationClass"
@@ -22,7 +24,7 @@ $params = @{
 }
 
 New-MgEducationClass -BodyParameter $params
+
 ```
 This example shows how to use the New-MgEducationClass Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
