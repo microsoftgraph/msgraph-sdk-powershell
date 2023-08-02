@@ -88,7 +88,7 @@ function Get-Files {
                     foreach ($CommandDetail in $CommandDetails) {
                         $ApiPath = $CommandDetail.URI
                         $Method = $CommandDetails.Method
-                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
+                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
                     }
                 }
                 else {
