@@ -14,7 +14,7 @@ paths:
       description: Get a list of the delegatedAdminCustomer objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0
       operationId: tenantRelationship_ListDelegatedAdminCustomer
       parameters:
         - $ref: '#/components/parameters/top'
@@ -106,7 +106,7 @@ paths:
       description: Read the properties of a delegatedAdminCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0
       operationId: tenantRelationship_GetDelegatedAdminCustomer
       parameters:
         - name: delegatedAdminCustomer-id
@@ -220,7 +220,7 @@ paths:
       description: Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminCustomer_ListServiceManagementDetail
       parameters:
         - name: delegatedAdminCustomer-id
@@ -496,7 +496,7 @@ paths:
       description: Get a list of the delegatedAdminRelationship objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-list-delegatedadminrelationships?view=graph-rest-1.0
       operationId: tenantRelationship_ListDelegatedAdminRelationship
       parameters:
         - $ref: '#/components/parameters/top'
@@ -590,7 +590,7 @@ paths:
       description: Create a new delegatedAdminRelationship object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantrelationship-post-delegatedadminrelationships?view=graph-rest-1.0
       operationId: tenantRelationship_CreateDelegatedAdminRelationship
       requestBody:
         description: New navigation property
@@ -617,7 +617,7 @@ paths:
       description: Read the properties of a delegatedAdminRelationship object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0
       operationId: tenantRelationship_GetDelegatedAdminRelationship
       parameters:
         - name: delegatedAdminRelationship-id
@@ -681,10 +681,10 @@ paths:
       tags:
         - tenantRelationships.delegatedAdminRelationship
       summary: Update delegatedAdminRelationship
-      description: Update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the `created` **status**.
+      description: Update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the created status.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0
       operationId: tenantRelationship_UpdateDelegatedAdminRelationship
       parameters:
         - name: delegatedAdminRelationship-id
@@ -719,7 +719,7 @@ paths:
       description: 'Delete a delegatedAdminRelationship object. A relationship can only be deleted if it''s in the ''created'' status. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0
       operationId: tenantRelationship_DeleteDelegatedAdminRelationship
       parameters:
         - name: delegatedAdminRelationship-id
@@ -750,7 +750,7 @@ paths:
       description: Get a list of the delegatedAdminAccessAssignment objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_ListAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -834,7 +834,7 @@ paths:
       description: Create a new delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_CreateAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -870,7 +870,7 @@ paths:
       description: Read the properties of a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-get?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_GetAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -935,7 +935,7 @@ paths:
       description: Update the properties of a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-update?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_UpdateAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -978,7 +978,7 @@ paths:
       description: Delete a delegatedAdminAccessAssignment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminaccessassignment-delete?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_DeleteAccessAssignment
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1039,7 +1039,7 @@ paths:
       description: Get a list of the delegatedAdminRelationshipOperation objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-operations?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_ListOperation
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1155,7 +1155,7 @@ paths:
       description: Read the properties of a delegatedAdminRelationshipOperation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_GetOperation
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1316,7 +1316,7 @@ paths:
       description: Get a list of the delegatedAdminRelationshipRequest objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_ListRequest
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1397,7 +1397,7 @@ paths:
       description: Create a new delegatedAdminRelationshipRequest object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_CreateRequest
       parameters:
         - name: delegatedAdminRelationship-id
@@ -1433,7 +1433,7 @@ paths:
       description: Read the properties and relationships of a delegatedAdminRelationshipRequest object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/delegatedadminrelationshiprequest-get?view=graph-rest-1.0
       operationId: tenantRelationship.delegatedAdminRelationship_GetRequest
       parameters:
         - name: delegatedAdminRelationship-id

@@ -182,7 +182,7 @@ paths:
       description: Get a list of the browserSiteList objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_ListSiteList
       parameters:
         - $ref: '#/components/parameters/top'
@@ -271,7 +271,7 @@ paths:
       description: Create a new browserSiteList object to support Internet Explorer mode.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_CreateSiteList
       requestBody:
         description: New navigation property
@@ -298,7 +298,7 @@ paths:
       description: Get a browserSiteList that contains browserSite and browserSharedCookie resources.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_GetSiteList
       parameters:
         - name: browserSiteList-id
@@ -362,7 +362,7 @@ paths:
       description: Update the properties of a browserSiteList object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_UpdateSiteList
       parameters:
         - name: browserSiteList-id
@@ -397,7 +397,7 @@ paths:
       description: Delete a browserSiteList object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode_DeleteSiteList
       parameters:
         - name: browserSiteList-id
@@ -428,7 +428,7 @@ paths:
       description: Get a list of the browserSharedCookie objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_ListSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -533,7 +533,7 @@ paths:
       description: Create a new browserSharedCookie object in a browserSiteList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_CreateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -569,7 +569,7 @@ paths:
       description: 'Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_GetSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -641,7 +641,7 @@ paths:
       description: Update the properties of a browserSharedCookie object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -684,7 +684,7 @@ paths:
       description: Delete a browserSharedCookie from a browserSiteList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSharedCookie
       parameters:
         - name: browserSiteList-id
@@ -745,7 +745,7 @@ paths:
       description: Get a list of the browserSite objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_ListSite
       parameters:
         - name: browserSiteList-id
@@ -850,7 +850,7 @@ paths:
       description: Create a new browserSite object in a browserSiteList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_CreateSite
       parameters:
         - name: browserSiteList-id
@@ -886,7 +886,7 @@ paths:
       description: Get a browserSite that resides on a browserSiteList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_GetSite
       parameters:
         - name: browserSiteList-id
@@ -958,7 +958,7 @@ paths:
       description: Update the properties of a browserSite object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_UpdateSite
       parameters:
         - name: browserSiteList-id
@@ -1001,7 +1001,7 @@ paths:
       description: Delete a browserSite from a browserSiteList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
       operationId: admin.edge.internetExplorerMode.siteList_DeleteSite
       parameters:
         - name: browserSiteList-id
@@ -35041,7 +35041,7 @@ paths:
       description: Get a list of the alertRecord objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-1.0
       operationId: deviceManagement.monitoring_ListAlertRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35152,7 +35152,7 @@ paths:
       description: Read the properties and relationships of an alertRecord object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-1.0
       operationId: deviceManagement.monitoring_GetAlertRecord
       parameters:
         - name: alertRecord-id
@@ -35285,7 +35285,7 @@ paths:
       description: Get a list of the alertRule objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0
       operationId: deviceManagement.monitoring_ListAlertRule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35370,7 +35370,7 @@ paths:
       description: Create an alertRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0
       operationId: deviceManagement.monitoring_CreateAlertRule
       requestBody:
         description: New navigation property
@@ -35397,7 +35397,7 @@ paths:
       description: Read the properties and relationships of an alertRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0
       operationId: deviceManagement.monitoring_GetAlertRule
       parameters:
         - name: alertRule-id
@@ -35457,7 +35457,7 @@ paths:
       description: Update the properties of an alertRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0
       operationId: deviceManagement.monitoring_UpdateAlertRule
       parameters:
         - name: alertRule-id
@@ -54809,26 +54809,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -54852,7 +54852,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -62866,7 +62866,7 @@ components:
           properties:
             enrollmentAuthorizationUrl:
               type: string
-              description: Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.
+              description: Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.
             enrollmentToken:
               type: string
               description: Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
@@ -71209,11 +71209,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -72053,7 +72053,7 @@ components:
               nullable: true
             imageId:
               type: string
-              description: 'The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.'
+              description: 'The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisheroffersku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.'
               nullable: true
             imageType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
@@ -72240,6 +72240,7 @@ components:
               nullable: true
             resetEnabled:
               type: boolean
+              description: 'Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.'
               nullable: true
             restorePointSetting:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
@@ -75881,7 +75882,7 @@ components:
           properties:
             clientId:
               type: string
-              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
               description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
@@ -84624,7 +84625,7 @@ components:
           properties:
             content:
               type: string
-              description: A field that represents the content of the transcript. Read-only.
+              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
@@ -84635,7 +84636,7 @@ components:
               nullable: true
             metadataContent:
               type: string
-              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
           additionalProperties:
@@ -86080,8 +86081,8 @@ components:
         - email
         - site
         - unifiedGroup
-        - unknownFutureValue
         - teamwork
+        - unknownFutureValue
       type: string
     microsoft.graph.applicationMode:
       title: applicationMode
@@ -86228,7 +86229,7 @@ components:
           nullable: true
         fieldId:
           type: string
-          description: 'Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.'
+          description: 'Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.'
           nullable: true
         type:
           type: string
@@ -87643,11 +87644,11 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.'
               nullable: true
             notificationContentType:
               type: string
@@ -91853,7 +91854,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time the version was last modified. Read-only.
+              description: Date and time when the version was last modified. Read-only.
               format: date-time
               nullable: true
             publication:
