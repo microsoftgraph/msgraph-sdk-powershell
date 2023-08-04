@@ -245,6 +245,7 @@
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
                     MGTeamsInternalAuthorizationPolicy authorizationPolicy = await this.Client.GetAuthorizationPolicy(eventListener: this, sender: Pipeline);
+
                     WriteVerbose($"PermissionGrantPolicies currently assigned to default user role: '{string.Join(", ", authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned)}'.");
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
@@ -252,7 +253,23 @@
                     MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection =
                         await this.Client.GetTenantConsentSettings(eventListener: this, sender: Pipeline);
 
+                    WriteVerbose($"Fetched tenant consent settings.");
+
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                    MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection =
+                        await this.Client.GetPermissionGrantPolicies(selectQuery: "id, resourceScopeType", eventListener: this, sender: this.Pipeline);
+
+                    WriteVerbose($"Fetched permission grant policies for tenant.");
+
+                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                    RscConfigurationSynthesizer rscConfigurationSynthesizer = new RscConfigurationSynthesizer();
+                    IEnumerable<MGTeamsInternalPermissionGrantPolicy> assignedPermissionGrantPoliciesApplicableToTeamScope =
+                        rscConfigurationSynthesizer.GetAssignedPermissionGrantPoliciesApplicableToGivenScopeType(
+                            permissionGrantPolicyCollection,
+                            authorizationPolicy,
+                            MicrosoftGraphRscConfigurationScopeType.Team);
 
                     if (this.State == MicrosoftGraphRscConfigurationState.DisabledForAllApps)
                     {
@@ -265,37 +282,34 @@
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                        // Disable preapproval configs.
-                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval, StringComparer.OrdinalIgnoreCase))
-                        {
-                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
-                                new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval },
+                        // Disable preapproval/permission grant policies applicable to Teams.
+                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                            .Except(
+                                assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase);
-                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                                updatedPermissionGrantPolicies,
-                                this,
-                                Pipeline);
+                        await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                            updatedPermissionGrantPolicies,
+                            this,
+                            Pipeline);
 
-                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
-                        }
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly)
                     {
                         // Enable preapproval configs.
-                        if (!authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval, StringComparer.OrdinalIgnoreCase))
-                        {
-                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Union(
-                                new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval },
-                                StringComparer.OrdinalIgnoreCase);
-                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                                updatedPermissionGrantPolicies,
-                                this,
-                                Pipeline);
+                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                            .Except(
+                                assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
+                                StringComparer.OrdinalIgnoreCase)
+                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval }, StringComparer.OrdinalIgnoreCase);
+                        await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                            updatedPermissionGrantPolicies,
+                            this,
+                            Pipeline);
 
-                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
-                        }
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
@@ -319,19 +333,17 @@
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                        // Disable preapproval configs.
-                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval, StringComparer.OrdinalIgnoreCase))
-                        {
-                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
-                                new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval },
+                        // Disable preapproval/permission grant policies applicable to Teams.
+                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                            .Except(
+                                assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase);
-                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                                updatedPermissionGrantPolicies,
-                                this,
-                                Pipeline);
+                        await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                            updatedPermissionGrantPolicies,
+                            this,
+                            Pipeline);
 
-                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
-                        }
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
@@ -401,7 +413,7 @@
                     .Where(s => !string.Equals(s.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey))
                     .Union(new MGTeamsInternalTenantConsentSettingValue[]
                      {
-                        new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString())
+                        new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString().ToLowerInvariant())
                      })
                     .ToArray();
 
@@ -417,30 +429,26 @@
                 // Modify only the group consent setting.
                 MGTeamsInternalTenantConsentSettingValue isGroupConsentEnabledSettingValue = groupConsentSettings.Values.Single(
                         v => string.Equals(v.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase));
-                if (!string.Equals(isGroupConsentEnabledSettingValue.Value, isGroupSpecificConsentEnabled.ToString(), StringComparison.OrdinalIgnoreCase))
-                {
-                    // Preserve existing values except for group consent setting.
-                    MGTeamsInternalTenantConsentSettingValue[] updatedValues =
-                        groupConsentSettings.Values
-                        .Where(v => !string.Equals(v.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase))
-                        .Union(new MGTeamsInternalTenantConsentSettingValue[]
-                         {
-                            new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString())
-                         })
-                        .ToArray();
 
-                    await this.Client.UpdateGroupConsentSettings(
-                        groupConsentSettings.Id,
-                        updatedValues,
-                        eventListener: this,
-                        sender: Pipeline);
+                // Preserve existing values except for group consent setting.
+                MGTeamsInternalTenantConsentSettingValue[] updatedValues =
+                    groupConsentSettings.Values
+                    .Where(v => !string.Equals(v.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase) &&
+                                !string.Equals(v.Name, RscConfigurationSynthesizer.ConstrainGroupSpecificConsentToMembersOfGroupIdKey, StringComparison.OrdinalIgnoreCase))
+                    .Union(new MGTeamsInternalTenantConsentSettingValue[]
+                     {
+                         new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString().ToLowerInvariant()),
+                         new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.ConstrainGroupSpecificConsentToMembersOfGroupIdKey, string.Empty)
+                     })
+                    .ToArray();
 
-                    WriteVerbose($"Updated group consent settings with values: '{string.Join(", ", updatedValues.Select(i => i.ToJson().ToString()))}'.");
-                }
-                else
-                {
-                    WriteVerbose($"Group consent setting is already set to '{isGroupSpecificConsentEnabled}'.");
-                }
+                await this.Client.UpdateGroupConsentSettings(
+                    groupConsentSettings.Id,
+                    updatedValues,
+                    eventListener: this,
+                    sender: Pipeline);
+
+                WriteVerbose($"Updated group consent settings with values: '{string.Join(", ", updatedValues.Select(i => i.ToJson().ToString()))}'.");
             }
         }
 
