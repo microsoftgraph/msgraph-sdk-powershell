@@ -1,4 +1,4 @@
-### Example 1: Get a user's one on one chat
+### Example 1: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Teams

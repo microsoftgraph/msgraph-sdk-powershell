@@ -1,16 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Education
-
-$params = @{
-	displayName = "Rogelio Cazares"
-	givenName = "Rogelio"
-	middleName = "Fernando"
-	surname = "Cazares"
-}
-
-Update-MgEducationUser -EducationUserId $educationUserId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgEducationUser Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

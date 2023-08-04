@@ -1,6 +1,7 @@
-### Example 1: Add a member to a private channel
+### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -13,20 +14,13 @@ $params = @{
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 This example shows how to use the New-MgTeamChannelMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Add a member with the owner role to a private channel
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-```powershellImport-Module Microsoft.Graph.Teams
+### Example 2: Code snippet
 
-New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId
-```
-This example shows how to use the New-MgTeamChannelMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: Add an owner to a channel using user principal name
-
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -39,11 +33,13 @@ $params = @{
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 This example shows how to use the New-MgTeamChannelMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Add a user who is part of the same tenant as a member to a shared channel
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-```powershellImport-Module Microsoft.Graph.Teams
+### Example 3: Code snippet
+
+```powershell
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -55,11 +51,13 @@ $params = @{
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 This example shows how to use the New-MgTeamChannelMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Add a user who is part of a different tenant as a member to a shared channel
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-```powershellImport-Module Microsoft.Graph.Teams
+### Example 4: Code snippet
+
+```powershell
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -72,21 +70,6 @@ $params = @{
 New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 This example shows how to use the New-MgTeamChannelMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Add a user who is part of the same or a different tenant as a member to a shared channel using user principal name
-
-```powershellImport-Module Microsoft.Graph.Teams
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-	)
-	"user@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
-}
-
-New-MgTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
-```
-This example shows how to use the New-MgTeamChannelMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

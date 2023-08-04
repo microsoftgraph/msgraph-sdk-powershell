@@ -1,4 +1,4 @@
-### Example 1: Get reply to a message in a channel
+### Example 1: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams

@@ -1,4 +1,4 @@
-### Example 1: Get a message in a chat
+### Example 1: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
