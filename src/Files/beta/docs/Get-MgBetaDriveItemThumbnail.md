@@ -44,17 +44,17 @@ Nullable.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
+Get-MgBetaDriveItemThumbnail -DriveId $driveId -DriveItemId $driveItemId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
+Get-MgBetaDriveItemThumbnail -DriveId $driveId -DriveItemId $driveItemId -Property "c300x400_crop"
 
 ## PARAMETERS
 

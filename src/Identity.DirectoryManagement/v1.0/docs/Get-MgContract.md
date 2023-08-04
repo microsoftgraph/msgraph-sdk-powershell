@@ -40,7 +40,7 @@ Retrieve the properties and relationships of contract object.
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-Get-MgContract -ContractId $contractId
+Get-MgContract
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ChangeNotifications
-Module Guid: a699f6df-e551-421e-8559-488595da8158
+Module Guid: 1d6f2f85-eb39-4045-a819-a7570105de3f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.changenotifications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,7 +16,7 @@ Retrieve the properties and relationships of a subscription.
 See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 
 ### [Invoke-MgReauthorizeSubscription](Invoke-MgReauthorizeSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [New-MgSubscription](New-MgSubscription.md)
 Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.

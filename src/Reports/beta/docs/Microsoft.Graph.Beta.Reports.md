@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Reports
-Module Guid: cd91a884-4f14-41d0-be81-f5b5db59d032
+Module Guid: c6c88b5b-bbc5-468b-9a3e-9660d1340486
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -130,13 +130,15 @@ Get the number of the resource
 Get dailyPrintUsage from reports
 
 ### [Get-MgBetaReportDailyPrintUsageByPrinter](Get-MgBetaReportDailyPrintUsageByPrinter.md)
-Retrieve a list of daily print usage summaries, grouped by printer.
+Retrieve a printer's usage summary for a particular time period.
+For descriptions of each of the endpoints, see printUsageByPrinter.
 
 ### [Get-MgBetaReportDailyPrintUsageByPrinterCount](Get-MgBetaReportDailyPrintUsageByPrinterCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaReportDailyPrintUsageByUser](Get-MgBetaReportDailyPrintUsageByUser.md)
-Retrieve a list of daily print usage summaries, grouped by user.
+Retrieve a user's usage summary for a particular time period.
+See the printUsageByUser documentation for descriptions of each of the endpoints.
 
 ### [Get-MgBetaReportDailyPrintUsageByUserCount](Get-MgBetaReportDailyPrintUsageByUserCount.md)
 Get the number of the resource

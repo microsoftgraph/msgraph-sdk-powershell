@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties and relationships of an incident object.
 Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects.
-Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.
+Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgSecurityIncident -InputObject <ISecurityIdentity> [-ExpandProperty <String
 ## DESCRIPTION
 Retrieve the properties and relationships of an incident object.
 Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects.
-Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.
+Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.
 
 ## EXAMPLES
 

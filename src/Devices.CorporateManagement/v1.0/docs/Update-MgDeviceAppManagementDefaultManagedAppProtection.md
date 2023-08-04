@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementDefaultManagedAppProtection
 
 ## SYNOPSIS
-Update the navigation property defaultManagedAppProtections in deviceAppManagement
+Update the properties of a defaultManagedAppProtection object.
 
 ## SYNTAX
 
@@ -75,7 +75,7 @@ Update-MgDeviceAppManagementDefaultManagedAppProtection -InputObject <IDevicesCo
 ```
 
 ## DESCRIPTION
-Update the navigation property defaultManagedAppProtections in deviceAppManagement
+Update the properties of a defaultManagedAppProtection object.
 
 ## EXAMPLES
 

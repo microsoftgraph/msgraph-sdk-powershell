@@ -8,7 +8,7 @@ schema: 2.0.0
 # Export-MgBetaComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
-Initiate an export from a **reviewSet**.
+Initiate an export from a reviewSet.
 For details, see Export documents from a review set in Advanced eDiscovery.
 
 ## SYNTAX
@@ -44,7 +44,7 @@ Export-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity
 ```
 
 ## DESCRIPTION
-Initiate an export from a **reviewSet**.
+Initiate an export from a reviewSet.
 For details, see Export documents from a review set in Advanced eDiscovery.
 
 ## EXAMPLES

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserManagedDeviceWindowsProtectionState
 
 ## SYNOPSIS
-The device protection status.
-This property is read-only.
+Read properties and relationships of the windowsProtectionState object.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgUserManagedDeviceWindowsProtectionState -InputObject <IDevicesCorporateMan
 ```
 
 ## DESCRIPTION
-The device protection status.
-This property is read-only.
+Read properties and relationships of the windowsProtectionState object.
 
 ## EXAMPLES
 

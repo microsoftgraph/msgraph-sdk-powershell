@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of place object, which can be a room or roomList.
-You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+You can identify the room or roomList by specifying the id or emailAddress property.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgPlace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtabl
 
 ## DESCRIPTION
 Update the properties of place object, which can be a room or roomList.
-You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+You can identify the room or roomList by specifying the id or emailAddress property.
 
 ## EXAMPLES
 

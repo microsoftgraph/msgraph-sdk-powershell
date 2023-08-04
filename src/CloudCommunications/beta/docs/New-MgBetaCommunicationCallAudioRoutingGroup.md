@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
-Create a new **audioRoutingGroup**.
+Create a new audioRoutingGroup.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgBetaCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsI
 ```
 
 ## DESCRIPTION
-Create a new **audioRoutingGroup**.
+Create a new audioRoutingGroup.
 
 ## EXAMPLES
 

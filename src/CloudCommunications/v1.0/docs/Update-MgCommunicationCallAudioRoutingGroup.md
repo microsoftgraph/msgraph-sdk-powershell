@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
-Update the navigation property audioRoutingGroups in communications
+Modify sources and receivers of an audioRoutingGroup.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Update the navigation property audioRoutingGroups in communications
+Modify sources and receivers of an audioRoutingGroup.
 
 ## EXAMPLES
 
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Receivers
-.
+List of receiving participant ids.
 
 ```yaml
 Type: System.String[]
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sources
-.
+List of source participant ids.
 
 ```yaml
 Type: System.String[]
@@ -253,9 +253,9 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphAudioRoutingGroup>`: audioRoutingGroup
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Receivers <String[]>]`: 
+  - `[Receivers <String[]>]`: List of receiving participant ids.
   - `[RoutingMode <String>]`: routingMode
-  - `[Sources <String[]>]`: 
+  - `[Sources <String[]>]`: List of source participant ids.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

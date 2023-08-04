@@ -41,7 +41,7 @@ Read a directory extension definition represented by an extensionProperty object
 Import-Module Microsoft.Graph.Applications
 ```
 
-Get-MgApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+Get-MgApplicationExtensionProperty -ApplicationId $applicationId
 
 ## PARAMETERS
 

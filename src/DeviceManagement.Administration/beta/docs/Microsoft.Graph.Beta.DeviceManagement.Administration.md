@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: 5e3b0f14-81e6-42e6-ab7b-a01b2670bf91
+Module Guid: 4c8b5be0-0448-429b-a852-730d53dbde9b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -408,6 +408,12 @@ Read the properties and relationships of a cloudPcExternalPartnerSetting object.
 ### [Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSettingCount](Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSettingCount.md)
 Get the number of the resource
 
+### [Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
+Get frontLineServicePlans from deviceManagement
+
+### [Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlanCount](Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlanCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDeviceManagementVirtualEndpointGalleryImage](Get-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Read the properties and relationships of a specific cloudPcGalleryImage object.
 
@@ -422,7 +428,7 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
-A tenant has only one **cloudPcOrganizationSettings** object.
+A tenant has only one cloudPcOrganizationSettings object.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Read the properties and relationships of a cloudPcProvisioningPolicy object.
@@ -460,8 +466,8 @@ Cloud PC related reports.
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJob](Get-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 Read the properties and relationships of a cloudPcExportJob object.
 You can download a report by first creating a new cloudPcExportJob resource to initiate downloading.
-Use this GET operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource.
+When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount](Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount.md)
 Get the number of the resource
@@ -637,6 +643,9 @@ Upload a custom OS image that you can later provision on Cloud PCs.
 ### [New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Create a new cloudPcExternalPartnerSetting object.
 
+### [New-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](New-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
+Create new navigation property to frontLineServicePlans for deviceManagement
+
 ### [New-MgBetaDeviceManagementVirtualEndpointGalleryImage](New-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Create new navigation property to galleryImages for deviceManagement
 
@@ -651,8 +660,8 @@ Create new navigation property to assignments for deviceManagement
 
 ### [New-MgBetaDeviceManagementVirtualEndpointReportExportJob](New-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
-Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property result is `completed`, the report has finished downloading to the location specified by the **exportUrl** property.
+Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource.
+When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointServicePlan](New-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
@@ -825,13 +834,16 @@ Delete a cloudPcDeviceImage object.
 ### [Remove-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Remove-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Delete navigation property externalPartnerSettings for deviceManagement
 
+### [Remove-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](Remove-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
+Delete navigation property frontLineServicePlans for deviceManagement
+
 ### [Remove-MgBetaDeviceManagementVirtualEndpointGalleryImage](Remove-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Delete navigation property galleryImages for deviceManagement
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection](Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection.md)
 Delete a specific cloudPcOnPremisesConnection object.
 When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources.
-You cannot delete an Azure network connection when it's in use, as indicated by the **inUse** property.
+You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Delete navigation property organizationSettings for deviceManagement
@@ -1022,6 +1034,9 @@ Update the navigation property deviceImages in deviceManagement
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Update-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Update the properties of a cloudPcExternalPartnerSetting object.
+
+### [Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
+Update the navigation property frontLineServicePlans in deviceManagement
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointGalleryImage](Update-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Update the navigation property galleryImages in deviceManagement

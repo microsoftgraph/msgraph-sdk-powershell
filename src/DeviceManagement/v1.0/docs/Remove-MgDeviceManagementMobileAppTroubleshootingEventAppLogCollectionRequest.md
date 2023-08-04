@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
-Delete navigation property appLogCollectionRequests for deviceManagement
+Deletes a appLogCollectionRequest.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 ```
 
 ## DESCRIPTION
-Delete navigation property appLogCollectionRequests for deviceManagement
+Deletes a appLogCollectionRequest.
 
 ## EXAMPLES
 

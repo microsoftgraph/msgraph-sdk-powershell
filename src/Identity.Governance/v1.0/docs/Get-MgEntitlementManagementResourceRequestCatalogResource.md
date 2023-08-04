@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceRequestCatalogResource
 
 ## SYNOPSIS
-Get resources from identityGovernance
+Access package resources in this catalog.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgEntitlementManagementResourceRequestCatalogResource -InputObject <IIdentit
 ```
 
 ## DESCRIPTION
-Get resources from identityGovernance
+Access package resources in this catalog.
 
 ## EXAMPLES
 

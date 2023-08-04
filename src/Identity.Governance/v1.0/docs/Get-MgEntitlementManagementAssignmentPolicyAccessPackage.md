@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Access package containing this policy.
 Read-only.
+Supports $expand.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Get-MgEntitlementManagementAssignmentPolicyAccessPackage -InputObject <IIdentity
 ## DESCRIPTION
 Access package containing this policy.
 Read-only.
+Supports $expand.
 
 ## EXAMPLES
 

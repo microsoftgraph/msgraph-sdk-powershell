@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamScheduleTimeOffReason
 
 ## SYNOPSIS
-Mark a timeOffReason as inactive by setting the **isActive** property.
+Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeoff reason.
 This method does not remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
@@ -28,7 +28,7 @@ Remove-MgTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-Mark a timeOffReason as inactive by setting the **isActive** property.
+Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeoff reason.
 This method does not remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
@@ -185,6 +185,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OpenShiftChangeRequestId <String>]`: The unique identifier of openShiftChangeRequest
   - `[OpenShiftId <String>]`: The unique identifier of openShift
   - `[PinnedChatMessageInfoId <String>]`: The unique identifier of pinnedChatMessageInfo
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift

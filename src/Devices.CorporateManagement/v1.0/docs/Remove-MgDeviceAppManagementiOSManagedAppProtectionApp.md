@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementiOSManagedAppProtectionApp
 
 ## SYNOPSIS
-Delete navigation property apps for deviceAppManagement
+Deletes a managedMobileApp.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementiOSManagedAppProtectionApp -InputObject <IDevicesCor
 ```
 
 ## DESCRIPTION
-Delete navigation property apps for deviceAppManagement
+Deletes a managedMobileApp.
 
 ## EXAMPLES
 

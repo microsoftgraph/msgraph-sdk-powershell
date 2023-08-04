@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatus
 
 ## SYNOPSIS
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatus -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ## EXAMPLES
 

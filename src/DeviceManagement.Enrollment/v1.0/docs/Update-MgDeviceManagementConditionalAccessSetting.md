@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementConditionalAccessSetting
 
 ## SYNOPSIS
-Update the navigation property conditionalAccessSettings in deviceManagement
+Update the properties of a onPremisesConditionalAccessSettings object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgDeviceManagementConditionalAccessSetting
 ```
 
 ## DESCRIPTION
-Update the navigation property conditionalAccessSettings in deviceManagement
+Update the properties of a onPremisesConditionalAccessSettings object.
 
 ## EXAMPLES
 

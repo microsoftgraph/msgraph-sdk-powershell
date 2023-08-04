@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementiOSManagedAppProtectionApp
 
 ## SYNOPSIS
-Update the navigation property apps in deviceAppManagement
+Update the properties of a managedMobileApp object.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-MgDeviceAppManagementiOSManagedAppProtectionApp -InputObject <IDevicesCor
 ```
 
 ## DESCRIPTION
-Update the navigation property apps in deviceAppManagement
+Update the properties of a managedMobileApp object.
 
 ## EXAMPLES
 

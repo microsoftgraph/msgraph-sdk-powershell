@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a specific cloudPcOnPremisesConnection object.
 When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources.
-You cannot delete an Azure network connection when it's in use, as indicated by the **inUse** property.
+You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Remove-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection
 ## DESCRIPTION
 Delete a specific cloudPcOnPremisesConnection object.
 When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources.
-You cannot delete an Azure network connection when it's in use, as indicated by the **inUse** property.
+You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
 
 ## EXAMPLES
 
@@ -170,6 +170,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
   - `[CloudPcExportJobId <String>]`: The unique identifier of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: The unique identifier of cloudPcExternalPartnerSetting
+  - `[CloudPcFrontLineServicePlanId <String>]`: The unique identifier of cloudPcFrontLineServicePlan
   - `[CloudPcGalleryImageId <String>]`: The unique identifier of cloudPcGalleryImage
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection

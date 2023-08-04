@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Confirm one or more riskyServicePrincipal objects as compromised.
-This action sets the targeted service principal account's risk level to `high`.
+This action sets the targeted service principal account's risk level to high.
 
 ## SYNTAX
 
@@ -28,22 +28,22 @@ Confirm-MgBetaRiskyServicePrincipalCompromised
 
 ## DESCRIPTION
 Confirm one or more riskyServicePrincipal objects as compromised.
-This action sets the targeted service principal account's risk level to `high`.
+This action sets the targeted service principal account's risk level to high.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
 $params = @{
-	ServicePrincipalIds = @(
+	servicePrincipalIds = @(
 		"9089a539-a539-9089-39a5-899039a58990"
 	)
 }
+
 Confirm-MgBetaRiskyServicePrincipalCompromised -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

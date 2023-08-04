@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 
 ## SYNOPSIS
-The list of localized messages for this Notification Message Template.
+Read properties and relationships of the localizedNotificationMessage object.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 ```
 
 ## DESCRIPTION
-The list of localized messages for this Notification Message Template.
+Read properties and relationships of the localizedNotificationMessage object.
 
 ## EXAMPLES
 

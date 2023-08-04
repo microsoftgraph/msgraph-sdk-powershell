@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Promote a verified subdomain to the root domain.
-A verified domain has its **isVerified** property set to `true`.
+A verified domain has its isVerified property set to true.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgBetaPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [
 
 ## DESCRIPTION
 Promote a verified subdomain to the root domain.
-A verified domain has its **isVerified** property set to `true`.
+A verified domain has its isVerified property set to true.
 
 ## EXAMPLES
 

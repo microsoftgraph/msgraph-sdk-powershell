@@ -43,7 +43,7 @@ For descriptions of each endpoint, see printUsageByUser.
 Import-Module Microsoft.Graph.Reports
 ```
 
-Get-MgReportDailyPrintUsageByUser -PrintUsageByUserId $printUsageByUserId
+Get-MgReportDailyPrintUsageByUser
 
 ## PARAMETERS
 

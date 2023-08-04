@@ -8,8 +8,8 @@ schema: 2.0.0
 # Stop-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest
 
 ## SYNOPSIS
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Stop-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest
 ```
 
 ## DESCRIPTION
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ## EXAMPLES
 

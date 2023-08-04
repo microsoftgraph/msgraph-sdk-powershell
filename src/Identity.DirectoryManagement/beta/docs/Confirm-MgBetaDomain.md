@@ -31,10 +31,9 @@ Validates the ownership of the domain.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Confirm-MgBetaDomain -DomainId $domainId
 ```
 
-
+Confirm-MgBetaDomain -DomainId $domainId
 
 ## PARAMETERS
 

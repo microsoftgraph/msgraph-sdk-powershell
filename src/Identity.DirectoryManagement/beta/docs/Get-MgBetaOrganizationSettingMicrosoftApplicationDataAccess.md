@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess
 ```
 
 ## DESCRIPTION
-Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 
 ## EXAMPLES
 

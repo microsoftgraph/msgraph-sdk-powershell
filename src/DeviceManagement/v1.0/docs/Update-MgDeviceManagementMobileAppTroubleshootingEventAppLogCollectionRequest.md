@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
-Update the navigation property appLogCollectionRequests in deviceManagement
+Update the properties of a appLogCollectionRequest object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 ```
 
 ## DESCRIPTION
-Update the navigation property appLogCollectionRequests in deviceManagement
+Update the properties of a appLogCollectionRequest object.
 
 ## EXAMPLES
 

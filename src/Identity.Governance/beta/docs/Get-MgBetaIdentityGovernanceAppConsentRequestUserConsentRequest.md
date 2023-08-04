@@ -41,7 +41,7 @@ Read the properties and relationships of a userConsentRequest object.
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest -AppConsentRequestId $appConsentRequestId -UserConsentRequestId $userConsentRequestId
+Get-MgBetaIdentityGovernanceAppConsentRequestUserConsentRequest -AppConsentRequestId $appConsentRequestId
 
 ## PARAMETERS
 

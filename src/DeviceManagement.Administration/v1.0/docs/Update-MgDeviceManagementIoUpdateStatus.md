@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementIoUpdateStatus
 
 ## SYNOPSIS
-Update the navigation property iosUpdateStatuses in deviceManagement
+Update the properties of a iosUpdateDeviceStatus object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementIoUpdateStatus -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-Update the navigation property iosUpdateStatuses in deviceManagement
+Update the properties of a iosUpdateDeviceStatus object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementRoleAssignment
 
 ## SYNOPSIS
-The Role Assignments.
+Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministrati
 ```
 
 ## DESCRIPTION
-The Role Assignments.
+Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
 
 ## EXAMPLES
 

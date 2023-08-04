@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementRoleDefinitionRoleAssignment
 
 ## SYNOPSIS
-Delete navigation property roleAssignments for deviceManagement
+Deletes a roleAssignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-Delete navigation property roleAssignments for deviceManagement
+Deletes a roleAssignment.
 
 ## EXAMPLES
 

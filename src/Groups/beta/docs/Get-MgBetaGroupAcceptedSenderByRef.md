@@ -28,10 +28,17 @@ Make sure you do not specify the same user or group in the accepted senders and 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
+{{ Add code here }}
 ```
 
-Get-MgBetaGroupAcceptedSender -GroupId $groupId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

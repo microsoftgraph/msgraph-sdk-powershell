@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaCommunicationCallParticipant
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a **participant** object.
+Retrieve the properties and relationships of a participant object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentit
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a **participant** object.
+Retrieve the properties and relationships of a participant object.
 
 ## EXAMPLES
 
@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a **participant** object.
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
 
-Get-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Get-MgBetaCommunicationCallParticipant -CallId $callId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCategory
 
 ## SYNOPSIS
-Create new navigation property to deviceCategories for deviceManagement
+Create a new deviceCategory object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceManagementDeviceCategory -BodyParameter <IMicrosoftGraphDeviceCatego
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceCategories for deviceManagement
+Create a new deviceCategory object.
 
 ## EXAMPLES
 

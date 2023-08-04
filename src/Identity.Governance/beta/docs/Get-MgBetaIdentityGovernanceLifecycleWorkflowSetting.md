@@ -25,10 +25,9 @@ Read the properties and relationships of a lifecycleManagementSettings object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting
 ```
 
-
+Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting
 
 ## PARAMETERS
 

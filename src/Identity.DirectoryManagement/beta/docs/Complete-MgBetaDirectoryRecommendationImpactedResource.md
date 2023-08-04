@@ -8,7 +8,7 @@ schema: 2.0.0
 # Complete-MgBetaDirectoryRecommendationImpactedResource
 
 ## SYNOPSIS
-Complete an impactedResource object and update its **status** to `completedByUser`.
+Complete an impactedResource object and update its status to completedByUser.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Complete-MgBetaDirectoryRecommendationImpactedResource -InputObject <IIdentityDi
 ```
 
 ## DESCRIPTION
-Complete an impactedResource object and update its **status** to `completedByUser`.
+Complete an impactedResource object and update its status to completedByUser.
 
 ## EXAMPLES
 

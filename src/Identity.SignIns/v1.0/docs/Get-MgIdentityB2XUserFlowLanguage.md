@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
-**Note:** Language customization is enabled by default in Azure Active Directory user flows.
+Note: Language customization is enabled by default in Azure Active Directory user flows.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgIdentityB2XUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-Expa
 ## DESCRIPTION
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
-**Note:** Language customization is enabled by default in Azure Active Directory user flows.
+Note: Language customization is enabled by default in Azure Active Directory user flows.
 
 ## EXAMPLES
 
@@ -45,7 +45,7 @@ These objects represent a language available in a user flow.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityB2XUserFlowLanguage -B2xIdentityUserFlowId $b2xIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
+Get-MgIdentityB2XUserFlowLanguage -B2xIdentityUserFlowId $b2xIdentityUserFlowId
 
 ## PARAMETERS
 

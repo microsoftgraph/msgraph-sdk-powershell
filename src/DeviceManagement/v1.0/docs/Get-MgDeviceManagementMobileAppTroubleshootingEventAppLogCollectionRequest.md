@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
-Indicates collection of App Log Upload Request.
+Read properties and relationships of the appLogCollectionRequest object.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 ```
 
 ## DESCRIPTION
-Indicates collection of App Log Upload Request.
+Read properties and relationships of the appLogCollectionRequest object.
 
 ## EXAMPLES
 

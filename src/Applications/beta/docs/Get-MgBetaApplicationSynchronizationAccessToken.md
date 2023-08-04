@@ -48,17 +48,17 @@ Acquire an OAuth Access token to authorize the Azure AD provisioning service to 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
+```
+
 $params = @{
-	Credentials = @(
+	credentials = @(
 		@{
 			"@odata.type" = "microsoft.graph.synchronizationSecretKeyStringValuePair"
 		}
 	)
 }
+
 Get-MgBetaApplicationSynchronizationAccessToken -ApplicationId $applicationId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

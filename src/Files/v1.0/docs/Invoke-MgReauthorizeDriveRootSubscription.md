@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReauthorizeDriveRootSubscription
 
 ## SYNOPSIS
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgReauthorizeDriveRootSubscription -InputObject <IFilesIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ## EXAMPLES
 

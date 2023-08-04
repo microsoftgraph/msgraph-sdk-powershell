@@ -10,13 +10,13 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a particular submission.
 Only teachers, students, and applications with application permissions can perform this operation.
-A **submission** object represents a student's work for an assignment.
-Resources associated with the **submission** represent this work.
-Only the **assignedTo** student can see and modify the **submission**.
-A teacher or application with application permissions has full access to all **submissions**.
+A submission object represents a student's work for an assignment.
+Resources associated with the submission represent this work.
+Only the assignedTo student can see and modify the submission.
+A teacher or application with application permissions has full access to all submissions.
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
-Students will not see the grade or feedback until the **assignment** has been released.
+Students will not see the grade or feedback until the assignment has been released.
 
 ## SYNTAX
 
@@ -42,13 +42,13 @@ Get-MgEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Exp
 ## DESCRIPTION
 Retrieve a particular submission.
 Only teachers, students, and applications with application permissions can perform this operation.
-A **submission** object represents a student's work for an assignment.
-Resources associated with the **submission** represent this work.
-Only the **assignedTo** student can see and modify the **submission**.
-A teacher or application with application permissions has full access to all **submissions**.
+A submission object represents a student's work for an assignment.
+Resources associated with the submission represent this work.
+Only the assignedTo student can see and modify the submission.
+A teacher or application with application permissions has full access to all submissions.
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
-Students will not see the grade or feedback until the **assignment** has been released.
+Students will not see the grade or feedback until the assignment has been released.
 
 ## EXAMPLES
 
@@ -57,14 +57,14 @@ Students will not see the grade or feedback until the **assignment** has been re
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+Get-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -ExpandProperty "*"
+Get-MgEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -ExpandProperty "outcomes"
 
 ## PARAMETERS
 

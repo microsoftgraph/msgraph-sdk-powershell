@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceAppManagementManagedEBook
 
 ## SYNOPSIS
-Invoke action assign
+Not yet documented
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Set-MgDeviceAppManagementManagedEBook -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Invoke action assign
+Not yet documented
 
 ## EXAMPLES
 

@@ -41,7 +41,14 @@ Read the properties and relationships of an appConsentRequest object.
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-Get-MgBetaIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId
+Get-MgBetaIdentityGovernanceAppConsentRequest
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+```
+
+Get-MgBetaIdentityGovernanceAppConsentRequest -Filter "userConsentRequests/any (u:u/status eq 'InProgress')"
 
 ## PARAMETERS
 

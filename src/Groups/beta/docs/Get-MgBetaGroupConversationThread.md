@@ -45,10 +45,9 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupConversationThread -GroupId $groupId -ConversationId $conversationId
 ```
 
-
+Get-MgBetaGroupConversationThread -GroupId $groupId -ConversationId $conversationId
 
 ## PARAMETERS
 

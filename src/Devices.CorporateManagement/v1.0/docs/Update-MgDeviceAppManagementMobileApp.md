@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Update the navigation property mobileApps in deviceAppManagement
+Update the properties of a windowsWebApp object.
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Update-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileApps in deviceAppManagement
+Update the properties of a windowsWebApp object.
 
 ## EXAMPLES
 

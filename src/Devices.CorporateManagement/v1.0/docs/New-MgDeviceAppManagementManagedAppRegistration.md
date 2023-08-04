@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedAppRegistration
 
 ## SYNOPSIS
-Create new navigation property to managedAppRegistrations for deviceAppManagement
+Create a new androidManagedAppRegistration object.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgDeviceAppManagementManagedAppRegistration -BodyParameter <IMicrosoftGraphM
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedAppRegistrations for deviceAppManagement
+Create a new androidManagedAppRegistration object.
 
 ## EXAMPLES
 

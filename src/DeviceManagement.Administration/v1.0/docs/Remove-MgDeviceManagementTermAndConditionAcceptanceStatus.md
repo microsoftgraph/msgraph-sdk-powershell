@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementTermAndConditionAcceptanceStatus
 
 ## SYNOPSIS
-Delete navigation property acceptanceStatuses for deviceManagement
+Deletes a termsAndConditionsAcceptanceStatus.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgDeviceManagementTermAndConditionAcceptanceStatus
 ```
 
 ## DESCRIPTION
-Delete navigation property acceptanceStatuses for deviceManagement
+Deletes a termsAndConditionsAcceptanceStatus.
 
 ## EXAMPLES
 

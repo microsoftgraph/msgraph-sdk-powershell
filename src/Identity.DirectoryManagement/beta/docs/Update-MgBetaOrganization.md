@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of the currently authenticated organization.
-In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.
-The **ID** is also known as the **tenantId** of the organization.
+In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
+The ID is also known as the tenantId of the organization.
 
 ## SYNTAX
 
@@ -72,8 +72,8 @@ Update-MgBetaOrganization -InputObject <IIdentityDirectoryManagementIdentity>
 
 ## DESCRIPTION
 Update the properties of the currently authenticated organization.
-In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.
-The **ID** is also known as the **tenantId** of the organization.
+In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
+The ID is also known as the tenantId of the organization.
 
 ## EXAMPLES
 

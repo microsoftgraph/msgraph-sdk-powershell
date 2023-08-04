@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecuritySecureScoreControlProfile
 
 ## SYNOPSIS
-Update an editable **secureScoreControlProfile** object within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.
+Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgSecuritySecureScoreControlProfile -InputObject <ISecurityIdentity> [-Ac
 ```
 
 ## DESCRIPTION
-Update an editable **secureScoreControlProfile** object within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.
+Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
 
 ## EXAMPLES
 

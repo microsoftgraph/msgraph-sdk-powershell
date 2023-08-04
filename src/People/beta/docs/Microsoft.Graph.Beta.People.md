@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.People
-Module Guid: 6414d4bb-c52c-4c36-8b0d-11b82e83982e
+Module Guid: 8ff08736-690a-43eb-9651-b8d66f76b318
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.people
 Help Version: 1.0.0.0
 Locale: en-US
@@ -30,9 +30,9 @@ Get the number of the resource
 
 ### [Get-MgBetaUserProfile](Get-MgBetaUserProfile.md)
 Retrieve the properties and relationships of a profile object for a given user.
-The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities.
+The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities.
 To get one of these navigation properties, use the corresponding GET method on that property.
-See the methods exposed by **profile**.
+See the methods exposed by profile.
 
 ### [Get-MgBetaUserProfileAccount](Get-MgBetaUserProfileAccount.md)
 Retrieve the properties and relationships of an userAccountInformation object in a user's profile.

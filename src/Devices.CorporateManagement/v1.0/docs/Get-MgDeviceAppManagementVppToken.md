@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementVppToken
 
 ## SYNOPSIS
-List of Vpp tokens for this organization.
+Read properties and relationships of the vppToken object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementVppToken -InputObject <IDevicesCorporateManagementIdent
 ```
 
 ## DESCRIPTION
-List of Vpp tokens for this organization.
+Read properties and relationships of the vppToken object.
 
 ## EXAMPLES
 

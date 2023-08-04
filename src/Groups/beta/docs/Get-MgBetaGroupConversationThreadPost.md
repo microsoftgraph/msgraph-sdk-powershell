@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of a post in a specified thread.
 You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
-Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance.
+Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 
 ## SYNTAX
 
@@ -48,16 +48,23 @@ Get-MgBetaGroupConversationThreadPost -InputObject <IGroupsIdentity> [-ExpandPro
 ## DESCRIPTION
 Get the properties and relationships of a post in a specified thread.
 You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation.
-Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance.
+Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
+{{ Add code here }}
 ```
 
-Get-MgBetaGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

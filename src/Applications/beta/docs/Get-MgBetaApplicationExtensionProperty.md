@@ -41,7 +41,7 @@ Read a directory extension definition represented by an extensionProperty object
 Import-Module Microsoft.Graph.Beta.Applications
 ```
 
-Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId
 
 ## PARAMETERS
 

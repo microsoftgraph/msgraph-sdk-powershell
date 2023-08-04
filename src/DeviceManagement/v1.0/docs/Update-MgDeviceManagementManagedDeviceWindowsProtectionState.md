@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementManagedDeviceWindowsProtectionState
 
 ## SYNOPSIS
-Update the navigation property windowsProtectionState in deviceManagement
+Update the properties of a windowsProtectionState object.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgDeviceManagementManagedDeviceWindowsProtectionState -InputObject <IDevi
 ```
 
 ## DESCRIPTION
-Update the navigation property windowsProtectionState in deviceManagement
+Update the properties of a windowsProtectionState object.
 
 ## EXAMPLES
 

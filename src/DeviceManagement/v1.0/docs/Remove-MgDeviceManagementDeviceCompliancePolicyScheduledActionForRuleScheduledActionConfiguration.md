@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration
 
 ## SYNOPSIS
-Delete navigation property scheduledActionConfigurations for deviceManagement
+Deletes a deviceComplianceActionItem.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledAc
 ```
 
 ## DESCRIPTION
-Delete navigation property scheduledActionConfigurations for deviceManagement
+Deletes a deviceComplianceActionItem.
 
 ## EXAMPLES
 

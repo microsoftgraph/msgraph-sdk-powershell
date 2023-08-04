@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSite
 
 ## SYNOPSIS
-Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
+Retrieve properties and relationships for a [site][] resource.\nA site resource represents a team site in SharePoint.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgBetaSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Prop
 ```
 
 ## DESCRIPTION
-Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
+Retrieve properties and relationships for a [site][] resource.\nA site resource represents a team site in SharePoint.
 
 ## EXAMPLES
 

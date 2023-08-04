@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileAppCategory
 
 ## SYNOPSIS
-Delete navigation property mobileAppCategories for deviceAppManagement
+Deletes a mobileAppCategory.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementMobileAppCategory -InputObject <IDevicesCorporateMan
 ```
 
 ## DESCRIPTION
-Delete navigation property mobileAppCategories for deviceAppManagement
+Deletes a mobileAppCategory.
 
 ## EXAMPLES
 

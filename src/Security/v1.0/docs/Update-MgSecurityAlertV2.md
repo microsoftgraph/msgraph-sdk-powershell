@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityAlertV2
 
 ## SYNOPSIS
-Update the properties of an alert object in an organization based on the specified alert **id** property.
+Update the properties of an alert object in an organization based on the specified alert id property.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgSecurityAlertV2 -InputObject <ISecurityIdentity> [-ActorDisplayName <St
 ```
 
 ## DESCRIPTION
-Update the properties of an alert object in an organization based on the specified alert **id** property.
+Update the properties of an alert object in an organization based on the specified alert id property.
 
 ## EXAMPLES
 

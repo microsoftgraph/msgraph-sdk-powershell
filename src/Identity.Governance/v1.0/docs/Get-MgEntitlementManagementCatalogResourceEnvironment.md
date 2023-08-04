@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEntitlementManagementCatalogResourceEnvironment
 
 ## SYNOPSIS
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgEntitlementManagementCatalogResourceEnvironment -InputObject <IIdentityGov
 ```
 
 ## DESCRIPTION
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ## EXAMPLES
 

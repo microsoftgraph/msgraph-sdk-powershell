@@ -39,20 +39,26 @@ The collection of child folders in the mailFolder.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -Includehiddenfolders true
 
 ## PARAMETERS
 

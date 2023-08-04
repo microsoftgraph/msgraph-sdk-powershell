@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Delete navigation property targetedManagedAppConfigurations for deviceAppManagement
+Deletes a targetedManagedAppConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementTargetedManagedAppConfiguration -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Delete navigation property targetedManagedAppConfigurations for deviceAppManagement
+Deletes a targetedManagedAppConfiguration.
 
 ## EXAMPLES
 

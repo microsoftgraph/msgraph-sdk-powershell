@@ -42,7 +42,7 @@ Import-Module Microsoft.Graph.Beta.Notes
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
+Get-MgBetaUserOnenoteNotebook -UserId $userId
 
 ## PARAMETERS
 

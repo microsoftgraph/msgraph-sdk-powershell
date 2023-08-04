@@ -43,7 +43,14 @@ Sign-ins that are interactive in nature (where a username/password is passed as 
 Import-Module Microsoft.Graph.Reports
 ```
 
-Get-MgAuditLogSignIn -SignInId $signInId
+Get-MgAuditLogSignIn
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Reports
+```
+
+Get-MgAuditLogSignIn -Filter "startsWith(appDisplayName,'Graph')" -Top 10
 
 ## PARAMETERS
 

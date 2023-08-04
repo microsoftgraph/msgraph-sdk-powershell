@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementResourceOperation
 
 ## SYNOPSIS
-Update the navigation property resourceOperations in deviceManagement
+Update the properties of a resourceOperation object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdmini
 ```
 
 ## DESCRIPTION
-Update the navigation property resourceOperations in deviceManagement
+Update the properties of a resourceOperation object.
 
 ## EXAMPLES
 

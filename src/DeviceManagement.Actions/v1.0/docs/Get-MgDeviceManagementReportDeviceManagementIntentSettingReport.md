@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportDeviceManagementIntentSettingReport
 
 ## SYNOPSIS
-Invoke action getDeviceManagementIntentSettingsReport
+Not yet documented
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementReportDeviceManagementIntentSettingReport
 ```
 
 ## DESCRIPTION
-Invoke action getDeviceManagementIntentSettingsReport
+Not yet documented
 
 ## EXAMPLES
 

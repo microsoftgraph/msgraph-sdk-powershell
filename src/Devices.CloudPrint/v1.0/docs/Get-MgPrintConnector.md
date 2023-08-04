@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintConnector
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a **printConnector** object.
+Retrieve the properties and relationships of a printConnector object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a **printConnector** object.
+Retrieve the properties and relationships of a printConnector object.
 
 ## EXAMPLES
 

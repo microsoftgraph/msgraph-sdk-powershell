@@ -40,7 +40,21 @@ Get the properties and relationships of a device object.
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-Get-MgDevice -DeviceId $deviceId
+Get-MgDevice
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+```
+
+Get-MgDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+```
+
+Get-MgDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual
 
 ## PARAMETERS
 

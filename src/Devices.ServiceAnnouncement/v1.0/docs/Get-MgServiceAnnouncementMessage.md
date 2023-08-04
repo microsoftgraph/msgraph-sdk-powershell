@@ -45,7 +45,7 @@ The operation returns an error if the message does not exist for the tenant.
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 ```
 
-Get-MgServiceAnnouncementMessage -ServiceUpdateMessageId $serviceUpdateMessageId
+Get-MgServiceAnnouncementMessage
 
 ## PARAMETERS
 

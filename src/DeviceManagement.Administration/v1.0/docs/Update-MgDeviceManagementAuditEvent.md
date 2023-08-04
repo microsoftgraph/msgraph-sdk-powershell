@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementAuditEvent
 
 ## SYNOPSIS
-Update the navigation property auditEvents in deviceManagement
+Update the properties of a auditEvent object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministratio
 ```
 
 ## DESCRIPTION
-Update the navigation property auditEvents in deviceManagement
+Update the properties of a auditEvent object.
 
 ## EXAMPLES
 

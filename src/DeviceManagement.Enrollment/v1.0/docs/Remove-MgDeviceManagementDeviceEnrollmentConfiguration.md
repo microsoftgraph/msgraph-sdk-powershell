@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Delete navigation property deviceEnrollmentConfigurations for deviceManagement
+Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceEnrollmentConfigurations for deviceManagement
+Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
 
 ## EXAMPLES
 

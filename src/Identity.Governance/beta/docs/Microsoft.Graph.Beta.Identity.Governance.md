@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: bd1efb33-b359-4f51-acf4-1447f1ed2675
+Module Guid: 8d1ec647-16eb-4c4a-a7d8-4346667ec17e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -36,12 +36,12 @@ A configured auto applying review, or selecting Apply doesn't have an effect on 
 If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
 
 ### [Add-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Add-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
+The status of the accessReviewInstance must be Completed to call this method.
 
 ### [Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
+The status of the accessReviewInstance must be Completed to call this method.
 
 ### [Export-MgBetaPrivilegedAccessResourceRoleAssignment](Export-MgBetaPrivilegedAccessResourceRoleAssignment.md)
 Invoke function export
@@ -54,7 +54,7 @@ In the Azure AD access reviews feature, retrieve an accessReview object.
  To retrieve the reviewers of the access review, use the list accessReview reviewers API.
 To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
-Instead, use the `instances` relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
+Instead, use the instances relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
 Each past and current instance will have decisions.
 
 ### [Get-MgBetaAccessReviewCount](Get-MgBetaAccessReviewCount.md)
@@ -114,7 +114,7 @@ Get the number of the resource
 
 ### [Get-MgBetaAgreementFile](Get-MgBetaAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
-The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
 
 ### [Get-MgBetaAgreementFileCount](Get-MgBetaAgreementFileCount.md)
 Get the number of the resource
@@ -197,7 +197,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -454,7 +454,7 @@ The instance is the parent of the decision item, representing the recurrence of 
 ### [Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition](Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition.md)
 Retrieve an accessReviewHistoryDefinition object by its identifier.
 All of the properties of the access review history definition object are returned.
-If the definition is 30 days or older, a `404 Not Found` error is returned.
+If the definition is 30 days or older, a 404 Not Found error is returned.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionCount](Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionCount.md)
 Get the number of the resource
@@ -952,7 +952,7 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFile](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
-The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileCount](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileCount.md)
 Get the number of the resource
@@ -2059,12 +2059,12 @@ When you run a workflow on demand, the tasks are executed regardless of whether 
 
 ### [Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation](Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
+Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
 ### [Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgBetaAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
+Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
 ### [Invoke-MgBetaAssignedRoleManagementCloudPcRoleDefinitionInheritPermissionFromPrincipal](Invoke-MgBetaAssignedRoleManagementCloudPcRoleDefinitionInheritPermissionFromPrincipal.md)
@@ -2104,10 +2104,10 @@ Invoke function assignedPrincipals
 Invoke function assignedPrincipals
 
 ### [Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision](Invoke-MgBetaBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
 
 ### [Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBetaBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
 
 ### [Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgBetaFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -2246,23 +2246,23 @@ Invoke function my
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
 
 ### [Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Invoke-MgBetaRecordIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
 
 ### [Invoke-MgBetaRemediateIdentityGovernanceRoleManagementAlertIncident](Invoke-MgBetaRemediateIdentityGovernanceRoleManagementAlertIncident.md)
 Invoke action remediate
@@ -2327,7 +2327,7 @@ The resources in the access package must be present in the target catalog.
 
 ### [New-MgBetaAccessReview](New-MgBetaAccessReview.md)
 In the Azure AD access reviews feature, create a new accessReview object.
-Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of **businessFlowTemplateId** to include in the request.
+Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of businessFlowTemplateId to include in the request.
 After making this request, the caller should create a programControl, to link the access review to a program.
 
 ### [New-MgBetaAccessReviewDecision](New-MgBetaAccessReviewDecision.md)
@@ -2418,7 +2418,7 @@ A resource must be included in an access package catalog before a role of that r
 
 ### [New-MgBetaEntitlementManagementAccessPackageResourceRoleScope](New-MgBetaEntitlementManagementAccessPackageResourceRoleScope.md)
 Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
-The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the **originId** for the resource role retrieved from the list of the resource roles.
+The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles.
 Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
 
 ### [New-MgBetaEntitlementManagementConnectedOrganization](New-MgBetaEntitlementManagementConnectedOrganization.md)
@@ -2490,9 +2490,9 @@ Create a new accessReviewHistoryDefinition object.
 Create new navigation property to instances for identityGovernance
 
 ### [New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
-Generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`.
+Generates a URI for an accessReviewHistoryInstance object the status for which is done.
 Each URI can be used to retrieve the instance's review history data.
-Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
+Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
 
 ### [New-MgBetaIdentityGovernanceAppConsentRequest](New-MgBetaIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
@@ -2846,8 +2846,8 @@ Delete entity from businessFlowTemplates
 
 ### [Remove-MgBetaEntitlementManagementAccessPackage](Remove-MgBetaEntitlementManagementAccessPackage.md)
 Delete an accessPackage object.
-You cannot delete an access package if it has any **accessPackageAssignment**.
-To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: `$filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'`.
+You cannot delete an access package if it has any accessPackageAssignment.
+To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'.
 For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignment](Remove-MgBetaEntitlementManagementAccessPackageAssignment.md)
@@ -2871,7 +2871,7 @@ Delete navigation property customExtensionStageSettings for identityGovernance
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
-You cannot delete an access package assignment request if it has any **accessPackageAssignment** objects.
+You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalog](Remove-MgBetaEntitlementManagementAccessPackageCatalog.md)
 Delete an accessPackageCatalog.
@@ -2880,12 +2880,12 @@ Delete an accessPackageCatalog.
 Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Delete an accessPackageAssignmentRequestWorkflowExtension object.
+Delete an accessPackageAssignmentWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
 Follow these steps to remove the custom workflow extension from any associated policies:\n1.
-First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending `?$expand=accessPackage($expand=accessPackageCatalog)` to the query.
-For example, `https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog)`.\n2.
-Use the access package catalog ID and retrieve the ID of the **accessPackageCustomWorkflowExtension** object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
+First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending ?$expand=accessPackage($expand=accessPackageCatalog) to the query.
+For example, https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog).\n2.
+Use the access package catalog ID and retrieve the ID of the accessPackageCustomWorkflowExtension object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
 Call the Update accessPackageAssignmentPolicy operation to remove the custom workflow extension object from the policy.
 For an example, see Example 3: Remove the customExtensionStageSettings from a policy.
 
@@ -3189,7 +3189,7 @@ Delete navigation property summary for privilegedRoles
 
 ### [Remove-MgBetaProgram](Remove-MgBetaProgram.md)
 In the Azure AD access reviews feature, delete a program object.
-Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
+Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
 Also, please note that the built-in default program cannot be deleted.
 
 ### [Remove-MgBetaProgramControl](Remove-MgBetaProgramControl.md)
@@ -3387,10 +3387,10 @@ The target object can be either a one-time access review, or an instance of a re
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 
 ### [Reset-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision](Reset-MgBetaIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 
 ### [Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 
 ### [Restore-MgBetaIdentityGovernanceLifecycleWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Restore a workflow that has been deleted.
@@ -3402,30 +3402,30 @@ You can only restore a workflow that was deleted within the last 30 days before 
 
 ### [Resume-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Resume-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
 In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
-It is performed on an accessPackageAssignmentRequest object whose **requestStatus** is in a `WaitingForCallback` state.
+It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
@@ -3468,11 +3468,11 @@ The target object can be either a one-time access review, or an instance of a re
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 
 ### [Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
+In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
 Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
+After the access review instance stops, the instance status will be Completed, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
@@ -3480,8 +3480,8 @@ To prevent a recurring access review from starting future instances, update the 
 Invoke action stopApplyDecisions
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
+Stop an access review stage that is inProgress.
+After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
@@ -3490,7 +3490,7 @@ Invoke action stop
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
+After the access review instance stops, the instance status will be Completed, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
@@ -3498,8 +3498,8 @@ To prevent a recurring access review from starting future instances, update the 
 Invoke action stopApplyDecisions
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
+Stop an access review stage that is inProgress.
+After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
@@ -3519,32 +3519,32 @@ Invoke action cancel
 Invoke action cancel
 
 ### [Stop-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 
 ### [Stop-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgBetaRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ### [Stop-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest](Stop-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 
 ### [Stop-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest](Stop-MgBetaRoleManagementEnterpriseAppRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ### [Stop-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 
 ### [Stop-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgBetaRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a Granted status, and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ### [Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgBetaEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -3555,7 +3555,7 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### [Test-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorProperty](Test-MgBetaEntitlementManagementConnectedOrganizationInternalSponsorProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -3641,7 +3641,7 @@ Invoke action reprocess
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the properties of an existing customAccessPackageWorkflowExtension object.
@@ -3681,9 +3681,9 @@ Update the navigation property insights in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Update the properties of an accessReviewStage object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewStage**, its **status** must be `NotStarted`, `Initializing`, or `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Update-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
 Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
@@ -3696,9 +3696,9 @@ Update an existing accessReviewScheduleDefinition object to change one or more o
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstance.md)
 Update the properties of an accessReviewInstance object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated but the **scope** property is also required in the request body.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewInstance**, it's **status** must be `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewInstance, its status must be InProgress.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Update the navigation property contactedReviewers in identityGovernance
@@ -3714,9 +3714,9 @@ Update the navigation property instance in identityGovernance
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Update the properties of an accessReviewStage object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewStage**, its **status** must be `NotStarted`, `Initializing`, or `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
 
 ### [Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.

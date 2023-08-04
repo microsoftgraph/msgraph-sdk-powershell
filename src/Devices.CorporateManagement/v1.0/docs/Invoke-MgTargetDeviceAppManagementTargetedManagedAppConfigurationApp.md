@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgTargetDeviceAppManagementTargetedManagedAppConfigurationApp
 
 ## SYNOPSIS
-Invoke action targetApps
+Not yet documented
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Invoke-MgTargetDeviceAppManagementTargetedManagedAppConfigurationApp
 ```
 
 ## DESCRIPTION
-Invoke action targetApps
+Not yet documented
 
 ## EXAMPLES
 

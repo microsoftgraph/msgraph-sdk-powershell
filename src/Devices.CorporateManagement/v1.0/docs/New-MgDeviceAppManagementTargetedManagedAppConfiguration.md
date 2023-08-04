@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Create a new targetedManagedAppConfiguration object.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgDeviceAppManagementTargetedManagedAppConfiguration
 ```
 
 ## DESCRIPTION
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Create a new targetedManagedAppConfiguration object.
 
 ## EXAMPLES
 

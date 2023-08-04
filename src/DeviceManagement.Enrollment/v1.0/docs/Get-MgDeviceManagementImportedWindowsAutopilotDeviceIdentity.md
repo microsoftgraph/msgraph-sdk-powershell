@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Collection of imported Windows autopilot devices.
+Read properties and relationships of the importedWindowsAutopilotDeviceIdentity object.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
 ```
 
 ## DESCRIPTION
-Collection of imported Windows autopilot devices.
+Read properties and relationships of the importedWindowsAutopilotDeviceIdentity object.
 
 ## EXAMPLES
 

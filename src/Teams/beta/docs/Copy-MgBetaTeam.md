@@ -56,17 +56,17 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	DisplayName = "Library Assist"
-	Description = "Self help community for library"
-	MailNickname = "libassist"
-	PartsToClone = "apps,tabs,settings,channels,members"
-	Visibility = "public"
-}
-Copy-MgBetaTeam -TeamId $teamId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Library Assist"
+	description = "Self help community for library"
+	mailNickname = "libassist"
+	partsToClone = "apps,tabs,settings,channels,members"
+	visibility = "public"
+}
 
+Copy-MgBetaTeam -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 

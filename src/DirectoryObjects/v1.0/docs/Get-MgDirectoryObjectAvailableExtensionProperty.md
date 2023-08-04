@@ -35,10 +35,9 @@ The following entities support extension properties:\n+ user\n+ group\n+ adminis
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.DirectoryObjects
-Get-MgDirectoryObjectAvailableExtensionProperty
 ```
 
-
+Get-MgDirectoryObjectAvailableExtensionProperty
 
 ## PARAMETERS
 

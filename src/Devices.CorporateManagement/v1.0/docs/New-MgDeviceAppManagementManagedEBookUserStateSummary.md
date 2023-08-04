@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedEBookUserStateSummary
 
 ## SYNOPSIS
-Create new navigation property to userStateSummary for deviceAppManagement
+Create a new userInstallStateSummary object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgDeviceAppManagementManagedEBookUserStateSummary -InputObject <IDevicesCorp
 ```
 
 ## DESCRIPTION
-Create new navigation property to userStateSummary for deviceAppManagement
+Create a new userInstallStateSummary object.
 
 ## EXAMPLES
 

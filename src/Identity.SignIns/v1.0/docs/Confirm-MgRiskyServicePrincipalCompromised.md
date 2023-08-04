@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Confirm one or more riskyServicePrincipal objects as compromised.
-This action sets the targeted service principal account's risk level to `high`.
+This action sets the targeted service principal account's risk level to high.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Confirm-MgRiskyServicePrincipalCompromised
 
 ## DESCRIPTION
 Confirm one or more riskyServicePrincipal objects as compromised.
-This action sets the targeted service principal account's risk level to `high`.
+This action sets the targeted service principal account's risk level to high.
 
 ## EXAMPLES
 

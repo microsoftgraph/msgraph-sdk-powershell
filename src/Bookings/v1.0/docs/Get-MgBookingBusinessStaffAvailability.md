@@ -47,17 +47,24 @@ Get the availability information of staff members of a Microsoft Bookings calend
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
+$params = @{
+	staffIds = @(
+		"311a5454-08b2-4560-ba1c-f715e938cb79"
+	)
+	startDateTime = @{
+		dateTime = "2022-01-25T00:00:00"
+		timeZone = "India Standard Time"
+	}
+	endDateTime = @{
+		dateTime = "2022-01-26T17:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBookingBusinessStaffAvailability -BookingBusinessId $bookingBusinessId -BodyParameter $params
 
 ## PARAMETERS
 

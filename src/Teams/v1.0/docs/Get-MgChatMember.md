@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgChatMember
 
 ## SYNOPSIS
-Retrieve a conversationMember from a chat.
+Retrieve a conversationMember from a chat or channel.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgChatMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Pr
 ```
 
 ## DESCRIPTION
-Retrieve a conversationMember from a chat.
+Retrieve a conversationMember from a chat or channel.
 
 ## EXAMPLES
 
@@ -276,6 +276,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OpenShiftChangeRequestId <String>]`: The unique identifier of openShiftChangeRequest
   - `[OpenShiftId <String>]`: The unique identifier of openShift
   - `[PinnedChatMessageInfoId <String>]`: The unique identifier of pinnedChatMessageInfo
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift

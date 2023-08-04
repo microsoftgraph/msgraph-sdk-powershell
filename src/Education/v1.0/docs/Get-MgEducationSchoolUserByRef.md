@@ -25,10 +25,17 @@ Get the educationUser resources associated with an educationSchool.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Education
+{{ Add code here }}
 ```
 
-Get-MgEducationSchoolUser -EducationSchoolId $educationSchoolId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

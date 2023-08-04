@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary
 
 ## SYNOPSIS
-The summary states of compliance policy settings for this account.
+Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary -InputObject <ID
 ```
 
 ## DESCRIPTION
-The summary states of compliance policy settings for this account.
+Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
 
 ## EXAMPLES
 

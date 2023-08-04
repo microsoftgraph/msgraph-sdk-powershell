@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementAndroidManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Create a new androidManagedAppProtection object.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgDeviceAppManagementAndroidManagedAppProtection
 ```
 
 ## DESCRIPTION
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Create a new androidManagedAppProtection object.
 
 ## EXAMPLES
 

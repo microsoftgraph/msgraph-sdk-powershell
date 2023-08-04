@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 96ea06b9-2d8c-4013-954c-24780e5e5634
+Module Guid: f7414bea-189d-434a-acc0-23b410fb8c6d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -125,7 +125,7 @@ Get the number of the resource
 Get lastSevenDays from groups
 
 ### [Get-MgGroupSiteAnalyticTime](Get-MgGroupSiteAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgGroupSiteColumn](Get-MgGroupSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
@@ -430,17 +430,17 @@ Read-only.
 
 ### [Get-MgGroupSiteOnenoteOperation](Get-MgGroupSiteOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
-This applies to operations that return the **Operation-Location** header in the response, such as `CopyNotebook`, `CopyToNotebook`, `CopyToSectionGroup`, `and CopyToSection`.
-  You can poll the Operation-Location endpoint until the `status` property returns `completed` or `failed`.
-If the status is `completed`, the `resourceLocation` property contains the resource endpoint URI.
-If the status is `failed`, the error and `@api.diagnostics` properties provide error information.
+This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.
+  You can poll the Operation-Location endpoint until the status property returns completed or failed.
+If the status is completed, the resourceLocation property contains the resource endpoint URI.
+If the status is failed, the error and @api.diagnostics properties provide error information.
 
 ### [Get-MgGroupSiteOnenoteOperationCount](Get-MgGroupSiteOnenoteOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupSiteOnenotePage](Get-MgGroupSiteOnenotePage.md)
 Retrieve the properties and relationships of a page object.
-**Getting page information** Access a page's metadata by page identifier: **Getting page content** You can use the page's `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
+Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
 
 ### [Get-MgGroupSiteOnenotePageContent](Get-MgGroupSiteOnenotePageContent.md)
 The page's HTML content.
@@ -902,7 +902,7 @@ The collection of the sub-sites under this site.
 Get the number of the resource
 
 ### [Get-MgSite](Get-MgSite.md)
-Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
+Retrieve properties and relationships for a [site][] resource.\nA site resource represents a team site in SharePoint.
 
 ### [Get-MgSiteActivityByInterval](Get-MgSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -932,7 +932,7 @@ Get the number of the resource
 Get lastSevenDays from sites
 
 ### [Get-MgSiteAnalyticTime](Get-MgSiteAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgSiteApplicableContentTypeForList](Get-MgSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
@@ -1522,7 +1522,7 @@ Invoke function preview
 Invoke function preview
 
 ### [Invoke-MgReauthorizeSiteListSubscription](Invoke-MgReauthorizeSiteListSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
 Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
@@ -1601,8 +1601,8 @@ Create new navigation property to operations for groups
 
 ### [New-MgGroupSiteOnenotePage](New-MgGroupSiteOnenotePage.md)
 Create a new OneNote page in the default section of the default notebook.
-To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.
-Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook.
+To create a page in a different section in the default notebook, you can use the sectionName query parameter.
+Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
 
 ### [New-MgGroupSiteOnenoteResource](New-MgGroupSiteOnenoteResource.md)
@@ -2312,7 +2312,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgGroupSiteListItemField](Update-MgGroupSiteListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgGroupSiteListItemLastModifiedByUserMailboxSetting](Update-MgGroupSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2522,7 +2522,7 @@ Update the navigation property documentSetVersions in sites
 Update the navigation property fields in sites
 
 ### [Update-MgSiteListItemField](Update-MgSiteListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgSiteListItemLastModifiedByUserMailboxSetting](Update-MgSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.

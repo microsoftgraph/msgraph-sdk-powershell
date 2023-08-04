@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Planner
-Module Guid: 64c7aaaa-01c5-4045-8169-982104a9ebfa
+Module Guid: 68daa37d-93a7-4cb4-9a8f-043cd2058b73
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -28,7 +28,7 @@ Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 Get the number of the resource
 
 ### [Get-MgBetaGroupPlannerPlanDetail](Get-MgBetaGroupPlannerPlanDetail.md)
-Retrieve the properties and relationships of a **plannerPlanDetails** object.
+Retrieve the properties and relationships of a plannerPlanDetails object.
 
 ### [Get-MgBetaGroupPlannerPlanTask](Get-MgBetaGroupPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -61,7 +61,7 @@ Get the number of the resource
 Invoke function delta
 
 ### [Get-MgBetaPlannerPlanDetail](Get-MgBetaPlannerPlanDetail.md)
-Retrieve the properties and relationships of a **plannerPlanDetails** object.
+Retrieve the properties and relationships of a plannerPlanDetails object.
 
 ### [Get-MgBetaPlannerPlanTask](Get-MgBetaPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -88,10 +88,10 @@ Get the number of the resource
 Retrieve the properties and relationships of plannerTask object.
 
 ### [Get-MgBetaPlannerTaskAssignedToTaskBoardFormat](Get-MgBetaPlannerTaskAssignedToTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
 
 ### [Get-MgBetaPlannerTaskBucketTaskBoardFormat](Get-MgBetaPlannerTaskBucketTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 
 ### [Get-MgBetaPlannerTaskCount](Get-MgBetaPlannerTaskCount.md)
 Get the number of the resource
@@ -100,10 +100,10 @@ Get the number of the resource
 Invoke function delta
 
 ### [Get-MgBetaPlannerTaskDetail](Get-MgBetaPlannerTaskDetail.md)
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ### [Get-MgBetaPlannerTaskProgressTaskBoardFormat](Get-MgBetaPlannerTaskProgressTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 
 ### [Get-MgBetaUserPlanner](Get-MgBetaUserPlanner.md)
 Retrieve the properties and relationships of a plannerUser object.
@@ -121,7 +121,7 @@ Returns the plannerPlans that the user marked as favorites.
 Get the number of the resource
 
 ### [Get-MgBetaUserPlannerPlan](Get-MgBetaUserPlannerPlan.md)
-Retrieve a list of **plannerplan** objects shared with a user object.
+Retrieve a list of plannerplan objects shared with a user object.
 
 ### [Get-MgBetaUserPlannerRecentPlan](Get-MgBetaUserPlannerRecentPlan.md)
 Read-only.
@@ -140,13 +140,13 @@ Returns the plannerPlans contained by the plannerRosters the user is a member.
 Get the number of the resource
 
 ### [Get-MgBetaUserPlannerTask](Get-MgBetaUserPlannerTask.md)
-Retrieve a list of **plannertask** objects assigned to a User.
+Retrieve a list of plannertask objects assigned to a User.
 
 ### [New-MgBetaPlannerBucket](New-MgBetaPlannerBucket.md)
 Create a new plannerBucket object.
 
 ### [New-MgBetaPlannerPlan](New-MgBetaPlannerPlan.md)
-Create a new **plannerPlan**.
+Create a new plannerPlan.
 
 ### [New-MgBetaPlannerRoster](New-MgBetaPlannerRoster.md)
 Create a new plannerRoster object.
@@ -155,13 +155,13 @@ Create a new plannerRoster object.
 Add a member to the plannerRoster object.
 
 ### [New-MgBetaPlannerTask](New-MgBetaPlannerTask.md)
-Create a new **plannerTask**.
+Create a new plannerTask.
 
 ### [Remove-MgBetaGroupPlannerPlanDetail](Remove-MgBetaGroupPlannerPlanDetail.md)
 Delete navigation property details for groups
 
 ### [Remove-MgBetaPlannerBucket](Remove-MgBetaPlannerBucket.md)
-Delete **plannerBucket**.
+Delete plannerBucket.
 
 ### [Remove-MgBetaPlannerPlan](Remove-MgBetaPlannerPlan.md)
 Delete a plannerPlan object.
@@ -197,7 +197,7 @@ Update planner
 Update the navigation property buckets in planner
 
 ### [Update-MgBetaPlannerPlan](Update-MgBetaPlannerPlan.md)
-Update the properties of a **plannerPlan** object.
+Update the properties of a plannerPlan object.
 
 ### [Update-MgBetaPlannerPlanDetail](Update-MgBetaPlannerPlanDetail.md)
 Update the navigation property details in planner

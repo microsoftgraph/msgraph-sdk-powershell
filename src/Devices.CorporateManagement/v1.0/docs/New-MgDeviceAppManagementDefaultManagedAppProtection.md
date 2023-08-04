@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementDefaultManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Create a new defaultManagedAppProtection object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ New-MgDeviceAppManagementDefaultManagedAppProtection
 ```
 
 ## DESCRIPTION
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Create a new defaultManagedAppProtection object.
 
 ## EXAMPLES
 

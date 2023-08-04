@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Clear a presence session of an application for a user.
-If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
 
 ## SYNTAX
@@ -42,7 +42,7 @@ Clear-MgBetaUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProper
 
 ## DESCRIPTION
 Clear a presence session of an application for a user.
-If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
 
 ## EXAMPLES

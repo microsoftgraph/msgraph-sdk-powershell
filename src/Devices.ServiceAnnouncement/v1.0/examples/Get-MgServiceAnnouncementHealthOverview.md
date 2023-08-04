@@ -1,18 +1,22 @@
-### Example 1: Get the properties of a serviceHealth object
+### Example 1: Get serviceHealth resources
 
-```powershellImport-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```powershell
 
-Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+
+Get-MgServiceAnnouncementHealthOverview
+
 ```
-This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will get servicehealth resources
 
 ### Example 2: Include navigation property issues
 
-```powershellImport-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```powershell
 
-Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues"
+Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+
+Get-MgServiceAnnouncementHealthOverview -ExpandProperty "issues" 
+
 ```
-This example shows how to use the Get-MgServiceAnnouncementHealthOverview Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will include navigation property issues
 

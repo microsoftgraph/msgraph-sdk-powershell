@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update an educationAssignment object.
 Only teachers can perform this action.
-Alternatively, request to change the status of an **assignment** with publish action.
+Alternatively, request to change the status of an assignment with publish action.
 Don't use a PATCH operation for this purpose.
 
 ## SYNTAX
@@ -58,7 +58,7 @@ Update-MgEducationClassAssignment -InputObject <IEducationIdentity> [-AddedStude
 ## DESCRIPTION
 Update an educationAssignment object.
 Only teachers can perform this action.
-Alternatively, request to change the status of an **assignment** with publish action.
+Alternatively, request to change the status of an assignment with publish action.
 Don't use a PATCH operation for this purpose.
 
 ## EXAMPLES

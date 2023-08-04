@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserManagedDeviceWindowsProtectionState
 
 ## SYNOPSIS
-Update the navigation property windowsProtectionState in users
+Update the properties of a windowsProtectionState object.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgUserManagedDeviceWindowsProtectionState -InputObject <IDevicesCorporate
 ```
 
 ## DESCRIPTION
-Update the navigation property windowsProtectionState in users
+Update the properties of a windowsProtectionState object.
 
 ## EXAMPLES
 

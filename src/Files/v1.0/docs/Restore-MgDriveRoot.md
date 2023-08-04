@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a driveItem that has been deleted and is currently in the recycle bin.
-**NOTE**: This functionality is currently only available for OneDrive Personal.
+NOTE: This functionality is currently only available for OneDrive Personal.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Restore-MgDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashta
 
 ## DESCRIPTION
 Restore a driveItem that has been deleted and is currently in the recycle bin.
-**NOTE**: This functionality is currently only available for OneDrive Personal.
+NOTE: This functionality is currently only available for OneDrive Personal.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementResourceOperation
 
 ## SYNOPSIS
-Create new navigation property to resourceOperations for deviceManagement
+Create a new resourceOperation object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceManagementResourceOperation -BodyParameter <IMicrosoftGraphResourceO
 ```
 
 ## DESCRIPTION
-Create new navigation property to resourceOperations for deviceManagement
+Create a new resourceOperation object.
 
 ## EXAMPLES
 

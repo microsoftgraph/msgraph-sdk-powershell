@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Add an educationSubmissionResource to a submission resource list.
 Only teachers and students can perform this operation.
-The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
+The operation will not succeed if the allowStudentsToAddResources flag is not set to true.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
 
@@ -47,7 +47,7 @@ New-MgEducationUserAssignmentSubmissionResource -InputObject <IEducationIdentity
 ## DESCRIPTION
 Add an educationSubmissionResource to a submission resource list.
 Only teachers and students can perform this operation.
-The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
+The operation will not succeed if the allowStudentsToAddResources flag is not set to true.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
 

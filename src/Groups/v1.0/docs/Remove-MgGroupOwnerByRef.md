@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupOwnerByRef
 
 ## SYNOPSIS
-Remove an owner from a Microsoft 365 group or a security group through the **owners** navigation property.
+Remove an owner from a Microsoft 365 group or a security group through the owners navigation property.
 Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Remove-MgGroupOwnerByRef -InputObject <IGroupsIdentity> [-Id <String>] [-IfMatch
 ```
 
 ## DESCRIPTION
-Remove an owner from a Microsoft 365 group or a security group through the **owners** navigation property.
+Remove an owner from a Microsoft 365 group or a security group through the owners navigation property.
 Once owners are assigned to a group, the last owner (a user object) of the group cannot be removed.
 
 ## EXAMPLES

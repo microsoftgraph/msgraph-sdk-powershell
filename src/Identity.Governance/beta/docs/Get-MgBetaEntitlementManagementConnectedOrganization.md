@@ -60,7 +60,7 @@ Retrieve the properties and relationships of a connectedOrganization object.
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-Get-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
+Get-MgBetaEntitlementManagementConnectedOrganization
 
 ## PARAMETERS
 

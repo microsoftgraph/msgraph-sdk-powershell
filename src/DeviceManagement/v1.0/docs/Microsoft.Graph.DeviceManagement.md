@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 6a5918c8-3580-44ed-ad17-b282f58a1676
+Module Guid: 9003f9ff-96b8-481e-9596-3cc2c04bf144
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -40,7 +40,7 @@ Get the number of the resource
 Read properties and relationships of the deviceManagement object.
 
 ### [Get-MgDeviceManagementDetectedApp](Get-MgDeviceManagementDetectedApp.md)
-The list of detected apps associated with a device.
+Read properties and relationships of the detectedApp object.
 
 ### [Get-MgDeviceManagementDetectedAppCount](Get-MgDeviceManagementDetectedAppCount.md)
 Get the number of the resource
@@ -52,16 +52,16 @@ The devices that have the discovered application installed
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCategory](Get-MgDeviceManagementDeviceCategory.md)
-The list of device categories with the tenant.
+Read properties and relationships of the deviceCategory object.
 
 ### [Get-MgDeviceManagementDeviceCategoryCount](Get-MgDeviceManagementDeviceCategoryCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicy](Get-MgDeviceManagementDeviceCompliancePolicy.md)
-The device compliance policies.
+Read properties and relationships of the androidWorkProfileCompliancePolicy object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyAssignment](Get-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
-The collection of assignments for this compliance policy.
+Read properties and relationships of the deviceCompliancePolicyAssignment object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyAssignmentCount](Get-MgDeviceManagementDeviceCompliancePolicyAssignmentCount.md)
 Get the number of the resource
@@ -76,57 +76,55 @@ Compliance Setting State Device Summary
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary.md)
-The device compliance state summary for this account.
+Read properties and relationships of the deviceCompliancePolicyDeviceStateSummary object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatus](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatus.md)
-List of DeviceComplianceDeviceStatus.
+Read properties and relationships of the deviceComplianceDeviceStatus object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusCount](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview](Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview.md)
-Device compliance devices status overview
+Read properties and relationships of the deviceComplianceDeviceOverview object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule.md)
-The list of scheduled action per rule for this compliance policy.
-This is a required property when creating any individual per-platform compliance policies.
+Read properties and relationships of the deviceComplianceScheduledActionForRule object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleCount](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-The list of scheduled action configurations for this compliance policy.
-Compliance policy must have one and only one block scheduled action.
+Read properties and relationships of the deviceComplianceActionItem object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfigurationCount](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfigurationCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummary.md)
-The summary states of compliance policy settings for this account.
+Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryCount](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Not yet documented
+Read properties and relationships of the deviceComplianceSettingState object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStateCount](Get-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStateCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatus](Get-MgDeviceManagementDeviceCompliancePolicyUserStatus.md)
-List of DeviceComplianceUserStatus.
+Read properties and relationships of the deviceComplianceUserStatus object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatusCount](Get-MgDeviceManagementDeviceCompliancePolicyUserStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview](Get-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview.md)
-Device compliance users status overview
+Read properties and relationships of the deviceComplianceUserOverview object.
 
 ### [Get-MgDeviceManagementDeviceConfiguration](Get-MgDeviceManagementDeviceConfiguration.md)
-The device configurations.
+Read properties and relationships of the sharedPCConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignment](Get-MgDeviceManagementDeviceConfigurationAssignment.md)
-The list of assignments for the device configuration profile.
+Read properties and relationships of the deviceConfigurationAssignment object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignmentCount](Get-MgDeviceManagementDeviceConfigurationAssignmentCount.md)
 Get the number of the resource
@@ -135,37 +133,37 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary](Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary.md)
-Device Configuration Setting State Device Summary
+Read properties and relationships of the settingStateDeviceSummary object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummaryCount](Get-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummaryCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary](Get-MgDeviceManagementDeviceConfigurationDeviceStateSummary.md)
-The device configuration device state summary for this account.
+Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatus](Get-MgDeviceManagementDeviceConfigurationDeviceStatus.md)
-Device configuration installation status by device.
+Read properties and relationships of the deviceConfigurationDeviceStatus object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatusCount](Get-MgDeviceManagementDeviceConfigurationDeviceStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview](Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview.md)
-Device Configuration devices status overview
+Read properties and relationships of the deviceConfigurationDeviceOverview object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatus](Get-MgDeviceManagementDeviceConfigurationUserStatus.md)
-Device configuration installation status by user.
+Read properties and relationships of the deviceConfigurationUserStatus object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatusCount](Get-MgDeviceManagementDeviceConfigurationUserStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceConfigurationUserStatusOverview](Get-MgDeviceManagementDeviceConfigurationUserStatusOverview.md)
-Device Configuration users status overview
+Read properties and relationships of the deviceConfigurationUserOverview object.
 
 ### [Get-MgDeviceManagementManagedDevice](Get-MgDeviceManagementManagedDevice.md)
-The list of managed devices.
+Read properties and relationships of the managedDevice object.
 
 ### [Get-MgDeviceManagementManagedDeviceCategory](Get-MgDeviceManagementManagedDeviceCategory.md)
-Device category
+Read properties and relationships of the deviceCategory object.
 
 ### [Get-MgDeviceManagementManagedDeviceCompliancePolicyState](Get-MgDeviceManagementManagedDeviceCompliancePolicyState.md)
 Device compliance policy states for this device.
@@ -189,26 +187,25 @@ List of log collection requests
 Get the number of the resource
 
 ### [Get-MgDeviceManagementManagedDeviceOverview](Get-MgDeviceManagementManagedDeviceOverview.md)
-Device overview
+Read properties and relationships of the managedDeviceOverview object.
 
 ### [Get-MgDeviceManagementManagedDeviceUser](Get-MgDeviceManagementManagedDeviceUser.md)
-The primary users associated with the managed device.
+List properties and relationships of the user objects.
 
 ### [Get-MgDeviceManagementManagedDeviceWindowsProtectionState](Get-MgDeviceManagementManagedDeviceWindowsProtectionState.md)
-The device protection status.
-This property is read-only.
+Read properties and relationships of the windowsProtectionState object.
 
 ### [Get-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState](Get-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Device malware list
+Read properties and relationships of the windowsDeviceMalwareState object.
 
 ### [Get-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareStateCount](Get-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareStateCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementMobileAppTroubleshootingEvent](Get-MgDeviceManagementMobileAppTroubleshootingEvent.md)
-The collection property of MobileAppTroubleshootingEvent.
+Read properties and relationships of the mobileAppTroubleshootingEvent object.
 
 ### [Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest](Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest.md)
-Indicates collection of App Log Upload Request.
+Read properties and relationships of the appLogCollectionRequest object.
 
 ### [Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestCount](Get-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestCount.md)
 Get the number of the resource
@@ -217,19 +214,19 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDeviceManagementNotificationMessageTemplate](Get-MgDeviceManagementNotificationMessageTemplate.md)
-The Notification Message Templates.
+Read properties and relationships of the notificationMessageTemplate object.
 
 ### [Get-MgDeviceManagementNotificationMessageTemplateCount](Get-MgDeviceManagementNotificationMessageTemplateCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage](Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage.md)
-The list of localized messages for this Notification Message Template.
+Read properties and relationships of the localizedNotificationMessage object.
 
 ### [Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessageCount](Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessageCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementSoftwareUpdateStatusSummary](Get-MgDeviceManagementSoftwareUpdateStatusSummary.md)
-The software update status summary.
+Read properties and relationships of the softwareUpdateStatusSummary object.
 
 ### [Get-MgDeviceManagementTroubleshootingEvent](Get-MgDeviceManagementTroubleshootingEvent.md)
 The list of troubleshooting events for the tenant.
@@ -403,25 +400,25 @@ The user experience analytics work from anywhere model performance
 Get the number of the resource
 
 ### [Get-MgDeviceManagementWindowsInformationProtectionAppLearningSummary](Get-MgDeviceManagementWindowsInformationProtectionAppLearningSummary.md)
-The windows information protection app learning summaries.
+Read properties and relationships of the windowsInformationProtectionAppLearningSummary object.
 
 ### [Get-MgDeviceManagementWindowsInformationProtectionAppLearningSummaryCount](Get-MgDeviceManagementWindowsInformationProtectionAppLearningSummaryCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary](Get-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary.md)
-The windows information protection network learning summaries.
+Read properties and relationships of the windowsInformationProtectionNetworkLearningSummary object.
 
 ### [Get-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummaryCount](Get-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummaryCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementWindowsMalwareInformation](Get-MgDeviceManagementWindowsMalwareInformation.md)
-The list of affected malware in the tenant.
+Read properties and relationships of the windowsMalwareInformation object.
 
 ### [Get-MgDeviceManagementWindowsMalwareInformationCount](Get-MgDeviceManagementWindowsMalwareInformationCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState](Get-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState.md)
-List of devices affected by current malware with the malware state on each device
+Read properties and relationships of the malwareStateForWindowsDevice object.
 
 ### [Get-MgDeviceManagementWindowsMalwareInformationDeviceMalwareStateCount](Get-MgDeviceManagementWindowsMalwareInformationDeviceMalwareStateCount.md)
 Get the number of the resource
@@ -436,55 +433,55 @@ Create a new browserSharedCookie object in a browserSiteList.
 Create a new browserSite object in a browserSiteList.
 
 ### [New-MgDeviceManagementDetectedApp](New-MgDeviceManagementDetectedApp.md)
-Create new navigation property to detectedApps for deviceManagement
+Create a new detectedApp object.
 
 ### [New-MgDeviceManagementDeviceCategory](New-MgDeviceManagementDeviceCategory.md)
-Create new navigation property to deviceCategories for deviceManagement
+Create a new deviceCategory object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicy](New-MgDeviceManagementDeviceCompliancePolicy.md)
-Create new navigation property to deviceCompliancePolicies for deviceManagement
+Create a new androidWorkProfileCompliancePolicy object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyAssignment](New-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
-Create new navigation property to assignments for deviceManagement
+Create a new deviceCompliancePolicyAssignment object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary](New-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary.md)
 Create new navigation property to deviceSettingStateSummaries for deviceManagement
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyDeviceStatus](New-MgDeviceManagementDeviceCompliancePolicyDeviceStatus.md)
-Create new navigation property to deviceStatuses for deviceManagement
+Create a new deviceComplianceDeviceStatus object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule](New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule.md)
-Create new navigation property to scheduledActionsForRule for deviceManagement
+Create a new deviceComplianceScheduledActionForRule object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-Create new navigation property to scheduledActionConfigurations for deviceManagement
+Create a new deviceComplianceActionItem object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicySettingStateSummary](New-MgDeviceManagementDeviceCompliancePolicySettingStateSummary.md)
-Create new navigation property to deviceCompliancePolicySettingStateSummaries for deviceManagement
+Create a new deviceCompliancePolicySettingStateSummary object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Create new navigation property to deviceComplianceSettingStates for deviceManagement
+Create a new deviceComplianceSettingState object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyUserStatus](New-MgDeviceManagementDeviceCompliancePolicyUserStatus.md)
-Create new navigation property to userStatuses for deviceManagement
+Create a new deviceComplianceUserStatus object.
 
 ### [New-MgDeviceManagementDeviceConfiguration](New-MgDeviceManagementDeviceConfiguration.md)
-Create new navigation property to deviceConfigurations for deviceManagement
+Create a new macOSCustomConfiguration object.
 
 ### [New-MgDeviceManagementDeviceConfigurationAssignment](New-MgDeviceManagementDeviceConfigurationAssignment.md)
-Create new navigation property to assignments for deviceManagement
+Create a new deviceConfigurationAssignment object.
 
 ### [New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary](New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary.md)
-Create new navigation property to deviceSettingStateSummaries for deviceManagement
+Create a new settingStateDeviceSummary object.
 
 ### [New-MgDeviceManagementDeviceConfigurationDeviceStatus](New-MgDeviceManagementDeviceConfigurationDeviceStatus.md)
-Create new navigation property to deviceStatuses for deviceManagement
+Create a new deviceConfigurationDeviceStatus object.
 
 ### [New-MgDeviceManagementDeviceConfigurationUserStatus](New-MgDeviceManagementDeviceConfigurationUserStatus.md)
-Create new navigation property to userStatuses for deviceManagement
+Create a new deviceConfigurationUserStatus object.
 
 ### [New-MgDeviceManagementManagedDevice](New-MgDeviceManagementManagedDevice.md)
-Create new navigation property to managedDevices for deviceManagement
+Create a new managedDevice object.
 
 ### [New-MgDeviceManagementManagedDeviceCompliancePolicyState](New-MgDeviceManagementManagedDeviceCompliancePolicyState.md)
 Create new navigation property to deviceCompliancePolicyStates for deviceManagement
@@ -493,19 +490,19 @@ Create new navigation property to deviceCompliancePolicyStates for deviceManagem
 Create new navigation property to deviceConfigurationStates for deviceManagement
 
 ### [New-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState](New-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Create new navigation property to detectedMalwareState for deviceManagement
+Create a new windowsDeviceMalwareState object.
 
 ### [New-MgDeviceManagementMobileAppTroubleshootingEvent](New-MgDeviceManagementMobileAppTroubleshootingEvent.md)
-Create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+Create a new mobileAppTroubleshootingEvent object.
 
 ### [New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest](New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest.md)
-Create new navigation property to appLogCollectionRequests for deviceManagement
+Create a new appLogCollectionRequest object.
 
 ### [New-MgDeviceManagementNotificationMessageTemplate](New-MgDeviceManagementNotificationMessageTemplate.md)
-Create new navigation property to notificationMessageTemplates for deviceManagement
+Create a new notificationMessageTemplate object.
 
 ### [New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage](New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage.md)
-Create new navigation property to localizedNotificationMessages for deviceManagement
+Create a new localizedNotificationMessage object.
 
 ### [New-MgDeviceManagementTroubleshootingEvent](New-MgDeviceManagementTroubleshootingEvent.md)
 Create new navigation property to troubleshootingEvents for deviceManagement
@@ -577,16 +574,16 @@ Create new navigation property to metricDevices for deviceManagement
 Create new navigation property to userExperienceAnalyticsWorkFromAnywhereModelPerformance for deviceManagement
 
 ### [New-MgDeviceManagementWindowsInformationProtectionAppLearningSummary](New-MgDeviceManagementWindowsInformationProtectionAppLearningSummary.md)
-Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+Create a new windowsInformationProtectionAppLearningSummary object.
 
 ### [New-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary](New-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary.md)
-Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+Create a new windowsInformationProtectionNetworkLearningSummary object.
 
 ### [New-MgDeviceManagementWindowsMalwareInformation](New-MgDeviceManagementWindowsMalwareInformation.md)
-Create new navigation property to windowsMalwareInformation for deviceManagement
+Create a new windowsMalwareInformation object.
 
 ### [New-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState](New-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState.md)
-Create new navigation property to deviceMalwareStates for deviceManagement
+Create a new malwareStateForWindowsDevice object.
 
 ### [Remove-MgAdminEdge](Remove-MgAdminEdge.md)
 Delete navigation property edge for admin
@@ -604,16 +601,16 @@ Delete a browserSharedCookie from a browserSiteList.
 Delete a browserSite from a browserSiteList.
 
 ### [Remove-MgDeviceManagementDetectedApp](Remove-MgDeviceManagementDetectedApp.md)
-Delete navigation property detectedApps for deviceManagement
+Deletes a detectedApp.
 
 ### [Remove-MgDeviceManagementDeviceCategory](Remove-MgDeviceManagementDeviceCategory.md)
-Delete navigation property deviceCategories for deviceManagement
+Deletes a deviceCategory.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicy](Remove-MgDeviceManagementDeviceCompliancePolicy.md)
-Delete navigation property deviceCompliancePolicies for deviceManagement
+Deletes a androidWorkProfileCompliancePolicy.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyAssignment](Remove-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
-Delete navigation property assignments for deviceManagement
+Deletes a deviceCompliancePolicyAssignment.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary](Remove-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary.md)
 Delete navigation property deviceSettingStateSummaries for deviceManagement
@@ -622,55 +619,55 @@ Delete navigation property deviceSettingStateSummaries for deviceManagement
 Delete navigation property deviceCompliancePolicyDeviceStateSummary for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStatus](Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStatus.md)
-Delete navigation property deviceStatuses for deviceManagement
+Deletes a deviceComplianceDeviceStatus.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview](Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview.md)
 Delete navigation property deviceStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule](Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule.md)
-Delete navigation property scheduledActionsForRule for deviceManagement
+Deletes a deviceComplianceScheduledActionForRule.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-Delete navigation property scheduledActionConfigurations for deviceManagement
+Deletes a deviceComplianceActionItem.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicySettingStateSummary](Remove-MgDeviceManagementDeviceCompliancePolicySettingStateSummary.md)
-Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+Deletes a deviceCompliancePolicySettingStateSummary.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](Remove-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Delete navigation property deviceComplianceSettingStates for deviceManagement
+Deletes a deviceComplianceSettingState.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyUserStatus](Remove-MgDeviceManagementDeviceCompliancePolicyUserStatus.md)
-Delete navigation property userStatuses for deviceManagement
+Deletes a deviceComplianceUserStatus.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview](Remove-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview.md)
 Delete navigation property userStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceConfiguration](Remove-MgDeviceManagementDeviceConfiguration.md)
-Delete navigation property deviceConfigurations for deviceManagement
+Deletes a macOSDeviceFeaturesConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationAssignment](Remove-MgDeviceManagementDeviceConfigurationAssignment.md)
-Delete navigation property assignments for deviceManagement
+Deletes a deviceConfigurationAssignment.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary](Remove-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary.md)
-Delete navigation property deviceSettingStateSummaries for deviceManagement
+Deletes a settingStateDeviceSummary.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationDeviceStateSummary](Remove-MgDeviceManagementDeviceConfigurationDeviceStateSummary.md)
 Delete navigation property deviceConfigurationDeviceStateSummaries for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceConfigurationDeviceStatus](Remove-MgDeviceManagementDeviceConfigurationDeviceStatus.md)
-Delete navigation property deviceStatuses for deviceManagement
+Deletes a deviceConfigurationDeviceStatus.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationDeviceStatusOverview](Remove-MgDeviceManagementDeviceConfigurationDeviceStatusOverview.md)
 Delete navigation property deviceStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceConfigurationUserStatus](Remove-MgDeviceManagementDeviceConfigurationUserStatus.md)
-Delete navigation property userStatuses for deviceManagement
+Deletes a deviceConfigurationUserStatus.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationUserStatusOverview](Remove-MgDeviceManagementDeviceConfigurationUserStatusOverview.md)
 Delete navigation property userStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementManagedDevice](Remove-MgDeviceManagementManagedDevice.md)
-Delete navigation property managedDevices for deviceManagement
+Deletes a managedDevice.
 
 ### [Remove-MgDeviceManagementManagedDeviceCategory](Remove-MgDeviceManagementManagedDeviceCategory.md)
 Delete navigation property deviceCategory for deviceManagement
@@ -688,19 +685,19 @@ Delete navigation property logCollectionRequests for deviceManagement
 Delete navigation property windowsProtectionState for deviceManagement
 
 ### [Remove-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState](Remove-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Delete navigation property detectedMalwareState for deviceManagement
+Deletes a windowsDeviceMalwareState.
 
 ### [Remove-MgDeviceManagementMobileAppTroubleshootingEvent](Remove-MgDeviceManagementMobileAppTroubleshootingEvent.md)
-Delete navigation property mobileAppTroubleshootingEvents for deviceManagement
+Deletes a mobileAppTroubleshootingEvent.
 
 ### [Remove-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest.md)
-Delete navigation property appLogCollectionRequests for deviceManagement
+Deletes a appLogCollectionRequest.
 
 ### [Remove-MgDeviceManagementNotificationMessageTemplate](Remove-MgDeviceManagementNotificationMessageTemplate.md)
-Delete navigation property notificationMessageTemplates for deviceManagement
+Deletes a notificationMessageTemplate.
 
 ### [Remove-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage](Remove-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage.md)
-Delete navigation property localizedNotificationMessages for deviceManagement
+Deletes a localizedNotificationMessage.
 
 ### [Remove-MgDeviceManagementTroubleshootingEvent](Remove-MgDeviceManagementTroubleshootingEvent.md)
 Delete navigation property troubleshootingEvents for deviceManagement
@@ -781,16 +778,16 @@ Delete navigation property metricDevices for deviceManagement
 Delete navigation property userExperienceAnalyticsWorkFromAnywhereModelPerformance for deviceManagement
 
 ### [Remove-MgDeviceManagementWindowsInformationProtectionAppLearningSummary](Remove-MgDeviceManagementWindowsInformationProtectionAppLearningSummary.md)
-Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
+Deletes a windowsInformationProtectionAppLearningSummary.
 
 ### [Remove-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary](Remove-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary.md)
-Delete navigation property windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+Deletes a windowsInformationProtectionNetworkLearningSummary.
 
 ### [Remove-MgDeviceManagementWindowsMalwareInformation](Remove-MgDeviceManagementWindowsMalwareInformation.md)
-Delete navigation property windowsMalwareInformation for deviceManagement
+Deletes a windowsMalwareInformation.
 
 ### [Remove-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState](Remove-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState.md)
-Delete navigation property deviceMalwareStates for deviceManagement
+Deletes a malwareStateForWindowsDevice.
 
 ### [Update-MgAdminEdge](Update-MgAdminEdge.md)
 Update the navigation property edge in admin
@@ -811,76 +808,76 @@ Update the properties of a browserSite object.
 Update the properties of a deviceManagement object.
 
 ### [Update-MgDeviceManagementDetectedApp](Update-MgDeviceManagementDetectedApp.md)
-Update the navigation property detectedApps in deviceManagement
+Update the properties of a detectedApp object.
 
 ### [Update-MgDeviceManagementDeviceCategory](Update-MgDeviceManagementDeviceCategory.md)
-Update the navigation property deviceCategories in deviceManagement
+Update the properties of a deviceCategory object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicy](Update-MgDeviceManagementDeviceCompliancePolicy.md)
-Update the navigation property deviceCompliancePolicies in deviceManagement
+Update the properties of a windows81CompliancePolicy object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyAssignment](Update-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
-Update the navigation property assignments in deviceManagement
+Update the properties of a deviceCompliancePolicyAssignment object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary](Update-MgDeviceManagementDeviceCompliancePolicyDeviceSettingStateSummary.md)
 Update the navigation property deviceSettingStateSummaries in deviceManagement
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary](Update-MgDeviceManagementDeviceCompliancePolicyDeviceStateSummary.md)
-Update the navigation property deviceCompliancePolicyDeviceStateSummary in deviceManagement
+Update the properties of a deviceCompliancePolicyDeviceStateSummary object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyDeviceStatus](Update-MgDeviceManagementDeviceCompliancePolicyDeviceStatus.md)
-Update the navigation property deviceStatuses in deviceManagement
+Update the properties of a deviceComplianceDeviceStatus object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview](Update-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview.md)
-Update the navigation property deviceStatusOverview in deviceManagement
+Update the properties of a deviceComplianceDeviceOverview object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule](Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule.md)
-Update the navigation property scheduledActionsForRule in deviceManagement
+Update the properties of a deviceComplianceScheduledActionForRule object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
-Update the navigation property scheduledActionConfigurations in deviceManagement
+Update the properties of a deviceComplianceActionItem object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary](Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary.md)
-Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+Update the properties of a deviceCompliancePolicySettingStateSummary object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Update the navigation property deviceComplianceSettingStates in deviceManagement
+Update the properties of a deviceComplianceSettingState object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyUserStatus](Update-MgDeviceManagementDeviceCompliancePolicyUserStatus.md)
-Update the navigation property userStatuses in deviceManagement
+Update the properties of a deviceComplianceUserStatus object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview](Update-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview.md)
-Update the navigation property userStatusOverview in deviceManagement
+Update the properties of a deviceComplianceUserOverview object.
 
 ### [Update-MgDeviceManagementDeviceConfiguration](Update-MgDeviceManagementDeviceConfiguration.md)
-Update the navigation property deviceConfigurations in deviceManagement
+Update the properties of a macOSGeneralDeviceConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationAssignment](Update-MgDeviceManagementDeviceConfigurationAssignment.md)
-Update the navigation property assignments in deviceManagement
+Update the properties of a deviceConfigurationAssignment object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary](Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary.md)
-Update the navigation property deviceSettingStateSummaries in deviceManagement
+Update the properties of a settingStateDeviceSummary object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationDeviceStateSummary](Update-MgDeviceManagementDeviceConfigurationDeviceStateSummary.md)
-Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
+Update the properties of a deviceConfigurationDeviceStateSummary object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationDeviceStatus](Update-MgDeviceManagementDeviceConfigurationDeviceStatus.md)
-Update the navigation property deviceStatuses in deviceManagement
+Update the properties of a deviceConfigurationDeviceStatus object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview](Update-MgDeviceManagementDeviceConfigurationDeviceStatusOverview.md)
-Update the navigation property deviceStatusOverview in deviceManagement
+Update the properties of a deviceConfigurationDeviceOverview object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationUserStatus](Update-MgDeviceManagementDeviceConfigurationUserStatus.md)
-Update the navigation property userStatuses in deviceManagement
+Update the properties of a deviceConfigurationUserStatus object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationUserStatusOverview](Update-MgDeviceManagementDeviceConfigurationUserStatusOverview.md)
-Update the navigation property userStatusOverview in deviceManagement
+Update the properties of a deviceConfigurationUserOverview object.
 
 ### [Update-MgDeviceManagementManagedDevice](Update-MgDeviceManagementManagedDevice.md)
-Update the navigation property managedDevices in deviceManagement
+Update the properties of a managedDevice object.
 
 ### [Update-MgDeviceManagementManagedDeviceCategory](Update-MgDeviceManagementManagedDeviceCategory.md)
-Update the navigation property deviceCategory in deviceManagement
+Update the properties of a deviceCategory object.
 
 ### [Update-MgDeviceManagementManagedDeviceCompliancePolicyState](Update-MgDeviceManagementManagedDeviceCompliancePolicyState.md)
 Update the navigation property deviceCompliancePolicyStates in deviceManagement
@@ -892,22 +889,22 @@ Update the navigation property deviceConfigurationStates in deviceManagement
 Update the navigation property logCollectionRequests in deviceManagement
 
 ### [Update-MgDeviceManagementManagedDeviceWindowsProtectionState](Update-MgDeviceManagementManagedDeviceWindowsProtectionState.md)
-Update the navigation property windowsProtectionState in deviceManagement
+Update the properties of a windowsProtectionState object.
 
 ### [Update-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState](Update-MgDeviceManagementManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Update the navigation property detectedMalwareState in deviceManagement
+Update the properties of a windowsDeviceMalwareState object.
 
 ### [Update-MgDeviceManagementMobileAppTroubleshootingEvent](Update-MgDeviceManagementMobileAppTroubleshootingEvent.md)
-Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
+Update the properties of a mobileAppTroubleshootingEvent object.
 
 ### [Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest](Update-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest.md)
-Update the navigation property appLogCollectionRequests in deviceManagement
+Update the properties of a appLogCollectionRequest object.
 
 ### [Update-MgDeviceManagementNotificationMessageTemplate](Update-MgDeviceManagementNotificationMessageTemplate.md)
-Update the navigation property notificationMessageTemplates in deviceManagement
+Update the properties of a notificationMessageTemplate object.
 
 ### [Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage](Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage.md)
-Update the navigation property localizedNotificationMessages in deviceManagement
+Update the properties of a localizedNotificationMessage object.
 
 ### [Update-MgDeviceManagementTroubleshootingEvent](Update-MgDeviceManagementTroubleshootingEvent.md)
 Update the navigation property troubleshootingEvents in deviceManagement
@@ -988,14 +985,14 @@ Update the navigation property metricDevices in deviceManagement
 Update the navigation property userExperienceAnalyticsWorkFromAnywhereModelPerformance in deviceManagement
 
 ### [Update-MgDeviceManagementWindowsInformationProtectionAppLearningSummary](Update-MgDeviceManagementWindowsInformationProtectionAppLearningSummary.md)
-Update the navigation property windowsInformationProtectionAppLearningSummaries in deviceManagement
+Update the properties of a windowsInformationProtectionAppLearningSummary object.
 
 ### [Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary](Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary.md)
-Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
+Update the properties of a windowsInformationProtectionNetworkLearningSummary object.
 
 ### [Update-MgDeviceManagementWindowsMalwareInformation](Update-MgDeviceManagementWindowsMalwareInformation.md)
-Update the navigation property windowsMalwareInformation in deviceManagement
+Update the properties of a windowsMalwareInformation object.
 
 ### [Update-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState](Update-MgDeviceManagementWindowsMalwareInformationDeviceMalwareState.md)
-Update the navigation property deviceMalwareStates in deviceManagement
+Update the properties of a malwareStateForWindowsDevice object.
 

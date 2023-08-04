@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementRoleAssignment
 
 ## SYNOPSIS
-Update the navigation property roleAssignments in deviceManagement
+Update the properties of a deviceAndAppManagementRoleAssignment object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementRoleAssignment -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-Update the navigation property roleAssignments in deviceManagement
+Update the properties of a deviceAndAppManagementRoleAssignment object.
 
 ## EXAMPLES
 

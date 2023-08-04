@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementManagedDevice
 
 ## SYNOPSIS
-Delete navigation property managedDevices for deviceManagement
+Deletes a managedDevice.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementManagedDevice -InputObject <IDeviceManagementIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property managedDevices for deviceManagement
+Deletes a managedDevice.
 
 ## EXAMPLES
 

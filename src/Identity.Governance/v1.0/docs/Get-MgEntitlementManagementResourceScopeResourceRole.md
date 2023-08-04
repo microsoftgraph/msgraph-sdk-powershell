@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceScopeResourceRole
 
 ## SYNOPSIS
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -34,7 +36,9 @@ Get-MgEntitlementManagementResourceScopeResourceRole -InputObject <IIdentityGove
 ```
 
 ## DESCRIPTION
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

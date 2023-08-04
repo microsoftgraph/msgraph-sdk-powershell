@@ -25,17 +25,11 @@ Retrieve a list of page objects from the specified section.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Notes
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteSectionPage -UserId $userId -OnenoteSectionId $onenoteSectionId
 
 ## PARAMETERS
 

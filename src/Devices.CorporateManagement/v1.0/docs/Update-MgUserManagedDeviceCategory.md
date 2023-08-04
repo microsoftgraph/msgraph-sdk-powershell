@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserManagedDeviceCategory
 
 ## SYNOPSIS
-Update the navigation property deviceCategory in users
+Update the properties of a deviceCategory object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgUserManagedDeviceCategory -InputObject <IDevicesCorporateManagementIden
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceCategory in users
+Update the properties of a deviceCategory object.
 
 ## EXAMPLES
 

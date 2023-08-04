@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 26be38a3-6045-477d-bc50-26a031351316
+Module Guid: c19d7bb4-3a57-4e4b-9cf1-11c935a4676d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -24,61 +24,61 @@ A request to remove the active TeamViewer connector
 Locate a device
 
 ### [Get-MgDeviceManagementReportCachedReport](Get-MgDeviceManagementReportCachedReport.md)
-Invoke action getCachedReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportCompliancePolicyNonComplianceReport](Get-MgDeviceManagementReportCompliancePolicyNonComplianceReport.md)
-Invoke action getCompliancePolicyNonComplianceReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportCompliancePolicyNonComplianceSummaryReport](Get-MgDeviceManagementReportCompliancePolicyNonComplianceSummaryReport.md)
-Invoke action getCompliancePolicyNonComplianceSummaryReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportComplianceSettingNonComplianceReport](Get-MgDeviceManagementReportComplianceSettingNonComplianceReport.md)
-Invoke action getComplianceSettingNonComplianceReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportConfigurationPolicyNonComplianceReport](Get-MgDeviceManagementReportConfigurationPolicyNonComplianceReport.md)
-Invoke action getConfigurationPolicyNonComplianceReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportConfigurationPolicyNonComplianceSummaryReport](Get-MgDeviceManagementReportConfigurationPolicyNonComplianceSummaryReport.md)
-Invoke action getConfigurationPolicyNonComplianceSummaryReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportConfigurationSettingNonComplianceReport](Get-MgDeviceManagementReportConfigurationSettingNonComplianceReport.md)
-Invoke action getConfigurationSettingNonComplianceReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportDeviceManagementIntentPerSettingContributingProfile](Get-MgDeviceManagementReportDeviceManagementIntentPerSettingContributingProfile.md)
-Invoke action getDeviceManagementIntentPerSettingContributingProfiles
+Not yet documented
 
 ### [Get-MgDeviceManagementReportDeviceManagementIntentSettingReport](Get-MgDeviceManagementReportDeviceManagementIntentSettingReport.md)
-Invoke action getDeviceManagementIntentSettingsReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportDeviceNonComplianceReport](Get-MgDeviceManagementReportDeviceNonComplianceReport.md)
-Invoke action getDeviceNonComplianceReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport](Get-MgDeviceManagementReportDeviceWithoutCompliancePolicyReport.md)
-Invoke action getDevicesWithoutCompliancePolicyReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportFilter](Get-MgDeviceManagementReportFilter.md)
-Invoke action getReportFilters
+Not yet documented
 
 ### [Get-MgDeviceManagementReportHistoricalReport](Get-MgDeviceManagementReportHistoricalReport.md)
-Invoke action getHistoricalReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport](Get-MgDeviceManagementReportNoncompliantDeviceAndSettingReport.md)
-Invoke action getNoncompliantDevicesAndSettingsReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportPolicyNonComplianceMetadata](Get-MgDeviceManagementReportPolicyNonComplianceMetadata.md)
-Invoke action getPolicyNonComplianceMetadata
+Not yet documented
 
 ### [Get-MgDeviceManagementReportPolicyNonComplianceReport](Get-MgDeviceManagementReportPolicyNonComplianceReport.md)
-Invoke action getPolicyNonComplianceReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport](Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport.md)
-Invoke action getPolicyNonComplianceSummaryReport
+Not yet documented
 
 ### [Get-MgDeviceManagementReportSettingNonComplianceReport](Get-MgDeviceManagementReportSettingNonComplianceReport.md)
-Invoke action getSettingNonComplianceReport
+Not yet documented
 
 ### [Import-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity](Import-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity.md)
-Invoke action import
+Not yet documented
 
 ### [Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding](Invoke-MgBeginDeviceManagementRemoteAssistancePartnerOnboarding.md)
 A request to start onboarding.
@@ -97,13 +97,13 @@ Logout shared Apple device active user
 Retire a device
 
 ### [Invoke-MgScanDeviceManagementManagedDeviceWindowsDefender](Invoke-MgScanDeviceManagementManagedDeviceWindowsDefender.md)
-Invoke action windowsDefenderScan
+Not yet documented
 
 ### [Invoke-MgScheduleDeviceManagementDeviceCompliancePolicyActionForRule](Invoke-MgScheduleDeviceManagementDeviceCompliancePolicyActionForRule.md)
-Invoke action scheduleActionsForRules
+Not yet documented
 
 ### [Invoke-MgTerminateDeviceManagementPartner](Invoke-MgTerminateDeviceManagementPartner.md)
-Invoke action terminate
+Not yet documented
 
 ### [Invoke-MgUnassignDeviceManagementWindowsAutopilotDeviceIdentityUserFromDevice](Invoke-MgUnassignDeviceManagementWindowsAutopilotDeviceIdentityUserFromDevice.md)
 Unassigns the user from an Autopilot device.
@@ -115,10 +115,10 @@ Remote lock
 Invoke action createDownloadUrl
 
 ### [New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature](New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature.md)
-Invoke action windowsDefenderUpdateSignatures
+Not yet documented
 
 ### [New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestDownloadUrl](New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestDownloadUrl.md)
-Invoke action createDownloadUrl
+Not yet documented
 
 ### [Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice](Remove-MgDeviceManagementManagedDeviceUserFromSharedAppleDevice.md)
 Delete user from shared Apple device
@@ -139,16 +139,16 @@ Recover passcode
 Sends test message using the specified notificationMessageTemplate in the default locale
 
 ### [Set-MgDeviceManagementDeviceCompliancePolicy](Set-MgDeviceManagementDeviceCompliancePolicy.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceManagementDeviceConfiguration](Set-MgDeviceManagementDeviceConfiguration.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceManagementDeviceEnrollmentConfiguration](Set-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority](Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority.md)
-Invoke action setPriority
+Not yet documented
 
 ### [Set-MgDeviceManagementWindowsAutopilotDeviceIdentityUserToDevice](Set-MgDeviceManagementWindowsAutopilotDeviceIdentityUserToDevice.md)
 Assigns user to Autopilot devices.
@@ -157,13 +157,13 @@ Assigns user to Autopilot devices.
 Bypass activation lock
 
 ### [Sync-MgDeviceManagementExchangeConnector](Sync-MgDeviceManagementExchangeConnector.md)
-Invoke action sync
+Not yet documented
 
 ### [Sync-MgDeviceManagementManagedDevice](Sync-MgDeviceManagementManagedDevice.md)
-Invoke action syncDevice
+Not yet documented
 
 ### [Update-MgDeviceManagementManagedDeviceWindowsDeviceAccount](Update-MgDeviceManagementManagedDeviceWindowsDeviceAccount.md)
-Invoke action updateWindowsDeviceAccount
+Not yet documented
 
 ### [Update-MgDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty](Update-MgDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty.md)
 Updates properties on Autopilot devices.

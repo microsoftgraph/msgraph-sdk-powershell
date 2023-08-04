@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Module Guid: f7bf1a48-0907-45e3-9d99-b81ffd3b422f
+Module Guid: 733da13a-e3b5-4d0e-9be0-2efbc4561f23
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -59,10 +59,10 @@ Archive a list of serviceUpdateMessages for the signed in user.
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
 
 ### [Invoke-MgBetaMarkServiceAnnouncementMessageRead](Invoke-MgBetaMarkServiceAnnouncementMessageRead.md)
-Mark a list of serviceUpdateMessages as **read** for the signed in user.
+Mark a list of serviceUpdateMessages as read for the signed in user.
 
 ### [Invoke-MgBetaMarkServiceAnnouncementMessageUnread](Invoke-MgBetaMarkServiceAnnouncementMessageUnread.md)
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Mark a list of serviceUpdateMessages as unread for the signed in user.
 
 ### [Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident.md)
 Invoke function incidentReport

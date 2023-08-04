@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileAppConfigurationDeviceStatus
 
 ## SYNOPSIS
-Delete navigation property deviceStatuses for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationDeviceStatus.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceAppManagementMobileAppConfigurationDeviceStatus
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceStatuses for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationDeviceStatus.
 
 ## EXAMPLES
 

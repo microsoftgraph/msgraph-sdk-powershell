@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 46fdfe7d-8425-4d0f-9e81-5d6dc26d8c70
+Module Guid: 2cf8781c-651f-4460-b1ef-44bf462b8063
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -25,8 +25,8 @@ The method allows users to pull content types directly from the content type hub
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
 
 ### [Add-MgBetaUserPendingAccessReviewInstanceDecision](Add-MgBetaUserPendingAccessReviewInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
+The status of the accessReviewInstance must be Completed to call this method.
 
 ### [Clear-MgBetaUserAndBlockManagedApp](Clear-MgBetaUserAndBlockManagedApp.md)
 Blocks the managed app user from app check-in.
@@ -48,35 +48,35 @@ Wipe a device
 
 ### [Clear-MgBetaUserPresence](Clear-MgBetaUserPresence.md)
 Clear a presence session of an application for a user.
-If it is the user's only presence session, a successful **clearPresence** changes the user's presence to `Offline/Offline`.
+If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
 
 ### [Clear-MgBetaUserPresenceUserPreferredPresence](Clear-MgBetaUserPresenceUserPreferredPresence.md)
 Clear the preferred availability and activity status for a user.
 
 ### [Complete-MgBetaUserOutlookTask](Complete-MgBetaUserOutlookTask.md)
-Complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`.
+Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed.
 If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series.
-The **completedDateTime** property represents the date when the task is finished.
-The time portion of **completedDateTime** is set to midnight UTC by default.
+The completedDateTime property represents the date when the task is finished.
+The time portion of completedDateTime is set to midnight UTC by default.
 By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC.
-You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
+You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
 
 ### [Complete-MgBetaUserOutlookTaskFolderTask](Complete-MgBetaUserOutlookTaskFolderTask.md)
-Complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`.
+Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed.
 If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series.
-The **completedDateTime** property represents the date when the task is finished.
-The time portion of **completedDateTime** is set to midnight UTC by default.
+The completedDateTime property represents the date when the task is finished.
+The time portion of completedDateTime is set to midnight UTC by default.
 By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC.
-You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
+You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
 
 ### [Complete-MgBetaUserOutlookTaskGroupTaskFolderTask](Complete-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
-Complete an Outlook task which sets the **completedDateTime** property to the current date, and the **status** property to `completed`.
+Complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed.
 If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series.
-The **completedDateTime** property represents the date when the task is finished.
-The time portion of **completedDateTime** is set to midnight UTC by default.
+The completedDateTime property represents the date when the task is finished.
+The time portion of completedDateTime is set to midnight UTC by default.
 By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC.
-You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.
+You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
 
 ### [Confirm-MgBetaUserChatPermissionGrantMemberGroup](Confirm-MgBetaUserChatPermissionGrantMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -188,8 +188,8 @@ Locate a device
 
 ### [Find-MgBetaUserMeetingTime](Find-MgBetaUserMeetingTime.md)
 Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters.
-If **findMeetingTimes** cannot return any meeting suggestions, the response would indicate a reason in the **emptySuggestionsReason** property.
-\nBased on this value, you can better adjust the parameters and call **findMeetingTimes** again.
+If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.
+\nBased on this value, you can better adjust the parameters and call findMeetingTimes again.
 The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time.
 In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 
@@ -243,7 +243,7 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 
 ### [Get-MgBetaUserMailTip](Get-MgBetaUserMailTip.md)
 Get the MailTips of one or more recipients as available to the signed-in user.
-Note that by making a `POST` call to the `getMailTips` action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
+Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
 
 ### [Get-MgBetaUserMemberGroup](Get-MgBetaUserMemberGroup.md)
@@ -296,21 +296,21 @@ Accept the specified event in a user calendar.
 
 ### [Invoke-MgBetaAcceptUserEventInstanceTentatively](Invoke-MgBetaAcceptUserEventInstanceTentatively.md)
 Tentatively accept the specified event in a user calendar.
-If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
+If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
 ### [Invoke-MgBetaAcceptUserEventTentatively](Invoke-MgBetaAcceptUserEventTentatively.md)
 Tentatively accept the specified event in a user calendar.
-If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
+If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
 ### [Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation](Invoke-MgBetaAcceptUserPendingAccessReviewInstanceRecommendation.md)
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
+Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object.
 If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
 
 ### [Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBetaBatchUserPendingAccessReviewInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
 
 ### [Invoke-MgBetaBufferUserInformationProtectionDecrypt](Invoke-MgBetaBufferUserInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
@@ -327,22 +327,22 @@ Restore multiple Cloud PC devices with a single request that includes the IDs of
 ### [Invoke-MgBetaBulkUserCloudPcResize](Invoke-MgBetaBulkUserCloudPcResize.md)
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
 If any devices cannot be resized, those devices will indicate 'resize failed'.
-The remaining devices will be `provisioned` for the resize process.
+The remaining devices will be provisioned for the resize process.
 
 ### [Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus](Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus.md)
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 
 ### [Invoke-MgBetaCheckinUserDriveItem](Invoke-MgBetaCheckinUserDriveItem.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Check in a checked out driveItem resource, which makes the version of the document available to others.
 
 ### [Invoke-MgBetaCheckinUserDriveRoot](Invoke-MgBetaCheckinUserDriveRoot.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Check in a checked out driveItem resource, which makes the version of the document available to others.
 
 ### [Invoke-MgBetaCheckoutUserDriveItem](Invoke-MgBetaCheckoutUserDriveItem.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ### [Invoke-MgBetaCheckoutUserDriveRoot](Invoke-MgBetaCheckoutUserDriveRoot.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ### [Invoke-MgBetaCleanUserManagedDeviceWindowsDevice](Invoke-MgBetaCleanUserManagedDeviceWindowsDevice.md)
 Clean Windows device
@@ -353,12 +353,12 @@ If the external ID already exists, this API will return the onlineMeeting object
 
 ### [Invoke-MgBetaDeclineUserEvent](Invoke-MgBetaDeclineUserEvent.md)
 Decline invitation to the specified event in a user calendar.
-If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
+If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
 ### [Invoke-MgBetaDeclineUserEventInstance](Invoke-MgBetaDeclineUserEventInstance.md)
 Decline invitation to the specified event in a user calendar.
-If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
+If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter.
 For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
 
 ### [Invoke-MgBetaDeprovisionUserManagedDevice](Invoke-MgBetaDeprovisionUserManagedDevice.md)
@@ -414,29 +414,29 @@ This convenience is not available when forwarding from an Outlook.com account.
 
 ### [Invoke-MgBetaForwardUserMailFolderChildFolderMessage](Invoke-MgBetaForwardUserMailFolderChildFolderMessage.md)
 Forward a message using either JSON or MIME format.
-When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to forward a message, and send it later.
 
 ### [Invoke-MgBetaForwardUserMailFolderMessage](Invoke-MgBetaForwardUserMailFolderMessage.md)
 Forward a message using either JSON or MIME format.
-When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to forward a message, and send it later.
 
 ### [Invoke-MgBetaForwardUserMessage](Invoke-MgBetaForwardUserMessage.md)
 Forward a message using either JSON or MIME format.
-When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to forward a message, and send it later.
 
 ### [Invoke-MgBetaGraphUserChat](Invoke-MgBetaGraphUserChat.md)
@@ -452,7 +452,7 @@ Perform MDM key recovery and TPM attestation
 Perform On Demand Proactive Remediation
 
 ### [Invoke-MgBetaInvalidateUserRefreshToken](Invoke-MgBetaInvalidateUserRefreshToken.md)
-Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the **refreshTokensValidFromDateTime** user property to the current date-time.
+Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time.
 Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.
 This operation would prevent access to any of the organization's data accessed through applications on the device without the user first being required to sign in again.
 In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device.
@@ -460,10 +460,10 @@ For developers, if the application attempts to redeem a delegated access token f
 If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
 
 ### [Invoke-MgBetaInviteUserDriveItem](Invoke-MgBetaInviteUserDriveItem.md)
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaInviteUserDriveRoot](Invoke-MgBetaInviteUserDriveRoot.md)
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaLicenseUser](Invoke-MgBetaLicenseUser.md)
 Reprocess all group-based license assignments for the user.
@@ -481,27 +481,27 @@ Mark a chat as unread for a user.
 
 ### [Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsJunk](Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsJunk.md)
 Mark a message as junk.
-This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
+This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
 
 ### [Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsNotJunk](Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsNotJunk.md)
 Mark a message as not junk.
-This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
+This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
 
 ### [Invoke-MgBetaMarkUserMailFolderMessageAsJunk](Invoke-MgBetaMarkUserMailFolderMessageAsJunk.md)
 Mark a message as junk.
-This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
+This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
 
 ### [Invoke-MgBetaMarkUserMailFolderMessageAsNotJunk](Invoke-MgBetaMarkUserMailFolderMessageAsNotJunk.md)
 Mark a message as not junk.
-This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
+This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
 
 ### [Invoke-MgBetaMarkUserMessageAsJunk](Invoke-MgBetaMarkUserMessageAsJunk.md)
 Mark a message as junk.
-This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
+This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
 
 ### [Invoke-MgBetaMarkUserMessageAsNotJunk](Invoke-MgBetaMarkUserMessageAsNotJunk.md)
 Mark a message as not junk.
-This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
+This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
 
 ### [Invoke-MgBetaOverrideUserManagedDeviceComplianceState](Invoke-MgBetaOverrideUserManagedDeviceComplianceState.md)
 Invoke action overrideComplianceState
@@ -516,67 +516,67 @@ Invoke action preview
 Invoke action preview
 
 ### [Invoke-MgBetaReauthorizeUserDriveItemSubscription](Invoke-MgBetaReauthorizeUserDriveItemSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaReauthorizeUserDriveListSubscription](Invoke-MgBetaReauthorizeUserDriveListSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaReauthorizeUserDriveRootSubscription](Invoke-MgBetaReauthorizeUserDriveRootSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaRecordUserPendingAccessReviewInstanceDecision](Invoke-MgBetaRecordUserPendingAccessReviewInstanceDecision.md)
 As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
 
 ### [Invoke-MgBetaReenableUserManagedDevice](Invoke-MgBetaReenableUserManagedDevice.md)
 Invoke action reenable
 
 ### [Invoke-MgBetaReplyAllUserMailFolderChildFolderMessage](Invoke-MgBetaReplyAllUserMailFolderChildFolderMessage.md)
 Reply to all recipients of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to reply-all to a message, and send it later.
 
 ### [Invoke-MgBetaReplyAllUserMailFolderMessage](Invoke-MgBetaReplyAllUserMailFolderMessage.md)
 Reply to all recipients of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to reply-all to a message, and send it later.
 
 ### [Invoke-MgBetaReplyAllUserMessage](Invoke-MgBetaReplyAllUserMessage.md)
 Reply to all recipients of a message using either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to reply-all to a message, and send it later.
 
 ### [Invoke-MgBetaReplyUserMailFolderChildFolderMessage](Invoke-MgBetaReplyUserMailFolderChildFolderMessage.md)
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using JSON format:\n* Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n* If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to reply to a message, and send it later.
 
 ### [Invoke-MgBetaReplyUserMailFolderMessage](Invoke-MgBetaReplyUserMailFolderMessage.md)
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using JSON format:\n* Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n* If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to reply to a message, and send it later.
 
 ### [Invoke-MgBetaReplyUserMessage](Invoke-MgBetaReplyUserMessage.md)
 Reply to the sender of a message using either JSON or MIME format.
-When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using JSON format:\n* Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n* If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), send the reply to the recipients in replyTo and not the recipient in the from property.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to reply to a message, and send it later.
 
 ### [Invoke-MgBetaReprovisionUserCloudPc](Invoke-MgBetaReprovisionUserCloudPc.md)
@@ -637,35 +637,35 @@ Unfollow a driveItem.
 
 ### [Invoke-MgBetaUnsubscribeUserMailFolderChildFolderMessage](Invoke-MgBetaUnsubscribeUserMailFolderChildFolderMessage.md)
 Submits a email request on behalf of the signed-in user to unsubscribe from an email distribution list.
-Uses the information in the `List-Unsubscribe` header.
+Uses the information in the List-Unsubscribe header.
 Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out.
-They can do so by specifying the `List-Unsubscribe` header in each message following RFC-2369.
-**Note** In particular, for the **unsubscribe** action to work, the sender must specify `mailto:` and not URL-based unsubscribe information.
-Setting that header would also set the **unsubscribeEnabled** property of the message instance to `true`, and the **unsubscribeData** property to the header data.
-If the **unsubscribeEnabled** property of a message is `true`, you can use the **unsubscribe** action to unsubscribe the user from similar future messages as managed by the message sender.
-A successful **unsubscribe** action moves the message to the **Deleted Items** folder.
+They can do so by specifying the List-Unsubscribe header in each message following RFC-2369.
+Note In particular, for the unsubscribe action to work, the sender must specify mailto: and not URL-based unsubscribe information.
+Setting that header would also set the unsubscribeEnabled property of the message instance to true, and the unsubscribeData property to the header data.
+If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
+A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
 
 ### [Invoke-MgBetaUnsubscribeUserMailFolderMessage](Invoke-MgBetaUnsubscribeUserMailFolderMessage.md)
 Submits a email request on behalf of the signed-in user to unsubscribe from an email distribution list.
-Uses the information in the `List-Unsubscribe` header.
+Uses the information in the List-Unsubscribe header.
 Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out.
-They can do so by specifying the `List-Unsubscribe` header in each message following RFC-2369.
-**Note** In particular, for the **unsubscribe** action to work, the sender must specify `mailto:` and not URL-based unsubscribe information.
-Setting that header would also set the **unsubscribeEnabled** property of the message instance to `true`, and the **unsubscribeData** property to the header data.
-If the **unsubscribeEnabled** property of a message is `true`, you can use the **unsubscribe** action to unsubscribe the user from similar future messages as managed by the message sender.
-A successful **unsubscribe** action moves the message to the **Deleted Items** folder.
+They can do so by specifying the List-Unsubscribe header in each message following RFC-2369.
+Note In particular, for the unsubscribe action to work, the sender must specify mailto: and not URL-based unsubscribe information.
+Setting that header would also set the unsubscribeEnabled property of the message instance to true, and the unsubscribeData property to the header data.
+If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
+A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
 
 ### [Invoke-MgBetaUnsubscribeUserMessage](Invoke-MgBetaUnsubscribeUserMessage.md)
 Submits a email request on behalf of the signed-in user to unsubscribe from an email distribution list.
-Uses the information in the `List-Unsubscribe` header.
+Uses the information in the List-Unsubscribe header.
 Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out.
-They can do so by specifying the `List-Unsubscribe` header in each message following RFC-2369.
-**Note** In particular, for the **unsubscribe** action to work, the sender must specify `mailto:` and not URL-based unsubscribe information.
-Setting that header would also set the **unsubscribeEnabled** property of the message instance to `true`, and the **unsubscribeData** property to the header data.
-If the **unsubscribeEnabled** property of a message is `true`, you can use the **unsubscribe** action to unsubscribe the user from similar future messages as managed by the message sender.
-A successful **unsubscribe** action moves the message to the **Deleted Items** folder.
+They can do so by specifying the List-Unsubscribe header in each message following RFC-2369.
+Note In particular, for the unsubscribe action to work, the sender must specify mailto: and not URL-based unsubscribe information.
+Setting that header would also set the unsubscribeEnabled property of the message instance to true, and the unsubscribeData property to the header data.
+If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
+A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
 
 ### [Join-MgBetaUserDriveListContentTypeWithHubSite](Join-MgBetaUserDriveListContentTypeWithHubSite.md)
@@ -699,47 +699,43 @@ This creates a new copy of the message in the destination folder and removes the
 Invoke action createEnrollmentNotificationConfiguration
 
 ### [New-MgBetaUserDriveItemLink](New-MgBetaUserDriveItemLink.md)
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaUserDriveItemListItemLink](New-MgBetaUserDriveItemListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaUserDriveItemUploadSession](New-MgBetaUserDriveItemUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.
-An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session:
+Invoke action createUploadSession
 
 ### [New-MgBetaUserDriveListItemLink](New-MgBetaUserDriveListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaUserDriveRootLink](New-MgBetaUserDriveRootLink.md)
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaUserDriveRootListItemLink](New-MgBetaUserDriveRootListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaUserDriveRootUploadSession](New-MgBetaUserDriveRootUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.
-An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session:
+Invoke action createUploadSession
 
 ### [New-MgBetaUserEventAttachmentUploadSession](New-MgBetaUserEventAttachmentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
@@ -747,9 +743,9 @@ The following are the steps to attach a file to an Outlook item using an upload 
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
@@ -757,35 +753,35 @@ The following are the steps to attach a file to an Outlook item using an upload 
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageForward](New-MgBetaUserMailFolderChildFolderMessageForward.md)
 Create a draft to forward an existing message, in either JSON or MIME format.
-When using JSON format, you can: \n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
-Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
+Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, forward a message in a single operation.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageReply](New-MgBetaUserMailFolderChildFolderMessageReply.md)
 Create a draft to reply to the sender of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in replyTo, and not the recipients in from.\n- You can update the draft later to add reply content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply to a message in a single operation.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageReplyAll](New-MgBetaUserMailFolderChildFolderMessageReplyAll.md)
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the **replyTo** and **toRecipients** properties, and not the recipients in the **from** and **toRecipients** properties.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
 \n- You can update the draft message later.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
 
@@ -793,35 +789,35 @@ Alternatively, reply-all to a message in a single action.
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
 ### [New-MgBetaUserMailFolderMessageForward](New-MgBetaUserMailFolderMessageForward.md)
 Create a draft to forward an existing message, in either JSON or MIME format.
-When using JSON format, you can: \n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
-Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
+Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, forward a message in a single operation.
 
 ### [New-MgBetaUserMailFolderMessageReply](New-MgBetaUserMailFolderMessageReply.md)
 Create a draft to reply to the sender of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in replyTo, and not the recipients in from.\n- You can update the draft later to add reply content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply to a message in a single operation.
 
 ### [New-MgBetaUserMailFolderMessageReplyAll](New-MgBetaUserMailFolderMessageReplyAll.md)
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the **replyTo** and **toRecipients** properties, and not the recipients in the **from** and **toRecipients** properties.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
 \n- You can update the draft message later.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
 
@@ -838,35 +834,35 @@ Invoke action windowsDefenderUpdateSignatures
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
 ### [New-MgBetaUserMessageForward](New-MgBetaUserMessageForward.md)
 Create a draft to forward an existing message, in either JSON or MIME format.
-When using JSON format, you can: \n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
-Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
+Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, forward a message in a single operation.
 
 ### [New-MgBetaUserMessageReply](New-MgBetaUserMessageReply.md)
 Create a draft to reply to the sender of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in replyTo, and not the recipients in from.\n- You can update the draft later to add reply content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply to a message in a single operation.
 
 ### [New-MgBetaUserMessageReplyAll](New-MgBetaUserMessageReplyAll.md)
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the **replyTo** and **toRecipients** properties, and not the recipients in the **from** and **toRecipients** properties.
+When using JSON format:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
 \n- You can update the draft message later.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
 
@@ -877,9 +873,9 @@ Invoke action createDownloadUrl
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
@@ -887,9 +883,9 @@ The following are the steps to attach a file to an Outlook item using an upload 
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
@@ -897,16 +893,16 @@ The following are the steps to attach a file to an Outlook item using an upload 
 Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
 The item can be a message or event.
 Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+To attach a file that's smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+Request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
 
 ### [New-MgBetaUserTodoListTaskAttachmentUploadSession](New-MgBetaUserTodoListTaskAttachmentUploadSession.md)
 Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-The request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries.
+The request headers for each PUT operation let you specify the exact range of bytes to be uploaded.
 This allows the transfer to be resumed, in case the network connection is dropped during the upload.
 The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
 
@@ -916,6 +912,12 @@ Publishes a [contentType][] present in a content type hub site.
 ### [Remove-MgBetaUserDeviceFromManagement](Remove-MgBetaUserDeviceFromManagement.md)
 Retire all devices from management for this user
 
+### [Remove-MgBetaUserDriveItemPermanent](Remove-MgBetaUserDriveItemPermanent.md)
+Invoke action permanentDelete
+
+### [Remove-MgBetaUserDriveRootPermanent](Remove-MgBetaUserDriveRootPermanent.md)
+Invoke action permanentDelete
+
 ### [Remove-MgBetaUserManagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgBetaUserManagedDeviceFirmwareConfigurationInterfaceManagement.md)
 Remove device from Device Firmware Configuration Interface management
 
@@ -924,7 +926,7 @@ Delete user from shared Apple device
 
 ### [Rename-MgBetaUserCloudPc](Rename-MgBetaUserCloudPc.md)
 Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Use this API to update the displayName for the Cloud PC entity.
 
 ### [Rename-MgBetaUserCloudPcUserAccountType](Rename-MgBetaUserCloudPcUserAccountType.md)
 Change the account type of the user on a specific Cloud PC.
@@ -939,7 +941,7 @@ Invoke action resetPassword
 Reset passcode
 
 ### [Reset-MgBetaUserPendingAccessReviewInstanceDecision](Reset-MgBetaUserPendingAccessReviewInstanceDecision.md)
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 
 ### [Resize-MgBetaUserManagedDeviceCloudPc](Resize-MgBetaUserManagedDeviceCloudPc.md)
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
@@ -1009,7 +1011,11 @@ Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by r
 Revoke all Apple Vpp licenses for a device
 
 ### [Revoke-MgBetaUserSignInSession](Revoke-MgBetaUserSignInSession.md)
-Invoke action revokeSignInSessions
+Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time.
+Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.
+This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+If the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error.
+If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
 
 ### [Send-MgBetaUserChatActivityNotification](Send-MgBetaUserChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
@@ -1018,21 +1024,21 @@ For more details about sending notifications and the requirements for doing so, 
 ### [Send-MgBetaUserMail](Send-MgBetaUserMail.md)
 Send the message specified in the request body using either JSON or MIME format.
 When using JSON format you can include an attachment and use a mention to call out another user in the new message.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft message to send later.
 To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
 
 ### [Send-MgBetaUserMailFolderChildFolderMessage](Send-MgBetaUserMailFolderChildFolderMessage.md)
 Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
-This method saves the message in the **Sent Items** folder.
+This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
 ### [Send-MgBetaUserMailFolderMessage](Send-MgBetaUserMailFolderMessage.md)
 Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
-This method saves the message in the **Sent Items** folder.
+This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
 ### [Send-MgBetaUserManagedDeviceCustomNotificationToCompanyPortal](Send-MgBetaUserManagedDeviceCustomNotificationToCompanyPortal.md)
@@ -1041,7 +1047,7 @@ Invoke action sendCustomNotificationToCompanyPortal
 ### [Send-MgBetaUserMessage](Send-MgBetaUserMessage.md)
 Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
-This method saves the message in the **Sent Items** folder.
+This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
 
 ### [Send-MgBetaUserPendingAccessReviewInstanceReminder](Send-MgBetaUserPendingAccessReviewInstanceReminder.md)
@@ -1128,18 +1134,18 @@ This action allows the organizer of a meeting to send a cancellation message and
 The action moves the event to the Deleted Items folder.
 The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
 An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
-You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
+You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
 
 ### [Stop-MgBetaUserEventInstance](Stop-MgBetaUserEventInstance.md)
 This action allows the organizer of a meeting to send a cancellation message and cancel the event.
 The action moves the event to the Deleted Items folder.
 The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
 An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
-You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
+You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
 
 ### [Stop-MgBetaUserPendingAccessReviewInstance](Stop-MgBetaUserPendingAccessReviewInstance.md)
 Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
+After the access review instance stops, the instance status will be Completed, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
@@ -1147,8 +1153,8 @@ To prevent a recurring access review from starting future instances, update the 
 Invoke action stopApplyDecisions
 
 ### [Stop-MgBetaUserPendingAccessReviewInstanceStage](Stop-MgBetaUserPendingAccessReviewInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
+Stop an access review stage that is inProgress.
+After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
@@ -1157,7 +1163,7 @@ Invoke action syncDevice
 
 ### [Test-MgBetaUserChatPermissionGrantProperty](Test-MgBetaUserChatPermissionGrantProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -1171,7 +1177,7 @@ Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 
 ### [Test-MgBetaUserDeviceProperty](Test-MgBetaUserDeviceProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -1215,7 +1221,7 @@ Invoke action evaluateDynamicMembership
 
 ### [Test-MgBetaUserJoinedGroupProperty](Test-MgBetaUserJoinedGroupProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -1230,7 +1236,7 @@ Use this action to provide real-time feedback on password strength while the use
 
 ### [Test-MgBetaUserPermissionGrantProperty](Test-MgBetaUserPermissionGrantProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -1241,7 +1247,7 @@ However, you can validate both the mail nickname and the display name and receiv
 
 ### [Test-MgBetaUserProperty](Test-MgBetaUserProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementAuditEvent
 
 ## SYNOPSIS
-The Audit Events
+Read properties and relationships of the auditEvent object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministrationId
 ```
 
 ## DESCRIPTION
-The Audit Events
+Read properties and relationships of the auditEvent object.
 
 ## EXAMPLES
 

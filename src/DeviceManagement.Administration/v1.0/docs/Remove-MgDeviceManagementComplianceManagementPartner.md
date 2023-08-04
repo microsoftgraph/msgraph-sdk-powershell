@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementComplianceManagementPartner
 
 ## SYNOPSIS
-Delete navigation property complianceManagementPartners for deviceManagement
+Deletes a complianceManagementPartner.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementComplianceManagementPartner -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Delete navigation property complianceManagementPartners for deviceManagement
+Deletes a complianceManagementPartner.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementManagedDevice
 
 ## SYNOPSIS
-The list of managed devices.
+Read properties and relationships of the managedDevice object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementManagedDevice -InputObject <IDeviceManagementIdentity> [-E
 ```
 
 ## DESCRIPTION
-The list of managed devices.
+Read properties and relationships of the managedDevice object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementWindowsInformationProtectionPolicy
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Create a new windowsInformationProtectionPolicy object.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ New-MgDeviceAppManagementWindowsInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Create a new windowsInformationProtectionPolicy object.
 
 ## EXAMPLES
 

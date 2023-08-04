@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-Module Guid: 4dfea556-04f9-4e81-b9a2-0d183da9df03
+Module Guid: f8d4cea6-0a9f-47f8-86ac-9ee45e0f28c7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -46,5 +46,5 @@ Delete navigation property historyItems for users
 Update the navigation property activities in users
 
 ### [Update-MgUserActivityHistoryItem](Update-MgUserActivityHistoryItem.md)
-Create a new or replace an existing history item for an existing user activity.
+Delete an existing history item for an existing user activity.
 

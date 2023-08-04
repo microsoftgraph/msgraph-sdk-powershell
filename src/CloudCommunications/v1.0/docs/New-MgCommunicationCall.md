@@ -48,41 +48,6 @@ Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	callbackUri = "https://bot.contoso.com/callback"
-	targets = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				user = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					displayName = "John"
-					id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
-				}
-			}
-		}
-	)
-	requestedModalities = @(
-		"audio"
-	)
-	callOptions = @{
-		"@odata.type" = "#microsoft.graph.outgoingCallOptions"
-		isContentSharingNotificationEnabled = $true
-	}
-	mediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-	}
-}
-
-New-MgCommunicationCall -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	callbackUri = "https://bot.contoso.com/callback"
 	source = @{
 		"@odata.type" = "#microsoft.graph.participantInfo"
 		identity = @{
@@ -114,13 +79,13 @@ $params = @{
 	)
 	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		blob = "&lt;Media Session Configuration&gt;"
+		blob = "\<Media Session Configuration\>"
 	}
 }
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 3 --------------------------
+### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -176,7 +141,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 4 --------------------------
+### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -232,7 +197,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 5 --------------------------
+### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -271,7 +236,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 6 --------------------------
+### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -309,7 +274,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 7 --------------------------
+### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -335,7 +300,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 8 --------------------------
+### -------------------------- EXAMPLE 7 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -357,6 +322,52 @@ $params = @{
 		passcode = $null
 	}
 	tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
+}
+
+New-MgCommunicationCall -BodyParameter $params
+
+### -------------------------- EXAMPLE 8 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
+		"@odata.type" = "#microsoft.graph.participantInfo"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			applicationInstance = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				displayName = "Calling Bot"
+				id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
+			}
+		}
+		countryCode = $null
+		endpointType = $null
+		region = $null
+		languageId = $null
+	}
+	targets = @(
+		@{
+			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			identity = @{
+				"@odata.type" = "#microsoft.graph.identitySet"
+				phone = @{
+					"@odata.type" = "#microsoft.graph.identity"
+					id = "+12345678901"
+				}
+			}
+		}
+	)
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
 
 New-MgCommunicationCall -BodyParameter $params
@@ -400,54 +411,8 @@ $params = @{
 		"audio"
 	)
 	mediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-	}
-	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-}
-
-New-MgCommunicationCall -BodyParameter $params
-
-### -------------------------- EXAMPLE 10 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	callbackUri = "https://bot.contoso.com/callback"
-	source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
-		identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			applicationInstance = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				displayName = "Calling Bot"
-				id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
-			}
-		}
-		countryCode = $null
-		endpointType = $null
-		region = $null
-		languageId = $null
-	}
-	targets = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					id = "+12345678901"
-				}
-			}
-		}
-	)
-	requestedModalities = @(
-		"audio"
-	)
-	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		blob = "&lt;Media Session Configuration&gt;"
+		blob = "\<Media Session Configuration\>"
 	}
 	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
@@ -935,18 +900,18 @@ To create the parameters described below, construct a hash table containing the 
 
 `AUDIOROUTINGGROUPS <IMicrosoftGraphAudioRoutingGroup[]>`: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Receivers <String[]>]`: 
+  - `[Receivers <String[]>]`: List of receiving participant ids.
   - `[RoutingMode <String>]`: routingMode
-  - `[Sources <String[]>]`: 
+  - `[Sources <String[]>]`: List of source participant ids.
 
 `BODYPARAMETER <IMicrosoftGraphCall>`: call
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AudioRoutingGroups <IMicrosoftGraphAudioRoutingGroup[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Receivers <String[]>]`: 
+    - `[Receivers <String[]>]`: List of receiving participant ids.
     - `[RoutingMode <String>]`: routingMode
-    - `[Sources <String[]>]`: 
+    - `[Sources <String[]>]`: List of source participant ids.
   - `[CallChainId <String>]`: A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
   - `[CallOptions <IMicrosoftGraphCallOptions>]`: callOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

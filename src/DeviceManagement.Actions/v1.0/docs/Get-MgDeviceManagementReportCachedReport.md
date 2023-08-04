@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportCachedReport
 
 ## SYNOPSIS
-Invoke action getCachedReport
+Not yet documented
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementReportCachedReport
 ```
 
 ## DESCRIPTION
-Invoke action getCachedReport
+Not yet documented
 
 ## EXAMPLES
 

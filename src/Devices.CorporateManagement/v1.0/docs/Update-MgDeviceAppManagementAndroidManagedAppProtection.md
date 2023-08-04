@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementAndroidManagedAppProtection
 
 ## SYNOPSIS
-Update the navigation property androidManagedAppProtections in deviceAppManagement
+Update the properties of a androidManagedAppProtection object.
 
 ## SYNTAX
 
@@ -77,7 +77,7 @@ Update-MgDeviceAppManagementAndroidManagedAppProtection -InputObject <IDevicesCo
 ```
 
 ## DESCRIPTION
-Update the navigation property androidManagedAppProtections in deviceAppManagement
+Update the properties of a androidManagedAppProtection object.
 
 ## EXAMPLES
 

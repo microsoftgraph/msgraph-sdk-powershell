@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a secureScore object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecuritySecureScore -SecureScoreId $secureScoreId
+Get-MgSecuritySecureScore -Top 1
 
 ## PARAMETERS
 

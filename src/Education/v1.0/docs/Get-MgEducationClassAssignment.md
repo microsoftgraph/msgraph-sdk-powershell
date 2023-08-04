@@ -45,7 +45,14 @@ Students can only see assignments assigned to them; teachers and applications wi
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Get-MgEducationClassAssignment -EducationClassId $educationClassId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Education
+```
+
+Get-MgEducationClassAssignment -EducationClassId $educationClassId -ExpandProperty "resources"
 
 ## PARAMETERS
 

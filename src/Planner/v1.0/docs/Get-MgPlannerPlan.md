@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a plannerplan object.
 Import-Module Microsoft.Graph.Planner
 ```
 
-Get-MgPlannerPlan -PlannerPlanId $plannerPlanId
+Get-MgPlannerPlan
 
 ## PARAMETERS
 

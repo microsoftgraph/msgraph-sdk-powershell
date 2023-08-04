@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a claimsMappingPolicy object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
+Get-MgPolicyClaimMappingPolicy
 
 ## PARAMETERS
 

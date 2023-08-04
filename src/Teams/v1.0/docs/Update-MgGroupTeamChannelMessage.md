@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a chatMessage object.
-\nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
 If one of the participants is using Skype, the operation will fail.
 This method does not support federation.
@@ -61,7 +61,7 @@ Update-MgGroupTeamChannelMessage -InputObject <ITeamsIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Update a chatMessage object.
-\nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios.
+\nWith the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.\nOnly the policyViolation property of a chatMessage can be updated in application permissions scenarios.
 The update only works for chats where members are Microsoft Teams users.
 If one of the participants is using Skype, the operation will fail.
 This method does not support federation.
@@ -751,6 +751,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OpenShiftChangeRequestId <String>]`: The unique identifier of openShiftChangeRequest
   - `[OpenShiftId <String>]`: The unique identifier of openShift
   - `[PinnedChatMessageInfoId <String>]`: The unique identifier of pinnedChatMessageInfo
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift

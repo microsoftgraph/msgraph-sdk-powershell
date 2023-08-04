@@ -41,7 +41,7 @@ Read the properties and relationships of a userRegistrationDetails object.
 Import-Module Microsoft.Graph.Beta.Reports
 ```
 
-Get-MgBetaReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId $userRegistrationDetailsId
+Get-MgBetaReportAuthenticationMethodUserRegistrationDetail
 
 ## PARAMETERS
 

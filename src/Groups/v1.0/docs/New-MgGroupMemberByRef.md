@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupMemberByRef
 
 ## SYNOPSIS
-Add a member to a security or Microsoft 365 group through the **members** navigation property.
+Add a member to a security or Microsoft 365 group through the members navigation property.
 The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ## SYNTAX
@@ -38,7 +38,7 @@ New-MgGroupMemberByRef -InputObject <IGroupsIdentity> -OdataId <String> [-Additi
 ```
 
 ## DESCRIPTION
-Add a member to a security or Microsoft 365 group through the **members** navigation property.
+Add a member to a security or Microsoft 365 group through the members navigation property.
 The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ## EXAMPLES

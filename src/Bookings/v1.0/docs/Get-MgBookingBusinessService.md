@@ -38,17 +38,10 @@ Get the properties and relationships of a bookingService object in the specified
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBookingBusinessService -BookingBusinessId $bookingBusinessId
 
 ## PARAMETERS
 

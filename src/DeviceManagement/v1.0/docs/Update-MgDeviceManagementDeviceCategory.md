@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCategory
 
 ## SYNOPSIS
-Update the navigation property deviceCategories in deviceManagement
+Update the properties of a deviceCategory object.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Update-MgDeviceManagementDeviceCategory -InputObject <IDeviceManagementIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceCategories in deviceManagement
+Update the properties of a deviceCategory object.
 
 ## EXAMPLES
 

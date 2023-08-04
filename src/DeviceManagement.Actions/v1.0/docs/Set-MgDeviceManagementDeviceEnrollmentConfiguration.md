@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Invoke action assign
+Not yet documented
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Set-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Invoke action assign
+Not yet documented
 
 ## EXAMPLES
 

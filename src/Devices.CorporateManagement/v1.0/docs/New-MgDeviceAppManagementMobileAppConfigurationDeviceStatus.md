@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileAppConfigurationDeviceStatus
 
 ## SYNOPSIS
-Create new navigation property to deviceStatuses for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgDeviceAppManagementMobileAppConfigurationDeviceStatus -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceStatuses for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ## EXAMPLES
 

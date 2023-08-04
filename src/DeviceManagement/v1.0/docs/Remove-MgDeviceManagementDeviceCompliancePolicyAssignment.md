@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicyAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for deviceManagement
+Deletes a deviceCompliancePolicyAssignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicyAssignment -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for deviceManagement
+Deletes a deviceCompliancePolicyAssignment.
 
 ## EXAMPLES
 

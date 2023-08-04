@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
-Use the **id** property, which is the currency code, to specify the currency.
+Use the id property, which is the currency code, to specify the currency.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaBookingCurrency -InputObject <IBookingsIdentity> [-ExpandProperty <Str
 
 ## DESCRIPTION
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
-Use the **id** property, which is the currency code, to specify the currency.
+Use the id property, which is the currency code, to specify the currency.
 
 ## EXAMPLES
 

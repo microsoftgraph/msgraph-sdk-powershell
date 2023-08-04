@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileAppConfiguration
 
 ## SYNOPSIS
-Delete navigation property mobileAppConfigurations for deviceAppManagement
+Deletes a iosMobileAppConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementMobileAppConfiguration -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Delete navigation property mobileAppConfigurations for deviceAppManagement
+Deletes a iosMobileAppConfiguration.
 
 ## EXAMPLES
 

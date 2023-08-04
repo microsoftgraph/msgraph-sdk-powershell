@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationUserStatus
 
 ## SYNOPSIS
-Device configuration installation status by user.
+Read properties and relationships of the deviceConfigurationUserStatus object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementDeviceConfigurationUserStatus -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Device configuration installation status by user.
+Read properties and relationships of the deviceConfigurationUserStatus object.
 
 ## EXAMPLES
 

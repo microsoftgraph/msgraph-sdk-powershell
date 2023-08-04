@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaShareListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -61,7 +61,7 @@ Update-MgBetaShareListItemField -InputObject <IFilesIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 

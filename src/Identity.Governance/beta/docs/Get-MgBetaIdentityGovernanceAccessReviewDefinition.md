@@ -49,7 +49,14 @@ To retrieve the instances of the access review series, use the list accessReview
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-Get-MgBetaIdentityGovernanceAccessReviewDefinition -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId
+Get-MgBetaIdentityGovernanceAccessReviewDefinition -Top 100 -Skip 0
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.Governance
+```
+
+Get-MgBetaIdentityGovernanceAccessReviewDefinition -Filter "contains(scope/microsoft.graph.accessReviewQueryScope/query, './members')"
 
 ## PARAMETERS
 

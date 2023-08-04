@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule
 
 ## SYNOPSIS
-Update the navigation property scheduledActionsForRule in deviceManagement
+Update the properties of a deviceComplianceScheduledActionForRule object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObje
 ```
 
 ## DESCRIPTION
-Update the navigation property scheduledActionsForRule in deviceManagement
+Update the properties of a deviceComplianceScheduledActionForRule object.
 
 ## EXAMPLES
 

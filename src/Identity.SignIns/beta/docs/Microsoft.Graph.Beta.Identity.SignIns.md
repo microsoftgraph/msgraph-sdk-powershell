@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: eb83f9bc-f525-40cb-a752-5441df9ed321
+Module Guid: aa5007ed-d70b-4293-b1b9-a074e047865b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,7 +16,7 @@ Invoke action verifySignature
 
 ### [Confirm-MgBetaRiskyServicePrincipalCompromised](Confirm-MgBetaRiskyServicePrincipalCompromised.md)
 Confirm one or more riskyServicePrincipal objects as compromised.
-This action sets the targeted service principal account's risk level to `high`.
+This action sets the targeted service principal account's risk level to high.
 
 ### [Confirm-MgBetaRiskyUserCompromised](Confirm-MgBetaRiskyUserCompromised.md)
 Confirm one or more riskyUser objects as compromised.
@@ -71,7 +71,7 @@ Get the number of the resource
 ### [Get-MgBetaIdentityB2CUserFlowLanguage](Get-MgBetaIdentityB2CUserFlowLanguage.md)
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
-**Note:** To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
+Note: To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
 For more information, see Update b2cIdentityUserFlow.
 Language customization is enabled by default in Azure Active Directory user flows.
 
@@ -113,6 +113,10 @@ The user attribute that you want to add to your user flow.
 ### [Get-MgBetaIdentityB2XUserFlow](Get-MgBetaIdentityB2XUserFlow.md)
 Retrieve the properties and relationships of a b2xIdentityUserFlow object.
 
+### [Get-MgBetaIdentityB2XUserFlowApiConnectorConfiguration](Get-MgBetaIdentityB2XUserFlowApiConnectorConfiguration.md)
+Configuration for enabling an API connector for use as part of the self-service sign up user flow.
+You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+
 ### [Get-MgBetaIdentityB2XUserFlowCount](Get-MgBetaIdentityB2XUserFlowCount.md)
 Get the number of the resource
 
@@ -152,6 +156,21 @@ Get media content for the navigation property overridesPages from identity
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguageOverridePageCount](Get-MgBetaIdentityB2XUserFlowLanguageOverridePageCount.md)
 Get the number of the resource
+
+### [Get-MgBetaIdentityB2XUserFlowPostAttributeCollection](Get-MgBetaIdentityB2XUserFlowPostAttributeCollection.md)
+Get postAttributeCollection from identity
+
+### [Get-MgBetaIdentityB2XUserFlowPostAttributeCollectionByRef](Get-MgBetaIdentityB2XUserFlowPostAttributeCollectionByRef.md)
+Get ref of postAttributeCollection from identity
+
+### [Get-MgBetaIdentityB2XUserFlowPostFederationSignup](Get-MgBetaIdentityB2XUserFlowPostFederationSignup.md)
+Get postFederationSignup from identity
+
+### [Get-MgBetaIdentityB2XUserFlowPostFederationSignupByRef](Get-MgBetaIdentityB2XUserFlowPostFederationSignupByRef.md)
+Get ref of postFederationSignup from identity
+
+### [Get-MgBetaIdentityB2XUserFlowPreTokenIssuance](Get-MgBetaIdentityB2XUserFlowPreTokenIssuance.md)
+Get preTokenIssuance from identity
 
 ### [Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 The user attribute assignments included in the user flow.
@@ -196,7 +215,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -217,8 +236,7 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of an authenticationEventListener object.
-The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -251,9 +269,9 @@ Get bitlocker from informationProtection
 
 ### [Get-MgBetaInformationProtectionBitlockerRecoveryKey](Get-MgBetaInformationProtectionBitlockerRecoveryKey.md)
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
-By default, this operation does not return the **key** property that represents the actual recovery key.
-To include the **key** property in the response, use the `$select` OData query parameter.
-Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log.
+By default, this operation does not return the key property that represents the actual recovery key.
+To include the key property in the response, use the $select OData query parameter.
+Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 You can find the log in Azure AD audit logs under the KeyManagement category.
 
 ### [Get-MgBetaInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaInformationProtectionBitlockerRecoveryKeyCount.md)
@@ -319,7 +337,7 @@ Get the number of the resource
 
 ### [Get-MgBetaOauth2PermissionGrant](Get-MgBetaOauth2PermissionGrant.md)
 Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
-An **oAuth2PermissionGrant** represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
+An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
 
 ### [Get-MgBetaOauth2PermissionGrantCount](Get-MgBetaOauth2PermissionGrantCount.md)
 Get the number of the resource
@@ -423,7 +441,7 @@ Read the properties and relationships of a crossTenantAccessPolicy object.
 
 ### [Get-MgBetaPolicyCrossTenantAccessPolicyDefault](Get-MgBetaPolicyCrossTenantAccessPolicyDefault.md)
 Read the default configuration of a cross-tenant access policy.
-This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
+This default configuration may be the service default assigned by Azure AD (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
 
 ### [Get-MgBetaPolicyCrossTenantAccessPolicyPartner](Get-MgBetaPolicyCrossTenantAccessPolicyPartner.md)
 Read the properties and relationships of a partner-specific configuration.
@@ -617,7 +635,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a **riskDetection** object.
+Retrieve the properties of a riskDetection object.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -705,7 +723,7 @@ This property is null if the device is not registered for passwordless Phone Sig
 Retrieve the properties and relationships of an operation object.
 Currently these operations are generated by initiating a password reset using the reset password method.
 An operation object tells the caller about the current state of that password reset operation.
-Possible states include: `Succeeded` and `Failed` are terminal states.
+Possible states include: Succeeded and Failed are terminal states.
 
 ### [Get-MgBetaUserAuthenticationOperationCount](Get-MgBetaUserAuthenticationOperationCount.md)
 Get the number of the resource
@@ -764,9 +782,9 @@ Get bitlocker from users
 
 ### [Get-MgBetaUserInformationProtectionBitlockerRecoveryKey](Get-MgBetaUserInformationProtectionBitlockerRecoveryKey.md)
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
-By default, this operation does not return the **key** property that represents the actual recovery key.
-To include the **key** property in the response, use the `$select` OData query parameter.
-Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log.
+By default, this operation does not return the key property that represents the actual recovery key.
+To include the key property in the response, use the $select OData query parameter.
+Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 You can find the log in Azure AD audit logs under the KeyManagement category.
 
 ### [Get-MgBetaUserInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaUserInformationProtectionBitlockerRecoveryKeyCount.md)
@@ -828,7 +846,7 @@ Invoke action encryptBuffer
 
 ### [Invoke-MgBetaDismissRiskyServicePrincipal](Invoke-MgBetaDismissRiskyServicePrincipal.md)
 Dismiss the risk of one or more riskyServicePrincipal objects.
-This action sets the targeted service principal account's risk level to `none`.
+This action sets the targeted service principal account's risk level to none.
 You can dismiss up to 60 service principal accounts in one request.
 
 ### [Invoke-MgBetaDismissRiskyUser](Invoke-MgBetaDismissRiskyUser.md)
@@ -844,6 +862,21 @@ The contentInfo input is resolved to informationProtectionContentLabel.
 Invoke action signDigest
 
 ### [Invoke-MgBetaUploadIdentityApiConnectorClientCertificate](Invoke-MgBetaUploadIdentityApiConnectorClientCertificate.md)
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
+
+### [Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate](Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate.md)
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
+
+### [Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate](Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate.md)
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
+
+### [Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPreTokenIssuanceClientCertificate](Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPreTokenIssuanceClientCertificate.md)
 Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
 The input is a base-64 encoded value of the PKCS 12 certificate contents.
 This method returns an apiConnector.
@@ -881,7 +914,7 @@ You can create only an externalUsersSelfServiceSignupEventsFlow object type.
 
 ### [New-MgBetaIdentityAuthenticationEventListener](New-MgBetaIdentityAuthenticationEventListener.md)
 Create a new authenticationEventListener object.
-You can create one of the following subtypes that are derived from **authenticationEventListener**.
+You can create one of the following subtypes that are derived from authenticationEventListener.
 
 ### [New-MgBetaIdentityB2CUserFlow](New-MgBetaIdentityB2CUserFlow.md)
 Create a new b2cIdentityUserFlow object.
@@ -941,7 +974,7 @@ Create a new conditionalAccessPolicy.
 
 ### [New-MgBetaIdentityCustomAuthenticationExtension](New-MgBetaIdentityCustomAuthenticationExtension.md)
 Create a new customAuthenticationExtension object.
-Only the **onTokenIssuanceStartCustomExtension** object type is supported.
+Only the onTokenIssuanceStartCustomExtension object type is supported.
 
 ### [New-MgBetaIdentityProvider](New-MgBetaIdentityProvider.md)
 Create an identity provider object that is of the type specified in the request body.
@@ -1038,11 +1071,11 @@ After creating the permission grant policy, you can add include condition sets t
 
 ### [New-MgBetaPolicyPermissionGrantPolicyExclude](New-MgBetaPolicyPermissionGrantPolicyExclude.md)
 Add conditions under which a permission grant event is *excluded* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **excludes** collection of a  permissionGrantPolicy.
+You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
 
 ### [New-MgBetaPolicyPermissionGrantPolicyInclude](New-MgBetaPolicyPermissionGrantPolicyInclude.md)
 Add conditions under which a permission grant event is *included* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **includes** collection of a  permissionGrantPolicy.
+You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
 
 ### [New-MgBetaPolicyRoleManagementPolicy](New-MgBetaPolicyRoleManagementPolicy.md)
 Create new navigation property to roleManagementPolicies for policies
@@ -1091,7 +1124,7 @@ Create new navigation property to servicePrincipalRiskDetections for identityPro
 
 ### [New-MgBetaTrustFrameworkKeySet](New-MgBetaTrustFrameworkKeySet.md)
 Create a new trustFrameworkKeySet.
-The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
+The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
 The modified ID will be available in the response and in the location header.
 
 ### [New-MgBetaTrustFrameworkKeySetKey](New-MgBetaTrustFrameworkKeySetKey.md)
@@ -1114,11 +1147,11 @@ Create new navigation property to operations for users
 
 ### [New-MgBetaUserAuthenticationPhoneMethod](New-MgBetaUserAuthenticationPhoneMethod.md)
 Add a new phone authentication method.
-A user may only have one phone of each type, captured in the **phoneType** property.
-This means, for example, adding a `mobile` phone to a user with a preexisting `mobile` phone will fail.
-Additionally, a user must always have a `mobile` phone before adding an `alternateMobile` phone.
+A user may only have one phone of each type, captured in the phoneType property.
+This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail.
+Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
-Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` number is added, the system will attempt to register the number for use in that system.
+Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system will attempt to register the number for use in that system.
 
 ### [New-MgBetaUserAuthenticationTemporaryAccessPassMethod](New-MgBetaUserAuthenticationTemporaryAccessPassMethod.md)
 Create a new temporaryAccessPassAuthenticationMethod object on a user.
@@ -1166,7 +1199,7 @@ For more information about identity providers available for user flows, see the 
 
 ### [Remove-MgBetaIdentityB2CUserFlowLanguage](Remove-MgBetaIdentityB2CUserFlowLanguage.md)
 Deletes a userFlowLanguageConfiguration object from a Azure AD B2C user flow.
-**Note:** You cannot delete languages from an Azure Active Directory user flow.
+Note: You cannot delete languages from an Azure Active Directory user flow.
 
 ### [Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage](Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage.md)
 Delete navigation property defaultPages for identity
@@ -1182,7 +1215,7 @@ Delete a b2xIdentityUserFlow object.
 
 ### [Remove-MgBetaIdentityB2XUserFlowIdentityProvider](Remove-MgBetaIdentityB2XUserFlowIdentityProvider.md)
 Delete an identity provider from a b2xIdentityUserFlow object.
-For self-service sign up user flows, the values can be `Google-OAUTH` or `Facebook-OAUTH`.
+For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 
 ### [Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef](Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
@@ -1195,6 +1228,21 @@ Delete navigation property defaultPages for identity
 
 ### [Remove-MgBetaIdentityB2XUserFlowLanguageOverridePage](Remove-MgBetaIdentityB2XUserFlowLanguageOverridePage.md)
 Delete navigation property overridesPages for identity
+
+### [Remove-MgBetaIdentityB2XUserFlowPostAttributeCollection](Remove-MgBetaIdentityB2XUserFlowPostAttributeCollection.md)
+Delete navigation property postAttributeCollection for identity
+
+### [Remove-MgBetaIdentityB2XUserFlowPostAttributeCollectionByRef](Remove-MgBetaIdentityB2XUserFlowPostAttributeCollectionByRef.md)
+Delete ref of navigation property postAttributeCollection for identity
+
+### [Remove-MgBetaIdentityB2XUserFlowPostFederationSignup](Remove-MgBetaIdentityB2XUserFlowPostFederationSignup.md)
+Delete navigation property postFederationSignup for identity
+
+### [Remove-MgBetaIdentityB2XUserFlowPostFederationSignupByRef](Remove-MgBetaIdentityB2XUserFlowPostFederationSignupByRef.md)
+Delete ref of navigation property postFederationSignup for identity
+
+### [Remove-MgBetaIdentityB2XUserFlowPreTokenIssuance](Remove-MgBetaIdentityB2XUserFlowPreTokenIssuance.md)
+Delete navigation property preTokenIssuance for identity
 
 ### [Remove-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Remove-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 Delete navigation property userAttributeAssignments for identity
@@ -1230,7 +1278,7 @@ Delete navigation property continuousAccessEvaluationPolicy for identity
 Delete a customAuthenticationExtension object.
 
 ### [Remove-MgBetaIdentityProvider](Remove-MgBetaIdentityProvider.md)
-Delete an identity provider resource that is of the type specified by the **id** in the request.
+Delete an identity provider resource that is of the type specified by the id in the request.
 Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Azure AD.
 In Azure AD B2C, this operation can currently delete a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 
@@ -1265,7 +1313,7 @@ Delete entity from invitations
 ### [Remove-MgBetaOauth2PermissionGrant](Remove-MgBetaOauth2PermissionGrant.md)
 Delete an oAuth2PermissionGrant, representing a delegated permission grant.
 When a delegated permission grant is deleted, the access it granted is revoked.
-Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
+Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.
 
 ### [Remove-MgBetaOrganizationCertificateBasedAuthConfiguration](Remove-MgBetaOrganizationCertificateBasedAuthConfiguration.md)
 Delete a certificateBasedAuthConfiguration object.
@@ -1362,10 +1410,10 @@ Delete a group from the list of groups included in a mobile app management polic
 Delete a permissionGrantPolicy object.
 
 ### [Remove-MgBetaPolicyPermissionGrantPolicyExclude](Remove-MgBetaPolicyPermissionGrantPolicyExclude.md)
-Deletes a permissionGrantConditionSet from the **excludes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
 
 ### [Remove-MgBetaPolicyPermissionGrantPolicyInclude](Remove-MgBetaPolicyPermissionGrantPolicyInclude.md)
-Deletes a permissionGrantConditionSet from the **includes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
 
 ### [Remove-MgBetaPolicyRoleManagementPolicy](Remove-MgBetaPolicyRoleManagementPolicy.md)
 Delete navigation property roleManagementPolicies for policies
@@ -1435,8 +1483,8 @@ Deletes a user's Microsoft Authenticator Passwordless Phone Sign-in method objec
 
 ### [Remove-MgBetaUserAuthenticationPhoneMethod](Remove-MgBetaUserAuthenticationPhoneMethod.md)
 Delete a user's phone authentication method.
-Remember that a user cannot have an `alternateMobile` number without a `mobile` number.
-If you want to remove a `mobile` number from a user that also has an `alternateMobile` number, first update the `mobile` number to the new number, then delete the `alternateMobile` number.
+Remember that a user cannot have an alternateMobile number without a mobile number.
+If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
 If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted.
 Have the user change their default authentication method, and then delete the number.
 
@@ -1494,6 +1542,12 @@ Update media content for the navigation property defaultPages in identity
 ### [Set-MgBetaIdentityB2XUserFlowLanguageOverridePageContent](Set-MgBetaIdentityB2XUserFlowLanguageOverridePageContent.md)
 Update media content for the navigation property overridesPages in identity
 
+### [Set-MgBetaIdentityB2XUserFlowPostAttributeCollectionByRef](Set-MgBetaIdentityB2XUserFlowPostAttributeCollectionByRef.md)
+Update the ref of navigation property postAttributeCollection in identity
+
+### [Set-MgBetaIdentityB2XUserFlowPostFederationSignupByRef](Set-MgBetaIdentityB2XUserFlowPostFederationSignupByRef.md)
+Update the ref of navigation property postFederationSignup in identity
+
 ### [Set-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder](Set-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder.md)
 Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 
@@ -1523,7 +1577,7 @@ Given contentInfo as an input, which includes existing content metadata key/valu
 
 ### [Test-MgBetaPolicyFeatureRolloutPolicyApplyToProperty](Test-MgBetaPolicyFeatureRolloutPolicyApplyToProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
+Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
 For validating properties of an existing group, use the validateProperties function for groups.
 The following validations are performed for the display name and mail nickname properties: \n1.
 Validate the prefix and suffix naming policy\n2.
@@ -1544,14 +1598,14 @@ Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
 
 ### [Update-MgBetaIdentityAuthenticationEventListener](Update-MgBetaIdentityAuthenticationEventListener.md)
 Update the properties of an authenticationEventListener object.
-You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
+You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
 
 ### [Update-MgBetaIdentityB2CUserFlow](Update-MgBetaIdentityB2CUserFlow.md)
 Update the properties of a b2cIdentityUserFlow object.
 
 ### [Update-MgBetaIdentityB2CUserFlowLanguage](Update-MgBetaIdentityB2CUserFlowLanguage.md)
 This method is used to create or update a custom language in an Azure AD B2C user flow.
-**Note:** You must enable language customization in the Azure AD B2C user flow before you can create a custom language.
+Note: You must enable language customization in the Azure AD B2C user flow before you can create a custom language.
 For more information, see Update b2cIdentityUserFlow.
 
 ### [Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage](Update-MgBetaIdentityB2CUserFlowLanguageDefaultPage.md)
@@ -1574,6 +1628,15 @@ Update the navigation property defaultPages in identity
 
 ### [Update-MgBetaIdentityB2XUserFlowLanguageOverridePage](Update-MgBetaIdentityB2XUserFlowLanguageOverridePage.md)
 Update the navigation property overridesPages in identity
+
+### [Update-MgBetaIdentityB2XUserFlowPostAttributeCollection](Update-MgBetaIdentityB2XUserFlowPostAttributeCollection.md)
+Update the navigation property postAttributeCollection in identity
+
+### [Update-MgBetaIdentityB2XUserFlowPostFederationSignup](Update-MgBetaIdentityB2XUserFlowPostFederationSignup.md)
+Update the navigation property postFederationSignup in identity
+
+### [Update-MgBetaIdentityB2XUserFlowPreTokenIssuance](Update-MgBetaIdentityB2XUserFlowPreTokenIssuance.md)
+Update the navigation property preTokenIssuance in identity
 
 ### [Update-MgBetaIdentityB2XUserFlowUserAttributeAssignment](Update-MgBetaIdentityB2XUserFlowUserAttributeAssignment.md)
 Update the navigation property userAttributeAssignments in identity
@@ -1654,7 +1717,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgBetaOauth2PermissionGrant](Update-MgBetaOauth2PermissionGrant.md)
 Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant.
-An **oAuth2PermissionGrant** can be updated to change which delegated permissions are granted, by adding or removing items from the list in **scopes**.
+An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.
 
 ### [Update-MgBetaPolicyAccessReviewPolicy](Update-MgBetaPolicyAccessReviewPolicy.md)
 Update the properties of an accessReviewPolicy object.
@@ -1669,8 +1732,8 @@ Update the properties of an adminConsentRequestPolicy object.
 Update an appManagementPolicy object.
 
 ### [Update-MgBetaPolicyAuthenticationFlowPolicy](Update-MgBetaPolicyAuthenticationFlowPolicy.md)
-Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object.
-The properties **id**, **type**, and **description** cannot be modified.
+Update the Boolean selfServiceSignUp property of an authenticationFlowsPolicy object.
+The properties id, type, and description cannot be modified.
 
 ### [Update-MgBetaPolicyAuthenticationMethodPolicy](Update-MgBetaPolicyAuthenticationMethodPolicy.md)
 Update the properties of an authenticationMethodsPolicy object.
@@ -1713,7 +1776,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ### [Update-MgBetaPolicyDefaultAppManagementPolicy](Update-MgBetaPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.
@@ -1825,7 +1888,7 @@ Update the navigation property operations in users
 Update the phone number associated with a phone authentication method.
 You can't change a phone's type.
 To change a phone's type, add a new number of the desired type and then delete the object with the original type.
-If a user is enabled by policy to use SMS to sign in and the `mobile` number is changed, the system will attempt to register the number for use in that system.
+If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.
 
 ### [Update-MgBetaUserInformationProtection](Update-MgBetaUserInformationProtection.md)
 Update the navigation property informationProtection in users

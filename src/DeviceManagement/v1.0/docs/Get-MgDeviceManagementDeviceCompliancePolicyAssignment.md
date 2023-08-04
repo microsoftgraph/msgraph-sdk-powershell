@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicyAssignment
 
 ## SYNOPSIS
-The collection of assignments for this compliance policy.
+Read properties and relationships of the deviceCompliancePolicyAssignment object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceCompliancePolicyAssignment -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-The collection of assignments for this compliance policy.
+Read properties and relationships of the deviceCompliancePolicyAssignment object.
 
 ## EXAMPLES
 

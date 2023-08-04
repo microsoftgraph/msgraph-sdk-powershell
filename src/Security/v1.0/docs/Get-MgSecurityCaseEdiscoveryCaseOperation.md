@@ -41,7 +41,7 @@ Read the properties and relationships of a caseOperation object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId $ediscoveryCaseId -CaseOperationId $caseOperationId
+Get-MgSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId $ediscoveryCaseId
 
 ## PARAMETERS
 

@@ -59,7 +59,7 @@ Retrieve the properties and relationships of an accessPackageCatalog object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-Get-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
+Get-MgEntitlementManagementCatalog
 
 ## PARAMETERS
 

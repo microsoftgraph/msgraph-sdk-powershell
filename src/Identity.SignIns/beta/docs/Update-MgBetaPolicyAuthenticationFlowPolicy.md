@@ -8,8 +8,8 @@ schema: 2.0.0
 # Update-MgBetaPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
-Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object.
-The properties **id**, **type**, and **description** cannot be modified.
+Update the Boolean selfServiceSignUp property of an authenticationFlowsPolicy object.
+The properties id, type, and description cannot be modified.
 
 ## SYNTAX
 
@@ -28,8 +28,8 @@ Update-MgBetaPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthe
 ```
 
 ## DESCRIPTION
-Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object.
-The properties **id**, **type**, and **description** cannot be modified.
+Update the Boolean selfServiceSignUp property of an authenticationFlowsPolicy object.
+The properties id, type, and description cannot be modified.
 
 ## EXAMPLES
 

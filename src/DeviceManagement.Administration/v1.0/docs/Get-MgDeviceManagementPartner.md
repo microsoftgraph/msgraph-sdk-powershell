@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementPartner
 
 ## SYNOPSIS
-The list of Device Management Partners configured by the tenant.
+Read properties and relationships of the deviceManagementPartner object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementPartner -InputObject <IDeviceManagementAdministrationIdent
 ```
 
 ## DESCRIPTION
-The list of Device Management Partners configured by the tenant.
+Read properties and relationships of the deviceManagementPartner object.
 
 ## EXAMPLES
 

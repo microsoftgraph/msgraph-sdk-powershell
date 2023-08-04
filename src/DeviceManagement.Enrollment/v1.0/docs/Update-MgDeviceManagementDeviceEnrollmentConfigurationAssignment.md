@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 
 ## SYNOPSIS
-Update the navigation property assignments in deviceManagement
+Update the properties of a enrollmentConfigurationAssignment object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 ```
 
 ## DESCRIPTION
-Update the navigation property assignments in deviceManagement
+Update the properties of a enrollmentConfigurationAssignment object.
 
 ## EXAMPLES
 

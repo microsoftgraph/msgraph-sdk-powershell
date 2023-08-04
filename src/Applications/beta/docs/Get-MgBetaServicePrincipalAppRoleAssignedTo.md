@@ -41,7 +41,7 @@ App role assignments for this app or service, granted to users, groups, and othe
 Import-Module Microsoft.Graph.Beta.Applications
 ```
 
-Remove-MgBetaServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
+Get-MgBetaServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

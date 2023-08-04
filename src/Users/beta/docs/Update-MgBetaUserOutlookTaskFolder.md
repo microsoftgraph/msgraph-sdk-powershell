@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the writable properties of an Outlook task folder.
-You cannot change the **name** property value of the default task folder, 'Tasks'.
+You cannot change the name property value of the default task folder, 'Tasks'.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgBetaUserOutlookTaskFolder -InputObject <IUsersIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Update the writable properties of an Outlook task folder.
-You cannot change the **name** property value of the default task folder, 'Tasks'.
+You cannot change the name property value of the default task folder, 'Tasks'.
 
 ## EXAMPLES
 

@@ -26,11 +26,10 @@ Retrieve a list of onenoteSection objects from the specified notebook.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Notes
-# A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId
 
 ## PARAMETERS
 

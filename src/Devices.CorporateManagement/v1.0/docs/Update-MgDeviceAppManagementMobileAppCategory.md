@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileAppCategory
 
 ## SYNOPSIS
-Update the navigation property mobileAppCategories in deviceAppManagement
+Update the properties of a mobileAppCategory object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceAppManagementMobileAppCategory -InputObject <IDevicesCorporateMan
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileAppCategories in deviceAppManagement
+Update the properties of a mobileAppCategory object.
 
 ## EXAMPLES
 

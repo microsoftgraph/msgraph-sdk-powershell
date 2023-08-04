@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileAppConfiguration
 
 ## SYNOPSIS
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+Create a new iosMobileAppConfiguration object.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ New-MgDeviceAppManagementMobileAppConfiguration
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+Create a new iosMobileAppConfiguration object.
 
 ## EXAMPLES
 

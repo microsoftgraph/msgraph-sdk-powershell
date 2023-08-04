@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: bbb269a1-44be-42a3-89fa-4d4f7918323e
+Module Guid: 60912c3c-cdf3-4446-974c-2e2e9223d28c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -125,15 +125,15 @@ Get the number of the resource
 ### [New-MgUserInferenceClassificationOverride](New-MgUserInferenceClassificationOverride.md)
 Create an override for a sender identified by an SMTP address.
 Future messages from that SMTP address will be consistently classified\nas specified in the override.
-**Note**
+Note
 
 ### [New-MgUserMailFolder](New-MgUserMailFolder.md)
 Use this API to create a new mail folder in the root folder of the user's mailbox.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
 Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
@@ -175,8 +175,8 @@ Outlook carries out those actions if an incoming message in the user's Inbox mee
 
 ### [New-MgUserMessage](New-MgUserMessage.md)
 Create a draft of a new message in either JSON or MIME format.
-When using JSON format, you can:\n- Include an attachment to the **message**.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
+When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
 By default, this operation saves the draft in the Drafts folder.
 Send the draft message in a subsequent operation.
 Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
@@ -212,7 +212,7 @@ Delete navigation property attachments for users
 
 ### [Remove-MgUserMailFolderChildFolderMessageExtension](Remove-MgUserMailFolderChildFolderMessageExtension.md)
 Delete an open extension (openTypeExtension object) from the specified instance of a resource.
-See the table in the Permissions section for the list of resources that support open extensions.
+For the list of resources that support open extensions, see the table in the Permissions section.
 
 ### [Remove-MgUserMailFolderChildFolderMessageRule](Remove-MgUserMailFolderChildFolderMessageRule.md)
 Delete the specified messageRule object.
@@ -225,7 +225,7 @@ Delete navigation property attachments for users
 
 ### [Remove-MgUserMailFolderMessageExtension](Remove-MgUserMailFolderMessageExtension.md)
 Delete an open extension (openTypeExtension object) from the specified instance of a resource.
-See the table in the Permissions section for the list of resources that support open extensions.
+For the list of resources that support open extensions, see the table in the Permissions section.
 
 ### [Remove-MgUserMailFolderMessageRule](Remove-MgUserMailFolderMessageRule.md)
 Delete the specified messageRule object.
@@ -238,7 +238,7 @@ Delete navigation property attachments for users
 
 ### [Remove-MgUserMessageExtension](Remove-MgUserMessageExtension.md)
 Delete an open extension (openTypeExtension object) from the specified instance of a resource.
-See the table in the Permissions section for the list of resources that support open extensions.
+For the list of resources that support open extensions, see the table in the Permissions section.
 
 ### [Set-MgUserMailFolderChildFolderMessageContent](Set-MgUserMailFolderChildFolderMessageContent.md)
 Update media content for the navigation property messages in users
@@ -253,7 +253,7 @@ Update media content for the navigation property messages in users
 Update the navigation property inferenceClassification in users
 
 ### [Update-MgUserInferenceClassificationOverride](Update-MgUserInferenceClassificationOverride.md)
-Change the **classifyAs** field of an override as specified.
+Change the classifyAs field of an override as specified.
 You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance.
 If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override.
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.

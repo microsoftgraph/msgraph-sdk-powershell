@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaPrintConnector
 
 ## SYNOPSIS
-Update the properties of a **printConnector** object.
+Update the properties of a printConnector object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Update the properties of a **printConnector** object.
+Update the properties of a printConnector object.
 
 ## EXAMPLES
 

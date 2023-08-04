@@ -11,7 +11,7 @@ schema: 2.0.0
 Retrieve the status of a long-running operation, represented by a longRunningOperation object.
 A long-running operation is initiated when you reset a user's password.
 This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list.
-The possible states of the long-running operation are `notStarted`, `running`, `succeeded`, `failed`, `unknownFutureValue` where `succeeded` and `failed` are terminal states.
+The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Get-MgUserAuthenticationOperation -InputObject <IIdentitySignInsIdentity> [-Expa
 Retrieve the status of a long-running operation, represented by a longRunningOperation object.
 A long-running operation is initiated when you reset a user's password.
 This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list.
-The possible states of the long-running operation are `notStarted`, `running`, `succeeded`, `failed`, `unknownFutureValue` where `succeeded` and `failed` are terminal states.
+The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
 
 ## EXAMPLES
 

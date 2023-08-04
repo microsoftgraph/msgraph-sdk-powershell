@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementManagedEBookAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for deviceAppManagement
+Deletes a iosVppEBookAssignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for deviceAppManagement
+Deletes a iosVppEBookAssignment.
 
 ## EXAMPLES
 

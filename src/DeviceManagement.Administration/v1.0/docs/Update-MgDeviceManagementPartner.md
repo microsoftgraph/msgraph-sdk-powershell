@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementPartner
 
 ## SYNOPSIS
-Update the navigation property deviceManagementPartners in deviceManagement
+Update the properties of a deviceManagementPartner object.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgDeviceManagementPartner -InputObject <IDeviceManagementAdministrationId
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceManagementPartners in deviceManagement
+Update the properties of a deviceManagementPartner object.
 
 ## EXAMPLES
 

@@ -48,13 +48,13 @@ This function is transitive.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.DirectoryObjects
-$params = @{
-	SecurityEnabledOnly = $false
-}
-Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
 
+$params = @{
+	securityEnabledOnly = $false
+}
 
+Get-MgDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
 
 ## PARAMETERS
 

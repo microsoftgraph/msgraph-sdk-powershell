@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
-Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property result is `completed`, the report has finished downloading to the location specified by the **exportUrl** property.
+Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource.
+When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.
 
 ## SYNTAX
 
@@ -30,8 +30,8 @@ New-MgBetaDeviceManagementVirtualEndpointReportExportJob -BodyParameter <IMicros
 
 ## DESCRIPTION
 Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
-Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property result is `completed`, the report has finished downloading to the location specified by the **exportUrl** property.
+Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource.
+When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.
 
 ## EXAMPLES
 

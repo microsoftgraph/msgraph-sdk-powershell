@@ -13,7 +13,7 @@ A call that does not receive this request within 45 minutes is considered inacti
 At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
 We recommend that you send a request in shorter time intervals (every 15 minutes).
 Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error.
+Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
 
 ## SYNTAX
@@ -35,7 +35,7 @@ A call that does not receive this request within 45 minutes is considered inacti
 At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
 We recommend that you send a request in shorter time intervals (every 15 minutes).
 Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error.
+Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
 
 ## EXAMPLES
@@ -43,10 +43,9 @@ The resources related to the call should be cleaned up on the application side.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Invoke-MgKeepCommunicationCallAlive -CallId $callId
 ```
 
-
+Invoke-MgKeepCommunicationCallAlive -CallId $callId
 
 ## PARAMETERS
 

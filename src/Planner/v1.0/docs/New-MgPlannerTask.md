@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerTask
 
 ## SYNOPSIS
-Create a new **plannerTask**.
+Create a new plannerTask.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ New-MgPlannerTask -BodyParameter <IMicrosoftGraphPlannerTask> [-Confirm] [-WhatI
 ```
 
 ## DESCRIPTION
-Create a new **plannerTask**.
+Create a new plannerTask.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaReauthorizeUserDriveListSubscription
 
 ## SYNOPSIS
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgBetaReauthorizeUserDriveListSubscription -InputObject <IUsersActionsIde
 ```
 
 ## DESCRIPTION
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ## EXAMPLES
 

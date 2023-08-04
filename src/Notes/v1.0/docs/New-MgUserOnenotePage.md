@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new OneNote page in the default section of the default notebook.
-To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.
-Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook.
+To create a page in a different section in the default notebook, you can use the sectionName query parameter.
+Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
 
 ## SYNTAX
@@ -47,8 +47,8 @@ New-MgUserOnenotePage -InputObject <INotesIdentity> [-AdditionalProperties <Hash
 
 ## DESCRIPTION
 Create a new OneNote page in the default section of the default notebook.
-To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.
-Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook.
+To create a page in a different section in the default notebook, you can use the sectionName query parameter.
+Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
 
 ## EXAMPLES

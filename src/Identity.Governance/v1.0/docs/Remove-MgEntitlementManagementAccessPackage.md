@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an accessPackage object.
-You cannot delete an access package if it has any **accessPackageAssignment**.
+You cannot delete an access package if it has any accessPackageAssignment.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIde
 
 ## DESCRIPTION
 Delete an accessPackage object.
-You cannot delete an access package if it has any **accessPackageAssignment**.
+You cannot delete an access package if it has any accessPackageAssignment.
 
 ## EXAMPLES
 

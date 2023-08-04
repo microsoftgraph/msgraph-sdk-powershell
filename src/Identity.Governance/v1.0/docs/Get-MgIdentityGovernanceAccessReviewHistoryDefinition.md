@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve an accessReviewHistoryDefinition object by its identifier.
 All the properties of the access review history definition object are returned.
-If the definition is 30 days or older, a `404 Not Found` error is returned.
+If the definition is 30 days or older, a 404 Not Found error is returned.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgIdentityGovernanceAccessReviewHistoryDefinition -InputObject <IIdentityGov
 ## DESCRIPTION
 Retrieve an accessReviewHistoryDefinition object by its identifier.
 All the properties of the access review history definition object are returned.
-If the definition is 30 days or older, a `404 Not Found` error is returned.
+If the definition is 30 days or older, a 404 Not Found error is returned.
 
 ## EXAMPLES
 

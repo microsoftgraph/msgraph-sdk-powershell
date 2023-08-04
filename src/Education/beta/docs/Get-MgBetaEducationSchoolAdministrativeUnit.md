@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaEducationSchoolAdministrativeUnit
 
 ## SYNOPSIS
-Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
+Retrieve the simple directory administrativeUnit that corresponds to this educationSchool.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-
 ```
 
 ## DESCRIPTION
-Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
+Retrieve the simple directory administrativeUnit that corresponds to this educationSchool.
 
 ## EXAMPLES
 
@@ -132,6 +132,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
+  - `[EducationModuleId <String>]`: The unique identifier of educationModule
+  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

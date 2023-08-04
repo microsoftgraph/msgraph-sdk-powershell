@@ -45,12 +45,8 @@ Nullable.
 Import-Module Microsoft.Graph.Beta.Mail
 ```
 
-$params = @{
-	classifyAs = "focused"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Get-MgBetaUserInferenceClassificationOverride -UserId $userId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
-Update the navigation property notificationMessageTemplates in deviceManagement
+Update the properties of a notificationMessageTemplate object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Update the navigation property notificationMessageTemplates in deviceManagement
+Update the properties of a notificationMessageTemplate object.
 
 ## EXAMPLES
 

@@ -556,6 +556,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Content <String>]`: 
         - `[ContentType <String>]`: bodyType
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[ModuleUrl <String>]`: 
       - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
       - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1076,7 +1077,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
             - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
               - `[ConsentType <String>]`: Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
               - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
               - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
@@ -1098,7 +1099,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Fields <IMicrosoftGraphPasswordSingleSignOnField[]>]`: 
                 - `[CustomizedLabel <String>]`: Title/label override for customization.
                 - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
-                - `[FieldId <String>]`: Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
+                - `[FieldId <String>]`: Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
                 - `[Type <String>]`: Type of the credential. The values can be text, password.
             - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
             - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
@@ -1680,6 +1681,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[EnableSingleSignOn <Boolean?>]`: 
             - `[ConnectivityResult <IMicrosoftGraphCloudPcConnectivityResult>]`: cloudPcConnectivityResult
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[FailedHealthCheckItems <IMicrosoftGraphCloudPcHealthCheckItem[]>]`: A list of failed health check items. If the status property is available, this property will be empty.
@@ -2000,7 +2004,7 @@ To create the parameters described below, construct a hash table containing the 
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Id <String>]`: The unique identifier for an entity. Read-only.
                           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                          - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
@@ -2019,7 +2023,7 @@ To create the parameters described below, construct a hash table containing the 
                         - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
                         - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
                           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                          - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                           - `[Id <String>]`: The unique identifier for an entity. Read-only.
                           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
@@ -2232,8 +2236,8 @@ To create the parameters described below, construct a hash table containing the 
                       - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
                       - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
                       - `[IncludeResourceData <Boolean?>]`: Optional. When set to true, change notifications include resource data (such as content of a chat message).
-                      - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-                      - `[LifecycleNotificationUrl <String>]`: Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.
+                      - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
+                      - `[LifecycleNotificationUrl <String>]`: Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.
                       - `[NotificationContentType <String>]`: Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
                       - `[NotificationQueryOptions <String>]`: Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.
                       - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
@@ -2253,7 +2257,7 @@ To create the parameters described below, construct a hash table containing the 
                       - `[Source <IMicrosoftGraphThumbnail>]`: thumbnail
                     - `[Versions <IMicrosoftGraphDriveItemVersion[]>]`: The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
                       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                      - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                      - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                       - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                       - `[Id <String>]`: The unique identifier for an entity. Read-only.
                       - `[Content <Byte[]>]`: 
@@ -2907,7 +2911,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-            - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
+            - `[Pages <IMicrosoftGraphBaseSitePage[]>]`: The collection of pages in the baseSitePages list in this site.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CreatedByUser <IMicrosoftGraphUser>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -2920,60 +2924,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
-                  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                  - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
-                    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                    - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
-                      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                    - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
-                  - `[Emphasis <String>]`: sectionEmphasisType
-                  - `[Layout <String>]`: horizontalSectionLayoutType
-                - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                  - `[Emphasis <String>]`: sectionEmphasisType
-                  - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
-              - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[PageLayout <String>]`: pageLayoutType
-              - `[PromotionKind <String>]`: pagePromotionType
               - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-              - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[CommentCount <Int32?>]`: Count of comments.
-                - `[LikeCount <Int32?>]`: Count of likes.
-                - `[ShareCount <Int32?>]`: Count of shares.
-              - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
-              - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
-              - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
               - `[Title <String>]`: Title of the sitePage.
-              - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[AlternativeText <String>]`: Alternative text on the title area.
-                - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
-                - `[ImageWebUrl <String>]`: URL of the image in the title area.
-                - `[Layout <String>]`: titleAreaLayoutType
-                - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-                    - `[Key <String>]`: Key of the meta data.
-                    - `[Value <String>]`: Value of the meta data.
-                  - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
-                    - `[Key <String>]`: Key of the metadata.
-                    - `[Value <IMicrosoftGraphJson>]`: Json
-                  - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
-                  - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-                  - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-                  - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-                - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
-                - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
-                - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
-                - `[TextAboveTitle <String>]`: The text above title line.
-                - `[TextAlignment <String>]`: titleAreaTextAlignmentType
-              - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
             - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
             - `[Root <IMicrosoftGraphRoot>]`: root
             - `[Settings <IMicrosoftGraphSiteSettings>]`: siteSettings
@@ -4017,9 +3970,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[Subject <String>]`: The subject of the online meeting.
             - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Content <Byte[]>]`: A field that represents the content of the transcript. Read-only.
+              - `[Content <Byte[]>]`: The content of the transcript. Read-only.
               - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[MetadataContent <Byte[]>]`: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
             - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5094,7 +5047,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
           - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
           - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-          - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: 
+          - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
           - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -5351,6 +5304,17 @@ To create the parameters described below, construct a hash table containing the 
       - `[User <IMicrosoftGraphUser>]`: user
       - `[UserPrincipalName <String>]`: The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
       - `[UserType <String>]`: A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
+    - `[Modules <IMicrosoftGraphEducationModule[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[IsPinned <Boolean?>]`: 
+      - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
+      - `[Status <String>]`: educationModuleStatus
     - `[Schools <IMicrosoftGraphEducationSchool[]>]`: All schools that this class is associated with. Nullable.
     - `[Teachers <IMicrosoftGraphEducationUser[]>]`: All teachers in the class. Nullable.
     - `[Term <IMicrosoftGraphEducationTerm>]`: educationTerm
@@ -5420,6 +5384,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Content <String>]`: 
       - `[ContentType <String>]`: bodyType
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[ModuleUrl <String>]`: 
     - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
     - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5951,7 +5916,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
           - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+            - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             - `[ConsentType <String>]`: Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
             - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
             - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
@@ -5973,7 +5938,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Fields <IMicrosoftGraphPasswordSingleSignOnField[]>]`: 
               - `[CustomizedLabel <String>]`: Title/label override for customization.
               - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
-              - `[FieldId <String>]`: Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
+              - `[FieldId <String>]`: Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
               - `[Type <String>]`: Type of the credential. The values can be text, password.
           - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
           - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
@@ -6555,6 +6520,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+          - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[EnableSingleSignOn <Boolean?>]`: 
           - `[ConnectivityResult <IMicrosoftGraphCloudPcConnectivityResult>]`: cloudPcConnectivityResult
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[FailedHealthCheckItems <IMicrosoftGraphCloudPcHealthCheckItem[]>]`: A list of failed health check items. If the status property is available, this property will be empty.
@@ -6875,7 +6843,7 @@ To create the parameters described below, construct a hash table containing the 
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                           - `[Id <String>]`: The unique identifier for an entity. Read-only.
                         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                        - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                        - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                         - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
                           - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
@@ -6894,7 +6862,7 @@ To create the parameters described below, construct a hash table containing the 
                       - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
                       - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
                         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                        - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                        - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                         - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                         - `[Id <String>]`: The unique identifier for an entity. Read-only.
                         - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
@@ -7107,8 +7075,8 @@ To create the parameters described below, construct a hash table containing the 
                     - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
                     - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
                     - `[IncludeResourceData <Boolean?>]`: Optional. When set to true, change notifications include resource data (such as content of a chat message).
-                    - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-                    - `[LifecycleNotificationUrl <String>]`: Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.
+                    - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
+                    - `[LifecycleNotificationUrl <String>]`: Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.
                     - `[NotificationContentType <String>]`: Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
                     - `[NotificationQueryOptions <String>]`: Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.
                     - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
@@ -7128,7 +7096,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[Source <IMicrosoftGraphThumbnail>]`: thumbnail
                   - `[Versions <IMicrosoftGraphDriveItemVersion[]>]`: The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
                     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                    - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                     - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                     - `[Id <String>]`: The unique identifier for an entity. Read-only.
                     - `[Content <Byte[]>]`: 
@@ -7782,7 +7750,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-          - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
+          - `[Pages <IMicrosoftGraphBaseSitePage[]>]`: The collection of pages in the baseSitePages list in this site.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -7795,60 +7763,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
-                - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
-                  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                  - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
-                    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                  - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
-                - `[Emphasis <String>]`: sectionEmphasisType
-                - `[Layout <String>]`: horizontalSectionLayoutType
-              - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[Emphasis <String>]`: sectionEmphasisType
-                - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
-            - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[PageLayout <String>]`: pageLayoutType
-            - `[PromotionKind <String>]`: pagePromotionType
             - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-            - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[CommentCount <Int32?>]`: Count of comments.
-              - `[LikeCount <Int32?>]`: Count of likes.
-              - `[ShareCount <Int32?>]`: Count of shares.
-            - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
-            - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
-            - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
             - `[Title <String>]`: Title of the sitePage.
-            - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[AlternativeText <String>]`: Alternative text on the title area.
-              - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
-              - `[ImageWebUrl <String>]`: URL of the image in the title area.
-              - `[Layout <String>]`: titleAreaLayoutType
-              - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-                  - `[Key <String>]`: Key of the meta data.
-                  - `[Value <String>]`: Value of the meta data.
-                - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
-                  - `[Key <String>]`: Key of the metadata.
-                  - `[Value <IMicrosoftGraphJson>]`: Json
-                - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
-                - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-                - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-                - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-              - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
-              - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
-              - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
-              - `[TextAboveTitle <String>]`: The text above title line.
-              - `[TextAlignment <String>]`: titleAreaTextAlignmentType
-            - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
           - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
           - `[Root <IMicrosoftGraphRoot>]`: root
           - `[Settings <IMicrosoftGraphSiteSettings>]`: siteSettings
@@ -8892,9 +8809,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[Subject <String>]`: The subject of the online meeting.
           - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Content <Byte[]>]`: A field that represents the content of the transcript. Read-only.
+            - `[Content <Byte[]>]`: The content of the transcript. Read-only.
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            - `[MetadataContent <Byte[]>]`: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+            - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
           - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9973,7 +9890,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
         - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
         - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-        - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: 
+        - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
         - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -10259,6 +10176,17 @@ To create the parameters described below, construct a hash table containing the 
     - `[User <IMicrosoftGraphUser>]`: user
     - `[UserPrincipalName <String>]`: The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
     - `[UserType <String>]`: A string value that can be used to classify user types in your directory, such as 'Member' and 'Guest'. Supports /$filter.
+  - `[Modules <IMicrosoftGraphEducationModule[]>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[IsPinned <Boolean?>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
+    - `[Status <String>]`: educationModuleStatus
   - `[Schools <IMicrosoftGraphEducationSchool[]>]`: All schools that this class is associated with. Nullable.
   - `[Teachers <IMicrosoftGraphEducationUser[]>]`: All teachers in the class. Nullable.
   - `[Term <IMicrosoftGraphEducationTerm>]`: educationTerm
@@ -10323,6 +10251,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Content <String>]`: 
       - `[ContentType <String>]`: bodyType
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[ModuleUrl <String>]`: 
     - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
     - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10869,7 +10798,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[NotificationEmailAddresses <String[]>]`: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
             - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[ClientId <String>]`: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              - `[ClientId <String>]`: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
               - `[ConsentType <String>]`: Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
               - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
               - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).
@@ -10891,7 +10820,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Fields <IMicrosoftGraphPasswordSingleSignOnField[]>]`: 
                 - `[CustomizedLabel <String>]`: Title/label override for customization.
                 - `[DefaultLabel <String>]`: Label that would be used if no customizedLabel is provided. Read only.
-                - `[FieldId <String>]`: Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.
+                - `[FieldId <String>]`: Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.
                 - `[Type <String>]`: Type of the credential. The values can be text, password.
             - `[PreferredSingleSignOnMode <String>]`: Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
             - `[PreferredTokenSigningKeyEndDateTime <DateTime?>]`: Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
@@ -11469,6 +11398,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            - `[ConnectionSettings <IMicrosoftGraphCloudPcConnectionSettings>]`: cloudPcConnectionSettings
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[EnableSingleSignOn <Boolean?>]`: 
             - `[ConnectivityResult <IMicrosoftGraphCloudPcConnectivityResult>]`: cloudPcConnectivityResult
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[FailedHealthCheckItems <IMicrosoftGraphCloudPcHealthCheckItem[]>]`: A list of failed health check items. If the status property is available, this property will be empty.
@@ -11789,7 +11721,7 @@ To create the parameters described below, construct a hash table containing the 
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Id <String>]`: The unique identifier for an entity. Read-only.
                           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                          - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                             - `[(Any) <Object>]`: This indicates any property can be added to this object.
                             - `[Level <String>]`: The state of publication for this document. Either published or checkout. Read-only.
@@ -11808,7 +11740,7 @@ To create the parameters described below, construct a hash table containing the 
                         - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
                         - `[Versions <IMicrosoftGraphListItemVersion[]>]`: The list of previous versions of the list item.
                           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                          - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                          - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                           - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                           - `[Id <String>]`: The unique identifier for an entity. Read-only.
                           - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
@@ -12021,8 +11953,8 @@ To create the parameters described below, construct a hash table containing the 
                       - `[EncryptionCertificateId <String>]`: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Required when includeResourceData is true.
                       - `[ExpirationDateTime <DateTime?>]`: Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
                       - `[IncludeResourceData <Boolean?>]`: Optional. When set to true, change notifications include resource data (such as content of a chat message).
-                      - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-                      - `[LifecycleNotificationUrl <String>]`: Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.
+                      - `[LatestSupportedTlsVersion <String>]`: Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
+                      - `[LifecycleNotificationUrl <String>]`: Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.
                       - `[NotificationContentType <String>]`: Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
                       - `[NotificationQueryOptions <String>]`: Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.
                       - `[NotificationUrl <String>]`: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
@@ -12042,7 +11974,7 @@ To create the parameters described below, construct a hash table containing the 
                       - `[Source <IMicrosoftGraphThumbnail>]`: thumbnail
                     - `[Versions <IMicrosoftGraphDriveItemVersion[]>]`: The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
                       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-                      - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.
+                      - `[LastModifiedDateTime <DateTime?>]`: Date and time when the version was last modified. Read-only.
                       - `[Publication <IMicrosoftGraphPublicationFacet>]`: publicationFacet
                       - `[Id <String>]`: The unique identifier for an entity. Read-only.
                       - `[Content <Byte[]>]`: 
@@ -12696,7 +12628,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[SectionGroups <IMicrosoftGraphSectionGroup[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
               - `[Sections <IMicrosoftGraphOnenoteSection[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
             - `[Operations <IMicrosoftGraphRichLongRunningOperation[]>]`: The collection of long running operations for the site.
-            - `[Pages <IMicrosoftGraphSitePage[]>]`: The collection of pages in the SitePages list in this site.
+            - `[Pages <IMicrosoftGraphBaseSitePage[]>]`: The collection of pages in the baseSitePages list in this site.
               - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
               - `[CreatedByUser <IMicrosoftGraphUser>]`: user
               - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -12709,60 +12641,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
               - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[CanvasLayout <IMicrosoftGraphCanvasLayout>]`: canvasLayout
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                - `[HorizontalSections <IMicrosoftGraphHorizontalSection[]>]`: Collection of horizontal sections on the SharePoint page.
-                  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                  - `[Columns <IMicrosoftGraphHorizontalSectionColumn[]>]`: The set of vertical columns in this section.
-                    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                    - `[Webparts <IMicrosoftGraphWebPart[]>]`: The collection of WebParts in this column.
-                      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                    - `[Width <Int32?>]`: Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.
-                  - `[Emphasis <String>]`: sectionEmphasisType
-                  - `[Layout <String>]`: horizontalSectionLayoutType
-                - `[VerticalSection <IMicrosoftGraphVerticalSection>]`: verticalSection
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-                  - `[Emphasis <String>]`: sectionEmphasisType
-                  - `[Webparts <IMicrosoftGraphWebPart[]>]`: The set of web parts in this section.
-              - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[PageLayout <String>]`: pageLayoutType
-              - `[PromotionKind <String>]`: pagePromotionType
               - `[PublishingState <IMicrosoftGraphPublicationFacet>]`: publicationFacet
-              - `[Reactions <IMicrosoftGraphReactionsFacet>]`: reactionsFacet
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[CommentCount <Int32?>]`: Count of comments.
-                - `[LikeCount <Int32?>]`: Count of likes.
-                - `[ShareCount <Int32?>]`: Count of shares.
-              - `[ShowComments <Boolean?>]`: Determines whether or not to show comments at the bottom of the page.
-              - `[ShowRecommendedPages <Boolean?>]`: Determines whether or not to show recommended pages at the bottom of the page.
-              - `[ThumbnailWebUrl <String>]`: Url of the sitePage's thumbnail image
               - `[Title <String>]`: Title of the sitePage.
-              - `[TitleArea <IMicrosoftGraphTitleArea>]`: titleArea
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[AlternativeText <String>]`: Alternative text on the title area.
-                - `[EnableGradientEffect <Boolean?>]`: Indicates whether the title area has a gradient effect enabled.
-                - `[ImageWebUrl <String>]`: URL of the image in the title area.
-                - `[Layout <String>]`: titleAreaLayoutType
-                - `[ServerProcessedContent <IMicrosoftGraphServerProcessedContent>]`: serverProcessedContent
-                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[ComponentDependencies <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-                    - `[Key <String>]`: Key of the meta data.
-                    - `[Value <String>]`: Value of the meta data.
-                  - `[CustomMetadata <IMicrosoftGraphMetaDataKeyValuePair[]>]`: A key-value map where keys are string identifier and values are object of custom key-value pair.
-                    - `[Key <String>]`: Key of the metadata.
-                    - `[Value <IMicrosoftGraphJson>]`: Json
-                  - `[HtmlStrings <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
-                  - `[ImageSources <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-                  - `[Links <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-                  - `[SearchablePlainTexts <IMicrosoftGraphMetaDataKeyStringPair[]>]`: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-                - `[ShowAuthor <Boolean?>]`: Indicates whether the author should be shown in title area.
-                - `[ShowPublishedDate <Boolean?>]`: Indicates whether the published date should be shown in title area.
-                - `[ShowTextBlockAboveTitle <Boolean?>]`: Indicates whether the text block above title should be shown in title area.
-                - `[TextAboveTitle <String>]`: The text above title line.
-                - `[TextAlignment <String>]`: titleAreaTextAlignmentType
-              - `[WebParts <IMicrosoftGraphWebPart[]>]`: Collection of webparts on the SharePoint page
             - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
             - `[Root <IMicrosoftGraphRoot>]`: root
             - `[Settings <IMicrosoftGraphSiteSettings>]`: siteSettings
@@ -13806,9 +13687,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[Subject <String>]`: The subject of the online meeting.
             - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Content <Byte[]>]`: A field that represents the content of the transcript. Read-only.
+              - `[Content <Byte[]>]`: The content of the transcript. Read-only.
               - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[MetadataContent <Byte[]>]`: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
             - `[VirtualAppointment <IMicrosoftGraphVirtualAppointment>]`: virtualAppointment
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14887,7 +14768,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[LastSignInRequestId <String>]`: Request identifier of the last interactive sign-in performed by this user.
           - `[SignInSessionsValidFromDateTime <DateTime?>]`: Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
           - `[Skills <String[]>]`: A list for the user to enumerate their skills. Returned only on $select.
-          - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: 
+          - `[Sponsors <IMicrosoftGraphDirectoryObject[]>]`: The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
           - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -15087,6 +14968,17 @@ To create the parameters described below, construct a hash table containing the 
         - `[OnPremisesGroupType <String>]`: Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default
     - `[MailNickname <String>]`: Mail name for sending email to all members, if this is enabled.
     - `[Members <IMicrosoftGraphEducationUser[]>]`: All users in the class. Nullable.
+    - `[Modules <IMicrosoftGraphEducationModule[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[IsPinned <Boolean?>]`: 
+      - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+      - `[Resources <IMicrosoftGraphEducationModuleResource[]>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
+      - `[Status <String>]`: educationModuleStatus
     - `[Schools <IMicrosoftGraphEducationSchool[]>]`: All schools that this class is associated with. Nullable.
       - `[Description <String>]`: Organization description.
       - `[DisplayName <String>]`: Organization display name.

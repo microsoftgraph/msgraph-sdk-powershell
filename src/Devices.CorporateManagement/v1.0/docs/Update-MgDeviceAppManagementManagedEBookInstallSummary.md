@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementManagedEBookInstallSummary
 
 ## SYNOPSIS
-Update the navigation property installSummary in deviceAppManagement
+Update the properties of a eBookInstallSummary object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceAppManagementManagedEBookInstallSummary -InputObject <IDevicesCor
 ```
 
 ## DESCRIPTION
-Update the navigation property installSummary in deviceAppManagement
+Update the properties of a eBookInstallSummary object.
 
 ## EXAMPLES
 

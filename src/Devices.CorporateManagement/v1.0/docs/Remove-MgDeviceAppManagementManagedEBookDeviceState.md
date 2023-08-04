@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementManagedEBookDeviceState
 
 ## SYNOPSIS
-Delete navigation property deviceStates for deviceAppManagement
+Deletes a deviceInstallState.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementManagedEBookDeviceState -InputObject <IDevicesCorpor
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceStates for deviceAppManagement
+Deletes a deviceInstallState.
 
 ## EXAMPLES
 

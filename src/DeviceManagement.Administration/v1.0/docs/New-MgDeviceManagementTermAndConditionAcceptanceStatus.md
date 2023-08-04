@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTermAndConditionAcceptanceStatus
 
 ## SYNOPSIS
-Create new navigation property to acceptanceStatuses for deviceManagement
+Create a new termsAndConditionsAcceptanceStatus object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgDeviceManagementTermAndConditionAcceptanceStatus -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Create new navigation property to acceptanceStatuses for deviceManagement
+Create a new termsAndConditionsAcceptanceStatus object.
 
 ## EXAMPLES
 

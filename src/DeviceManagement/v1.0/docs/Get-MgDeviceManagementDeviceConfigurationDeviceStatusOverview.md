@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview
 
 ## SYNOPSIS
-Device Configuration devices status overview
+Read properties and relationships of the deviceConfigurationDeviceOverview object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementDeviceConfigurationDeviceStatusOverview -InputObject <IDev
 ```
 
 ## DESCRIPTION
-Device Configuration devices status overview
+Read properties and relationships of the deviceConfigurationDeviceOverview object.
 
 ## EXAMPLES
 

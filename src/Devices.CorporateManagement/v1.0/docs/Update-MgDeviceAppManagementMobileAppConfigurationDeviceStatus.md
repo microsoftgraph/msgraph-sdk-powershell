@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatus
 
 ## SYNOPSIS
-Update the navigation property deviceStatuses in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatus
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceStatuses in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
-The **start** and **end** properties are always returned in UTC.
+The start and end properties are always returned in UTC.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-ExpandPr
 
 ## DESCRIPTION
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
-The **start** and **end** properties are always returned in UTC.
+The start and end properties are always returned in UTC.
 
 ## EXAMPLES
 

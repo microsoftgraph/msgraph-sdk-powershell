@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPlannerTaskProgressTaskBoardFormat
 
 ## SYNOPSIS
-Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaPlannerTaskProgressTaskBoardFormat -InputObject <IPlannerIdentity> [-E
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 
 ## EXAMPLES
 

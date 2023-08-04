@@ -52,35 +52,24 @@ For more information, see getCompatibleHubContentTypes and the blog post Syntex 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-$params = @{
-	ContentTypeId = "String"
-}
-Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
+$params = @{
+	contentTypeId = "0x0101"
+}
 
+Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-$params = @{
-	ContentTypeId = "String"
-}
-Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
 $params = @{
-	ContentTypeId = "0x0101"
+	contentTypeId = "String"
 }
+
 Add-MgBetaSiteListContentTypeCopyFromContentTypeHub -SiteId $siteId -ListId $listId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

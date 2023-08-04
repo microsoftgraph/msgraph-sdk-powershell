@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 28867cca-1e46-4820-88d8-5d00a9d04cd4
+Module Guid: 4c8f593c-411c-4a11-a835-d42b24cdfe1a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,8 +17,8 @@ You can also use the method addMembers to add members.
 
 ### [Add-MgBetaWindowsUpdatesDeploymentAudienceMember](Add-MgBetaWindowsUpdatesDeploymentAudienceMember.md)
 Add members to an updatableAssetGroup.
-You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist.
+You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
+Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 
 ### [Add-MgBetaWindowsUpdatesDeploymentAudienceMemberById](Add-MgBetaWindowsUpdatesDeploymentAudienceMemberById.md)
@@ -27,8 +27,8 @@ You can also use the method addMembers to add members.
 
 ### [Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember](Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember.md)
 Add members to an updatableAssetGroup.
-You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist.
+You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
+Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 
 ### [Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById](Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById.md)
@@ -37,8 +37,8 @@ You can also use the method addMembers to add members.
 
 ### [Add-MgBetaWindowsUpdatesPolicyAudienceMember](Add-MgBetaWindowsUpdatesPolicyAudienceMember.md)
 Add members to an updatableAssetGroup.
-You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist.
+You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
+Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 
 ### [Add-MgBetaWindowsUpdatesPolicyAudienceMemberById](Add-MgBetaWindowsUpdatesPolicyAudienceMemberById.md)
@@ -47,8 +47,8 @@ You can also use the method addMembers to add members.
 
 ### [Add-MgBetaWindowsUpdatesUpdatableAssetMember](Add-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Add members to an updatableAssetGroup.
-You can add azureADDevice resources as members, but may not add **updatableAssetGroup** resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an **azureADDevice** object, if it does not already exist.
+You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
+Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 
 ### [Add-MgBetaWindowsUpdatesUpdatableAssetMemberById](Add-MgBetaWindowsUpdatesUpdatableAssetMemberById.md)
@@ -111,13 +111,13 @@ The policy this compliance change is a member of.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesResourceConnection](Get-MgBetaWindowsUpdatesResourceConnection.md)
-Read the properties and relationships of an operationalInsightsConnection object.
+Read the properties and relationships of a resourceConnection object.
 
 ### [Get-MgBetaWindowsUpdatesResourceConnectionCount](Get-MgBetaWindowsUpdatesResourceConnectionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties and relationships of an updatableAssetGroup object.
+Read the properties of an azureADDevice object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -190,7 +190,7 @@ Create a new operationalInsightsConnection object.
 
 ### [New-MgBetaWindowsUpdatesUpdatableAsset](New-MgBetaWindowsUpdatesUpdatableAsset.md)
 Create a new updatableAssetGroup object.
-The **updatableAssetGroup** resource inherits from updatableAsset.
+The updatableAssetGroup resource inherits from updatableAsset.
 
 ### [Remove-MgBetaWindowsUpdatesDeployment](Remove-MgBetaWindowsUpdatesDeployment.md)
 Delete a deployment object.
@@ -231,7 +231,7 @@ You can also use the method removeMembers to remove members.
 Delete a contentApproval object.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
-Delete an operationalInsightsConnection object.
+Delete a resourceConnection object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
 Delete an updatableAssetGroup object.
@@ -251,14 +251,14 @@ Update the properties of a deployment object.
 ### [Update-MgBetaWindowsUpdatesDeploymentAudience](Update-MgBetaWindowsUpdatesDeploymentAudience.md)
 Update the members and exclusions collections of a deploymentAudience.
 Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist.
-If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
-If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.
+If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
+If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.
 
 ### [Update-MgBetaWindowsUpdatesDeploymentAudienceById](Update-MgBetaWindowsUpdatesDeploymentAudienceById.md)
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
 Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
-If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
-You can also use the method updateAudience to update the **deploymentAudience**.
+If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
+You can also use the method updateAudience to update the deploymentAudience.
 
 ### [Update-MgBetaWindowsUpdatesPolicy](Update-MgBetaWindowsUpdatesPolicy.md)
 Update the properties of an updatePolicy object.
@@ -269,8 +269,8 @@ Update the navigation property audience in admin
 ### [Update-MgBetaWindowsUpdatesPolicyAudienceById](Update-MgBetaWindowsUpdatesPolicyAudienceById.md)
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
 Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
-If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
-You can also use the method updateAudience to update the **deploymentAudience**.
+If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
+You can also use the method updateAudience to update the deploymentAudience.
 
 ### [Update-MgBetaWindowsUpdatesPolicyAudienceExclusion](Update-MgBetaWindowsUpdatesPolicyAudienceExclusion.md)
 Update the navigation property exclusions in admin

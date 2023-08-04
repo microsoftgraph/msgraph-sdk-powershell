@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a print service.
 Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-Get-MgPrintService -PrintServiceId $printServiceId
+Get-MgPrintService
 
 ## PARAMETERS
 

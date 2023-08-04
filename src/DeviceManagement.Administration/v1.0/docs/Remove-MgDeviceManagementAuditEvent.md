@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementAuditEvent
 
 ## SYNOPSIS
-Delete navigation property auditEvents for deviceManagement
+Deletes a auditEvent.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementAuditEvent -InputObject <IDeviceManagementAdministratio
 ```
 
 ## DESCRIPTION
-Delete navigation property auditEvents for deviceManagement
+Deletes a auditEvent.
 
 ## EXAMPLES
 

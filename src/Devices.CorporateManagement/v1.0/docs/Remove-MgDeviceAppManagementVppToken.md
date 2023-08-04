@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementVppToken
 
 ## SYNOPSIS
-Delete navigation property vppTokens for deviceAppManagement
+Deletes a vppToken.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementVppToken -InputObject <IDevicesCorporateManagementId
 ```
 
 ## DESCRIPTION
-Delete navigation property vppTokens for deviceAppManagement
+Deletes a vppToken.
 
 ## EXAMPLES
 

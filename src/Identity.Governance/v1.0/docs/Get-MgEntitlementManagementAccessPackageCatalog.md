@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageCatalog
 
 ## SYNOPSIS
-Get catalog from identityGovernance
+Required when creating the access package.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgEntitlementManagementAccessPackageCatalog -InputObject <IIdentityGovernanc
 ```
 
 ## DESCRIPTION
-Get catalog from identityGovernance
+Required when creating the access package.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

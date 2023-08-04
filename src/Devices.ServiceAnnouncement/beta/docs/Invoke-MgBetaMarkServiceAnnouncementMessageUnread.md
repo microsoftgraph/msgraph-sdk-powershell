@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaMarkServiceAnnouncementMessageUnread
 
 ## SYNOPSIS
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Mark a list of serviceUpdateMessages as unread for the signed in user.
 
 ## SYNTAX
 
@@ -26,23 +26,23 @@ Invoke-MgBetaMarkServiceAnnouncementMessageUnread
 ```
 
 ## DESCRIPTION
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Mark a list of serviceUpdateMessages as unread for the signed in user.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+```
+
 $params = @{
-	MessageIds = @(
+	messageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
+
 Invoke-MgBetaMarkServiceAnnouncementMessageUnread -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

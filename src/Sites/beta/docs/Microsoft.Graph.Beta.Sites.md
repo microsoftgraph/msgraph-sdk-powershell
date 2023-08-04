@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 54a1316c-d473-409a-8bef-9d966f74ae67
+Module Guid: fb28cd6e-2a88-47e3-aaff-1980e8933986
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -220,9 +220,9 @@ Get bitlocker from groups
 
 ### [Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKey](Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKey.md)
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
-By default, this operation does not return the **key** property that represents the actual recovery key.
-To include the **key** property in the response, use the `$select` OData query parameter.
-Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log.
+By default, this operation does not return the key property that represents the actual recovery key.
+To include the key property in the response, use the $select OData query parameter.
+Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 You can find the log in Azure AD audit logs under the KeyManagement category.
 
 ### [Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKeyCount.md)
@@ -299,7 +299,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -522,10 +522,10 @@ Read-only.
 
 ### [Get-MgBetaGroupSiteOnenoteOperation](Get-MgBetaGroupSiteOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
-This applies to operations that return the **Operation-Location** header in the response, such as `CopyNotebook`, `CopyToNotebook`, `CopyToSectionGroup`, `and CopyToSection`.
-  You can poll the Operation-Location endpoint until the `status` property returns `completed` or `failed`.
-If the status is `completed`, the `resourceLocation` property contains the resource endpoint URI.
-If the status is `failed`, the error and `@api.diagnostics` properties provide error information.
+This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.
+  You can poll the Operation-Location endpoint until the status property returns completed or failed.
+If the status is completed, the resourceLocation property contains the resource endpoint URI.
+If the status is failed, the error and @api.diagnostics properties provide error information.
 
 ### [Get-MgBetaGroupSiteOnenoteOperationCount](Get-MgBetaGroupSiteOnenoteOperationCount.md)
 Get the number of the resource
@@ -1016,7 +1016,7 @@ The collection of the sub-sites under this site.
 Get the number of the resource
 
 ### [Get-MgBetaSite](Get-MgBetaSite.md)
-Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
+Retrieve properties and relationships for a [site][] resource.\nA site resource represents a team site in SharePoint.
 
 ### [Get-MgBetaSiteActivityByInterval](Get-MgBetaSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -1142,7 +1142,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1667,7 +1667,7 @@ Invoke function preview
 Invoke function preview
 
 ### [Invoke-MgBetaReauthorizeSiteListSubscription](Invoke-MgBetaReauthorizeSiteListSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaSignSiteInformationProtectionDigest](Invoke-MgBetaSignSiteInformationProtectionDigest.md)
 Invoke action signDigest
@@ -1924,8 +1924,8 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaSiteListItemLink](New-MgBetaSiteListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaSiteListItemVersion](New-MgBetaSiteListItemVersion.md)
 Create new navigation property to versions for sites
@@ -2588,7 +2588,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupSiteListItemField](Update-MgBetaGroupSiteListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaGroupSiteListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2810,7 +2810,7 @@ Update the navigation property documentSetVersions in sites
 Update the navigation property fields in sites
 
 ### [Update-MgBetaSiteListItemField](Update-MgBetaSiteListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaSiteListItemLastModifiedByUserMailboxSetting](Update-MgBetaSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.

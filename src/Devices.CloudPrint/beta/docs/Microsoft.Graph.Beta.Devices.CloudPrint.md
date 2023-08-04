@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
-Module Guid: 8d70ca83-04c8-4b2a-9ce7-af35470a47d1
+Module Guid: 3fc4ac5a-3551-431f-bea8-b31092ade72c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Get print
 
 ### [Get-MgBetaPrintConnector](Get-MgBetaPrintConnector.md)
-Retrieve the properties and relationships of a **printConnector** object.
+Retrieve the properties and relationships of a printConnector object.
 
 ### [Get-MgBetaPrintConnectorCount](Get-MgBetaPrintConnectorCount.md)
 Get the number of the resource
@@ -238,34 +238,34 @@ Read-only.
 ### [Invoke-MgBetaAbortPrintPrinterJob](Invoke-MgBetaAbortPrintPrinterJob.md)
 Abort a print job.
 Only applications using application permissions can abort a print job.
-Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgBetaAbortPrintPrinterShareJob](Invoke-MgBetaAbortPrintPrinterShareJob.md)
 Abort a print job.
 Only applications using application permissions can abort a print job.
-Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgBetaAbortPrintShareJob](Invoke-MgBetaAbortPrintShareJob.md)
 Abort a print job.
 Only applications using application permissions can abort a print job.
-Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgBetaRedirectPrintPrinterJob](Invoke-MgBetaRedirectPrintPrinterJob.md)
 Redirect a print job to a different printer.
-Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgBetaRedirectPrintPrinterShareJob](Invoke-MgBetaRedirectPrintPrinterShareJob.md)
 Redirect a print job to a different printer.
-Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgBetaRedirectPrintShareJob](Invoke-MgBetaRedirectPrintShareJob.md)
 Redirect a print job to a different printer.
-Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [New-MgBetaPrintConnector](New-MgBetaPrintConnector.md)
@@ -286,8 +286,8 @@ Create new navigation property to documents for print
 
 ### [New-MgBetaPrintPrinterJobDocumentUploadSession](New-MgBetaPrintPrinterJobDocumentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ### [New-MgBetaPrintPrinterJobTask](New-MgBetaPrintPrinterJobTask.md)
@@ -310,8 +310,8 @@ Create new navigation property to documents for print
 
 ### [New-MgBetaPrintPrinterShareJobDocumentUploadSession](New-MgBetaPrintPrinterShareJobDocumentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ### [New-MgBetaPrintPrinterShareJobTask](New-MgBetaPrintPrinterShareJobTask.md)
@@ -319,7 +319,7 @@ Create new navigation property to tasks for print
 
 ### [New-MgBetaPrintPrinterTaskTrigger](New-MgBetaPrintPrinterTaskTrigger.md)
 Create a new task trigger on the specified printer.
-Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future.
+Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
 
 ### [New-MgBetaPrintService](New-MgBetaPrintService.md)
 Create new navigation property to services for print
@@ -328,7 +328,7 @@ Create new navigation property to services for print
 Create new navigation property to endpoints for print
 
 ### [New-MgBetaPrintShare](New-MgBetaPrintShare.md)
-Create a new **printerShare** for the specified printer.
+Create a new printerShare for the specified printer.
 
 ### [New-MgBetaPrintShareAllowedGroupByRef](New-MgBetaPrintShareAllowedGroupByRef.md)
 Grant the specified group access to submit print jobs to the associated printerShare.
@@ -344,8 +344,8 @@ Create new navigation property to documents for print
 
 ### [New-MgBetaPrintShareJobDocumentUploadSession](New-MgBetaPrintShareJobDocumentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ### [New-MgBetaPrintShareJobTask](New-MgBetaPrintShareJobTask.md)
@@ -424,7 +424,7 @@ Delete navigation property documents for print
 Delete navigation property tasks for print
 
 ### [Remove-MgBetaPrintTaskDefinition](Remove-MgBetaPrintTaskDefinition.md)
-Delete a **taskDefinition**.
+Delete a taskDefinition.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [Remove-MgBetaPrintTaskDefinitionTask](Remove-MgBetaPrintTaskDefinitionTask.md)
@@ -488,7 +488,7 @@ Invoke action cancelPrintJob
 Update print
 
 ### [Update-MgBetaPrintConnector](Update-MgBetaPrintConnector.md)
-Update the properties of a **printConnector** object.
+Update the properties of a printConnector object.
 
 ### [Update-MgBetaPrintOperation](Update-MgBetaPrintOperation.md)
 Update the navigation property operations in print

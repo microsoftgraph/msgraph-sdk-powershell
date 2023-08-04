@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+Create a new importedWindowsAutopilotDeviceIdentity object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
 ```
 
 ## DESCRIPTION
-Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+Create a new importedWindowsAutopilotDeviceIdentity object.
 
 ## EXAMPLES
 

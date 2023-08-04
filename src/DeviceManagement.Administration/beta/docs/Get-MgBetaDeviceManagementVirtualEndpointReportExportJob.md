@@ -10,8 +10,8 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of a cloudPcExportJob object.
 You can download a report by first creating a new cloudPcExportJob resource to initiate downloading.
-Use this GET operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource.
+When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property.
 
 ## SYNTAX
 
@@ -38,8 +38,8 @@ Get-MgBetaDeviceManagementVirtualEndpointReportExportJob
 ## DESCRIPTION
 Read the properties and relationships of a cloudPcExportJob object.
 You can download a report by first creating a new cloudPcExportJob resource to initiate downloading.
-Use this GET operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource.
+When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property.
 
 ## EXAMPLES
 
@@ -269,6 +269,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
   - `[CloudPcExportJobId <String>]`: The unique identifier of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: The unique identifier of cloudPcExternalPartnerSetting
+  - `[CloudPcFrontLineServicePlanId <String>]`: The unique identifier of cloudPcFrontLineServicePlan
   - `[CloudPcGalleryImageId <String>]`: The unique identifier of cloudPcGalleryImage
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementManagedAppRegistrationOperation
 
 ## SYNOPSIS
-Delete navigation property operations for deviceAppManagement
+Deletes a managedAppOperation.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementManagedAppRegistrationOperation -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Delete navigation property operations for deviceAppManagement
+Deletes a managedAppOperation.
 
 ## EXAMPLES
 

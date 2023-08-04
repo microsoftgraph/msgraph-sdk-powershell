@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Calendar
-Module Guid: 12ef95c9-4bba-4a07-baf9-a4a37f2d75b6
+Module Guid: c39c15dd-630d-44f3-9d81-c779ed50763a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -154,7 +154,7 @@ To get expanded event instances, you can get the calendar view, or \nget the ins
 ### [Get-MgUserEvent](Get-MgUserEvent.md)
 Get the properties and relationships of the specified event object.
 Currently, this operation returns event bodies in only HTML format.
-There are two scenarios where an app can get an event in another user's calendar: Since the **event** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **event** instance.
+There are two scenarios where an app can get an event in another user's calendar: Since the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
 
 ### [Get-MgUserEventAttachment](Get-MgUserEventAttachment.md)
 The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
@@ -350,7 +350,7 @@ Update the navigation property extensions in groups
 
 ### [Update-MgPlace](Update-MgPlace.md)
 Update the properties of place object, which can be a room or roomList.
-You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+You can identify the room or roomList by specifying the id or emailAddress property.
 
 ### [Update-MgUserCalendarGroup](Update-MgUserCalendarGroup.md)
 Update the properties of calendargroup object.

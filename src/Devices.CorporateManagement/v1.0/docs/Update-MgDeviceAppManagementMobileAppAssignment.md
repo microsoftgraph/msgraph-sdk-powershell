@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileAppAssignment
 
 ## SYNOPSIS
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a mobileAppAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceAppManagementMobileAppAssignment -InputObject <IDevicesCorporateM
 ```
 
 ## DESCRIPTION
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a mobileAppAssignment object.
 
 ## EXAMPLES
 

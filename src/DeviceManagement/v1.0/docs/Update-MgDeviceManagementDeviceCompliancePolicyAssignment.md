@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicyAssignment
 
 ## SYNOPSIS
-Update the navigation property assignments in deviceManagement
+Update the properties of a deviceCompliancePolicyAssignment object.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyAssignment -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Update the navigation property assignments in deviceManagement
+Update the properties of a deviceCompliancePolicyAssignment object.
 
 ## EXAMPLES
 

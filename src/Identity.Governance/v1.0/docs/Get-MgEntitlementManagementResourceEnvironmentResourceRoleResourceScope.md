@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope
 
 ## SYNOPSIS
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -37,7 +39,9 @@ Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope
 ```
 
 ## DESCRIPTION
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

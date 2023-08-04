@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementComplianceManagementPartner
 
 ## SYNOPSIS
-Update the navigation property complianceManagementPartners in deviceManagement
+Update the properties of a complianceManagementPartner object.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgDeviceManagementComplianceManagementPartner -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Update the navigation property complianceManagementPartners in deviceManagement
+Update the properties of a complianceManagementPartner object.
 
 ## EXAMPLES
 

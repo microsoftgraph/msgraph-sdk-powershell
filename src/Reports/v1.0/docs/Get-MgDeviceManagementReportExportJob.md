@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportExportJob
 
 ## SYNOPSIS
-Entity representing a job to export a report
+Read properties and relationships of the deviceManagementExportJob object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementReportExportJob -InputObject <IReportsIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Entity representing a job to export a report
+Read properties and relationships of the deviceManagementExportJob object.
 
 ## EXAMPLES
 

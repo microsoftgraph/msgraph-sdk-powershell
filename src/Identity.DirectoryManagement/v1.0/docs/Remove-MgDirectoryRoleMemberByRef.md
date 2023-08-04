@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a member from a directoryRole.
-You can use both the object ID and template ID of the **directoryRole** with this API.
+You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
 For details, see Role template IDs.
 
@@ -29,7 +29,7 @@ Remove-MgDirectoryRoleMemberByRef -InputObject <IIdentityDirectoryManagementIden
 
 ## DESCRIPTION
 Remove a member from a directoryRole.
-You can use both the object ID and template ID of the **directoryRole** with this API.
+You can use both the object ID and template ID of the directoryRole with this API.
 The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
 For details, see Role template IDs.
 

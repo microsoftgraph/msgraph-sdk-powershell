@@ -50,13 +50,13 @@ For more information about how to handle unmute operations, see unmuteParticipan
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	ClientContext = "clientContext-value"
-}
-Invoke-MgBetaUnmuteCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	clientContext = "clientContext-value"
+}
 
+Invoke-MgBetaUnmuteCommunicationCall -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 

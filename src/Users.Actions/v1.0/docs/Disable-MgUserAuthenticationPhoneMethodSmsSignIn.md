@@ -8,7 +8,7 @@ schema: 2.0.0
 # Disable-MgUserAuthenticationPhoneMethodSmsSignIn
 
 ## SYNOPSIS
-Disable SMS sign-in for an existing `mobile` phone number registered to a user.
+Disable SMS sign-in for an existing mobile phone number registered to a user.
 The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Disable-MgUserAuthenticationPhoneMethodSmsSignIn -InputObject <IUsersActionsIden
 ```
 
 ## DESCRIPTION
-Disable SMS sign-in for an existing `mobile` phone number registered to a user.
+Disable SMS sign-in for an existing mobile phone number registered to a user.
 The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
 
 ## EXAMPLES
@@ -184,6 +184,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

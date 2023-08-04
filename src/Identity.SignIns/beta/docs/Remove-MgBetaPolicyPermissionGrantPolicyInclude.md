@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaPolicyPermissionGrantPolicyInclude
 
 ## SYNOPSIS
-Deletes a permissionGrantConditionSet from the **includes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Deletes a permissionGrantConditionSet from the **includes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
 
 ## EXAMPLES
 

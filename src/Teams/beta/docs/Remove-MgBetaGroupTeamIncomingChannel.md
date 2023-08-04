@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupTeamIncomingChannel
 
 ## SYNOPSIS
-Remove an incoming channel (a **channel** shared with a **team**) from a team.
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaGroupTeamIncomingChannel -InputObject <ITeamsIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Remove an incoming channel (a **channel** shared with a **team**) from a team.
+Remove an incoming channel (a channel shared with a team) from a team.
 
 ## EXAMPLES
 

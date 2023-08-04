@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 619434a9-12e2-402b-ba70-87c82e3464de
+Module Guid: 5c609c92-942b-4c2c-8f36-6098d3cd1823
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -96,7 +96,7 @@ The list of recent activities that took place on this item.
 Invoke function getActivitiesByInterval
 
 ### [Get-MgBetaDriveItemAnalytic](Get-MgBetaDriveItemAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgBetaDriveItemAnalyticItemActivityStat](Get-MgBetaDriveItemAnalyticItemActivityStat.md)
 Get itemActivityStats from drives
@@ -214,7 +214,7 @@ A collection of the fields and values for this version of the list item.
 ### [Get-MgBetaDriveItemPermission](Get-MgBetaDriveItemPermission.md)
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
-Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
 
 ### [Get-MgBetaDriveItemPermissionCount](Get-MgBetaDriveItemPermissionCount.md)
 Get the number of the resource
@@ -392,7 +392,7 @@ The list of recent activities that took place on this item.
 Invoke function getActivitiesByInterval
 
 ### [Get-MgBetaDriveRootAnalytic](Get-MgBetaDriveRootAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgBetaDriveRootAnalyticItemActivityStat](Get-MgBetaDriveRootAnalyticItemActivityStat.md)
 Get itemActivityStats from drives
@@ -507,7 +507,7 @@ A collection of the fields and values for this version of the list item.
 ### [Get-MgBetaDriveRootPermission](Get-MgBetaDriveRootPermission.md)
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
-Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
 
 ### [Get-MgBetaDriveRootPermissionCount](Get-MgBetaDriveRootPermissionCount.md)
 Get the number of the resource
@@ -611,7 +611,7 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaGroupDriveItemAnalytic](Get-MgBetaGroupDriveItemAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgBetaGroupDriveItemAnalyticItemActivityStat](Get-MgBetaGroupDriveItemAnalyticItemActivityStat.md)
 Get itemActivityStats from groups
@@ -723,7 +723,7 @@ A collection of the fields and values for this version of the list item.
 ### [Get-MgBetaGroupDriveItemPermission](Get-MgBetaGroupDriveItemPermission.md)
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
-Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
 
 ### [Get-MgBetaGroupDriveItemPermissionCount](Get-MgBetaGroupDriveItemPermissionCount.md)
 Get the number of the resource
@@ -886,7 +886,7 @@ Retrieve the metadata for a driveItem in a drive by file system path or ID.
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaGroupDriveRootAnalytic](Get-MgBetaGroupDriveRootAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgBetaGroupDriveRootAnalyticItemActivityStat](Get-MgBetaGroupDriveRootAnalyticItemActivityStat.md)
 Get itemActivityStats from groups
@@ -995,7 +995,7 @@ A collection of the fields and values for this version of the list item.
 ### [Get-MgBetaGroupDriveRootPermission](Get-MgBetaGroupDriveRootPermission.md)
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
-Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
 
 ### [Get-MgBetaGroupDriveRootPermissionCount](Get-MgBetaGroupDriveRootPermissionCount.md)
 Get the number of the resource
@@ -1063,7 +1063,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaShareDriveItem](Get-MgBetaShareDriveItem.md)
-Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
+Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
 ### [Get-MgBetaShareDriveItemContent](Get-MgBetaShareDriveItemContent.md)
@@ -1228,7 +1228,7 @@ Get root from shares
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaShareSharedDriveItemSharedDriveItem](Get-MgBetaShareSharedDriveItemSharedDriveItem.md)
-Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
+Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 
 ### [Get-MgBetaShareSite](Get-MgBetaShareSite.md)
@@ -1292,7 +1292,7 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaUserDriveItemAnalytic](Get-MgBetaUserDriveItemAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgBetaUserDriveItemAnalyticItemActivityStat](Get-MgBetaUserDriveItemAnalyticItemActivityStat.md)
 Get itemActivityStats from users
@@ -1404,7 +1404,7 @@ A collection of the fields and values for this version of the list item.
 ### [Get-MgBetaUserDriveItemPermission](Get-MgBetaUserDriveItemPermission.md)
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
-Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
 
 ### [Get-MgBetaUserDriveItemPermissionCount](Get-MgBetaUserDriveItemPermissionCount.md)
 Get the number of the resource
@@ -1567,7 +1567,7 @@ Retrieve the metadata for a driveItem in a drive by file system path or ID.
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaUserDriveRootAnalytic](Get-MgBetaUserDriveRootAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgBetaUserDriveRootAnalyticItemActivityStat](Get-MgBetaUserDriveRootAnalyticItemActivityStat.md)
 Get itemActivityStats from users
@@ -1676,7 +1676,7 @@ A collection of the fields and values for this version of the list item.
 ### [Get-MgBetaUserDriveRootPermission](Get-MgBetaUserDriveRootPermission.md)
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
-Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
 
 ### [Get-MgBetaUserDriveRootPermissionCount](Get-MgBetaUserDriveRootPermissionCount.md)
 Get the number of the resource
@@ -1732,16 +1732,16 @@ Grant users access to a link represented by a [permission][].
 Grant users access to a link represented by a [permission][].
 
 ### [Invoke-MgBetaCheckinDriveItem](Invoke-MgBetaCheckinDriveItem.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Check in a checked out driveItem resource, which makes the version of the document available to others.
 
 ### [Invoke-MgBetaCheckinDriveRoot](Invoke-MgBetaCheckinDriveRoot.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Check in a checked out driveItem resource, which makes the version of the document available to others.
 
 ### [Invoke-MgBetaCheckoutDriveItem](Invoke-MgBetaCheckoutDriveItem.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ### [Invoke-MgBetaCheckoutDriveRoot](Invoke-MgBetaCheckoutDriveRoot.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ### [Invoke-MgBetaExtractDriveItemSensitivityLabel](Invoke-MgBetaExtractDriveItemSensitivityLabel.md)
 Invoke action extractSensitivityLabels
@@ -1759,10 +1759,10 @@ Follow a driveItem.
 Invoke function sharedWithMe
 
 ### [Invoke-MgBetaInviteDriveItem](Invoke-MgBetaInviteDriveItem.md)
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaInviteDriveRoot](Invoke-MgBetaInviteDriveRoot.md)
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ### [Invoke-MgBetaPreviewDriveItem](Invoke-MgBetaPreviewDriveItem.md)
 Invoke action preview
@@ -1771,16 +1771,16 @@ Invoke action preview
 Invoke action preview
 
 ### [Invoke-MgBetaReauthorizeDriveItemSubscription](Invoke-MgBetaReauthorizeDriveItemSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaReauthorizeDriveListSubscription](Invoke-MgBetaReauthorizeDriveListSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaReauthorizeDriveRootSubscription](Invoke-MgBetaReauthorizeDriveRootSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaReauthorizeShareListSubscription](Invoke-MgBetaReauthorizeShareListSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [Invoke-MgBetaRecentDrive](Invoke-MgBetaRecentDrive.md)
 Invoke function recent
@@ -1813,8 +1813,8 @@ Create new navigation property to itemActivityStats for drives
 Create new navigation property to children for drives
 
 ### [New-MgBetaDriveItemLink](New-MgBetaDriveItemLink.md)
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaDriveItemListItemDocumentSetVersion](New-MgBetaDriveItemListItemDocumentSetVersion.md)
@@ -1822,8 +1822,8 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaDriveItemListItemLink](New-MgBetaDriveItemListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaDriveItemListItemVersion](New-MgBetaDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1838,9 +1838,7 @@ Create new navigation property to subscriptions for drives
 Create new navigation property to thumbnails for drives
 
 ### [New-MgBetaDriveItemUploadSession](New-MgBetaDriveItemUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.
-An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session:
+Invoke action createUploadSession
 
 ### [New-MgBetaDriveItemVersion](New-MgBetaDriveItemVersion.md)
 Create new navigation property to versions for drives
@@ -1865,8 +1863,8 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaDriveListItemLink](New-MgBetaDriveListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaDriveListItemVersion](New-MgBetaDriveListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1884,8 +1882,8 @@ Create new navigation property to itemActivityStats for drives
 Create new navigation property to children for drives
 
 ### [New-MgBetaDriveRootLink](New-MgBetaDriveRootLink.md)
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
+You can use createLink action to share a driveItem via a sharing link.
+The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
 
 ### [New-MgBetaDriveRootListItemDocumentSetVersion](New-MgBetaDriveRootListItemDocumentSetVersion.md)
@@ -1893,8 +1891,8 @@ Create a new version of a document set item in a list.
 
 ### [New-MgBetaDriveRootListItemLink](New-MgBetaDriveRootListItemLink.md)
 Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
+listItem resources inherit sharing permissions from the list the item resides in.
 
 ### [New-MgBetaDriveRootListItemVersion](New-MgBetaDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1909,9 +1907,7 @@ Create new navigation property to subscriptions for drives
 Create new navigation property to thumbnails for drives
 
 ### [New-MgBetaDriveRootUploadSession](New-MgBetaDriveRootUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.
-An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session:
+Invoke action createUploadSession
 
 ### [New-MgBetaDriveRootVersion](New-MgBetaDriveRootVersion.md)
 Create new navigation property to versions for drives
@@ -2158,7 +2154,7 @@ Invoke action permanentDelete
 
 ### [Remove-MgBetaDriveItemPermission](Remove-MgBetaDriveItemPermission.md)
 Remove access to a DriveItem.
-Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
+Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaDriveItemRetentionLabel](Remove-MgBetaDriveItemRetentionLabel.md)
 Delete navigation property retentionLabel for drives
@@ -2246,7 +2242,7 @@ Invoke action permanentDelete
 
 ### [Remove-MgBetaDriveRootPermission](Remove-MgBetaDriveRootPermission.md)
 Remove access to a DriveItem.
-Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
+Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaDriveRootRetentionLabel](Remove-MgBetaDriveRootRetentionLabel.md)
 Delete navigation property retentionLabel for drives
@@ -2295,7 +2291,7 @@ Delete navigation property fields for groups
 
 ### [Remove-MgBetaGroupDriveItemPermission](Remove-MgBetaGroupDriveItemPermission.md)
 Remove access to a DriveItem.
-Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
+Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaGroupDriveItemRetentionLabel](Remove-MgBetaGroupDriveItemRetentionLabel.md)
 Delete navigation property retentionLabel for groups
@@ -2380,7 +2376,7 @@ Delete navigation property fields for groups
 
 ### [Remove-MgBetaGroupDriveRootPermission](Remove-MgBetaGroupDriveRootPermission.md)
 Remove access to a DriveItem.
-Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
+Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaGroupDriveRootRetentionLabel](Remove-MgBetaGroupDriveRootRetentionLabel.md)
 Delete navigation property retentionLabel for groups
@@ -2474,7 +2470,7 @@ Delete navigation property fields for users
 
 ### [Remove-MgBetaUserDriveItemPermission](Remove-MgBetaUserDriveItemPermission.md)
 Remove access to a DriveItem.
-Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
+Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaUserDriveItemRetentionLabel](Remove-MgBetaUserDriveItemRetentionLabel.md)
 Delete navigation property retentionLabel for users
@@ -2559,7 +2555,7 @@ Delete navigation property fields for users
 
 ### [Remove-MgBetaUserDriveRootPermission](Remove-MgBetaUserDriveRootPermission.md)
 Remove access to a DriveItem.
-Only sharing permissions that are **not** inherited can be deleted.\nThe **inheritedFrom** property must be `null`.
+Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaUserDriveRootRetentionLabel](Remove-MgBetaUserDriveRootRetentionLabel.md)
 Delete navigation property retentionLabel for users
@@ -2780,7 +2776,7 @@ Update entity in drives
 Update property mailboxSettings value.
 
 ### [Update-MgBetaDriveItem](Update-MgBetaDriveItem.md)
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
+To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
 
@@ -2809,7 +2805,7 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveItemListItemField](Update-MgBetaDriveItemListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgBetaDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2822,7 +2818,7 @@ Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveItemPermission](Update-MgBetaDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
-Only the **roles** property can be modified this way.
+Only the roles property can be modified this way.
 
 ### [Update-MgBetaDriveItemRetentionLabel](Update-MgBetaDriveItemRetentionLabel.md)
 Update the navigation property retentionLabel in drives
@@ -2870,7 +2866,7 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveListItemField](Update-MgBetaDriveListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaDriveListItemLastModifiedByUserMailboxSetting](Update-MgBetaDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2918,7 +2914,7 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveRootListItemField](Update-MgBetaDriveRootListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgBetaDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2931,7 +2927,7 @@ Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveRootPermission](Update-MgBetaDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
-Only the **roles** property can be modified this way.
+Only the roles property can be modified this way.
 
 ### [Update-MgBetaDriveRootRetentionLabel](Update-MgBetaDriveRootRetentionLabel.md)
 Update the navigation property retentionLabel in drives
@@ -2952,7 +2948,7 @@ Update the navigation property drives in groups
 Update property mailboxSettings value.
 
 ### [Update-MgBetaGroupDriveItem](Update-MgBetaGroupDriveItem.md)
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
+To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
 
@@ -2981,7 +2977,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveItemListItemField](Update-MgBetaGroupDriveItemListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaGroupDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2994,7 +2990,7 @@ Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveItemPermission](Update-MgBetaGroupDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
-Only the **roles** property can be modified this way.
+Only the roles property can be modified this way.
 
 ### [Update-MgBetaGroupDriveItemRetentionLabel](Update-MgBetaGroupDriveItemRetentionLabel.md)
 Update the navigation property retentionLabel in groups
@@ -3042,7 +3038,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveListItemField](Update-MgBetaGroupDriveListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaGroupDriveListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3090,7 +3086,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveRootListItemField](Update-MgBetaGroupDriveRootListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaGroupDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3103,7 +3099,7 @@ Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveRootPermission](Update-MgBetaGroupDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
-Only the **roles** property can be modified this way.
+Only the roles property can be modified this way.
 
 ### [Update-MgBetaGroupDriveRootRetentionLabel](Update-MgBetaGroupDriveRootRetentionLabel.md)
 Update the navigation property retentionLabel in groups
@@ -3154,7 +3150,7 @@ Update the navigation property documentSetVersions in shares
 Update the navigation property fields in shares
 
 ### [Update-MgBetaShareListItemField](Update-MgBetaShareListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaShareListItemLastModifiedByUserMailboxSetting](Update-MgBetaShareListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3187,7 +3183,7 @@ Update the navigation property drives in users
 Update property mailboxSettings value.
 
 ### [Update-MgBetaUserDriveItem](Update-MgBetaUserDriveItem.md)
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
+To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
 
@@ -3216,7 +3212,7 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveItemListItemField](Update-MgBetaUserDriveItemListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaUserDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgBetaUserDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3229,7 +3225,7 @@ Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveItemPermission](Update-MgBetaUserDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
-Only the **roles** property can be modified this way.
+Only the roles property can be modified this way.
 
 ### [Update-MgBetaUserDriveItemRetentionLabel](Update-MgBetaUserDriveItemRetentionLabel.md)
 Update the navigation property retentionLabel in users
@@ -3277,7 +3273,7 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveListItemField](Update-MgBetaUserDriveListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaUserDriveListItemLastModifiedByUserMailboxSetting](Update-MgBetaUserDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3325,7 +3321,7 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveRootListItemField](Update-MgBetaUserDriveRootListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ### [Update-MgBetaUserDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgBetaUserDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3338,7 +3334,7 @@ Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveRootPermission](Update-MgBetaUserDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
-Only the **roles** property can be modified this way.
+Only the roles property can be modified this way.
 
 ### [Update-MgBetaUserDriveRootRetentionLabel](Update-MgBetaUserDriveRootRetentionLabel.md)
 Update the navigation property retentionLabel in users

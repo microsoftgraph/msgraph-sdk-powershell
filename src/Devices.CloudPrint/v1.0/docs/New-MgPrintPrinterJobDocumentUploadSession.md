@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ## SYNTAX
@@ -45,8 +45,8 @@ New-MgPrintPrinterJobDocumentUploadSession -InputObject <IDevicesCloudPrintIdent
 
 ## DESCRIPTION
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ## EXAMPLES

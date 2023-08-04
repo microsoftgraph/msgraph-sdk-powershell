@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the MailTips of one or more recipients as available to the signed-in user.
-Note that by making a `POST` call to the `getMailTips` action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
+Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
 
 ## SYNTAX
@@ -42,7 +42,7 @@ Get-MgBetaUserMailTip -InputObject <IUsersActionsIdentity> [-AdditionalPropertie
 
 ## DESCRIPTION
 Get the MailTips of one or more recipients as available to the signed-in user.
-Note that by making a `POST` call to the `getMailTips` action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
+Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
 
 ## EXAMPLES

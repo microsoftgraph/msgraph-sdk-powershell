@@ -8,7 +8,7 @@ schema: 2.0.0
 # Import-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Invoke action import
+Not yet documented
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Import-MgDeviceManagementImportedWindowsAutopilotDeviceIdentity
 ```
 
 ## DESCRIPTION
-Invoke action import
+Not yet documented
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementMobileThreatDefenseConnector
 
 ## SYNOPSIS
-Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+Deletes a mobileThreatDefenseConnector.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementMobileThreatDefenseConnector -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+Deletes a mobileThreatDefenseConnector.
 
 ## EXAMPLES
 

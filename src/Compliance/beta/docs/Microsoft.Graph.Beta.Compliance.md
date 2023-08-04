@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Compliance
-Module Guid: 1ccff4cf-9156-4c8e-98c4-dd57be82d9e5
+Module Guid: ff9650d2-c37b-4af1-95e1-d59da242a3a8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,14 +22,14 @@ Apply tags to documents that match the specified reviewSetQuery.
 
 ### [Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet](Add-MgBetaComplianceEdiscoveryCaseReviewSetToReviewSet.md)
 Start the process of adding a collection from Microsoft 365 services to a review set.
-After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers.
 The location provides a URL that will return a caseExportOperation.
 
 ### [Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData](Clear-MgBetaComplianceEdiscoveryCaseSourceCollectionData.md)
 Permanently delete Microsoft Teams messages contained in a sourceCollection.
-You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people.
-Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
-Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel.
+You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people.
+Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
+Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel.
 For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- Advanced eDiscovery workflow for content in Microsoft Teams
 
 ### [Close-MgBetaComplianceEdiscoveryCase](Close-MgBetaComplianceEdiscoveryCase.md)
@@ -37,7 +37,7 @@ Close an eDiscovery case.
 For details, see Close a case.
 
 ### [Export-MgBetaComplianceEdiscoveryCaseReviewSet](Export-MgBetaComplianceEdiscoveryCaseReviewSet.md)
-Initiate an export from a **reviewSet**.
+Initiate an export from a reviewSet.
 For details, see Export documents from a review set in Advanced eDiscovery.
 
 ### [Get-MgBetaCompliance](Get-MgBetaCompliance.md)

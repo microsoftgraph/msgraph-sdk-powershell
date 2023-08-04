@@ -11,7 +11,7 @@ schema: 2.0.0
 Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or isn't in that folder, the `POST` request will fail.
+If the file doesn't exist or isn't in that folder, the POST request will fail.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgEducationClassAssignmentSubmissionOutcome -InputObject <IEducationIdentity
 Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or isn't in that folder, the `POST` request will fail.
+If the file doesn't exist or isn't in that folder, the POST request will fail.
 
 ## EXAMPLES
 

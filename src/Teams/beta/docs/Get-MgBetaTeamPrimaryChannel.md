@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaTeamPrimaryChannel
 
 ## SYNOPSIS
-Get the default channel, **General**, of a team.
+Get the default channel, General, of a team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaTeamPrimaryChannel -InputObject <ITeamsIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get the default channel, **General**, of a team.
+Get the default channel, General, of a team.
 
 ## EXAMPLES
 

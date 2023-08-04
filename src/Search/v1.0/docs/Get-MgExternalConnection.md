@@ -41,7 +41,7 @@ Read the properties and relationships of an externalConnection object.
 Import-Module Microsoft.Graph.Search
 ```
 
-Get-MgExternalConnection -ExternalConnectionId $externalConnectionId
+Get-MgExternalConnection
 
 ## PARAMETERS
 

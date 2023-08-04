@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupAcceptedSenderByRef
 
 ## SYNOPSIS
-Specify the user or group in `@odata.id` in the request body.
+Specify the user or group in @odata.id in the request body.
 Users in the accepted senders list can post to conversations of the group .
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
@@ -39,7 +39,7 @@ New-MgGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> -OdataId <String>
 ```
 
 ## DESCRIPTION
-Specify the user or group in `@odata.id` in the request body.
+Specify the user or group in @odata.id in the request body.
 Users in the accepted senders list can post to conversations of the group .
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 

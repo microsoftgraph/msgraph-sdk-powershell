@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary
 
 ## SYNOPSIS
-Update the navigation property userStatusSummary in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary
 ```
 
 ## DESCRIPTION
-Update the navigation property userStatusSummary in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
 
 ## EXAMPLES
 

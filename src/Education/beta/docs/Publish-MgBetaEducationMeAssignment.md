@@ -8,13 +8,13 @@ schema: 2.0.0
 # Publish-MgBetaEducationMeAssignment
 
 ## SYNOPSIS
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
+Change the state of an educationAssignment from its original draft status to the published status.
+You can change the state from draft to scheduled if the assignment is scheduled for a future date.
 Only a teacher in the class can make this call.
-When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
+When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects.
 When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
-The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
+The state of the assignment goes back to draft if there is any backend failure during publish process.
+To update the properties of a published assignment, see update an assignment.
 To update the properties of a published assignment, see update an assignment.
 
 ## SYNTAX
@@ -31,13 +31,13 @@ Publish-MgBetaEducationMeAssignment -InputObject <IEducationIdentity> [-Confirm]
 ```
 
 ## DESCRIPTION
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
+Change the state of an educationAssignment from its original draft status to the published status.
+You can change the state from draft to scheduled if the assignment is scheduled for a future date.
 Only a teacher in the class can make this call.
-When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
+When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects.
 When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
-The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
+The state of the assignment goes back to draft if there is any backend failure during publish process.
+To update the properties of a published assignment, see update an assignment.
 To update the properties of a published assignment, see update an assignment.
 
 ## EXAMPLES
@@ -139,6 +139,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
+  - `[EducationModuleId <String>]`: The unique identifier of educationModule
+  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

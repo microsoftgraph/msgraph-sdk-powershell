@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Start the process of applying hold on eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## SYNTAX
@@ -54,7 +54,7 @@ Add-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity>
 
 ## DESCRIPTION
 Start the process of applying hold on eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ## EXAMPLES

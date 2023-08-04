@@ -41,7 +41,7 @@ Retrieve the properties and relationships of an externalConnection.
 Import-Module Microsoft.Graph.Beta.Search
 ```
 
-Get-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId
+Get-MgBetaExternalConnection
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileAppConfiguration
 
 ## SYNOPSIS
-Update the navigation property mobileAppConfigurations in deviceAppManagement
+Update the properties of a iosMobileAppConfiguration object.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgDeviceAppManagementMobileAppConfiguration -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileAppConfigurations in deviceAppManagement
+Update the properties of a iosMobileAppConfiguration object.
 
 ## EXAMPLES
 

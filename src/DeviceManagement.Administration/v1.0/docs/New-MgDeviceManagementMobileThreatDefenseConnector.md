@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMobileThreatDefenseConnector
 
 ## SYNOPSIS
-Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
+Create a new mobileThreatDefenseConnector object.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ New-MgDeviceManagementMobileThreatDefenseConnector
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
+Create a new mobileThreatDefenseConnector object.
 
 ## EXAMPLES
 

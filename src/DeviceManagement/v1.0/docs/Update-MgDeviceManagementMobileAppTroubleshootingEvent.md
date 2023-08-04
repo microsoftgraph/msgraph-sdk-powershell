@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementMobileAppTroubleshootingEvent
 
 ## SYNOPSIS
-Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
+Update the properties of a mobileAppTroubleshootingEvent object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceManagementMobileAppTroubleshootingEvent -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileAppTroubleshootingEvents in deviceManagement
+Update the properties of a mobileAppTroubleshootingEvent object.
 
 ## EXAMPLES
 

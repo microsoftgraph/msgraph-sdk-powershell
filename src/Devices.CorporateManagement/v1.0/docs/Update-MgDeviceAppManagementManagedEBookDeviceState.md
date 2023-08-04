@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementManagedEBookDeviceState
 
 ## SYNOPSIS
-Update the navigation property deviceStates in deviceAppManagement
+Update the properties of a deviceInstallState object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceAppManagementManagedEBookDeviceState -InputObject <IDevicesCorpor
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceStates in deviceAppManagement
+Update the properties of a deviceInstallState object.
 
 ## EXAMPLES
 

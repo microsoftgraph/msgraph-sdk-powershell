@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 
 ## SYNOPSIS
-Update the navigation property localizedNotificationMessages in deviceManagement
+Update the properties of a localizedNotificationMessage object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 ```
 
 ## DESCRIPTION
-Update the navigation property localizedNotificationMessages in deviceManagement
+Update the properties of a localizedNotificationMessage object.
 
 ## EXAMPLES
 

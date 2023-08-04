@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceRequest
 
 ## SYNOPSIS
-Get resourceRequests from identityGovernance
+Represents a request to add or remove a resource to or from a catalog respectively.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgEntitlementManagementResourceRequest -InputObject <IIdentityGovernanceIden
 ```
 
 ## DESCRIPTION
-Get resourceRequests from identityGovernance
+Represents a request to add or remove a resource to or from a catalog respectively.
 
 ## EXAMPLES
 

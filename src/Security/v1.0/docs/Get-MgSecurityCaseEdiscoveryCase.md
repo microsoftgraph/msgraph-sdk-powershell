@@ -41,7 +41,7 @@ Read the properties and relationships of an ediscoveryCase object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
+Get-MgSecurityCaseEdiscoveryCase
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaCheckinUserDriveItem
 
 ## SYNOPSIS
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Check in a checked out driveItem resource, which makes the version of the document available to others.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Invoke-MgBetaCheckinUserDriveItem -InputObject <IUsersActionsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Check in a checked out driveItem resource, which makes the version of the document available to others.
 
 ## EXAMPLES
 

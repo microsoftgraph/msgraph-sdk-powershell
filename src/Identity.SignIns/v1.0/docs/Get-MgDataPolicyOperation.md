@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDataPolicyOperation
 
 ## SYNOPSIS
-Retrieve the properties of a **dataPolicyOperation** object.
+Retrieve the properties of a dataPolicyOperation object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDataPolicyOperation -InputObject <IIdentitySignInsIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Retrieve the properties of a **dataPolicyOperation** object.
+Retrieve the properties of a dataPolicyOperation object.
 
 ## EXAMPLES
 

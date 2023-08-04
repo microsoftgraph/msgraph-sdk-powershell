@@ -41,7 +41,7 @@ Read the properties and relationships of an educationSchool object.
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationSchool -EducationSchoolId $educationSchoolId
+Get-MgEducationSchool
 
 ## PARAMETERS
 

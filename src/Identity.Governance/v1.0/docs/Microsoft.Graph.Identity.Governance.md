@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 26336a0b-95a1-452c-9404-d7869d1c0486
+Module Guid: 2779021a-efcf-4838-a0f3-e222d7fcfe16
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,8 +12,8 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Identity.Governance Cmdlets
 ### [Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review's accessReviewScheduleSettings.
+The status of the accessReviewInstance must be Completed to call this method.
 
 ### [Get-MgAgreement](Get-MgAgreement.md)
 Get entity from agreements by key
@@ -27,7 +27,7 @@ Get the number of the resource
 
 ### [Get-MgAgreementFile](Get-MgAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
-The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
 
 ### [Get-MgAgreementFileCount](Get-MgAgreementFileCount.md)
 Get the number of the resource
@@ -53,7 +53,9 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementAccessPackage](Get-MgEntitlementManagementAccessPackage.md)
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ### [Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
@@ -70,10 +72,14 @@ An approval stage is contained within an approval object.
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentPolicy](Get-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-Get assignmentPolicies from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
-Get catalog from identityGovernance
+Required when creating the access package.
+Read-only.
+Nullable.
 
 ### [Get-MgEntitlementManagementAccessPackageCount](Get-MgEntitlementManagementAccessPackageCount.md)
 Get the number of the resource
@@ -109,6 +115,7 @@ In Azure AD entitlement management, retrieve the properties and relationships of
 ### [Get-MgEntitlementManagementAssignmentPolicyAccessPackage](Get-MgEntitlementManagementAssignmentPolicyAccessPackage.md)
 Access package containing this policy.
 Read-only.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementAssignmentPolicyCatalog](Get-MgEntitlementManagementAssignmentPolicyCatalog.md)
 Catalog of the access package containing this policy.
@@ -118,13 +125,16 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting](Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting.md)
-Get customExtensionStageSettings from identityGovernance
+The collection of stages when to execute one or more custom access package workflow extensions.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSettingCount](Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSettingCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSettingCustomExtension](Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSettingCustomExtension.md)
-Get customExtension from identityGovernance
+Indicates the custom workflow extension that will be executed at this stage.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementAssignmentPolicyQuestion](Get-MgEntitlementManagementAssignmentPolicyQuestion.md)
 Questions that are posed to the  requestor.
@@ -154,13 +164,14 @@ Get customWorkflowExtensions from identityGovernance
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementCatalogResource](Get-MgEntitlementManagementCatalogResource.md)
-Get resources from identityGovernance
+Access package resources in this catalog.
 
 ### [Get-MgEntitlementManagementCatalogResourceCount](Get-MgEntitlementManagementCatalogResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementCatalogResourceEnvironment](Get-MgEntitlementManagementCatalogResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceRole](Get-MgEntitlementManagementCatalogResourceRole.md)
 Get resourceRoles from identityGovernance
@@ -172,10 +183,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment](Get-MgEntitlementManagementCatalogResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceRoleResourceScope](Get-MgEntitlementManagementCatalogResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeCount](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -184,10 +198,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRoleCount](Get-MgEntitlementManagementCatalogResourceRoleResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -202,10 +219,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment](Get-MgEntitlementManagementCatalogResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceScopeResourceRole](Get-MgEntitlementManagementCatalogResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleCount](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -214,10 +234,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScopeCount](Get-MgEntitlementManagementCatalogResourceScopeResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -265,25 +288,28 @@ Get the number of the resource
 Invoke function delta
 
 ### [Get-MgEntitlementManagementResource](Get-MgEntitlementManagementResource.md)
-Get resources from identityGovernance
+The resources associated with the catalogs.
 
 ### [Get-MgEntitlementManagementResourceCount](Get-MgEntitlementManagementResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceEnvironment](Get-MgEntitlementManagementResourceEnvironment.md)
-Get resourceEnvironments from identityGovernance
+A reference to the geolocation environments in which a resource is located.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentCount](Get-MgEntitlementManagementResourceEnvironmentCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResource](Get-MgEntitlementManagementResourceEnvironmentResource.md)
-Get resources from identityGovernance
+Read-only.
+Required.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceCount](Get-MgEntitlementManagementResourceEnvironmentResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceRole](Get-MgEntitlementManagementResourceEnvironmentResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleCount](Get-MgEntitlementManagementResourceEnvironmentResourceRoleCount.md)
 Get the number of the resource
@@ -292,10 +318,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -304,10 +333,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceRoleResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceScope](Get-MgEntitlementManagementResourceEnvironmentResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeCount](Get-MgEntitlementManagementResourceEnvironmentResourceScopeCount.md)
 Get the number of the resource
@@ -316,10 +348,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -328,10 +363,11 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceEnvironmentResourceScopeResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequest](Get-MgEntitlementManagementResourceRequest.md)
-Get resourceRequests from identityGovernance
+Represents a request to add or remove a resource to or from a catalog respectively.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalog](Get-MgEntitlementManagementResourceRequestCatalog.md)
 Get catalog from identityGovernance
@@ -351,13 +387,14 @@ Get customWorkflowExtensions from identityGovernance
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResource](Get-MgEntitlementManagementResourceRequestCatalogResource.md)
-Get resources from identityGovernance
+Access package resources in this catalog.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceCount](Get-MgEntitlementManagementResourceRequestCatalogResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRole](Get-MgEntitlementManagementResourceRequestCatalogResourceRole.md)
 Get resourceRoles from identityGovernance
@@ -369,10 +406,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -381,10 +421,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRequestCatalogResourceRoleResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -399,10 +442,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -411,10 +457,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRequestCatalogResourceScopeResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -426,10 +475,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceRole](Get-MgEntitlementManagementResourceRequestResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceRoleCount](Get-MgEntitlementManagementResourceRequestResourceRoleCount.md)
 Get the number of the resource
@@ -438,10 +490,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScope](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -450,10 +505,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceRoleResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceScope](Get-MgEntitlementManagementResourceRequestResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceScopeCount](Get-MgEntitlementManagementResourceRequestResourceScopeCount.md)
 Get the number of the resource
@@ -462,10 +520,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRole](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -474,10 +535,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRequestResourceScopeResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRole](Get-MgEntitlementManagementResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleCount](Get-MgEntitlementManagementResourceRoleCount.md)
 Get the number of the resource
@@ -486,10 +550,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleResourceScope](Get-MgEntitlementManagementResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRoleResourceScopeCount.md)
 Get the number of the resource
@@ -498,7 +565,8 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRoleResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScope](Get-MgEntitlementManagementResourceRoleScope.md)
 Get resourceRoleScopes from identityGovernance
@@ -510,10 +578,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceRole](Get-MgEntitlementManagementResourceRoleScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleCount](Get-MgEntitlementManagementResourceRoleScopeResourceRoleCount.md)
 Get the number of the resource
@@ -522,16 +593,21 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScopeCount](Get-MgEntitlementManagementResourceRoleScopeResourceRoleResourceScopeCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceScope](Get-MgEntitlementManagementResourceRoleScopeResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeResourceScopeCount](Get-MgEntitlementManagementResourceRoleScopeResourceScopeCount.md)
 Get the number of the resource
@@ -543,16 +619,21 @@ Get role from identityGovernance
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceRole](Get-MgEntitlementManagementResourceRoleScopeRoleResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceRoleCount](Get-MgEntitlementManagementResourceRoleScopeRoleResourceRoleCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScope](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeCount](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeCount.md)
 Get the number of the resource
@@ -561,16 +642,21 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceRoleScopeRoleResourceScopeResourceRoleCount.md)
 Get the number of the resource
 
 ### [Get-MgEntitlementManagementResourceScope](Get-MgEntitlementManagementResourceScope.md)
-Get scopes from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceScopeCount](Get-MgEntitlementManagementResourceScopeCount.md)
 Get the number of the resource
@@ -579,10 +665,13 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceScopeResourceEnvironment](Get-MgEntitlementManagementResourceScopeResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceScopeResourceRole](Get-MgEntitlementManagementResourceScopeResourceRole.md)
-Get roles from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ### [Get-MgEntitlementManagementResourceScopeResourceRoleCount](Get-MgEntitlementManagementResourceScopeResourceRoleCount.md)
 Get the number of the resource
@@ -591,7 +680,8 @@ Get the number of the resource
 Get resource from identityGovernance
 
 ### [Get-MgEntitlementManagementResourceScopeResourceRoleResourceEnvironment](Get-MgEntitlementManagementResourceScopeResourceRoleResourceEnvironment.md)
-Get environment from identityGovernance
+Contains the environment information for the resource.
+This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
 Retrieve the properties of an entitlementManagementSettings object.
@@ -650,7 +740,7 @@ There can be multiple insights associated with an accessReviewInstanceDecisionIt
 ### [Get-MgIdentityGovernanceAccessReviewHistoryDefinition](Get-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
 Retrieve an accessReviewHistoryDefinition object by its identifier.
 All the properties of the access review history definition object are returned.
-If the definition is 30 days or older, a `404 Not Found` error is returned.
+If the definition is 30 days or older, a 404 Not Found error is returned.
 
 ### [Get-MgIdentityGovernanceAccessReviewHistoryDefinitionCount](Get-MgIdentityGovernanceAccessReviewHistoryDefinitionCount.md)
 Get the number of the resource
@@ -974,7 +1064,7 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementFile](Get-MgIdentityGovernanceTermsOfUseAgreementFile.md)
 Retrieve the details of an agreement file, including the language and version information.
-The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementFileCount](Get-MgIdentityGovernanceTermsOfUseAgreementFileCount.md)
 Get the number of the resource
@@ -1437,7 +1527,7 @@ When you run a workflow on demand, the tasks are executed regardless of whether 
 Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
 
 ### [Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
 
 ### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -1555,7 +1645,9 @@ Add an accessPackage to the list of access packages that have been marked as inc
 Add a group to the list of groups that have been marked as incompatible on an accessPackage.
 
 ### [New-MgEntitlementManagementAccessPackageResourceRoleScope](New-MgEntitlementManagementAccessPackageResourceRoleScope.md)
-Create new navigation property to resourceRoleScopes for identityGovernance
+Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
+The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the originId for the resource role retrieved from the list of the resource roles.
+Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
 
 ### [New-MgEntitlementManagementAssignment](New-MgEntitlementManagementAssignment.md)
 Create new navigation property to assignments for identityGovernance
@@ -1634,7 +1726,12 @@ Create new navigation property to scopes for identityGovernance
 Create new navigation property to roles for identityGovernance
 
 ### [New-MgEntitlementManagementResourceRequest](New-MgEntitlementManagementResourceRequest.md)
-Create new navigation property to resourceRequests for identityGovernance
+Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
+A resource must be included in an access package catalog before a role of that resource can be added to an access package.
+To add an Azure AD group as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
+The value of the originSystem property within the resource should be AadGroup and the value of the originId is the identifier of the group.
+If using delegated permissions, the user requesting to add a group should be an owner of the group or in a directory role which allows them to modify groups.
+If using application permissions, the application requesting to add the group should also be assigned the Group.ReadWrite.All permission.
 
 ### [New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
 Create new navigation property to customWorkflowExtensions for identityGovernance
@@ -1736,9 +1833,9 @@ Create a new accessReviewHistoryDefinition object.
 Create new navigation property to instances for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
-Generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`.
+Generates a URI for an accessReviewHistoryInstance object the status for which is done.
 Each URI can be used to retrieve the instance's review history data.
-Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
+Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
 
 ### [New-MgIdentityGovernanceAppConsentRequest](New-MgIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
@@ -1883,7 +1980,7 @@ Delete navigation property versions for agreements
 
 ### [Remove-MgEntitlementManagementAccessPackage](Remove-MgEntitlementManagementAccessPackage.md)
 Delete an accessPackage object.
-You cannot delete an access package if it has any **accessPackageAssignment**.
+You cannot delete an access package if it has any accessPackageAssignment.
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApproval](Remove-MgEntitlementManagementAccessPackageAssignmentApproval.md)
 Delete navigation property accessPackageAssignmentApprovals for identityGovernance
@@ -1901,7 +1998,7 @@ Remove an access package from the list of access packages that have been marked 
 Remove a group from the list of groups that have been marked as incompatible on an accessPackage.
 
 ### [Remove-MgEntitlementManagementAccessPackageResourceRoleScope](Remove-MgEntitlementManagementAccessPackageResourceRoleScope.md)
-Delete navigation property resourceRoleScopes for identityGovernance
+Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
 
 ### [Remove-MgEntitlementManagementAssignment](Remove-MgEntitlementManagementAssignment.md)
 Delete navigation property assignments for identityGovernance
@@ -1918,7 +2015,7 @@ Delete navigation property questions for identityGovernance
 ### [Remove-MgEntitlementManagementAssignmentRequest](Remove-MgEntitlementManagementAssignmentRequest.md)
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
-You cannot delete an access package assignment request if it has any **accessPackageAssignment** objects.
+You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
 
 ### [Remove-MgEntitlementManagementCatalog](Remove-MgEntitlementManagementCatalog.md)
 Delete an accessPackageCatalog.
@@ -2298,7 +2395,7 @@ Delete navigation property roleEligibilityScheduleInstances for roleManagement
 Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
 ### [Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 
 ### [Restore-MgIdentityGovernanceLifecycleWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflow.md)
 Restore a workflow that has been deleted.
@@ -2312,27 +2409,27 @@ You can only restore a workflow that was deleted within the last 30 days before 
 Invoke action resume
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
@@ -2343,38 +2440,38 @@ Send a reminder to the reviewers of an active accessReviewInstance.
 Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Stop-MgEntitlementManagementAssignmentRequest](Stop-MgEntitlementManagementAssignmentRequest.md)
-In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
+In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinition](Stop-MgIdentityGovernanceAccessReviewDefinition.md)
 Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status is marked as `Completed`, the reviewers can no longer give input, and the access review decisions are applied.
+After the access review instance stops, the instance status is marked as Completed, the reviewers can no longer give input, and the access review decisions are applied.
 Stopping an instance will not stop future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
+Stop an access review stage that is inProgress.
+After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input.
 If there are subsequent stages that depend on the completed stage, the next stage will be created.
 The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
 
 ### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 
 ### [Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a Granted status, and have the system automatically delete the canceled request after 30 days.
+After calling this action, the status of the canceled unifiedRoleAssignmentScheduleRequest changes to Canceled.
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.
+Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is Granted and have the system automatically delete the cancelled request after 30 days.
+After calling this action, the status of the cancelled unifiedRoleEligibilityScheduleRequest changes to Revoked.
 
 ### [Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -2435,7 +2532,7 @@ Update the navigation property resourceRoleScopes in identityGovernance
 
 ### [Update-MgEntitlementManagementAssignment](Update-MgEntitlementManagementAssignment.md)
 In Azure AD entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package.
-The **state** of the access package assignment must be `Delivered` for the administrator to reprocess the user's assignment.
+The state of the access package assignment must be Delivered for the administrator to reprocess the user's assignment.
 Only admins with the Access Package Assignment Manager role, or higher, in Azure AD entitlement management can perform this action.
 
 ### [Update-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting](Update-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting.md)
@@ -2446,7 +2543,7 @@ Update the navigation property questions in identityGovernance
 
 ### [Update-MgEntitlementManagementAssignmentRequest](Update-MgEntitlementManagementAssignmentRequest.md)
 In Azure AD entitlement management, callers can automatically retry a user's request for access to an access package.
-It is performed on an accessPackageAssignmentRequest object whose **requestState** is in a `DeliveryFailed` or `PartiallyDelivered` state.
+It is performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.
 You can only reprocess a request within 14 days from the time the original request was completed.
 For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.
 
@@ -2662,9 +2759,9 @@ Update an existing accessReviewScheduleDefinition object to change one or more o
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinitionInstance](Update-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Update the properties of an accessReviewInstance object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated but the **scope** property is also required in the request body.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewInstance**, it's **status** must be `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewInstance, it's status must be InProgress.
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceContactedReviewer.md)
 Update the navigation property contactedReviewers in identityGovernance
@@ -2677,9 +2774,9 @@ Update the navigation property insights in identityGovernance
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Update the properties of an accessReviewStage object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewStage**, its **status** must be `NotStarted`, `Initializing`, or `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewStage, its status must be NotStarted, Initializing, or InProgress.
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision](Update-MgIdentityGovernanceAccessReviewDefinitionInstanceStageDecision.md)
 Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.

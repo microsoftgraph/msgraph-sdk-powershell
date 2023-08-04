@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDetectedApp
 
 ## SYNOPSIS
-Delete navigation property detectedApps for deviceManagement
+Deletes a detectedApp.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDetectedApp -InputObject <IDeviceManagementIdentity> [-
 ```
 
 ## DESCRIPTION
-Delete navigation property detectedApps for deviceManagement
+Deletes a detectedApp.
 
 ## EXAMPLES
 

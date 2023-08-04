@@ -8,9 +8,9 @@ schema: 2.0.0
 # Invoke-MgBetaReactivateDirectoryImpactedResource
 
 ## SYNOPSIS
-Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object.
-This action updates the **status** of the resource to `active`.
-This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`.
+Reactivate an accidentally dismissed, completed, or postponed impactedResource object.
+This action updates the status of the resource to active.
+This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser.
 
 ## SYNTAX
 
@@ -27,9 +27,9 @@ Invoke-MgBetaReactivateDirectoryImpactedResource -InputObject <IIdentityDirector
 ```
 
 ## DESCRIPTION
-Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object.
-This action updates the **status** of the resource to `active`.
-This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`.
+Reactivate an accidentally dismissed, completed, or postponed impactedResource object.
+This action updates the status of the resource to active.
+This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser.
 
 ## EXAMPLES
 

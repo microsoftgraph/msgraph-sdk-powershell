@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new trustFrameworkKeySet.
-The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
+The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
 The modified ID will be available in the response and in the location header.
 
 ## SYNTAX
@@ -28,7 +28,7 @@ New-MgBetaTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeyS
 
 ## DESCRIPTION
 Create a new trustFrameworkKeySet.
-The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
+The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
 The modified ID will be available in the response and in the location header.
 
 ## EXAMPLES

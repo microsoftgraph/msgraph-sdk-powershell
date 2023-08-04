@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementRoleAssignment
 
 ## SYNOPSIS
-Create new navigation property to roleAssignments for deviceManagement
+Create a new deviceAndAppManagementRoleAssignment object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementRoleAssignment -BodyParameter <IMicrosoftGraphDeviceAndApp
 ```
 
 ## DESCRIPTION
-Create new navigation property to roleAssignments for deviceManagement
+Create a new deviceAndAppManagementRoleAssignment object.
 
 ## EXAMPLES
 

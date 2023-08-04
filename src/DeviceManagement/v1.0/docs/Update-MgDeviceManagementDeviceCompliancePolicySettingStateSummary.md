@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary
 
 ## SYNOPSIS
-Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+Update the properties of a deviceCompliancePolicySettingStateSummary object.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgDeviceManagementDeviceCompliancePolicySettingStateSummary -InputObject 
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+Update the properties of a deviceCompliancePolicySettingStateSummary object.
 
 ## EXAMPLES
 

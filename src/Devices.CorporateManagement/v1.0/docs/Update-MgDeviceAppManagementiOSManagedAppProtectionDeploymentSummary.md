@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary
 
 ## SYNOPSIS
-Update the navigation property deploymentSummary in deviceAppManagement
+Update the properties of a managedAppPolicyDeploymentSummary object.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary
 ```
 
 ## DESCRIPTION
-Update the navigation property deploymentSummary in deviceAppManagement
+Update the properties of a managedAppPolicyDeploymentSummary object.
 
 ## EXAMPLES
 

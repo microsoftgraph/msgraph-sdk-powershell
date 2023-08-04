@@ -5,7 +5,6 @@ namespace Microsoft.Graph.Beta.PowerShell
 {
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.Beta.PowerShell.Models;
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
@@ -17,26 +16,6 @@ namespace Microsoft.Graph.Beta.PowerShell
 
     internal static class PSCmdletExtensions
     {
-        private static readonly char[] PathSeparators = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
-        
-        // Converts a string to its unescaped form. The method also replaces '+' with spaces.
-        internal static string UnescapeString(this PSCmdlet cmdlet, string value)
-        {
-            if (value == null)
-                return null;
-
-            try
-            {
-                var unescapedString = Uri.UnescapeDataString(value);
-                return unescapedString.Replace('+', ' ');
-            }
-            catch (UriFormatException ex)
-            {
-                cmdlet.ThrowTerminatingError(new ErrorRecord(ex, string.Empty, ErrorCategory.InvalidArgument, value));
-                return null;
-            }
-        }
-
         /// <summary>
         /// Gets a resolved or unresolved path from PSPath.
         /// </summary>
@@ -105,17 +84,6 @@ namespace Microsoft.Graph.Beta.PowerShell
                 cmdlet.WriteToStream(inputStream, fileProvider.Stream, downloadUrl, cancellationToken);
             }
         }
-        
-        internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage response)
-        {
-            var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
-            var recommendedAction = $"See service error codes: {serviceErrorDoc}";
-            var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response, odataError);
-            return new ErrorDetails(errorDetailsMessage)
-            {
-                RecommendedAction = recommendedAction
-            };
-        }
 
         /// <summary>
         /// Writes an input stream to an output stream.
@@ -153,24 +121,20 @@ namespace Microsoft.Graph.Beta.PowerShell
         private static bool IsPathDirectory(string path)
         {
             if (path == null) throw new ArgumentNullException("path");
-            bool isDirectory = false;
             path = path.Trim();
 
             if (Directory.Exists(path))
-                isDirectory = true;
+                return true;
 
             if (File.Exists(path))
-                isDirectory = false;
+                return false;
 
             // If path has a trailing slash then it's a directory.
-            if (PathSeparators.Contains(path.Last()))
-                isDirectory = true;
+            if (new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar }.Any(x => path.EndsWith(x.ToString())))
+                return true;
 
-            // If path has an extension then its a file.
-            if (Path.HasExtension(path))
-                isDirectory = false;
-
-            return isDirectory;
+            // If path has an extension then its a file; directory otherwise.
+            return string.IsNullOrWhiteSpace(Path.GetExtension(path));
         }
 
         private static string GetFileName(HttpResponseMessage responseMessage)

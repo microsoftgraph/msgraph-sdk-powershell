@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for deviceManagement
+Deletes a enrollmentConfigurationAssignment.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for deviceManagement
+Deletes a enrollmentConfigurationAssignment.
 
 ## EXAMPLES
 

@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
-**Note:** To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
+Note: To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
 For more information, see Update b2cIdentityUserFlow.
 Language customization is enabled by default in Azure Active Directory user flows.
 
@@ -39,7 +39,7 @@ Get-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-
 ## DESCRIPTION
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
-**Note:** To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
+Note: To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
 For more information, see Update b2cIdentityUserFlow.
 Language customization is enabled by default in Azure Active Directory user flows.
 

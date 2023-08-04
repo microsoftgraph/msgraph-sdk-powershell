@@ -9,9 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an accessReviewInstance object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated but the **scope** property is also required in the request body.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewInstance**, it's **status** must be `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewInstance, it's status must be InProgress.
 
 ## SYNTAX
 
@@ -53,9 +53,9 @@ Update-MgIdentityGovernanceAccessReviewDefinitionInstance -InputObject <IIdentit
 
 ## DESCRIPTION
 Update the properties of an accessReviewInstance object.
-Only the **reviewers** and **fallbackReviewers** properties can be updated but the **scope** property is also required in the request body.
-You can only add reviewers to the **fallbackReviewers** property but can't remove existing **fallbackReviewers**.
-To update an **accessReviewInstance**, it's **status** must be `InProgress`.
+Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body.
+You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers.
+To update an accessReviewInstance, it's status must be InProgress.
 
 ## EXAMPLES
 

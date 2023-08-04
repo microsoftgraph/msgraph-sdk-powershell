@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
 
 ## SYNOPSIS
-Delete navigation property deviceComplianceSettingStates for deviceManagement
+Deletes a deviceComplianceSettingState.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplian
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceComplianceSettingStates for deviceManagement
+Deletes a deviceComplianceSettingState.
 
 ## EXAMPLES
 

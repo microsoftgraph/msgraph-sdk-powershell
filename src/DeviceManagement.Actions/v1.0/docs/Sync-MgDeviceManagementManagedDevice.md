@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgDeviceManagementManagedDevice
 
 ## SYNOPSIS
-Invoke action syncDevice
+Not yet documented
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Sync-MgDeviceManagementManagedDevice -InputObject <IDeviceManagementActionsIdent
 ```
 
 ## DESCRIPTION
-Invoke action syncDevice
+Not yet documented
 
 ## EXAMPLES
 

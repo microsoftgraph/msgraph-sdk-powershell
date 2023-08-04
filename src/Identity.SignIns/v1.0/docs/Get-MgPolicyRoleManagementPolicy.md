@@ -41,6 +41,13 @@ Retrieve the details of a role management policy.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
+Get-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+```
+
 Get-MgPolicyRoleManagementPolicy -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -ExpandProperty "effectiveRules,rules"
 
 ## PARAMETERS

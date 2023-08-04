@@ -41,7 +41,7 @@ Get the properties of the specified schemaExtension definition.
 Import-Module Microsoft.Graph.Beta.SchemaExtensions
 ```
 
-Get-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
+Get-MgBetaSchemaExtension -Filter "id eq 'graphlearn_test'"
 
 ## PARAMETERS
 

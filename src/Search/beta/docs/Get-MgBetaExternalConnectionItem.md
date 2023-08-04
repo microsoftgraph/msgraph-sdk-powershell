@@ -11,7 +11,7 @@ schema: 2.0.0
 Get the properties and relationships of an externalitem object.
 This API is provided for diagnostic purposes only.
 It is not intended to be used for any other purpose.
-Repeated requests to this API might result in `429` HTTP errors.
+Repeated requests to this API might result in 429 HTTP errors.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Get-MgBetaExternalConnectionItem -InputObject <ISearchIdentity> [-ExpandProperty
 Get the properties and relationships of an externalitem object.
 This API is provided for diagnostic purposes only.
 It is not intended to be used for any other purpose.
-Repeated requests to this API might result in `429` HTTP errors.
+Repeated requests to this API might result in 429 HTTP errors.
 
 ## EXAMPLES
 

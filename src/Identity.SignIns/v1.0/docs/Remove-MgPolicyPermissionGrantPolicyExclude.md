@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
-Deletes a permissionGrantConditionSet from the **excludes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdenti
 ```
 
 ## DESCRIPTION
-Deletes a permissionGrantConditionSet from the **excludes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
 
 ## EXAMPLES
 

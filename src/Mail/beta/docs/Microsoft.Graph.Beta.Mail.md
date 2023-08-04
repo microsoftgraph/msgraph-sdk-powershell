@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: e8f3a996-64a4-4734-863a-b3466d113d83
+Module Guid: 605d7642-1797-427b-8382-cad75dfb84ab
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -161,18 +161,19 @@ Future messages from that SMTP address will be consistently classified\nas speci
 
 ### [New-MgBetaUserMailFolder](New-MgBetaUserMailFolder.md)
 Use this API to create a new mail folder in the root folder of the user's mailbox.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolder](New-MgBetaUserMailFolderChildFolder.md)
 Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolderMessage](New-MgBetaUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageAttachment](New-MgBetaUserMailFolderChildFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageExtension](New-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -191,8 +192,9 @@ Outlook carries out those actions if an incoming message in the user's Inbox mee
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgBetaUserMailFolderMessageAttachment](New-MgBetaUserMailFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMailFolderMessageExtension](New-MgBetaUserMailFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -208,16 +210,15 @@ Create a messageRule object by specifying a set of conditions and actions.
 Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ### [New-MgBetaUserMessage](New-MgBetaUserMessage.md)
-Create a draft of a new message in either JSON or MIME format.
-When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
-By default, this operation saves the draft in the Drafts folder.
-Send the draft message in a subsequent operation.
-Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserMessageAttachment](New-MgBetaUserMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMessageExtension](New-MgBetaUserMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -247,7 +248,7 @@ Delete navigation property attachments for users
 
 ### [Remove-MgBetaUserMailFolderChildFolderMessageExtension](Remove-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Delete an open extension (openTypeExtension object) from the specified instance of a resource.
-See the table in the Permissions section for the list of resources that support open extensions.
+For the list of resources that support open extensions, see the table in the Permissions section.
 
 ### [Remove-MgBetaUserMailFolderChildFolderMessageMention](Remove-MgBetaUserMailFolderChildFolderMessageMention.md)
 Delete a message in the specified user's mailbox, or delete a relationship of the message.
@@ -264,7 +265,7 @@ Delete navigation property attachments for users
 
 ### [Remove-MgBetaUserMailFolderMessageExtension](Remove-MgBetaUserMailFolderMessageExtension.md)
 Delete an open extension (openTypeExtension object) from the specified instance of a resource.
-See the table in the Permissions section for the list of resources that support open extensions.
+For the list of resources that support open extensions, see the table in the Permissions section.
 
 ### [Remove-MgBetaUserMailFolderMessageMention](Remove-MgBetaUserMailFolderMessageMention.md)
 Delete a message in the specified user's mailbox, or delete a relationship of the message.
@@ -282,7 +283,7 @@ Delete navigation property attachments for users
 
 ### [Remove-MgBetaUserMessageExtension](Remove-MgBetaUserMessageExtension.md)
 Delete an open extension (openTypeExtension object) from the specified instance of a resource.
-See the table in the Permissions section for the list of resources that support open extensions.
+For the list of resources that support open extensions, see the table in the Permissions section.
 
 ### [Remove-MgBetaUserMessageMention](Remove-MgBetaUserMessageMention.md)
 Delete a message in the specified user's mailbox, or delete a relationship of the message.
@@ -301,13 +302,13 @@ Update media content for the navigation property messages in users
 Update the navigation property inferenceClassification in users
 
 ### [Update-MgBetaUserInferenceClassificationOverride](Update-MgBetaUserInferenceClassificationOverride.md)
-Change the **classifyAs** field of a focused Inbox override as specified.
+Change the classifyAs field of a focused Inbox override as specified.
 You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance.
 If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override.
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgBetaUserMailFolder](Update-MgBetaUserMailFolder.md)
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailFolder object.
 
 ### [Update-MgBetaUserMailFolderChildFolder](Update-MgBetaUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users

@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a plannerBucket object.
 Import-Module Microsoft.Graph.Beta.Planner
 ```
 
-Get-MgBetaPlannerBucket -PlannerBucketId $plannerBucketId
+Get-MgBetaPlannerBucket
 
 ## PARAMETERS
 

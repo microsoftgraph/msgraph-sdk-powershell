@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAlertV2
 
 ## SYNOPSIS
-Get the properties and relationships of an alert in an organization based on the specified alert **id** property.
+Get the properties and relationships of an alert in an organization based on the specified alert id property.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityAlertV2 -InputObject <ISecurityIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of an alert in an organization based on the specified alert **id** property.
+Get the properties and relationships of an alert in an organization based on the specified alert id property.
 
 ## EXAMPLES
 

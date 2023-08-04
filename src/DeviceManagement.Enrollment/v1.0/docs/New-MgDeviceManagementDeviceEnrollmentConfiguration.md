@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
+Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementDeviceEnrollmentConfiguration
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
+Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ## EXAMPLES
 

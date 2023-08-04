@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a callRecord object.
-There are two ways to get the **id** of a **callRecord**:
+There are two ways to get the id of a callRecord:
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgCommunicationCallRecord -InputObject <ICloudCommunicationsIdentity> [-Expa
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a callRecord object.
-There are two ways to get the **id** of a **callRecord**:
+There are two ways to get the id of a callRecord:
 
 ## EXAMPLES
 

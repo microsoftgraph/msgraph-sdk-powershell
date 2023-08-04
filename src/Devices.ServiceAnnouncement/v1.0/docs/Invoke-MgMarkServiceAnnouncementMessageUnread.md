@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgMarkServiceAnnouncementMessageUnread
 
 ## SYNOPSIS
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Mark a list of serviceUpdateMessages as unread for the signed in user.
 
 ## SYNTAX
 
@@ -26,23 +26,23 @@ Invoke-MgMarkServiceAnnouncementMessageUnread
 ```
 
 ## DESCRIPTION
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Mark a list of serviceUpdateMessages as unread for the signed in user.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```
+
 $params = @{
-	MessageIds = @(
+	messageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
+
 Invoke-MgMarkServiceAnnouncementMessageUnread -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

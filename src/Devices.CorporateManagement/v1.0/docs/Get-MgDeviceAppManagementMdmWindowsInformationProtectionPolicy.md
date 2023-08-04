@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy
 
 ## SYNOPSIS
-Windows information protection for apps running on devices which are MDM enrolled.
+Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Windows information protection for apps running on devices which are MDM enrolled.
+Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
 
 ## EXAMPLES
 

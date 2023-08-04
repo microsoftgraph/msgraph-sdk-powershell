@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileAppConfigurationAssignment
 
 ## SYNOPSIS
-Create new navigation property to assignments for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationAssignment object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgDeviceAppManagementMobileAppConfigurationAssignment -InputObject <IDevices
 ```
 
 ## DESCRIPTION
-Create new navigation property to assignments for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationAssignment object.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingLocalizationCustomCss
 
 ## SYNOPSIS
-Get customCSS for the navigation property localizations from organization
+CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgOrganizationBrandingLocalizationCustomCss -InputObject <IIdentityDirectory
 ```
 
 ## DESCRIPTION
-Get customCSS for the navigation property localizations from organization
+CSS styling that appears on the sign-in page.
+The allowed format is .css format only and not larger than 25 KB.
 
 ## EXAMPLES
 

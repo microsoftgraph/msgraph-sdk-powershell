@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationCallAudioRoutingGroup
 
 ## SYNOPSIS
-Delete navigation property audioRoutingGroups for communications
+Delete the specified audioRoutingGroup.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Delete navigation property audioRoutingGroups for communications
+Delete the specified audioRoutingGroup.
 
 ## EXAMPLES
 

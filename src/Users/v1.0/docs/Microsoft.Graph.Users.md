@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 4e0064d5-79c0-4275-9ec1-031a560f74a8
+Module Guid: a863dce8-4df1-45ed-895a-35cf3b3280d6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -175,7 +175,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
-Get the specified profilePhoto or its metadata (**profilePhoto** properties).
+Get the specified profilePhoto or its metadata (profilePhoto properties).
 The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
 Photos can be any dimension if they are stored in Azure Active Directory.
 You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
@@ -331,11 +331,14 @@ Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
 Create a linkedResource object to associate a specified task with an item in a partner application.
-For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association.
-You can also create a **linkedResource** object while creating a task.
+For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association.
+You can also create a linkedResource object while creating a task.
 
 ### [Remove-MgUser](Remove-MgUser.md)
-Deletes a user.
+Delete user.
+ When deleted, user resources are moved to a temporary container and can be restored within 30 days.
+After that time, they are permanently deleted.
+To learn more, see deletedItems.
 
 ### [Remove-MgUserExtension](Remove-MgUserExtension.md)
 Delete navigation property extensions for users
@@ -410,8 +413,8 @@ Update the navigation property licenseDetails in users
 Update property mailboxSettings value.
 
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
-Update the writable property, **color**, of the specified outlookCategory object.
-You cannot modify the **displayName** property \nonce you have created the category.
+Update the writable property, color, of the specified outlookCategory object.
+You cannot modify the displayName property \nonce you have created the category.
 
 ### [Update-MgUserPhoto](Update-MgUserPhoto.md)
 Update the navigation property photo in users

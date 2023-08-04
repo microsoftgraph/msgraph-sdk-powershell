@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaBusinessScenarioPlannerTaskDetail
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaBusinessScenarioPlannerTaskDetail -InputObject <IBookingsIdentity> [-E
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ## EXAMPLES
 

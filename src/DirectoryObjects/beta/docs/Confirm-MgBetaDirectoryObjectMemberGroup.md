@@ -54,8 +54,10 @@ Because Microsoft 365 groups cannot contain other groups, membership in a Micros
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.DirectoryObjects
+```
+
 $params = @{
-	GroupIds = @(
+	groupIds = @(
 		"f448435d-3ca7-4073-8152-a1fd73c0fd09"
 		"bd7c6263-4dd5-4ae8-8c96-556e1c0bece6"
 		"93670da6-d731-4366-94b5-abed40b6016b"
@@ -63,10 +65,8 @@ $params = @{
 		"c9103f26-f3cf-4004-a611-2a14e81b8f79"
 	)
 }
+
 Confirm-MgBetaDirectoryObjectMemberGroup -DirectoryObjectId $directoryObjectId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

@@ -43,7 +43,7 @@ For descriptions of each of the endpoints, see printUsageByPrinter.
 Import-Module Microsoft.Graph.Reports
 ```
 
-Get-MgReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
+Get-MgReportDailyPrintUsageByPrinter
 
 ## PARAMETERS
 

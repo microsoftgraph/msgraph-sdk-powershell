@@ -40,7 +40,7 @@ See the table in the Permissions section for the list of resources that support 
 Import-Module Microsoft.Graph.Beta.ChangeNotifications
 ```
 
-Get-MgBetaSubscription -SubscriptionId $subscriptionId
+Get-MgBetaSubscription
 
 ## PARAMETERS
 

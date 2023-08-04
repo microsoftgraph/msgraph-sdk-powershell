@@ -9,11 +9,11 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a new phone authentication method for a user.
-A user may only have one phone of each type, captured in the **phoneType** property.
-This means, for example, adding a `mobile` phone to a user with a preexisting `mobile` phone will fail.
-Additionally, a user must always have a `mobile` phone before adding an `alternateMobile` phone.
+A user may only have one phone of each type, captured in the phoneType property.
+This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail.
+Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
-Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` number is added, the system will attempt to register the number for use in that system.
+Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system will attempt to register the number for use in that system.
 
 ## SYNTAX
 
@@ -45,11 +45,11 @@ New-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
 
 ## DESCRIPTION
 Add a new phone authentication method for a user.
-A user may only have one phone of each type, captured in the **phoneType** property.
-This means, for example, adding a `mobile` phone to a user with a preexisting `mobile` phone will fail.
-Additionally, a user must always have a `mobile` phone before adding an `alternateMobile` phone.
+A user may only have one phone of each type, captured in the phoneType property.
+This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail.
+Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
-Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` number is added, the system will attempt to register the number for use in that system.
+Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system will attempt to register the number for use in that system.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestDownloadUrl
 
 ## SYNOPSIS
-Invoke action createDownloadUrl
+Not yet documented
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequestDownlo
 ```
 
 ## DESCRIPTION
-Invoke action createDownloadUrl
+Not yet documented
 
 ## EXAMPLES
 

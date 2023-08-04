@@ -10,8 +10,8 @@ schema: 2.0.0
 ## SYNOPSIS
 Indicate that a student wants to work on the submission of the assignment after it was turned in.
 Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `submitted` to `working`.
-During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
+This method changes the status of the submission from submitted to working.
+During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
 
@@ -32,8 +32,8 @@ Invoke-MgUnsubmitEducationClassAssignmentSubmission -InputObject <IEducationIden
 ## DESCRIPTION
 Indicate that a student wants to work on the submission of the assignment after it was turned in.
 Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `submitted` to `working`.
-During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
+This method changes the status of the submission from submitted to working.
+During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
 
@@ -42,10 +42,9 @@ A teacher can also unsubmit a student's assignment on their behalf.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Invoke-MgUnsubmitEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
 
-
+Invoke-MgUnsubmitEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 
 ## PARAMETERS
 

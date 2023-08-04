@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.ChangeNotifications
-Module Guid: 7a48e2f5-7ba5-4d8c-b984-c44af1b500d1
+Module Guid: 60253272-e8df-4b61-9faf-7fdc1a114bc5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.changenotifications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,7 +16,7 @@ Retrieve the properties and relationships of a subscription.
 See the table in the Permissions section for the list of resources that support subscribing to change notifications.
 
 ### [Invoke-MgBetaReauthorizeSubscription](Invoke-MgBetaReauthorizeSubscription.md)
-Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+Reauthorize a subscription when you receive a reauthorizationRequired challenge.
 
 ### [New-MgBetaSubscription](New-MgBetaSubscription.md)
 Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.

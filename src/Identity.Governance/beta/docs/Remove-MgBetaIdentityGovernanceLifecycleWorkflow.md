@@ -34,10 +34,9 @@ You can restore a deleted workflow and its associated objects within 30 days of 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-Remove-MgBetaIdentityGovernanceLifecycleWorkflow -WorkflowId $workflowId
 ```
 
-
+Remove-MgBetaIdentityGovernanceLifecycleWorkflow -WorkflowId $workflowId
 
 ## PARAMETERS
 

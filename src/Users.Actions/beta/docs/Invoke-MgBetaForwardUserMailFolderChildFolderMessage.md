@@ -9,11 +9,11 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Forward a message using either JSON or MIME format.
-When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to forward a message, and send it later.
 
 ## SYNTAX
@@ -50,11 +50,11 @@ Invoke-MgBetaForwardUserMailFolderChildFolderMessage -InputObject <IUsersActions
 
 ## DESCRIPTION
 Forward a message using either JSON or MIME format.
-When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
+Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the **Sent Items** folder.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft to forward a message, and send it later.
 
 ## EXAMPLES

@@ -50,13 +50,13 @@ For more information about how to handle mute operations, see muteParticipantOpe
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	ClientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
-}
-Invoke-MgMuteCommunicationCallParticipant -CallId $callId -ParticipantId $participantId -BodyParameter $params
 ```
 
+$params = @{
+	clientContext = "d45324c1-fcb5-430a-902c-f20af696537c"
+}
 
+Invoke-MgMuteCommunicationCallParticipant -CallId $callId -ParticipantId $participantId -BodyParameter $params
 
 ## PARAMETERS
 

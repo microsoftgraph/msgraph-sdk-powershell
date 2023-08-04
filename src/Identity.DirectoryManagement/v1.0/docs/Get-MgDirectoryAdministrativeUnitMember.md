@@ -29,10 +29,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $administrativeUnitId
 ```
 
-
+Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $administrativeUnitId
 
 ## PARAMETERS
 

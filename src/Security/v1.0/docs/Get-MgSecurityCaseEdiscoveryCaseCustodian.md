@@ -41,7 +41,7 @@ Read the properties and relationships of an ediscoveryCustodian object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
+Get-MgSecurityCaseEdiscoveryCaseCustodian -EdiscoveryCaseId $ediscoveryCaseId
 
 ## PARAMETERS
 

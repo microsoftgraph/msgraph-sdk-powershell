@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementManagedEBook
 
 ## SYNOPSIS
-Delete navigation property managedEBooks for deviceAppManagement
+Deletes a iosVppEBook.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementManagedEBook -InputObject <IDevicesCorporateManageme
 ```
 
 ## DESCRIPTION
-Delete navigation property managedEBooks for deviceAppManagement
+Deletes a iosVppEBook.
 
 ## EXAMPLES
 

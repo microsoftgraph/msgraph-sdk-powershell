@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementExchangeConnector
 
 ## SYNOPSIS
-Delete navigation property exchangeConnectors for deviceManagement
+Deletes a deviceManagementExchangeConnector.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdmini
 ```
 
 ## DESCRIPTION
-Delete navigation property exchangeConnectors for deviceManagement
+Deletes a deviceManagementExchangeConnector.
 
 ## EXAMPLES
 

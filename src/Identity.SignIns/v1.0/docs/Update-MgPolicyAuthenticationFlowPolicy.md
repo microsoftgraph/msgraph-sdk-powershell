@@ -8,8 +8,8 @@ schema: 2.0.0
 # Update-MgPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
-Update the **selfServiceSignUp** property of an authenticationFlowsPolicy object.
-The properties **id**, **type**, and **description** cannot be modified.
+Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
+The properties id, type, and description cannot be modified.
 
 ## SYNTAX
 
@@ -28,8 +28,8 @@ Update-MgPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthentic
 ```
 
 ## DESCRIPTION
-Update the **selfServiceSignUp** property of an authenticationFlowsPolicy object.
-The properties **id**, **type**, and **description** cannot be modified.
+Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
+The properties id, type, and description cannot be modified.
 
 ## EXAMPLES
 

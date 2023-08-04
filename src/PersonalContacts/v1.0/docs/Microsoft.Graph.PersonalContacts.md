@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.PersonalContacts
-Module Guid: 2b5298f1-c5d0-4e0d-9f3c-22043a1065a8
+Module Guid: 371e9fcc-c79a-4336-96cf-55c8603974d8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.personalcontacts
 Help Version: 1.0.0.0
 Locale: en-US
@@ -112,13 +112,13 @@ Create a new contactFolder as a child of a specified folder.
 You can also create a new contactFolder under the user's default contact folder.
 
 ### [New-MgUserContactFolderChildFolderContact](New-MgUserContactFolderChildFolderContact.md)
-Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 
 ### [New-MgUserContactFolderChildFolderContactExtension](New-MgUserContactFolderChildFolderContactExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserContactFolderContact](New-MgUserContactFolderContact.md)
-Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 
 ### [New-MgUserContactFolderContactExtension](New-MgUserContactFolderContactExtension.md)
 Create new navigation property to extensions for users

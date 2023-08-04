@@ -41,7 +41,7 @@ Retrieve the properties of an applicationTemplate object.
 Import-Module Microsoft.Graph.Applications
 ```
 
-Get-MgApplicationTemplate -ApplicationTemplateId $applicationTemplateId
+Get-MgApplicationTemplate
 
 ## PARAMETERS
 

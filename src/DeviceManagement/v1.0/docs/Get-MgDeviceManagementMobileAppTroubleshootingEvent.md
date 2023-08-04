@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementMobileAppTroubleshootingEvent
 
 ## SYNOPSIS
-The collection property of MobileAppTroubleshootingEvent.
+Read properties and relationships of the mobileAppTroubleshootingEvent object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementMobileAppTroubleshootingEvent -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-The collection property of MobileAppTroubleshootingEvent.
+Read properties and relationships of the mobileAppTroubleshootingEvent object.
 
 ## EXAMPLES
 

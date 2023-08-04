@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementWindowsInformationProtectionAppLearningSummary
 
 ## SYNOPSIS
-The windows information protection app learning summaries.
+Read properties and relationships of the windowsInformationProtectionAppLearningSummary object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgDeviceManagementWindowsInformationProtectionAppLearningSummary -InputObjec
 ```
 
 ## DESCRIPTION
-The windows information protection app learning summaries.
+Read properties and relationships of the windowsInformationProtectionAppLearningSummary object.
 
 ## EXAMPLES
 

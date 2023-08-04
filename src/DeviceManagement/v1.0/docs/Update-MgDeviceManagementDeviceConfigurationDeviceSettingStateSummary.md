@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary
 
 ## SYNOPSIS
-Update the navigation property deviceSettingStateSummaries in deviceManagement
+Update the properties of a settingStateDeviceSummary object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObje
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceSettingStateSummaries in deviceManagement
+Update the properties of a settingStateDeviceSummary object.
 
 ## EXAMPLES
 

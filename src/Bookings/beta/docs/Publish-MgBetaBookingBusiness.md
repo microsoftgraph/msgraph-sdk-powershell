@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Make the scheduling page of this business available to external customers.
-Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.
+Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Publish-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Con
 
 ## DESCRIPTION
 Make the scheduling page of this business available to external customers.
-Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.
+Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
 
 ## EXAMPLES
 

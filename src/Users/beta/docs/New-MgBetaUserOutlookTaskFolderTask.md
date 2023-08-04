@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an Outlook task in the specified task folder.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone.
 
 ## SYNTAX
 
@@ -58,7 +58,7 @@ New-MgBetaUserOutlookTaskFolderTask -InputObject <IUsersIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Create an Outlook task in the specified task folder.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone.
 
 ## EXAMPLES
 

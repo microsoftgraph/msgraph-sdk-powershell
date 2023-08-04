@@ -43,10 +43,9 @@ Returns the plannerPlans owned by the group.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Planner
-Get-MgBetaGroupPlannerPlan -GroupId $groupId
 ```
 
-
+Get-MgBetaGroupPlannerPlan -GroupId $groupId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementDefaultManagedAppProtection
 
 ## SYNOPSIS
-Delete navigation property defaultManagedAppProtections for deviceAppManagement
+Deletes a defaultManagedAppProtection.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementDefaultManagedAppProtection -InputObject <IDevicesCo
 ```
 
 ## DESCRIPTION
-Delete navigation property defaultManagedAppProtections for deviceAppManagement
+Deletes a defaultManagedAppProtection.
 
 ## EXAMPLES
 

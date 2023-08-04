@@ -56,49 +56,25 @@ The current timeout value is 15 seconds.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
-	Targets = @(
+	targets = @(
 		@{
 			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
+			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
-				Application = @{
+				phone = @{
 					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "test bot 2"
-					Id = "22bfd41f-550e-477d-8789-f6f7bd2a5e8b"
+					id = "+12345678901"
 				}
 			}
 		}
 	)
-	CallbackUri = "https://bot.contoso.com/api/calls/24701998-1a73-4d42-8085-bf46ed0ae039"
+	callbackUri = "https://bot.contoso.com/api/calls/24701998-1a73-4d42-8085-bf46ed0ae039"
 }
+
 Invoke-MgBetaRedirectCommunicationCall -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Targets = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				Phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "+12345678901"
-				}
-			}
-		}
-	)
-	CallbackUri = "https://bot.contoso.com/api/calls/24701998-1a73-4d42-8085-bf46ed0ae039"
-}
-Invoke-MgBetaRedirectCommunicationCall -CallId $callId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -336,8 +312,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[ParticipantId <String>]`: Optional. The ID of the target participant.
@@ -372,8 +348,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.

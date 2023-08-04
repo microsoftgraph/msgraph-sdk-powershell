@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
-Create new navigation property to appLogCollectionRequests for deviceManagement
+Create a new appLogCollectionRequest object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgDeviceManagementMobileAppTroubleshootingEventAppLogCollectionRequest
 ```
 
 ## DESCRIPTION
-Create new navigation property to appLogCollectionRequests for deviceManagement
+Create a new appLogCollectionRequest object.
 
 ## EXAMPLES
 

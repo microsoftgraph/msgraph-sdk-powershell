@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementMobileAppTroubleshootingEvent
 
 ## SYNOPSIS
-Create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+Create a new mobileAppTroubleshootingEvent object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementMobileAppTroubleshootingEvent
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileAppTroubleshootingEvents for deviceManagement
+Create a new mobileAppTroubleshootingEvent object.
 
 ## EXAMPLES
 

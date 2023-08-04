@@ -41,7 +41,7 @@ Get an attack simulation automation for a tenant.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityAttackSimulationAutomation -SimulationAutomationId $simulationAutomationId
+Get-MgSecurityAttackSimulationAutomation
 
 ## PARAMETERS
 

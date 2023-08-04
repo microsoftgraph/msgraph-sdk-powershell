@@ -8,9 +8,9 @@ schema: 2.0.0
 # Remove-MgBetaGroupTeamScheduleTimeOffReason
 
 ## SYNOPSIS
-Mark a timeOffReason as inactive by setting the **isActive** property.
-Every team must include at least one **timeOffReason**.
-This method does not remove the specified **timeOffReason** instance.
+Mark a timeOffReason as inactive by setting the isActive property.
+Every team must include at least one timeOffReason.
+This method does not remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
 
 ## SYNTAX
@@ -28,9 +28,9 @@ Remove-MgBetaGroupTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Mark a timeOffReason as inactive by setting the **isActive** property.
-Every team must include at least one **timeOffReason**.
-This method does not remove the specified **timeOffReason** instance.
+Mark a timeOffReason as inactive by setting the isActive property.
+Every team must include at least one timeOffReason.
+This method does not remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
 
 ## EXAMPLES

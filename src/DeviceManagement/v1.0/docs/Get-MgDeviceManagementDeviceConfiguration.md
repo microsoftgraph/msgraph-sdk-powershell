@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-The device configurations.
+Read properties and relationships of the sharedPCConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIdentit
 ```
 
 ## DESCRIPTION
-The device configurations.
+Read properties and relationships of the sharedPCConfiguration object.
 
 ## EXAMPLES
 

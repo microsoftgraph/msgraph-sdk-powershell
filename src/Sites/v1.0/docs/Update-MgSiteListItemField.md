@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSiteListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgSiteListItemField -InputObject <ISitesIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 

@@ -34,10 +34,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDeviceRegisteredOwner -DeviceId $deviceId
 ```
 
-
+Get-MgDeviceRegisteredOwner -DeviceId $deviceId
 
 ## PARAMETERS
 

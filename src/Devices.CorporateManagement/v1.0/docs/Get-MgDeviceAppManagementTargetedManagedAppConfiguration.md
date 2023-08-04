@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Targeted managed app configurations.
+Read properties and relationships of the targetedManagedAppConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementTargetedManagedAppConfiguration -InputObject <IDevicesC
 ```
 
 ## DESCRIPTION
-Targeted managed app configurations.
+Read properties and relationships of the targetedManagedAppConfiguration object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementTermAndConditionAssignment
 
 ## SYNOPSIS
-Update the navigation property assignments in deviceManagement
+Update the properties of a termsAndConditionsAssignment object.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Update the navigation property assignments in deviceManagement
+Update the properties of a termsAndConditionsAssignment object.
 
 ## EXAMPLES
 

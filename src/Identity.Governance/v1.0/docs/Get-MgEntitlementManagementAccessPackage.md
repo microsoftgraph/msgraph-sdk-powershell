@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackage
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdenti
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ## EXAMPLES
 
@@ -41,7 +45,7 @@ Retrieve the properties and relationships of an accessPackage object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-Get-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId
+Get-MgEntitlementManagementAccessPackage
 
 ## PARAMETERS
 

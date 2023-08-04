@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgTerminateDeviceManagementPartner
 
 ## SYNOPSIS
-Invoke action terminate
+Not yet documented
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgTerminateDeviceManagementPartner -InputObject <IDeviceManagementActions
 ```
 
 ## DESCRIPTION
-Invoke action terminate
+Not yet documented
 
 ## EXAMPLES
 

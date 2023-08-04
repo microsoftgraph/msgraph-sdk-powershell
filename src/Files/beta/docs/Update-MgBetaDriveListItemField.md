@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaDriveListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgBetaDriveListItemField -InputObject <IFilesIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 

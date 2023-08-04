@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy
 
 ## SYNOPSIS
-Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+Update the properties of a mdmWindowsInformationProtectionPolicy object.
 
 ## SYNTAX
 
@@ -83,7 +83,7 @@ Update-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+Update the properties of a mdmWindowsInformationProtectionPolicy object.
 
 ## EXAMPLES
 

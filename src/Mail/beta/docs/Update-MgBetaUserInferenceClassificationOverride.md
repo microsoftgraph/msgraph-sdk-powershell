@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaUserInferenceClassificationOverride
 
 ## SYNOPSIS
-Change the **classifyAs** field of a focused Inbox override as specified.
+Change the classifyAs field of a focused Inbox override as specified.
 You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance.
 If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override.
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
@@ -42,7 +42,7 @@ Update-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity>
 ```
 
 ## DESCRIPTION
-Change the **classifyAs** field of a focused Inbox override as specified.
+Change the classifyAs field of a focused Inbox override as specified.
 You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance.
 If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override.
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.

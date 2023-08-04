@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementWindowsInformationProtectionPolicy
 
 ## SYNOPSIS
-Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
+Deletes a windowsInformationProtectionPolicy.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgDeviceAppManagementWindowsInformationProtectionPolicy
 ```
 
 ## DESCRIPTION
-Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
+Deletes a windowsInformationProtectionPolicy.
 
 ## EXAMPLES
 

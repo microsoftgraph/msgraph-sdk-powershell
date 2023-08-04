@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 
 ## EXAMPLES
 

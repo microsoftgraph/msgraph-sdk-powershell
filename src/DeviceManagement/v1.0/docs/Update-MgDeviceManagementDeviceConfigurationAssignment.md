@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceConfigurationAssignment
 
 ## SYNOPSIS
-Update the navigation property assignments in deviceManagement
+Update the properties of a deviceConfigurationAssignment object.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Update the navigation property assignments in deviceManagement
+Update the properties of a deviceConfigurationAssignment object.
 
 ## EXAMPLES
 

@@ -43,7 +43,7 @@ Supports $expand.
 Import-Module Microsoft.Graph.Beta.Applications
 ```
 
-Remove-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -DelegatedPermissionClassificationId $delegatedPermissionClassificationId
+Get-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

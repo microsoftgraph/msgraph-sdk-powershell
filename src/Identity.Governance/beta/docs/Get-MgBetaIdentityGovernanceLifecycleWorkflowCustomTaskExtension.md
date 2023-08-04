@@ -41,7 +41,7 @@ Read the properties and relationships of a customTaskExtension object.
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension -CustomTaskExtensionId $customTaskExtensionId
+Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension
 
 ## PARAMETERS
 

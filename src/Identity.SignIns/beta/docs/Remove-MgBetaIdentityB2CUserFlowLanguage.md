@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a userFlowLanguageConfiguration object from a Azure AD B2C user flow.
-**Note:** You cannot delete languages from an Azure Active Directory user flow.
+Note: You cannot delete languages from an Azure Active Directory user flow.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Remove-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
 
 ## DESCRIPTION
 Deletes a userFlowLanguageConfiguration object from a Azure AD B2C user flow.
-**Note:** You cannot delete languages from an Azure Active Directory user flow.
+Note: You cannot delete languages from an Azure Active Directory user flow.
 
 ## EXAMPLES
 

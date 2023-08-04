@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCheckoutDriveRoot
 
 ## SYNOPSIS
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Invoke-MgCheckoutDriveRoot -InputObject <IFilesIdentity> [-PassThru] [-Confirm] 
 ```
 
 ## DESCRIPTION
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
 ## EXAMPLES
 

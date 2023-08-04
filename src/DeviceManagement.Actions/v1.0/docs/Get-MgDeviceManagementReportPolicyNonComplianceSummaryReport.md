@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport
 
 ## SYNOPSIS
-Invoke action getPolicyNonComplianceSummaryReport
+Not yet documented
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementReportPolicyNonComplianceSummaryReport
 ```
 
 ## DESCRIPTION
-Invoke action getPolicyNonComplianceSummaryReport
+Not yet documented
 
 ## EXAMPLES
 

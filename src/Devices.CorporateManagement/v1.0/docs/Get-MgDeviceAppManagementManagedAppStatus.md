@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementManagedAppStatus
 
 ## SYNOPSIS
-The managed app statuses.
+Read properties and relationships of the managedAppStatusRaw object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementManagedAppStatus -InputObject <IDevicesCorporateManagem
 ```
 
 ## DESCRIPTION
-The managed app statuses.
+Read properties and relationships of the managedAppStatusRaw object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementMobileThreatDefenseConnector
 
 ## SYNOPSIS
-Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+Update the properties of a mobileThreatDefenseConnector object.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgDeviceManagementMobileThreatDefenseConnector -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+Update the properties of a mobileThreatDefenseConnector object.
 
 ## EXAMPLES
 

@@ -10,14 +10,14 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a particular submission.
 Only teachers, students, and applications with application permissions can perform this operation.
-A **submission** object represents a student's work for an assignment.
-Resources associated with the **submission** represent this work.
-Only the **assignedTo** student can see and modify the **submission**.
-A teacher or application with application permissions has full access to all **submissions**.
+A submission object represents a student's work for an assignment.
+Resources associated with the submission represent this work.
+Only the assignedTo student can see and modify the submission.
+A teacher or application with application permissions has full access to all submissions.
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
-Students will not see the grade or feedback until the **assignment** has been released.
-Provide the header `Prefer: include-unknown-enum-members` to properly list **submissions** with the `reassigned` status.
+Students will not see the grade or feedback until the assignment has been released.
+Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status.
 For details, see the examples section.
 
 ## SYNTAX
@@ -44,14 +44,14 @@ Get-MgBetaEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [
 ## DESCRIPTION
 Retrieve a particular submission.
 Only teachers, students, and applications with application permissions can perform this operation.
-A **submission** object represents a student's work for an assignment.
-Resources associated with the **submission** represent this work.
-Only the **assignedTo** student can see and modify the **submission**.
-A teacher or application with application permissions has full access to all **submissions**.
+A submission object represents a student's work for an assignment.
+Resources associated with the submission represent this work.
+Only the assignedTo student can see and modify the submission.
+A teacher or application with application permissions has full access to all submissions.
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
-Students will not see the grade or feedback until the **assignment** has been released.
-Provide the header `Prefer: include-unknown-enum-members` to properly list **submissions** with the `reassigned` status.
+Students will not see the grade or feedback until the assignment has been released.
+Provide the header Prefer: include-unknown-enum-members to properly list submissions with the reassigned status.
 For details, see the examples section.
 
 ## EXAMPLES
@@ -64,6 +64,13 @@ Import-Module Microsoft.Graph.Beta.Education
 Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 
 ### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+
+### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
 ```
@@ -310,6 +317,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
+  - `[EducationModuleId <String>]`: The unique identifier of educationModule
+  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

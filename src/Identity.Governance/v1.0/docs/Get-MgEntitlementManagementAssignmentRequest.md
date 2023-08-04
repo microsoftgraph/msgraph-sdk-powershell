@@ -53,7 +53,7 @@ In Azure AD entitlement management, retrieve the properties and relationships of
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-Get-MgEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
+Get-MgEntitlementManagementAssignmentRequest
 
 ## PARAMETERS
 

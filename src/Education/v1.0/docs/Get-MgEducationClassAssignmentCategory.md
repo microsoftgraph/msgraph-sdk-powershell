@@ -50,7 +50,7 @@ Only teachers, students, and applications with application permissions can perfo
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
+Get-MgEducationClassAssignmentCategory -EducationClassId $educationClassId
 
 ## PARAMETERS
 

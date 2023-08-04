@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: b830384a-1b87-4540-a2da-cd7e65bfc468
+Module Guid: 0e9249a6-8834-42bd-96cb-8813b4667ed5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -344,13 +344,14 @@ Invoke action getConnectionQualityReports
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport](Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport.md)
-Invoke action getInaccessibleCloudPcReports
+Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status.
+An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
 Get the remote connection history records of a Cloud PC during a given period.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport](Get-MgBetaDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport.md)
-Get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
+Get a usage report on shared-use licenses, such as servicePlanId, licenseCount, and claimedLicenseCount, for real-time, 7 days, or 28 days trend.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
 Get the total aggregated remote connection usage of a Cloud PC during a given time span.
@@ -392,7 +393,7 @@ Set the review status of multiple Cloud PC devices with a single request that in
 ### [Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize](Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize.md)
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
 If any devices cannot be resized, those devices will indicate 'resize failed'.
-The remaining devices will be `provisioned` for the resize process.
+The remaining devices will be provisioned for the resize process.
 
 ### [Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
@@ -686,7 +687,7 @@ Delete user from shared Apple device
 
 ### [Rename-MgBetaDeviceManagementVirtualEndpointCloudPc](Rename-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Use this API to update the displayName for the Cloud PC entity.
 
 ### [Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType](Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType.md)
 Change the account type of the user on a specific Cloud PC.
@@ -844,7 +845,7 @@ After the review is completed, use this API again to set the Cloud PC back to a 
 Set device name of the device.
 
 ### [Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
-Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
+Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the isPortalNotificationSent property of the portal notification to true.
 
 ### [Set-MgBetaDeviceManagementResourceAccessProfile](Set-MgBetaDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -981,7 +982,7 @@ Invoke action updateWindowsDeviceAccount
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword](Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword.md)
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
-This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
+This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
 
 ### [Update-MgBetaDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty](Update-MgBetaDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty.md)
 Updates properties on Autopilot devices.

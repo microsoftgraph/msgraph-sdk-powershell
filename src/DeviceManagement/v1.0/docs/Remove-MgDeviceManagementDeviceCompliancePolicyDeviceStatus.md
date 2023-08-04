@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStatus
 
 ## SYNOPSIS
-Delete navigation property deviceStatuses for deviceManagement
+Deletes a deviceComplianceDeviceStatus.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicyDeviceStatus -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceStatuses for deviceManagement
+Deletes a deviceComplianceDeviceStatus.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource.
-This operation is allowed only for channels with a **membershipType** value of `shared`.
+This operation is allowed only for channels with a membershipType value of shared.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgBetaGroupTeamPrimaryChannelSharedWithTeam -InputObject <ITeamsIdentity>
 
 ## DESCRIPTION
 Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource.
-This operation is allowed only for channels with a **membershipType** value of `shared`.
+This operation is allowed only for channels with a membershipType value of shared.
 
 ## EXAMPLES
 

@@ -39,26 +39,16 @@ Read the details of a built-in workflow task.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -TaskDefinitionId $taskDefinitionId
 ```
 
-
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -Filter "category eq 'joiner,leaver' OR category eq 'joiner'"
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition
-```
-
-
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskDefinition -Filter "category has 'joiner'"
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementIoUpdateStatus
 
 ## SYNOPSIS
-The IOS software update installation statuses for this account.
+Read properties and relationships of the iosUpdateDeviceStatus object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementIoUpdateStatus -InputObject <IDeviceManagementAdministrati
 ```
 
 ## DESCRIPTION
-The IOS software update installation statuses for this account.
+Read properties and relationships of the iosUpdateDeviceStatus object.
 
 ## EXAMPLES
 

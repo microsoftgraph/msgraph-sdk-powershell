@@ -40,7 +40,7 @@ See the table in the Permissions section for the list of resources that support 
 Import-Module Microsoft.Graph.ChangeNotifications
 ```
 
-Get-MgSubscription -SubscriptionId $subscriptionId
+Get-MgSubscription
 
 ## PARAMETERS
 

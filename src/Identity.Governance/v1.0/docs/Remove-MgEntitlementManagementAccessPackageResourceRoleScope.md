@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEntitlementManagementAccessPackageResourceRoleScope
 
 ## SYNOPSIS
-Delete navigation property resourceRoleScopes for identityGovernance
+Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Delete navigation property resourceRoleScopes for identityGovernance
+Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
 
 ## EXAMPLES
 

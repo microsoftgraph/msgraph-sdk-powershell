@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting
 
 ## SYNOPSIS
-Get customExtensionStageSettings from identityGovernance
+The collection of stages when to execute one or more custom access package workflow extensions.
+Supports $expand.
 
 ## SYNTAX
 
@@ -35,7 +36,8 @@ Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSetting
 ```
 
 ## DESCRIPTION
-Get customExtensionStageSettings from identityGovernance
+The collection of stages when to execute one or more custom access package workflow extensions.
+Supports $expand.
 
 ## EXAMPLES
 

@@ -26,10 +26,9 @@ Get the educationClass resources owned by an educationSchool.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationSchoolClass -EducationSchoolId $educationSchoolId
 ```
 
-
+Get-MgEducationSchoolClass -EducationSchoolId $educationSchoolId
 
 ## PARAMETERS
 

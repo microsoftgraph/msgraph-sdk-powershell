@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaUserOutlookTaskFolder
 
 ## SYNOPSIS
-Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+Create a task folder in the default task group (My Tasks) of the user's mailbox.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgBetaUserOutlookTaskFolder -InputObject <IUsersIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+Create a task folder in the default task group (My Tasks) of the user's mailbox.
 
 ## EXAMPLES
 

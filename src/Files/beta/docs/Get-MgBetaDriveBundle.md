@@ -41,7 +41,14 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 Import-Module Microsoft.Graph.Beta.Files
 ```
 
-Get-MgBetaDriveBundle -DriveId $driveId -DriveItemId $driveItemId
+Get-MgBetaDriveBundle -DriveId $driveId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Files
+```
+
+Get-MgBetaDriveBundle -DriveId $driveId -Filter "bundle/album ne null"
 
 ## PARAMETERS
 

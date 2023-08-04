@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceAppManagementMobileAppConfiguration
 
 ## SYNOPSIS
-Invoke action assign
+Not yet documented
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Set-MgDeviceAppManagementMobileAppConfiguration -InputObject <IDevicesCorporateM
 ```
 
 ## DESCRIPTION
-Invoke action assign
+Not yet documented
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Partner
-Module Guid: 4acbd43c-69a4-4866-9e06-e18b02061abb
+Module Guid: 21ced988-ba83-4fcb-a9b9-fc30a6561dd5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.partner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -92,7 +92,7 @@ Update the navigation property serviceManagementDetails in tenantRelationships
 
 ### [Update-MgBetaTenantRelationshipDelegatedAdminRelationship](Update-MgBetaTenantRelationshipDelegatedAdminRelationship.md)
 Update the properties of a delegatedAdminRelationship object.
-A relationship can only be updated if it's in the `created` **status**.
+A relationship can only be updated if it's in the created status.
 
 ### [Update-MgBetaTenantRelationshipDelegatedAdminRelationshipAccessAssignment](Update-MgBetaTenantRelationshipDelegatedAdminRelationshipAccessAssignment.md)
 Update the properties of a delegatedAdminAccessAssignment object.

@@ -41,7 +41,7 @@ Get schemaExtension
 Import-Module Microsoft.Graph.SchemaExtensions
 ```
 
-Get-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
+Get-MgSchemaExtension -Filter "id eq 'graphlearn_test'"
 
 ## PARAMETERS
 

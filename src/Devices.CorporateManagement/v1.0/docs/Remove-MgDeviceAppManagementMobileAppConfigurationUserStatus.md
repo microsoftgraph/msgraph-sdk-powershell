@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileAppConfigurationUserStatus
 
 ## SYNOPSIS
-Delete navigation property userStatuses for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationUserStatus.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceAppManagementMobileAppConfigurationUserStatus
 ```
 
 ## DESCRIPTION
-Delete navigation property userStatuses for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationUserStatus.
 
 ## EXAMPLES
 

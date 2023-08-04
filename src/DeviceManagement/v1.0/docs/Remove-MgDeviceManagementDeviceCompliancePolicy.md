@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Delete navigation property deviceCompliancePolicies for deviceManagement
+Deletes a androidWorkProfileCompliancePolicy.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicy -InputObject <IDeviceManagementI
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceCompliancePolicies for deviceManagement
+Deletes a androidWorkProfileCompliancePolicy.
 
 ## EXAMPLES
 

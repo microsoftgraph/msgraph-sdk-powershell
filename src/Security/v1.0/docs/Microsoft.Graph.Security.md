@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 5289298c-2c13-40d9-b630-6332375eae35
+Module Guid: 8424c101-598b-40d9-83ce-b8a8a6988361
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,12 +13,12 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.Security Cmdlets
 ### [Add-MgSecurityCaseEdiscoveryCaseCustodianHold](Add-MgSecurityCaseEdiscoveryCaseCustodianHold.md)
 Start the process of applying hold on eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of applying hold on eDiscovery non-custodial data sources.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
@@ -27,14 +27,14 @@ For details, see Tag documents in a review set in eDiscovery.
 
 ### [Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet](Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet.md)
 Start the process of adding a collection from Microsoft 365 services to a review set.
-After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers.
 The location provides a URL that will return a Add to review set operation.
 
 ### [Clear-MgSecurityCaseEdiscoveryCaseSearchData](Clear-MgSecurityCaseEdiscoveryCaseSearchData.md)
 Delete Microsoft Teams messages contained in an eDiscovery search.
-You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people.
-Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
-Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel.
+You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people.
+Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
+Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel.
 For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams
 
 ### [Close-MgSecurityCaseEdiscoveryCase](Close-MgSecurityCaseEdiscoveryCase.md)
@@ -46,7 +46,7 @@ Initiate an export from a ediscoveryReviewSet.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
 ### [Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
-Initiate an export from a microsoft.graph.security.ediscoveryReviewSetQuery.
+Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
@@ -56,7 +56,7 @@ Retrieve the properties and relationships of an alert object.
 Get the number of the resource
 
 ### [Get-MgSecurityAlertV2](Get-MgSecurityAlertV2.md)
-Get the properties and relationships of an alert in an organization based on the specified alert **id** property.
+Get the properties and relationships of an alert in an organization based on the specified alert id property.
 
 ### [Get-MgSecurityAlertV2Count](Get-MgSecurityAlertV2Count.md)
 Get the number of the resource
@@ -200,7 +200,7 @@ Returns the parent tag of the specified tag.
 ### [Get-MgSecurityIncident](Get-MgSecurityIncident.md)
 Retrieve the properties and relationships of an incident object.
 Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects.
-Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.
+Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.
 
 ### [Get-MgSecurityIncidentAlert](Get-MgSecurityIncidentAlert.md)
 The list of related alerts.
@@ -512,7 +512,7 @@ Delete navigation property custodians for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseCustodianHold](Remove-MgSecurityCaseEdiscoveryCaseCustodianHold.md)
 Start the process of removing hold from eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
@@ -529,7 +529,7 @@ Delete navigation property noncustodialDataSources for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of removing hold from eDiscovery non-custodial data sources.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
+After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseOperation](Remove-MgSecurityCaseEdiscoveryCaseOperation.md)
@@ -626,11 +626,11 @@ Reset a caseSettings object to the default values.
 Invoke action runHuntingQuery
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
-Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions.
+Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions.
 This method updates any solution that has a record of the referenced alert ID.
 
 ### [Update-MgSecurityAlertV2](Update-MgSecurityAlertV2.md)
-Update the properties of an alert object in an organization based on the specified alert **id** property.
+Update the properties of an alert object in an organization based on the specified alert id property.
 
 ### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -693,7 +693,7 @@ Update the properties of an incident object.
 Update the navigation property secureScores in security
 
 ### [Update-MgSecuritySecureScoreControlProfile](Update-MgSecuritySecureScoreControlProfile.md)
-Update an editable **secureScoreControlProfile** object within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.
+Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
 
 ### [Update-MgSecurityThreatIntelligence](Update-MgSecurityThreatIntelligence.md)
 Update the navigation property threatIntelligence in security

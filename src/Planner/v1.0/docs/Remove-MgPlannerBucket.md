@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPlannerBucket
 
 ## SYNOPSIS
-Delete **plannerBucket**.
+Delete plannerBucket.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgPlannerBucket -InputObject <IPlannerIdentity> [-IfMatch <String>] [-Pas
 ```
 
 ## DESCRIPTION
-Delete **plannerBucket**.
+Delete plannerBucket.
 
 ## EXAMPLES
 

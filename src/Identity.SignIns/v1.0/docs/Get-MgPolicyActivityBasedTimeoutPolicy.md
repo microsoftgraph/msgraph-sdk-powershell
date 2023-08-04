@@ -41,7 +41,7 @@ Get the properties of an activityBasedTimeoutPolicy object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
+Get-MgPolicyActivityBasedTimeoutPolicy
 
 ## PARAMETERS
 

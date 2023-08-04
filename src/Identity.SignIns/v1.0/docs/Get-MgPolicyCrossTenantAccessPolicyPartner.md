@@ -41,7 +41,14 @@ Read the properties and relationships of a partner-specific configuration.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId
+Get-MgPolicyCrossTenantAccessPolicyPartner
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+```
+
+Get-MgPolicyCrossTenantAccessPolicyPartner -Property "tenantId" -ExpandProperty "identitySynchronization"
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority
 
 ## SYNOPSIS
-Invoke action setPriority
+Not yet documented
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Set-MgDeviceManagementDeviceEnrollmentConfigurationPriority -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Invoke action setPriority
+Not yet documented
 
 ## EXAMPLES
 

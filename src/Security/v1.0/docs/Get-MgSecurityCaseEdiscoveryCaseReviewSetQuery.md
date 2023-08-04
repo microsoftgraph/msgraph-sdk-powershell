@@ -41,7 +41,7 @@ Read the properties and relationships of an ediscoveryReviewSetQuery object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId
+Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId
 
 ## PARAMETERS
 

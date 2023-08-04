@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPrintConnector
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a **printConnector** object.
+Retrieve the properties and relationships of a printConnector object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a **printConnector** object.
+Retrieve the properties and relationships of a printConnector object.
 
 ## EXAMPLES
 

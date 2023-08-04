@@ -47,78 +47,17 @@ The response provides details about which memberships could and couldn't be crea
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	Values = @(
-		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
-			Roles = @(
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('18a80140-b0fb-4489-b360-2f6efaf225a0')"
-		}
-		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
-			Roles = @(
-				"owner"
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('86503198-b81b-43fe-81ee-ad45b8848ac9')"
-		}
-	)
-}
 
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	Values = @(
-		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
-			Roles = @(
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('18a80140-b0fb-4489-b360-2f6efaf225a0')"
-		}
-		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
-			Roles = @(
-				"owner"
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('86503198-b81b-43fe-81ee-ad45b8848ac9')"
-		}
-	)
-}
 
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-$params = @{
-	Values = @(
-		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
-			Roles = @(
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
-		}
-		@{
-			"@odata.type" = "microsoft.graph.aadUserConversationMember"
-			Roles = @(
-				"owner"
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('alex@contoso.com')"
-		}
-	)
-}
-
-Add-MgTeamMember -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -301,6 +240,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

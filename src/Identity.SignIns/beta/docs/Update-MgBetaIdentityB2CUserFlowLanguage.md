@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 This method is used to create or update a custom language in an Azure AD B2C user flow.
-**Note:** You must enable language customization in the Azure AD B2C user flow before you can create a custom language.
+Note: You must enable language customization in the Azure AD B2C user flow before you can create a custom language.
 For more information, see Update b2cIdentityUserFlow.
 
 ## SYNTAX
@@ -45,7 +45,7 @@ Update-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
 
 ## DESCRIPTION
 This method is used to create or update a custom language in an Azure AD B2C user flow.
-**Note:** You must enable language customization in the Azure AD B2C user flow before you can create a custom language.
+Note: You must enable language customization in the Azure AD B2C user flow before you can create a custom language.
 For more information, see Update b2cIdentityUserFlow.
 
 ## EXAMPLES

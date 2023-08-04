@@ -41,7 +41,14 @@ Retrieve the properties and relationships of a b2xIdentityUserFlow object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityB2XUserFlow -B2xIdentityUserFlowId $b2xIdentityUserFlowId
+Get-MgIdentityB2XUserFlow
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+```
+
+Get-MgIdentityB2XUserFlow -ExpandProperty "identityProviders"
 
 ## PARAMETERS
 

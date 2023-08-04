@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 
 ## SYNOPSIS
-Delete navigation property localizedNotificationMessages for deviceManagement
+Deletes a localizedNotificationMessage.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 ```
 
 ## DESCRIPTION
-Delete navigation property localizedNotificationMessages for deviceManagement
+Deletes a localizedNotificationMessage.
 
 ## EXAMPLES
 

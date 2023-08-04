@@ -43,7 +43,7 @@ An approval stage is contained within an approval object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage -ApprovalId $approvalId -ApprovalStageId $approvalStageId
+Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage -ApprovalId $approvalId
 
 ## PARAMETERS
 

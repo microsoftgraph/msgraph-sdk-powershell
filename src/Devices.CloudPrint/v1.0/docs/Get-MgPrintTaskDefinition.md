@@ -55,7 +55,7 @@ For details about how to use this API to add pull printing support to Universal 
 Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-Get-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId
+Get-MgPrintTaskDefinition
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserPlannerPlan
 
 ## SYNOPSIS
-Retrieve a list of **plannerplan** objects shared with a user object.
+Retrieve a list of plannerplan objects shared with a user object.
 
 ## SYNTAX
 
@@ -19,18 +19,17 @@ Get-MgBetaUserPlannerPlan -UserId <String> [-ExpandProperty <String[]>] [-Filter
 ```
 
 ## DESCRIPTION
-Retrieve a list of **plannerplan** objects shared with a user object.
+Retrieve a list of plannerplan objects shared with a user object.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Planner
-# A UPN can also be used as -UserId.
-Get-MgBetaUserPlannerPlan -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserPlannerPlan -UserId $userId
 
 ## PARAMETERS
 

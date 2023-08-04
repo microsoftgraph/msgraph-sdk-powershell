@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 6d692f8d-0717-4515-a032-1190de98be7a
+Module Guid: 0aac9f35-7d4b-4050-b033-771103ca2e53
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Read properties and relationships of the deviceAppManagement object.
 
 ### [Get-MgDeviceAppManagementAndroidManagedAppProtection](Get-MgDeviceAppManagementAndroidManagedAppProtection.md)
-Android managed app policies.
+Read properties and relationships of the androidManagedAppProtection object.
 
 ### [Get-MgDeviceAppManagementAndroidManagedAppProtectionApp](Get-MgDeviceAppManagementAndroidManagedAppProtectionApp.md)
 List of apps to which the policy is deployed.
@@ -36,7 +36,7 @@ Get the number of the resource
 Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppManagementDefaultManagedAppProtection](Get-MgDeviceAppManagementDefaultManagedAppProtection.md)
-Default managed app policies.
+Read properties and relationships of the defaultManagedAppProtection object.
 
 ### [Get-MgDeviceAppManagementDefaultManagedAppProtectionApp](Get-MgDeviceAppManagementDefaultManagedAppProtectionApp.md)
 List of apps to which the policy is deployed.
@@ -51,10 +51,10 @@ Get the number of the resource
 Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppManagementiOSManagedAppProtection](Get-MgDeviceAppManagementiOSManagedAppProtection.md)
-iOS managed app policies.
+Read properties and relationships of the iosManagedAppProtection object.
 
 ### [Get-MgDeviceAppManagementiOSManagedAppProtectionApp](Get-MgDeviceAppManagementiOSManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+Read properties and relationships of the managedMobileApp object.
 
 ### [Get-MgDeviceAppManagementiOSManagedAppProtectionAppCount](Get-MgDeviceAppManagementiOSManagedAppProtectionAppCount.md)
 Get the number of the resource
@@ -69,16 +69,16 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary](Get-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+Read properties and relationships of the managedAppPolicyDeploymentSummary object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicy](Get-MgDeviceAppManagementManagedAppPolicy.md)
-Managed app policies.
+Read properties and relationships of the targetedManagedAppProtection object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicyCount](Get-MgDeviceAppManagementManagedAppPolicyCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedAppRegistration](Get-MgDeviceAppManagementManagedAppRegistration.md)
-The managed app registrations.
+Read properties and relationships of the androidManagedAppRegistration object.
 
 ### [Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy](Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy.md)
 Zero or more policys already applied on the registered app when it last synchronized with managment service.
@@ -96,7 +96,7 @@ Zero or more policies admin intended for the app as of now.
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedAppRegistrationOperation](Get-MgDeviceAppManagementManagedAppRegistrationOperation.md)
-Zero or more long running operations triggered on the app registration.
+Read properties and relationships of the managedAppOperation object.
 
 ### [Get-MgDeviceAppManagementManagedAppRegistrationOperationCount](Get-MgDeviceAppManagementManagedAppRegistrationOperationCount.md)
 Get the number of the resource
@@ -105,16 +105,16 @@ Get the number of the resource
 Invoke function getUserIdsWithFlaggedAppRegistration
 
 ### [Get-MgDeviceAppManagementManagedAppStatus](Get-MgDeviceAppManagementManagedAppStatus.md)
-The managed app statuses.
+Read properties and relationships of the managedAppStatusRaw object.
 
 ### [Get-MgDeviceAppManagementManagedAppStatusCount](Get-MgDeviceAppManagementManagedAppStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedEBook](Get-MgDeviceAppManagementManagedEBook.md)
-The Managed eBook.
+Read properties and relationships of the managedEBook object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignment](Get-MgDeviceAppManagementManagedEBookAssignment.md)
-The list of assignments for this eBook.
+Read properties and relationships of the managedEBookAssignment object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignmentCount](Get-MgDeviceAppManagementManagedEBookAssignmentCount.md)
 Get the number of the resource
@@ -123,16 +123,16 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedEBookDeviceState](Get-MgDeviceAppManagementManagedEBookDeviceState.md)
-The list of installation states for this eBook.
+Read properties and relationships of the deviceInstallState object.
 
 ### [Get-MgDeviceAppManagementManagedEBookDeviceStateCount](Get-MgDeviceAppManagementManagedEBookDeviceStateCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedEBookInstallSummary](Get-MgDeviceAppManagementManagedEBookInstallSummary.md)
-Mobile App Install Summary.
+Read properties and relationships of the eBookInstallSummary object.
 
 ### [Get-MgDeviceAppManagementManagedEBookUserStateSummary](Get-MgDeviceAppManagementManagedEBookUserStateSummary.md)
-The list of installation states for this eBook.
+Read properties and relationships of the userInstallStateSummary object.
 
 ### [Get-MgDeviceAppManagementManagedEBookUserStateSummaryCount](Get-MgDeviceAppManagementManagedEBookUserStateSummaryCount.md)
 Get the number of the resource
@@ -144,7 +144,7 @@ The install state of the eBook.
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy](Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are MDM enrolled.
+Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
 
 ### [Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment](Get-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment.md)
 Navigation property to list of security groups targeted for policy.
@@ -168,7 +168,7 @@ Another way to input protected apps through xml files
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileApp](Get-MgDeviceAppManagementMobileApp.md)
-The mobile apps.
+Read properties and relationships of the windowsUniversalAppX object.
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobApp](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
@@ -177,22 +177,22 @@ Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileL
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
 
 ### [Get-MgDeviceAppManagementMobileAppAssignment](Get-MgDeviceAppManagementMobileAppAssignment.md)
-The list of group assignments for this mobile app.
+Read properties and relationships of the mobileAppAssignment object.
 
 ### [Get-MgDeviceAppManagementMobileAppAssignmentCount](Get-MgDeviceAppManagementMobileAppAssignmentCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppCategory](Get-MgDeviceAppManagementMobileAppCategory.md)
-The mobile app categories.
+Read properties and relationships of the mobileAppCategory object.
 
 ### [Get-MgDeviceAppManagementMobileAppCategoryCount](Get-MgDeviceAppManagementMobileAppCategoryCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfiguration](Get-MgDeviceAppManagementMobileAppConfiguration.md)
-The Managed Device Mobile Application Configurations.
+Read properties and relationships of the managedDeviceMobileAppConfiguration object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationAssignment](Get-MgDeviceAppManagementMobileAppConfigurationAssignment.md)
-The list of group assignemenets for app configration.
+Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationAssignmentCount](Get-MgDeviceAppManagementMobileAppConfigurationAssignmentCount.md)
 Get the number of the resource
@@ -201,22 +201,22 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatus](Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatus.md)
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatusCount](Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary](Get-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary.md)
-App configuration device status summary.
+Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationUserStatus](Get-MgDeviceAppManagementMobileAppConfigurationUserStatus.md)
-List of ManagedDeviceMobileAppConfigurationUserStatus.
+Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationUserStatusCount](Get-MgDeviceAppManagementMobileAppConfigurationUserStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
-App configuration user status summary.
+Read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
 
 ### [Get-MgDeviceAppManagementMobileAppCount](Get-MgDeviceAppManagementMobileAppCount.md)
 Get the number of the resource
@@ -228,7 +228,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementTargetedManagedAppConfiguration](Get-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
-Targeted managed app configurations.
+Read properties and relationships of the targetedManagedAppConfiguration object.
 
 ### [Get-MgDeviceAppManagementTargetedManagedAppConfigurationApp](Get-MgDeviceAppManagementTargetedManagedAppConfigurationApp.md)
 List of apps to which the policy is deployed.
@@ -249,13 +249,13 @@ Get the number of the resource
 Navigation property to deployment summary of the configuration.
 
 ### [Get-MgDeviceAppManagementVppToken](Get-MgDeviceAppManagementVppToken.md)
-List of Vpp tokens for this organization.
+Read properties and relationships of the vppToken object.
 
 ### [Get-MgDeviceAppManagementVppTokenCount](Get-MgDeviceAppManagementVppTokenCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementWindowsInformationProtectionPolicy](Get-MgDeviceAppManagementWindowsInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are not MDM enrolled.
+Read properties and relationships of the windowsInformationProtectionPolicy object.
 
 ### [Get-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment](Get-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment.md)
 Navigation property to list of security groups targeted for policy.
@@ -294,7 +294,7 @@ Get the number of the resource
 The managed devices associated with the user.
 
 ### [Get-MgUserManagedDeviceCategory](Get-MgUserManagedDeviceCategory.md)
-Device category
+Read properties and relationships of the deviceCategory object.
 
 ### [Get-MgUserManagedDeviceCompliancePolicyState](Get-MgUserManagedDeviceCompliancePolicyState.md)
 Device compliance policy states for this device.
@@ -318,32 +318,31 @@ Get the number of the resource
 List of log collection requests
 
 ### [Get-MgUserManagedDeviceUser](Get-MgUserManagedDeviceUser.md)
-The primary users associated with the managed device.
+List properties and relationships of the user objects.
 
 ### [Get-MgUserManagedDeviceWindowsProtectionState](Get-MgUserManagedDeviceWindowsProtectionState.md)
-The device protection status.
-This property is read-only.
+Read properties and relationships of the windowsProtectionState object.
 
 ### [Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Device malware list
+Read properties and relationships of the windowsDeviceMalwareState object.
 
 ### [Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareStateCount](Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareStateCount.md)
 Get the number of the resource
 
 ### [Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp](Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp.md)
-Invoke action targetApps
+Not yet documented
 
 ### [Invoke-MgTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp](Invoke-MgTargetDeviceAppManagementManagedAppRegistrationAppliedPolicyApp.md)
-Invoke action targetApps
+Not yet documented
 
 ### [Invoke-MgTargetDeviceAppManagementManagedAppRegistrationIntendedPolicyApp](Invoke-MgTargetDeviceAppManagementManagedAppRegistrationIntendedPolicyApp.md)
-Invoke action targetApps
+Not yet documented
 
 ### [Invoke-MgTargetDeviceAppManagementTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppManagementTargetedManagedAppConfigurationApp.md)
-Invoke action targetApps
+Not yet documented
 
 ### [New-MgDeviceAppManagementAndroidManagedAppProtection](New-MgDeviceAppManagementAndroidManagedAppProtection.md)
-Create new navigation property to androidManagedAppProtections for deviceAppManagement
+Create a new androidManagedAppProtection object.
 
 ### [New-MgDeviceAppManagementAndroidManagedAppProtectionApp](New-MgDeviceAppManagementAndroidManagedAppProtectionApp.md)
 Create new navigation property to apps for deviceAppManagement
@@ -352,16 +351,16 @@ Create new navigation property to apps for deviceAppManagement
 Create new navigation property to assignments for deviceAppManagement
 
 ### [New-MgDeviceAppManagementDefaultManagedAppProtection](New-MgDeviceAppManagementDefaultManagedAppProtection.md)
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Create a new defaultManagedAppProtection object.
 
 ### [New-MgDeviceAppManagementDefaultManagedAppProtectionApp](New-MgDeviceAppManagementDefaultManagedAppProtectionApp.md)
 Create new navigation property to apps for deviceAppManagement
 
 ### [New-MgDeviceAppManagementiOSManagedAppProtection](New-MgDeviceAppManagementiOSManagedAppProtection.md)
-Create new navigation property to iosManagedAppProtections for deviceAppManagement
+Create a new iosManagedAppProtection object.
 
 ### [New-MgDeviceAppManagementiOSManagedAppProtectionApp](New-MgDeviceAppManagementiOSManagedAppProtectionApp.md)
-Create new navigation property to apps for deviceAppManagement
+Create a new managedMobileApp object.
 
 ### [New-MgDeviceAppManagementiOSManagedAppProtectionAssignment](New-MgDeviceAppManagementiOSManagedAppProtectionAssignment.md)
 Create new navigation property to assignments for deviceAppManagement
@@ -370,7 +369,7 @@ Create new navigation property to assignments for deviceAppManagement
 Create new navigation property to managedAppPolicies for deviceAppManagement
 
 ### [New-MgDeviceAppManagementManagedAppRegistration](New-MgDeviceAppManagementManagedAppRegistration.md)
-Create new navigation property to managedAppRegistrations for deviceAppManagement
+Create a new androidManagedAppRegistration object.
 
 ### [New-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy](New-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy.md)
 Create new navigation property to appliedPolicies for deviceAppManagement
@@ -379,28 +378,28 @@ Create new navigation property to appliedPolicies for deviceAppManagement
 Create new navigation property to intendedPolicies for deviceAppManagement
 
 ### [New-MgDeviceAppManagementManagedAppRegistrationOperation](New-MgDeviceAppManagementManagedAppRegistrationOperation.md)
-Create new navigation property to operations for deviceAppManagement
+Create a new managedAppOperation object.
 
 ### [New-MgDeviceAppManagementManagedAppStatus](New-MgDeviceAppManagementManagedAppStatus.md)
 Create new navigation property to managedAppStatuses for deviceAppManagement
 
 ### [New-MgDeviceAppManagementManagedEBook](New-MgDeviceAppManagementManagedEBook.md)
-Create new navigation property to managedEBooks for deviceAppManagement
+Create a new iosVppEBook object.
 
 ### [New-MgDeviceAppManagementManagedEBookAssignment](New-MgDeviceAppManagementManagedEBookAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
+Create a new managedEBookAssignment object.
 
 ### [New-MgDeviceAppManagementManagedEBookDeviceState](New-MgDeviceAppManagementManagedEBookDeviceState.md)
-Create new navigation property to deviceStates for deviceAppManagement
+Create a new deviceInstallState object.
 
 ### [New-MgDeviceAppManagementManagedEBookUserStateSummary](New-MgDeviceAppManagementManagedEBookUserStateSummary.md)
-Create new navigation property to userStateSummary for deviceAppManagement
+Create a new userInstallStateSummary object.
 
 ### [New-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState](New-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState.md)
 Create new navigation property to deviceStates for deviceAppManagement
 
 ### [New-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy](New-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy.md)
-Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
+Create a new mdmWindowsInformationProtectionPolicy object.
 
 ### [New-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment](New-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment.md)
 Create new navigation property to assignments for deviceAppManagement
@@ -412,28 +411,28 @@ Create new navigation property to exemptAppLockerFiles for deviceAppManagement
 Create new navigation property to protectedAppLockerFiles for deviceAppManagement
 
 ### [New-MgDeviceAppManagementMobileApp](New-MgDeviceAppManagementMobileApp.md)
-Create new navigation property to mobileApps for deviceAppManagement
+Create a new windowsMicrosoftEdgeApp object.
 
 ### [New-MgDeviceAppManagementMobileAppAssignment](New-MgDeviceAppManagementMobileAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
+Create a new mobileAppAssignment object.
 
 ### [New-MgDeviceAppManagementMobileAppCategory](New-MgDeviceAppManagementMobileAppCategory.md)
-Create new navigation property to mobileAppCategories for deviceAppManagement
+Create a new mobileAppCategory object.
 
 ### [New-MgDeviceAppManagementMobileAppConfiguration](New-MgDeviceAppManagementMobileAppConfiguration.md)
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+Create a new iosMobileAppConfiguration object.
 
 ### [New-MgDeviceAppManagementMobileAppConfigurationAssignment](New-MgDeviceAppManagementMobileAppConfigurationAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationAssignment object.
 
 ### [New-MgDeviceAppManagementMobileAppConfigurationDeviceStatus](New-MgDeviceAppManagementMobileAppConfigurationDeviceStatus.md)
-Create new navigation property to deviceStatuses for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ### [New-MgDeviceAppManagementMobileAppConfigurationUserStatus](New-MgDeviceAppManagementMobileAppConfigurationUserStatus.md)
-Create new navigation property to userStatuses for deviceAppManagement
+Create a new managedDeviceMobileAppConfigurationUserStatus object.
 
 ### [New-MgDeviceAppManagementTargetedManagedAppConfiguration](New-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Create a new targetedManagedAppConfiguration object.
 
 ### [New-MgDeviceAppManagementTargetedManagedAppConfigurationApp](New-MgDeviceAppManagementTargetedManagedAppConfigurationApp.md)
 Create new navigation property to apps for deviceAppManagement
@@ -442,10 +441,10 @@ Create new navigation property to apps for deviceAppManagement
 Create new navigation property to assignments for deviceAppManagement
 
 ### [New-MgDeviceAppManagementVppToken](New-MgDeviceAppManagementVppToken.md)
-Create new navigation property to vppTokens for deviceAppManagement
+Create a new vppToken object.
 
 ### [New-MgDeviceAppManagementWindowsInformationProtectionPolicy](New-MgDeviceAppManagementWindowsInformationProtectionPolicy.md)
-Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+Create a new windowsInformationProtectionPolicy object.
 
 ### [New-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment](New-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment.md)
 Create new navigation property to assignments for deviceAppManagement
@@ -472,10 +471,10 @@ Create new navigation property to deviceConfigurationStates for users
 Create new navigation property to logCollectionRequests for users
 
 ### [New-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](New-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Create new navigation property to detectedMalwareState for users
+Create a new windowsDeviceMalwareState object.
 
 ### [Remove-MgDeviceAppManagementAndroidManagedAppProtection](Remove-MgDeviceAppManagementAndroidManagedAppProtection.md)
-Delete navigation property androidManagedAppProtections for deviceAppManagement
+Deletes a androidManagedAppProtection.
 
 ### [Remove-MgDeviceAppManagementAndroidManagedAppProtectionApp](Remove-MgDeviceAppManagementAndroidManagedAppProtectionApp.md)
 Delete navigation property apps for deviceAppManagement
@@ -487,7 +486,7 @@ Delete navigation property assignments for deviceAppManagement
 Delete navigation property deploymentSummary for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementDefaultManagedAppProtection](Remove-MgDeviceAppManagementDefaultManagedAppProtection.md)
-Delete navigation property defaultManagedAppProtections for deviceAppManagement
+Deletes a defaultManagedAppProtection.
 
 ### [Remove-MgDeviceAppManagementDefaultManagedAppProtectionApp](Remove-MgDeviceAppManagementDefaultManagedAppProtectionApp.md)
 Delete navigation property apps for deviceAppManagement
@@ -496,10 +495,10 @@ Delete navigation property apps for deviceAppManagement
 Delete navigation property deploymentSummary for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementiOSManagedAppProtection](Remove-MgDeviceAppManagementiOSManagedAppProtection.md)
-Delete navigation property iosManagedAppProtections for deviceAppManagement
+Deletes a iosManagedAppProtection.
 
 ### [Remove-MgDeviceAppManagementiOSManagedAppProtectionApp](Remove-MgDeviceAppManagementiOSManagedAppProtectionApp.md)
-Delete navigation property apps for deviceAppManagement
+Deletes a managedMobileApp.
 
 ### [Remove-MgDeviceAppManagementiOSManagedAppProtectionAssignment](Remove-MgDeviceAppManagementiOSManagedAppProtectionAssignment.md)
 Delete navigation property assignments for deviceAppManagement
@@ -520,31 +519,31 @@ Delete navigation property appliedPolicies for deviceAppManagement
 Delete navigation property intendedPolicies for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementManagedAppRegistrationOperation](Remove-MgDeviceAppManagementManagedAppRegistrationOperation.md)
-Delete navigation property operations for deviceAppManagement
+Deletes a managedAppOperation.
 
 ### [Remove-MgDeviceAppManagementManagedAppStatus](Remove-MgDeviceAppManagementManagedAppStatus.md)
 Delete navigation property managedAppStatuses for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementManagedEBook](Remove-MgDeviceAppManagementManagedEBook.md)
-Delete navigation property managedEBooks for deviceAppManagement
+Deletes a iosVppEBook.
 
 ### [Remove-MgDeviceAppManagementManagedEBookAssignment](Remove-MgDeviceAppManagementManagedEBookAssignment.md)
-Delete navigation property assignments for deviceAppManagement
+Deletes a iosVppEBookAssignment.
 
 ### [Remove-MgDeviceAppManagementManagedEBookDeviceState](Remove-MgDeviceAppManagementManagedEBookDeviceState.md)
-Delete navigation property deviceStates for deviceAppManagement
+Deletes a deviceInstallState.
 
 ### [Remove-MgDeviceAppManagementManagedEBookInstallSummary](Remove-MgDeviceAppManagementManagedEBookInstallSummary.md)
 Delete navigation property installSummary for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementManagedEBookUserStateSummary](Remove-MgDeviceAppManagementManagedEBookUserStateSummary.md)
-Delete navigation property userStateSummary for deviceAppManagement
+Deletes a userInstallStateSummary.
 
 ### [Remove-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState](Remove-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState.md)
 Delete navigation property deviceStates for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy](Remove-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy.md)
-Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+Deletes a mdmWindowsInformationProtectionPolicy.
 
 ### [Remove-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment](Remove-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment.md)
 Delete navigation property assignments for deviceAppManagement
@@ -556,34 +555,34 @@ Delete navigation property exemptAppLockerFiles for deviceAppManagement
 Delete navigation property protectedAppLockerFiles for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMobileApp](Remove-MgDeviceAppManagementMobileApp.md)
-Delete navigation property mobileApps for deviceAppManagement
+Deletes a managedIOSStoreApp.
 
 ### [Remove-MgDeviceAppManagementMobileAppAssignment](Remove-MgDeviceAppManagementMobileAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
+Deletes a mobileAppAssignment.
 
 ### [Remove-MgDeviceAppManagementMobileAppCategory](Remove-MgDeviceAppManagementMobileAppCategory.md)
-Delete navigation property mobileAppCategories for deviceAppManagement
+Deletes a mobileAppCategory.
 
 ### [Remove-MgDeviceAppManagementMobileAppConfiguration](Remove-MgDeviceAppManagementMobileAppConfiguration.md)
-Delete navigation property mobileAppConfigurations for deviceAppManagement
+Deletes a iosMobileAppConfiguration.
 
 ### [Remove-MgDeviceAppManagementMobileAppConfigurationAssignment](Remove-MgDeviceAppManagementMobileAppConfigurationAssignment.md)
-Delete navigation property assignments for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationAssignment.
 
 ### [Remove-MgDeviceAppManagementMobileAppConfigurationDeviceStatus](Remove-MgDeviceAppManagementMobileAppConfigurationDeviceStatus.md)
-Delete navigation property deviceStatuses for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationDeviceStatus.
 
 ### [Remove-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary](Remove-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary.md)
 Delete navigation property deviceStatusSummary for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMobileAppConfigurationUserStatus](Remove-MgDeviceAppManagementMobileAppConfigurationUserStatus.md)
-Delete navigation property userStatuses for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationUserStatus.
 
 ### [Remove-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Remove-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Delete navigation property userStatusSummary for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementTargetedManagedAppConfiguration](Remove-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
-Delete navigation property targetedManagedAppConfigurations for deviceAppManagement
+Deletes a targetedManagedAppConfiguration.
 
 ### [Remove-MgDeviceAppManagementTargetedManagedAppConfigurationApp](Remove-MgDeviceAppManagementTargetedManagedAppConfigurationApp.md)
 Delete navigation property apps for deviceAppManagement
@@ -595,10 +594,10 @@ Delete navigation property assignments for deviceAppManagement
 Delete navigation property deploymentSummary for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementVppToken](Remove-MgDeviceAppManagementVppToken.md)
-Delete navigation property vppTokens for deviceAppManagement
+Deletes a vppToken.
 
 ### [Remove-MgDeviceAppManagementWindowsInformationProtectionPolicy](Remove-MgDeviceAppManagementWindowsInformationProtectionPolicy.md)
-Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
+Deletes a windowsInformationProtectionPolicy.
 
 ### [Remove-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment](Remove-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment.md)
 Delete navigation property assignments for deviceAppManagement
@@ -631,19 +630,19 @@ Delete navigation property logCollectionRequests for users
 Delete navigation property windowsProtectionState for users
 
 ### [Remove-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](Remove-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Delete navigation property detectedMalwareState for users
+Deletes a windowsDeviceMalwareState.
 
 ### [Set-MgDeviceAppManagementManagedEBook](Set-MgDeviceAppManagementManagedEBook.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceAppManagementMobileApp](Set-MgDeviceAppManagementMobileApp.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceAppManagementMobileAppConfiguration](Set-MgDeviceAppManagementMobileAppConfiguration.md)
-Invoke action assign
+Not yet documented
 
 ### [Set-MgDeviceAppManagementTargetedManagedAppConfiguration](Set-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
-Invoke action assign
+Not yet documented
 
 ### [Sync-MgDeviceAppManagementMicrosoftStoreForBusinessApp](Sync-MgDeviceAppManagementMicrosoftStoreForBusinessApp.md)
 Syncs Intune account with Microsoft Store For Business
@@ -655,7 +654,7 @@ Syncs licenses associated with a specific appleVolumePurchaseProgramToken
 Update the properties of a deviceAppManagement object.
 
 ### [Update-MgDeviceAppManagementAndroidManagedAppProtection](Update-MgDeviceAppManagementAndroidManagedAppProtection.md)
-Update the navigation property androidManagedAppProtections in deviceAppManagement
+Update the properties of a androidManagedAppProtection object.
 
 ### [Update-MgDeviceAppManagementAndroidManagedAppProtectionApp](Update-MgDeviceAppManagementAndroidManagedAppProtectionApp.md)
 Update the navigation property apps in deviceAppManagement
@@ -667,7 +666,7 @@ Update the navigation property assignments in deviceAppManagement
 Update the navigation property deploymentSummary in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementDefaultManagedAppProtection](Update-MgDeviceAppManagementDefaultManagedAppProtection.md)
-Update the navigation property defaultManagedAppProtections in deviceAppManagement
+Update the properties of a defaultManagedAppProtection object.
 
 ### [Update-MgDeviceAppManagementDefaultManagedAppProtectionApp](Update-MgDeviceAppManagementDefaultManagedAppProtectionApp.md)
 Update the navigation property apps in deviceAppManagement
@@ -676,16 +675,16 @@ Update the navigation property apps in deviceAppManagement
 Update the navigation property deploymentSummary in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementiOSManagedAppProtection](Update-MgDeviceAppManagementiOSManagedAppProtection.md)
-Update the navigation property iosManagedAppProtections in deviceAppManagement
+Update the properties of a iosManagedAppProtection object.
 
 ### [Update-MgDeviceAppManagementiOSManagedAppProtectionApp](Update-MgDeviceAppManagementiOSManagedAppProtectionApp.md)
-Update the navigation property apps in deviceAppManagement
+Update the properties of a managedMobileApp object.
 
 ### [Update-MgDeviceAppManagementiOSManagedAppProtectionAssignment](Update-MgDeviceAppManagementiOSManagedAppProtectionAssignment.md)
 Update the navigation property assignments in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary](Update-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary.md)
-Update the navigation property deploymentSummary in deviceAppManagement
+Update the properties of a managedAppPolicyDeploymentSummary object.
 
 ### [Update-MgDeviceAppManagementManagedAppPolicy](Update-MgDeviceAppManagementManagedAppPolicy.md)
 Update the navigation property managedAppPolicies in deviceAppManagement
@@ -700,31 +699,31 @@ Update the navigation property appliedPolicies in deviceAppManagement
 Update the navigation property intendedPolicies in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementManagedAppRegistrationOperation](Update-MgDeviceAppManagementManagedAppRegistrationOperation.md)
-Update the navigation property operations in deviceAppManagement
+Update the properties of a managedAppOperation object.
 
 ### [Update-MgDeviceAppManagementManagedAppStatus](Update-MgDeviceAppManagementManagedAppStatus.md)
 Update the navigation property managedAppStatuses in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementManagedEBook](Update-MgDeviceAppManagementManagedEBook.md)
-Update the navigation property managedEBooks in deviceAppManagement
+Update the properties of a iosVppEBook object.
 
 ### [Update-MgDeviceAppManagementManagedEBookAssignment](Update-MgDeviceAppManagementManagedEBookAssignment.md)
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a iosVppEBookAssignment object.
 
 ### [Update-MgDeviceAppManagementManagedEBookDeviceState](Update-MgDeviceAppManagementManagedEBookDeviceState.md)
-Update the navigation property deviceStates in deviceAppManagement
+Update the properties of a deviceInstallState object.
 
 ### [Update-MgDeviceAppManagementManagedEBookInstallSummary](Update-MgDeviceAppManagementManagedEBookInstallSummary.md)
-Update the navigation property installSummary in deviceAppManagement
+Update the properties of a eBookInstallSummary object.
 
 ### [Update-MgDeviceAppManagementManagedEBookUserStateSummary](Update-MgDeviceAppManagementManagedEBookUserStateSummary.md)
-Update the navigation property userStateSummary in deviceAppManagement
+Update the properties of a userInstallStateSummary object.
 
 ### [Update-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState](Update-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState.md)
 Update the navigation property deviceStates in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy](Update-MgDeviceAppManagementMdmWindowsInformationProtectionPolicy.md)
-Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+Update the properties of a mdmWindowsInformationProtectionPolicy object.
 
 ### [Update-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment](Update-MgDeviceAppManagementMdmWindowsInformationProtectionPolicyAssignment.md)
 Update the navigation property assignments in deviceAppManagement
@@ -736,34 +735,34 @@ Update the navigation property exemptAppLockerFiles in deviceAppManagement
 Update the navigation property protectedAppLockerFiles in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementMobileApp](Update-MgDeviceAppManagementMobileApp.md)
-Update the navigation property mobileApps in deviceAppManagement
+Update the properties of a windowsWebApp object.
 
 ### [Update-MgDeviceAppManagementMobileAppAssignment](Update-MgDeviceAppManagementMobileAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a mobileAppAssignment object.
 
 ### [Update-MgDeviceAppManagementMobileAppCategory](Update-MgDeviceAppManagementMobileAppCategory.md)
-Update the navigation property mobileAppCategories in deviceAppManagement
+Update the properties of a mobileAppCategory object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfiguration](Update-MgDeviceAppManagementMobileAppConfiguration.md)
-Update the navigation property mobileAppConfigurations in deviceAppManagement
+Update the properties of a iosMobileAppConfiguration object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfigurationAssignment](Update-MgDeviceAppManagementMobileAppConfigurationAssignment.md)
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationAssignment object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatus](Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatus.md)
-Update the navigation property deviceStatuses in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary](Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatusSummary.md)
-Update the navigation property deviceStatusSummary in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationDeviceSummary object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfigurationUserStatus](Update-MgDeviceAppManagementMobileAppConfigurationUserStatus.md)
-Update the navigation property userStatuses in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Update-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
-Update the navigation property userStatusSummary in deviceAppManagement
+Update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
 
 ### [Update-MgDeviceAppManagementTargetedManagedAppConfiguration](Update-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
-Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
+Update the properties of a targetedManagedAppConfiguration object.
 
 ### [Update-MgDeviceAppManagementTargetedManagedAppConfigurationApp](Update-MgDeviceAppManagementTargetedManagedAppConfigurationApp.md)
 Update the navigation property apps in deviceAppManagement
@@ -775,10 +774,10 @@ Update the navigation property assignments in deviceAppManagement
 Update the navigation property deploymentSummary in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementVppToken](Update-MgDeviceAppManagementVppToken.md)
-Update the navigation property vppTokens in deviceAppManagement
+Update the properties of a vppToken object.
 
 ### [Update-MgDeviceAppManagementWindowsInformationProtectionPolicy](Update-MgDeviceAppManagementWindowsInformationProtectionPolicy.md)
-Update the navigation property windowsInformationProtectionPolicies in deviceAppManagement
+Update the properties of a windowsInformationProtectionPolicy object.
 
 ### [Update-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment](Update-MgDeviceAppManagementWindowsInformationProtectionPolicyAssignment.md)
 Update the navigation property assignments in deviceAppManagement
@@ -796,7 +795,7 @@ Update the navigation property deviceManagementTroubleshootingEvents in users
 Update the navigation property managedDevices in users
 
 ### [Update-MgUserManagedDeviceCategory](Update-MgUserManagedDeviceCategory.md)
-Update the navigation property deviceCategory in users
+Update the properties of a deviceCategory object.
 
 ### [Update-MgUserManagedDeviceCompliancePolicyState](Update-MgUserManagedDeviceCompliancePolicyState.md)
 Update the navigation property deviceCompliancePolicyStates in users
@@ -808,8 +807,8 @@ Update the navigation property deviceConfigurationStates in users
 Update the navigation property logCollectionRequests in users
 
 ### [Update-MgUserManagedDeviceWindowsProtectionState](Update-MgUserManagedDeviceWindowsProtectionState.md)
-Update the navigation property windowsProtectionState in users
+Update the properties of a windowsProtectionState object.
 
 ### [Update-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](Update-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
-Update the navigation property detectedMalwareState in users
+Update the properties of a windowsDeviceMalwareState object.
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: c8ed89ef-4f07-4962-bbf4-6d09c234cbef
+Module Guid: 7de2ab1b-cbc0-4534-a005-0504f0dd9774
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,7 +16,7 @@ Get the properties and relationships of a bookingBusiness object.
 
 ### [Get-MgBetaBookingBusinessAppointment](Get-MgBetaBookingBusinessAppointment.md)
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
-The **start** and **end** properties are always returned in UTC.
+The start and end properties are always returned in UTC.
 
 ### [Get-MgBetaBookingBusinessAppointmentCount](Get-MgBetaBookingBusinessAppointmentCount.md)
 Get the number of the resource
@@ -61,7 +61,7 @@ Get the number of the resource
 
 ### [Get-MgBetaBookingCurrency](Get-MgBetaBookingCurrency.md)
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
-Use the **id** property, which is the currency code, to specify the currency.
+Use the id property, which is the currency code, to specify the currency.
 
 ### [Get-MgBetaBookingCurrencyCount](Get-MgBetaBookingCurrencyCount.md)
 Get the number of the resource
@@ -77,7 +77,7 @@ Read the properties and relationships of a businessScenarioPlanner object.
 
 ### [Get-MgBetaBusinessScenarioPlannerPlan](Get-MgBetaBusinessScenarioPlannerPlan.md)
 Get information about the plannerPlan mapped to a given target.
-If a **plannerPlan** doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
+If a plannerPlan doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
 
 ### [Get-MgBetaBusinessScenarioPlannerPlanConfiguration](Get-MgBetaBusinessScenarioPlannerPlanConfiguration.md)
 Read the properties and relationships of a plannerPlanConfiguration object.
@@ -92,10 +92,10 @@ Get the number of the resource
 Read the properties and relationships of a businessScenarioTask object.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat](Get-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskBucketTaskBoardFormat](Get-MgBetaBusinessScenarioPlannerTaskBucketTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskConfiguration](Get-MgBetaBusinessScenarioPlannerTaskConfiguration.md)
 Read the properties and relationships of a plannerTaskConfiguration object.
@@ -104,10 +104,10 @@ Read the properties and relationships of a plannerTaskConfiguration object.
 Get the number of the resource
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskDetail](Get-MgBetaBusinessScenarioPlannerTaskDetail.md)
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskProgressTaskBoardFormat](Get-MgBetaBusinessScenarioPlannerTaskProgressTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 
 ### [Get-MgBetaVirtualEvent](Get-MgBetaVirtualEvent.md)
 Get events from solutions
@@ -174,7 +174,7 @@ Get content for the navigation property recordings from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionRegistration](Get-MgBetaVirtualEventSessionRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaVirtualEventSessionRegistrationCustomQuestion](Get-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -194,14 +194,14 @@ Retrieving the transcript returns the metadata of the single transcript associat
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
 
 ### [Get-MgBetaVirtualEventSessionTranscriptContent](Get-MgBetaVirtualEventSessionTranscriptContent.md)
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ### [Get-MgBetaVirtualEventSessionTranscriptCount](Get-MgBetaVirtualEventSessionTranscriptCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionTranscriptMetadataContent](Get-MgBetaVirtualEventSessionTranscriptMetadataContent.md)
-A field that represents the time-aligned metadata of the utterances in the transcript.
+The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgBetaVirtualEventSessionVirtualAppointment](Get-MgBetaVirtualEventSessionVirtualAppointment.md)
@@ -275,7 +275,7 @@ Get content for the navigation property recordings from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistration](Get-MgBetaVirtualEventWebinarSessionRegistration.md)
-Get the externalMeetingRegistration details associated with an onlineMeeting.
+Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -295,14 +295,14 @@ Retrieving the transcript returns the metadata of the single transcript associat
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
 
 ### [Get-MgBetaVirtualEventWebinarSessionTranscriptContent](Get-MgBetaVirtualEventWebinarSessionTranscriptContent.md)
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionTranscriptCount](Get-MgBetaVirtualEventWebinarSessionTranscriptCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionTranscriptMetadataContent](Get-MgBetaVirtualEventWebinarSessionTranscriptMetadataContent.md)
-A field that represents the time-aligned metadata of the utterances in the transcript.
+The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionVirtualAppointment](Get-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
@@ -311,7 +311,7 @@ Read the properties and relationships of a virtualAppointment object.
 ### [New-MgBetaBookingBusiness](New-MgBetaBookingBusiness.md)
 Create a new Microsoft Bookings business in a tenant.
 This is the first step in setting up a Bookings business where you must specify the business display name.
-You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.
+You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
 
 ### [New-MgBetaBookingBusinessAppointment](New-MgBetaBookingBusinessAppointment.md)
 Create a new bookingAppointment for the specified bookingBusiness.
@@ -405,7 +405,7 @@ Create new navigation property to transcripts for solutions
 
 ### [Publish-MgBetaBookingBusiness](Publish-MgBetaBookingBusiness.md)
 Make the scheduling page of this business available to external customers.
-Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.
+Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
 
 ### [Remove-MgBetaBookingBusiness](Remove-MgBetaBookingBusiness.md)
 Delete a bookingBusiness object.
@@ -559,11 +559,11 @@ Read-only.
 Update content for the navigation property recordings in solutions
 
 ### [Set-MgBetaVirtualEventSessionTranscriptContent](Set-MgBetaVirtualEventSessionTranscriptContent.md)
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ### [Set-MgBetaVirtualEventSessionTranscriptMetadataContent](Set-MgBetaVirtualEventSessionTranscriptMetadataContent.md)
-A field that represents the time-aligned metadata of the utterances in the transcript.
+The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionAlternativeRecording](Set-MgBetaVirtualEventWebinarSessionAlternativeRecording.md)
@@ -585,11 +585,11 @@ Read-only.
 Update content for the navigation property recordings in solutions
 
 ### [Set-MgBetaVirtualEventWebinarSessionTranscriptContent](Set-MgBetaVirtualEventWebinarSessionTranscriptContent.md)
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionTranscriptMetadataContent](Set-MgBetaVirtualEventWebinarSessionTranscriptMetadataContent.md)
-A field that represents the time-aligned metadata of the utterances in the transcript.
+The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Stop-MgBetaBookingBusinessAppointment](Stop-MgBetaBookingBusinessAppointment.md)
@@ -600,7 +600,7 @@ Cancel the specified bookingAppointment in the specified bookingBusiness, and se
 
 ### [Unpublish-MgBetaBookingBusiness](Unpublish-MgBetaBookingBusiness.md)
 Make the scheduling page of this business not available to external customers.
-Set the **isPublished** property to false, and **publicUrl** property to null.
+Set the isPublished property to false, and publicUrl property to null.
 
 ### [Update-MgBetaBookingBusiness](Update-MgBetaBookingBusiness.md)
 Update the properties of a bookingBusiness object.

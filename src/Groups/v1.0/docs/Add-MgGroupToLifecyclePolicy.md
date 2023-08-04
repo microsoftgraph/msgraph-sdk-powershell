@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Adds specific groups to a lifecycle policy.
-This action limits the group lifecycle policy to a set of groups only if the **managedGroupTypes** property of groupLifecyclePolicy is set to `Selected`.
+This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
 
 ## SYNTAX
 
@@ -41,23 +41,20 @@ Add-MgGroupToLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Adds specific groups to a lifecycle policy.
-This action limits the group lifecycle policy to a set of groups only if the **managedGroupTypes** property of groupLifecyclePolicy is set to `Selected`.
+This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Groups
 ```
 
-{{ Add output here }}
+$params = @{
+	groupId = "ffffffff-ffff-ffff-ffff-ffffffffffff"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Add-MgGroupToLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary
 
 ## SYNOPSIS
-Create new navigation property to deviceSettingStateSummaries for deviceManagement
+Create a new settingStateDeviceSummary object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgDeviceManagementDeviceConfigurationDeviceSettingStateSummary -InputObject 
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceSettingStateSummaries for deviceManagement
+Create a new settingStateDeviceSummary object.
 
 ## EXAMPLES
 

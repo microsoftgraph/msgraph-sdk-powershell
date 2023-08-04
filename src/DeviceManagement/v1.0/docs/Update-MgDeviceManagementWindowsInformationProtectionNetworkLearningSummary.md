@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
 
 ## SYNOPSIS
-Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
+Update the properties of a windowsInformationProtectionNetworkLearningSummary object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
 ```
 
 ## DESCRIPTION
-Update the navigation property windowsInformationProtectionNetworkLearningSummaries in deviceManagement
+Update the properties of a windowsInformationProtectionNetworkLearningSummary object.
 
 ## EXAMPLES
 

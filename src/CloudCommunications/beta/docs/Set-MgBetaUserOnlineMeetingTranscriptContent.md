@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgBetaUserOnlineMeetingTranscriptContent
 
 ## SYNOPSIS
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Set-MgBetaUserOnlineMeetingTranscriptContent -InputObject <ICloudCommunicationsI
 ```
 
 ## DESCRIPTION
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ## EXAMPLES

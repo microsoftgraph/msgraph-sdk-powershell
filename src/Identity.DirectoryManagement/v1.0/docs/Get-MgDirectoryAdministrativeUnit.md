@@ -41,7 +41,7 @@ Retrieve the properties and relationships of an administrativeUnit object.
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-Get-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
+Get-MgDirectoryAdministrativeUnit
 
 ## PARAMETERS
 

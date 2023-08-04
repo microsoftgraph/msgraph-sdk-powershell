@@ -44,7 +44,7 @@ Import-Module Microsoft.Graph.Beta.PersonalContacts
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
+Get-MgBetaUserContactFolder -UserId $userId
 
 ## PARAMETERS
 

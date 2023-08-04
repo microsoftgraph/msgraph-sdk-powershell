@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Mark a message as junk.
-This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
+This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsJunk -InputObject <IUsersActi
 
 ## DESCRIPTION
 Mark a message as junk.
-This API adds the sender to the list of blocked senders and moves the message to the **Junk Email** folder, when **moveToJunk** is `true`.
+This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
 
 ## EXAMPLES
 

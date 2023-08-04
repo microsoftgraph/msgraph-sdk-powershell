@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a printer share.
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-Get-MgBetaPrintShare -PrinterShareId $printerShareId
+Get-MgBetaPrintShare
 
 ## PARAMETERS
 

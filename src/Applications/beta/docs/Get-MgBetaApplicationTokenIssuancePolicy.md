@@ -26,10 +26,9 @@ List the tokenIssuancePolicy objects that are assigned to an application.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-Get-MgBetaApplicationTokenIssuancePolicy -ApplicationId $applicationId
 ```
 
-
+Get-MgBetaApplicationTokenIssuancePolicy -ApplicationId $applicationId
 
 ## PARAMETERS
 

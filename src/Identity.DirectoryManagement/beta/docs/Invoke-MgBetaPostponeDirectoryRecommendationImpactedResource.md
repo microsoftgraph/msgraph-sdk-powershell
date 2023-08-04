@@ -8,8 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource
 
 ## SYNOPSIS
-Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`.
-On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.
+Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
+On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 
 ## SYNTAX
 
@@ -44,8 +44,8 @@ Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource
 ```
 
 ## DESCRIPTION
-Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`.
-On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.
+Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
+On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 
 ## EXAMPLES
 

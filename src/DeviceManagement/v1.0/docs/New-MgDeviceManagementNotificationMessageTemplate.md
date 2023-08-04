@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
-Create new navigation property to notificationMessageTemplates for deviceManagement
+Create a new notificationMessageTemplate object.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementNotificationMessageTemplate -BodyParameter <IMicrosoftGrap
 ```
 
 ## DESCRIPTION
-Create new navigation property to notificationMessageTemplates for deviceManagement
+Create a new notificationMessageTemplate object.
 
 ## EXAMPLES
 

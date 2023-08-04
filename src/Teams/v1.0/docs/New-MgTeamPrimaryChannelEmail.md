@@ -9,9 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Provision an email address for a channel.
-Microsoft Teams doesn't automatically provision an email address for a **channel** by default.
-To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one.
-To remove the email address of a **channel**, use the removeEmail method.
+Microsoft Teams doesn't automatically provision an email address for a channel by default.
+To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one.
+To remove the email address of a channel, use the removeEmail method.
 
 ## SYNTAX
 
@@ -27,9 +27,9 @@ New-MgTeamPrimaryChannelEmail -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf]
 
 ## DESCRIPTION
 Provision an email address for a channel.
-Microsoft Teams doesn't automatically provision an email address for a **channel** by default.
-To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one.
-To remove the email address of a **channel**, use the removeEmail method.
+Microsoft Teams doesn't automatically provision an email address for a channel by default.
+To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one.
+To remove the email address of a channel, use the removeEmail method.
 
 ## EXAMPLES
 
@@ -138,6 +138,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OpenShiftChangeRequestId <String>]`: The unique identifier of openShiftChangeRequest
   - `[OpenShiftId <String>]`: The unique identifier of openShift
   - `[PinnedChatMessageInfoId <String>]`: The unique identifier of pinnedChatMessageInfo
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: The unique identifier of schedulingGroup
   - `[SharedWithChannelTeamInfoId <String>]`: The unique identifier of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: The unique identifier of shift

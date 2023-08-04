@@ -60,43 +60,43 @@ The current timeout value is 15 seconds for regular scenarios, and 5 seconds for
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	CallbackUri = "https://bot.contoso.com/api/calls"
-	AcceptedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-}
-Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	callbackUri = "callbackUri-value"
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "\<Media Session Configuration Blob\>"
+	}
+	acceptedModalities = @(
+		"audio"
+	)
+	callOptions = @{
+		"@odata.type" = "#microsoft.graph.incomingCallOptions"
+		isContentSharingNotificationEnabled = $true
+	}
+	participantCapacity = 200
+}
 
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	CallbackUri = "callbackUri-value"
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-	AcceptedModalities = @(
-		"audio"
-	)
-	CallOptions = @{
-		"@odata.type" = "#microsoft.graph.incomingCallOptions"
-		IsContentSharingNotificationEnabled = $true
-	}
-	ParticipantCapacity = 200
-}
-Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	callbackUri = "https://bot.contoso.com/api/calls"
+	acceptedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "\<Media Session Configuration Blob\>"
+	}
+}
 
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 

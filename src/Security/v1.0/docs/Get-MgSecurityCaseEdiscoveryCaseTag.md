@@ -41,7 +41,7 @@ Read the properties and relationships of an ediscoveryReviewTag object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewTagId $ediscoveryReviewTagId
+Get-MgSecurityCaseEdiscoveryCaseTag -EdiscoveryCaseId $ediscoveryCaseId
 
 ## PARAMETERS
 

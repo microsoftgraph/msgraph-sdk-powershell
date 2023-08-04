@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult
 
 ## SYNOPSIS
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 
@@ -47,7 +47,7 @@ Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult
 ```
 
 ## DESCRIPTION
-Resume a task processing result that's `inProgress`.
+Resume a task processing result that's inProgress.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
 For more information, see: Lifecycle Workflows extensibility approach.
 

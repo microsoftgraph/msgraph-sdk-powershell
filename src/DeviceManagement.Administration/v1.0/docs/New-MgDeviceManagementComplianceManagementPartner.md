@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementComplianceManagementPartner
 
 ## SYNOPSIS
-Create new navigation property to complianceManagementPartners for deviceManagement
+Create a new complianceManagementPartner object.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgDeviceManagementComplianceManagementPartner -BodyParameter <IMicrosoftGrap
 ```
 
 ## DESCRIPTION
-Create new navigation property to complianceManagementPartners for deviceManagement
+Create a new complianceManagementPartner object.
 
 ## EXAMPLES
 

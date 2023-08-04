@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgScanDeviceManagementManagedDeviceWindowsDefender
 
 ## SYNOPSIS
-Invoke action windowsDefenderScan
+Not yet documented
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgScanDeviceManagementManagedDeviceWindowsDefender -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Invoke action windowsDefenderScan
+Not yet documented
 
 ## EXAMPLES
 

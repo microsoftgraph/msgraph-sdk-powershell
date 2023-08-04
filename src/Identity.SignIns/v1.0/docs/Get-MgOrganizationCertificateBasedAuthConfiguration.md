@@ -41,7 +41,7 @@ Get the properties of a certificateBasedAuthConfiguration object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId $organizationId -CertificateBasedAuthConfigurationId $certificateBasedAuthConfigurationId
+Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId $organizationId
 
 ## PARAMETERS
 

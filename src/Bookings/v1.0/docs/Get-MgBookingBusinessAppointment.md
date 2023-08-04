@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
-The **startDateTime** and **endDateTime** properties are always returned in UTC.
+The startDateTime and endDateTime properties are always returned in UTC.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-ExpandProper
 
 ## DESCRIPTION
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
-The **startDateTime** and **endDateTime** properties are always returned in UTC.
+The startDateTime and endDateTime properties are always returned in UTC.
 
 ## EXAMPLES
 
@@ -43,7 +43,7 @@ The **startDateTime** and **endDateTime** properties are always returned in UTC.
 Import-Module Microsoft.Graph.Bookings
 ```
 
-Get-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId -BookingAppointmentId $bookingAppointmentId
+Get-MgBookingBusinessAppointment -BookingBusinessId $bookingBusinessId
 
 ## PARAMETERS
 

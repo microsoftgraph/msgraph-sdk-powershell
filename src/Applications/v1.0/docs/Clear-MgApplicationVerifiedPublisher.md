@@ -34,10 +34,9 @@ For more information, see Publisher verification.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Applications
-Clear-MgApplicationVerifiedPublisher -ApplicationId $applicationId
 ```
 
-
+Clear-MgApplicationVerifiedPublisher -ApplicationId $applicationId
 
 ## PARAMETERS
 

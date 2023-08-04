@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementManagedEBookUserStateSummary
 
 ## SYNOPSIS
-Delete navigation property userStateSummary for deviceAppManagement
+Deletes a userInstallStateSummary.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementManagedEBookUserStateSummary -InputObject <IDevicesC
 ```
 
 ## DESCRIPTION
-Delete navigation property userStateSummary for deviceAppManagement
+Deletes a userInstallStateSummary.
 
 ## EXAMPLES
 

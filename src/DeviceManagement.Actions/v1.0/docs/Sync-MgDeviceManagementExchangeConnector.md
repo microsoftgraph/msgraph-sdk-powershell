@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgDeviceManagementExchangeConnector
 
 ## SYNOPSIS
-Invoke action sync
+Not yet documented
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Sync-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementActionsI
 ```
 
 ## DESCRIPTION
-Invoke action sync
+Not yet documented
 
 ## EXAMPLES
 

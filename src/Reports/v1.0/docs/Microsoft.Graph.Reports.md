@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: 83a80116-a29f-4fec-8ae4-df6c8ceef291
+Module Guid: c43f4cef-5acb-48a8-a4a6-56f98d1016c0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -32,10 +32,10 @@ Sign-ins that are interactive in nature (where a username/password is passed as 
 Get the number of the resource
 
 ### [Get-MgDeviceManagementReport](Get-MgDeviceManagementReport.md)
-Reports singleton
+Read properties and relationships of the deviceManagementReports object.
 
 ### [Get-MgDeviceManagementReportExportJob](Get-MgDeviceManagementReportExportJob.md)
-Entity representing a job to export a report
+Read properties and relationships of the deviceManagementExportJob object.
 
 ### [Get-MgDeviceManagementReportExportJobCount](Get-MgDeviceManagementReportExportJobCount.md)
 Get the number of the resource
@@ -346,7 +346,7 @@ Delete navigation property reports for deviceManagement
 Delete navigation property userRegistrationDetails for reports
 
 ### [Update-MgDeviceManagementReport](Update-MgDeviceManagementReport.md)
-Update the navigation property reports in deviceManagement
+Update the properties of a deviceManagementReports object.
 
 ### [Update-MgReportAuthenticationMethodUserRegistrationDetail](Update-MgReportAuthenticationMethodUserRegistrationDetail.md)
 Update the navigation property userRegistrationDetails in reports

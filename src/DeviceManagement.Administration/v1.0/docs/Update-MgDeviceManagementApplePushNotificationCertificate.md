@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementApplePushNotificationCertificate
 
 ## SYNOPSIS
-Update the navigation property applePushNotificationCertificate in deviceManagement
+Update the properties of a applePushNotificationCertificate object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgDeviceManagementApplePushNotificationCertificate
 ```
 
 ## DESCRIPTION
-Update the navigation property applePushNotificationCertificate in deviceManagement
+Update the properties of a applePushNotificationCertificate object.
 
 ## EXAMPLES
 

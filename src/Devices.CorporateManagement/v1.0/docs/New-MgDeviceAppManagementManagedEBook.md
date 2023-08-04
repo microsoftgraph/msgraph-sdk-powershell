@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedEBook
 
 ## SYNOPSIS
-Create new navigation property to managedEBooks for deviceAppManagement
+Create a new iosVppEBook object.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgDeviceAppManagementManagedEBook -BodyParameter <IMicrosoftGraphManagedEBoo
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedEBooks for deviceAppManagement
+Create a new iosVppEBook object.
 
 ## EXAMPLES
 

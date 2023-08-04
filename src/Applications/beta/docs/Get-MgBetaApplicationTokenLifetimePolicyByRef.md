@@ -27,10 +27,17 @@ Only one object is returned in the collection because only one tokenLifetimePoli
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Applications
+{{ Add code here }}
 ```
 
-Get-MgBetaApplicationTokenLifetimePolicy -ApplicationId $applicationId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

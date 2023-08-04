@@ -43,10 +43,9 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-Get-MgBetaServicePrincipalOauth2PermissionGrant -ServicePrincipalId $servicePrincipalId
 ```
 
-
+Get-MgBetaServicePrincipalOauth2PermissionGrant -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

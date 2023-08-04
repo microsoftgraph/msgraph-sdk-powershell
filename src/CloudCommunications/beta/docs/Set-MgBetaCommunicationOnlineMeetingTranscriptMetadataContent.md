@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgBetaCommunicationOnlineMeetingTranscriptMetadataContent
 
 ## SYNOPSIS
-A field that represents the time-aligned metadata of the utterances in the transcript.
+The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ## SYNTAX
@@ -27,7 +27,7 @@ Set-MgBetaCommunicationOnlineMeetingTranscriptMetadataContent -InputObject <IClo
 ```
 
 ## DESCRIPTION
-A field that represents the time-aligned metadata of the utterances in the transcript.
+The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ## EXAMPLES

@@ -26,10 +26,9 @@ List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipa
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalHomeRealmDiscoveryPolicy -ServicePrincipalId $servicePrincipalId
 ```
 
-
+Get-MgServicePrincipalHomeRealmDiscoveryPolicy -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

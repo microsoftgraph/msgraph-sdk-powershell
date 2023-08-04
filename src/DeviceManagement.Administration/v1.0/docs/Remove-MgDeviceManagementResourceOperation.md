@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementResourceOperation
 
 ## SYNOPSIS
-Delete navigation property resourceOperations for deviceManagement
+Deletes a resourceOperation.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdmini
 ```
 
 ## DESCRIPTION
-Delete navigation property resourceOperations for deviceManagement
+Deletes a resourceOperation.
 
 ## EXAMPLES
 

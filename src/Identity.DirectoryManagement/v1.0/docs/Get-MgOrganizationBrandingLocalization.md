@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an organizationalBrandingLocalization object.
-To retrieve a localization branding object, specify the value of **id** in the URL.
+To retrieve a localization branding object, specify the value of id in the URL.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManagemen
 
 ## DESCRIPTION
 Read the properties and relationships of an organizationalBrandingLocalization object.
-To retrieve a localization branding object, specify the value of **id** in the URL.
+To retrieve a localization branding object, specify the value of id in the URL.
 
 ## EXAMPLES
 

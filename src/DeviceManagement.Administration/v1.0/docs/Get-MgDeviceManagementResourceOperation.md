@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementResourceOperation
 
 ## SYNOPSIS
-The Resource Operations.
+Read properties and relationships of the resourceOperation object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementResourceOperation -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-The Resource Operations.
+Read properties and relationships of the resourceOperation object.
 
 ## EXAMPLES
 

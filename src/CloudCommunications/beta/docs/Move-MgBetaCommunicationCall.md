@@ -52,126 +52,126 @@ This is opposed to transfering the call directly.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	TransferTarget = @{
-		EndpointType = "default"
-		Identity = @{
-			User = @{
-				Id = "550fae72-d251-43ec-868c-373732c2704f"
-				TenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
-				DisplayName = "Heidi Steen"
-			}
-		}
-		LanguageId = "languageId-value"
-		Region = "region-value"
-	}
-}
-Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	transferTarget = @{
+		endpointType = "default"
+		identity = @{
+			user = @{
+				id = "550fae72-d251-43ec-868c-373732c2704f"
+				tenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
+				displayName = "Heidi Steen"
+			}
+		}
+		languageId = "languageId-value"
+		region = "region-value"
+	}
+}
 
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	TransferTarget = @{
-		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-		EndpointType = "default"
-		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				Id = "550fae72-d251-43ec-868c-373732c2704f"
-				TenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
-				DisplayName = "Heidi Steen"
-			}
-		}
-		LanguageId = "en-us"
-		Region = "amer"
-		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
-	}
-}
-Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	transferTarget = @{
+		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+		endpointType = "default"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "550fae72-d251-43ec-868c-373732c2704f"
+				tenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
+				displayName = "Heidi Steen"
+			}
+		}
+		languageId = "en-us"
+		region = "amer"
+		replacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
+	}
+}
 
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	TransferTarget = @{
-		EndpointType = "default"
-		Identity = @{
-			Phone = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				Id = "+12345678901"
-			}
-		}
-		LanguageId = "languageId-value"
-		Region = "region-value"
-	}
-}
-Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	transferTarget = @{
+		endpointType = "default"
+		identity = @{
+			phone = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "+12345678901"
+			}
+		}
+		languageId = "languageId-value"
+		region = "region-value"
+	}
+}
 
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	TransferTarget = @{
-		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-		EndpointType = "default"
-		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			Phone = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				Id = "+12345678901"
-			}
-		}
-		LanguageId = "en-us"
-		Region = "amer"
-		ReplacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
-	}
-}
-Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	transferTarget = @{
+		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+		endpointType = "default"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			phone = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "+12345678901"
+			}
+		}
+		languageId = "en-us"
+		region = "amer"
+		replacesCallId = "e5d39592-99bd-4db8-bca8-30fb894ec51d"
+	}
+}
 
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	TransferTarget = @{
-		EndpointType = "default"
-		Identity = @{
-			User = @{
-				Id = "550fae72-d251-43ec-868c-373732c2704f"
-				TenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
-				DisplayName = "Heidi Steen"
-			}
-		}
-	}
-	Transferee = @{
-		Identity = @{
-			User = @{
-				Id = "751f6800-3180-414d-bd94-333364659951"
-				TenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
-			}
-		}
-		ParticipantId = "909c6581-5130-43e9-88f3-fcb3582cde37"
-	}
-	LanguageId = "languageId-value"
-	Region = "region-value"
-}
-Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	transferTarget = @{
+		endpointType = "default"
+		identity = @{
+			user = @{
+				id = "550fae72-d251-43ec-868c-373732c2704f"
+				tenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
+				displayName = "Heidi Steen"
+			}
+		}
+	}
+	transferee = @{
+		identity = @{
+			user = @{
+				id = "751f6800-3180-414d-bd94-333364659951"
+				tenantId = "72f988bf-86f1-41af-91ab-2d7cd011db47"
+			}
+		}
+		participantId = "909c6581-5130-43e9-88f3-fcb3582cde37"
+	}
+	languageId = "languageId-value"
+	region = "region-value"
+}
 
+Move-MgBetaCommunicationCall -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -347,8 +347,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[ParticipantId <String>]`: Optional. The ID of the target participant.
@@ -393,8 +393,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -411,8 +411,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserPlannerTask
 
 ## SYNOPSIS
-Retrieve a list of **plannertask** objects assigned to a User.
+Retrieve a list of plannertask objects assigned to a User.
 
 ## SYNTAX
 
@@ -19,18 +19,17 @@ Get-MgUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter <St
 ```
 
 ## DESCRIPTION
-Retrieve a list of **plannertask** objects assigned to a User.
+Retrieve a list of plannertask objects assigned to a User.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-# A UPN can also be used as -UserId.
-Get-MgUserPlannerTask -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserPlannerTask -UserId $userId
 
 ## PARAMETERS
 

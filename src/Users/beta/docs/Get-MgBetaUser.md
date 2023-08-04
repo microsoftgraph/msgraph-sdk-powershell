@@ -10,9 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties and relationships of user object.
 This operation returns by default only a subset of the more commonly used properties for each user.
-These _default_ properties are noted in the Properties section.
-To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.
-Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+These default properties are noted in the Properties section.
+To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
+Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
 
 ## SYNTAX
 
@@ -37,9 +37,9 @@ Get-MgBetaUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Prop
 ## DESCRIPTION
 Retrieve the properties and relationships of user object.
 This operation returns by default only a subset of the more commonly used properties for each user.
-These _default_ properties are noted in the Properties section.
-To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.
-Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+These default properties are noted in the Properties section.
+To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
+Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
 
 ## EXAMPLES
 

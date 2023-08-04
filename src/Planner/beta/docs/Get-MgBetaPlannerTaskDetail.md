@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPlannerTaskDetail
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaPlannerTaskDetail -InputObject <IPlannerIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ## EXAMPLES
 

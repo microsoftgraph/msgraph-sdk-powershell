@@ -58,58 +58,62 @@ The current timeout value is 15 seconds for regular scenarios, and 5 seconds for
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	CallbackUri = "https://bot.contoso.com/api/calls"
-	AcceptedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-}
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	callbackUri = "callbackUri-value"
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "\<Media Session Configuration Blob\>"
+	}
+	acceptedModalities = @(
+		"audio"
+	)
+	callOptions = @{
+		"@odata.type" = "#microsoft.graph.incomingCallOptions"
+		isContentSharingNotificationEnabled = $true
+	}
+	participantCapacity = 200
+}
 
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	CallbackUri = "callbackUri-value"
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-	AcceptedModalities = @(
-		"audio"
-	)
-	ParticipantCapacity = 200
-}
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	callbackUri = "https://bot.contoso.com/api/calls"
+	acceptedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+}
 
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	CallbackUri = "https://bot.contoso.com/api/calls"
-	AcceptedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
-		)
-	}
-}
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 ```
 
+$params = @{
+	callbackUri = "https://bot.contoso.com/api/calls"
+	acceptedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "\<Media Session Configuration Blob\>"
+	}
+}
 
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 

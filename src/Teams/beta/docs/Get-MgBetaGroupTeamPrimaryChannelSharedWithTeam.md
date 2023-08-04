@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a team that has been shared with a specified channel.
-This operation is allowed only for channels with a **membershipType** value of `shared`.
+This operation is allowed only for channels with a membershipType value of shared.
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Get-MgBetaGroupTeamPrimaryChannelSharedWithTeam -InputObject <ITeamsIdentity> [-
 
 ## DESCRIPTION
 Get a team that has been shared with a specified channel.
-This operation is allowed only for channels with a **membershipType** value of `shared`.
+This operation is allowed only for channels with a membershipType value of shared.
 
 ## EXAMPLES
 

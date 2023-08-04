@@ -44,17 +44,17 @@ Nullable.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
+Get-MgBetaDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
+Get-MgBetaDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
 
 ## PARAMETERS
 

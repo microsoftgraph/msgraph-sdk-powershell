@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPlannerPlan
 
 ## SYNOPSIS
-Update the properties of a **plannerPlan** object.
+Update the properties of a plannerPlan object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgPlannerPlan -InputObject <IPlannerIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Update the properties of a **plannerPlan** object.
+Update the properties of a plannerPlan object.
 
 ## EXAMPLES
 

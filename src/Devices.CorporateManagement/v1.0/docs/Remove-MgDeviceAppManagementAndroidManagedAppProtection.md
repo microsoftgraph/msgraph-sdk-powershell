@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementAndroidManagedAppProtection
 
 ## SYNOPSIS
-Delete navigation property androidManagedAppProtections for deviceAppManagement
+Deletes a androidManagedAppProtection.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementAndroidManagedAppProtection -InputObject <IDevicesCo
 ```
 
 ## DESCRIPTION
-Delete navigation property androidManagedAppProtections for deviceAppManagement
+Deletes a androidManagedAppProtection.
 
 ## EXAMPLES
 

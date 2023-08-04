@@ -39,18 +39,16 @@ Represents the aggregation of task execution data for tasks within a workflow ob
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport -WorkflowId $workflowId -TaskReportId $taskReportId
 ```
 
-
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport -WorkflowId $workflowId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport -WorkflowId $workflowId
 ```
 
-
+Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReport -WorkflowId $workflowId -Property "id,failedUsersCount,processingStatus,successfulUsersCount,totalUsersCount,unprocessedUsersCount,taskDefinition,taskProcessingResults"
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.SchemaExtensions
-Module Guid: 396a15cb-6bb5-4be7-b0f9-b286c4f14983
+Module Guid: 40413b42-afc2-4332-8359-d0424cb83e44
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.schemaextensions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -26,18 +26,18 @@ See examples of how to define a schema extension that describes a training cours
 
 ### [Remove-MgBetaSchemaExtension](Remove-MgBetaSchemaExtension.md)
 Delete the definition of a schema extension.
-Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state.
+Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state.
 Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
 
 ### [Update-MgBetaSchemaExtension](Update-MgBetaSchemaExtension.md)
 Update properties in the definition of the specified schemaExtension.
-Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status.
+Additive updates to the extension can only be made when the extension is in the InDevelopment or Available status.
 This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed.
-The update applies to all the resources that are included in the **targetTypes** property of the extension.
+The update applies to all the resources that are included in the targetTypes property of the extension.
 These resources are among the supporting resource types.
-For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns.
+For delegated flows, the signed-in user can update a schema extension as long as the owner property of the extension is set to the appId of an application the signed-in user owns.
 That application can be the one that initially created the extension, or some other application owned by the signed-in user.
-This criteria for the **owner** property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer.
-When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body.
+This criteria for the owner property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer.
+When using Graph Explorer to update a schemaExtension resource, include the owner property in the PATCH request body.
 For more information, see the Extensions section in Known issues with Microsoft Graph.
 

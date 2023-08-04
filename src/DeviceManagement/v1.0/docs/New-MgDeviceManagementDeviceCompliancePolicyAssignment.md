@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicyAssignment
 
 ## SYNOPSIS
-Create new navigation property to assignments for deviceManagement
+Create a new deviceCompliancePolicyAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceManagementDeviceCompliancePolicyAssignment -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Create new navigation property to assignments for deviceManagement
+Create a new deviceCompliancePolicyAssignment object.
 
 ## EXAMPLES
 

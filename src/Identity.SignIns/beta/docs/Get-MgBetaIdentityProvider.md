@@ -61,6 +61,13 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
 Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
+Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+
 ## PARAMETERS
 
 ### -All

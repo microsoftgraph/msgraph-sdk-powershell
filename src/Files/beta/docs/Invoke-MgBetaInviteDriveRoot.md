@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaInviteDriveRoot
 
 ## SYNOPSIS
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Invoke-MgBetaInviteDriveRoot -InputObject <IFilesIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupMemberByRef
 
 ## SYNOPSIS
-Remove a member from a group via the **members** navigation property.
+Remove a member from a group via the members navigation property.
 You can't remove a member from groups with dynamic memberships.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Remove-MgBetaGroupMemberByRef -InputObject <IGroupsIdentity> [-Id <String>] [-If
 ```
 
 ## DESCRIPTION
-Remove a member from a group via the **members** navigation property.
+Remove a member from a group via the members navigation property.
 You can't remove a member from groups with dynamic memberships.
 
 ## EXAMPLES

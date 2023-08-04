@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportFilter
 
 ## SYNOPSIS
-Invoke action getReportFilters
+Not yet documented
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementReportFilter
 ```
 
 ## DESCRIPTION
-Invoke action getReportFilters
+Not yet documented
 
 ## EXAMPLES
 

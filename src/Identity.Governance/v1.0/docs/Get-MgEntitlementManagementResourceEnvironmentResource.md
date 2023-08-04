@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceEnvironmentResource
 
 ## SYNOPSIS
-Get resources from identityGovernance
+Read-only.
+Required.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgEntitlementManagementResourceEnvironmentResource -InputObject <IIdentityGo
 ```
 
 ## DESCRIPTION
-Get resources from identityGovernance
+Read-only.
+Required.
 
 ## EXAMPLES
 

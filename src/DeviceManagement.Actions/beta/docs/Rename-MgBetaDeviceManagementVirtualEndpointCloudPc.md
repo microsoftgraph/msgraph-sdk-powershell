@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Use this API to update the displayName for the Cloud PC entity.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Rename-MgBetaDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagem
 
 ## DESCRIPTION
 Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Use this API to update the displayName for the Cloud PC entity.
 
 ## EXAMPLES
 

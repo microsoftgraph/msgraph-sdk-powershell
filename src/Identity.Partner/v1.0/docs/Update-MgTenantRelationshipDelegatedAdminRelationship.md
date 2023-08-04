@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a delegatedAdminRelationship object.
-A relationship can only be updated if it's in the `created` **status**.
+A relationship can only be updated if it's in the created status.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgTenantRelationshipDelegatedAdminRelationship -InputObject <IIdentityPar
 
 ## DESCRIPTION
 Update the properties of a delegatedAdminRelationship object.
-A relationship can only be updated if it's in the `created` **status**.
+A relationship can only be updated if it's in the created status.
 
 ## EXAMPLES
 

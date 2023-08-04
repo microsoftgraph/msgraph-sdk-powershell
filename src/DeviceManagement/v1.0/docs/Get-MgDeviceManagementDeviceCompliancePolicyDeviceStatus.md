@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatus
 
 ## SYNOPSIS
-List of DeviceComplianceDeviceStatus.
+Read properties and relationships of the deviceComplianceDeviceStatus object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatus -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-List of DeviceComplianceDeviceStatus.
+Read properties and relationships of the deviceComplianceDeviceStatus object.
 
 ## EXAMPLES
 

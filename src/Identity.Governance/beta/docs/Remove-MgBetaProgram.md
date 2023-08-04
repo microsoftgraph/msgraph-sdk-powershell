@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In the Azure AD access reviews feature, delete a program object.
-Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
+Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
 Also, please note that the built-in default program cannot be deleted.
 
 ## SYNTAX
@@ -28,7 +28,7 @@ Remove-MgBetaProgram -InputObject <IIdentityGovernanceIdentity> [-IfMatch <Strin
 
 ## DESCRIPTION
 In the Azure AD access reviews feature, delete a program object.
-Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
+Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
 Also, please note that the built-in default program cannot be deleted.
 
 ## EXAMPLES

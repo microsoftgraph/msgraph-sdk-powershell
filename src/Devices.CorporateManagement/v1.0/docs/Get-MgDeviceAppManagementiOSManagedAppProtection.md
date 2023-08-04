@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementiOSManagedAppProtection
 
 ## SYNOPSIS
-iOS managed app policies.
+Read properties and relationships of the iosManagedAppProtection object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementiOSManagedAppProtection -InputObject <IDevicesCorporate
 ```
 
 ## DESCRIPTION
-iOS managed app policies.
+Read properties and relationships of the iosManagedAppProtection object.
 
 ## EXAMPLES
 

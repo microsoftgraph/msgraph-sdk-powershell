@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Mark a message as not junk.
-This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
+This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Invoke-MgBetaMarkUserMailFolderChildFolderMessageAsNotJunk -InputObject <IUsersA
 
 ## DESCRIPTION
 Mark a message as not junk.
-This API removes the sender from the list of blocked senders and moves the message to the **Inbox** folder, when **moveToInbox** is `true`.
+This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
 
 ## EXAMPLES
 

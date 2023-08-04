@@ -26,10 +26,9 @@ Retrieve a list of plannerTask objects associated to a plannerBucket object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-Get-MgPlannerBucketTask -PlannerBucketId $plannerBucketId
 ```
 
-
+Get-MgPlannerBucketTask -PlannerBucketId $plannerBucketId
 
 ## PARAMETERS
 

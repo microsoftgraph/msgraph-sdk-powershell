@@ -25,10 +25,17 @@ Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Planner
+{{ Add code here }}
 ```
 
-Get-MgBetaPlannerPlanBucket -PlannerPlanId $plannerPlanId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

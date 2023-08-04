@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+Create a new windowsInformationProtectionNetworkLearningSummary object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementWindowsInformationProtectionNetworkLearningSummary
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
+Create a new windowsInformationProtectionNetworkLearningSummary object.
 
 ## EXAMPLES
 

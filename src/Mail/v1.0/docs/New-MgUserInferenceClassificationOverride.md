@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create an override for a sender identified by an SMTP address.
 Future messages from that SMTP address will be consistently classified\nas specified in the override.
-**Note**
+Note
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Additio
 ## DESCRIPTION
 Create an override for a sender identified by an SMTP address.
 Future messages from that SMTP address will be consistently classified\nas specified in the override.
-**Note**
+Note
 
 ## EXAMPLES
 

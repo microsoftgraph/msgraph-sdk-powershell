@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Delete navigation property deviceConfigurations for deviceManagement
+Deletes a macOSDeviceFeaturesConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceConfigurations for deviceManagement
+Deletes a macOSDeviceFeaturesConfiguration.
 
 ## EXAMPLES
 

@@ -46,15 +46,15 @@ Add a strong password or secret to a servicePrincipal object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Applications
-$params = @{
-	PasswordCredential = @{
-		DisplayName = "Password friendly name"
-	}
-}
-Add-MgServicePrincipalPassword -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
+$params = @{
+	passwordCredential = @{
+		displayName = "Password friendly name"
+	}
+}
 
+Add-MgServicePrincipalPassword -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 
 ## PARAMETERS
 

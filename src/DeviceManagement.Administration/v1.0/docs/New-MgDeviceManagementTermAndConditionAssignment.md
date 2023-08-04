@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTermAndConditionAssignment
 
 ## SYNOPSIS
-Create new navigation property to assignments for deviceManagement
+Create a new termsAndConditionsAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Create new navigation property to assignments for deviceManagement
+Create a new termsAndConditionsAssignment object.
 
 ## EXAMPLES
 

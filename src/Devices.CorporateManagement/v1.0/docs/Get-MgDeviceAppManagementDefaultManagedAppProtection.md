@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementDefaultManagedAppProtection
 
 ## SYNOPSIS
-Default managed app policies.
+Read properties and relationships of the defaultManagedAppProtection object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementDefaultManagedAppProtection -InputObject <IDevicesCorpo
 ```
 
 ## DESCRIPTION
-Default managed app policies.
+Read properties and relationships of the defaultManagedAppProtection object.
 
 ## EXAMPLES
 

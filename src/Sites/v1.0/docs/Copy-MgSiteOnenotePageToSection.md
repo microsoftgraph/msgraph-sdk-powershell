@@ -49,16 +49,17 @@ For copy operations, you follow an asynchronous calling pattern:  First call the
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Users.Actions
+{{ Add code here }}
 ```
 
-$params = @{
-	Id = "id-value"
-	GroupId = "groupId-value"
-}
 
-# A UPN can also be used as -UserId.
-Copy-MgUserOnenotePageToSection -UserId $userId -OnenotePageId $onenotePageId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Create new navigation property to deviceConfigurations for deviceManagement
+Create a new macOSCustomConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgDeviceManagementDeviceConfiguration -BodyParameter <IMicrosoftGraphDeviceC
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceConfigurations for deviceManagement
+Create a new macOSCustomConfiguration object.
 
 ## EXAMPLES
 

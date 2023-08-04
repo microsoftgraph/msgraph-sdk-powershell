@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserPlannerTask
 
 ## SYNOPSIS
-Retrieve a list of **plannertask** objects assigned to a User.
+Retrieve a list of plannertask objects assigned to a User.
 
 ## SYNTAX
 
@@ -19,18 +19,17 @@ Get-MgBetaUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter
 ```
 
 ## DESCRIPTION
-Retrieve a list of **plannertask** objects assigned to a User.
+Retrieve a list of plannertask objects assigned to a User.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Planner
-# A UPN can also be used as -UserId.
-Get-MgBetaUserPlannerTask -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserPlannerTask -UserId $userId
 
 ## PARAMETERS
 

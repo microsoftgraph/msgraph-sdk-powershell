@@ -43,11 +43,10 @@ A person is an aggregation of information from across mail, contacts and social 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.People
-# A UPN can also be used as -UserId.
-Get-MgBetaUserPerson -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserPerson -UserId $userId
 
 ## PARAMETERS
 

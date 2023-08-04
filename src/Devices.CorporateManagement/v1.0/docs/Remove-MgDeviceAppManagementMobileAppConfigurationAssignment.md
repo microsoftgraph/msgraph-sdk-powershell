@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileAppConfigurationAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationAssignment.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceAppManagementMobileAppConfigurationAssignment
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for deviceAppManagement
+Deletes a managedDeviceMobileAppConfigurationAssignment.
 
 ## EXAMPLES
 

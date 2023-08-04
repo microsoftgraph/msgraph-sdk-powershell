@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMobileAppCategory
 
 ## SYNOPSIS
-The mobile app categories.
+Read properties and relationships of the mobileAppCategory object.
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Get-MgDeviceAppManagementMobileAppCategory -MobileAppId <String> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-The mobile app categories.
+Read properties and relationships of the mobileAppCategory object.
 
 ## EXAMPLES
 

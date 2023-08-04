@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a delegated permission grant, represented by an oAuth2PermissionGrant object.
 When a delegated permission grant is deleted, the access it granted is revoked.
-Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
+Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Remove-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-IfMatch
 ## DESCRIPTION
 Delete a delegated permission grant, represented by an oAuth2PermissionGrant object.
 When a delegated permission grant is deleted, the access it granted is revoked.
-Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
+Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.
 
 ## EXAMPLES
 

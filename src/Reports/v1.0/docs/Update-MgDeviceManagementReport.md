@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementReport
 
 ## SYNOPSIS
-Update the navigation property reports in deviceManagement
+Update the properties of a deviceManagementReports object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgDeviceManagementReport -BodyParameter <IMicrosoftGraphDeviceManagementR
 ```
 
 ## DESCRIPTION
-Update the navigation property reports in deviceManagement
+Update the properties of a deviceManagementReports object.
 
 ## EXAMPLES
 

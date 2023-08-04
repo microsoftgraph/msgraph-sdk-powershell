@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDetectedApp
 
 ## SYNOPSIS
-The list of detected apps associated with a device.
+Read properties and relationships of the detectedApp object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDetectedApp -InputObject <IDeviceManagementIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-The list of detected apps associated with a device.
+Read properties and relationships of the detectedApp object.
 
 ## EXAMPLES
 

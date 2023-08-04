@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementExchangeConnector
 
 ## SYNOPSIS
-Update the navigation property exchangeConnectors in deviceManagement
+Update the properties of a deviceManagementExchangeConnector object.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgDeviceManagementExchangeConnector -InputObject <IDeviceManagementAdmini
 ```
 
 ## DESCRIPTION
-Update the navigation property exchangeConnectors in deviceManagement
+Update the properties of a deviceManagementExchangeConnector object.
 
 ## EXAMPLES
 

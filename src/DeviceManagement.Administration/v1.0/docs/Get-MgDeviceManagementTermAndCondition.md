@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementTermAndCondition
 
 ## SYNOPSIS
-The terms and conditions associated with device management of the company.
+Read properties and relationships of the termsAndConditions object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementTermAndCondition -InputObject <IDeviceManagementAdministra
 ```
 
 ## DESCRIPTION
-The terms and conditions associated with device management of the company.
+Read properties and relationships of the termsAndConditions object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementManagedEBookAssignment
 
 ## SYNOPSIS
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a iosVppEBookAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Update the navigation property assignments in deviceAppManagement
+Update the properties of a iosVppEBookAssignment object.
 
 ## EXAMPLES
 

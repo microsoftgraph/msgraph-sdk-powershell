@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new task trigger on the specified printer.
-Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future.
+Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-Additi
 
 ## DESCRIPTION
 Create a new task trigger on the specified printer.
-Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future.
+Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
 
 ## EXAMPLES
 

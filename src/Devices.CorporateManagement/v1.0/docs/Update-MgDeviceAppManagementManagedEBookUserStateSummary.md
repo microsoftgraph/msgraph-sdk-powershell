@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementManagedEBookUserStateSummary
 
 ## SYNOPSIS
-Update the navigation property userStateSummary in deviceAppManagement
+Update the properties of a userInstallStateSummary object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceAppManagementManagedEBookUserStateSummary -InputObject <IDevicesC
 ```
 
 ## DESCRIPTION
-Update the navigation property userStateSummary in deviceAppManagement
+Update the properties of a userInstallStateSummary object.
 
 ## EXAMPLES
 

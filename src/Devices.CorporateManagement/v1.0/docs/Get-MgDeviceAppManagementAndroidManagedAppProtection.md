@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementAndroidManagedAppProtection
 
 ## SYNOPSIS
-Android managed app policies.
+Read properties and relationships of the androidManagedAppProtection object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementAndroidManagedAppProtection -InputObject <IDevicesCorpo
 ```
 
 ## DESCRIPTION
-Android managed app policies.
+Read properties and relationships of the androidManagedAppProtection object.
 
 ## EXAMPLES
 

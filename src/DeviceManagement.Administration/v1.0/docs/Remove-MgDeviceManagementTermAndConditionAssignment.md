@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementTermAndConditionAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for deviceManagement
+Deletes a termsAndConditionsAssignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for deviceManagement
+Deletes a termsAndConditionsAssignment.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementManagedAppRegistrationOperation
 
 ## SYNOPSIS
-Create new navigation property to operations for deviceAppManagement
+Create a new managedAppOperation object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceAppManagementManagedAppRegistrationOperation -InputObject <IDevicesC
 ```
 
 ## DESCRIPTION
-Create new navigation property to operations for deviceAppManagement
+Create a new managedAppOperation object.
 
 ## EXAMPLES
 

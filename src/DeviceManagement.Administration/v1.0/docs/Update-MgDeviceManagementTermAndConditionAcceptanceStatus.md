@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementTermAndConditionAcceptanceStatus
 
 ## SYNOPSIS
-Update the navigation property acceptanceStatuses in deviceManagement
+Update the properties of a termsAndConditionsAcceptanceStatus object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgDeviceManagementTermAndConditionAcceptanceStatus
 ```
 
 ## DESCRIPTION
-Update the navigation property acceptanceStatuses in deviceManagement
+Update the properties of a termsAndConditionsAcceptanceStatus object.
 
 ## EXAMPLES
 

@@ -32,10 +32,9 @@ Supported for Microsoft 365 groups only.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Add-MgBetaGroupFavorite -GroupId $groupId
 ```
 
-
+Add-MgBetaGroupFavorite -GroupId $groupId
 
 ## PARAMETERS
 

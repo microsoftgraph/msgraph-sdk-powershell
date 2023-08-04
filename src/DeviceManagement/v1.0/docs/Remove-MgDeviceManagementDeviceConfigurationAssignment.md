@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceConfigurationAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for deviceManagement
+Deletes a deviceConfigurationAssignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for deviceManagement
+Deletes a deviceConfigurationAssignment.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaOrganizationSetting
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**.
+Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties.
 This operation does not return insightsSettings.
 Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
 This operation does not return microsoftApplicationDataAccessSettings.
@@ -29,7 +29,7 @@ Get-MgBetaOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**.
+Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties.
 This operation does not return insightsSettings.
 Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
 This operation does not return microsoftApplicationDataAccessSettings.

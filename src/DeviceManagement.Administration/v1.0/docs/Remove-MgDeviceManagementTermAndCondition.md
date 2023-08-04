@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementTermAndCondition
 
 ## SYNOPSIS
-Delete navigation property termsAndConditions for deviceManagement
+Deletes a termsAndConditions.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementTermAndCondition -InputObject <IDeviceManagementAdminis
 ```
 
 ## DESCRIPTION
-Delete navigation property termsAndConditions for deviceManagement
+Deletes a termsAndConditions.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgBetaGroupTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## EXAMPLES
 

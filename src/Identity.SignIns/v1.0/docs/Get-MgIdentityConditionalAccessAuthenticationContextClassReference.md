@@ -42,7 +42,7 @@ Retrieve the properties and relationships of a authenticationContextClassReferen
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
+Get-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## PARAMETERS
 

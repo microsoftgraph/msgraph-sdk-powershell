@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserContactFolderContact
 
 ## SYNOPSIS
-Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 
 ## SYNTAX
 
@@ -63,7 +63,7 @@ New-MgUserContactFolderContact -InputObject <IPersonalContactsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
 
 ## EXAMPLES
 

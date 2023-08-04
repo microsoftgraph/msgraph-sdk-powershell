@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentInputFile
-Input File for Content (A field that represents the content of the transcript.
+Input File for Content (The content of the transcript.
 Read-only.)
 
 ```yaml
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -MetadataContentInputFile
-Input File for MetadataContent (A field that represents the time-aligned metadata of the utterances in the transcript.
+Input File for MetadataContent (The time-aligned metadata of the utterances in the transcript.
 Read-only.)
 
 ```yaml
@@ -273,9 +273,9 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphCallTranscript>`: callTranscript
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <Byte[]>]`: A field that represents the content of the transcript. Read-only.
+  - `[Content <Byte[]>]`: The content of the transcript. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[MetadataContent <Byte[]>]`: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+  - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

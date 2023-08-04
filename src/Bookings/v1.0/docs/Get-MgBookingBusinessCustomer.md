@@ -41,7 +41,7 @@ Get the properties and relationships of a bookingCustomer object.
 Import-Module Microsoft.Graph.Bookings
 ```
 
-Get-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BookingCustomerBaseId $bookingCustomerBaseId
+Get-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId
 
 ## PARAMETERS
 

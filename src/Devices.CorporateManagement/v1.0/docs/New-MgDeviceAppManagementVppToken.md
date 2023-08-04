@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementVppToken
 
 ## SYNOPSIS
-Create new navigation property to vppTokens for deviceAppManagement
+Create a new vppToken object.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceAppManagementVppToken -BodyParameter <IMicrosoftGraphVppToken> [-Con
 ```
 
 ## DESCRIPTION
-Create new navigation property to vppTokens for deviceAppManagement
+Create a new vppToken object.
 
 ## EXAMPLES
 

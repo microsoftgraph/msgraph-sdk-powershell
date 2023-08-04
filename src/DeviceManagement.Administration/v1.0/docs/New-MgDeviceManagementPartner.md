@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementPartner
 
 ## SYNOPSIS
-Create new navigation property to deviceManagementPartners for deviceManagement
+Create a new deviceManagementPartner object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementPartner -BodyParameter <IMicrosoftGraphDeviceManagementPar
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceManagementPartners for deviceManagement
+Create a new deviceManagementPartner object.
 
 ## EXAMPLES
 

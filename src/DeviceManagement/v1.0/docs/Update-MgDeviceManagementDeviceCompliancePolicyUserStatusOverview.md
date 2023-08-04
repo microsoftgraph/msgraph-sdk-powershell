@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview
 
 ## SYNOPSIS
-Update the navigation property userStatusOverview in deviceManagement
+Update the properties of a deviceComplianceUserOverview object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyUserStatusOverview -InputObject <
 ```
 
 ## DESCRIPTION
-Update the navigation property userStatusOverview in deviceManagement
+Update the properties of a deviceComplianceUserOverview object.
 
 ## EXAMPLES
 

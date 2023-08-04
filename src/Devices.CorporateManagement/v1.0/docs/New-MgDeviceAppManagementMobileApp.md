@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Create new navigation property to mobileApps for deviceAppManagement
+Create a new windowsMicrosoftEdgeApp object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-C
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileApps for deviceAppManagement
+Create a new windowsMicrosoftEdgeApp object.
 
 ## EXAMPLES
 

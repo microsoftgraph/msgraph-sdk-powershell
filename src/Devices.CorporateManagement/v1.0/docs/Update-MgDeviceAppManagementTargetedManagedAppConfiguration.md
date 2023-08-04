@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
+Update the properties of a targetedManagedAppConfiguration object.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgDeviceAppManagementTargetedManagedAppConfiguration -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
+Update the properties of a targetedManagedAppConfiguration object.
 
 ## EXAMPLES
 

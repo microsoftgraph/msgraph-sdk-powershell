@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 095c7452-795a-4331-9fcd-52c8e2e8839a
+Module Guid: ce79d05f-5949-4694-8dfd-60ddcdb637bb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -26,7 +26,7 @@ Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 Get the number of the resource
 
 ### [Get-MgGroupPlannerPlanDetail](Get-MgGroupPlannerPlanDetail.md)
-Retrieve the properties and relationships of a **plannerPlanDetails** object.
+Retrieve the properties and relationships of a plannerPlanDetails object.
 
 ### [Get-MgGroupPlannerPlanTask](Get-MgGroupPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -53,7 +53,7 @@ Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 Get the number of the resource
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
-Retrieve the properties and relationships of a **plannerPlanDetails** object.
+Retrieve the properties and relationships of a plannerPlanDetails object.
 
 ### [Get-MgPlannerPlanTask](Get-MgPlannerPlanTask.md)
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
@@ -62,44 +62,44 @@ Retrieve a list of plannerTask objects associated with a plannerPlan object.
 Retrieve the properties and relationships of plannerTask object.
 
 ### [Get-MgPlannerTaskAssignedToTaskBoardFormat](Get-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
 
 ### [Get-MgPlannerTaskBucketTaskBoardFormat](Get-MgPlannerTaskBucketTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 
 ### [Get-MgPlannerTaskCount](Get-MgPlannerTaskCount.md)
 Get the number of the resource
 
 ### [Get-MgPlannerTaskDetail](Get-MgPlannerTaskDetail.md)
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Retrieve the properties and relationships of a plannerTaskDetails object.
 
 ### [Get-MgPlannerTaskProgressTaskBoardFormat](Get-MgPlannerTaskProgressTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
 
 ### [Get-MgUserPlanner](Get-MgUserPlanner.md)
 Entry-point to the Planner resource that might exist for a user.
 Read-only.
 
 ### [Get-MgUserPlannerPlan](Get-MgUserPlannerPlan.md)
-Retrieve a list of **plannerplan** objects shared with a user object.
+Retrieve a list of plannerplan objects shared with a user object.
 
 ### [Get-MgUserPlannerTask](Get-MgUserPlannerTask.md)
-Retrieve a list of **plannertask** objects assigned to a User.
+Retrieve a list of plannertask objects assigned to a User.
 
 ### [New-MgPlannerBucket](New-MgPlannerBucket.md)
 Create a new plannerBucket object.
 
 ### [New-MgPlannerPlan](New-MgPlannerPlan.md)
-Use this API to create a new **plannerPlan**.
+Use this API to create a new plannerPlan.
 
 ### [New-MgPlannerTask](New-MgPlannerTask.md)
-Create a new **plannerTask**.
+Create a new plannerTask.
 
 ### [Remove-MgGroupPlannerPlanDetail](Remove-MgGroupPlannerPlanDetail.md)
 Delete navigation property details for groups
 
 ### [Remove-MgPlannerBucket](Remove-MgPlannerBucket.md)
-Delete **plannerBucket**.
+Delete plannerBucket.
 
 ### [Remove-MgPlannerPlan](Remove-MgPlannerPlan.md)
 Delete a plannerPlan object.
@@ -129,7 +129,7 @@ Update planner
 Update the navigation property buckets in planner
 
 ### [Update-MgPlannerPlan](Update-MgPlannerPlan.md)
-Update the properties of a **plannerPlan** object.
+Update the properties of a plannerPlan object.
 
 ### [Update-MgPlannerPlanDetail](Update-MgPlannerPlanDetail.md)
 Update the navigation property details in planner

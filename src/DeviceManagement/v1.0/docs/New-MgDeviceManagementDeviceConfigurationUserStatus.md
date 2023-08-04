@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfigurationUserStatus
 
 ## SYNOPSIS
-Create new navigation property to userStatuses for deviceManagement
+Create a new deviceConfigurationUserStatus object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgDeviceManagementDeviceConfigurationUserStatus -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Create new navigation property to userStatuses for deviceManagement
+Create a new deviceConfigurationUserStatus object.
 
 ## EXAMPLES
 

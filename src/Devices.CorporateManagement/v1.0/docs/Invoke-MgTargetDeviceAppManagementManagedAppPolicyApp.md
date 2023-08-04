@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp
 
 ## SYNOPSIS
-Invoke action targetApps
+Not yet documented
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp -InputObject <IDevicesCorp
 ```
 
 ## DESCRIPTION
-Invoke action targetApps
+Not yet documented
 
 ## EXAMPLES
 

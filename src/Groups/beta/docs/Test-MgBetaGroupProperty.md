@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
+Clients can use the API to determine if a display name or mail nickname is valid before trying to update a Microsoft 365 group.
 For validating properties before creating a group, use the validateProperties function for directory objects.
 The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
@@ -46,7 +46,7 @@ Test-MgBetaGroupProperty -InputObject <IGroupsIdentity> [-AdditionalProperties <
 
 ## DESCRIPTION
 Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
+Clients can use the API to determine if a display name or mail nickname is valid before trying to update a Microsoft 365 group.
 For validating properties before creating a group, use the validateProperties function for directory objects.
 The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.

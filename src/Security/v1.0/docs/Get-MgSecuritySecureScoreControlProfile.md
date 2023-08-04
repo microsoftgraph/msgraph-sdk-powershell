@@ -41,7 +41,7 @@ Retrieve the properties and relationships of an securescorecontrolprofile object
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId
+Get-MgSecuritySecureScoreControlProfile
 
 ## PARAMETERS
 

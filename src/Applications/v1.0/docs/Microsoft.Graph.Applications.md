@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: 506bbc76-5fb6-40c0-b35e-7b935ceb361b
+Module Guid: c7ceb73f-4112-48cd-bc67-cd68e89bb2a8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -33,13 +33,13 @@ Add a strong password or secret to a servicePrincipal object.
 
 ### [Add-MgServicePrincipalTokenSigningCertificate](Add-MgServicePrincipalTokenSigningCertificate.md)
 Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.
-The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with **usage** set to `Sign`.\n    + A public key object with **usage** set to `Verify`.\n+ The passwordCredentials object.
-All the objects have the same value of **customKeyIdentifier**.
-The **passwordCredential** is used to open the PFX file (private key).
-It and the associated private key object have the same value of **keyId**.
-When set during creation through the **displayName** property, the subject of the certificate cannot be updated.
-The **startDateTime** is set to the same time the certificate is created using the action.
-The **endDateTime** can be up to three years after the certificate is created.
+The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object.
+All the objects have the same value of customKeyIdentifier.
+The passwordCredential is used to open the PFX file (private key).
+It and the associated private key object have the same value of keyId.
+When set during creation through the displayName property, the subject of the certificate cannot be updated.
+The startDateTime is set to the same time the certificate is created using the action.
+The endDateTime can be up to three years after the certificate is created.
 
 ### [Clear-MgApplicationVerifiedPublisher](Clear-MgApplicationVerifiedPublisher.md)
 Unset the verifiedPublisher previously set on an application, removing all verified publisher properties.
@@ -135,7 +135,7 @@ This function is transitive.
 ### [Get-MgApplicationMemberObject](Get-MgApplicationMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
+Note: Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgApplicationOwner](Get-MgApplicationOwner.md)
 Directory objects that are owners of the application.
@@ -335,7 +335,7 @@ This function is transitive.
 ### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
+Note: Only users and role-enabled groups can be members of directory roles.
 
 ### [Get-MgServicePrincipalMemberOf](Get-MgServicePrincipalMemberOf.md)
 Roles that this service principal is a member of.
@@ -561,7 +561,7 @@ Invoke function functions
 ### [Invoke-MgInstantiateApplicationTemplate](Invoke-MgInstantiateApplicationTemplate.md)
 Add an instance of an application from the Azure AD application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
-Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.
+Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
 
 ### [Invoke-MgParseApplicationSynchronizationJobSchemaExpression](Invoke-MgParseApplicationSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.

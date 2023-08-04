@@ -41,7 +41,7 @@ Retrieve the properties and relationships of plannerTask object.
 Import-Module Microsoft.Graph.Planner
 ```
 
-Get-MgPlannerTask -PlannerTaskId $plannerTaskId
+Get-MgPlannerTask
 
 ## PARAMETERS
 

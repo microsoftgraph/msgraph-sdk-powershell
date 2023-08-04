@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageAssignmentPolicy
 
 ## SYNOPSIS
-Get assignmentPolicies from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgEntitlementManagementAccessPackageAssignmentPolicy -InputObject <IIdentity
 ```
 
 ## DESCRIPTION
-Get assignmentPolicies from identityGovernance
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

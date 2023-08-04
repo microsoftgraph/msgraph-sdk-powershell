@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementManagedDeviceWindowsDeviceAccount
 
 ## SYNOPSIS
-Invoke action updateWindowsDeviceAccount
+Not yet documented
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgDeviceManagementManagedDeviceWindowsDeviceAccount -InputObject <IDevice
 ```
 
 ## DESCRIPTION
-Invoke action updateWindowsDeviceAccount
+Not yet documented
 
 ## EXAMPLES
 

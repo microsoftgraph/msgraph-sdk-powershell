@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementNotificationMessageTemplate
 
 ## SYNOPSIS
-Delete navigation property notificationMessageTemplates for deviceManagement
+Deletes a notificationMessageTemplate.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementNotificationMessageTemplate -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Delete navigation property notificationMessageTemplates for deviceManagement
+Deletes a notificationMessageTemplate.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature
 
 ## SYNOPSIS
-Invoke action windowsDefenderUpdateSignatures
+Not yet documented
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature
 ```
 
 ## DESCRIPTION
-Invoke action windowsDefenderUpdateSignatures
+Not yet documented
 
 ## EXAMPLES
 

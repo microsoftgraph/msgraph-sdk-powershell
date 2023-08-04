@@ -56,188 +56,27 @@ When an invited participant is removed, any outstanding add participant request 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
-	Participants = @(
+	participants = @(
 		@{
 			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			Identity = @{
+			replacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
+			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
+				user = @{
 					"@odata.type" = "#microsoft.graph.identity"
-					Id = "278405a3-f568-4b3e-b684-009193463064"
-					IdentityProvider = "AAD"
+					id = "278405a3-f568-4b3e-b684-009193463064"
+					identityProvider = "AAD"
 				}
 			}
 		}
 	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
+	clientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
 }
+
 Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Participants = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "278405a3-f568-4b3e-b684-009193463064"
-					IdentityProvider = "AAD"
-				}
-			}
-		}
-	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
-}
-Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Participants = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "278405a3-f568-4b3e-b684-009193463064"
-					IdentityProvider = "AAD"
-				}
-			}
-		}
-	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
-}
-Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Participants = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				Phone = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "+12345678901"
-				}
-			}
-		}
-	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
-}
-Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Participants = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "7e1b4346-85a6-4bdd-abe3-d11c5d420efe"
-					IdentityProvider = "AAD"
-				}
-			}
-		}
-	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
-}
-Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Participants = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			ParticipantId = "7d501bf1-5ee4-4605-ba92-0ae4513c611c"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "682b6c37-0729-4fab-ace6-d730d5d9137e"
-					IdentityProvider = "AAD"
-				}
-			}
-		}
-	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
-}
-Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	Participants = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "7e1b4346-85a6-4bdd-abe3-d11c5d420efe"
-					IdentityProvider = "AAD"
-				}
-			}
-		}
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			ReplacesCallId = "a7ebfb2d-871e-419c-87af-27290b22e8db"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					Id = "1e126418-44a0-4a94-a6f8-0efe1ad71acb"
-					IdentityProvider = "AAD"
-				}
-			}
-		}
-	)
-	ClientContext = "f2fa86af-3c51-4bc2-8fc0-475452d9764f"
-}
-Invoke-MgBetaInviteCommunicationCallParticipant -CallId $callId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -397,8 +236,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[ParticipantId <String>]`: Optional. The ID of the target participant.
@@ -432,8 +271,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.

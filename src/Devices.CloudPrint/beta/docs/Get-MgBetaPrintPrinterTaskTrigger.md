@@ -43,7 +43,7 @@ For details about how to use this API to add pull printing support to Universal 
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-Get-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
+Get-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId
 
 ## PARAMETERS
 

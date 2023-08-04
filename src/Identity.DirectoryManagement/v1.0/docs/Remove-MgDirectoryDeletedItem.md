@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items.
-After an item is permanently deleted, it **cannot** be restored.
-Administrative units **cannot** be permanently deleted by using the **deletedItems** API.
+After an item is permanently deleted, it cannot be restored.
+Administrative units cannot be permanently deleted by using the deletedItems API.
 Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 
 ## SYNTAX
@@ -29,8 +29,8 @@ Remove-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity
 
 ## DESCRIPTION
 Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items.
-After an item is permanently deleted, it **cannot** be restored.
-Administrative units **cannot** be permanently deleted by using the **deletedItems** API.
+After an item is permanently deleted, it cannot be restored.
+Administrative units cannot be permanently deleted by using the deletedItems API.
 Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 
 ## EXAMPLES

@@ -30,10 +30,9 @@ Validates the ownership of the domain.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Confirm-MgDomain -DomainId $domainId
 ```
 
-
+Confirm-MgDomain -DomainId $domainId
 
 ## PARAMETERS
 

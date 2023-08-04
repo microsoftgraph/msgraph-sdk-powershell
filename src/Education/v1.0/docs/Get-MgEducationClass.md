@@ -47,7 +47,7 @@ If you're using the delegated token, the user will only see classes in which the
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClass -EducationClassId $educationClassId
+Get-MgEducationClass
 
 ## PARAMETERS
 

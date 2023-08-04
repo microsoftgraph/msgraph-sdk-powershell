@@ -11,7 +11,7 @@ schema: 2.0.0
 Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or is not in that folder, the `POST` request will fail.
+If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgBetaEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdent
 Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or is not in that folder, the `POST` request will fail.
+If the file doesn't exist or is not in that folder, the POST request will fail.
 
 ## EXAMPLES
 
@@ -280,6 +280,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
+  - `[EducationModuleId <String>]`: The unique identifier of educationModule
+  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

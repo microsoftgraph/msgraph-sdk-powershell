@@ -41,7 +41,7 @@ Read the properties and relationships of a federatedIdentityCredential object.
 Import-Module Microsoft.Graph.Applications
 ```
 
-Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
+Get-MgApplicationFederatedIdentityCredential -ApplicationId $applicationId
 
 ## PARAMETERS
 

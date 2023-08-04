@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementWindowsAutopilotDeviceIdentity
 
 ## SYNOPSIS
-Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+Deletes a windowsAutopilotDeviceIdentity.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementWindowsAutopilotDeviceIdentity -InputObject <IDeviceMan
 ```
 
 ## DESCRIPTION
-Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+Deletes a windowsAutopilotDeviceIdentity.
 
 ## EXAMPLES
 

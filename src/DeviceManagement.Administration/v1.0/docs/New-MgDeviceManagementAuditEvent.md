@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementAuditEvent
 
 ## SYNOPSIS
-Create new navigation property to auditEvents for deviceManagement
+Create a new auditEvent object.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementAuditEvent -BodyParameter <IMicrosoftGraphAuditEvent> [-Co
 ```
 
 ## DESCRIPTION
-Create new navigation property to auditEvents for deviceManagement
+Create a new auditEvent object.
 
 ## EXAMPLES
 

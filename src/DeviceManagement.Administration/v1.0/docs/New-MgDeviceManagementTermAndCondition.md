@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTermAndCondition
 
 ## SYNOPSIS
-Create new navigation property to termsAndConditions for deviceManagement
+Create a new termsAndConditions object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceManagementTermAndCondition -BodyParameter <IMicrosoftGraphTermsAndCo
 ```
 
 ## DESCRIPTION
-Create new navigation property to termsAndConditions for deviceManagement
+Create a new termsAndConditions object.
 
 ## EXAMPLES
 

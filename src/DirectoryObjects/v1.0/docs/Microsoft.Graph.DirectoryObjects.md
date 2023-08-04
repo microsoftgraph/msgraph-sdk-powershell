@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DirectoryObjects
-Module Guid: be8d6986-aa42-4bab-a91d-22a5530c0230
+Module Guid: 20429e71-52b4-47a5-a150-b884e0f08613
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
@@ -45,7 +45,7 @@ This function is transitive.
 ### [Get-MgDirectoryObjectMemberObject](Get-MgDirectoryObjectMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-**Note:** Only users and role-enabled groups can be members of directory roles.
+Note: Only users and role-enabled groups can be members of directory roles.
 
 ### [New-MgDirectoryObject](New-MgDirectoryObject.md)
 Add new entity to directoryObjects

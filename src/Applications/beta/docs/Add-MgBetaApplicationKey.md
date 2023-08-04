@@ -56,38 +56,38 @@ You can use the Update application operation to perform an update instead.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-$params = @{
-	KeyCredential = @{
-		Type = "AsymmetricX509Cert"
-		Usage = "Verify"
-		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
-	}
-	PasswordCredential = $null
-	Proof = "eyJ0eXAiOiJ..."
-}
-Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
 
+$params = @{
+	keyCredential = @{
+		type = "AsymmetricX509Cert"
+		usage = "Verify"
+		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	}
+	passwordCredential = $null
+	proof = "eyJ0eXAiOiJ..."
+}
 
+Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-$params = @{
-	KeyCredential = @{
-		Type = "X509CertAndPassword"
-		Usage = "Sign"
-		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
-	}
-	PasswordCredential = @{
-		SecretText = "MKTr0w1..."
-	}
-	Proof = "eyJ0eXAiOiJ..."
-}
-Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 ```
 
+$params = @{
+	keyCredential = @{
+		type = "X509CertAndPassword"
+		usage = "Sign"
+		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	}
+	passwordCredential = @{
+		secretText = "MKTr0w1..."
+	}
+	proof = "eyJ0eXAiOiJ..."
+}
 
+Add-MgBetaApplicationKey -ApplicationId $applicationId -BodyParameter $params
 
 ## PARAMETERS
 

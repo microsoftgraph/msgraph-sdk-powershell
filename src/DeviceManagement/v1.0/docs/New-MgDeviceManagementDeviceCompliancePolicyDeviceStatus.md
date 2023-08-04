@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicyDeviceStatus
 
 ## SYNOPSIS
-Create new navigation property to deviceStatuses for deviceManagement
+Create a new deviceComplianceDeviceStatus object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgDeviceManagementDeviceCompliancePolicyDeviceStatus -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceStatuses for deviceManagement
+Create a new deviceComplianceDeviceStatus object.
 
 ## EXAMPLES
 

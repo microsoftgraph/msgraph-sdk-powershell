@@ -25,10 +25,17 @@ Retrieve a list of the group objects that have been marked as incompatible on an
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Identity.Governance
+{{ Add code here }}
 ```
 
-Get-MgEntitlementManagementAccessPackageIncompatibleGroup -AccessPackageId $accessPackageId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

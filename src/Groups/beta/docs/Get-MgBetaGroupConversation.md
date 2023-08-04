@@ -40,7 +40,7 @@ Retrieve the properties and relationships of conversation object.
 Import-Module Microsoft.Graph.Beta.Groups
 ```
 
-Get-MgBetaGroupConversation -GroupId $groupId -ConversationId $conversationId
+Get-MgBetaGroupConversation -GroupId $groupId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementIoUpdateStatus
 
 ## SYNOPSIS
-Create new navigation property to iosUpdateStatuses for deviceManagement
+Create a new iosUpdateDeviceStatus object.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementIoUpdateStatus -BodyParameter <IMicrosoftGraphIosUpdateDev
 ```
 
 ## DESCRIPTION
-Create new navigation property to iosUpdateStatuses for deviceManagement
+Create a new iosUpdateDeviceStatus object.
 
 ## EXAMPLES
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSettingCustomExtension
 
 ## SYNOPSIS
-Get customExtension from identityGovernance
+Indicates the custom workflow extension that will be executed at this stage.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +29,9 @@ Get-MgEntitlementManagementAssignmentPolicyCustomExtensionStageSettingCustomExte
 ```
 
 ## DESCRIPTION
-Get customExtension from identityGovernance
+Indicates the custom workflow extension that will be executed at this stage.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 

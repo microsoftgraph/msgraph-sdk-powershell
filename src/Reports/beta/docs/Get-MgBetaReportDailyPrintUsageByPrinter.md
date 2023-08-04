@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaReportDailyPrintUsageByPrinter
 
 ## SYNOPSIS
-Retrieve a list of daily print usage summaries, grouped by printer.
+Retrieve a printer's usage summary for a particular time period.
+For descriptions of each of the endpoints, see printUsageByPrinter.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaReportDailyPrintUsageByPrinter -InputObject <IReportsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Retrieve a list of daily print usage summaries, grouped by printer.
+Retrieve a printer's usage summary for a particular time period.
+For descriptions of each of the endpoints, see printUsageByPrinter.
 
 ## EXAMPLES
 
@@ -41,7 +43,7 @@ Retrieve a list of daily print usage summaries, grouped by printer.
 Import-Module Microsoft.Graph.Beta.Reports
 ```
 
-Get-MgBetaReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
+Get-MgBetaReportDailyPrintUsageByPrinter
 
 ## PARAMETERS
 

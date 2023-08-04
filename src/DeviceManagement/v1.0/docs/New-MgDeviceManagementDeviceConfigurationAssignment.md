@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfigurationAssignment
 
 ## SYNOPSIS
-Create new navigation property to assignments for deviceManagement
+Create a new deviceConfigurationAssignment object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceManagementDeviceConfigurationAssignment -InputObject <IDeviceManagem
 ```
 
 ## DESCRIPTION
-Create new navigation property to assignments for deviceManagement
+Create a new deviceConfigurationAssignment object.
 
 ## EXAMPLES
 

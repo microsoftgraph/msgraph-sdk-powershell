@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgOrganizationBrandingLocalizationFavicon
 
 ## SYNOPSIS
-Update favicon for the navigation property localizations in organization
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Set-MgOrganizationBrandingLocalizationFavicon -InputObject <IIdentityDirectoryMa
 ```
 
 ## DESCRIPTION
-Update favicon for the navigation property localizations in organization
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ## EXAMPLES
 

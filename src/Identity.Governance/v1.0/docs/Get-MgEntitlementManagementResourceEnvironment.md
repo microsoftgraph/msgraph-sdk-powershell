@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceEnvironment
 
 ## SYNOPSIS
-Get resourceEnvironments from identityGovernance
+A reference to the geolocation environments in which a resource is located.
 
 ## SYNTAX
 
@@ -56,7 +56,7 @@ Get-MgEntitlementManagementResourceEnvironment -InputObject <IIdentityGovernance
 ```
 
 ## DESCRIPTION
-Get resourceEnvironments from identityGovernance
+A reference to the geolocation environments in which a resource is located.
 
 ## EXAMPLES
 

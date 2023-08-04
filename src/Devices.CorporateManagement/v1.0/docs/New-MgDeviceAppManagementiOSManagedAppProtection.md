@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementiOSManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to iosManagedAppProtections for deviceAppManagement
+Create a new iosManagedAppProtection object.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ New-MgDeviceAppManagementiOSManagedAppProtection -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-Create new navigation property to iosManagedAppProtections for deviceAppManagement
+Create a new iosManagedAppProtection object.
 
 ## EXAMPLES
 

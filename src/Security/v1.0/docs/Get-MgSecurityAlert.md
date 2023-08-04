@@ -40,7 +40,7 @@ Retrieve the properties and relationships of an alert object.
 Import-Module Microsoft.Graph.Security
 ```
 
-Get-MgSecurityAlert -AlertId $alertId
+Get-MgSecurityAlert
 
 ## PARAMETERS
 

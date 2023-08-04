@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportHistoricalReport
 
 ## SYNOPSIS
-Invoke action getHistoricalReport
+Not yet documented
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceManagementReportHistoricalReport
 ```
 
 ## DESCRIPTION
-Invoke action getHistoricalReport
+Not yet documented
 
 ## EXAMPLES
 

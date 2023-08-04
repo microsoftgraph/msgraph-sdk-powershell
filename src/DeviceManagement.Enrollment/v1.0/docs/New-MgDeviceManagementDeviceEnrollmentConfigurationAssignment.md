@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 
 ## SYNOPSIS
-Create new navigation property to assignments for deviceManagement
+Create a new enrollmentConfigurationAssignment object.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 ```
 
 ## DESCRIPTION
-Create new navigation property to assignments for deviceManagement
+Create a new enrollmentConfigurationAssignment object.
 
 ## EXAMPLES
 

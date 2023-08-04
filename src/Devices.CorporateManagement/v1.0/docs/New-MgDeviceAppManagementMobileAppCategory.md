@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileAppCategory
 
 ## SYNOPSIS
-Create new navigation property to mobileAppCategories for deviceAppManagement
+Create a new mobileAppCategory object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgDeviceAppManagementMobileAppCategory -BodyParameter <IMicrosoftGraphMobile
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileAppCategories for deviceAppManagement
+Create a new mobileAppCategory object.
 
 ## EXAMPLES
 

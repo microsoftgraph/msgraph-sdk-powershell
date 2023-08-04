@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 
 ## SYNOPSIS
-The list of group assignments for the device configuration profile
+Read properties and relationships of the enrollmentConfigurationAssignment object.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment
 ```
 
 ## DESCRIPTION
-The list of group assignments for the device configuration profile
+Read properties and relationships of the enrollmentConfigurationAssignment object.
 
 ## EXAMPLES
 

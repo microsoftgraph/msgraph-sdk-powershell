@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementManagedDeviceCategory
 
 ## SYNOPSIS
-Device category
+Read properties and relationships of the deviceCategory object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementManagedDeviceCategory -InputObject <IDeviceManagementIdent
 ```
 
 ## DESCRIPTION
-Device category
+Read properties and relationships of the deviceCategory object.
 
 ## EXAMPLES
 

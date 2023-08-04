@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 
 ## SYNOPSIS
-Create new navigation property to localizedNotificationMessages for deviceManagement
+Create a new localizedNotificationMessage object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
 ```
 
 ## DESCRIPTION
-Create new navigation property to localizedNotificationMessages for deviceManagement
+Create a new localizedNotificationMessage object.
 
 ## EXAMPLES
 

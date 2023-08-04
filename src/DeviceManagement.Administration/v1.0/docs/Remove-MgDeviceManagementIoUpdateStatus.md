@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementIoUpdateStatus
 
 ## SYNOPSIS
-Delete navigation property iosUpdateStatuses for deviceManagement
+Deletes a iosUpdateDeviceStatus.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementIoUpdateStatus -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-Delete navigation property iosUpdateStatuses for deviceManagement
+Deletes a iosUpdateDeviceStatus.
 
 ## EXAMPLES
 

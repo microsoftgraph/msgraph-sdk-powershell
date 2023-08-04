@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a domain using an asynchronous long-running operation.
-Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service.
+Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service.
 The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a HTTP 404 status code.
 To verify deletion of a domain, you can perform a get domain operation.
 
@@ -44,7 +44,7 @@ Invoke-MgForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
 
 ## DESCRIPTION
 Deletes a domain using an asynchronous long-running operation.
-Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service.
+Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service.
 The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a HTTP 404 status code.
 To verify deletion of a domain, you can perform a get domain operation.
 

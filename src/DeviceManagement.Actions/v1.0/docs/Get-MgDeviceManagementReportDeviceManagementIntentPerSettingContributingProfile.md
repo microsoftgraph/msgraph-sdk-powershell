@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementReportDeviceManagementIntentPerSettingContributingProfile
 
 ## SYNOPSIS
-Invoke action getDeviceManagementIntentPerSettingContributingProfiles
+Not yet documented
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementReportDeviceManagementIntentPerSettingContributingProfile
 ```
 
 ## DESCRIPTION
-Invoke action getDeviceManagementIntentPerSettingContributingProfiles
+Not yet documented
 
 ## EXAMPLES
 

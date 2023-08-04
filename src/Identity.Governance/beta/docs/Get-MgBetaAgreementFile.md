@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the details of an agreement file, including the language and version information.
-The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
 
 ## SYNTAX
 
@@ -34,23 +34,16 @@ Get-MgBetaAgreementFile -AgreementId <String> [-ExpandProperty <String[]>] [-Fil
 
 ## DESCRIPTION
 Retrieve the details of an agreement file, including the language and version information.
-The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaAgreementFile -AgreementId $agreementId
 
 ## PARAMETERS
 

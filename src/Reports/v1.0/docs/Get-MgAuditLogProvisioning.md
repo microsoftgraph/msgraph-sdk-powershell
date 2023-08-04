@@ -43,13 +43,6 @@ Import-Module Microsoft.Graph.Reports
 
 Get-MgAuditLogProvisioning
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Reports
-```
-
-Get-MgAuditLogProvisioning
-
 ## PARAMETERS
 
 ### -All

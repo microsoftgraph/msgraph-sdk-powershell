@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a printer object.
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-Get-MgBetaPrintPrinter -PrinterId $printerId
+Get-MgBetaPrintPrinter
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 360fbe3c-0e56-478e-882c-2d1ac3b2f232
+Module Guid: 8c5f78dd-0525-498f-b15d-3698f681d250
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,14 +13,14 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.Identity.SignIns Cmdlets
 ### [Confirm-MgRiskyServicePrincipalCompromised](Confirm-MgRiskyServicePrincipalCompromised.md)
 Confirm one or more riskyServicePrincipal objects as compromised.
-This action sets the targeted service principal account's risk level to `high`.
+This action sets the targeted service principal account's risk level to high.
 
 ### [Confirm-MgRiskyUserCompromised](Confirm-MgRiskyUserCompromised.md)
 Confirm one or more riskyUser objects as compromised.
 This action sets the targeted user's risk level to high.
 
 ### [Get-MgDataPolicyOperation](Get-MgDataPolicyOperation.md)
-Retrieve the properties of a **dataPolicyOperation** object.
+Retrieve the properties of a dataPolicyOperation object.
 
 ### [Get-MgDataPolicyOperationCount](Get-MgDataPolicyOperationCount.md)
 Get the number of the resource
@@ -33,6 +33,10 @@ Get the number of the resource
 
 ### [Get-MgIdentityB2XUserFlow](Get-MgIdentityB2XUserFlow.md)
 Retrieve the properties and relationships of a b2xIdentityUserFlow object.
+
+### [Get-MgIdentityB2XUserFlowApiConnectorConfiguration](Get-MgIdentityB2XUserFlowApiConnectorConfiguration.md)
+Configuration for enabling an API connector for use as part of the self-service sign-up user flow.
+You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 
 ### [Get-MgIdentityB2XUserFlowCount](Get-MgIdentityB2XUserFlowCount.md)
 Get the number of the resource
@@ -49,7 +53,7 @@ Get the number of the resource
 ### [Get-MgIdentityB2XUserFlowLanguage](Get-MgIdentityB2XUserFlowLanguage.md)
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
-**Note:** Language customization is enabled by default in Azure Active Directory user flows.
+Note: Language customization is enabled by default in Azure Active Directory user flows.
 
 ### [Get-MgIdentityB2XUserFlowLanguageCount](Get-MgIdentityB2XUserFlowLanguageCount.md)
 Get the number of the resource
@@ -74,6 +78,18 @@ Get media content for the navigation property overridesPages from identity
 ### [Get-MgIdentityB2XUserFlowLanguageOverridePageCount](Get-MgIdentityB2XUserFlowLanguageOverridePageCount.md)
 Get the number of the resource
 
+### [Get-MgIdentityB2XUserFlowPostAttributeCollection](Get-MgIdentityB2XUserFlowPostAttributeCollection.md)
+Get postAttributeCollection from identity
+
+### [Get-MgIdentityB2XUserFlowPostAttributeCollectionByRef](Get-MgIdentityB2XUserFlowPostAttributeCollectionByRef.md)
+Get ref of postAttributeCollection from identity
+
+### [Get-MgIdentityB2XUserFlowPostFederationSignup](Get-MgIdentityB2XUserFlowPostFederationSignup.md)
+Get postFederationSignup from identity
+
+### [Get-MgIdentityB2XUserFlowPostFederationSignupByRef](Get-MgIdentityB2XUserFlowPostFederationSignupByRef.md)
+Get ref of postFederationSignup from identity
+
 ### [Get-MgIdentityB2XUserFlowUserAttributeAssignment](Get-MgIdentityB2XUserFlowUserAttributeAssignment.md)
 Read the properties and relationships of an identityUserFlowAttributeAssignment object.
 
@@ -96,7 +112,7 @@ Retrieve the properties and relationships of a authenticationContextClassReferen
 Get the number of the resource
 
 ### [Get-MgIdentityConditionalAccessNamedLocation](Get-MgIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgIdentityConditionalAccessNamedLocationCount](Get-MgIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -135,9 +151,9 @@ Get bitlocker from informationProtection
 
 ### [Get-MgInformationProtectionBitlockerRecoveryKey](Get-MgInformationProtectionBitlockerRecoveryKey.md)
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
-By default, this operation does not return the **key** property that represents the actual recovery key.
-To include the **key** property in the response, use the `$select` OData query parameter.
-Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log.
+By default, this operation does not return the key property that represents the actual recovery key.
+To include the key property in the response, use the $select OData query parameter.
+Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Azure AD audit logs.
 
 ### [Get-MgInformationProtectionBitlockerRecoveryKeyCount](Get-MgInformationProtectionBitlockerRecoveryKeyCount.md)
@@ -171,7 +187,7 @@ Returned only on $select.
 
 ### [Get-MgOauth2PermissionGrant](Get-MgOauth2PermissionGrant.md)
 Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
-An **oAuth2PermissionGrant** represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
+An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
 
 ### [Get-MgOauth2PermissionGrantCount](Get-MgOauth2PermissionGrantCount.md)
 Get the number of the resource
@@ -260,7 +276,7 @@ Read the properties and relationships of a crossTenantAccessPolicy object.
 
 ### [Get-MgPolicyCrossTenantAccessPolicyDefault](Get-MgPolicyCrossTenantAccessPolicyDefault.md)
 Read the default configuration of a cross-tenant access policy.
-This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
+This default configuration may be the service default assigned by Azure AD (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
 
 ### [Get-MgPolicyCrossTenantAccessPolicyPartner](Get-MgPolicyCrossTenantAccessPolicyPartner.md)
 Read the properties and relationships of a partner-specific configuration.
@@ -456,14 +472,14 @@ This property is null if the device is not registered for passwordless Phone Sig
 Retrieve the status of a long-running operation, represented by a longRunningOperation object.
 A long-running operation is initiated when you reset a user's password.
 This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list.
-The possible states of the long-running operation are `notStarted`, `running`, `succeeded`, `failed`, `unknownFutureValue` where `succeeded` and `failed` are terminal states.
+The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.
 
 ### [Get-MgUserAuthenticationOperationCount](Get-MgUserAuthenticationOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgUserAuthenticationPasswordMethod](Get-MgUserAuthenticationPasswordMethod.md)
 Retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object.
-For security, the password itself will never be returned in the object and the **password** property is always `null`.
+For security, the password itself will never be returned in the object and the password property is always null.
 
 ### [Get-MgUserAuthenticationPasswordMethodCount](Get-MgUserAuthenticationPasswordMethodCount.md)
 Get the number of the resource
@@ -504,7 +520,7 @@ Invoke function availableProviderTypes
 
 ### [Invoke-MgDismissRiskyServicePrincipal](Invoke-MgDismissRiskyServicePrincipal.md)
 Dismiss the risk of one or more riskyServicePrincipal objects.
-This action sets the targeted service principal account's risk level to `none`.
+This action sets the targeted service principal account's risk level to none.
 You can dismiss up to 60 service principal accounts in one request.
 
 ### [Invoke-MgDismissRiskyUser](Invoke-MgDismissRiskyUser.md)
@@ -512,6 +528,16 @@ Dismiss the risk of one or more riskyUser objects.
 This action sets the targeted user's risk level to none.
 
 ### [Invoke-MgUploadIdentityApiConnectorClientCertificate](Invoke-MgUploadIdentityApiConnectorClientCertificate.md)
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
+
+### [Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate](Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeCollectionClientCertificate.md)
+Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
+The input is a base-64 encoded value of the PKCS 12 certificate contents.
+This method returns an apiConnector.
+
+### [Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate](Invoke-MgUploadIdentityB2XUserFlowApiConnectorConfigurationPostFederationSignupClientCertificate.md)
 Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
 The input is a base-64 encoded value of the PKCS 12 certificate contents.
 This method returns an apiConnector.
@@ -628,11 +654,11 @@ After creating the permission grant policy, you can add include condition sets t
 
 ### [New-MgPolicyPermissionGrantPolicyExclude](New-MgPolicyPermissionGrantPolicyExclude.md)
 Add conditions under which a permission grant event is *excluded* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **excludes** collection of a  permissionGrantPolicy.
+You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
 
 ### [New-MgPolicyPermissionGrantPolicyInclude](New-MgPolicyPermissionGrantPolicyInclude.md)
 Add conditions under which a permission grant event is *included* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **includes** collection of a  permissionGrantPolicy.
+You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
 
 ### [New-MgPolicyRoleManagementPolicy](New-MgPolicyRoleManagementPolicy.md)
 Create new navigation property to roleManagementPolicies for policies
@@ -683,11 +709,11 @@ Create new navigation property to operations for users
 
 ### [New-MgUserAuthenticationPhoneMethod](New-MgUserAuthenticationPhoneMethod.md)
 Add a new phone authentication method for a user.
-A user may only have one phone of each type, captured in the **phoneType** property.
-This means, for example, adding a `mobile` phone to a user with a preexisting `mobile` phone will fail.
-Additionally, a user must always have a `mobile` phone before adding an `alternateMobile` phone.
+A user may only have one phone of each type, captured in the phoneType property.
+This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail.
+Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
 Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
-Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` number is added, the system will attempt to register the number for use in that system.
+Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system will attempt to register the number for use in that system.
 
 ### [New-MgUserAuthenticationTemporaryAccessPassMethod](New-MgUserAuthenticationTemporaryAccessPassMethod.md)
 Create a new temporaryAccessPassAuthenticationMethod object on a user.
@@ -705,7 +731,7 @@ Delete a b2xIdentityUserFlow object.
 
 ### [Remove-MgIdentityB2XUserFlowIdentityProvider](Remove-MgIdentityB2XUserFlowIdentityProvider.md)
 Delete an identity provider from a b2xIdentityUserFlow object.
-For self-service sign-up user flows, the values can be `Google-OAUTH` or `Facebook-OAUTH`.
+For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 
 ### [Remove-MgIdentityB2XUserFlowIdentityProviderByRef](Remove-MgIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
@@ -719,6 +745,18 @@ Delete navigation property defaultPages for identity
 ### [Remove-MgIdentityB2XUserFlowLanguageOverridePage](Remove-MgIdentityB2XUserFlowLanguageOverridePage.md)
 Delete navigation property overridesPages for identity
 
+### [Remove-MgIdentityB2XUserFlowPostAttributeCollection](Remove-MgIdentityB2XUserFlowPostAttributeCollection.md)
+Delete navigation property postAttributeCollection for identity
+
+### [Remove-MgIdentityB2XUserFlowPostAttributeCollectionByRef](Remove-MgIdentityB2XUserFlowPostAttributeCollectionByRef.md)
+Delete ref of navigation property postAttributeCollection for identity
+
+### [Remove-MgIdentityB2XUserFlowPostFederationSignup](Remove-MgIdentityB2XUserFlowPostFederationSignup.md)
+Delete navigation property postFederationSignup for identity
+
+### [Remove-MgIdentityB2XUserFlowPostFederationSignupByRef](Remove-MgIdentityB2XUserFlowPostFederationSignupByRef.md)
+Delete ref of navigation property postFederationSignup for identity
+
 ### [Remove-MgIdentityB2XUserFlowUserAttributeAssignment](Remove-MgIdentityB2XUserFlowUserAttributeAssignment.md)
 Delete an identityUserFlowAttributeAssignment object.
 
@@ -729,13 +767,13 @@ Delete navigation property conditionalAccess for identity
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ### [Remove-MgIdentityConditionalAccessNamedLocation](Remove-MgIdentityConditionalAccessNamedLocation.md)
-Delete a countryNamedLocation object.
+Delete an ipNamedLocation object.
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
 
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
-Delete an identity provider resource that is of the type specified by the **id** in the request.
+Delete an identity provider resource that is of the type specified by the id in the request.
 Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Azure AD.
 In Azure AD B2C, this operation can currently delete a socialIdentityProvider, or an appleManagedIdentityProvider resource.
 
@@ -755,7 +793,7 @@ Delete entity from invitations
 ### [Remove-MgOauth2PermissionGrant](Remove-MgOauth2PermissionGrant.md)
 Delete a delegated permission grant, represented by an oAuth2PermissionGrant object.
 When a delegated permission grant is deleted, the access it granted is revoked.
-Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
+Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.
 
 ### [Remove-MgOrganizationCertificateBasedAuthConfiguration](Remove-MgOrganizationCertificateBasedAuthConfiguration.md)
 Delete a certificateBasedAuthConfiguration object.
@@ -822,10 +860,10 @@ Delete navigation property identitySecurityDefaultsEnforcementPolicy for policie
 Delete a permissionGrantPolicy object.
 
 ### [Remove-MgPolicyPermissionGrantPolicyExclude](Remove-MgPolicyPermissionGrantPolicyExclude.md)
-Deletes a permissionGrantConditionSet from the **excludes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
 
 ### [Remove-MgPolicyPermissionGrantPolicyInclude](Remove-MgPolicyPermissionGrantPolicyInclude.md)
-Deletes a permissionGrantConditionSet from the **includes** collection of a permissionGrantPolicy.
+Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
 
 ### [Remove-MgPolicyRoleManagementPolicy](Remove-MgPolicyRoleManagementPolicy.md)
 Delete navigation property roleManagementPolicies for policies
@@ -878,8 +916,8 @@ Delete navigation property operations for users
 ### [Remove-MgUserAuthenticationPhoneMethod](Remove-MgUserAuthenticationPhoneMethod.md)
 Delete a user's phone authentication method.
 This removes the phone number from the user and they will no longer be able to use the number for authentication, whether via SMS or voice calls.
-A user cannot have an `alternateMobile` number without a `mobile` number.
-If you want to remove a `mobile` number from a user that also has an `alternateMobile` number, first update the `mobile` number to the new number, then delete the `alternateMobile` number.
+A user cannot have an alternateMobile number without a mobile number.
+If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
 If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted.
 Have the user change their default authentication method, and then delete the number.
 
@@ -900,6 +938,12 @@ Update media content for the navigation property defaultPages in identity
 
 ### [Set-MgIdentityB2XUserFlowLanguageOverridePageContent](Set-MgIdentityB2XUserFlowLanguageOverridePageContent.md)
 Update media content for the navigation property overridesPages in identity
+
+### [Set-MgIdentityB2XUserFlowPostAttributeCollectionByRef](Set-MgIdentityB2XUserFlowPostAttributeCollectionByRef.md)
+Update the ref of navigation property postAttributeCollection in identity
+
+### [Set-MgIdentityB2XUserFlowPostFederationSignupByRef](Set-MgIdentityB2XUserFlowPostFederationSignupByRef.md)
+Update the ref of navigation property postFederationSignup in identity
 
 ### [Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder](Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder.md)
 Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
@@ -934,6 +978,12 @@ Update the navigation property defaultPages in identity
 ### [Update-MgIdentityB2XUserFlowLanguageOverridePage](Update-MgIdentityB2XUserFlowLanguageOverridePage.md)
 Update the navigation property overridesPages in identity
 
+### [Update-MgIdentityB2XUserFlowPostAttributeCollection](Update-MgIdentityB2XUserFlowPostAttributeCollection.md)
+Update the navigation property postAttributeCollection in identity
+
+### [Update-MgIdentityB2XUserFlowPostFederationSignup](Update-MgIdentityB2XUserFlowPostFederationSignup.md)
+Update the navigation property postFederationSignup in identity
+
 ### [Update-MgIdentityB2XUserFlowUserAttributeAssignment](Update-MgIdentityB2XUserFlowUserAttributeAssignment.md)
 Update the properties of a identityUserFlowAttributeAssignment object.
 
@@ -945,7 +995,7 @@ Create an authenticationContextClassReference object, if the ID has not been use
 If ID has been used, this call updates the authenticationContextClassReference object.
 
 ### [Update-MgIdentityConditionalAccessNamedLocation](Update-MgIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -976,7 +1026,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgOauth2PermissionGrant](Update-MgOauth2PermissionGrant.md)
 Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant.
-An **oAuth2PermissionGrant** can be updated to change which delegated permissions are granted, by adding or removing items from the list in **scopes**.
+An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.
 
 ### [Update-MgPolicyActivityBasedTimeoutPolicy](Update-MgPolicyActivityBasedTimeoutPolicy.md)
 Update the properties of an activityBasedTimeoutPolicy object.
@@ -988,8 +1038,8 @@ Update the properties of an adminConsentRequestPolicy object.
 Update an appManagementPolicy object.
 
 ### [Update-MgPolicyAuthenticationFlowPolicy](Update-MgPolicyAuthenticationFlowPolicy.md)
-Update the **selfServiceSignUp** property of an authenticationFlowsPolicy object.
-The properties **id**, **type**, and **description** cannot be modified.
+Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
+The properties id, type, and description cannot be modified.
 
 ### [Update-MgPolicyAuthenticationMethodPolicy](Update-MgPolicyAuthenticationMethodPolicy.md)
 Update the properties of an authenticationMethodsPolicy object.
@@ -1099,5 +1149,5 @@ Update the navigation property operations in users
 Update a user's phone number associated with a phone authentication method object.
 You can't change a phone's type.
 To change a phone's type, add a new number of the desired type and then delete the object with the original type.
-If a user is enabled by policy to use SMS to sign in and the `mobile` number is changed, the system will attempt to register the number for use in that system.
+If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.
 

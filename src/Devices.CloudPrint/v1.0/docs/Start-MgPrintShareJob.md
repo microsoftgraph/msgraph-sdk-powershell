@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Submits the print job to the associated printer or printerShare.
-It will be printed after any existing pending **jobs** are completed, aborted, or canceled.
+It will be printed after any existing pending jobs are completed, aborted, or canceled.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Start-MgPrintShareJob -InputObject <IDevicesCloudPrintIdentity> [-Confirm] [-Wha
 
 ## DESCRIPTION
 Submits the print job to the associated printer or printerShare.
-It will be printed after any existing pending **jobs** are completed, aborted, or canceled.
+It will be printed after any existing pending jobs are completed, aborted, or canceled.
 
 ## EXAMPLES
 

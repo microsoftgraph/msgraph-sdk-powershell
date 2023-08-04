@@ -38,17 +38,10 @@ The localized version of the terms of use agreement files attached to the agreem
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgAgreementFileLocalization -AgreementId $agreementId
 
 ## PARAMETERS
 

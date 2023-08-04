@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview
 
 ## SYNOPSIS
-Device compliance devices status overview
+Read properties and relationships of the deviceComplianceDeviceOverview object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgDeviceManagementDeviceCompliancePolicyDeviceStatusOverview -InputObject <I
 ```
 
 ## DESCRIPTION
-Device compliance devices status overview
+Read properties and relationships of the deviceComplianceDeviceOverview object.
 
 ## EXAMPLES
 

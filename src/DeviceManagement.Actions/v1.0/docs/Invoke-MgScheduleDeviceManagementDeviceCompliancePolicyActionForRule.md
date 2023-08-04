@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgScheduleDeviceManagementDeviceCompliancePolicyActionForRule
 
 ## SYNOPSIS
-Invoke action scheduleActionsForRules
+Not yet documented
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Invoke-MgScheduleDeviceManagementDeviceCompliancePolicyActionForRule
 ```
 
 ## DESCRIPTION
-Invoke action scheduleActionsForRules
+Not yet documented
 
 ## EXAMPLES
 

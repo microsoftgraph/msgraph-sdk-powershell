@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerPlan
 
 ## SYNOPSIS
-Use this API to create a new **plannerPlan**.
+Use this API to create a new plannerPlan.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPlannerPlan -BodyParameter <IMicrosoftGraphPlannerPlan> [-Confirm] [-WhatI
 ```
 
 ## DESCRIPTION
-Use this API to create a new **plannerPlan**.
+Use this API to create a new plannerPlan.
 
 ## EXAMPLES
 

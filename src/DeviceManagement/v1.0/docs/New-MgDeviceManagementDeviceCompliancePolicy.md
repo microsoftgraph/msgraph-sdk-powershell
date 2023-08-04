@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Create new navigation property to deviceCompliancePolicies for deviceManagement
+Create a new androidWorkProfileCompliancePolicy object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter <IMicrosoftGraphDevi
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceCompliancePolicies for deviceManagement
+Create a new androidWorkProfileCompliancePolicy object.
 
 ## EXAMPLES
 

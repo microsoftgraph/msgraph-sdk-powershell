@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementRoleDefinitionRoleAssignment
 
 ## SYNOPSIS
-Create new navigation property to roleAssignments for deviceManagement
+Create a new roleAssignment object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgDeviceManagementRoleDefinitionRoleAssignment -InputObject <IDeviceManageme
 ```
 
 ## DESCRIPTION
-Create new navigation property to roleAssignments for deviceManagement
+Create a new roleAssignment object.
 
 ## EXAMPLES
 

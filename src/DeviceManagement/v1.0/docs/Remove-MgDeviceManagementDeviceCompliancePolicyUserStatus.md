@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicyUserStatus
 
 ## SYNOPSIS
-Delete navigation property userStatuses for deviceManagement
+Deletes a deviceComplianceUserStatus.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicyUserStatus -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Delete navigation property userStatuses for deviceManagement
+Deletes a deviceComplianceUserStatus.
 
 ## EXAMPLES
 

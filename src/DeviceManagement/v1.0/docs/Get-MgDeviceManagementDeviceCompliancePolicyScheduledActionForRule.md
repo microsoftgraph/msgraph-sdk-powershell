@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule
 
 ## SYNOPSIS
-The list of scheduled action per rule for this compliance policy.
-This is a required property when creating any individual per-platform compliance policies.
+Read properties and relationships of the deviceComplianceScheduledActionForRule object.
 
 ## SYNTAX
 
@@ -34,8 +33,7 @@ Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject 
 ```
 
 ## DESCRIPTION
-The list of scheduled action per rule for this compliance policy.
-This is a required property when creating any individual per-platform compliance policies.
+Read properties and relationships of the deviceComplianceScheduledActionForRule object.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: bd8473a1-9d4d-45cf-8291-3970fb69cf29
+Module Guid: bf30ea3e-20ed-4657-bd96-083e34ac5138
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,7 +16,7 @@ Get the properties and relationships of a bookingBusiness object.
 
 ### [Get-MgBookingBusinessAppointment](Get-MgBookingBusinessAppointment.md)
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
-The **startDateTime** and **endDateTime** properties are always returned in UTC.
+The startDateTime and endDateTime properties are always returned in UTC.
 
 ### [Get-MgBookingBusinessAppointmentCount](Get-MgBookingBusinessAppointmentCount.md)
 Get the number of the resource
@@ -61,7 +61,7 @@ Get the number of the resource
 
 ### [Get-MgBookingCurrency](Get-MgBookingCurrency.md)
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
-Use the **id** property, which is the currency code, to specify the currency.
+Use the id property, which is the currency code, to specify the currency.
 
 ### [Get-MgBookingCurrencyCount](Get-MgBookingCurrencyCount.md)
 Get the number of the resource
@@ -69,7 +69,7 @@ Get the number of the resource
 ### [New-MgBookingBusiness](New-MgBookingBusiness.md)
 Create a new Microsoft Bookings business in a tenant.
 This is the first step in setting up a Bookings business where you must specify the business display name.
-You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.
+You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
 
 ### [New-MgBookingBusinessAppointment](New-MgBookingBusinessAppointment.md)
 Create a new bookingAppointment for the specified bookingBusiness.
@@ -94,7 +94,7 @@ Create new navigation property to bookingCurrencies for solutions
 
 ### [Publish-MgBookingBusiness](Publish-MgBookingBusiness.md)
 Make the scheduling page of a business available to external customers.
-Set the **isPublished** property to `true`, and the **publicUrl** property to the URL of the scheduling page.
+Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.
 
 ### [Remove-MgBookingBusiness](Remove-MgBookingBusiness.md)
 Delete a bookingBusiness object.
@@ -128,7 +128,7 @@ Cancel the specified bookingAppointment in the specified bookingBusiness and sen
 
 ### [Unpublish-MgBookingBusiness](Unpublish-MgBookingBusiness.md)
 Make the scheduling page of this business not available to external customers.
-Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
+Set the isPublished property to false, and the publicUrl property to null.
 
 ### [Update-MgBookingBusiness](Update-MgBookingBusiness.md)
 Update the properties of a bookingBusiness object.

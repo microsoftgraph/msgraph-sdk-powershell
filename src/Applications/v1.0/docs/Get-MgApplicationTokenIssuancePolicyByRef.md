@@ -25,10 +25,17 @@ List the tokenIssuancePolicy objects that are assigned to an application.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Applications
+{{ Add code here }}
 ```
 
-Get-MgApplicationTokenIssuancePolicy -ApplicationId $applicationId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

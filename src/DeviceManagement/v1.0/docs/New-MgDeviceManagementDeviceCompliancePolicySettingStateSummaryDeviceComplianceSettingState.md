@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState
 
 ## SYNOPSIS
-Create new navigation property to deviceComplianceSettingStates for deviceManagement
+Create a new deviceComplianceSettingState object.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceS
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceComplianceSettingStates for deviceManagement
+Create a new deviceComplianceSettingState object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupConversation
 
 ## SYNOPSIS
-Delete conversation.
+Delete a conversation object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete conversation.
+Delete a conversation object.
 
 ## EXAMPLES
 

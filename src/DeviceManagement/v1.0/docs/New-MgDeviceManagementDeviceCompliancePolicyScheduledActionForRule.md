@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule
 
 ## SYNOPSIS
-Create new navigation property to scheduledActionsForRule for deviceManagement
+Create a new deviceComplianceScheduledActionForRule object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRule -InputObject 
 ```
 
 ## DESCRIPTION
-Create new navigation property to scheduledActionsForRule for deviceManagement
+Create a new deviceComplianceScheduledActionForRule object.
 
 ## EXAMPLES
 

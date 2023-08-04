@@ -42,7 +42,7 @@ Read the properties and relationships of a federatedIdentityCredential object.
 Import-Module Microsoft.Graph.Beta.Applications
 ```
 
-Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId
+Get-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId
 
 ## PARAMETERS
 

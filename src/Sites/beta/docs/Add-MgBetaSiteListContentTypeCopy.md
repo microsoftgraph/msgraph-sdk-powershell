@@ -46,13 +46,13 @@ Add a copy of a [content type][contentType] from a [site][site] to a [list][list
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-$params = @{
-	ContentType = "https://graph.microsoft.com/beta/sites/id/contentTypes/0x0101"
-}
-Add-MgBetaSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
 ```
 
+$params = @{
+	contentType = "https://graph.microsoft.com/beta/sites/id/contentTypes/0x0101"
+}
 
+Add-MgBetaSiteListContentTypeCopy -SiteId $siteId -ListId $listId -BodyParameter $params
 
 ## PARAMETERS
 

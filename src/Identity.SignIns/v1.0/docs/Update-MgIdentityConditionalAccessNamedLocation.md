@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ## EXAMPLES
 

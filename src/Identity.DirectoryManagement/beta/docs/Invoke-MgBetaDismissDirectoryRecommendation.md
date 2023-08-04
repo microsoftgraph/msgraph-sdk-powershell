@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaDismissDirectoryRecommendation
 
 ## SYNOPSIS
-Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgBetaDismissDirectoryRecommendation -InputObject <IIdentityDirectoryMana
 ```
 
 ## DESCRIPTION
-Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
 
 ## EXAMPLES
 

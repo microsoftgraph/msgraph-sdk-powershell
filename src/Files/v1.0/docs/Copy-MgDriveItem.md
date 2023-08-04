@@ -45,17 +45,18 @@ Asynchronously creates a copy of an [driveItem][item-resource] (including any ch
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Files
 ```
 
-{{ Add output here }}
+$params = @{
+	parentReference = @{
+		driveId = "6F7D00BF-FC4D-4E62-9769-6AEA81F3A21B"
+		id = "DCD0D3AD-8989-4F23-A5A2-2C086050513F"
+	}
+	name = "contoso plan (copy).txt"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Copy-MgDriveItem -DriveId $driveId -DriveItemId $driveItemId -BodyParameter $params
 
 ## PARAMETERS
 

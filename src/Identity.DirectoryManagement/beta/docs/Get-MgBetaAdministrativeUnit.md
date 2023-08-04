@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an administrativeUnit object.
-Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
+Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdentity>
 
 ## DESCRIPTION
 Retrieve the properties and relationships of an administrativeUnit object.
-Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
+Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.
 
 ## EXAMPLES
 

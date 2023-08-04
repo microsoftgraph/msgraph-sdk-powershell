@@ -26,10 +26,9 @@ Retrieve a list of groups that have been granted access to submit print jobs to 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
-Get-MgBetaPrintShareAllowedGroup -PrinterShareId $printerShareId
 ```
 
-
+Get-MgBetaPrintShareAllowedGroup -PrinterShareId $printerShareId
 
 ## PARAMETERS
 

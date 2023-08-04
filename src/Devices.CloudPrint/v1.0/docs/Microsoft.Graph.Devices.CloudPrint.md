@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: a9062b82-5c87-4870-9cc3-9061419873ca
+Module Guid: d9125224-6eb8-4dfb-b195-225ed51c5aee
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Get print
 
 ### [Get-MgPrintConnector](Get-MgPrintConnector.md)
-Retrieve the properties and relationships of a **printConnector** object.
+Retrieve the properties and relationships of a printConnector object.
 
 ### [Get-MgPrintConnectorCount](Get-MgPrintConnectorCount.md)
 Get the number of the resource
@@ -181,23 +181,23 @@ Read-only.
 ### [Invoke-MgAbortPrintPrinterJob](Invoke-MgAbortPrintPrinterJob.md)
 Abort a print job.
 Only applications using application permissions can abort a print job.
-Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgAbortPrintShareJob](Invoke-MgAbortPrintShareJob.md)
 Abort a print job.
 Only applications using application permissions can abort a print job.
-Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgRedirectPrintPrinterJob](Invoke-MgRedirectPrintPrinterJob.md)
 Redirect a print job to a different printer.
-Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [Invoke-MgRedirectPrintShareJob](Invoke-MgRedirectPrintShareJob.md)
 Redirect a print job to a different printer.
-Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.
+Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [New-MgPrintConnector](New-MgPrintConnector.md)
@@ -219,8 +219,8 @@ Create new navigation property to documents for print
 
 ### [New-MgPrintPrinterJobDocumentUploadSession](New-MgPrintPrinterJobDocumentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ### [New-MgPrintPrinterJobTask](New-MgPrintPrinterJobTask.md)
@@ -228,7 +228,7 @@ Create new navigation property to tasks for print
 
 ### [New-MgPrintPrinterTaskTrigger](New-MgPrintPrinterTaskTrigger.md)
 Create a new task trigger on the specified printer.
-Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future.
+Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
 
 ### [New-MgPrintService](New-MgPrintService.md)
 Create new navigation property to services for print
@@ -237,7 +237,7 @@ Create new navigation property to services for print
 Create new navigation property to endpoints for print
 
 ### [New-MgPrintShare](New-MgPrintShare.md)
-Create a new **printerShare** for the specified printer.
+Create a new printerShare for the specified printer.
 
 ### [New-MgPrintShareAllowedGroupByRef](New-MgPrintShareAllowedGroupByRef.md)
 Grant the specified group access to submit print jobs to the associated printerShare.
@@ -253,8 +253,8 @@ Create new navigation property to documents for print
 
 ### [New-MgPrintShareJobDocumentUploadSession](New-MgPrintShareJobDocumentUploadSession.md)
 Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document.
-As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded.
+As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries.
+Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded.
 This allows transfer to be resumed, in case the network connection is dropped during upload.
 
 ### [New-MgPrintShareJobTask](New-MgPrintShareJobTask.md)
@@ -315,7 +315,7 @@ Delete navigation property documents for print
 Delete navigation property tasks for print
 
 ### [Remove-MgPrintTaskDefinition](Remove-MgPrintTaskDefinition.md)
-Delete a **taskDefinition**.
+Delete a taskDefinition.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
 
 ### [Remove-MgPrintTaskDefinitionTask](Remove-MgPrintTaskDefinitionTask.md)
@@ -332,11 +332,11 @@ Update media content for the navigation property documents in print
 
 ### [Start-MgPrintPrinterJob](Start-MgPrintPrinterJob.md)
 Submits the print job to the associated printer or printerShare.
-It will be printed after any existing pending **jobs** are completed, aborted, or canceled.
+It will be printed after any existing pending jobs are completed, aborted, or canceled.
 
 ### [Start-MgPrintShareJob](Start-MgPrintShareJob.md)
 Submits the print job to the associated printer or printerShare.
-It will be printed after any existing pending **jobs** are completed, aborted, or canceled.
+It will be printed after any existing pending jobs are completed, aborted, or canceled.
 
 ### [Stop-MgPrintPrinterJob](Stop-MgPrintPrinterJob.md)
 Cancel a print job.
@@ -350,7 +350,7 @@ Print jobs can be canceled only on behalf of a user, using delegated permissions
 Update print
 
 ### [Update-MgPrintConnector](Update-MgPrintConnector.md)
-Update the properties of a **printConnector** object.
+Update the properties of a printConnector object.
 
 ### [Update-MgPrintOperation](Update-MgPrintOperation.md)
 Update the navigation property operations in print

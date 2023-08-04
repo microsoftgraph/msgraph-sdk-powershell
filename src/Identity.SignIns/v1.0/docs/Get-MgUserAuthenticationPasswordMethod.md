@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object.
-For security, the password itself will never be returned in the object and the **password** property is always `null`.
+For security, the password itself will never be returned in the object and the password property is always null.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity> [
 
 ## DESCRIPTION
 Retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object.
-For security, the password itself will never be returned in the object and the **password** property is always `null`.
+For security, the password itself will never be returned in the object and the password property is always null.
 
 ## EXAMPLES
 

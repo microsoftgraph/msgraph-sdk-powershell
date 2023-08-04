@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBetaUserSponsor
 
 ## SYNOPSIS
-Get sponsors from users
+The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated.
+(HTTP Methods: GET, POST, DELETE.).
+Supports $expand.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgBetaUserSponsor -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get sponsors from users
+The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated.
+(HTTP Methods: GET, POST, DELETE.).
+Supports $expand.
 
 ## EXAMPLES
 

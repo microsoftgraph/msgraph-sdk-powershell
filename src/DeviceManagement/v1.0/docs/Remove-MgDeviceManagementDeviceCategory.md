@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCategory
 
 ## SYNOPSIS
-Delete navigation property deviceCategories for deviceManagement
+Deletes a deviceCategory.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceCategory -InputObject <IDeviceManagementIdentity>
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceCategories for deviceManagement
+Deletes a deviceCategory.
 
 ## EXAMPLES
 

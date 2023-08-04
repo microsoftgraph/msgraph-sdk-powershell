@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementDeviceCompliancePolicyUserStatus
 
 ## SYNOPSIS
-Update the navigation property userStatuses in deviceManagement
+Update the properties of a deviceComplianceUserStatus object.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-MgDeviceManagementDeviceCompliancePolicyUserStatus -InputObject <IDeviceM
 ```
 
 ## DESCRIPTION
-Update the navigation property userStatuses in deviceManagement
+Update the properties of a deviceComplianceUserStatus object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementiOSManagedAppProtectionApp
 
 ## SYNOPSIS
-Create new navigation property to apps for deviceAppManagement
+Create a new managedMobileApp object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDeviceAppManagementiOSManagedAppProtectionApp -InputObject <IDevicesCorpor
 ```
 
 ## DESCRIPTION
-Create new navigation property to apps for deviceAppManagement
+Create a new managedMobileApp object.
 
 ## EXAMPLES
 

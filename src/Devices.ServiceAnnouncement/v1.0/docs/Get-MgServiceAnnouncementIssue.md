@@ -45,7 +45,7 @@ The operation returns an error if the issue does not exist for the tenant.
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
 ```
 
-Get-MgServiceAnnouncementIssue -ServiceHealthIssueId $serviceHealthIssueId
+Get-MgServiceAnnouncementIssue
 
 ## PARAMETERS
 

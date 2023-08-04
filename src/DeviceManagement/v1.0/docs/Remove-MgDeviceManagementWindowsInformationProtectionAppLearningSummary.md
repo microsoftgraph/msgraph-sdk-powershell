@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementWindowsInformationProtectionAppLearningSummary
 
 ## SYNOPSIS
-Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
+Deletes a windowsInformationProtectionAppLearningSummary.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgDeviceManagementWindowsInformationProtectionAppLearningSummary
 ```
 
 ## DESCRIPTION
-Delete navigation property windowsInformationProtectionAppLearningSummaries for deviceManagement
+Deletes a windowsInformationProtectionAppLearningSummary.
 
 ## EXAMPLES
 

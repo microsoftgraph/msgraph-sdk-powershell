@@ -25,10 +25,17 @@ Retrieve a list of plannerTask objects associated with a plannerPlan object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Planner
+{{ Add code here }}
 ```
 
-Get-MgBetaPlannerPlanTask -PlannerPlanId $plannerPlanId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

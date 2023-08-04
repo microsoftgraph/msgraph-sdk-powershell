@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgBetaVirtualEventWebinarSessionTranscriptContent
 
 ## SYNOPSIS
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ## SYNTAX
@@ -27,7 +27,7 @@ Set-MgBetaVirtualEventWebinarSessionTranscriptContent -InputObject <IBookingsIde
 ```
 
 ## DESCRIPTION
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ## EXAMPLES

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementExchangeConnector
 
 ## SYNOPSIS
-Create new navigation property to exchangeConnectors for deviceManagement
+Create a new deviceManagementExchangeConnector object.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementExchangeConnector -BodyParameter <IMicrosoftGraphDeviceMan
 ```
 
 ## DESCRIPTION
-Create new navigation property to exchangeConnectors for deviceManagement
+Create a new deviceManagementExchangeConnector object.
 
 ## EXAMPLES
 

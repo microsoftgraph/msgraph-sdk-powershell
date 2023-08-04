@@ -33,16 +33,16 @@ Unarchive a list of serviceUpdateMessages for the signed in user.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```
+
 $params = @{
-	MessageIds = @(
+	messageIds = @(
 		"MC172851"
 		"MC167983"
 	)
 }
+
 Invoke-MgUnarchiveServiceAnnouncementMessage -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

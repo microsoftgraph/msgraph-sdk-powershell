@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
-You cannot delete an access package assignment request if it has any **accessPackageAssignment** objects.
+You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Remove-MgBetaEntitlementManagementAccessPackageAssignmentRequest -InputObject <I
 ## DESCRIPTION
 Delete an accessPackageAssignmentRequest object.
 This request can be made to remove a denied or completed request.
-You cannot delete an access package assignment request if it has any **accessPackageAssignment** objects.
+You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
 
 ## EXAMPLES
 

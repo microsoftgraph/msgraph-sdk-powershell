@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
 If any devices cannot be resized, those devices will indicate 'resize failed'.
-The remaining devices will be `provisioned` for the resize process.
+The remaining devices will be provisioned for the resize process.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize
 ## DESCRIPTION
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
 If any devices cannot be resized, those devices will indicate 'resize failed'.
-The remaining devices will be `provisioned` for the resize process.
+The remaining devices will be provisioned for the resize process.
 
 ## EXAMPLES
 

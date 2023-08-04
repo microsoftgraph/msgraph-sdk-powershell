@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingHeaderLogo
 
 ## SYNOPSIS
-Get headerLogo for the navigation property branding from organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgOrganizationBrandingHeaderLogo -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Get headerLogo for the navigation property branding from organization
+A company logo that appears in the header of the sign-in page.
+The allowed types are PNG or JPEG not larger than 36 × 245 pixels.
+We recommend using a transparent image with no padding around the logo.
 
 ## EXAMPLES
 

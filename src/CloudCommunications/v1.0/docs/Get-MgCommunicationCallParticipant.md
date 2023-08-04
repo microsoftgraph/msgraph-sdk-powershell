@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationCallParticipant
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a **participant** object.
+Retrieve the properties and relationships of a participant object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity> [
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a **participant** object.
+Retrieve the properties and relationships of a participant object.
 
 ## EXAMPLES
 

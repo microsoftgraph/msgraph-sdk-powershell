@@ -41,7 +41,7 @@ Retrieve the properties and relationships of plannerTask object.
 Import-Module Microsoft.Graph.Beta.Planner
 ```
 
-Get-MgBetaPlannerTask -PlannerTaskId $plannerTaskId
+Get-MgBetaPlannerTask
 
 ## PARAMETERS
 

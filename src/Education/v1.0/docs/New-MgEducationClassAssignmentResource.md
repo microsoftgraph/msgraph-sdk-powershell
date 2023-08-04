@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create an assignment resource.
 Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgEducationClassAssignmentResource -InputObject <IEducationIdentity> [-Addit
 ## DESCRIPTION
 Create an assignment resource.
 Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ## EXAMPLES
 
@@ -119,9 +119,9 @@ Import-Module Microsoft.Graph.Education
 $params = @{
 	distributeForStudentWork = $false
 	resource = @{
-		"@odata.type" = "microsoft.graph.educationPowerPointResource"
-		displayName = "state diagram.pptx"
-		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RN327OXRN6EVFE2Q5FRJZTN5EOJ"
+		"@odata.type" = "microsoft.graph.educationMediaResource"
+		displayName = "homework example.PNG"
+		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RMUWOKAGSJZ6BHINJVKNMOOJABF"
 	}
 }
 
@@ -135,26 +135,10 @@ Import-Module Microsoft.Graph.Education
 $params = @{
 	distributeForStudentWork = $false
 	resource = @{
-		"@odata.type" = "microsoft.graph.educationMediaResource"
-		displayName = "homework example.PNG"
-		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RMUWOKAGSJZ6BHINJVKNMOOJABF"
-	}
-}
-
-New-MgEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-```
-
-$params = @{
-	distributeForStudentWork = $false
-	resource = @{
 		displayName = "Template - My Story"
 		appId = "6fbeb90c-3d55-4bd5-82c4-bfe824be4300"
 		appIconWebUrl = "https://statics.teams.cdn.office.net/evergreen-assets/ThirdPartyApps/6fbeb90c-3d55-4bd5-82c4-bfe824be4300_largeImage.png?v=2.0.2"
-		teamsEmbeddedContentUrl = "https://app.api.edu.buncee.com/player/C7B0866C9B7E485EAE21AE14DBC3FD08?embed=1&amp;render_slide_panel=1"
+		teamsEmbeddedContentUrl = "https://app.api.edu.buncee.com/player/C7B0866C9B7E485EAE21AE14DBC3FD08?embed=1&render_slide_panel=1"
 		webUrl = "https://app.edu.buncee.com/buncee/C7B0866C9B7E485EAE21AE14DBC3FD08"
 		"@odata.type" = "#microsoft.graph.educationTeamsAppResource"
 	}

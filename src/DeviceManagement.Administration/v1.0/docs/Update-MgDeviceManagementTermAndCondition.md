@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementTermAndCondition
 
 ## SYNOPSIS
-Update the navigation property termsAndConditions in deviceManagement
+Update the properties of a termsAndConditions object.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgDeviceManagementTermAndCondition -InputObject <IDeviceManagementAdminis
 ```
 
 ## DESCRIPTION
-Update the navigation property termsAndConditions in deviceManagement
+Update the properties of a termsAndConditions object.
 
 ## EXAMPLES
 

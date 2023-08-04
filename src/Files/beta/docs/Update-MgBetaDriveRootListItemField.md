@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaDriveRootListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgBetaDriveRootListItemField -InputObject <IFilesIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 

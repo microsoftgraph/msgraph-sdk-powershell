@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: f582abd4-abdb-4b55-996d-e81752e711bb
+Module Guid: f17ec78f-288f-4b75-b7fa-320c91caf103
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,40 +12,40 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.DeviceManagement.Administration Cmdlets
 ### [Get-MgDeviceManagementApplePushNotificationCertificate](Get-MgDeviceManagementApplePushNotificationCertificate.md)
-Apple push notification certificate.
+Read properties and relationships of the applePushNotificationCertificate object.
 
 ### [Get-MgDeviceManagementAuditEvent](Get-MgDeviceManagementAuditEvent.md)
-The Audit Events
+Read properties and relationships of the auditEvent object.
 
 ### [Get-MgDeviceManagementAuditEventCount](Get-MgDeviceManagementAuditEventCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementComplianceManagementPartner](Get-MgDeviceManagementComplianceManagementPartner.md)
-The list of Compliance Management Partners configured by the tenant.
+Read properties and relationships of the complianceManagementPartner object.
 
 ### [Get-MgDeviceManagementComplianceManagementPartnerCount](Get-MgDeviceManagementComplianceManagementPartnerCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementExchangeConnector](Get-MgDeviceManagementExchangeConnector.md)
-The list of Exchange Connectors configured by the tenant.
+Read properties and relationships of the deviceManagementExchangeConnector object.
 
 ### [Get-MgDeviceManagementExchangeConnectorCount](Get-MgDeviceManagementExchangeConnectorCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementIoUpdateStatus](Get-MgDeviceManagementIoUpdateStatus.md)
-The IOS software update installation statuses for this account.
+Read properties and relationships of the iosUpdateDeviceStatus object.
 
 ### [Get-MgDeviceManagementIoUpdateStatusCount](Get-MgDeviceManagementIoUpdateStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementMobileThreatDefenseConnector](Get-MgDeviceManagementMobileThreatDefenseConnector.md)
-The list of Mobile threat Defense connectors configured by the tenant.
+Read properties and relationships of the mobileThreatDefenseConnector object.
 
 ### [Get-MgDeviceManagementMobileThreatDefenseConnectorCount](Get-MgDeviceManagementMobileThreatDefenseConnectorCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementPartner](Get-MgDeviceManagementPartner.md)
-The list of Device Management Partners configured by the tenant.
+Read properties and relationships of the deviceManagementPartner object.
 
 ### [Get-MgDeviceManagementPartnerCount](Get-MgDeviceManagementPartnerCount.md)
 Get the number of the resource
@@ -57,13 +57,13 @@ Read properties and relationships of the remoteAssistancePartner object.
 Get the number of the resource
 
 ### [Get-MgDeviceManagementResourceOperation](Get-MgDeviceManagementResourceOperation.md)
-The Resource Operations.
+Read properties and relationships of the resourceOperation object.
 
 ### [Get-MgDeviceManagementResourceOperationCount](Get-MgDeviceManagementResourceOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementRoleAssignment](Get-MgDeviceManagementRoleAssignment.md)
-The Role Assignments.
+Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
 
 ### [Get-MgDeviceManagementRoleAssignmentCount](Get-MgDeviceManagementRoleAssignmentCount.md)
 Get the number of the resource
@@ -72,13 +72,13 @@ Get the number of the resource
 Role definition this assignment is part of.
 
 ### [Get-MgDeviceManagementRoleDefinition](Get-MgDeviceManagementRoleDefinition.md)
-The Role Definitions.
+Read properties and relationships of the roleDefinition object.
 
 ### [Get-MgDeviceManagementRoleDefinitionCount](Get-MgDeviceManagementRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceManagementRoleDefinitionRoleAssignment](Get-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-List of Role assignments for this role definition.
+Read properties and relationships of the roleAssignment object.
 
 ### [Get-MgDeviceManagementRoleDefinitionRoleAssignmentCount](Get-MgDeviceManagementRoleDefinitionRoleAssignmentCount.md)
 Get the number of the resource
@@ -93,10 +93,10 @@ Read properties and relationships of the telecomExpenseManagementPartner object.
 Get the number of the resource
 
 ### [Get-MgDeviceManagementTermAndCondition](Get-MgDeviceManagementTermAndCondition.md)
-The terms and conditions associated with device management of the company.
+Read properties and relationships of the termsAndConditions object.
 
 ### [Get-MgDeviceManagementTermAndConditionAcceptanceStatus](Get-MgDeviceManagementTermAndConditionAcceptanceStatus.md)
-The list of acceptance statuses for this T&C policy.
+Read properties and relationships of the termsAndConditionsAcceptanceStatus object.
 
 ### [Get-MgDeviceManagementTermAndConditionAcceptanceStatusCount](Get-MgDeviceManagementTermAndConditionAcceptanceStatusCount.md)
 Get the number of the resource
@@ -105,7 +105,7 @@ Get the number of the resource
 Navigation link to the terms and conditions that are assigned.
 
 ### [Get-MgDeviceManagementTermAndConditionAssignment](Get-MgDeviceManagementTermAndConditionAssignment.md)
-The list of assignments for this T&C policy.
+Read properties and relationships of the termsAndConditionsAssignment object.
 
 ### [Get-MgDeviceManagementTermAndConditionAssignmentCount](Get-MgDeviceManagementTermAndConditionAssignmentCount.md)
 Get the number of the resource
@@ -114,143 +114,143 @@ Get the number of the resource
 Get the number of the resource
 
 ### [New-MgDeviceManagementAuditEvent](New-MgDeviceManagementAuditEvent.md)
-Create new navigation property to auditEvents for deviceManagement
+Create a new auditEvent object.
 
 ### [New-MgDeviceManagementComplianceManagementPartner](New-MgDeviceManagementComplianceManagementPartner.md)
-Create new navigation property to complianceManagementPartners for deviceManagement
+Create a new complianceManagementPartner object.
 
 ### [New-MgDeviceManagementExchangeConnector](New-MgDeviceManagementExchangeConnector.md)
-Create new navigation property to exchangeConnectors for deviceManagement
+Create a new deviceManagementExchangeConnector object.
 
 ### [New-MgDeviceManagementIoUpdateStatus](New-MgDeviceManagementIoUpdateStatus.md)
-Create new navigation property to iosUpdateStatuses for deviceManagement
+Create a new iosUpdateDeviceStatus object.
 
 ### [New-MgDeviceManagementMobileThreatDefenseConnector](New-MgDeviceManagementMobileThreatDefenseConnector.md)
-Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
+Create a new mobileThreatDefenseConnector object.
 
 ### [New-MgDeviceManagementPartner](New-MgDeviceManagementPartner.md)
-Create new navigation property to deviceManagementPartners for deviceManagement
+Create a new deviceManagementPartner object.
 
 ### [New-MgDeviceManagementRemoteAssistancePartner](New-MgDeviceManagementRemoteAssistancePartner.md)
 Create a new remoteAssistancePartner object.
 
 ### [New-MgDeviceManagementResourceOperation](New-MgDeviceManagementResourceOperation.md)
-Create new navigation property to resourceOperations for deviceManagement
+Create a new resourceOperation object.
 
 ### [New-MgDeviceManagementRoleAssignment](New-MgDeviceManagementRoleAssignment.md)
-Create new navigation property to roleAssignments for deviceManagement
+Create a new deviceAndAppManagementRoleAssignment object.
 
 ### [New-MgDeviceManagementRoleDefinition](New-MgDeviceManagementRoleDefinition.md)
-Create new navigation property to roleDefinitions for deviceManagement
+Create a new deviceAndAppManagementRoleDefinition object.
 
 ### [New-MgDeviceManagementRoleDefinitionRoleAssignment](New-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-Create new navigation property to roleAssignments for deviceManagement
+Create a new roleAssignment object.
 
 ### [New-MgDeviceManagementTelecomExpenseManagementPartner](New-MgDeviceManagementTelecomExpenseManagementPartner.md)
 Create a new telecomExpenseManagementPartner object.
 
 ### [New-MgDeviceManagementTermAndCondition](New-MgDeviceManagementTermAndCondition.md)
-Create new navigation property to termsAndConditions for deviceManagement
+Create a new termsAndConditions object.
 
 ### [New-MgDeviceManagementTermAndConditionAcceptanceStatus](New-MgDeviceManagementTermAndConditionAcceptanceStatus.md)
-Create new navigation property to acceptanceStatuses for deviceManagement
+Create a new termsAndConditionsAcceptanceStatus object.
 
 ### [New-MgDeviceManagementTermAndConditionAssignment](New-MgDeviceManagementTermAndConditionAssignment.md)
-Create new navigation property to assignments for deviceManagement
+Create a new termsAndConditionsAssignment object.
 
 ### [Remove-MgDeviceManagementApplePushNotificationCertificate](Remove-MgDeviceManagementApplePushNotificationCertificate.md)
 Delete navigation property applePushNotificationCertificate for deviceManagement
 
 ### [Remove-MgDeviceManagementAuditEvent](Remove-MgDeviceManagementAuditEvent.md)
-Delete navigation property auditEvents for deviceManagement
+Deletes a auditEvent.
 
 ### [Remove-MgDeviceManagementComplianceManagementPartner](Remove-MgDeviceManagementComplianceManagementPartner.md)
-Delete navigation property complianceManagementPartners for deviceManagement
+Deletes a complianceManagementPartner.
 
 ### [Remove-MgDeviceManagementExchangeConnector](Remove-MgDeviceManagementExchangeConnector.md)
-Delete navigation property exchangeConnectors for deviceManagement
+Deletes a deviceManagementExchangeConnector.
 
 ### [Remove-MgDeviceManagementIoUpdateStatus](Remove-MgDeviceManagementIoUpdateStatus.md)
-Delete navigation property iosUpdateStatuses for deviceManagement
+Deletes a iosUpdateDeviceStatus.
 
 ### [Remove-MgDeviceManagementMobileThreatDefenseConnector](Remove-MgDeviceManagementMobileThreatDefenseConnector.md)
-Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+Deletes a mobileThreatDefenseConnector.
 
 ### [Remove-MgDeviceManagementPartner](Remove-MgDeviceManagementPartner.md)
-Delete navigation property deviceManagementPartners for deviceManagement
+Deletes a deviceManagementPartner.
 
 ### [Remove-MgDeviceManagementRemoteAssistancePartner](Remove-MgDeviceManagementRemoteAssistancePartner.md)
 Deletes a remoteAssistancePartner.
 
 ### [Remove-MgDeviceManagementResourceOperation](Remove-MgDeviceManagementResourceOperation.md)
-Delete navigation property resourceOperations for deviceManagement
+Deletes a resourceOperation.
 
 ### [Remove-MgDeviceManagementRoleAssignment](Remove-MgDeviceManagementRoleAssignment.md)
-Delete navigation property roleAssignments for deviceManagement
+Deletes a deviceAndAppManagementRoleAssignment.
 
 ### [Remove-MgDeviceManagementRoleDefinition](Remove-MgDeviceManagementRoleDefinition.md)
-Delete navigation property roleDefinitions for deviceManagement
+Deletes a roleDefinition.
 
 ### [Remove-MgDeviceManagementRoleDefinitionRoleAssignment](Remove-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-Delete navigation property roleAssignments for deviceManagement
+Deletes a roleAssignment.
 
 ### [Remove-MgDeviceManagementTelecomExpenseManagementPartner](Remove-MgDeviceManagementTelecomExpenseManagementPartner.md)
 Deletes a telecomExpenseManagementPartner.
 
 ### [Remove-MgDeviceManagementTermAndCondition](Remove-MgDeviceManagementTermAndCondition.md)
-Delete navigation property termsAndConditions for deviceManagement
+Deletes a termsAndConditions.
 
 ### [Remove-MgDeviceManagementTermAndConditionAcceptanceStatus](Remove-MgDeviceManagementTermAndConditionAcceptanceStatus.md)
-Delete navigation property acceptanceStatuses for deviceManagement
+Deletes a termsAndConditionsAcceptanceStatus.
 
 ### [Remove-MgDeviceManagementTermAndConditionAssignment](Remove-MgDeviceManagementTermAndConditionAssignment.md)
-Delete navigation property assignments for deviceManagement
+Deletes a termsAndConditionsAssignment.
 
 ### [Update-MgDeviceManagementApplePushNotificationCertificate](Update-MgDeviceManagementApplePushNotificationCertificate.md)
-Update the navigation property applePushNotificationCertificate in deviceManagement
+Update the properties of a applePushNotificationCertificate object.
 
 ### [Update-MgDeviceManagementAuditEvent](Update-MgDeviceManagementAuditEvent.md)
-Update the navigation property auditEvents in deviceManagement
+Update the properties of a auditEvent object.
 
 ### [Update-MgDeviceManagementComplianceManagementPartner](Update-MgDeviceManagementComplianceManagementPartner.md)
-Update the navigation property complianceManagementPartners in deviceManagement
+Update the properties of a complianceManagementPartner object.
 
 ### [Update-MgDeviceManagementExchangeConnector](Update-MgDeviceManagementExchangeConnector.md)
-Update the navigation property exchangeConnectors in deviceManagement
+Update the properties of a deviceManagementExchangeConnector object.
 
 ### [Update-MgDeviceManagementIoUpdateStatus](Update-MgDeviceManagementIoUpdateStatus.md)
-Update the navigation property iosUpdateStatuses in deviceManagement
+Update the properties of a iosUpdateDeviceStatus object.
 
 ### [Update-MgDeviceManagementMobileThreatDefenseConnector](Update-MgDeviceManagementMobileThreatDefenseConnector.md)
-Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+Update the properties of a mobileThreatDefenseConnector object.
 
 ### [Update-MgDeviceManagementPartner](Update-MgDeviceManagementPartner.md)
-Update the navigation property deviceManagementPartners in deviceManagement
+Update the properties of a deviceManagementPartner object.
 
 ### [Update-MgDeviceManagementRemoteAssistancePartner](Update-MgDeviceManagementRemoteAssistancePartner.md)
 Update the properties of a remoteAssistancePartner object.
 
 ### [Update-MgDeviceManagementResourceOperation](Update-MgDeviceManagementResourceOperation.md)
-Update the navigation property resourceOperations in deviceManagement
+Update the properties of a resourceOperation object.
 
 ### [Update-MgDeviceManagementRoleAssignment](Update-MgDeviceManagementRoleAssignment.md)
-Update the navigation property roleAssignments in deviceManagement
+Update the properties of a deviceAndAppManagementRoleAssignment object.
 
 ### [Update-MgDeviceManagementRoleDefinition](Update-MgDeviceManagementRoleDefinition.md)
-Update the navigation property roleDefinitions in deviceManagement
+Update the properties of a deviceAndAppManagementRoleDefinition object.
 
 ### [Update-MgDeviceManagementRoleDefinitionRoleAssignment](Update-MgDeviceManagementRoleDefinitionRoleAssignment.md)
-Update the navigation property roleAssignments in deviceManagement
+Update the properties of a roleAssignment object.
 
 ### [Update-MgDeviceManagementTelecomExpenseManagementPartner](Update-MgDeviceManagementTelecomExpenseManagementPartner.md)
 Update the properties of a telecomExpenseManagementPartner object.
 
 ### [Update-MgDeviceManagementTermAndCondition](Update-MgDeviceManagementTermAndCondition.md)
-Update the navigation property termsAndConditions in deviceManagement
+Update the properties of a termsAndConditions object.
 
 ### [Update-MgDeviceManagementTermAndConditionAcceptanceStatus](Update-MgDeviceManagementTermAndConditionAcceptanceStatus.md)
-Update the navigation property acceptanceStatuses in deviceManagement
+Update the properties of a termsAndConditionsAcceptanceStatus object.
 
 ### [Update-MgDeviceManagementTermAndConditionAssignment](Update-MgDeviceManagementTermAndConditionAssignment.md)
-Update the navigation property assignments in deviceManagement
+Update the properties of a termsAndConditionsAssignment object.
 

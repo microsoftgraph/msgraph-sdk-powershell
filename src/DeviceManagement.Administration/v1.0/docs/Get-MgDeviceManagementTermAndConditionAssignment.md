@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementTermAndConditionAssignment
 
 ## SYNOPSIS
-The list of assignments for this T&C policy.
+Read properties and relationships of the termsAndConditionsAssignment object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementTermAndConditionAssignment -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-The list of assignments for this T&C policy.
+Read properties and relationships of the termsAndConditionsAssignment object.
 
 ## EXAMPLES
 

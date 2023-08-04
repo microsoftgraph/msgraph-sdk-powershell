@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementManagedEBook
 
 ## SYNOPSIS
-Update the navigation property managedEBooks in deviceAppManagement
+Update the properties of a iosVppEBook object.
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ Update-MgDeviceAppManagementManagedEBook -InputObject <IDevicesCorporateManageme
 ```
 
 ## DESCRIPTION
-Update the navigation property managedEBooks in deviceAppManagement
+Update the properties of a iosVppEBook object.
 
 ## EXAMPLES
 

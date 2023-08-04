@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaOnPremisePublishingProfileConnectorGroup
 
 ## SYNOPSIS
-Create a new connectorGroup.
+Create a connectorGroup object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgBetaOnPremisePublishingProfileConnectorGroup -InputObject <IApplicationsId
 ```
 
 ## DESCRIPTION
-Create a new connectorGroup.
+Create a connectorGroup object.
 
 ## EXAMPLES
 

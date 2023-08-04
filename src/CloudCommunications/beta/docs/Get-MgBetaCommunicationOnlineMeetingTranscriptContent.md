@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaCommunicationOnlineMeetingTranscriptContent
 
 ## SYNOPSIS
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Get-MgBetaCommunicationOnlineMeetingTranscriptContent -InputObject <ICloudCommun
 ```
 
 ## DESCRIPTION
-A field that represents the content of the transcript.
+The content of the transcript.
 Read-only.
 
 ## EXAMPLES

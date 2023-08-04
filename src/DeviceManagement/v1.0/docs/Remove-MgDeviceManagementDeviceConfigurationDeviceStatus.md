@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceConfigurationDeviceStatus
 
 ## SYNOPSIS
-Delete navigation property deviceStatuses for deviceManagement
+Deletes a deviceConfigurationDeviceStatus.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceConfigurationDeviceStatus -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-Delete navigation property deviceStatuses for deviceManagement
+Deletes a deviceConfigurationDeviceStatus.
 
 ## EXAMPLES
 

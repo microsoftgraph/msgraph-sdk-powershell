@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementWindowsInformationProtectionAppLearningSummary
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+Create a new windowsInformationProtectionAppLearningSummary object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementWindowsInformationProtectionAppLearningSummary
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionAppLearningSummaries for deviceManagement
+Create a new windowsInformationProtectionAppLearningSummary object.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Initialize-MgBetaEducationMeAssignment
 
 ## SYNOPSIS
-Activate an `inactive` educationAssignment to signal that the assignment has further action items for teachers and students.
+Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students.
 This action can only be performed by a teacher on currently inactive assignments.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Initialize-MgBetaEducationMeAssignment -InputObject <IEducationIdentity> [-Confi
 ```
 
 ## DESCRIPTION
-Activate an `inactive` educationAssignment to signal that the assignment has further action items for teachers and students.
+Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students.
 This action can only be performed by a teacher on currently inactive assignments.
 
 ## EXAMPLES
@@ -135,6 +135,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
   - `[EducationClassId <String>]`: The unique identifier of educationClass
   - `[EducationGradingCategoryId <String>]`: The unique identifier of educationGradingCategory
+  - `[EducationModuleId <String>]`: The unique identifier of educationModule
+  - `[EducationModuleResourceId <String>]`: The unique identifier of educationModuleResource
   - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
   - `[EducationRubricId <String>]`: The unique identifier of educationRubric
   - `[EducationSchoolId <String>]`: The unique identifier of educationSchool

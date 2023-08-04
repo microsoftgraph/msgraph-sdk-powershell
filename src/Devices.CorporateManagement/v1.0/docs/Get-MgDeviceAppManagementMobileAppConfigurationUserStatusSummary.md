@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary
 
 ## SYNOPSIS
-App configuration user status summary.
+Read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary
 ```
 
 ## DESCRIPTION
-App configuration user status summary.
+Read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
 
 ## EXAMPLES
 
