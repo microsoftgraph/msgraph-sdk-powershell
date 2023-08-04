@@ -6364,7 +6364,7 @@ paths:
       description: Get a list of the unifiedRbacResourceAction objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
       operationId: roleManagement.cloudPC.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6490,7 +6490,7 @@ paths:
       description: Read the properties and relationships of an unifiedRbacResourceAction object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6864,7 +6864,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6954,7 +6954,7 @@ paths:
       description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -6981,7 +6981,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7048,7 +7048,7 @@ paths:
       description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_UpdateRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7083,7 +7083,7 @@ paths:
       description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7751,7 +7751,7 @@ paths:
       description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)\n- Exchange Online"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7844,7 +7844,7 @@ paths:
       description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -7871,7 +7871,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7935,7 +7935,7 @@ paths:
       description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -7970,7 +7970,7 @@ paths:
       description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
       operationId: roleManagement.cloudPC_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8592,7 +8592,7 @@ paths:
       description: Get a list of the unifiedRbacResourceAction objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8718,7 +8718,7 @@ paths:
       description: Read the properties and relationships of an unifiedRbacResourceAction object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement.resourceNamespace_GetResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9092,7 +9092,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9182,7 +9182,7 @@ paths:
       description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -9209,7 +9209,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_GetRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9276,7 +9276,7 @@ paths:
       description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_UpdateRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9311,7 +9311,7 @@ paths:
       description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_DeleteRoleAssignment
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9979,7 +9979,7 @@ paths:
       description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)\n- Exchange Online"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10072,7 +10072,7 @@ paths:
       description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -10099,7 +10099,7 @@ paths:
       description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_GetRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10163,7 +10163,7 @@ paths:
       description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_UpdateRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10198,7 +10198,7 @@ paths:
       description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
       operationId: roleManagement.deviceManagement_DeleteRoleDefinition
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11969,11 +11969,11 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+              description: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith).
               nullable: true
             isBuiltIn:
               type: boolean
-              description: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+              description: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq).
               nullable: true
             isEnabled:
               type: boolean
@@ -11986,7 +11986,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+              description: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
             rolePermissions:
               type: array
               items:
@@ -11998,7 +11998,7 @@ components:
               nullable: true
             version:
               type: string
-              description: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+              description: Indicates the version of the unifiedRoleDefinition object. Read-only when isBuiltIn is true.
               nullable: true
             inheritsPermissionsFrom:
               type: array

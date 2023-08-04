@@ -77,10 +77,10 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
       operationId: solution_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -186,10 +186,10 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingBusiness
-      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.'
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
       operationId: solution_CreateBookingBusiness
       requestBody:
         description: New navigation property
@@ -216,7 +216,7 @@ paths:
       description: Get the properties and relationships of a bookingBusiness object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
       operationId: solution_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -292,7 +292,7 @@ paths:
       description: Update the properties of a bookingBusiness object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
       operationId: solution_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -327,7 +327,7 @@ paths:
       description: Delete a bookingBusiness object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
       operationId: solution_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -358,7 +358,7 @@ paths:
       description: Get a list of bookingAppointment objects for the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
@@ -499,7 +499,7 @@ paths:
       description: Create a new bookingAppointment for the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
       operationId: solution.bookingBusiness_CreateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -532,10 +532,10 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingAppointment
-      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **startDateTime** and **endDateTime** properties are always returned in UTC.
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
       operationId: solution.bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
@@ -619,7 +619,7 @@ paths:
       description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
       operationId: solution.bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -662,7 +662,7 @@ paths:
       description: Delete a bookingAppointment in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
       operationId: solution.bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
@@ -701,7 +701,7 @@ paths:
       description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: solution.bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -769,7 +769,7 @@ paths:
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1129,7 +1129,7 @@ paths:
       description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: solution.bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1197,7 +1197,7 @@ paths:
       description: Get a list of bookingCustomer objects of a business.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1266,7 +1266,7 @@ paths:
       description: Create a new bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
       operationId: solution.bookingBusiness_CreateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1302,7 +1302,7 @@ paths:
       description: Get the properties and relationships of a bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
       operationId: solution.bookingBusiness_GetCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1362,7 +1362,7 @@ paths:
       description: Update the properties of a bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
       operationId: solution.bookingBusiness_UpdateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1405,7 +1405,7 @@ paths:
       description: Delete the specified bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
       operationId: solution.bookingBusiness_DeleteCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1466,7 +1466,7 @@ paths:
       description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1544,7 +1544,7 @@ paths:
       description: Create a new bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
       operationId: solution.bookingBusiness_CreateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1580,7 +1580,7 @@ paths:
       description: Read the properties and relationships of a bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
       operationId: solution.bookingBusiness_GetCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1643,7 +1643,7 @@ paths:
       description: Update the properties of a bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
       operationId: solution.bookingBusiness_UpdateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1686,7 +1686,7 @@ paths:
       description: Delete a bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
       operationId: solution.bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1747,7 +1747,7 @@ paths:
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
       operationId: solution.bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1804,10 +1804,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action publish
-      description: 'Make the scheduling page of a business available to external customers. Set the **isPublished** property to `true`, and the **publicUrl** property to the URL of the scheduling page.'
+      description: 'Make the scheduling page of a business available to external customers. Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
       operationId: solution.bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -1829,10 +1829,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action unpublish
-      description: 'Make the scheduling page of this business not available to external customers. Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.'
+      description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
       operationId: solution.bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1857,7 +1857,7 @@ paths:
       description: Get a list of bookingService objects in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListService
       parameters:
         - name: bookingBusiness-id
@@ -1989,7 +1989,7 @@ paths:
       description: Create a new bookingService for the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
       operationId: solution.bookingBusiness_CreateService
       parameters:
         - name: bookingBusiness-id
@@ -2025,7 +2025,7 @@ paths:
       description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
       operationId: solution.bookingBusiness_GetService
       parameters:
         - name: bookingBusiness-id
@@ -2106,7 +2106,7 @@ paths:
       description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
       operationId: solution.bookingBusiness_UpdateService
       parameters:
         - name: bookingBusiness-id
@@ -2149,7 +2149,7 @@ paths:
       description: Delete a bookingService object in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
       operationId: solution.bookingBusiness_DeleteService
       parameters:
         - name: bookingBusiness-id
@@ -2210,7 +2210,7 @@ paths:
       description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
       operationId: solution.bookingBusiness_ListStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2279,7 +2279,7 @@ paths:
       description: Create a new bookingStaffMember in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
       operationId: solution.bookingBusiness_CreateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2315,7 +2315,7 @@ paths:
       description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
       operationId: solution.bookingBusiness_GetStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2375,7 +2375,7 @@ paths:
       description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
       operationId: solution.bookingBusiness_UpdateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2418,7 +2418,7 @@ paths:
       description: Delete a bookingStaffMember in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
       operationId: solution.bookingBusiness_DeleteStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2493,7 +2493,7 @@ paths:
       description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
       operationId: solution_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2577,10 +2577,10 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Get bookingCurrency
-      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.'
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
       operationId: solution_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
