@@ -35,8 +35,10 @@
         /// <summary>
         /// Convert the given settings and policy to Chat RSC configuration.
         /// </summary>
+        /// <param name="permissionGrantPolicyCollection">The permission grant policy collection.</param>
         /// <param name="teamsAppSettings">Teams app settings.</param>
         /// <param name="authorizationPolicy">Authorization policy.</param>
+        /// <param name="eventListener">The event listener.</param>
         /// <returns>The chat RSC configuration.</returns>
         internal MicrosoftGraphRscConfiguration ConvertToChatRscConfiguration(
             MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection,
@@ -121,6 +123,7 @@
         /// <summary>
         /// Convert the given tenant settings to Team RSC configuration.
         /// </summary>
+        /// <param name="permissionGrantPolicyCollection">Permission grant policy collection.</param>
         /// <param name="tenantConsentSettingCollection">Tenant consent setting collection.</param>
         /// <param name="authorizationPolicy">Authorization policy.</param>
         /// <returns>Rsc configuration.</returns>
@@ -214,6 +217,13 @@
             return microsoftGraphRscConfiguration;
         }
 
+        /// <summary>
+        /// Get permission grant policies assigned to default user role (all users and apps) which are relevant to the given scope.
+        /// </summary>
+        /// <param name="permissionGrantPolicyCollection">The permission grant policy collection.</param>
+        /// <param name="authorizationPolicy">The authorization policy.</param>
+        /// <param name="rscConfigurationScopeType">The rsc config scope type.</param>
+        /// <returns>List of policies.</returns>
         internal IEnumerable<MGTeamsInternalPermissionGrantPolicy> GetAssignedPermissionGrantPoliciesApplicableToGivenScopeType(
             MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection,
             MGTeamsInternalAuthorizationPolicy authorizationPolicy,
@@ -253,12 +263,14 @@
         }
 
         /// <summary>
-        /// Get the projected value of IsGroupConsentEnabled.
+        /// Get the projected value of group consent settings. i.e.
+        /// 1. Whether group consent is enabled. This is derived from group consent and user consent settings.
+        /// 2. Specific groups that group consent is restricted to.
         /// </summary>
         /// <param name="tenantConsentSettingCollection">Tenant consent setting collection.</param>
         /// <param name="authorizationPolicy">The authorization policy.</param>
         /// <param name="eventListener">The event listener.</param>
-        /// <returns>Project value of IsGroupConsentEnabled.</returns>
+        /// <returns>Projected value of group consent settings.</returns>
         private (string isGroupConsentSettingEnabled, string groupConsentConstrainedToGroupId) GetProjectedGroupConsentSettings(
             MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingCollection,
             MGTeamsInternalAuthorizationPolicy authorizationPolicy,
