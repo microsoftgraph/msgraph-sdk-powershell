@@ -25,6 +25,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const int DEFAULT_RETRY_DELAY = 3;
         internal const int DEFAULT_MAX_RETRY = 3;
         internal static readonly string GraphOptionsFilePath = Path.Combine(Core.Constants.GraphDirectoryPath, "mg.graphoptions.json");
+        internal static readonly string SdkReadmeLink = "https://github.com/microsoftgraph/msgraph-sdk-powershell/#readme";
+        internal static readonly string SdkDocsLink = "https://learn.microsoft.com/powershell/microsoftgraph";
+        internal static readonly string ApiDocsLink = "https://docs.microsoft.com/graph";
 
         public static class HelpMessages
         {
@@ -40,6 +43,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
             public const string Environment = "The name of the national cloud environment to connect to. By default global cloud is used.";
             public const string UseDeviceCode = "Use device code authentication instead of a browser control.";
             public const string ClientTimeout = "Sets the HTTP client timeout in seconds.";
+            public const string NoWelcome = "Hides the welcome message.";
             public const string Identity = "Login using a Managed Identity.";
             public const string EnvironmentVariable = "Allows for authentication using environment variables configured on the host machine. See https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/identity/Azure.Identity#environment-variables.";
             public const string ManagedIdentityClientId = "The client id to authenticate for a user assigned managed identity. For more information on user assigned managed identities see: https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-a-user-assigned-managed-identity-works-with-an-azure-vmId. To use the SystemAssigned identity, leave this field blank.";
