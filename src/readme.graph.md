@@ -428,6 +428,13 @@ directive:
         let errorDetailsRegex = /(ErrorDetails\s*=\s*)(new.*ErrorDetails\(message\).*)/gmi
         $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
 
+        // Prevents null response objects to the output stream
+        let writeObjectRegex = /(WriteObject.*(await response).*;)/gm
+        var writeObjectRegexMatch = writeObjectRegex.exec($);
+        if(writeObjectRegexMatch){
+           $ = $.replace(writeObjectRegex, 'var result = await response; if(result!=null){WriteObject(result);}');
+        }
+        
         return $;
       }
 
