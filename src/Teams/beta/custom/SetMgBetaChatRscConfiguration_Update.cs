@@ -276,22 +276,23 @@
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                        // Disable preapproval configs.
-                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to chat scope.
+                        IEnumerable<string> existingPermissionGrantPoliciesExceptChatScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(assignedPermissionGrantPoliciesApplicableToChatScope
                                     .Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId), StringComparer.OrdinalIgnoreCase);
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                            updatedPermissionGrantPolicies,
+                            existingPermissionGrantPoliciesExceptChatScopePolicies,
                             this,
                             Pipeline);
 
-                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", existingPermissionGrantPoliciesExceptChatScopePolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly)
                     {
-                        // Enable preapproval configs.
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to chat scope and add
+                        // Microsoft created.policy enabling pre-approvals.
                         IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToChatScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
@@ -328,17 +329,17 @@
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                        // Disable preapproval configs.
-                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to chat scope.
+                        IEnumerable<string> existingPermissionGrantPoliciesExceptChatScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToChatScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase);
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                            updatedPermissionGrantPolicies,
+                            existingPermissionGrantPoliciesExceptChatScopePolicies,
                             this,
                             Pipeline);
 
-                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", existingPermissionGrantPoliciesExceptChatScopePolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }

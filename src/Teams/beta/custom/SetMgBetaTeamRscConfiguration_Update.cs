@@ -282,23 +282,24 @@
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                        // Disable preapproval/permission grant policies applicable to Teams.
-                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope.
+                        IEnumerable<string> existingPermissionGrantPoliciesExceptTeamScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase);
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                            updatedPermissionGrantPolicies,
+                            existingPermissionGrantPoliciesExceptTeamScopePolicies,
                             this,
                             Pipeline);
 
-                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", existingPermissionGrantPoliciesExceptTeamScopePolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly)
                     {
-                        // Enable preapproval configs.
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope and add
+                        // Microsoft created.policy enabling pre-approvals.
                         IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
@@ -333,17 +334,17 @@
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                        // Disable preapproval/permission grant policies applicable to Teams.
-                        IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope.
+                        IEnumerable<string> existingPermissionGrantPoliciesExceptTeamScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase);
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                            updatedPermissionGrantPolicies,
+                            existingPermissionGrantPoliciesExceptTeamScopePolicies,
                             this,
                             Pipeline);
 
-                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", existingPermissionGrantPoliciesExceptTeamScopePolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
