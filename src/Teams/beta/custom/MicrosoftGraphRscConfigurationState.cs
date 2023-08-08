@@ -21,6 +21,16 @@ namespace Microsoft.Graph.Beta.PowerShell.Models
         /// <summary>
         /// Enabled for all apps.
         /// </summary>
-        EnabledForAllApps
+        EnabledForAllApps,
+
+        /// <summary>
+        /// Enabled for selected group of users.
+        /// </summary>
+        EnabledForSelectedGroupOfUsers,
+
+        /// <summary>
+        /// Custom configuration not understood by the sdk.
+        /// </summary>
+        Custom
     }
 }

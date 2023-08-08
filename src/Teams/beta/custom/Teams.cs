@@ -114,6 +114,32 @@ namespace Microsoft.Graph.Beta.PowerShell
         }
 
         /// <summary>
+        /// Get permission grant policies in the tenant.
+        /// </summary>
+        /// <param name="selectQuery">The select query.</param>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">The http request sender.</param>
+        /// <returns>Preapproval policy collection.</returns>
+        internal async System.Threading.Tasks.Task<MGTeamsInternalPermissionGrantPolicyCollection> GetPermissionGrantPolicies(
+            string selectQuery,
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                GetPermissionGrantPolicyCollectionRequest request =
+                    new GetPermissionGrantPolicyCollectionRequest(selectQuery);
+
+                return await this.ExecuteHttpRequestAsync(
+                    request,
+                    json => MGTeamsInternalPermissionGrantPolicyCollection.FromJson(json),
+                    eventListener,
+                    sender);
+            }
+        }
+
+        /// <summary>
         /// Get resource specific permissions registered in Microsoft Graph.
         /// </summary>
         /// <param name="eventListener">The event listener.</param>
