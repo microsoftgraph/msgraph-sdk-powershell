@@ -1894,10 +1894,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -2341,7 +2341,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -3547,10 +3547,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -3946,7 +3946,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -4275,7 +4275,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -4485,7 +4485,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -4586,11 +4586,11 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update eventMessage
-      description: Update the properties of an eventMessage object.
+      summary: Update message
+      description: Update the properties of a message object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -4671,7 +4671,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -4742,10 +4742,10 @@ paths:
       tags:
         - users.message
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to a message.
+      description: Retrieve a list of attachment objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -5093,7 +5093,7 @@ paths:
       tags:
         - users.message
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
