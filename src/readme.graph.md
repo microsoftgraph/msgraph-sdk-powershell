@@ -429,11 +429,11 @@ directive:
         $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
 
         // Prevents null response objects to the output stream for scenarios where response is a model type
-        let responseTypeRegex = /global::System.Threading.Tasks.Task<Microsoft.Graph.w*PowerShell.Models.\w*> \w*\)[^]*?(WriteObject.*(await response).*;)/gm
+        let responseTypeRegex = /global::System.Threading.Tasks.Task<Microsoft.Graph(.|.Beta.)PowerShell.Models.\w*> \w*\)[^]*?(WriteObject.*(await response).*;)/gm
+        var writeObjectRegex = /(WriteObject.*(await response).*;)/gm
         var responseTypeRegexMatch = $.match(responseTypeRegex);
         if(responseTypeRegexMatch){
            responseTypeRegexMatch.forEach((item)=>{
-            var writeObjectRegex = /(WriteObject.*(await response).*;)/gm
             var writeObjectRegexMatch = writeObjectRegex.exec($);
             if(writeObjectRegexMatch){
               var newContent = item.replace(writeObjectRegex, `var result = ${writeObjectRegexMatch[2]}; if(result!=null){WriteObject(result);}`)
