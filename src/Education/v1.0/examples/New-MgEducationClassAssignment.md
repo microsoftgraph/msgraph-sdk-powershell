@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Education
+```powershell
+
+Import-Module Microsoft.Graph.Education
 
 $params = @{
 	dueDateTime = [System.DateTime]::Parse("2022-09-16T00:00:00Z")
@@ -21,7 +23,7 @@ $params = @{
 }
 
 New-MgEducationClassAssignment -EducationClassId $educationClassId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgEducationClassAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

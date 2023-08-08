@@ -1,6 +1,7 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Notes
+```powershell
+Import-Module Microsoft.Graph.Notes
 
 $params = @{
 	displayName = "My Private notebook"
@@ -10,5 +11,6 @@ $params = @{
 New-MgUserOnenoteNotebook -UserId $userId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserOnenoteNotebook Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

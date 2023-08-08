@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.ChangeNotifications
+```powershell
+
+Import-Module Microsoft.Graph.Beta.ChangeNotifications
 
 $params = @{
 	changeType = "created"
@@ -12,7 +14,7 @@ $params = @{
 }
 
 New-MgBetaSubscription -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaSubscription Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -1,11 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Get assignments
 
 ```powershell
+
 Import-Module Microsoft.Graph.Education
 
-Get-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
-```
-This example shows how to use the Get-MgEducationClassAssignment Cmdlet.
+Get-MgEducationClassAssignment -EducationClassId $educationClassId
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will get assignments
+
+### Example 2: Get assignments using $expand options
+
+```powershell
+
+Import-Module Microsoft.Graph.Education
+
+Get-MgEducationClassAssignment -EducationClassId $educationClassId -ExpandProperty "resources" 
+
+```
+This example will get assignments using $expand options
 

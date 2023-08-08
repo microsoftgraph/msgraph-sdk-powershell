@@ -1,14 +1,19 @@
-### Example 1: Using the Copy-MgBetaTeam Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Teams
+
 $params = @{
-	DisplayName = "Library Assist"
-	Description = "Self help community for library"
-	MailNickname = "libassist"
-	PartsToClone = "apps,tabs,settings,channels,members"
-	Visibility = "public"
+	displayName = "Library Assist"
+	description = "Self help community for library"
+	mailNickname = "libassist"
+	partsToClone = "apps,tabs,settings,channels,members"
+	visibility = "public"
 }
+
 Copy-MgBetaTeam -TeamId $teamId -BodyParameter $params
+
 ```
 This example shows how to use the Copy-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

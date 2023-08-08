@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
+```powershell
 
-Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId
+Import-Module Microsoft.Graph.Identity.Governance
+
+Get-MgEntitlementManagementAssignmentPolicy
+
 ```
 This example shows how to use the Get-MgEntitlementManagementAssignmentPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
