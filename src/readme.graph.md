@@ -101,6 +101,7 @@ directive:
     - MicrosoftGraphPlannerTaskCreation
     - MicrosoftGraphPlannerTeamsPublicationInfo
     - MicrosoftGraphWorkbookComment
+    - MicrosoftGraphSecurityHost
   # Set parameter alias
   - where:
       parameter-name: OrderBy
