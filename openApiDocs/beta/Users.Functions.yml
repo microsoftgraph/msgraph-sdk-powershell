@@ -392,10 +392,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -633,10 +633,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -866,10 +866,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -1107,10 +1107,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -1340,10 +1340,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
@@ -1565,10 +1565,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -1806,10 +1806,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -2039,10 +2039,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -2280,10 +2280,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
@@ -2513,10 +2513,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event_delta
       parameters:
         - name: user-id
@@ -2788,10 +2788,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -3045,10 +3045,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -3294,10 +3294,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -3551,10 +3551,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -3800,10 +3800,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.calendarView_delta
       parameters:
         - name: user-id
@@ -4041,10 +4041,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -4298,10 +4298,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -4547,10 +4547,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -4804,10 +4804,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.event.instance_delta
       parameters:
         - name: user-id
@@ -5053,10 +5053,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.event_delta
       parameters:
         - name: user-id
@@ -5360,10 +5360,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -5609,10 +5609,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -5850,10 +5850,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -6099,10 +6099,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -6340,10 +6340,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
@@ -6573,10 +6573,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -6822,10 +6822,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -7063,10 +7063,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -7312,10 +7312,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
@@ -7553,10 +7553,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendar.event_delta
       parameters:
         - name: user-id
@@ -7844,10 +7844,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -8085,10 +8085,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarView.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -8318,10 +8318,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -8559,10 +8559,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarView.instance_delta
       parameters:
         - name: user-id
@@ -8792,10 +8792,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.calendarView_delta
       parameters:
         - name: user-id
@@ -10028,10 +10028,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
       operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
@@ -10235,10 +10235,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
+      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
       operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
@@ -10332,10 +10332,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
       operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
@@ -10531,10 +10531,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
+      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
       operationId: user.contactFolder_delta
       parameters:
         - name: user-id
@@ -10620,10 +10620,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
       operationId: user.contact_delta
       parameters:
         - name: user-id
@@ -13874,10 +13874,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.event.exceptionOccurrence.instance_delta
       parameters:
         - name: user-id
@@ -14115,10 +14115,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.event.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -14348,10 +14348,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.event.instance.exceptionOccurrence_delta
       parameters:
         - name: user-id
@@ -14589,10 +14589,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.event.instance_delta
       parameters:
         - name: user-id
@@ -14822,10 +14822,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in one or more calendars.  You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a calendarView (range of events defined by start and end dates) of a calendar. The calendar can be the default calendar or some other specified calendar of the user''s. In the case of getting incremental changes on calendarView, the calendar can be a group calendar as well. Typically, synchronizing events in a calendar or calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time. The following table lists the differences between the delta function on events and the delta function on a calendarView in a calendar.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: user.event_delta
       parameters:
         - name: user-id
@@ -15303,10 +15303,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_delta
       parameters:
         - name: user-id
@@ -15499,10 +15499,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_delta
       parameters:
         - name: user-id
@@ -15610,10 +15610,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
       operationId: user.mailFolder.message_delta
       parameters:
         - name: user-id
@@ -15798,10 +15798,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
       operationId: user.mailFolder_delta
       parameters:
         - name: user-id
@@ -16126,10 +16126,10 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
       operationId: user.message_delta
       parameters:
         - name: user-id
@@ -16371,7 +16371,7 @@ paths:
       description: "Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.\nYou can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
       operationId: user_findRoomList
       parameters:
         - name: user-id
@@ -17404,7 +17404,7 @@ paths:
       description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by \ngetting the user's mailbox settings."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
       operationId: user.outlook_supportedLanguage
       parameters:
         - name: user-id
@@ -25040,11 +25040,11 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.'
               nullable: true
             notificationContentType:
               type: string
@@ -26264,11 +26264,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -27345,7 +27345,7 @@ components:
           properties:
             clientId:
               type: string
-              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
               description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
@@ -29939,7 +29939,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time the version was last modified. Read-only.
+              description: Date and time when the version was last modified. Read-only.
               format: date-time
               nullable: true
             publication:
@@ -35497,7 +35497,7 @@ components:
           properties:
             content:
               type: string
-              description: A field that represents the content of the transcript. Read-only.
+              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
@@ -35508,7 +35508,7 @@ components:
               nullable: true
             metadataContent:
               type: string
-              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
           additionalProperties:
@@ -37374,8 +37374,8 @@ components:
         - email
         - site
         - unifiedGroup
-        - unknownFutureValue
         - teamwork
+        - unknownFutureValue
       type: string
     microsoft.graph.applicationMode:
       title: applicationMode
@@ -37522,7 +37522,7 @@ components:
           nullable: true
         fieldId:
           type: string
-          description: 'Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.'
+          description: 'Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.'
           nullable: true
         type:
           type: string

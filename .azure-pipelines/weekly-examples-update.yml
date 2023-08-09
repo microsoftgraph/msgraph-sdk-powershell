@@ -33,7 +33,7 @@ jobs:
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
-
+  - template: ./common-templates/install-sdk.yml
   - task: PowerShell@2
     name: "ComputeBranch"
     displayName: "Compute weekly examples update branch name"

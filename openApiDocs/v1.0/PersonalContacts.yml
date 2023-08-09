@@ -14,7 +14,7 @@ paths:
       description: Get the contact folder collection in the default Contacts folder of the signed-in user.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
       operationId: user_ListContactFolder
       parameters:
         - name: user-id
@@ -96,7 +96,7 @@ paths:
       description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
       operationId: user_CreateContactFolder
       parameters:
         - name: user-id
@@ -132,7 +132,7 @@ paths:
       description: 'Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user''s contact folder:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
       operationId: user_GetContactFolder
       parameters:
         - name: user-id
@@ -202,7 +202,7 @@ paths:
       description: Update the properties of contactfolder object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
       operationId: user_UpdateContactFolder
       parameters:
         - name: user-id
@@ -245,7 +245,7 @@ paths:
       description: Delete contactFolder other than the default contactFolder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
       operationId: user_DeleteContactFolder
       parameters:
         - name: user-id
@@ -284,7 +284,7 @@ paths:
       description: Get a collection of child folders under the specified contact folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
       operationId: user.contactFolder_ListChildFolder
       parameters:
         - name: user-id
@@ -374,7 +374,7 @@ paths:
       description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
       operationId: user.contactFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -580,10 +580,10 @@ paths:
       tags:
         - users.contactFolder
       summary: List contacts
-      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
+      description: 'Get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
       operationId: user.contactFolder.childFolder_ListContact
       parameters:
         - name: user-id
@@ -783,10 +783,10 @@ paths:
       tags:
         - users.contactFolder
       summary: Create contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
       operationId: user.contactFolder.childFolder_CreateContact
       parameters:
         - name: user-id
@@ -1739,10 +1739,10 @@ paths:
       tags:
         - users.contactFolder
       summary: List contacts
-      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
+      description: 'Get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
       operationId: user.contactFolder_ListContact
       parameters:
         - name: user-id
@@ -1934,10 +1934,10 @@ paths:
       tags:
         - users.contactFolder
       summary: Create contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
       operationId: user.contactFolder_CreateContact
       parameters:
         - name: user-id
@@ -2765,7 +2765,7 @@ paths:
       description: 'Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user''s contact folder:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
       operationId: user_ListContact
       parameters:
         - name: user-id
@@ -2953,7 +2953,7 @@ paths:
       description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
       operationId: user_CreateContact
       parameters:
         - name: user-id
@@ -2989,7 +2989,7 @@ paths:
       description: 'Retrieve the properties and relationships of a contact object. There are two scenarios where an app can get a contact in another user''s contact folder:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
       operationId: user_GetContact
       parameters:
         - name: user-id
@@ -3094,7 +3094,7 @@ paths:
       description: Update the properties of a contact object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
       operationId: user_UpdateContact
       parameters:
         - name: user-id
@@ -3137,7 +3137,7 @@ paths:
       description: Delete a contact.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0
       operationId: user_DeleteContact
       parameters:
         - name: user-id

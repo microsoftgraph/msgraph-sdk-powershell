@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Security
+```powershell
 
-Get-MgSecurityAttackSimulationAutomation -SimulationAutomationId $simulationAutomationId
+Import-Module Microsoft.Graph.Security
+
+Get-MgSecurityAttackSimulationAutomation
+
 ```
 This example shows how to use the Get-MgSecurityAttackSimulationAutomation Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

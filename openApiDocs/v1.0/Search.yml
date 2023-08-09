@@ -78,7 +78,7 @@ paths:
       description: Get a list of the externalConnection objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
       operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -165,7 +165,7 @@ paths:
       description: Create a new externalConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
       operationId: external_CreateConnection
       requestBody:
         description: New navigation property
@@ -192,7 +192,7 @@ paths:
       description: Read the properties and relationships of an externalConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
       operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
@@ -258,7 +258,7 @@ paths:
       description: Update the properties of an externalConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
       operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
@@ -293,7 +293,7 @@ paths:
       description: Deletes an externalConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
       operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
@@ -398,7 +398,7 @@ paths:
       description: Create a new externalGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
       operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
@@ -434,7 +434,7 @@ paths:
       description: Get an externalGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
       operationId: external.connection_GetGroup
       parameters:
         - name: externalConnection-id
@@ -498,7 +498,7 @@ paths:
       description: Update the properties of an externalGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
       operationId: external.connection_UpdateGroup
       parameters:
         - name: externalConnection-id
@@ -541,7 +541,7 @@ paths:
       description: Delete an externalGroup object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
       operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
@@ -657,7 +657,7 @@ paths:
       description: Create an identity resource for a new member in an externalGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
       operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
@@ -814,7 +814,7 @@ paths:
       description: Delete an identity resource to remove the corresponding member from an externalGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-identity-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-identity-delete?view=graph-rest-1.0
       operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
@@ -1022,7 +1022,7 @@ paths:
       description: Read the properties and relationships of an externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
       operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
@@ -1126,7 +1126,7 @@ paths:
       description: Delete an externalItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
       operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
@@ -1730,7 +1730,7 @@ paths:
       description: Read the properties and relationships of a connectionOperation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
       operationId: external.connection_GetOperation
       parameters:
         - name: externalConnection-id
@@ -1888,7 +1888,7 @@ paths:
       description: Read the properties and relationships of a schema object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
       operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
@@ -2077,7 +2077,7 @@ paths:
       description: Runs the query specified in the request body. Search results are provided in the response.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
       operationId: search_query
       requestBody:
         description: Action parameters

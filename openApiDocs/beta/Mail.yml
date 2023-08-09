@@ -84,7 +84,7 @@ paths:
       description: 'Get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
       operationId: user.inferenceClassification_ListOverride
       parameters:
         - name: user-id
@@ -146,7 +146,7 @@ paths:
       description: "Create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classified\nas specified in the override."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
       operationId: user.inferenceClassification_CreateOverride
       parameters:
         - name: user-id
@@ -226,10 +226,10 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Update inferenceClassificationOverride
-      description: "Change the **classifyAs** field of a focused Inbox override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender."
+      description: "Change the classifyAs field of a focused Inbox override as specified. You cannot use PATCH to change any other fields in an inferenceClassificationOverride instance. If an override exists for a sender and the sender changes his/her display name, you can use POST to force an update to the name field in the existing override. If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inferenceclassificationoverride-update?view=graph-rest-1.0
       operationId: user.inferenceClassification_UpdateOverride
       parameters:
         - name: user-id
@@ -272,7 +272,7 @@ paths:
       description: Delete a focused Inbox override specified by its ID.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inferenceclassificationoverride-delete?view=graph-rest-1.0
       operationId: user.inferenceClassification_DeleteOverride
       parameters:
         - name: user-id
@@ -332,7 +332,7 @@ paths:
       description: The user's mail folders. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
       operationId: user_ListMailFolder
       parameters:
         - name: user-id
@@ -437,10 +437,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Create MailFolder
-      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
+      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
       operationId: user_CreateMailFolder
       parameters:
         - name: user-id
@@ -476,7 +476,7 @@ paths:
       description: The user's mail folders. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-get?view=graph-rest-1.0
       operationId: user_GetMailFolder
       parameters:
         - name: user-id
@@ -558,11 +558,11 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailSearchFolder
-      description: Update the writable properties of a mailSearchFolder object.
+      summary: Update mailFolder
+      description: Update the properties of mailFolder object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -605,7 +605,7 @@ paths:
       description: 'Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-1.0
       operationId: user_DeleteMailFolder
       parameters:
         - name: user-id
@@ -644,7 +644,7 @@ paths:
       description: The collection of child folders in the mailFolder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
       operationId: user.mailFolder_ListChildFolder
       parameters:
         - name: user-id
@@ -757,10 +757,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Create child folder
-      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
+      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -985,7 +985,7 @@ paths:
       description: Get all the messageRule objects defined for the user's inbox.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_ListMessageRule
       parameters:
         - name: user-id
@@ -1081,7 +1081,7 @@ paths:
       description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_CreateMessageRule
       parameters:
         - name: user-id
@@ -1133,7 +1133,7 @@ paths:
       description: Get the properties and relationships of a messageRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_GetMessageRule
       parameters:
         - name: user-id
@@ -1205,7 +1205,7 @@ paths:
       description: Change writable properties on a messageRule object and save the changes.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_UpdateMessageRule
       parameters:
         - name: user-id
@@ -1264,7 +1264,7 @@ paths:
       description: Delete the specified messageRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_DeleteMessageRule
       parameters:
         - name: user-id
@@ -1356,7 +1356,7 @@ paths:
       description: 'List all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_ListMessage
       parameters:
         - name: user-id
@@ -1550,7 +1550,7 @@ paths:
       description: Use this API to create a new Message in a mailfolder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_CreateMessage
       parameters:
         - name: user-id
@@ -1823,7 +1823,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -1929,7 +1929,7 @@ paths:
       description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -2031,10 +2031,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -2094,7 +2094,7 @@ paths:
       description: 'Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_GetAttachment
       parameters:
         - name: user-id
@@ -2376,7 +2376,7 @@ paths:
       description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_CreateExtension
       parameters:
         - name: user-id
@@ -2436,7 +2436,7 @@ paths:
       description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_GetExtension
       parameters:
         - name: user-id
@@ -2580,10 +2580,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete openTypeExtension
-      description: Delete an open extension (openTypeExtension object) from the specified instance of a resource.  See the table in the Permissions section for the list of resources that support open extensions.
+      description: 'Delete an open extension (openTypeExtension object) from the specified instance of a resource.  For the list of resources that support open extensions, see the table in the Permissions section.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_DeleteExtension
       parameters:
         - name: user-id
@@ -2949,7 +2949,7 @@ paths:
       description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_DeleteMention
       parameters:
         - name: user-id
@@ -3295,7 +3295,7 @@ paths:
       description: Get all the messageRule objects defined for the user's inbox.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
       operationId: user.mailFolder_ListMessageRule
       parameters:
         - name: user-id
@@ -3383,7 +3383,7 @@ paths:
       description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
       operationId: user.mailFolder_CreateMessageRule
       parameters:
         - name: user-id
@@ -3427,7 +3427,7 @@ paths:
       description: Get the properties and relationships of a messageRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/messagerule-get?view=graph-rest-1.0
       operationId: user.mailFolder_GetMessageRule
       parameters:
         - name: user-id
@@ -3491,7 +3491,7 @@ paths:
       description: Change writable properties on a messageRule object and save the changes.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/messagerule-update?view=graph-rest-1.0
       operationId: user.mailFolder_UpdateMessageRule
       parameters:
         - name: user-id
@@ -3542,7 +3542,7 @@ paths:
       description: Delete the specified messageRule object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/messagerule-delete?view=graph-rest-1.0
       operationId: user.mailFolder_DeleteMessageRule
       parameters:
         - name: user-id
@@ -3618,7 +3618,7 @@ paths:
       description: 'List all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder_ListMessage
       parameters:
         - name: user-id
@@ -3804,7 +3804,7 @@ paths:
       description: Use this API to create a new Message in a mailfolder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
       operationId: user.mailFolder_CreateMessage
       parameters:
         - name: user-id
@@ -4045,7 +4045,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -4135,7 +4135,7 @@ paths:
       description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -4229,10 +4229,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -4284,7 +4284,7 @@ paths:
       description: 'Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
       operationId: user.mailFolder.message_GetAttachment
       parameters:
         - name: user-id
@@ -4534,7 +4534,7 @@ paths:
       description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: user.mailFolder.message_CreateExtension
       parameters:
         - name: user-id
@@ -4586,7 +4586,7 @@ paths:
       description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user.mailFolder.message_GetExtension
       parameters:
         - name: user-id
@@ -4714,10 +4714,10 @@ paths:
       tags:
         - users.mailFolder
       summary: Delete openTypeExtension
-      description: Delete an open extension (openTypeExtension object) from the specified instance of a resource.  See the table in the Permissions section for the list of resources that support open extensions.
+      description: 'Delete an open extension (openTypeExtension object) from the specified instance of a resource.  For the list of resources that support open extensions, see the table in the Permissions section.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
       operationId: user.mailFolder.message_DeleteExtension
       parameters:
         - name: user-id
@@ -5043,7 +5043,7 @@ paths:
       description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
       operationId: user.mailFolder.message_DeleteMention
       parameters:
         - name: user-id
@@ -5333,7 +5333,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -5514,11 +5514,11 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create Message
-      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message."
+      summary: Create openTypeExtension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: user_CreateMessage
       parameters:
         - name: user-id
@@ -5554,7 +5554,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -5664,7 +5664,7 @@ paths:
       description: Update the properties of a message object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -5707,7 +5707,7 @@ paths:
       description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -5745,7 +5745,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -5819,7 +5819,7 @@ paths:
       description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -5905,10 +5905,10 @@ paths:
       tags:
         - users.message
       summary: Add attachment
-      description: "Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
@@ -5952,7 +5952,7 @@ paths:
       description: 'Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0
       operationId: user.message_GetAttachment
       parameters:
         - name: user-id
@@ -6170,7 +6170,7 @@ paths:
       description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: user.message_CreateExtension
       parameters:
         - name: user-id
@@ -6214,7 +6214,7 @@ paths:
       description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user.message_GetExtension
       parameters:
         - name: user-id
@@ -6326,10 +6326,10 @@ paths:
       tags:
         - users.message
       summary: Delete openTypeExtension
-      description: Delete an open extension (openTypeExtension object) from the specified instance of a resource.  See the table in the Permissions section for the list of resources that support open extensions.
+      description: 'Delete an open extension (openTypeExtension object) from the specified instance of a resource.  For the list of resources that support open extensions, see the table in the Permissions section.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-delete?view=graph-rest-1.0
       operationId: user.message_DeleteExtension
       parameters:
         - name: user-id
@@ -6615,7 +6615,7 @@ paths:
       description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
       operationId: user.message_DeleteMention
       parameters:
         - name: user-id

@@ -1,39 +1,49 @@
-### Example 1: Using the Invoke-MgBetaAnswerCommunicationCall Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+
 $params = @{
-	CallbackUri = "https://bot.contoso.com/api/calls"
-	AcceptedModalities = @(
+	callbackUri = "callbackUri-value"
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "<Media Session Configuration Blob>"
+	}
+	acceptedModalities = @(
 		"audio"
 	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-}
-Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
-```
-This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgBetaAnswerCommunicationCall Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	CallbackUri = "callbackUri-value"
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-	AcceptedModalities = @(
-		"audio"
-	)
-	CallOptions = @{
+	callOptions = @{
 		"@odata.type" = "#microsoft.graph.incomingCallOptions"
-		IsContentSharingNotificationEnabled = $true
+		isContentSharingNotificationEnabled = $true
 	}
-	ParticipantCapacity = 200
+	participantCapacity = 200
 }
+
 Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
+
 ```
 This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+
+$params = @{
+	callbackUri = "https://bot.contoso.com/api/calls"
+	acceptedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "<Media Session Configuration Blob>"
+	}
+}
+
+Invoke-MgBetaAnswerCommunicationCall -CallId $callId -BodyParameter $params
+
+```
+This example shows how to use the Invoke-MgBetaAnswerCommunicationCall Cmdlet.
+

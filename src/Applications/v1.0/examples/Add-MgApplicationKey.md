@@ -1,34 +1,44 @@
-### Example 1: Using the Add-MgApplicationKey Cmdlet
+### Example 1: Add a new key credential to an application
+
 ```powershell
+
 Import-Module Microsoft.Graph.Applications
+
 $params = @{
-	KeyCredential = @{
-		Type = "AsymmetricX509Cert"
-		Usage = "Verify"
-		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	keyCredential = @{
+		type = "AsymmetricX509Cert"
+		usage = "Verify"
+		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
 	}
-	PasswordCredential = $null
-	Proof = "eyJ0eXAiOiJ..."
+	passwordCredential = $null
+	proof = "eyJ0eXAiOiJ..."
 }
+
 Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+
 ```
-This example shows how to use the Add-MgApplicationKey Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Add-MgApplicationKey Cmdlet
+This example will add a new key credential to an application
+
+### Example 2: Add a key credential and an associated password for the key
+
 ```powershell
+
 Import-Module Microsoft.Graph.Applications
+
 $params = @{
-	KeyCredential = @{
-		Type = "X509CertAndPassword"
-		Usage = "Sign"
-		Key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
+	keyCredential = @{
+		type = "X509CertAndPassword"
+		usage = "Sign"
+		key = [System.Text.Encoding]::ASCII.GetBytes("MIIDYDCCAki...")
 	}
-	PasswordCredential = @{
-		SecretText = "MKTr0w1..."
+	passwordCredential = @{
+		secretText = "MKTr0w1..."
 	}
-	Proof = "eyJ0eXAiOiJ..."
+	proof = "eyJ0eXAiOiJ..."
 }
+
 Add-MgApplicationKey -ApplicationId $applicationId -BodyParameter $params
+
 ```
-This example shows how to use the Add-MgApplicationKey Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will add a key credential and an associated password for the key
+

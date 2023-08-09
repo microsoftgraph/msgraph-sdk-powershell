@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
+```powershell
 
-Get-MgBetaSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId $ediscoveryCaseId -CaseOperationId $caseOperationId
+Import-Module Microsoft.Graph.Beta.Security
+
+Get-MgBetaSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId $ediscoveryCaseId
+
 ```
 This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseOperation Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
