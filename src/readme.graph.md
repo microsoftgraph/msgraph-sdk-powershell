@@ -100,6 +100,7 @@ directive:
     - MicrosoftGraphManagedTenantsManagementTemplateStep
     - MicrosoftGraphPlannerTaskCreation
     - MicrosoftGraphPlannerTeamsPublicationInfo
+    - MicrosoftGraphWorkbookComment
   # Set parameter alias
   - where:
       parameter-name: OrderBy
