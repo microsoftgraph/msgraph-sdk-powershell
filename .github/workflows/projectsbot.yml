@@ -1,4 +1,4 @@
-# This workflow is used to add new issues to GitHub Projects (Beta)
+# This workflow is used to add new issues to GitHub Projects 
 
 name: Add PR to project
 on:
