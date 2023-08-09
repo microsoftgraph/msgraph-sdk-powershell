@@ -166,7 +166,6 @@ directive:
     set:
       subject: $1$2$3
   - where:
-      verb: Get|New|Remove|Update
       subject: ^(Admin)(Person)
     set:
       subject: AdminPeople
