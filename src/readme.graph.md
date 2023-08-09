@@ -165,6 +165,10 @@ directive:
       subject: ^(.*)List(.*)(As.*)$
     set:
       subject: $1$2$3
+  - where:
+      subject: ^(Admin)(Person)
+    set:
+      subject: AdminPeople
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
