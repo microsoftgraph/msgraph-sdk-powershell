@@ -394,7 +394,7 @@ paths:
       description: 'Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
       operationId: user_ListPerson
       parameters:
         - name: user-id
@@ -597,10 +597,10 @@ paths:
       tags:
         - users.profile
       summary: Get profile
-      description: 'Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.'
+      description: 'Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
       operationId: user_GetProfile
       parameters:
         - name: user-id
@@ -721,7 +721,7 @@ paths:
       description: Deletes a profile object from a user's account.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
       operationId: user_DeleteProfile
       parameters:
         - name: user-id
@@ -752,7 +752,7 @@ paths:
       description: Retrieves properties related to the user's accounts from the profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
       operationId: user.profile_ListAccount
       parameters:
         - name: user-id
@@ -857,7 +857,7 @@ paths:
       description: Create a new userAccountInformation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
       operationId: user.profile_CreateAccount
       parameters:
         - name: user-id
@@ -893,7 +893,7 @@ paths:
       description: Retrieve the properties and relationships of an userAccountInformation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
       operationId: user.profile_GetAccount
       parameters:
         - name: user-id
@@ -965,7 +965,7 @@ paths:
       description: Update the properties of an userAccountInformation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
       operationId: user.profile_UpdateAccount
       parameters:
         - name: user-id
@@ -1008,7 +1008,7 @@ paths:
       description: Delete an userAccountInformation object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteAccount
       parameters:
         - name: user-id
@@ -1066,10 +1066,10 @@ paths:
       tags:
         - users.profile
       summary: List addresses
-      description: Get the itemAddress resources from the **addresses** navigation property.
+      description: Get the itemAddress resources from the addresses navigation property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
       operationId: user.profile_ListAddress
       parameters:
         - name: user-id
@@ -1171,7 +1171,7 @@ paths:
       description: Create a new itemAddress object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
       operationId: user.profile_CreateAddress
       parameters:
         - name: user-id
@@ -1207,7 +1207,7 @@ paths:
       description: Read the properties and relationships of an itemAddress object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemaddress-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itemaddress-get?view=graph-rest-1.0
       operationId: user.profile_GetAddress
       parameters:
         - name: user-id
@@ -1278,7 +1278,7 @@ paths:
       description: Update the properties of an itemAddress object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemaddress-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-1.0
       operationId: user.profile_UpdateAddress
       parameters:
         - name: user-id
@@ -1321,7 +1321,7 @@ paths:
       description: Deletes an itemAddress object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteAddress
       parameters:
         - name: user-id
@@ -1382,7 +1382,7 @@ paths:
       description: Retrieve a list of personAnniversary objects for the given user from their profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
       operationId: user.profile_ListAnniversary
       parameters:
         - name: user-id
@@ -1484,7 +1484,7 @@ paths:
       description: Use this API to create a new personAnniversary object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
       operationId: user.profile_CreateAnniversary
       parameters:
         - name: user-id
@@ -1520,7 +1520,7 @@ paths:
       description: Retrieve the properties and relationships of a personAnniversary object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personanniversary-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personanniversary-get?view=graph-rest-1.0
       operationId: user.profile_GetAnniversary
       parameters:
         - name: user-id
@@ -1591,7 +1591,7 @@ paths:
       description: Update the properties of a personAnniversary object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personanniversary-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personanniversary-update?view=graph-rest-1.0
       operationId: user.profile_UpdateAnniversary
       parameters:
         - name: user-id
@@ -1634,7 +1634,7 @@ paths:
       description: Delete a personAnniversary object from the user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteAnniversary
       parameters:
         - name: user-id
@@ -1695,7 +1695,7 @@ paths:
       description: Retrieve a list of personAward objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
       operationId: user.profile_ListAward
       parameters:
         - name: user-id
@@ -1806,7 +1806,7 @@ paths:
       description: Create a new personAward object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
       operationId: user.profile_CreateAward
       parameters:
         - name: user-id
@@ -1842,7 +1842,7 @@ paths:
       description: Read the properties and relationships of a personAward object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0
       operationId: user.profile_GetAward
       parameters:
         - name: user-id
@@ -1916,7 +1916,7 @@ paths:
       description: Update the properties of a personAward object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0
       operationId: user.profile_UpdateAward
       parameters:
         - name: user-id
@@ -1959,7 +1959,7 @@ paths:
       description: Deletes a personAward object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteAward
       parameters:
         - name: user-id
@@ -2020,7 +2020,7 @@ paths:
       description: Retrieve a list of personCertification objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
       operationId: user.profile_ListCertification
       parameters:
         - name: user-id
@@ -2143,7 +2143,7 @@ paths:
       description: Create a new personCertification object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
       operationId: user.profile_CreateCertification
       parameters:
         - name: user-id
@@ -2179,7 +2179,7 @@ paths:
       description: Read the properties and relationships of a personCertification object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personcertification-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personcertification-get?view=graph-rest-1.0
       operationId: user.profile_GetCertification
       parameters:
         - name: user-id
@@ -2257,7 +2257,7 @@ paths:
       description: Update the properties of a personCertification object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personcertification-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-1.0
       operationId: user.profile_UpdateCertification
       parameters:
         - name: user-id
@@ -2300,7 +2300,7 @@ paths:
       description: Deletes a personCertification object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personcertification-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteCertification
       parameters:
         - name: user-id
@@ -2361,7 +2361,7 @@ paths:
       description: Retrieve a list of educationalActivity objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
       operationId: user.profile_ListEducationalActivity
       parameters:
         - name: user-id
@@ -2469,7 +2469,7 @@ paths:
       description: Create a new educationalActivity in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
       operationId: user.profile_CreateEducationalActivity
       parameters:
         - name: user-id
@@ -2505,7 +2505,7 @@ paths:
       description: Retrieve the properties and relationships of an educationalActivity object from a users profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-1.0
       operationId: user.profile_GetEducationalActivity
       parameters:
         - name: user-id
@@ -2578,7 +2578,7 @@ paths:
       description: Update the properties of an educationalActivity object within a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationalactivity-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/educationalactivity-update?view=graph-rest-1.0
       operationId: user.profile_UpdateEducationalActivity
       parameters:
         - name: user-id
@@ -2621,7 +2621,7 @@ paths:
       description: Delete an educationalActivity object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationalactivity-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/educationalactivity-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteEducationalActivity
       parameters:
         - name: user-id
@@ -2682,7 +2682,7 @@ paths:
       description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
       operationId: user.profile_ListEmail
       parameters:
         - name: user-id
@@ -2784,7 +2784,7 @@ paths:
       description: Create a new itemEmail object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
       operationId: user.profile_CreateEmail
       parameters:
         - name: user-id
@@ -2820,7 +2820,7 @@ paths:
       description: Retrieve the properties and relationships of an itemEmail object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itememail-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-1.0
       operationId: user.profile_GetEmail
       parameters:
         - name: user-id
@@ -2891,7 +2891,7 @@ paths:
       description: Update the properties of an itemEmail object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itememail-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-1.0
       operationId: user.profile_UpdateEmail
       parameters:
         - name: user-id
@@ -2934,7 +2934,7 @@ paths:
       description: Delete an itemEmail object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itememail-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itememail-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteEmail
       parameters:
         - name: user-id
@@ -2995,7 +2995,7 @@ paths:
       description: Retrieve a list of personInterest objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
       operationId: user.profile_ListInterest
       parameters:
         - name: user-id
@@ -3106,7 +3106,7 @@ paths:
       description: Create a new personInterest.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
       operationId: user.profile_CreateInterest
       parameters:
         - name: user-id
@@ -3142,7 +3142,7 @@ paths:
       description: Retrieve the properties and relationships of a personInterest object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
       operationId: user.profile_GetInterest
       parameters:
         - name: user-id
@@ -3216,7 +3216,7 @@ paths:
       description: Update the properties of a personInterest object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
       operationId: user.profile_UpdateInterest
       parameters:
         - name: user-id
@@ -3259,7 +3259,7 @@ paths:
       description: Deletes a personInterest object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteInterest
       parameters:
         - name: user-id
@@ -3320,7 +3320,7 @@ paths:
       description: Retrieve a list of languageProficiency objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
       operationId: user.profile_ListLanguage
       parameters:
         - name: user-id
@@ -3434,7 +3434,7 @@ paths:
       description: Use this API to create a new languageProficiency object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
       operationId: user.profile_CreateLanguage
       parameters:
         - name: user-id
@@ -3470,7 +3470,7 @@ paths:
       description: Retrieve the properties and relationships of a languageProficiency object within a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0
       operationId: user.profile_GetLanguage
       parameters:
         - name: user-id
@@ -3545,7 +3545,7 @@ paths:
       description: Update the properties of a languageProficiency object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0
       operationId: user.profile_UpdateLanguage
       parameters:
         - name: user-id
@@ -3588,7 +3588,7 @@ paths:
       description: Delete a languageProficiency object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteLanguage
       parameters:
         - name: user-id
@@ -3649,7 +3649,7 @@ paths:
       description: Retrieve a list of personName objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
       operationId: user.profile_ListName
       parameters:
         - name: user-id
@@ -3775,7 +3775,7 @@ paths:
       description: Use this API to create a new personName object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
       operationId: user.profile_CreateName
       parameters:
         - name: user-id
@@ -3811,7 +3811,7 @@ paths:
       description: Retrieve the properties and relationships of a personName object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personname-get?view=graph-rest-1.0
       operationId: user.profile_GetName
       parameters:
         - name: user-id
@@ -3890,7 +3890,7 @@ paths:
       description: Update the properties of a personName object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personname-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personname-update?view=graph-rest-1.0
       operationId: user.profile_UpdateName
       parameters:
         - name: user-id
@@ -3933,7 +3933,7 @@ paths:
       description: Delete a personName object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteName
       parameters:
         - name: user-id
@@ -3994,7 +3994,7 @@ paths:
       description: Retrieve a list of personAnnotation objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
       operationId: user.profile_ListNote
       parameters:
         - name: user-id
@@ -4096,7 +4096,7 @@ paths:
       description: Create a new personAnnotation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
       operationId: user.profile_CreateNote
       parameters:
         - name: user-id
@@ -4132,7 +4132,7 @@ paths:
       description: Read the properties and relationships of a personAnnotation object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0
       operationId: user.profile_GetNote
       parameters:
         - name: user-id
@@ -4203,7 +4203,7 @@ paths:
       description: Update the properties of a personAnnotation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0
       operationId: user.profile_UpdateNote
       parameters:
         - name: user-id
@@ -4246,7 +4246,7 @@ paths:
       description: Deletes a personAnnotation object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteNote
       parameters:
         - name: user-id
@@ -4307,7 +4307,7 @@ paths:
       description: Retrieve a list of itemPatent objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
       operationId: user.profile_ListPatent
       parameters:
         - name: user-id
@@ -4421,7 +4421,7 @@ paths:
       description: Create a new itemPatent object within a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
       operationId: user.profile_CreatePatent
       parameters:
         - name: user-id
@@ -4457,7 +4457,7 @@ paths:
       description: Read the properties and relationships of an itemPatent object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0
       operationId: user.profile_GetPatent
       parameters:
         - name: user-id
@@ -4532,7 +4532,7 @@ paths:
       description: Update the properties of an itemPatent object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0
       operationId: user.profile_UpdatePatent
       parameters:
         - name: user-id
@@ -4575,7 +4575,7 @@ paths:
       description: Deletes an itemPatent object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0
       operationId: user.profile_DeletePatent
       parameters:
         - name: user-id
@@ -4636,7 +4636,7 @@ paths:
       description: Retrieve a list of itemPhone objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
       operationId: user.profile_ListPhone
       parameters:
         - name: user-id
@@ -4738,7 +4738,7 @@ paths:
       description: Use this API to create a new itemPhone object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
       operationId: user.profile_CreatePhone
       parameters:
         - name: user-id
@@ -4774,7 +4774,7 @@ paths:
       description: Retrieve the properties and relationships of an itemPhone object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0
       operationId: user.profile_GetPhone
       parameters:
         - name: user-id
@@ -4845,7 +4845,7 @@ paths:
       description: Update the properties of an itemPhone object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0
       operationId: user.profile_UpdatePhone
       parameters:
         - name: user-id
@@ -4888,7 +4888,7 @@ paths:
       description: Delete an itemPhone object from the user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0
       operationId: user.profile_DeletePhone
       parameters:
         - name: user-id
@@ -4949,7 +4949,7 @@ paths:
       description: Retrieve a list of workPosition objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
       operationId: user.profile_ListPosition
       parameters:
         - name: user-id
@@ -5057,7 +5057,7 @@ paths:
       description: Use this API to create a new workPosition in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
       operationId: user.profile_CreatePosition
       parameters:
         - name: user-id
@@ -5093,7 +5093,7 @@ paths:
       description: Retrieve the properties and relationships of a workPosition object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0
       operationId: user.profile_GetPosition
       parameters:
         - name: user-id
@@ -5166,7 +5166,7 @@ paths:
       description: Update the properties of a workPosition object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0
       operationId: user.profile_UpdatePosition
       parameters:
         - name: user-id
@@ -5209,7 +5209,7 @@ paths:
       description: Delete a specific workPosition object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0
       operationId: user.profile_DeletePosition
       parameters:
         - name: user-id
@@ -5270,7 +5270,7 @@ paths:
       description: Retrieve a list of projectParticipation objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
       operationId: user.profile_ListProject
       parameters:
         - name: user-id
@@ -5387,7 +5387,7 @@ paths:
       description: Use this API to create a new projectParticipation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
       operationId: user.profile_CreateProject
       parameters:
         - name: user-id
@@ -5423,7 +5423,7 @@ paths:
       description: Retrieve the properties and relationships of a projectParticipation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectparticipation-get?view=graph-rest-1.0
       operationId: user.profile_GetProject
       parameters:
         - name: user-id
@@ -5499,7 +5499,7 @@ paths:
       description: Update the properties of a projectParticipation object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/projectparticipation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectparticipation-update?view=graph-rest-1.0
       operationId: user.profile_UpdateProject
       parameters:
         - name: user-id
@@ -5542,7 +5542,7 @@ paths:
       description: Delete a projectParticipation object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/projectparticipation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectparticipation-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteProject
       parameters:
         - name: user-id
@@ -5603,7 +5603,7 @@ paths:
       description: Retrieve a list of itemPublication objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
       operationId: user.profile_ListPublication
       parameters:
         - name: user-id
@@ -5714,7 +5714,7 @@ paths:
       description: Create a new itemPublication object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
       operationId: user.profile_CreatePublication
       parameters:
         - name: user-id
@@ -5750,7 +5750,7 @@ paths:
       description: Read the properties and relationships of an itemPublication object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0
       operationId: user.profile_GetPublication
       parameters:
         - name: user-id
@@ -5824,7 +5824,7 @@ paths:
       description: Update the properties of an itemPublication object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0
       operationId: user.profile_UpdatePublication
       parameters:
         - name: user-id
@@ -5867,7 +5867,7 @@ paths:
       description: Deletes an itemPublication object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0
       operationId: user.profile_DeletePublication
       parameters:
         - name: user-id
@@ -5928,7 +5928,7 @@ paths:
       description: Retrieve a list of skillProficiency objects in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
       operationId: user.profile_ListSkill
       parameters:
         - name: user-id
@@ -6039,7 +6039,7 @@ paths:
       description: Use this API to create a new skillProficiency object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
       operationId: user.profile_CreateSkill
       parameters:
         - name: user-id
@@ -6075,7 +6075,7 @@ paths:
       description: Retrieve the properties and relationships of a skillproficiency object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-1.0
       operationId: user.profile_GetSkill
       parameters:
         - name: user-id
@@ -6149,7 +6149,7 @@ paths:
       description: Update the properties of a skillProficiency object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-1.0
       operationId: user.profile_UpdateSkill
       parameters:
         - name: user-id
@@ -6192,7 +6192,7 @@ paths:
       description: Delete a skillProficiency object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteSkill
       parameters:
         - name: user-id
@@ -6253,7 +6253,7 @@ paths:
       description: Retrieve a list of webAccounts objects from the user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
       operationId: user.profile_ListWebAccount
       parameters:
         - name: user-id
@@ -6364,7 +6364,7 @@ paths:
       description: Create a new webAccount object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
       operationId: user.profile_CreateWebAccount
       parameters:
         - name: user-id
@@ -6400,7 +6400,7 @@ paths:
       description: Retrieve the properties and relationships of a webAccount object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0
       operationId: user.profile_GetWebAccount
       parameters:
         - name: user-id
@@ -6474,7 +6474,7 @@ paths:
       description: Update the properties of a webAccount object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0
       operationId: user.profile_UpdateWebAccount
       parameters:
         - name: user-id
@@ -6517,7 +6517,7 @@ paths:
       description: Delete a webAccount object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteWebAccount
       parameters:
         - name: user-id
@@ -6578,7 +6578,7 @@ paths:
       description: Retrieve a list of personWebsite objects from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
       operationId: user.profile_ListWebsite
       parameters:
         - name: user-id
@@ -6686,7 +6686,7 @@ paths:
       description: Create a new personWebsite object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
       operationId: user.profile_CreateWebsite
       parameters:
         - name: user-id
@@ -6722,7 +6722,7 @@ paths:
       description: Retrieve the properties and relationships of a personWebsite object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
       operationId: user.profile_GetWebsite
       parameters:
         - name: user-id
@@ -6795,7 +6795,7 @@ paths:
       description: Update the properties of personWebsite object in a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
       operationId: user.profile_UpdateWebsite
       parameters:
         - name: user-id
@@ -6838,7 +6838,7 @@ paths:
       description: Deletes a personWebsite object from a user's profile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
       operationId: user.profile_DeleteWebsite
       parameters:
         - name: user-id

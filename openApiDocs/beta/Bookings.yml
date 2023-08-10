@@ -11,10 +11,10 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation. You can also query for Bookings businesses by specifying a string in a `query` parameter to do substring matching among the businesses of a tenant. For details, see Example 2.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
       operationId: bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -120,10 +120,10 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Create bookingBusiness
-      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.'
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
       operationId: bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -150,7 +150,7 @@ paths:
       description: Get the properties and relationships of a bookingBusiness object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -226,7 +226,7 @@ paths:
       description: Update the properties of a bookingBusiness object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -261,7 +261,7 @@ paths:
       description: Delete a bookingBusiness object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -292,7 +292,7 @@ paths:
       description: Get a list of bookingAppointment objects for the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
       operationId: bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
@@ -469,7 +469,7 @@ paths:
       description: Create a new bookingAppointment for the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
       operationId: bookingBusiness_CreateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -502,10 +502,10 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get bookingAppointment
-      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
@@ -601,7 +601,7 @@ paths:
       description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -644,7 +644,7 @@ paths:
       description: Delete a bookingAppointment in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
@@ -683,7 +683,7 @@ paths:
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -751,7 +751,7 @@ paths:
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: bookingBusiness_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1159,7 +1159,7 @@ paths:
       description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1227,7 +1227,7 @@ paths:
       description: Get a list of bookingCustomer objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
       operationId: bookingBusiness_ListCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1308,7 +1308,7 @@ paths:
       description: Create a new bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
       operationId: bookingBusiness_CreateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1344,7 +1344,7 @@ paths:
       description: Get the properties and relationships of a bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1408,7 +1408,7 @@ paths:
       description: Update the properties of a bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1451,7 +1451,7 @@ paths:
       description: Delete the specified bookingCustomer object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1512,7 +1512,7 @@ paths:
       description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
       operationId: bookingBusiness_ListCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1590,7 +1590,7 @@ paths:
       description: Create a new bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
       operationId: bookingBusiness_CreateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1626,7 +1626,7 @@ paths:
       description: Read the properties and relationships of a bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1689,7 +1689,7 @@ paths:
       description: Update the properties of a bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1732,7 +1732,7 @@ paths:
       description: Delete the specified bookingCustomQuestion object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1793,7 +1793,7 @@ paths:
       description: Get the availability information of staff members of a Microsoft Bookings calendar.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
       operationId: bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1850,10 +1850,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
-      description: 'Make the scheduling page of this business available to external customers. Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.'
+      description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
       operationId: bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -1875,10 +1875,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
-      description: 'Make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.'
+      description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
       operationId: bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1903,7 +1903,7 @@ paths:
       description: Get a list of bookingService objects in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
       operationId: bookingBusiness_ListService
       parameters:
         - name: bookingBusiness-id
@@ -2035,7 +2035,7 @@ paths:
       description: Create a new bookingService for the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
       operationId: bookingBusiness_CreateService
       parameters:
         - name: bookingBusiness-id
@@ -2071,7 +2071,7 @@ paths:
       description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetService
       parameters:
         - name: bookingBusiness-id
@@ -2152,7 +2152,7 @@ paths:
       description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateService
       parameters:
         - name: bookingBusiness-id
@@ -2195,7 +2195,7 @@ paths:
       description: Delete a bookingService object in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteService
       parameters:
         - name: bookingBusiness-id
@@ -2256,7 +2256,7 @@ paths:
       description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
       operationId: bookingBusiness_ListStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2355,7 +2355,7 @@ paths:
       description: Create a new staff member in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
       operationId: bookingBusiness_CreateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2391,7 +2391,7 @@ paths:
       description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2461,7 +2461,7 @@ paths:
       description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2504,7 +2504,7 @@ paths:
       description: Delete a staff member in the specified bookingbusiness.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2579,7 +2579,7 @@ paths:
       description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
       operationId: bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2663,10 +2663,10 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get bookingCurrency
-      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.'
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
       operationId: bookingCurrency_GetBookingCurrency
       parameters:
         - name: bookingCurrency-id
@@ -2857,7 +2857,7 @@ paths:
       description: Get a list of all businessScenario objects in an organization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
       operationId: solution_ListBusinessScenario
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2941,7 +2941,7 @@ paths:
       description: Create a new businessScenario object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
       operationId: solution_CreateBusinessScenario
       requestBody:
         description: New navigation property
@@ -2968,7 +2968,7 @@ paths:
       description: Read the properties and relationships of a businessScenario object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
       operationId: solution_GetBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -3029,7 +3029,7 @@ paths:
       description: Update the properties of a businessScenario object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
       operationId: solution_UpdateBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -3064,7 +3064,7 @@ paths:
       description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
       operationId: solution_DeleteBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -3095,7 +3095,7 @@ paths:
       description: Read the properties and relationships of a businessScenarioPlanner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
       operationId: solution.businessScenario_GetPlanner
       parameters:
         - name: businessScenario-id
@@ -3208,10 +3208,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action getPlan
-      description: 'Get information about the plannerPlan mapped to a given target. If a **plannerPlan** doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
+      description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_getPlan
       parameters:
         - name: businessScenario-id
@@ -3252,7 +3252,7 @@ paths:
       description: Read the properties and relationships of a plannerPlanConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_GetPlanConfiguration
       parameters:
         - name: businessScenario-id
@@ -3312,7 +3312,7 @@ paths:
       description: Update the properties of a plannerPlanConfiguration object for a businessScenario.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_UpdatePlanConfiguration
       parameters:
         - name: businessScenario-id
@@ -3374,7 +3374,7 @@ paths:
       description: Get a list of the plannerPlanConfigurationLocalization objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_ListLocalization
       parameters:
         - name: businessScenario-id
@@ -3452,7 +3452,7 @@ paths:
       description: Create a new plannerPlanConfigurationLocalization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_CreateLocalization
       parameters:
         - name: businessScenario-id
@@ -3488,7 +3488,7 @@ paths:
       description: Read the properties and relationships of a plannerPlanConfigurationLocalization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_GetLocalization
       parameters:
         - name: businessScenario-id
@@ -3551,7 +3551,7 @@ paths:
       description: Update the properties of a plannerPlanConfigurationLocalization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalization
       parameters:
         - name: businessScenario-id
@@ -3594,7 +3594,7 @@ paths:
       description: Delete a plannerPlanConfigurationLocalization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalization
       parameters:
         - name: businessScenario-id
@@ -3655,7 +3655,7 @@ paths:
       description: Read the properties and relationships of a plannerTaskConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_GetTaskConfiguration
       parameters:
         - name: businessScenario-id
@@ -3708,7 +3708,7 @@ paths:
       description: Update the properties of a plannerTaskConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_UpdateTaskConfiguration
       parameters:
         - name: businessScenario-id
@@ -3770,7 +3770,7 @@ paths:
       description: Get a list of the businessScenarioTask objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_ListTask
       parameters:
         - name: businessScenario-id
@@ -3925,7 +3925,7 @@ paths:
       description: Create a new businessScenarioTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_CreateTask
       parameters:
         - name: businessScenario-id
@@ -3961,7 +3961,7 @@ paths:
       description: Read the properties and relationships of a businessScenarioTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_GetTask
       parameters:
         - name: businessScenario-id
@@ -4055,7 +4055,7 @@ paths:
       description: Update the properties of a businessScenarioTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_UpdateTask
       parameters:
         - name: businessScenario-id
@@ -4098,7 +4098,7 @@ paths:
       description: Delete a businessScenarioTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_DeleteTask
       parameters:
         - name: businessScenario-id
@@ -4134,10 +4134,10 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -4198,7 +4198,7 @@ paths:
       summary: Update the navigation property assignedToTaskBoardFormat in solutions
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -4280,10 +4280,10 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_GetBucketTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -4343,7 +4343,7 @@ paths:
       summary: Update the navigation property bucketTaskBoardFormat in solutions
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -4425,10 +4425,10 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_GetDetail
       parameters:
         - name: businessScenario-id
@@ -4493,7 +4493,7 @@ paths:
       summary: Update the navigation property details in solutions
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateDetail
       parameters:
         - name: businessScenario-id
@@ -4575,10 +4575,10 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_GetProgressTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -4638,7 +4638,7 @@ paths:
       summary: Update the navigation property progressTaskBoardFormat in solutions
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: businessScenario-id
@@ -5537,7 +5537,7 @@ paths:
       description: Read the properties and relationships of a virtualEventSession object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event_GetSession
       parameters:
         - name: virtualEvent-id
@@ -5789,7 +5789,7 @@ paths:
       description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_ListAttendanceReport
       parameters:
         - name: virtualEvent-id
@@ -5917,7 +5917,7 @@ paths:
       description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetAttendanceReport
       parameters:
         - name: virtualEvent-id
@@ -6080,7 +6080,7 @@ paths:
       description: Get a list of attendanceRecord objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEvent-id
@@ -6626,7 +6626,7 @@ paths:
       description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetMeetingAttendanceReport
       parameters:
         - name: virtualEvent-id
@@ -6765,7 +6765,7 @@ paths:
       description: Get a list of attendanceRecord objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEvent-id
@@ -7159,7 +7159,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
       operationId: solution.virtualEvent.event.session_ListRecording
       parameters:
         - name: virtualEvent-id
@@ -7278,7 +7279,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetRecording
       parameters:
         - name: virtualEvent-id
@@ -7435,6 +7440,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get content for the navigation property recordings from solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.event.session_GetRecordingsContent
       parameters:
         - name: virtualEvent-id
@@ -7476,6 +7482,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update content for the navigation property recordings in solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.event.session_SetRecordingsContent
       parameters:
         - name: virtualEvent-id
@@ -7558,7 +7565,7 @@ paths:
       description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetRegistration
       parameters:
         - name: virtualEvent-id
@@ -7630,7 +7637,7 @@ paths:
       description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_UpdateRegistration
       parameters:
         - name: virtualEvent-id
@@ -7669,11 +7676,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteRegistration
       parameters:
         - name: virtualEvent-id
@@ -7712,7 +7719,7 @@ paths:
       description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.registration_ListCustomQuestion
       parameters:
         - name: virtualEvent-id
@@ -7801,7 +7808,7 @@ paths:
       description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.registration_CreateCustomQuestion
       parameters:
         - name: virtualEvent-id
@@ -7845,7 +7852,7 @@ paths:
       description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.registration_GetCustomQuestion
       parameters:
         - name: virtualEvent-id
@@ -7917,7 +7924,7 @@ paths:
       description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.registration_UpdateCustomQuestion
       parameters:
         - name: virtualEvent-id
@@ -7968,7 +7975,7 @@ paths:
       description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session.registration_DeleteCustomQuestion
       parameters:
         - name: virtualEvent-id
@@ -8348,7 +8355,7 @@ paths:
       description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_ListTranscript
       parameters:
         - name: virtualEvent-id
@@ -8474,7 +8481,7 @@ paths:
       description: Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetTranscript
       parameters:
         - name: virtualEvent-id
@@ -8632,10 +8639,10 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get content for the navigation property transcripts from solutions
-      description: A field that represents the content of the transcript. Read-only.
+      description: The content of the transcript. Read-only.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetTranscriptsContent
       parameters:
         - name: virtualEvent-id
@@ -8677,7 +8684,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update content for the navigation property transcripts in solutions
-      description: A field that represents the content of the transcript. Read-only.
+      description: The content of the transcript. Read-only.
       operationId: solution.virtualEvent.event.session_SetTranscriptsContent
       parameters:
         - name: virtualEvent-id
@@ -8727,10 +8734,10 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get metadataContent for the navigation property transcripts from solutions
-      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      description: The time-aligned metadata of the utterances in the transcript. Read-only.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetTranscriptsMetadataContent
       parameters:
         - name: virtualEvent-id
@@ -8772,7 +8779,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update metadataContent for the navigation property transcripts in solutions
-      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      description: The time-aligned metadata of the utterances in the transcript. Read-only.
       operationId: solution.virtualEvent.event.session_SetTranscriptsMetadataContent
       parameters:
         - name: virtualEvent-id
@@ -8851,7 +8858,7 @@ paths:
       description: Read the properties and relationships of a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -8918,11 +8925,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create virtualAppointment (deprecated)
-      description: Create a new virtualAppointment object.
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -8971,7 +8978,7 @@ paths:
       description: Delete a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -9163,7 +9170,7 @@ paths:
       description: Read the properties and relationships of a virtualEventWebinar object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0
       operationId: solution.virtualEvent_GetWebinar
       parameters:
         - name: virtualEventWebinar-id
@@ -9818,7 +9825,7 @@ paths:
       description: Read the properties and relationships of a virtualEventSession object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -10070,7 +10077,7 @@ paths:
       description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_ListAttendanceReport
       parameters:
         - name: virtualEventWebinar-id
@@ -10198,7 +10205,7 @@ paths:
       description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetAttendanceReport
       parameters:
         - name: virtualEventWebinar-id
@@ -10361,7 +10368,7 @@ paths:
       description: Get a list of attendanceRecord objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.attendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventWebinar-id
@@ -10907,7 +10914,7 @@ paths:
       description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetMeetingAttendanceReport
       parameters:
         - name: virtualEventWebinar-id
@@ -11046,7 +11053,7 @@ paths:
       description: Get a list of attendanceRecord objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - name: virtualEventWebinar-id
@@ -11440,7 +11447,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
       operationId: solution.virtualEvent.webinar.session_ListRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -11559,7 +11567,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -11716,6 +11728,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get content for the navigation property recordings from solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.webinar.session_GetRecordingsContent
       parameters:
         - name: virtualEventWebinar-id
@@ -11757,6 +11770,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update content for the navigation property recordings in solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.webinar.session_SetRecordingsContent
       parameters:
         - name: virtualEventWebinar-id
@@ -11839,7 +11853,7 @@ paths:
       description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11911,7 +11925,7 @@ paths:
       description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_UpdateRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11950,11 +11964,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11993,7 +12007,7 @@ paths:
       description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.registration_ListCustomQuestion
       parameters:
         - name: virtualEventWebinar-id
@@ -12082,7 +12096,7 @@ paths:
       description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.registration_CreateCustomQuestion
       parameters:
         - name: virtualEventWebinar-id
@@ -12126,7 +12140,7 @@ paths:
       description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.registration_GetCustomQuestion
       parameters:
         - name: virtualEventWebinar-id
@@ -12198,7 +12212,7 @@ paths:
       description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.registration_UpdateCustomQuestion
       parameters:
         - name: virtualEventWebinar-id
@@ -12249,7 +12263,7 @@ paths:
       description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session.registration_DeleteCustomQuestion
       parameters:
         - name: virtualEventWebinar-id
@@ -12629,7 +12643,7 @@ paths:
       description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_ListTranscript
       parameters:
         - name: virtualEventWebinar-id
@@ -12755,7 +12769,7 @@ paths:
       description: Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetTranscript
       parameters:
         - name: virtualEventWebinar-id
@@ -12913,10 +12927,10 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get content for the navigation property transcripts from solutions
-      description: A field that represents the content of the transcript. Read-only.
+      description: The content of the transcript. Read-only.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetTranscriptsContent
       parameters:
         - name: virtualEventWebinar-id
@@ -12958,7 +12972,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update content for the navigation property transcripts in solutions
-      description: A field that represents the content of the transcript. Read-only.
+      description: The content of the transcript. Read-only.
       operationId: solution.virtualEvent.webinar.session_SetTranscriptsContent
       parameters:
         - name: virtualEventWebinar-id
@@ -13008,10 +13022,10 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get metadataContent for the navigation property transcripts from solutions
-      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      description: The time-aligned metadata of the utterances in the transcript. Read-only.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetTranscriptsMetadataContent
       parameters:
         - name: virtualEventWebinar-id
@@ -13053,7 +13067,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update metadataContent for the navigation property transcripts in solutions
-      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      description: The time-aligned metadata of the utterances in the transcript. Read-only.
       operationId: solution.virtualEvent.webinar.session_SetTranscriptsMetadataContent
       parameters:
         - name: virtualEventWebinar-id
@@ -13132,7 +13146,7 @@ paths:
       description: Read the properties and relationships of a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -13199,11 +13213,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create virtualAppointment (deprecated)
-      description: Create a new virtualAppointment object.
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -13252,7 +13266,7 @@ paths:
       description: Delete a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -14148,11 +14162,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -14251,7 +14267,7 @@ components:
           properties:
             content:
               type: string
-              description: A field that represents the content of the transcript. Read-only.
+              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
@@ -14262,7 +14278,7 @@ components:
               nullable: true
             metadataContent:
               type: string
-              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
           additionalProperties:
@@ -15089,6 +15105,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -15129,11 +15146,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

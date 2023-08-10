@@ -30,7 +30,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         {
             IGraphOption graphOptions = null;
             // Try to create directory if it doesn't exist.
-            Directory.CreateDirectory(Core.Constants.GraphDirectoryPath);
+            try 
+            {
+                Directory.CreateDirectory(Core.Constants.GraphDirectoryPath);
+            }
+            catch (Exception)
+            {
+            }
             if (File.Exists(Constants.GraphOptionsFilePath))
             {
                 // Deserialize the JSON into the GraphOption instance

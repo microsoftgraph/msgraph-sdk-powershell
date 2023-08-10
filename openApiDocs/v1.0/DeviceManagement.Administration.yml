@@ -10,8 +10,11 @@ paths:
     get:
       tags:
         - deviceManagement.applePushNotificationCertificate
-      summary: Get applePushNotificationCertificate from deviceManagement
-      description: Apple push notification certificate.
+      summary: Get applePushNotificationCertificate
+      description: Read properties and relationships of the applePushNotificationCertificate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-get?view=graph-rest-1.0
       operationId: deviceManagement_GetApplePushNotificationCertificate
       parameters:
         - name: $select
@@ -59,7 +62,11 @@ paths:
     patch:
       tags:
         - deviceManagement.applePushNotificationCertificate
-      summary: Update the navigation property applePushNotificationCertificate in deviceManagement
+      summary: Update applePushNotificationCertificate
+      description: Update the properties of a applePushNotificationCertificate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateApplePushNotificationCertificate
       requestBody:
         description: New navigation property values
@@ -100,8 +107,11 @@ paths:
     get:
       tags:
         - deviceManagement.auditEvent
-      summary: Get auditEvents from deviceManagement
-      description: The Audit Events
+      summary: List auditEvents
+      description: List properties and relationships of the auditEvent objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-list?view=graph-rest-1.0
       operationId: deviceManagement_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -191,7 +201,11 @@ paths:
     post:
       tags:
         - deviceManagement.auditEvent
-      summary: Create new navigation property to auditEvents for deviceManagement
+      summary: Create auditEvent
+      description: Create a new auditEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateAuditEvent
       requestBody:
         description: New navigation property
@@ -214,8 +228,11 @@ paths:
     get:
       tags:
         - deviceManagement.auditEvent
-      summary: Get auditEvents from deviceManagement
-      description: The Audit Events
+      summary: Get auditEvent
+      description: Read properties and relationships of the auditEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-get?view=graph-rest-1.0
       operationId: deviceManagement_GetAuditEvent
       parameters:
         - name: auditEvent-id
@@ -274,7 +291,11 @@ paths:
     patch:
       tags:
         - deviceManagement.auditEvent
-      summary: Update the navigation property auditEvents in deviceManagement
+      summary: Update auditEvent
+      description: Update the properties of a auditEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateAuditEvent
       parameters:
         - name: auditEvent-id
@@ -305,7 +326,11 @@ paths:
     delete:
       tags:
         - deviceManagement.auditEvent
-      summary: Delete navigation property auditEvents for deviceManagement
+      summary: Delete auditEvent
+      description: Deletes a auditEvent.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-auditing-auditevent-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteAuditEvent
       parameters:
         - name: auditEvent-id
@@ -346,8 +371,11 @@ paths:
     get:
       tags:
         - deviceManagement.complianceManagementPartner
-      summary: Get complianceManagementPartners from deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
+      summary: List complianceManagementPartners
+      description: List properties and relationships of the complianceManagementPartner objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-list?view=graph-rest-1.0
       operationId: deviceManagement_ListComplianceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
@@ -431,7 +459,11 @@ paths:
     post:
       tags:
         - deviceManagement.complianceManagementPartner
-      summary: Create new navigation property to complianceManagementPartners for deviceManagement
+      summary: Create complianceManagementPartner
+      description: Create a new complianceManagementPartner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateComplianceManagementPartner
       requestBody:
         description: New navigation property
@@ -454,8 +486,11 @@ paths:
     get:
       tags:
         - deviceManagement.complianceManagementPartner
-      summary: Get complianceManagementPartners from deviceManagement
-      description: The list of Compliance Management Partners configured by the tenant.
+      summary: Get complianceManagementPartner
+      description: Read properties and relationships of the complianceManagementPartner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-get?view=graph-rest-1.0
       operationId: deviceManagement_GetComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
@@ -512,7 +547,11 @@ paths:
     patch:
       tags:
         - deviceManagement.complianceManagementPartner
-      summary: Update the navigation property complianceManagementPartners in deviceManagement
+      summary: Update complianceManagementPartner
+      description: Update the properties of a complianceManagementPartner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
@@ -543,7 +582,11 @@ paths:
     delete:
       tags:
         - deviceManagement.complianceManagementPartner
-      summary: Delete navigation property complianceManagementPartners for deviceManagement
+      summary: Delete complianceManagementPartner
+      description: Deletes a complianceManagementPartner.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-compliancemanagementpartner-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
@@ -584,8 +627,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementPartner
-      summary: Get deviceManagementPartners from deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
+      summary: List deviceManagementPartners
+      description: List properties and relationships of the deviceManagementPartner objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
@@ -669,7 +715,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceManagementPartner
-      summary: Create new navigation property to deviceManagementPartners for deviceManagement
+      summary: Create deviceManagementPartner
+      description: Create a new deviceManagementPartner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceManagementPartner
       requestBody:
         description: New navigation property
@@ -692,8 +742,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementPartner
-      summary: Get deviceManagementPartners from deviceManagement
-      description: The list of Device Management Partners configured by the tenant.
+      summary: Get deviceManagementPartner
+      description: Read properties and relationships of the deviceManagementPartner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
@@ -750,7 +803,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementPartner
-      summary: Update the navigation property deviceManagementPartners in deviceManagement
+      summary: Update deviceManagementPartner
+      description: Update the properties of a deviceManagementPartner object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
@@ -781,7 +838,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceManagementPartner
-      summary: Delete navigation property deviceManagementPartners for deviceManagement
+      summary: Delete deviceManagementPartner
+      description: Deletes a deviceManagementPartner.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementpartner-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
@@ -822,8 +883,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
-      summary: Get exchangeConnectors from deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
+      summary: List deviceManagementExchangeConnectors
+      description: List properties and relationships of the deviceManagementExchangeConnector objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-list?view=graph-rest-1.0
       operationId: deviceManagement_ListExchangeConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -907,7 +971,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
-      summary: Create new navigation property to exchangeConnectors for deviceManagement
+      summary: Create deviceManagementExchangeConnector
+      description: Create a new deviceManagementExchangeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateExchangeConnector
       requestBody:
         description: New navigation property
@@ -930,8 +998,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
-      summary: Get exchangeConnectors from deviceManagement
-      description: The list of Exchange Connectors configured by the tenant.
+      summary: Get deviceManagementExchangeConnector
+      description: Read properties and relationships of the deviceManagementExchangeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-get?view=graph-rest-1.0
       operationId: deviceManagement_GetExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -988,7 +1059,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
-      summary: Update the navigation property exchangeConnectors in deviceManagement
+      summary: Update deviceManagementExchangeConnector
+      description: Update the properties of a deviceManagementExchangeConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -1019,7 +1094,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
-      summary: Delete navigation property exchangeConnectors for deviceManagement
+      summary: Delete deviceManagementExchangeConnector
+      description: Deletes a deviceManagementExchangeConnector.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
@@ -1060,8 +1139,11 @@ paths:
     get:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
-      summary: Get iosUpdateStatuses from deviceManagement
-      description: The IOS software update installation statuses for this account.
+      summary: List iosUpdateDeviceStatuses
+      description: List properties and relationships of the iosUpdateDeviceStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-list?view=graph-rest-1.0
       operationId: deviceManagement_ListIosUpdateStatus
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1151,7 +1233,11 @@ paths:
     post:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
-      summary: Create new navigation property to iosUpdateStatuses for deviceManagement
+      summary: Create iosUpdateDeviceStatus
+      description: Create a new iosUpdateDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateIosUpdateStatus
       requestBody:
         description: New navigation property
@@ -1174,8 +1260,11 @@ paths:
     get:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
-      summary: Get iosUpdateStatuses from deviceManagement
-      description: The IOS software update installation statuses for this account.
+      summary: Get iosUpdateDeviceStatus
+      description: Read properties and relationships of the iosUpdateDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-get?view=graph-rest-1.0
       operationId: deviceManagement_GetIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -1234,7 +1323,11 @@ paths:
     patch:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
-      summary: Update the navigation property iosUpdateStatuses in deviceManagement
+      summary: Update iosUpdateDeviceStatus
+      description: Update the properties of a iosUpdateDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -1265,7 +1358,11 @@ paths:
     delete:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
-      summary: Delete navigation property iosUpdateStatuses for deviceManagement
+      summary: Delete iosUpdateDeviceStatus
+      description: Deletes a iosUpdateDeviceStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosupdatedevicestatus-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
@@ -1306,8 +1403,11 @@ paths:
     get:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
-      summary: Get mobileThreatDefenseConnectors from deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
+      summary: List mobileThreatDefenseConnectors
+      description: List properties and relationships of the mobileThreatDefenseConnector objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-list?view=graph-rest-1.0
       operationId: deviceManagement_ListMobileThreatDefenseConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1409,7 +1509,11 @@ paths:
     post:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
-      summary: Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
+      summary: Create mobileThreatDefenseConnector
+      description: Create a new mobileThreatDefenseConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateMobileThreatDefenseConnector
       requestBody:
         description: New navigation property
@@ -1432,8 +1536,11 @@ paths:
     get:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
-      summary: Get mobileThreatDefenseConnectors from deviceManagement
-      description: The list of Mobile threat Defense connectors configured by the tenant.
+      summary: Get mobileThreatDefenseConnector
+      description: Read properties and relationships of the mobileThreatDefenseConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-get?view=graph-rest-1.0
       operationId: deviceManagement_GetMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1496,7 +1603,11 @@ paths:
     patch:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
-      summary: Update the navigation property mobileThreatDefenseConnectors in deviceManagement
+      summary: Update mobileThreatDefenseConnector
+      description: Update the properties of a mobileThreatDefenseConnector object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1527,7 +1638,11 @@ paths:
     delete:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
-      summary: Delete navigation property mobileThreatDefenseConnectors for deviceManagement
+      summary: Delete mobileThreatDefenseConnector
+      description: Deletes a mobileThreatDefenseConnector.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-mobilethreatdefenseconnector-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
@@ -1572,7 +1687,7 @@ paths:
       description: List properties and relationships of the remoteAssistancePartner objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRemoteAssistancePartner
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1645,7 +1760,7 @@ paths:
       description: Create a new remoteAssistancePartner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateRemoteAssistancePartner
       requestBody:
         description: New navigation property
@@ -1672,7 +1787,7 @@ paths:
       description: Read properties and relationships of the remoteAssistancePartner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
@@ -1728,7 +1843,7 @@ paths:
       description: Update the properties of a remoteAssistancePartner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
@@ -1763,7 +1878,7 @@ paths:
       description: Deletes a remoteAssistancePartner.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
@@ -1804,8 +1919,11 @@ paths:
     get:
       tags:
         - deviceManagement.resourceOperation
-      summary: Get resourceOperations from deviceManagement
-      description: The Resource Operations.
+      summary: List resourceOperations
+      description: List properties and relationships of the resourceOperation objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-list?view=graph-rest-1.0
       operationId: deviceManagement_ListResourceOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1871,7 +1989,11 @@ paths:
     post:
       tags:
         - deviceManagement.resourceOperation
-      summary: Create new navigation property to resourceOperations for deviceManagement
+      summary: Create resourceOperation
+      description: Create a new resourceOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateResourceOperation
       requestBody:
         description: New navigation property
@@ -1894,8 +2016,11 @@ paths:
     get:
       tags:
         - deviceManagement.resourceOperation
-      summary: Get resourceOperations from deviceManagement
-      description: The Resource Operations.
+      summary: Get resourceOperation
+      description: Read properties and relationships of the resourceOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-get?view=graph-rest-1.0
       operationId: deviceManagement_GetResourceOperation
       parameters:
         - name: resourceOperation-id
@@ -1946,7 +2071,11 @@ paths:
     patch:
       tags:
         - deviceManagement.resourceOperation
-      summary: Update the navigation property resourceOperations in deviceManagement
+      summary: Update resourceOperation
+      description: Update the properties of a resourceOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateResourceOperation
       parameters:
         - name: resourceOperation-id
@@ -1977,7 +2106,11 @@ paths:
     delete:
       tags:
         - deviceManagement.resourceOperation
-      summary: Delete navigation property resourceOperations for deviceManagement
+      summary: Delete resourceOperation
+      description: Deletes a resourceOperation.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-resourceoperation-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteResourceOperation
       parameters:
         - name: resourceOperation-id
@@ -2018,8 +2151,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
-      summary: Get roleAssignments from deviceManagement
-      description: The Role Assignments.
+      summary: List deviceAndAppManagementRoleAssignments
+      description: List properties and relationships of the deviceAndAppManagementRoleAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2090,7 +2226,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
-      summary: Create new navigation property to roleAssignments for deviceManagement
+      summary: Create deviceAndAppManagementRoleAssignment
+      description: Create a new deviceAndAppManagementRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -2113,8 +2253,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
-      summary: Get roleAssignments from deviceManagement
-      description: The Role Assignments.
+      summary: Get deviceAndAppManagementRoleAssignment
+      description: Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -2168,7 +2311,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
-      summary: Update the navigation property roleAssignments in deviceManagement
+      summary: Update deviceAndAppManagementRoleAssignment
+      description: Update the properties of a deviceAndAppManagementRoleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -2199,7 +2346,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
-      summary: Delete navigation property roleAssignments for deviceManagement
+      summary: Delete deviceAndAppManagementRoleAssignment
+      description: Deletes a deviceAndAppManagementRoleAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroleassignment-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
@@ -2296,8 +2447,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleDefinitions from deviceManagement
-      description: The Role Definitions.
+      summary: List deviceAndAppManagementRoleDefinitions
+      description: List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-list?view=graph-rest-1.0
       operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2368,7 +2522,11 @@ paths:
     post:
       tags:
         - deviceManagement.roleDefinition
-      summary: Create new navigation property to roleDefinitions for deviceManagement
+      summary: Create deviceAndAppManagementRoleDefinition
+      description: Create a new deviceAndAppManagementRoleDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -2391,8 +2549,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleDefinitions from deviceManagement
-      description: The Role Definitions.
+      summary: Get roleDefinition
+      description: Read properties and relationships of the roleDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0
       operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2446,7 +2607,11 @@ paths:
     patch:
       tags:
         - deviceManagement.roleDefinition
-      summary: Update the navigation property roleDefinitions in deviceManagement
+      summary: Update deviceAndAppManagementRoleDefinition
+      description: Update the properties of a deviceAndAppManagementRoleDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2477,7 +2642,11 @@ paths:
     delete:
       tags:
         - deviceManagement.roleDefinition
-      summary: Delete navigation property roleDefinitions for deviceManagement
+      summary: Delete roleDefinition
+      description: Deletes a roleDefinition.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -2504,8 +2673,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleAssignments from deviceManagement
-      description: List of Role assignments for this role definition.
+      summary: List roleAssignments
+      description: List properties and relationships of the roleAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-list?view=graph-rest-1.0
       operationId: deviceManagement.roleDefinition_ListRoleAssignment
       parameters:
         - name: roleDefinition-id
@@ -2581,7 +2753,11 @@ paths:
     post:
       tags:
         - deviceManagement.roleDefinition
-      summary: Create new navigation property to roleAssignments for deviceManagement
+      summary: Create roleAssignment
+      description: Create a new roleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-create?view=graph-rest-1.0
       operationId: deviceManagement.roleDefinition_CreateRoleAssignment
       parameters:
         - name: roleDefinition-id
@@ -2613,8 +2789,11 @@ paths:
     get:
       tags:
         - deviceManagement.roleDefinition
-      summary: Get roleAssignments from deviceManagement
-      description: List of Role assignments for this role definition.
+      summary: Get roleAssignment
+      description: Read properties and relationships of the roleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-get?view=graph-rest-1.0
       operationId: deviceManagement.roleDefinition_GetRoleAssignment
       parameters:
         - name: roleDefinition-id
@@ -2675,7 +2854,11 @@ paths:
     patch:
       tags:
         - deviceManagement.roleDefinition
-      summary: Update the navigation property roleAssignments in deviceManagement
+      summary: Update roleAssignment
+      description: Update the properties of a roleAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-update?view=graph-rest-1.0
       operationId: deviceManagement.roleDefinition_UpdateRoleAssignment
       parameters:
         - name: roleDefinition-id
@@ -2714,7 +2897,11 @@ paths:
     delete:
       tags:
         - deviceManagement.roleDefinition
-      summary: Delete navigation property roleAssignments for deviceManagement
+      summary: Delete roleAssignment
+      description: Deletes a roleAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-delete?view=graph-rest-1.0
       operationId: deviceManagement.roleDefinition_DeleteRoleAssignment
       parameters:
         - name: roleDefinition-id
@@ -2853,7 +3040,7 @@ paths:
       description: List properties and relationships of the telecomExpenseManagementPartner objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-list?view=graph-rest-1.0
       operationId: deviceManagement_ListTelecomExpenseManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2929,7 +3116,7 @@ paths:
       description: Create a new telecomExpenseManagementPartner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateTelecomExpenseManagementPartner
       requestBody:
         description: New navigation property
@@ -2956,7 +3143,7 @@ paths:
       description: Read properties and relationships of the telecomExpenseManagementPartner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-get?view=graph-rest-1.0
       operationId: deviceManagement_GetTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -3013,7 +3200,7 @@ paths:
       description: Update the properties of a telecomExpenseManagementPartner object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -3048,7 +3235,7 @@ paths:
       description: Deletes a telecomExpenseManagementPartner.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-tem-telecomexpensemanagementpartner-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
@@ -3089,8 +3276,11 @@ paths:
     get:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Get termsAndConditions from deviceManagement
-      description: The terms and conditions associated with device management of the company.
+      summary: List termsAndConditionses
+      description: List properties and relationships of the termsAndConditions objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-list?view=graph-rest-1.0
       operationId: deviceManagement_ListTermsAndCondition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3175,7 +3365,11 @@ paths:
     post:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Create new navigation property to termsAndConditions for deviceManagement
+      summary: Create termsAndConditions
+      description: Create a new termsAndConditions object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateTermsAndCondition
       requestBody:
         description: New navigation property
@@ -3198,8 +3392,11 @@ paths:
     get:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Get termsAndConditions from deviceManagement
-      description: The terms and conditions associated with device management of the company.
+      summary: Get termsAndConditions
+      description: Read properties and relationships of the termsAndConditions object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-get?view=graph-rest-1.0
       operationId: deviceManagement_GetTermsAndCondition
       parameters:
         - name: termsAndConditions-id
@@ -3259,7 +3456,11 @@ paths:
     patch:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Update the navigation property termsAndConditions in deviceManagement
+      summary: Update termsAndConditions
+      description: Update the properties of a termsAndConditions object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateTermsAndCondition
       parameters:
         - name: termsAndConditions-id
@@ -3290,7 +3491,11 @@ paths:
     delete:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Delete navigation property termsAndConditions for deviceManagement
+      summary: Delete termsAndConditions
+      description: Deletes a termsAndConditions.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditions-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteTermsAndCondition
       parameters:
         - name: termsAndConditions-id
@@ -3317,8 +3522,11 @@ paths:
     get:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Get acceptanceStatuses from deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
+      summary: List termsAndConditionsAcceptanceStatuses
+      description: List properties and relationships of the termsAndConditionsAcceptanceStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-list?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_ListAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
@@ -3397,7 +3605,11 @@ paths:
     post:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Create new navigation property to acceptanceStatuses for deviceManagement
+      summary: Create termsAndConditionsAcceptanceStatus
+      description: Create a new termsAndConditionsAcceptanceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-create?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_CreateAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
@@ -3429,8 +3641,11 @@ paths:
     get:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Get acceptanceStatuses from deviceManagement
-      description: The list of acceptance statuses for this T&C policy.
+      summary: Get termsAndConditionsAcceptanceStatus
+      description: Read properties and relationships of the termsAndConditionsAcceptanceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-get?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_GetAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
@@ -3492,7 +3707,11 @@ paths:
     patch:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Update the navigation property acceptanceStatuses in deviceManagement
+      summary: Update termsAndConditionsAcceptanceStatus
+      description: Update the properties of a termsAndConditionsAcceptanceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-update?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_UpdateAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
@@ -3531,7 +3750,11 @@ paths:
     delete:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Delete navigation property acceptanceStatuses for deviceManagement
+      summary: Delete termsAndConditionsAcceptanceStatus
+      description: Deletes a termsAndConditionsAcceptanceStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsacceptancestatus-delete?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_DeleteAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
@@ -3658,8 +3881,11 @@ paths:
     get:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Get assignments from deviceManagement
-      description: The list of assignments for this T&C policy.
+      summary: List termsAndConditionsAssignments
+      description: List properties and relationships of the termsAndConditionsAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-list?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_ListAssignment
       parameters:
         - name: termsAndConditions-id
@@ -3727,7 +3953,11 @@ paths:
     post:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Create new navigation property to assignments for deviceManagement
+      summary: Create termsAndConditionsAssignment
+      description: Create a new termsAndConditionsAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-create?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_CreateAssignment
       parameters:
         - name: termsAndConditions-id
@@ -3759,8 +3989,11 @@ paths:
     get:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Get assignments from deviceManagement
-      description: The list of assignments for this T&C policy.
+      summary: Get termsAndConditionsAssignment
+      description: Read properties and relationships of the termsAndConditionsAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-get?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_GetAssignment
       parameters:
         - name: termsAndConditions-id
@@ -3817,7 +4050,11 @@ paths:
     patch:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Update the navigation property assignments in deviceManagement
+      summary: Update termsAndConditionsAssignment
+      description: Update the properties of a termsAndConditionsAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-update?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_UpdateAssignment
       parameters:
         - name: termsAndConditions-id
@@ -3856,7 +4093,11 @@ paths:
     delete:
       tags:
         - deviceManagement.termsAndConditions
-      summary: Delete navigation property assignments for deviceManagement
+      summary: Delete termsAndConditionsAssignment
+      description: Deletes a termsAndConditionsAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-delete?view=graph-rest-1.0
       operationId: deviceManagement.termsAndCondition_DeleteAssignment
       parameters:
         - name: termsAndConditions-id

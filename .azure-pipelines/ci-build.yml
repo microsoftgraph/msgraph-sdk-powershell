@@ -27,7 +27,11 @@ trigger:
     include:
       - main
       - dev
-pr: none
+pr:
+  branches:
+    include:
+      - main
+      - dev
 
 jobs:
   - job: MsGraphPsSdkCiBuild

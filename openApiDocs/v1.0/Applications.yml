@@ -14,7 +14,7 @@ paths:
       description: Get the list of applications in this organization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0
       operationId: application_ListApplication
       parameters:
         - name: ConsistencyLevel
@@ -211,7 +211,7 @@ paths:
       description: Create a new application object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
       operationId: application_CreateApplication
       requestBody:
         description: New entity
@@ -238,7 +238,7 @@ paths:
       description: Get the properties and relationships of an application object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
       operationId: application_GetApplication
       parameters:
         - name: application-id
@@ -344,7 +344,7 @@ paths:
       description: Update the properties of an application object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
       operationId: application_UpdateApplication
       parameters:
         - name: application-id
@@ -379,7 +379,7 @@ paths:
       description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
       operationId: application_DeleteApplication
       parameters:
         - name: application-id
@@ -494,7 +494,7 @@ paths:
       description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
       operationId: application_DeleteAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -614,7 +614,7 @@ paths:
       description: Assign an appManagementPolicy policy object to an application or service principal object. The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting. Only one policy object can be assigned to an application or service principal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-1.0
       operationId: application_CreateAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -692,7 +692,7 @@ paths:
       description: 'Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
       operationId: application_ListExtensionProperty
       parameters:
         - name: application-id
@@ -779,7 +779,7 @@ paths:
       description: 'Create a new directory extension definition, represented by an extensionProperty object.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
       operationId: application_CreateExtensionProperty
       parameters:
         - name: application-id
@@ -815,7 +815,7 @@ paths:
       description: Read a directory extension definition represented by an extensionProperty object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
       operationId: application_GetExtensionProperty
       parameters:
         - name: application-id
@@ -920,7 +920,7 @@ paths:
       description: Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
       operationId: application_DeleteExtensionProperty
       parameters:
         - name: application-id
@@ -981,7 +981,7 @@ paths:
       description: Get a list of the federatedIdentityCredential objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
       operationId: application_ListFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1065,7 +1065,7 @@ paths:
       description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
       operationId: application_CreateFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1101,7 +1101,7 @@ paths:
       description: Read the properties and relationships of a federatedIdentityCredential object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
       operationId: application_GetFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1166,7 +1166,7 @@ paths:
       description: Update the properties of a federatedIdentityCredential object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
       operationId: application_UpdateFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1209,7 +1209,7 @@ paths:
       description: Delete a federatedIdentityCredential object from an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
       operationId: application_DeleteFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1495,7 +1495,7 @@ paths:
       description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
       operationId: application_addKey
       parameters:
         - name: application-id
@@ -1540,7 +1540,7 @@ paths:
       description: Adds a strong password or secret to an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
       operationId: application_addPassword
       parameters:
         - name: application-id
@@ -1581,7 +1581,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: application_checkMemberGroup
       parameters:
         - name: application-id
@@ -1689,7 +1689,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: application_getMemberGroup
       parameters:
         - name: application-id
@@ -1742,10 +1742,10 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
+      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: application_getMemberObject
       parameters:
         - name: application-id
@@ -1801,7 +1801,7 @@ paths:
       description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
       operationId: application_removeKey
       parameters:
         - name: application-id
@@ -1842,7 +1842,7 @@ paths:
       description: Remove a password from an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
       operationId: application_removePassword
       parameters:
         - name: application-id
@@ -1881,7 +1881,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: application_restore
       parameters:
         - name: application-id
@@ -1910,7 +1910,7 @@ paths:
       description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
       operationId: application_setVerifiedPublisher
       parameters:
         - name: application-id
@@ -1947,7 +1947,7 @@ paths:
       description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
       operationId: application_unsetVerifiedPublisher
       parameters:
         - name: application-id
@@ -1972,7 +1972,7 @@ paths:
       description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: application_ListOwner
       parameters:
         - name: application-id
@@ -2055,7 +2055,7 @@ paths:
       description: 'Remove an owner from an application. As a recommended best practice, apps should have at least two owners.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
       operationId: application_DeleteOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -2401,7 +2401,7 @@ paths:
       description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: application_ListOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -2458,7 +2458,7 @@ paths:
       description: Add an owner to an application by posting to the owners collection.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0
       operationId: application_CreateOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -3037,7 +3037,7 @@ paths:
       description: List existing jobs for a given application instance (service principal).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
       operationId: application.synchronization_ListJob
       parameters:
         - name: application-id
@@ -3120,7 +3120,7 @@ paths:
       description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
       operationId: application.synchronization_CreateJob
       parameters:
         - name: application-id
@@ -3156,7 +3156,7 @@ paths:
       description: Retrieve the existing synchronization job and its properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
       operationId: application.synchronization_GetJob
       parameters:
         - name: application-id
@@ -3261,7 +3261,7 @@ paths:
       description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
       operationId: application.synchronization_DeleteJob
       parameters:
         - name: application-id
@@ -3300,7 +3300,7 @@ paths:
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
       operationId: application.synchronization.job_pause
       parameters:
         - name: application-id
@@ -3333,7 +3333,7 @@ paths:
       description: 'Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
       operationId: application.synchronization.job_provisionOnDemand
       parameters:
         - name: application-id
@@ -3384,7 +3384,7 @@ paths:
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
       operationId: application.synchronization.job_restart
       parameters:
         - name: application-id
@@ -3429,7 +3429,7 @@ paths:
       description: 'Start an existing synchronization job. If the job is in a paused state, it will continue processing changes from the point where it was paused. If the job is in quarantine, the quarantine status will be cleared. Do not create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
       operationId: application.synchronization.job_start
       parameters:
         - name: application-id
@@ -3462,7 +3462,7 @@ paths:
       description: Validate that the credentials are valid in the tenant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
       operationId: application.synchronization.job_validateCredential
       parameters:
         - name: application-id
@@ -3519,7 +3519,7 @@ paths:
       description: Retrieve the schema for a given synchronization job or template.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
       operationId: application.synchronization.job_GetSchema
       parameters:
         - name: application-id
@@ -3583,7 +3583,7 @@ paths:
       description: 'Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
       operationId: application.synchronization.job_UpdateSchema
       parameters:
         - name: application-id
@@ -3954,7 +3954,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: application.synchronization.job.schema.directory_discover
       parameters:
         - name: application-id
@@ -4195,7 +4195,7 @@ paths:
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
       operationId: application.synchronization.job.schema_parseExpression
       parameters:
         - name: application-id
@@ -4316,7 +4316,7 @@ paths:
       description: Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
       operationId: application.synchronization_acquireAccessToken
       parameters:
         - name: application-id
@@ -4412,7 +4412,7 @@ paths:
       description: List the synchronization templates associated with a given application or service principal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
       operationId: application.synchronization_ListTemplate
       parameters:
         - name: application-id
@@ -4598,7 +4598,7 @@ paths:
       description: Update (override) the synchronization template associated with a given application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
       operationId: application.synchronization_UpdateTemplate
       parameters:
         - name: application-id
@@ -5104,7 +5104,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: application.synchronization.template.schema.directory_discover
       parameters:
         - name: application-id
@@ -5345,7 +5345,7 @@ paths:
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
       operationId: application.synchronization.template.schema_parseExpression
       parameters:
         - name: application-id
@@ -5421,7 +5421,7 @@ paths:
       description: List the tokenIssuancePolicy objects that are assigned to an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_ListTokenIssuancePolicy
       parameters:
         - name: application-id
@@ -5508,7 +5508,7 @@ paths:
       description: Remove a tokenIssuancePolicy from an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5576,7 +5576,7 @@ paths:
       description: List the tokenIssuancePolicy objects that are assigned to an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_ListTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5631,7 +5631,7 @@ paths:
       description: Assign a tokenIssuancePolicy to an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_CreateTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5658,7 +5658,7 @@ paths:
       description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_ListTokenLifetimePolicy
       parameters:
         - name: application-id
@@ -5745,7 +5745,7 @@ paths:
       description: Remove a tokenLifetimePolicy from an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5813,7 +5813,7 @@ paths:
       description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_ListTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5868,7 +5868,7 @@ paths:
       description: Assign a tokenLifetimePolicy to an application. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_CreateTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5895,7 +5895,7 @@ paths:
       description: Get the properties and relationships of an application object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
       operationId: application_GetApplicationGraphBPreAppId
       parameters:
         - name: appId
@@ -6001,7 +6001,7 @@ paths:
       description: Update the properties of an application object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
       operationId: application_UpdateApplicationGraphBPreAppId
       parameters:
         - name: appId
@@ -6036,7 +6036,7 @@ paths:
       description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
       operationId: application_DeleteApplicationGraphBPreAppId
       parameters:
         - name: appId
@@ -6272,7 +6272,7 @@ paths:
       description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: application_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
@@ -6317,10 +6317,10 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: application_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -6373,7 +6373,7 @@ paths:
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: application_validateProperty
       requestBody:
         description: Action parameters
@@ -6413,7 +6413,7 @@ paths:
       description: Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
       operationId: applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6499,7 +6499,7 @@ paths:
       description: Retrieve the properties of an applicationTemplate object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
       operationId: applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
@@ -6557,10 +6557,10 @@ paths:
       tags:
         - applicationTemplates.Actions
       summary: Invoke action instantiate
-      description: 'Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.'
+      description: 'Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
       operationId: applicationTemplate_instantiate
       parameters:
         - name: applicationTemplate-id
@@ -6616,7 +6616,7 @@ paths:
       description: Represents the app roles a group has been granted for an application. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
       operationId: group_ListAppRoleAssignment
       parameters:
         - name: group-id
@@ -6719,7 +6719,7 @@ paths:
       description: 'Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
       operationId: group_CreateAppRoleAssignment
       parameters:
         - name: group-id
@@ -6869,7 +6869,7 @@ paths:
       description: Deletes an appRoleAssignment that a group has been granted.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
       operationId: group_DeleteAppRoleAssignment
       parameters:
         - name: group-id
@@ -6940,7 +6940,7 @@ paths:
       description: Retrieve a list of servicePrincipal objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
       operationId: servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
@@ -6992,6 +6992,8 @@ paths:
                 - appRoleAssignmentRequired desc
                 - appRoles
                 - appRoles desc
+                - customSecurityAttributes
+                - customSecurityAttributes desc
                 - description
                 - description desc
                 - disabledByMicrosoftStatus
@@ -7061,6 +7063,7 @@ paths:
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - customSecurityAttributes
                 - description
                 - disabledByMicrosoftStatus
                 - displayName
@@ -7147,7 +7150,7 @@ paths:
       description: Create a new servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
       operationId: servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
@@ -7174,7 +7177,7 @@ paths:
       description: Retrieve the properties and relationships of a servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
       operationId: servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -7207,6 +7210,7 @@ paths:
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - customSecurityAttributes
                 - description
                 - disabledByMicrosoftStatus
                 - displayName
@@ -7325,7 +7329,7 @@ paths:
       description: Delete a servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -7504,7 +7508,7 @@ paths:
       description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppManagementPolicy
       parameters:
         - name: servicePrincipal-id
@@ -7565,7 +7569,7 @@ paths:
       description: 'Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -7658,7 +7662,7 @@ paths:
       description: 'Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -7798,7 +7802,7 @@ paths:
       description: 'Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -7859,7 +7863,7 @@ paths:
       description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_ListAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -7962,7 +7966,7 @@ paths:
       description: 'Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_CreateAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -8112,7 +8116,7 @@ paths:
       description: Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -8183,7 +8187,7 @@ paths:
       description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListClaimsMappingPolicy
       parameters:
         - name: servicePrincipal-id
@@ -8270,7 +8274,7 @@ paths:
       description: Remove a claimsMappingPolicy from a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8338,7 +8342,7 @@ paths:
       description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8393,7 +8397,7 @@ paths:
       description: Assign a claimsMappingPolicy to a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_CreateClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8718,7 +8722,7 @@ paths:
       description: Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_ListDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -8796,7 +8800,7 @@ paths:
       description: Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_CreateDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -8930,7 +8934,7 @@ paths:
       description: Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -9535,7 +9539,7 @@ paths:
       description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListHomeRealmDiscoveryPolicy
       parameters:
         - name: servicePrincipal-id
@@ -9622,7 +9626,7 @@ paths:
       description: Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -9690,7 +9694,7 @@ paths:
       description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_ListHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -9745,7 +9749,7 @@ paths:
       description: Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_CreateHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -9772,7 +9776,7 @@ paths:
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
       operationId: servicePrincipal_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -10487,7 +10491,7 @@ paths:
       description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
       operationId: servicePrincipal_addKey
       parameters:
         - name: servicePrincipal-id
@@ -10532,7 +10536,7 @@ paths:
       description: Add a strong password or secret to a servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
       operationId: servicePrincipal_addPassword
       parameters:
         - name: servicePrincipal-id
@@ -10570,10 +10574,10 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addTokenSigningCertificate
-      description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with **usage** set to `Sign`.\n    + A public key object with **usage** set to `Verify`.\n+ The passwordCredentials object.  All the objects have the same value of **customKeyIdentifier**. The **passwordCredential** is used to open the PFX file (private key). It and the associated private key object have the same value of **keyId**. When set during creation through the **displayName** property, the subject of the certificate cannot be updated. The **startDateTime** is set to the same time the certificate is created using the action. The **endDateTime** can be up to three years after the certificate is created."
+      description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object.  All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. When set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
       operationId: servicePrincipal_addTokenSigningCertificate
       parameters:
         - name: servicePrincipal-id
@@ -10620,7 +10624,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: servicePrincipal_checkMemberGroup
       parameters:
         - name: servicePrincipal-id
@@ -10728,7 +10732,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: servicePrincipal_getMemberGroup
       parameters:
         - name: servicePrincipal-id
@@ -10781,10 +10785,10 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
+      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: servicePrincipal_getMemberObject
       parameters:
         - name: servicePrincipal-id
@@ -10840,7 +10844,7 @@ paths:
       description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
       operationId: servicePrincipal_removeKey
       parameters:
         - name: servicePrincipal-id
@@ -10881,7 +10885,7 @@ paths:
       description: Remove a password from a servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
       operationId: servicePrincipal_removePassword
       parameters:
         - name: servicePrincipal-id
@@ -10920,7 +10924,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: servicePrincipal_restore
       parameters:
         - name: servicePrincipal-id
@@ -10949,7 +10953,7 @@ paths:
       description: 'Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
       operationId: servicePrincipal_ListOauth2PermissionGrant
       parameters:
         - name: servicePrincipal-id
@@ -12005,7 +12009,7 @@ paths:
       description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipal_ListOwner
       parameters:
         - name: servicePrincipal-id
@@ -12088,7 +12092,7 @@ paths:
       description: 'Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -12434,7 +12438,7 @@ paths:
       description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipal_ListOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -12491,7 +12495,7 @@ paths:
       description: 'Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
       operationId: servicePrincipal_CreateOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -13070,7 +13074,7 @@ paths:
       description: List existing jobs for a given application instance (service principal).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_ListJob
       parameters:
         - name: servicePrincipal-id
@@ -13153,7 +13157,7 @@ paths:
       description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_CreateJob
       parameters:
         - name: servicePrincipal-id
@@ -13189,7 +13193,7 @@ paths:
       description: Retrieve the existing synchronization job and its properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_GetJob
       parameters:
         - name: servicePrincipal-id
@@ -13294,7 +13298,7 @@ paths:
       description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_DeleteJob
       parameters:
         - name: servicePrincipal-id
@@ -13333,7 +13337,7 @@ paths:
       description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_pause
       parameters:
         - name: servicePrincipal-id
@@ -13366,7 +13370,7 @@ paths:
       description: 'Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_provisionOnDemand
       parameters:
         - name: servicePrincipal-id
@@ -13417,7 +13421,7 @@ paths:
       description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_restart
       parameters:
         - name: servicePrincipal-id
@@ -13462,7 +13466,7 @@ paths:
       description: 'Start an existing synchronization job. If the job is in a paused state, it will continue processing changes from the point where it was paused. If the job is in quarantine, the quarantine status will be cleared. Do not create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_start
       parameters:
         - name: servicePrincipal-id
@@ -13495,7 +13499,7 @@ paths:
       description: Validate that the credentials are valid in the tenant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_validateCredential
       parameters:
         - name: servicePrincipal-id
@@ -13552,7 +13556,7 @@ paths:
       description: Retrieve the schema for a given synchronization job or template.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_GetSchema
       parameters:
         - name: servicePrincipal-id
@@ -13616,7 +13620,7 @@ paths:
       description: 'Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-update?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job_UpdateSchema
       parameters:
         - name: servicePrincipal-id
@@ -13987,7 +13991,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
@@ -14228,7 +14232,7 @@ paths:
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.job.schema_parseExpression
       parameters:
         - name: servicePrincipal-id
@@ -14349,7 +14353,7 @@ paths:
       description: Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_acquireAccessToken
       parameters:
         - name: servicePrincipal-id
@@ -14445,7 +14449,7 @@ paths:
       description: List the synchronization templates associated with a given application or service principal.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_ListTemplate
       parameters:
         - name: servicePrincipal-id
@@ -14631,7 +14635,7 @@ paths:
       description: Update (override) the synchronization template associated with a given application.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_UpdateTemplate
       parameters:
         - name: servicePrincipal-id
@@ -15137,7 +15141,7 @@ paths:
       description: 'Discover the latest schema definition for provisioning to an application. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.template.schema.directory_discover
       parameters:
         - name: servicePrincipal-id
@@ -15378,7 +15382,7 @@ paths:
       description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization.template.schema_parseExpression
       parameters:
         - name: servicePrincipal-id
@@ -15795,7 +15799,7 @@ paths:
       summary: Get transitiveMemberOf from servicePrincipals
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
       operationId: servicePrincipal_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -16509,7 +16513,7 @@ paths:
       description: Retrieve the properties and relationships of a servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
       operationId: servicePrincipal_GetServicePrincipalGraphBPreAppId
       parameters:
         - name: appId
@@ -16542,6 +16546,7 @@ paths:
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - customSecurityAttributes
                 - description
                 - disabledByMicrosoftStatus
                 - displayName
@@ -16660,7 +16665,7 @@ paths:
       description: Delete a servicePrincipal object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteServicePrincipalGraphBPreAppId
       parameters:
         - name: appId
@@ -16741,6 +16746,7 @@ paths:
                 - appOwnerOrganizationId
                 - appRoleAssignmentRequired
                 - appRoles
+                - customSecurityAttributes
                 - description
                 - disabledByMicrosoftStatus
                 - displayName
@@ -16816,6 +16822,8 @@ paths:
                 - appRoleAssignmentRequired desc
                 - appRoles
                 - appRoles desc
+                - customSecurityAttributes
+                - customSecurityAttributes desc
                 - description
                 - description desc
                 - disabledByMicrosoftStatus
@@ -16898,7 +16906,7 @@ paths:
       description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: servicePrincipal_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
@@ -16943,10 +16951,10 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: servicePrincipal_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -16999,7 +17007,7 @@ paths:
       description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: servicePrincipal_validateProperty
       requestBody:
         description: Action parameters
@@ -17039,7 +17047,7 @@ paths:
       description: Represents the app roles a user has been granted for an application. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
       operationId: user_ListAppRoleAssignment
       parameters:
         - name: user-id
@@ -17142,7 +17150,7 @@ paths:
       description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
       operationId: user_CreateAppRoleAssignment
       parameters:
         - name: user-id
@@ -17292,7 +17300,7 @@ paths:
       description: Delete an appRoleAssignment that has been granted to a user.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
       operationId: user_DeleteAppRoleAssignment
       parameters:
         - name: user-id
@@ -17811,6 +17819,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+            customSecurityAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
               type: string
               description: 'Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
@@ -17888,7 +17898,7 @@ components:
               description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: 'Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.'
+              description: 'Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.SocialIdp - For internal use.'
               nullable: true
             signInAudience:
               type: string
@@ -18063,6 +18073,8 @@ components:
               type: string
               description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
               nullable: true
+            customSecurityAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
               description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
@@ -19368,7 +19380,7 @@ components:
           properties:
             clientId:
               type: string
-              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
               description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
@@ -19705,6 +19717,11 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.customSecurityAttributeValue:
+      title: customSecurityAttributeValue
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.permissionScope:
       title: permissionScope
       type: object
@@ -20039,7 +20056,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -21677,6 +21694,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowParticipantsToChangeName:
+              type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates whether Teams reactions are enabled for the meeting.
@@ -21731,6 +21752,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21895,6 +21918,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
               x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              x-ms-navigationProperty: true
             pinnedMessages:
               type: array
               items:
@@ -22000,6 +22028,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
+              x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -24309,7 +24342,7 @@ components:
               description: 'The type of permission, for example, read. See below for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -25845,6 +25878,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.watermarkProtectionValues:
       title: watermarkProtectionValues
       type: object
@@ -28453,11 +28493,11 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Required for Teams resources if  the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.'
               nullable: true
             notificationQueryOptions:
               type: string

@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: 'Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.'
+      description: 'Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -464,10 +464,10 @@ paths:
       tags:
         - users.user
       summary: Create user
-      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a `$select` OData query option."
+      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -491,10 +491,10 @@ paths:
       tags:
         - users.user
       summary: Get user
-      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option. Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.'
+      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
       operationId: user_GetUser
       parameters:
         - name: user-id
@@ -763,7 +763,7 @@ paths:
       description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -798,7 +798,7 @@ paths:
       description: 'Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -829,7 +829,7 @@ paths:
       description: Get the service principals to which the user has an app role assignment either directly or through group membership.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0
       operationId: user_ListAppRoleAssignedResource
       parameters:
         - name: user-id
@@ -1206,7 +1206,7 @@ paths:
       description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
       operationId: user_ListCreatedObject
       parameters:
         - name: user-id
@@ -1507,7 +1507,7 @@ paths:
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
       operationId: user_ListDirectReport
       parameters:
         - name: user-id
@@ -3452,7 +3452,7 @@ paths:
       description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
       operationId: user_ListLicenseDetail
       parameters:
         - name: user-id
@@ -3805,7 +3805,7 @@ paths:
       description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
       operationId: user_GetManager
       parameters:
         - name: user-id
@@ -3858,7 +3858,7 @@ paths:
       description: Remove a user's manager.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
       operationId: user_DeleteManager
       parameters:
         - name: user-id
@@ -3889,7 +3889,7 @@ paths:
       description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
       operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -3917,7 +3917,7 @@ paths:
       description: Assign a user's manager.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
       operationId: user_SetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -3943,7 +3943,7 @@ paths:
       description: Remove a user's manager.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
       operationId: user_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -3974,7 +3974,7 @@ paths:
       description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
       operationId: user_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -5002,7 +5002,7 @@ paths:
       description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
       operationId: user_ListOauth2PermissionGrant
       parameters:
         - name: user-id
@@ -5221,7 +5221,7 @@ paths:
       description: Get all the categories that have been defined for the user.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
       operationId: user.outlook_ListMasterCategory
       parameters:
         - name: user-id
@@ -5283,7 +5283,7 @@ paths:
       description: Create an outlookCategory object in the user's master list of categories.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
       operationId: user.outlook_CreateMasterCategory
       parameters:
         - name: user-id
@@ -5319,7 +5319,7 @@ paths:
       description: Get the properties and relationships of the specified outlookCategory object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
       operationId: user.outlook_GetMasterCategory
       parameters:
         - name: user-id
@@ -5366,10 +5366,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Update Outlook category
-      description: "Update the writable property, **color**, of the specified outlookCategory object. You cannot modify the **displayName** property\nonce you have created the category."
+      description: "Update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName property\nonce you have created the category."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
       operationId: user.outlook_UpdateMasterCategory
       parameters:
         - name: user-id
@@ -5408,11 +5408,11 @@ paths:
     delete:
       tags:
         - users.outlookUser
-      summary: Delete Outlook category
+      summary: Delete outlookCategory
       description: Delete the specified outlookCategory object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
       operationId: user.outlook_DeleteMasterCategory
       parameters:
         - name: user-id
@@ -5472,7 +5472,7 @@ paths:
       description: Get all the Outlook task folders in the user's mailbox.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
       operationId: user.outlook_ListTaskFolder
       parameters:
         - name: user-id
@@ -5546,10 +5546,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTaskFolder (deprecated)
-      description: Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+      description: Create a task folder in the default task group (My Tasks) of the user's mailbox.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0
       operationId: user.outlook_CreateTaskFolder
       parameters:
         - name: user-id
@@ -5591,7 +5591,7 @@ paths:
       description: Get the properties and relationships of the specified Outlook task folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0
       operationId: user.outlook_GetTaskFolder
       parameters:
         - name: user-id
@@ -5649,10 +5649,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Update outlooktaskfolder (deprecated)
-      description: 'Update the writable properties of an Outlook task folder. You cannot change the **name** property value of the default task folder, ''Tasks''.'
+      description: 'Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, ''Tasks''.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0
       operationId: user.outlook_UpdateTaskFolder
       parameters:
         - name: user-id
@@ -5701,7 +5701,7 @@ paths:
       description: Delete the specified Outlook task folder.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0
       operationId: user.outlook_DeleteTaskFolder
       parameters:
         - name: user-id
@@ -5743,10 +5743,10 @@ paths:
       tags:
         - users.outlookUser
       summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
+      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a Prefer: outlook.timezone request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskFolder_ListTask
       parameters:
         - name: user-id
@@ -5873,10 +5873,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone."
+      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskFolder_CreateTask
       parameters:
         - name: user-id
@@ -6109,7 +6109,7 @@ paths:
       description: Get a list of attachment objects attached to an Outlook task.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskFolder.task_ListAttachment
       parameters:
         - name: user-id
@@ -6214,7 +6214,7 @@ paths:
       description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskFolder.task_CreateAttachment
       parameters:
         - name: user-id
@@ -6515,10 +6515,10 @@ paths:
       tags:
         - users.outlookUser
       summary: List taskGroups (deprecated)
-      description: 'Get all the Outlook task groups in the user''s mailbox. The response always includes the default task group `My Tasks`, and any other task groups that have been created in the mailbox.'
+      description: 'Get all the Outlook task groups in the user''s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
       operationId: user.outlook_ListTaskGroup
       parameters:
         - name: user-id
@@ -6593,7 +6593,7 @@ paths:
       description: Create an Outlook task group in the user's mailbox.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
       operationId: user.outlook_CreateTaskGroup
       parameters:
         - name: user-id
@@ -6635,7 +6635,7 @@ paths:
       description: Get the properties and relationships of the specified Outlook task group.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
       operationId: user.outlook_GetTaskGroup
       parameters:
         - name: user-id
@@ -6780,7 +6780,7 @@ paths:
       description: Get Outlook task folders in a specific outlookTaskGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
       operationId: user.outlook.taskGroup_ListTaskFolder
       parameters:
         - name: user-id
@@ -6865,7 +6865,7 @@ paths:
       description: Create an Outlook task folder under a specified outlookTaskGroup.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0
       operationId: user.outlook.taskGroup_CreateTaskFolder
       parameters:
         - name: user-id
@@ -7080,10 +7080,10 @@ paths:
       tags:
         - users.outlookUser
       summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
+      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a Prefer: outlook.timezone request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder_ListTask
       parameters:
         - name: user-id
@@ -7218,10 +7218,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone."
+      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder_CreateTask
       parameters:
         - name: user-id
@@ -7486,7 +7486,7 @@ paths:
       description: Get a list of attachment objects attached to an Outlook task.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder.task_ListAttachment
       parameters:
         - name: user-id
@@ -7599,7 +7599,7 @@ paths:
       description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder.task_CreateAttachment
       parameters:
         - name: user-id
@@ -7975,10 +7975,10 @@ paths:
       tags:
         - users.outlookUser
       summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks."
+      description: "Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.\nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
       operationId: user.outlook_ListTask
       parameters:
         - name: user-id
@@ -8097,10 +8097,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. \nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC."
+      description: "Create an Outlook task in the default task group (My Tasks) and default task folder (Tasks) in the user's mailbox. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. \nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlookuser-post-tasks?view=graph-rest-1.0
       operationId: user.outlook_CreateTask
       parameters:
         - name: user-id
@@ -8139,10 +8139,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlookTask (deprecated)
-      description: 'Get the properties and relationships of an Outlook task in the user''s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.'
+      description: 'Get the properties and relationships of an Outlook task in the user''s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-get?view=graph-rest-1.0
       operationId: user.outlook_GetTask
       parameters:
         - name: user-id
@@ -8215,10 +8215,10 @@ paths:
       tags:
         - users.outlookUser
       summary: Update outlooktask (deprecated)
-      description: 'Change writable properties of an Outlook task. The **completedDateTime** property can be set by the **complete** action, or explicitly by a PATCH operation. If you use PATCH to set **completedDateTime**, make sure you set **status** to `completed` as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.'
+      description: 'Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-update?view=graph-rest-1.0
       operationId: user.outlook_UpdateTask
       parameters:
         - name: user-id
@@ -8267,7 +8267,7 @@ paths:
       description: Delete the specified Outlook task in the user's mailbox.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-delete?view=graph-rest-1.0
       operationId: user.outlook_DeleteTask
       parameters:
         - name: user-id
@@ -8312,7 +8312,7 @@ paths:
       description: Get a list of attachment objects attached to an Outlook task.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
       operationId: user.outlook.task_ListAttachment
       parameters:
         - name: user-id
@@ -8409,7 +8409,7 @@ paths:
       description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
       operationId: user.outlook.task_CreateAttachment
       parameters:
         - name: user-id
@@ -8646,7 +8646,7 @@ paths:
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
       operationId: user_ListOwnedDevice
       parameters:
         - name: user-id
@@ -9184,7 +9184,7 @@ paths:
       description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
       operationId: user_ListOwnedObject
       parameters:
         - name: user-id
@@ -10247,7 +10247,7 @@ paths:
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
       operationId: user_ListRegisteredDevice
       parameters:
         - name: user-id
@@ -10901,7 +10901,7 @@ paths:
       description: Read the properties and relationships of a contactMergeSuggestions object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
       operationId: user.setting_GetContactMergeSuggestion
       parameters:
         - name: user-id
@@ -10954,7 +10954,7 @@ paths:
       description: Update the properties of a contactMergeSuggestions object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
       operationId: user.setting_UpdateContactMergeSuggestion
       parameters:
         - name: user-id
@@ -11016,7 +11016,7 @@ paths:
       description: Get the user-customizable privacy settings for itemInsights and meeting hours insights.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
       operationId: user.setting_GetItemInsight
       parameters:
         - name: user-id
@@ -11069,7 +11069,7 @@ paths:
       description: Update the privacy settings for itemInsights and meeting hours insights of a user.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
       operationId: user.setting_UpdateItemInsight
       parameters:
         - name: user-id
@@ -11131,7 +11131,7 @@ paths:
       description: Retrieve the properties of a user's regionalAndLanguageSettings.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
       operationId: user.setting_GetRegionalAndLanguageSetting
       parameters:
         - name: user-id
@@ -11190,7 +11190,7 @@ paths:
       description: Update some or all of the properties of a regionalAndLanguageSettings object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
       operationId: user.setting_UpdateRegionalAndLanguageSetting
       parameters:
         - name: user-id
@@ -11252,7 +11252,7 @@ paths:
       description: Retrieve the properties and relationships of a shiftPreferences object by ID.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
       operationId: user.setting_GetShiftPreference
       parameters:
         - name: user-id
@@ -11309,7 +11309,7 @@ paths:
       description: Update the properties and relationships of a shiftPreferences object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
       operationId: user.setting_UpdateShiftPreference
       parameters:
         - name: user-id
@@ -11367,7 +11367,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: Get sponsors from users
+      summary: List sponsors
+      description: Get a user's sponsors. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0
       operationId: user_ListSponsor
       parameters:
         - name: user-id
@@ -11437,6 +11441,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get sponsors from users
+      description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
       operationId: user_GetSponsor
       parameters:
         - name: user-id
@@ -11487,6 +11492,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Remove sponsor
+      description: Remove a user's sponsor.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0
+      operationId: user_DeleteSponsor
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: directoryObject-id
+          in: path
+          description: The unique identifier of directoryObject
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11629,7 +11672,7 @@ paths:
       description: Get a list of the todoTaskList objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
       operationId: user.todo_ListList
       parameters:
         - name: user-id
@@ -11714,7 +11757,7 @@ paths:
       description: Create a new lists object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
       operationId: user.todo_CreateList
       parameters:
         - name: user-id
@@ -11750,7 +11793,7 @@ paths:
       description: Read the properties and relationships of a todoTaskList object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
       operationId: user.todo_GetList
       parameters:
         - name: user-id
@@ -11818,7 +11861,7 @@ paths:
       description: Update the properties of a todoTaskList object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
       operationId: user.todo_UpdateList
       parameters:
         - name: user-id
@@ -11861,7 +11904,7 @@ paths:
       description: Deletes a todoTaskList object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
       operationId: user.todo_DeleteList
       parameters:
         - name: user-id
@@ -12196,10 +12239,10 @@ paths:
       tags:
         - users.todo
       summary: List tasks
-      description: Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+      description: Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
       operationId: user.todo.list_ListTask
       parameters:
         - name: user-id
@@ -12331,7 +12374,7 @@ paths:
       description: Create a new task object in a specified todoTaskList.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
       operationId: user.todo.list_CreateTask
       parameters:
         - name: user-id
@@ -12375,7 +12418,7 @@ paths:
       description: Read the properties and relationships of a todoTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0
       operationId: user.todo.list_GetTask
       parameters:
         - name: user-id
@@ -12468,7 +12511,7 @@ paths:
       description: Update the properties of a todoTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0
       operationId: user.todo.list_UpdateTask
       parameters:
         - name: user-id
@@ -12519,7 +12562,7 @@ paths:
       description: Deletes a todoTask object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0
       operationId: user.todo.list_DeleteTask
       parameters:
         - name: user-id
@@ -12563,10 +12606,10 @@ paths:
       tags:
         - users.todo
       summary: List taskFileAttachments
-      description: Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
+      description: Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_ListAttachment
       parameters:
         - name: user-id
@@ -12650,7 +12693,7 @@ paths:
       description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_CreateAttachment
       parameters:
         - name: user-id
@@ -12702,7 +12745,7 @@ paths:
       description: Read the properties and relationships of a taskFileAttachment object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
       operationId: user.todo.list.task_GetAttachment
       parameters:
         - name: user-id
@@ -12770,7 +12813,7 @@ paths:
       description: Delete a taskFileAttachment object from a todoTask resource.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
       operationId: user.todo.list.task_DeleteAttachment
       parameters:
         - name: user-id
@@ -12824,7 +12867,7 @@ paths:
       summary: Get media content for the navigation property attachments from users
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_GetAttachmentsContent
       parameters:
         - name: user-id
@@ -13356,10 +13399,10 @@ paths:
       tags:
         - users.todo
       summary: List checklistItems
-      description: Get the checklistItem resources associated to the **checklistItems** navigation property of a todoTask.
+      description: Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
       operationId: user.todo.list.task_ListChecklistItem
       parameters:
         - name: user-id
@@ -13456,7 +13499,7 @@ paths:
       description: Create a new checklistItem object as a subtask in a bigger todoTask.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
       operationId: user.todo.list.task_CreateChecklistItem
       parameters:
         - name: user-id
@@ -13508,7 +13551,7 @@ paths:
       description: Read the properties and relationships of a checklistItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
       operationId: user.todo.list.task_GetChecklistItem
       parameters:
         - name: user-id
@@ -13588,7 +13631,7 @@ paths:
       description: Update the properties of a checklistItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
       operationId: user.todo.list.task_UpdateChecklistItem
       parameters:
         - name: user-id
@@ -13647,7 +13690,7 @@ paths:
       description: Delete a checklistItem object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
       operationId: user.todo.list.task_DeleteChecklistItem
       parameters:
         - name: user-id
@@ -14087,7 +14130,7 @@ paths:
       description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
       operationId: user.todo.list.task_ListLinkedResource
       parameters:
         - name: user-id
@@ -14181,10 +14224,10 @@ paths:
       tags:
         - users.todo
       summary: Create linkedResource
-      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a todoTask.'
+      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a todoTask.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
       operationId: user.todo.list.task_CreateLinkedResource
       parameters:
         - name: user-id
@@ -14236,7 +14279,7 @@ paths:
       description: Read the properties and relationships of a linkedResource object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
       operationId: user.todo.list.task_GetLinkedResource
       parameters:
         - name: user-id
@@ -14316,7 +14359,7 @@ paths:
       description: Update the properties of a linkedResource object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
       operationId: user.todo.list.task_UpdateLinkedResource
       parameters:
         - name: user-id
@@ -14375,7 +14418,7 @@ paths:
       description: Deletes a linkedResource object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
       operationId: user.todo.list.task_DeleteLinkedResource
       parameters:
         - name: user-id
@@ -14520,7 +14563,7 @@ paths:
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
       operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -15877,6 +15920,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
@@ -17112,7 +17156,7 @@ components:
           properties:
             clientId:
               type: string
-              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
               description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
@@ -18473,6 +18517,8 @@ components:
               type: string
               description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
+            connectionSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
             connectivityResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectivityResult'
             diskEncryptionState:
@@ -19583,8 +19629,8 @@ components:
             pages:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.sitePage'
-              description: The collection of pages in the SitePages list in this site.
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+              description: The collection of pages in the baseSitePages list in this site.
               x-ms-navigationProperty: true
             permissions:
               type: array
@@ -22359,7 +22405,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount, the value for this property must be 2'
+          description: 'Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.  The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure requestedAccessTokenVersion to indicate the supported access token format.  Possible values for requestedAccessTokenVersion are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint.  If signInAudience on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2.'
           format: int32
           nullable: true
       additionalProperties:
@@ -23279,6 +23325,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcConnectionSettings:
+      title: cloudPcConnectionSettings
+      type: object
+      properties:
+        enableSingleSignOn:
+          type: boolean
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcConnectivityResult:
       title: cloudPcConnectivityResult
       type: object
@@ -23414,6 +23468,7 @@ components:
         - unknownFutureValue
         - movingRegion
         - resizePendingLicense
+        - updatingSingleSignOn
       type: string
     microsoft.graph.cloudPcStatusDetails:
       title: cloudPcStatusDetails
@@ -24594,48 +24649,20 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.sitePage:
+    microsoft.graph.baseSitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
-        - title: sitePage
+        - title: baseSitePage
           type: object
           properties:
-            contentType:
-              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             pageLayout:
               $ref: '#/components/schemas/microsoft.graph.pageLayoutType'
-            promotionKind:
-              $ref: '#/components/schemas/microsoft.graph.pagePromotionType'
             publishingState:
               $ref: '#/components/schemas/microsoft.graph.publicationFacet'
-            reactions:
-              $ref: '#/components/schemas/microsoft.graph.reactionsFacet'
-            showComments:
-              type: boolean
-              description: Determines whether or not to show comments at the bottom of the page.
-              nullable: true
-            showRecommendedPages:
-              type: boolean
-              description: Determines whether or not to show recommended pages at the bottom of the page.
-              nullable: true
-            thumbnailWebUrl:
-              type: string
-              description: Url of the sitePage's thumbnail image
-              nullable: true
             title:
               type: string
               description: Title of the sitePage.
               nullable: true
-            titleArea:
-              $ref: '#/components/schemas/microsoft.graph.titleArea'
-            canvasLayout:
-              $ref: '#/components/schemas/microsoft.graph.canvasLayout'
-            webParts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: Collection of webparts on the SharePoint page
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.permission:
@@ -28245,7 +28272,7 @@ components:
           properties:
             content:
               type: string
-              description: A field that represents the content of the transcript. Read-only.
+              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
@@ -28256,7 +28283,7 @@ components:
               nullable: true
             metadataContent:
               type: string
-              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
           additionalProperties:
@@ -29322,7 +29349,7 @@ components:
           nullable: true
         fieldId:
           type: string
-          description: 'Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.'
+          description: 'Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.'
           nullable: true
         type:
           type: string
@@ -30189,8 +30216,8 @@ components:
         - email
         - site
         - unifiedGroup
-        - unknownFutureValue
         - teamwork
+        - unknownFutureValue
       type: string
     microsoft.graph.applicationMode:
       title: applicationMode
@@ -31360,11 +31387,11 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.'
               nullable: true
             notificationContentType:
               type: string
@@ -31875,104 +31902,6 @@ components:
         - home
         - unknownFutureValue
       type: string
-    microsoft.graph.pagePromotionType:
-      title: pagePromotionType
-      enum:
-        - microsoftReserved
-        - page
-        - newsPost
-        - unknownFutureValue
-      type: string
-    microsoft.graph.reactionsFacet:
-      title: reactionsFacet
-      type: object
-      properties:
-        commentCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of comments.
-          format: int32
-          nullable: true
-        likeCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of likes.
-          format: int32
-          nullable: true
-        shareCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Count of shares.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.titleArea:
-      title: titleArea
-      type: object
-      properties:
-        alternativeText:
-          type: string
-          description: Alternative text on the title area.
-          nullable: true
-        enableGradientEffect:
-          type: boolean
-          description: Indicates whether the title area has a gradient effect enabled.
-          nullable: true
-        imageWebUrl:
-          type: string
-          description: URL of the image in the title area.
-          nullable: true
-        layout:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaLayoutType'
-        serverProcessedContent:
-          $ref: '#/components/schemas/microsoft.graph.serverProcessedContent'
-        showAuthor:
-          type: boolean
-          description: Indicates whether the author should be shown in title area.
-          nullable: true
-        showPublishedDate:
-          type: boolean
-          description: Indicates whether the published date should be shown in title area.
-          nullable: true
-        showTextBlockAboveTitle:
-          type: boolean
-          description: Indicates whether the text block above title should be shown in title area.
-          nullable: true
-        textAboveTitle:
-          type: string
-          description: The text above title line.
-          nullable: true
-        textAlignment:
-          $ref: '#/components/schemas/microsoft.graph.titleAreaTextAlignmentType'
-      additionalProperties:
-        type: object
-    microsoft.graph.canvasLayout:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: canvasLayout
-          type: object
-          properties:
-            horizontalSections:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSection'
-              description: Collection of horizontal sections on the SharePoint page.
-              x-ms-navigationProperty: true
-            verticalSection:
-              $ref: '#/components/schemas/microsoft.graph.verticalSection'
-          additionalProperties:
-            type: object
-    microsoft.graph.webPart:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: webPart
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -36323,7 +36252,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time the version was last modified. Read-only.
+              description: Date and time when the version was last modified. Read-only.
               format: date-time
               nullable: true
             publication:
@@ -36489,92 +36418,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.titleAreaLayoutType:
-      title: titleAreaLayoutType
-      enum:
-        - imageAndTitle
-        - plain
-        - colorBlock
-        - overlap
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serverProcessedContent:
-      title: serverProcessedContent
-      type: object
-      properties:
-        componentDependencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
-        customMetadata:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyValuePair'
-          description: A key-value map where keys are string identifier and values are object of custom key-value pair.
-        htmlStrings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: 'A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.'
-        imageSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
-        searchablePlainTexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.metaDataKeyStringPair'
-          description: A key-value map where keys are string identifiers and values are strings that should be search indexed.
-      additionalProperties:
-        type: object
-    microsoft.graph.titleAreaTextAlignmentType:
-      title: titleAreaTextAlignmentType
-      enum:
-        - left
-        - center
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            layout:
-              $ref: '#/components/schemas/microsoft.graph.horizontalSectionLayoutType'
-            columns:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.horizontalSectionColumn'
-              description: The set of vertical columns in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.verticalSection:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: verticalSection
-          type: object
-          properties:
-            emphasis:
-              $ref: '#/components/schemas/microsoft.graph.sectionEmphasisType'
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The set of web parts in this section.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.sharePointIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -39504,74 +39347,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.metaDataKeyStringPair:
-      title: metaDataKeyStringPair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the meta data.
-          nullable: true
-        value:
-          type: string
-          description: Value of the meta data.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.metaDataKeyValuePair:
-      title: metaDataKeyValuePair
-      type: object
-      properties:
-        key:
-          type: string
-          description: Key of the metadata.
-          nullable: true
-        value:
-          $ref: '#/components/schemas/microsoft.graph.Json'
-      additionalProperties:
-        type: object
-    microsoft.graph.sectionEmphasisType:
-      title: sectionEmphasisType
-      enum:
-        - none
-        - neutral
-        - soft
-        - strong
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionLayoutType:
-      title: horizontalSectionLayoutType
-      enum:
-        - none
-        - oneColumn
-        - twoColumns
-        - threeColumns
-        - oneThirdLeftColumn
-        - oneThirdRightColumn
-        - fullWidth
-        - unknownFutureValue
-      type: string
-    microsoft.graph.horizontalSectionColumn:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: horizontalSectionColumn
-          type: object
-          properties:
-            width:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.'
-              format: int32
-              nullable: true
-            webparts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.webPart'
-              description: The collection of WebParts in this column.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

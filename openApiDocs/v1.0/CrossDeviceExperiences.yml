@@ -11,10 +11,10 @@ paths:
       tags:
         - users.userActivity
       summary: Get user activities
-      description: 'Get activities for a given user. Unlike the **recent** OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application''s activities, use the **nextLink** property to paginate.'
+      description: 'Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/projectrome-get-activities?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectrome-get-activities?view=graph-rest-1.0
       operationId: user_ListActivity
       parameters:
         - name: user-id
@@ -267,7 +267,7 @@ paths:
       description: Delete an existing user activity for your app.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -521,7 +521,7 @@ paths:
       description: Create a new or replace an existing history item for an existing user activity.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id

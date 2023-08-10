@@ -1,0 +1,19 @@
+steps:
+- task: PowerShell@2
+  displayName: Install PowerShell SDK
+  inputs:
+    targetType: 'inline'
+    pwsh: true
+    script: |
+          try{
+              # Installing Beta module.
+              Install-Module Microsoft.Graph.Beta -Repository PSGallery -Scope AllUsers -AcceptLicense -SkipPublisherCheck -Force -AllowClobber
+          }catch{
+                echo "Error when installing Beta"
+          }
+          try{
+              # Installing V1 module.
+              Install-Module Microsoft.Graph -Repository PSGallery -Scope AllUsers -AcceptLicense -SkipPublisherCheck -Force -AllowClobber
+          }catch{
+                echo "Error when installing V1"
+          }
