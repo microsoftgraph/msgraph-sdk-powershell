@@ -21142,6 +21142,8 @@ paths:
                 - retireAfterDateTime desc
                 - roleScopeTagIds
                 - roleScopeTagIds desc
+                - securityPatchLevel
+                - securityPatchLevel desc
                 - serialNumber
                 - serialNumber desc
                 - skuFamily
@@ -21249,6 +21251,7 @@ paths:
                 - requireUserEnrollmentApproval
                 - retireAfterDateTime
                 - roleScopeTagIds
+                - securityPatchLevel
                 - serialNumber
                 - skuFamily
                 - skuNumber
@@ -21440,6 +21443,7 @@ paths:
                 - requireUserEnrollmentApproval
                 - retireAfterDateTime
                 - roleScopeTagIds
+                - securityPatchLevel
                 - serialNumber
                 - skuFamily
                 - skuNumber
@@ -24712,6 +24716,8 @@ paths:
                 - businessPhones desc
                 - city
                 - city desc
+                - cloudRealtimeCommunicationInfo
+                - cloudRealtimeCommunicationInfo desc
                 - companyName
                 - companyName desc
                 - consentProvidedForMinor
@@ -24792,6 +24798,8 @@ paths:
                 - onPremisesSamAccountName desc
                 - onPremisesSecurityIdentifier
                 - onPremisesSecurityIdentifier desc
+                - onPremisesSipInfo
+                - onPremisesSipInfo desc
                 - onPremisesSyncEnabled
                 - onPremisesSyncEnabled desc
                 - onPremisesUserPrincipalName
@@ -24881,6 +24889,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -24921,6 +24930,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -28761,26 +28771,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -28804,7 +28814,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -29688,6 +29698,11 @@ components:
                 type: string
                 nullable: true
               description: List of Scope Tag IDs for this Device instance.
+            securityPatchLevel:
+              type: string
+              description: This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+              nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
@@ -31374,7 +31389,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -33050,6 +33065,8 @@ components:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            cloudRealtimeCommunicationInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
               description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -33220,6 +33237,8 @@ components:
               type: string
               description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
               nullable: true
+            onPremisesSipInfo:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
@@ -36446,6 +36465,15 @@ components:
           description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
+    microsoft.graph.cloudRealtimeCommunicationInfo:
+      title: cloudRealtimeCommunicationInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.customSecurityAttributeValue:
       title: customSecurityAttributeValue
       type: object
@@ -36629,6 +36657,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesSipInfo:
+      title: onPremisesSipInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+        sipDeploymentLocation:
+          type: string
+          nullable: true
+        sipPrimaryAddress:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.passwordProfile:
       title: passwordProfile
       type: object
@@ -36643,7 +36685,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -39509,6 +39551,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -44300,11 +44343,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -45808,11 +45853,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -51032,6 +51077,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
               x-ms-navigationProperty: true
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -51188,6 +51235,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -53946,6 +53998,58 @@ components:
             contentType:
               type: string
               description: Indicates the type for the replied comment.
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+          additionalProperties:
+            type: object
+    microsoft.graph.workbookDocumentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTask
+          type: object
+          properties:
+            assignees:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startAndDueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
+            title:
+              type: string
+              nullable: true
+            changes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              x-ms-navigationProperty: true
+            comment:
+              $ref: '#/components/schemas/microsoft.graph.workbookComment'
           additionalProperties:
             type: object
     microsoft.graph.workbookOperationError:
@@ -54577,6 +54681,87 @@ components:
           description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
+    microsoft.graph.workbookEmailIdentity:
+      title: workbookEmailIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskSchedule:
+      title: workbookDocumentTaskSchedule
+      type: object
+      properties:
+        dueDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskChange:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTaskChange
+          type: object
+          properties:
+            assignee:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            changedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            commentId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            type:
+              type: string
+            undoChangeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

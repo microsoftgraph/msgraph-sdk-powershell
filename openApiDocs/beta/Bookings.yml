@@ -7159,7 +7159,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
       operationId: solution.virtualEvent.event.session_ListRecording
       parameters:
         - name: virtualEvent-id
@@ -7278,7 +7279,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetRecording
       parameters:
         - name: virtualEvent-id
@@ -7435,6 +7440,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get content for the navigation property recordings from solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.event.session_GetRecordingsContent
       parameters:
         - name: virtualEvent-id
@@ -7476,6 +7482,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update content for the navigation property recordings in solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.event.session_SetRecordingsContent
       parameters:
         - name: virtualEvent-id
@@ -7554,11 +7561,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetRegistration
       parameters:
         - name: virtualEvent-id
@@ -7669,11 +7676,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteRegistration
       parameters:
         - name: virtualEvent-id
@@ -8918,11 +8925,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create virtualAppointment (deprecated)
-      description: Create a new virtualAppointment object.
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -11440,7 +11447,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
       operationId: solution.virtualEvent.webinar.session_ListRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -11559,7 +11567,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get recordings from solutions
+      summary: Get callRecording
+      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -11716,6 +11728,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get content for the navigation property recordings from solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.webinar.session_GetRecordingsContent
       parameters:
         - name: virtualEventWebinar-id
@@ -11757,6 +11770,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update content for the navigation property recordings in solutions
+      description: The content of the recording. Read-only.
       operationId: solution.virtualEvent.webinar.session_SetRecordingsContent
       parameters:
         - name: virtualEventWebinar-id
@@ -11835,11 +11849,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -11950,11 +11964,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -13199,11 +13213,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Create virtualAppointment (deprecated)
-      description: Create a new virtualAppointment object.
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -14148,11 +14162,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -15089,6 +15105,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
