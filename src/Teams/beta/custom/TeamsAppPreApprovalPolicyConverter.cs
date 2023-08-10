@@ -189,7 +189,7 @@
                 {
                     throw new MGTeamsInternalException(
                         MGTeamsInternalErrorType.UnsupportedScenario,
-                        $"Unsupported scope sensitivity label '{groupCondition.SensitivityLabels.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
+                        $"Unsupported team scope sensitivity label type '{groupCondition.SensitivityLabels.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
                 }
 
                 MGTeamsInternalEnumeratedPreApprovedPermissions mGTeamsInternalEnumeratedPreApprovedPermissions =
@@ -209,6 +209,13 @@
 
             if (chatCondition != null)
             {
+                if (!string.Equals(chatCondition.SensitivityLabels.OdataType, "#microsoft.graph.allScopeSensitivityLabels", System.StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new MGTeamsInternalException(
+                        MGTeamsInternalErrorType.UnsupportedScenario,
+                        $"Unsupported chat scope sensitivity label type '{chatCondition.SensitivityLabels.OdataType}' in preapproval policy '{permissionGrantPreApprovalPolicy.Id}'.");
+                }
+
                 MGTeamsInternalEnumeratedPreApprovedPermissions mGTeamsInternalEnumeratedPreApprovedPermissions =
                     chatCondition.Permissions as MGTeamsInternalEnumeratedPreApprovedPermissions;
                 if (mGTeamsInternalEnumeratedPreApprovedPermissions != null)
