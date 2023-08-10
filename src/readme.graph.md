@@ -167,6 +167,10 @@ directive:
       subject: ^(.*)List(.*)(As.*)$
     set:
       subject: $1$2$3
+  - where:
+      subject: ^(Admin)(Person)
+    set:
+      subject: AdminPeople
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
@@ -430,6 +434,20 @@ directive:
         let errorDetailsRegex = /(ErrorDetails\s*=\s*)(new.*ErrorDetails\(message\).*)/gmi
         $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
 
+        // Prevents null response objects to the output stream for scenarios where response is a model type
+        let responseTypeRegex = /global::System.Threading.Tasks.Task<Microsoft.Graph(.|.Beta.)PowerShell.Models.\w*> \w*\)[^]*?(WriteObject.*(await response).*;)/gm
+        var writeObjectRegex = /(WriteObject.*(await response).*;)/gm
+        var responseTypeRegexMatch = $.match(responseTypeRegex);
+        if(responseTypeRegexMatch){
+           responseTypeRegexMatch.forEach((item)=>{
+            var writeObjectRegexMatch = writeObjectRegex.exec($);
+            if(writeObjectRegexMatch){
+              var newContent = item.replace(writeObjectRegex, `var result = ${writeObjectRegexMatch[2]}; if(result!=null){WriteObject(result);}`)
+              $ = $.replace(item, newContent);
+            }
+           });
+        }
+        
         return $;
       }
 

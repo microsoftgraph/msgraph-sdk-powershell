@@ -237,6 +237,11 @@
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
+                    MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection =
+                        await this.Client.GetPermissionGrantPolicies(selectQuery: "id, resourceScopeType", eventListener: this, sender: this.Pipeline);
+
+                    WriteVerbose($"Fetched permission grant policies for tenant.");
+
                     // Get Group consent settings
                     MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingCollection = await this.Client.GetTenantConsentSettings(this, Pipeline);
 
@@ -252,8 +257,11 @@
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
                     RscConfigurationSynthesizer rscConfigurationConverter = new RscConfigurationSynthesizer();
-                    Models.IMicrosoftGraphRscConfiguration microsoftGraphRscConfiguration =
-                        rscConfigurationConverter.ConvertToTeamRscConfiguration(tenantConsentSettingCollection, authorizationPolicy, this);
+                    Models.IMicrosoftGraphRscConfiguration microsoftGraphRscConfiguration = rscConfigurationConverter.ConvertToTeamRscConfiguration(
+                        permissionGrantPolicyCollection,
+                        tenantConsentSettingCollection,
+                        authorizationPolicy,
+                        this);
 
                     WriteObject(microsoftGraphRscConfiguration);
 
