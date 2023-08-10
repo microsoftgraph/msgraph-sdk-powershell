@@ -307,7 +307,7 @@ paths:
       description: 'Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0
       operationId: admin.person_GetPronoun
       parameters:
         - name: $select
@@ -352,7 +352,7 @@ paths:
       description: 'Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0
       operationId: admin.person_UpdatePronoun
       requestBody:
         description: New navigation property values
@@ -397,7 +397,7 @@ paths:
       description: Retrieve a list of administrativeUnit objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0
       operationId: administrativeUnit_ListAdministrativeUnit
       parameters:
         - name: ConsistencyLevel
@@ -489,7 +489,7 @@ paths:
       description: Use this API to create a new administrativeUnit.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0
       operationId: administrativeUnit_CreateAdministrativeUnit
       requestBody:
         description: New entity
@@ -513,10 +513,10 @@ paths:
       tags:
         - administrativeUnits.administrativeUnit
       summary: Get administrativeUnit
-      description: 'Retrieve the properties and relationships of an administrativeUnit object. Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.'
+      description: 'Retrieve the properties and relationships of an administrativeUnit object. Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
       operationId: administrativeUnit_GetAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -579,7 +579,7 @@ paths:
       description: Update the properties of an administrativeUnit object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-1.0
       operationId: administrativeUnit_UpdateAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -614,7 +614,7 @@ paths:
       description: Delete an administrativeUnit.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-1.0
       operationId: administrativeUnit_DeleteAdministrativeUnit
       parameters:
         - name: administrativeUnit-id
@@ -974,7 +974,7 @@ paths:
       summary: Create new navigation property to members for administrativeUnits
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: administrativeUnit_CreateMember
       parameters:
         - name: administrativeUnit-id
@@ -1539,7 +1539,7 @@ paths:
       summary: Create new navigation property ref to members for administrativeUnits
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: administrativeUnit_CreateMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -2226,7 +2226,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: administrativeUnit_checkMemberGroup
       parameters:
         - name: administrativeUnit-id
@@ -2334,7 +2334,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: administrativeUnit_getMemberGroup
       parameters:
         - name: administrativeUnit-id
@@ -2442,7 +2442,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: administrativeUnit_restore
       parameters:
         - name: administrativeUnit-id
@@ -2471,7 +2471,7 @@ paths:
       description: List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0
       operationId: administrativeUnit_ListScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -2549,7 +2549,7 @@ paths:
       description: 'Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0
       operationId: administrativeUnit_CreateScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -2585,7 +2585,7 @@ paths:
       description: Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
       operationId: administrativeUnit_GetScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -2687,7 +2687,7 @@ paths:
       description: Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
       operationId: administrativeUnit_DeleteScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -2854,7 +2854,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: administrativeUnit_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -2907,7 +2907,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: administrativeUnit_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -2940,10 +2940,10 @@ paths:
       tags:
         - administrativeUnits.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: administrativeUnit_validateProperty
       requestBody:
         description: Action parameters
@@ -2983,7 +2983,7 @@ paths:
       description: Get the list of organizational contacts for this organization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/orgcontact-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/orgcontact-list?view=graph-rest-1.0
       operationId: contact.orgContact_ListOrgContact
       parameters:
         - name: ConsistencyLevel
@@ -3135,7 +3135,7 @@ paths:
       description: Get the properties and relationships of an organizational contact object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/orgcontact-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/orgcontact-get?view=graph-rest-1.0
       operationId: contact.orgContact_GetOrgContact
       parameters:
         - name: orgContact-id
@@ -3271,7 +3271,7 @@ paths:
       description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-directreports?view=graph-rest-1.0
       operationId: contact_ListDirectReport
       parameters:
         - name: orgContact-id
@@ -3809,7 +3809,7 @@ paths:
       description: Get the contact's manager
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0
       operationId: contact_GetManager
       parameters:
         - name: orgContact-id
@@ -3863,7 +3863,7 @@ paths:
       description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/orgcontact-list-memberof?view=graph-rest-1.0
       operationId: contact_ListMemberGraphOPre
       parameters:
         - name: orgContact-id
@@ -4401,7 +4401,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: contact_checkMemberGroup
       parameters:
         - name: orgContact-id
@@ -4509,7 +4509,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: contact_getMemberGroup
       parameters:
         - name: orgContact-id
@@ -4617,7 +4617,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: contact_restore
       parameters:
         - name: orgContact-id
@@ -5492,7 +5492,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: contact_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -5545,7 +5545,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: contact_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -5578,10 +5578,10 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: contact_validateProperty
       requestBody:
         description: Action parameters
@@ -5621,7 +5621,7 @@ paths:
       description: Retrieve a list of contract objects associated to a partner tenant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contract-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contract-list?view=graph-rest-1.0
       operationId: contract_ListContract
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5720,7 +5720,7 @@ paths:
       description: Retrieve the properties and relationships of contract object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contract-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/contract-get?view=graph-rest-1.0
       operationId: contract_GetContract
       parameters:
         - name: contract-id
@@ -5835,7 +5835,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: contract_checkMemberGroup
       parameters:
         - name: contract-id
@@ -5943,7 +5943,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: contract_getMemberGroup
       parameters:
         - name: contract-id
@@ -6051,7 +6051,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: contract_restore
       parameters:
         - name: contract-id
@@ -6161,7 +6161,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: contract_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -6214,7 +6214,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: contract_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -6247,10 +6247,10 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: contract_validateProperty
       requestBody:
         description: Action parameters
@@ -6290,7 +6290,7 @@ paths:
       description: 'Retrieve a list of devices registered in the directory. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0
       operationId: device_ListDevice
       parameters:
         - name: ConsistencyLevel
@@ -6486,7 +6486,7 @@ paths:
       description: Create a new device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0
       operationId: device_CreateDevice
       requestBody:
         description: New entity
@@ -6510,10 +6510,10 @@ paths:
       tags:
         - devices.device
       summary: Get device
-      description: 'Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.'
+      description: 'Get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
       operationId: device_GetDevice
       parameters:
         - name: device-id
@@ -6616,7 +6616,7 @@ paths:
       description: Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
       operationId: device_UpdateDevice
       parameters:
         - name: device-id
@@ -6651,7 +6651,7 @@ paths:
       description: Delete a registered device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
       operationId: device_DeleteDevice
       parameters:
         - name: device-id
@@ -7277,7 +7277,7 @@ paths:
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: device_ListMemberGraphOPre
       parameters:
         - name: device-id
@@ -7815,7 +7815,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: device_checkMemberGroup
       parameters:
         - name: device-id
@@ -7923,7 +7923,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: device_getMemberGroup
       parameters:
         - name: device-id
@@ -8031,7 +8031,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: device_restore
       parameters:
         - name: device-id
@@ -8060,7 +8060,7 @@ paths:
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: device_ListRegisteredOwner
       parameters:
         - name: device-id
@@ -8143,7 +8143,7 @@ paths:
       description: Remove a user as a registered owner of the device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -8422,7 +8422,7 @@ paths:
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: device_ListRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -8479,7 +8479,7 @@ paths:
       description: Add a user as a registered owner of the device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
       operationId: device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: device-id
@@ -8836,7 +8836,7 @@ paths:
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: device_ListRegisteredUser
       parameters:
         - name: device-id
@@ -8919,7 +8919,7 @@ paths:
       description: Remove a user as a registered user of the device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -9198,7 +9198,7 @@ paths:
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: device_ListRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -9255,7 +9255,7 @@ paths:
       description: Add a registered user for the device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
       operationId: device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: device-id
@@ -9612,7 +9612,7 @@ paths:
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: device_ListTransitiveMemberGraphOPre
       parameters:
         - name: device-id
@@ -10150,7 +10150,7 @@ paths:
       description: Retrieve a list of usageRight objects for a given device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
       operationId: device_ListUsageRight
       parameters:
         - name: device-id
@@ -10413,10 +10413,10 @@ paths:
       tags:
         - devices.device
       summary: Get device
-      description: 'Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.'
+      description: 'Get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
       operationId: device_GetDeviceGraphBPreDeviceId
       parameters:
         - name: deviceId
@@ -10519,7 +10519,7 @@ paths:
       description: Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
       operationId: device_UpdateDeviceGraphBPreDeviceId
       parameters:
         - name: deviceId
@@ -10554,7 +10554,7 @@ paths:
       description: Delete a registered device.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
       operationId: device_DeleteDeviceGraphBPreDeviceId
       parameters:
         - name: deviceId
@@ -10791,7 +10791,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: device_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -10844,7 +10844,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: device_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -10877,10 +10877,10 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: device_validateProperty
       requestBody:
         description: Action parameters
@@ -11560,7 +11560,7 @@ paths:
       summary: Create new navigation property to members for directory
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateMember
       parameters:
         - name: administrativeUnit-id
@@ -12125,7 +12125,7 @@ paths:
       summary: Create new navigation property ref to members for directory
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateMemberGraphBPreRef
       parameters:
         - name: administrativeUnit-id
@@ -12812,7 +12812,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directory.administrativeUnit_checkMemberGroup
       parameters:
         - name: administrativeUnit-id
@@ -12920,7 +12920,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directory.administrativeUnit_getMemberGroup
       parameters:
         - name: administrativeUnit-id
@@ -13028,7 +13028,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directory.administrativeUnit_restore
       parameters:
         - name: administrativeUnit-id
@@ -13057,7 +13057,7 @@ paths:
       description: List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_ListScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -13135,7 +13135,7 @@ paths:
       description: 'Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_CreateScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -13171,7 +13171,7 @@ paths:
       description: Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_GetScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -13273,7 +13273,7 @@ paths:
       description: Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0
       operationId: directory.administrativeUnit_DeleteScopedRoleMember
       parameters:
         - name: administrativeUnit-id
@@ -13430,7 +13430,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directory.administrativeUnit_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -13483,7 +13483,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: directory.administrativeUnit_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -13516,10 +13516,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directory.administrativeUnit_validateProperty
       requestBody:
         description: Action parameters
@@ -13559,7 +13559,7 @@ paths:
       description: Get a list of the attributeSet objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
       operationId: directory_ListAttributeSet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13626,7 +13626,7 @@ paths:
       description: Create a new attributeSet object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
       operationId: directory_CreateAttributeSet
       requestBody:
         description: New navigation property
@@ -13653,7 +13653,7 @@ paths:
       description: Read the properties and relationships of an attributeSet object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
       operationId: directory_GetAttributeSet
       parameters:
         - name: attributeSet-id
@@ -13707,7 +13707,7 @@ paths:
       description: Update the properties of an attributeSet object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
       operationId: directory_UpdateAttributeSet
       parameters:
         - name: attributeSet-id
@@ -14347,7 +14347,7 @@ paths:
       description: Get a list of the customSecurityAttributeDefinition objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_ListCustomSecurityAttributeDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14434,7 +14434,7 @@ paths:
       description: Create a new customSecurityAttributeDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_CreateCustomSecurityAttributeDefinition
       requestBody:
         description: New navigation property
@@ -14461,7 +14461,7 @@ paths:
       description: Read the properties and relationships of a customSecurityAttributeDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
       operationId: directory_GetCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -14523,7 +14523,7 @@ paths:
       description: Update the properties of a customSecurityAttributeDefinition object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
       operationId: directory_UpdateCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -14585,7 +14585,7 @@ paths:
       description: Get a list of the allowedValue objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_ListAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -14657,7 +14657,7 @@ paths:
       description: Create a new allowedValue object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_CreateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -14693,7 +14693,7 @@ paths:
       description: Read the properties and relationships of an allowedValue object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_GetAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -14754,7 +14754,7 @@ paths:
       description: Update the properties of an allowedValue object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_UpdateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -15156,7 +15156,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directory.deletedItem_checkMemberGroup
       parameters:
         - name: directoryObject-id
@@ -15313,7 +15313,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directory.deletedItem_getMemberGroup
       parameters:
         - name: directoryObject-id
@@ -15470,7 +15470,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directory.deletedItem_restore
       parameters:
         - name: directoryObject-id
@@ -15900,7 +15900,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directory.deletedItem_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -15953,7 +15953,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: directory.deletedItem_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -16208,10 +16208,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directory.deletedItem_validateProperty
       requestBody:
         description: Action parameters
@@ -16566,7 +16566,7 @@ paths:
       description: Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
       operationId: directory.featureRolloutPolicy_CreateAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
@@ -16608,7 +16608,7 @@ paths:
       description: Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
       operationId: directory.featureRolloutPolicy_DeleteAppliesToGraphBPreRef
       parameters:
         - name: featureRolloutPolicy-id
@@ -16738,7 +16738,7 @@ paths:
       description: Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
       operationId: directory.featureRolloutPolicy_CreateAppliesToGraphBPreRef
       parameters:
         - name: featureRolloutPolicy-id
@@ -16852,7 +16852,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directory.featureRolloutPolicy.appliesTo_getGraphBPreId
       parameters:
         - name: featureRolloutPolicy-id
@@ -16920,7 +16920,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: directory.featureRolloutPolicy.appliesTo_getUserOwnedObject
       parameters:
         - name: featureRolloutPolicy-id
@@ -16968,10 +16968,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directory.featureRolloutPolicy.appliesTo_validateProperty
       parameters:
         - name: featureRolloutPolicy-id
@@ -17211,7 +17211,7 @@ paths:
       description: Delete a samlOrWsFedExternalDomainFederation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/samlorwsfedexternaldomainfederation-delete?view=graph-rest-1.0
       operationId: directory_DeleteFederationConfiguration
       parameters:
         - name: identityProviderBase-id
@@ -17531,10 +17531,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action complete
-      description: Complete an impactedResource object and update its **status** to `completedByUser`.
+      description: Complete an impactedResource object and update its status to completedByUser.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
       operationId: directory.impactedResource_complete
       parameters:
         - name: impactedResource-id
@@ -17560,10 +17560,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
-      description: Dismiss an impactedResources object and update its status to `dismissed`.
+      description: Dismiss an impactedResources object and update its status to dismissed.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
       operationId: directory.impactedResource_dismiss
       parameters:
         - name: impactedResource-id
@@ -17602,10 +17602,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action postpone
-      description: 'Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`. On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.'
+      description: 'Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
       operationId: directory.impactedResource_postpone
       parameters:
         - name: impactedResource-id
@@ -17645,10 +17645,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
-      description: 'Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object. This action updates the **status** of the resource to `active`. This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`. '
+      description: 'Reactivate an accidentally dismissed, completed, or postponed impactedResource object. This action updates the status of the resource to active. This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0
       operationId: directory.impactedResource_reactivate
       parameters:
         - name: impactedResource-id
@@ -17691,7 +17691,7 @@ paths:
       description: Retrieve the properties of all inboundSharedUserProfiles.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-inboundshareduserprofiles?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-inboundshareduserprofiles?view=graph-rest-1.0
       operationId: directory_ListInboundSharedUserProfile
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17784,7 +17784,7 @@ paths:
       description: Read the properties of an inboundSharedUserProfile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inboundshareduserprofile-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inboundshareduserprofile-get?view=graph-rest-1.0
       operationId: directory_GetInboundSharedUserProfile
       parameters:
         - name: inboundSharedUserProfile-userId
@@ -17897,7 +17897,7 @@ paths:
       description: Create a request to export the personal data for an inboundSharedUserProfile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
       operationId: directory.inboundSharedUserProfile_exportPersonalData
       parameters:
         - name: inboundSharedUserProfile-userId
@@ -17935,7 +17935,7 @@ paths:
       description: 'Create a request to remove the personal data for an inboundSharedUserProfile. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/inboundshareduserprofile-removepersonaldata?view=graph-rest-1.0
       operationId: directory.inboundSharedUserProfile_removePersonalData
       parameters:
         - name: inboundSharedUserProfile-userId
@@ -18061,7 +18061,7 @@ paths:
       description: Read the properties and relationships of an onPremisesDirectorySynchronization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-get?view=graph-rest-1.0
       operationId: directory_GetOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -18115,7 +18115,7 @@ paths:
       description: Update the properties of an onPremisesDirectorySynchronization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/onpremisesdirectorysynchronization-update?view=graph-rest-1.0
       operationId: directory_UpdateOnPremisesSynchronization
       parameters:
         - name: onPremisesDirectorySynchronization-id
@@ -18191,7 +18191,7 @@ paths:
       description: Retrieve the properties of all outboundSharedUserProfiles.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-1.0
       operationId: directory_ListOutboundSharedUserProfile
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18277,7 +18277,7 @@ paths:
       description: Get the details of an outboundSharedUserProfile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outboundshareduserprofile-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outboundshareduserprofile-get?view=graph-rest-1.0
       operationId: directory_GetOutboundSharedUserProfile
       parameters:
         - name: outboundSharedUserProfile-userId
@@ -18389,7 +18389,7 @@ paths:
       description: List the tenant references of an outboundSharedUserProfile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outboundshareduserprofile-list-tenants?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/outboundshareduserprofile-list-tenants?view=graph-rest-1.0
       operationId: directory.outboundSharedUserProfile_ListTenant
       parameters:
         - name: outboundSharedUserProfile-userId
@@ -18621,7 +18621,7 @@ paths:
       description: Create a request to remove the personal data for an outboundSharedUserProfile.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tenantreference-removepersonaldata?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/tenantreference-removepersonaldata?view=graph-rest-1.0
       operationId: directory.outboundSharedUserProfile.tenant_removePersonalData
       parameters:
         - name: outboundSharedUserProfile-userId
@@ -18690,7 +18690,7 @@ paths:
       description: Get a list of the recommendation objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-1.0
       operationId: directory_ListRecommendation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18833,7 +18833,7 @@ paths:
       description: Read the properties and relationships of a recommendation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/recommendation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/recommendation-get?view=graph-rest-1.0
       operationId: directory_GetRecommendation
       parameters:
         - name: recommendation-id
@@ -19246,10 +19246,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action complete
-      description: Complete an impactedResource object and update its **status** to `completedByUser`.
+      description: Complete an impactedResource object and update its status to completedByUser.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_complete
       parameters:
         - name: recommendation-id
@@ -19283,10 +19283,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
-      description: Dismiss an impactedResources object and update its status to `dismissed`.
+      description: Dismiss an impactedResources object and update its status to dismissed.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_dismiss
       parameters:
         - name: recommendation-id
@@ -19333,10 +19333,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action postpone
-      description: 'Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`. On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.'
+      description: 'Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed. On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_postpone
       parameters:
         - name: recommendation-id
@@ -19384,10 +19384,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
-      description: 'Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object. This action updates the **status** of the resource to `active`. This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`. '
+      description: 'Reactivate an accidentally dismissed, completed, or postponed impactedResource object. This action updates the status of the resource to active. This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_reactivate
       parameters:
         - name: recommendation-id
@@ -19443,10 +19443,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action complete
-      description: Complete a recommendation object and update its **status** to `completedByUser`.
+      description: Complete a recommendation object and update its status to completedByUser.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/recommendation-complete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/recommendation-complete?view=graph-rest-1.0
       operationId: directory.recommendation_complete
       parameters:
         - name: recommendation-id
@@ -19472,10 +19472,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
-      description: Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+      description: Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0
       operationId: directory.recommendation_dismiss
       parameters:
         - name: recommendation-id
@@ -19514,10 +19514,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action postpone
-      description: 'Postpone action on a recommendation object to a specified future date and time by marking its **status** as `postponed`. On the date and time provided, Azure AD will automatically update the **status** of the **recommendation** object to `active` again.'
+      description: 'Postpone action on a recommendation object to a specified future date and time by marking its status as postponed. On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-1.0
       operationId: directory.recommendation_postpone
       parameters:
         - name: recommendation-id
@@ -19557,10 +19557,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
-      description: 'Reactivate a completed, dismissed, or postponed recommendation object. This action updates the **status** of the recommendation to `active`. This method only works when the **status** of the recommendation is `completedByUser`, `dismissed`, or `postponed`.'
+      description: 'Reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-1.0
       operationId: directory.recommendation_reactivate
       parameters:
         - name: recommendation-id
@@ -19807,7 +19807,7 @@ paths:
       description: Get the list of commercial subscriptions that an organization has acquired.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0
       operationId: directory_ListSubscription
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19930,7 +19930,7 @@ paths:
       description: Get a specific commercial subscription that an organization has acquired.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0
       operationId: directory_GetSubscription
       parameters:
         - name: companySubscription-id
@@ -20067,7 +20067,7 @@ paths:
       description: 'List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin''s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0
       operationId: directoryRole_ListDirectoryRole
       parameters:
         - $ref: '#/components/parameters/skip'
@@ -20140,10 +20140,10 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Activate directoryRole
-      description: 'Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.'
+      description: 'Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0
       operationId: directoryRole_CreateDirectoryRole
       requestBody:
         description: New entity
@@ -20167,10 +20167,10 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Get directoryRole
-      description: 'Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
+      description: 'Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
       operationId: directoryRole_GetDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -20288,7 +20288,7 @@ paths:
       description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
       operationId: directoryRole_ListMember
       parameters:
         - name: directoryRole-id
@@ -20368,10 +20368,10 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Remove directory role member
-      description: 'Remove a member from a directoryRole. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
+      description: 'Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-1.0
       operationId: directoryRole_DeleteMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -20851,7 +20851,7 @@ paths:
       description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-1.0
       operationId: directoryRole_ListMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -20905,10 +20905,10 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Add directory role member
-      description: 'Create a new directory role member. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
+      description: 'Create a new directory role member. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-post-members?view=graph-rest-1.0
       operationId: directoryRole_CreateMemberGraphBPreRef
       parameters:
         - name: directoryRole-id
@@ -21595,7 +21595,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directoryRole_checkMemberGroup
       parameters:
         - name: directoryRole-id
@@ -21703,7 +21703,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directoryRole_getMemberGroup
       parameters:
         - name: directoryRole-id
@@ -21811,7 +21811,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directoryRole_restore
       parameters:
         - name: directoryRole-id
@@ -21840,7 +21840,7 @@ paths:
       description: Retrieve a list of scopedRoleMembership objects for a directory role.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0
       operationId: directoryRole_ListScopedMember
       parameters:
         - name: directoryRole-id
@@ -22103,10 +22103,10 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Get directoryRole
-      description: 'Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
+      description: 'Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0
       operationId: directoryRole_GetDirectoryRoleGraphBPreRoleTemplateId
       parameters:
         - name: roleTemplateId
@@ -22316,7 +22316,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directoryRole_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -22369,7 +22369,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: directoryRole_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -22402,10 +22402,10 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directoryRole_validateProperty
       requestBody:
         description: Action parameters
@@ -22445,7 +22445,7 @@ paths:
       description: Retrieve a list of directoryroletemplate objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0
       operationId: directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
         - $ref: '#/components/parameters/skip'
@@ -22537,7 +22537,7 @@ paths:
       description: Retrieve the properties and relationships of a directoryroletemplate object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryroletemplate-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryroletemplate-get?view=graph-rest-1.0
       operationId: directoryRoleTemplate_GetDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -22650,7 +22650,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directoryRoleTemplate_checkMemberGroup
       parameters:
         - name: directoryRoleTemplate-id
@@ -22758,7 +22758,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directoryRoleTemplate_getMemberGroup
       parameters:
         - name: directoryRoleTemplate-id
@@ -22866,7 +22866,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directoryRoleTemplate_restore
       parameters:
         - name: directoryRoleTemplate-id
@@ -22976,7 +22976,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directoryRoleTemplate_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -23029,7 +23029,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: directoryRoleTemplate_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -23062,10 +23062,10 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directoryRoleTemplate_validateProperty
       requestBody:
         description: Action parameters
@@ -23102,10 +23102,10 @@ paths:
       tags:
         - directorySettingTemplates.directorySettingTemplate
       summary: List directorySettingTemplates
-      description: 'Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.'
+      description: 'Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0
       operationId: directorySettingTemplate_ListDirectorySettingTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23198,10 +23198,10 @@ paths:
       tags:
         - directorySettingTemplates.directorySettingTemplate
       summary: Get a directory setting template
-      description: 'A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.'
+      description: 'A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorysettingtemplate-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directorysettingtemplate-get?view=graph-rest-1.0
       operationId: directorySettingTemplate_GetDirectorySettingTemplate
       parameters:
         - name: directorySettingTemplate-id
@@ -23315,7 +23315,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: directorySettingTemplate_checkMemberGroup
       parameters:
         - name: directorySettingTemplate-id
@@ -23423,7 +23423,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: directorySettingTemplate_getMemberGroup
       parameters:
         - name: directorySettingTemplate-id
@@ -23531,7 +23531,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: directorySettingTemplate_restore
       parameters:
         - name: directorySettingTemplate-id
@@ -23641,7 +23641,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: directorySettingTemplate_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -23694,7 +23694,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: directorySettingTemplate_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -23727,10 +23727,10 @@ paths:
       tags:
         - directorySettingTemplates.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: directorySettingTemplate_validateProperty
       requestBody:
         description: Action parameters
@@ -23770,7 +23770,7 @@ paths:
       description: Retrieve a list of domain objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-list?view=graph-rest-1.0
       operationId: domain_ListDomain
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23871,10 +23871,10 @@ paths:
       tags:
         - domains.domain
       summary: Create domain
-      description: 'Adds a domain to the tenant. **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.'
+      description: 'Adds a domain to the tenant. Important: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0
       operationId: domain_CreateDomain
       requestBody:
         description: New entity
@@ -23901,7 +23901,7 @@ paths:
       description: Retrieve the properties and relationships of domain object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-get?view=graph-rest-1.0
       operationId: domain_GetDomain
       parameters:
         - name: domain-id
@@ -23974,7 +23974,7 @@ paths:
       description: Update the properties of domain object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-1.0
       operationId: domain_UpdateDomain
       parameters:
         - name: domain-id
@@ -24009,7 +24009,7 @@ paths:
       description: Deletes a domain from a tenant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0
       operationId: domain_DeleteDomain
       parameters:
         - name: domain-id
@@ -24040,7 +24040,7 @@ paths:
       description: Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0
       operationId: domain_ListDomainNameReference
       parameters:
         - name: domain-id
@@ -24299,7 +24299,7 @@ paths:
       description: Create a new internalDomainFederation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-post-federationconfiguration?view=graph-rest-1.0
       operationId: domain_CreateFederationConfiguration
       parameters:
         - name: domain-id
@@ -24335,7 +24335,7 @@ paths:
       description: Read the properties and relationships of an internalDomainFederation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0
       operationId: domain_GetFederationConfiguration
       parameters:
         - name: domain-id
@@ -24408,7 +24408,7 @@ paths:
       description: Update the properties of an internalDomainFederation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0
       operationId: domain_UpdateFederationConfiguration
       parameters:
         - name: domain-id
@@ -24451,7 +24451,7 @@ paths:
       description: Deletes an internalDomainFederation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0
       operationId: domain_DeleteFederationConfiguration
       parameters:
         - name: domain-id
@@ -24509,10 +24509,10 @@ paths:
       tags:
         - domains.Actions
       summary: Invoke action forceDelete
-      description: 'Deletes a domain using an asynchronous operation. Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code. To verify deletion of a domain, you can perform a get domain. If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.'
+      description: 'Deletes a domain using an asynchronous operation. Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code. To verify deletion of a domain, you can perform a get domain. If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0
       operationId: domain_forceDelete
       parameters:
         - name: domain-id
@@ -24548,10 +24548,10 @@ paths:
       tags:
         - domains.Actions
       summary: Invoke action promote
-      description: Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
+      description: Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
       operationId: domain_promote
       parameters:
         - name: domain-id
@@ -24587,7 +24587,7 @@ paths:
       description: Validates the ownership of the domain.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0
       operationId: domain_verify
       parameters:
         - name: domain-id
@@ -24616,7 +24616,7 @@ paths:
       description: Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-list-serviceconfigurationrecords?view=graph-rest-1.0
       operationId: domain_ListServiceConfigurationRecord
       parameters:
         - name: domain-id
@@ -25151,7 +25151,7 @@ paths:
       description: 'Retrieve a list of domainDnsRecord objects. You cannot use an associated domain with your Azure AD tenant until ownership is verified. To verify the ownership of the domain, retrieve the domain verification records and add the details to the zone file of the domain. This can be done through the domain registrar or DNS server configuration. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/domain-list-verificationdnsrecords?view=graph-rest-1.0
       operationId: domain_ListVerificationDnsRecord
       parameters:
         - name: domain-id
@@ -25439,7 +25439,7 @@ paths:
       description: Retrieve a list of organization objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25614,10 +25614,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.'
+      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -25704,10 +25704,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: 'Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.'
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -25766,10 +25766,10 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get organizationalBranding
-      description: 'Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`. If no default organizational branding object exists, this method returns a `404 Not Found` error. If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**. To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.'
+      description: 'Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBranding
       parameters:
         - name: organization-id
@@ -25854,7 +25854,7 @@ paths:
       description: Update the properties of the default branding object specified by the organizationalBranding resource.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-update?view=graph-rest-1.0
       operationId: organization_UpdateBranding
       parameters:
         - name: organization-id
@@ -25889,7 +25889,7 @@ paths:
       description: 'Delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-delete?view=graph-rest-1.0
       operationId: organization_DeleteBranding
       parameters:
         - name: organization-id
@@ -25920,7 +25920,7 @@ paths:
       description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingBackgroundImage
       parameters:
         - name: organization-id
@@ -25979,7 +25979,7 @@ paths:
       description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingBannerLogo
       parameters:
         - name: organization-id
@@ -26038,7 +26038,7 @@ paths:
       description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingCustomCSS
       parameters:
         - name: organization-id
@@ -26097,7 +26097,7 @@ paths:
       description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingFavicon
       parameters:
         - name: organization-id
@@ -26156,7 +26156,7 @@ paths:
       description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingHeaderLogo
       parameters:
         - name: organization-id
@@ -26215,7 +26215,7 @@ paths:
       description: 'Retrieve all localization branding objects, including the default branding.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_ListLocalization
       parameters:
         - name: organization-id
@@ -26377,7 +26377,7 @@ paths:
       description: 'Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn''t exist. The default branding is created only once. It''s loaded when a localized branding isn''t configured for the user''s browser language. To retrieve the default branding, see Get branding.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-post-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-post-localizations?view=graph-rest-1.0
       operationId: organization.branding_CreateLocalization
       parameters:
         - name: organization-id
@@ -26410,10 +26410,10 @@ paths:
       tags:
         - organization.organizationalBranding
       summary: Get organizationalBrandingLocalization
-      description: 'Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of **id** in the URL.'
+      description: 'Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of id in the URL.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-get?view=graph-rest-1.0
       operationId: organization.branding_GetLocalization
       parameters:
         - name: organization-id
@@ -26504,7 +26504,7 @@ paths:
       description: Update the properties of an organizationalBrandingLocalization object for a specific localization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-update?view=graph-rest-1.0
       operationId: organization.branding_UpdateLocalization
       parameters:
         - name: organization-id
@@ -26547,7 +26547,7 @@ paths:
       description: 'Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbrandinglocalization-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbrandinglocalization-delete?view=graph-rest-1.0
       operationId: organization.branding_DeleteLocalization
       parameters:
         - name: organization-id
@@ -26586,7 +26586,7 @@ paths:
       description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsBackgroundImage
       parameters:
         - name: organization-id
@@ -26661,7 +26661,7 @@ paths:
       description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsBannerLogo
       parameters:
         - name: organization-id
@@ -26736,7 +26736,7 @@ paths:
       description: CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsCustomCSS
       parameters:
         - name: organization-id
@@ -26811,7 +26811,7 @@ paths:
       description: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsFavicon
       parameters:
         - name: organization-id
@@ -26886,7 +26886,7 @@ paths:
       description: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsHeaderLogo
       parameters:
         - name: organization-id
@@ -26961,7 +26961,7 @@ paths:
       description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsSquareLogo
       parameters:
         - name: organization-id
@@ -27036,7 +27036,7 @@ paths:
       description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
       operationId: organization.branding_GetLocalizationsSquareLogoDark
       parameters:
         - name: organization-id
@@ -27133,7 +27133,7 @@ paths:
       description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingSquareLogo
       parameters:
         - name: organization-id
@@ -27192,7 +27192,7 @@ paths:
       description: A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
       operationId: organization_GetBrandingSquareLogoDark
       parameters:
         - name: organization-id
@@ -27502,7 +27502,7 @@ paths:
       description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: organization_checkMemberGroup
       parameters:
         - name: organization-id
@@ -27610,7 +27610,7 @@ paths:
       description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: organization_getMemberGroup
       parameters:
         - name: organization-id
@@ -27718,7 +27718,7 @@ paths:
       description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: organization_restore
       parameters:
         - name: organization-id
@@ -27778,10 +27778,10 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get organizationSettings
-      description: 'Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.'
+      description: 'Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-get?view=graph-rest-1.0
       operationId: organization_GetSetting
       parameters:
         - name: organization-id
@@ -27903,7 +27903,7 @@ paths:
       description: Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0
       operationId: organization.setting_GetContactInsight
       parameters:
         - name: organization-id
@@ -27957,7 +27957,7 @@ paths:
       description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
       operationId: organization.setting_UpdateContactInsight
       parameters:
         - name: organization-id
@@ -28019,7 +28019,7 @@ paths:
       description: 'Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-list-iteminsights?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-list-iteminsights?view=graph-rest-1.0
       operationId: organization.setting_GetItemInsight
       parameters:
         - name: organization-id
@@ -28073,7 +28073,7 @@ paths:
       description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
       operationId: organization.setting_UpdateItemInsight
       parameters:
         - name: organization-id
@@ -28132,10 +28132,10 @@ paths:
       tags:
         - organization.organizationSettings
       summary: List microsoftApplicationDataAccessSettings
-      description: Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+      description: Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-1.0
       operationId: organization.setting_GetMicrosoftApplicationDataAccess
       parameters:
         - name: organization-id
@@ -28189,7 +28189,7 @@ paths:
       description: Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/microsoftapplicationdataaccesssettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/microsoftapplicationdataaccesssettings-update?view=graph-rest-1.0
       operationId: organization.setting_UpdateMicrosoftApplicationDataAccess
       parameters:
         - name: organization-id
@@ -28251,7 +28251,7 @@ paths:
       description: 'Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-list-peopleinsights?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-list-peopleinsights?view=graph-rest-1.0
       operationId: organization.setting_GetPeopleInsight
       parameters:
         - name: organization-id
@@ -28305,7 +28305,7 @@ paths:
       description: "Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy"
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0
       operationId: organization.setting_UpdatePeopleInsight
       parameters:
         - name: organization-id
@@ -28364,10 +28364,10 @@ paths:
       tags:
         - organization.organizationSettings
       summary: List profileCardProperties
-      description: Get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
+      description: Get a collection of profileCardProperty resources of an organization. Each resource is identified by its directoryPropertyName property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-list-profilecardproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-list-profilecardproperties?view=graph-rest-1.0
       operationId: organization.setting_ListProfileCardProperty
       parameters:
         - name: organization-id
@@ -28439,10 +28439,10 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Create profileCardProperty
-      description: 'Create a new profileCardProperty for an organization. The new property is identified by its **directoryPropertyName** property. For more information on adding properties to the profile card for an organization, see customize the profile card.'
+      description: 'Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information on adding properties to the profile card for an organization, see customize the profile card.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organizationsettings-post-profilecardproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organizationsettings-post-profilecardproperties?view=graph-rest-1.0
       operationId: organization.setting_CreateProfileCardProperty
       parameters:
         - name: organization-id
@@ -28475,10 +28475,10 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get profileCardProperty
-      description: 'Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its **directoryPropertyName** property.'
+      description: 'Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
       operationId: organization.setting_GetProfileCardProperty
       parameters:
         - name: organization-id
@@ -28757,7 +28757,7 @@ paths:
       description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: organization_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -28810,7 +28810,7 @@ paths:
       description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: organization_getUserOwnedObject
       requestBody:
         description: Action parameters
@@ -28843,10 +28843,10 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: organization_validateProperty
       requestBody:
         description: Action parameters
@@ -28886,7 +28886,7 @@ paths:
       description: Retrieve a list of tenant-level or group-specific group settings objects.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
       operationId: setting.directorySetting_ListDirectorySetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28952,10 +28952,10 @@ paths:
       tags:
         - settings.directorySetting
       summary: Create settings
-      description: 'Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.'
+      description: 'Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
       operationId: setting.directorySetting_CreateDirectorySetting
       requestBody:
         description: New entity
@@ -28982,7 +28982,7 @@ paths:
       description: Retrieve the properties of a specific directory setting object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorysetting-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directorysetting-get?view=graph-rest-1.0
       operationId: setting.directorySetting_GetDirectorySetting
       parameters:
         - name: directorySetting-id
@@ -29037,7 +29037,7 @@ paths:
       description: Update the properties of a specific directory setting object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorysetting-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directorysetting-update?view=graph-rest-1.0
       operationId: setting.directorySetting_UpdateDirectorySetting
       parameters:
         - name: directorySetting-id
@@ -29072,7 +29072,7 @@ paths:
       description: Delete a directory setting.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/directorysetting-delete?view=graph-rest-1.0
       operationId: setting.directorySetting_DeleteDirectorySetting
       parameters:
         - name: directorySetting-id
@@ -29113,10 +29113,10 @@ paths:
       tags:
         - subscribedSkus.subscribedSku
       summary: List subscribedSkus
-      description: 'Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.'
+      description: 'Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0
       operationId: subscribedSku_ListSubscribedSku
       parameters:
         - $ref: '#/components/parameters/search'
@@ -29214,7 +29214,7 @@ paths:
       description: Get a specific commercial subscription that an organization has acquired.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-1.0
       operationId: subscribedSku_GetSubscribedSku
       parameters:
         - name: subscribedSku-id
@@ -29360,7 +29360,7 @@ paths:
       description: Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-1.0
       operationId: tenantRelationship.managedTenant.managementAction_apply
       parameters:
         - name: managementAction-id
@@ -29563,7 +29563,7 @@ paths:
       description: 'Carries out the appropriate procedures to remove a managed tenant from the multi-tenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multi-tenant management platform.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-1.0
       operationId: tenantRelationship.managedTenant.tenant_offboardTenant
       parameters:
         - name: tenant-id
@@ -29592,7 +29592,7 @@ paths:
       description: Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multi-tenant management platform using the offboardTenant action. By invoking this action the platform will attempt to onboard the managed tenant for management.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-1.0
       operationId: tenantRelationship.managedTenant.tenant_resetTenantOnboardingStatus
       parameters:
         - name: tenant-id
@@ -29621,7 +29621,7 @@ paths:
       description: Assign the tenant tag to the specified managed tenants.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0
       operationId: tenantRelationship.managedTenant.tenantTag_assignTag
       parameters:
         - name: tenantTag-id
@@ -29665,7 +29665,7 @@ paths:
       description: Un-assigns the tenant tag from the specified managed tenants.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-unassigntag?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-unassigntag?view=graph-rest-1.0
       operationId: tenantRelationship.managedTenant.tenantTag_unassignTag
       parameters:
         - name: tenantTag-id
@@ -29709,7 +29709,7 @@ paths:
       description: Retrieve a list of scopedRoleMembership for the user.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-1.0
       operationId: user_ListScopedRoleMemberGraphOPre
       parameters:
         - name: user-id
@@ -35027,7 +35027,7 @@ components:
           properties:
             clientId:
               type: string
-              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
               description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
@@ -37533,11 +37533,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -41468,7 +41468,7 @@ components:
           nullable: true
         fieldId:
           type: string
-          description: 'Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.'
+          description: 'Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.'
           nullable: true
         type:
           type: string
@@ -45758,7 +45758,7 @@ components:
           properties:
             content:
               type: string
-              description: A field that represents the content of the transcript. Read-only.
+              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
@@ -45769,7 +45769,7 @@ components:
               nullable: true
             metadataContent:
               type: string
-              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
           additionalProperties:
@@ -48005,11 +48005,11 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.'
               nullable: true
             notificationContentType:
               type: string
@@ -49546,8 +49546,8 @@ components:
         - email
         - site
         - unifiedGroup
-        - unknownFutureValue
         - teamwork
+        - unknownFutureValue
       type: string
     microsoft.graph.applicationMode:
       title: applicationMode
@@ -53240,7 +53240,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time the version was last modified. Read-only.
+              description: Date and time when the version was last modified. Read-only.
               format: date-time
               nullable: true
             publication:

@@ -1,53 +1,72 @@
-### Example 1: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+### Example 1: Answer a Peer-to-Peer VoIP call with service hosted media
+
 ```powershell
+
 Import-Module Microsoft.Graph.CloudCommunications
+
 $params = @{
-	CallbackUri = "https://bot.contoso.com/api/calls"
-	AcceptedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
+	callbackUri = "callbackUri-value"
+	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
+		blob = "<Media Session Configuration Blob>"
 	}
-}
-Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
-```
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Invoke-MgAnswerCommunicationCall Cmdlet
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	CallbackUri = "callbackUri-value"
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration Blob>"
-	}
-	AcceptedModalities = @(
+	acceptedModalities = @(
 		"audio"
 	)
-	ParticipantCapacity = 200
+	callOptions = @{
+		"@odata.type" = "#microsoft.graph.incomingCallOptions"
+		isContentSharingNotificationEnabled = $true
+	}
+	participantCapacity = 200
 }
+
 Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+
 ```
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Invoke-MgAnswerCommunicationCall Cmdlet
+This example will answer a peer-to-peer voip call with service hosted media
+
+### Example 2: Answer VOIP call with application hosted media
+
 ```powershell
+
 Import-Module Microsoft.Graph.CloudCommunications
+
 $params = @{
-	CallbackUri = "https://bot.contoso.com/api/calls"
-	AcceptedModalities = @(
+	callbackUri = "https://bot.contoso.com/api/calls"
+	acceptedModalities = @(
 		"audio"
 	)
-	MediaConfig = @{
+	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
+		preFetchMedia = @(
 		)
 	}
 }
+
 Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+
 ```
-This example shows how to use the Invoke-MgAnswerCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will answer voip call with application hosted media
+
+### Example 3: Answer a policy-based recording call
+
+```powershell
+
+Import-Module Microsoft.Graph.CloudCommunications
+
+$params = @{
+	callbackUri = "https://bot.contoso.com/api/calls"
+	acceptedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "<Media Session Configuration Blob>"
+	}
+}
+
+Invoke-MgAnswerCommunicationCall -CallId $callId -BodyParameter $params
+
+```
+This example will answer a policy-based recording call
+

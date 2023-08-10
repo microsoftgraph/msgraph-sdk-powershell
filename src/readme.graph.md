@@ -100,6 +100,8 @@ directive:
     - MicrosoftGraphManagedTenantsManagementTemplateStep
     - MicrosoftGraphPlannerTaskCreation
     - MicrosoftGraphPlannerTeamsPublicationInfo
+    - MicrosoftGraphWorkbookComment
+    - MicrosoftGraphSecurityHost
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -165,6 +167,10 @@ directive:
       subject: ^(.*)List(.*)(As.*)$
     set:
       subject: $1$2$3
+  - where:
+      subject: ^(Admin)(Person)
+    set:
+      subject: AdminPeople
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
@@ -361,9 +367,17 @@ directive:
       {
         return $;
       } else {
+        // Add using namespaces to class.
+        let namespaceRegex = /(namespace.*.Models\n\{)/gm
+        $ = $.replace(namespaceRegex,'$1\n\tusing System.Linq;');
+
         // Change XmlDateTimeSerializationMode from Unspecified to Utc.
         let strToDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
         $ = $.replace(strToDateTimeRegex, '$1Utc');
+
+        // Use case-insensitive dictionary when deserializing from dictionaries/OrderedHashtables.
+        let deserializeFromDictionaryRegex = /(.*DeserializeFromDictionary\(.*IDictionary.*\n.*\{.*\n.*new.*\()content(\);)/gm
+        $ = $.replace(deserializeFromDictionaryRegex, '$1(content.Cast<global::System.Collections.DictionaryEntry>().ToDictionary(kvp => kvp.Key as string, kvp => kvp.Value, global::System.StringComparer.OrdinalIgnoreCase))$2');
 
         return $;
       }
@@ -420,6 +434,20 @@ directive:
         let errorDetailsRegex = /(ErrorDetails\s*=\s*)(new.*ErrorDetails\(message\).*)/gmi
         $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
 
+        // Prevents null response objects to the output stream for scenarios where response is a model type
+        let responseTypeRegex = /global::System.Threading.Tasks.Task<Microsoft.Graph(.|.Beta.)PowerShell.Models.\w*> \w*\)[^]*?(WriteObject.*(await response).*;)/gm
+        var writeObjectRegex = /(WriteObject.*(await response).*;)/gm
+        var responseTypeRegexMatch = $.match(responseTypeRegex);
+        if(responseTypeRegexMatch){
+           responseTypeRegexMatch.forEach((item)=>{
+            var writeObjectRegexMatch = writeObjectRegex.exec($);
+            if(writeObjectRegexMatch){
+              var newContent = item.replace(writeObjectRegex, `var result = ${writeObjectRegexMatch[2]}; if(result!=null){WriteObject(result);}`)
+              $ = $.replace(item, newContent);
+            }
+           });
+        }
+        
         return $;
       }
 
@@ -538,9 +566,18 @@ directive:
       {
         return $;
       } else {
+        // Add using namespaces to class.
+        let namespaceRegex = /(namespace.*.Runtime\n\{)/gm
+        $ = $.replace(namespaceRegex,'$1\n\tusing System.Linq;');
+
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+
+        // Serialize OrderedDictionary
+        let enumerableRegex = /(if.*\(value.*IEnumerable.*\))/gm
+        let orderedSerializerImpl = 'if (value is System.Collections.Specialized.OrderedDictionary ovalue) { return JsonSerializable.ToJson((ovalue?.Cast<global::System.Collections.DictionaryEntry>().ToDictionary(kvp => kvp.Key as string, kvp => kvp.Value, global::System.StringComparer.OrdinalIgnoreCase)), null);}';
+        $ = $.replace(enumerableRegex, `${orderedSerializerImpl}\n\n$1`)
 
         return $;
       }

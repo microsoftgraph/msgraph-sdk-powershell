@@ -75,7 +75,7 @@ paths:
       description: Get a list of subjectRightsRequest objects and their properties.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0
       operationId: privacy_ListSubjectRightsRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -191,7 +191,7 @@ paths:
       description: Create a new subjectRightsRequest object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0
       operationId: privacy_CreateSubjectRightsRequest
       requestBody:
         description: New navigation property
@@ -218,7 +218,7 @@ paths:
       description: Read the properties and relationships of a subjectRightsRequest object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
       operationId: privacy_GetSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
@@ -291,7 +291,7 @@ paths:
       description: Update the properties of a subjectRightsRequest object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
       operationId: privacy_UpdateSubjectRightsRequest
       parameters:
         - name: subjectRightsRequest-id
@@ -353,7 +353,7 @@ paths:
       description: 'Get the list of authored notes assoicated with a subject rights request. '
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
       operationId: privacy.subjectRightsRequest_ListNote
       parameters:
         - name: subjectRightsRequest-id
@@ -431,7 +431,7 @@ paths:
       description: Create a new authoredNote object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
       operationId: privacy.subjectRightsRequest_CreateNote
       parameters:
         - name: subjectRightsRequest-id
@@ -664,6 +664,7 @@ paths:
                 - installedApps
                 - members
                 - operations
+                - permissionGrants
                 - photo
                 - primaryChannel
                 - tags
@@ -688,6 +689,7 @@ paths:
                 - installedApps
                 - members
                 - operations
+                - permissionGrants
                 - photo
                 - primaryChannel
                 - tags
@@ -914,6 +916,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsAsyncOperation'
               description: The async operations that ran or are running on this team.
+              x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -1688,6 +1695,34 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.resourceSpecificPermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: resourceSpecificPermissionGrant
+          type: object
+          properties:
+            clientAppId:
+              type: string
+              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+              nullable: true
+            clientId:
+              type: string
+              description: ID of the Azure AD app that has been granted access. Read-only.
+              nullable: true
+            permission:
+              type: string
+              description: The name of the resource-specific permission. Read-only.
+              nullable: true
+            permissionType:
+              type: string
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              nullable: true
+            resourceAppId:
+              type: string
+              description: ID of the Azure AD app that is hosting the resource. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.profilePhoto:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2336,34 +2371,6 @@ components:
               type: string
               description: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
               format: uuid
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.resourceSpecificPermissionGrant:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: resourceSpecificPermissionGrant
-          type: object
-          properties:
-            clientAppId:
-              type: string
-              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
-              nullable: true
-            clientId:
-              type: string
-              description: ID of the Azure AD app that has been granted access. Read-only.
-              nullable: true
-            permission:
-              type: string
-              description: The name of the resource-specific permission. Read-only.
-              nullable: true
-            permissionType:
-              type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
-              nullable: true
-            resourceAppId:
-              type: string
-              description: ID of the Azure AD app that is hosting the resource. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -3985,7 +3992,7 @@ components:
               description: 'The type of permission, for example, read. See below for the full list of roles. Read-only.'
             shareId:
               type: string
-              description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
+              description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -4029,11 +4036,11 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v10, v11, v12, v13. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.'
+              description: 'Required for Teams resources if  the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.'
               nullable: true
             notificationQueryOptions:
               type: string
@@ -5518,6 +5525,8 @@ components:
               type: string
               description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).'
               nullable: true
+            customSecurityAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
               description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
@@ -7680,6 +7689,11 @@ components:
             nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.customSecurityAttributeValue:
+      title: customSecurityAttributeValue
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.employeeOrgData:
       title: employeeOrgData
       type: object
@@ -7920,7 +7934,7 @@ components:
           properties:
             clientId:
               type: string
-              description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
               description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
@@ -9047,6 +9061,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
             allowMeetingChat:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowParticipantsToChangeName:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates whether Teams reactions are enabled for the meeting.
@@ -9264,6 +9281,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the chat. Nullable.
+              x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
