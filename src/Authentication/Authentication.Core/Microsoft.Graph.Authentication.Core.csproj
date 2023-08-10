@@ -4,7 +4,7 @@
     <LangVersion>9.0</LangVersion>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>2.1.0</Version>
+    <Version>2.3.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
