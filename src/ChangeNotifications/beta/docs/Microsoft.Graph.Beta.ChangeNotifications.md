@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.ChangeNotifications
-Module Guid: 60253272-e8df-4b61-9faf-7fdc1a114bc5
+Module Guid: 7fc3f3f2-ea8b-42ff-87e5-d537097f2f4b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.changenotifications
 Help Version: 1.0.0.0
 Locale: en-US

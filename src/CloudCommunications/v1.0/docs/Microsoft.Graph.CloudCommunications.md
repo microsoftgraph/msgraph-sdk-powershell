@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 9f3a4c9a-9ba6-453d-9834-cb0def983bfb
+Module Guid: 175f69c9-2095-49f9-a2e3-57e2629b0cf1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US

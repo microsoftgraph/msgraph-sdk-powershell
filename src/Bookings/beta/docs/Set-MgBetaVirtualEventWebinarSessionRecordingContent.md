@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgBetaVirtualEventWebinarSessionRecordingContent
 
 ## SYNOPSIS
-Update content for the navigation property recordings in solutions
+The content of the recording.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgBetaVirtualEventWebinarSessionRecordingContent -InputObject <IBookingsIden
 ```
 
 ## DESCRIPTION
-Update content for the navigation property recordings in solutions
+The content of the recording.
+Read-only.
 
 ## EXAMPLES
 

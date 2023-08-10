@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: 605d7642-1797-427b-8382-cad75dfb84ab
+Module Guid: 6dd60a72-2052-4e4a-9b23-81281c2d0bf0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -171,14 +171,12 @@ If you intend a new folder to be hidden, you must set the isHidden property to t
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageAttachment](New-MgBetaUserMailFolderChildFolderMessageAttachment.md)
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageExtension](New-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageMention](New-MgBetaUserMailFolderChildFolderMessageMention.md)
@@ -192,14 +190,12 @@ Outlook carries out those actions if an incoming message in the user's Inbox mee
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgBetaUserMailFolderMessageAttachment](New-MgBetaUserMailFolderMessageAttachment.md)
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMailFolderMessageExtension](New-MgBetaUserMailFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserMailFolderMessageMention](New-MgBetaUserMailFolderMessageMention.md)
@@ -212,18 +208,15 @@ Outlook carries out those actions if an incoming message in the user's Inbox mee
 ### [New-MgBetaUserMessage](New-MgBetaUserMessage.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserMessageAttachment](New-MgBetaUserMessageAttachment.md)
-Use this API to add an attachment to a message.
+Use this API to create a new Attachment.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMessageExtension](New-MgBetaUserMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserMessageMention](New-MgBetaUserMessageMention.md)
@@ -275,8 +268,7 @@ For example, you can delete a specific @-mention of the specified user in the me
 Delete the specified messageRule object.
 
 ### [Remove-MgBetaUserMessage](Remove-MgBetaUserMessage.md)
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
-For example, you can delete a specific @-mention of the specified user in the message.
+Delete eventMessage.
 
 ### [Remove-MgBetaUserMessageAttachment](Remove-MgBetaUserMessageAttachment.md)
 Delete navigation property attachments for users

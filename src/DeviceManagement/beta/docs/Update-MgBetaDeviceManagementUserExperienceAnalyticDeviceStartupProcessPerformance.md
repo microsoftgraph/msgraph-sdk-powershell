@@ -16,9 +16,9 @@ Update the navigation property userExperienceAnalyticsDeviceStartupProcessPerfor
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int64>] [-MedianImpactInMs2 <Int64>]
- [-ProcessName <String>] [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int64>]
- [-TotalImpactInMs2 <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int64>] [-ProcessName <String>]
+ [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int64>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -41,9 +41,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerforman
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int64>]
- [-Id <String>] [-MedianImpactInMS <Int64>] [-MedianImpactInMs2 <Int64>] [-ProcessName <String>]
- [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int64>] [-TotalImpactInMs2 <Int64>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-MedianImpactInMS <Int64>] [-ProcessName <String>] [-ProductName <String>]
+ [-Publisher <String>] [-TotalImpactInMS <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -164,23 +163,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MedianImpactInMs2
-The median impact of startup process on device boot time in milliseconds.
-Supports: $filter, $select, $OrderBy.
-Read-only.
-
-```yaml
-Type: System.Int64
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ProcessName
 The name of the startup process.
 Examples: outlook, excel.
@@ -236,23 +218,6 @@ Accept wildcard characters: False
 ```
 
 ### -TotalImpactInMS
-The total impact of startup process on device boot time in milliseconds.
-Supports: $filter, $select, $OrderBy.
-Read-only.
-
-```yaml
-Type: System.Int64
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TotalImpactInMs2
 The total impact of startup process on device boot time in milliseconds.
 Supports: $filter, $select, $OrderBy.
 Read-only.
@@ -342,12 +307,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeviceCount <Int64?>]`: The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.
   - `[MedianImpactInMS <Int64?>]`: The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
-  - `[MedianImpactInMs2 <Int64?>]`: The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
   - `[ProcessName <String>]`: The name of the startup process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
   - `[ProductName <String>]`: The product name of the startup process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
   - `[Publisher <String>]`: The publisher of the startup process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
   - `[TotalImpactInMS <Int64?>]`: The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
-  - `[TotalImpactInMs2 <Int64?>]`: The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState

@@ -19148,6 +19148,8 @@ paths:
                 - businessPhones desc
                 - city
                 - city desc
+                - cloudRealtimeCommunicationInfo
+                - cloudRealtimeCommunicationInfo desc
                 - companyName
                 - companyName desc
                 - consentProvidedForMinor
@@ -19228,6 +19230,8 @@ paths:
                 - onPremisesSamAccountName desc
                 - onPremisesSecurityIdentifier
                 - onPremisesSecurityIdentifier desc
+                - onPremisesSipInfo
+                - onPremisesSipInfo desc
                 - onPremisesSyncEnabled
                 - onPremisesSyncEnabled desc
                 - onPremisesUserPrincipalName
@@ -19317,6 +19321,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -19357,6 +19362,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -19590,6 +19596,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -19630,6 +19637,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -19997,6 +20005,8 @@ paths:
                 - businessPhones desc
                 - city
                 - city desc
+                - cloudRealtimeCommunicationInfo
+                - cloudRealtimeCommunicationInfo desc
                 - companyName
                 - companyName desc
                 - consentProvidedForMinor
@@ -20077,6 +20087,8 @@ paths:
                 - onPremisesSamAccountName desc
                 - onPremisesSecurityIdentifier
                 - onPremisesSecurityIdentifier desc
+                - onPremisesSipInfo
+                - onPremisesSipInfo desc
                 - onPremisesSyncEnabled
                 - onPremisesSyncEnabled desc
                 - onPremisesUserPrincipalName
@@ -20166,6 +20178,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -20206,6 +20219,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -20439,6 +20453,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -20479,6 +20494,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -22627,7 +22643,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostPairs from security
+      summary: Get hostPair
+      description: Read the properties and relationships of a hostPair object.
       operationId: security.threatIntelligence_ListHostPair
       parameters:
         - $ref: '#/components/parameters/top'
@@ -22720,7 +22737,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostPairs from security
+      summary: Get hostPair
+      description: Read the properties and relationships of a hostPair object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-hostpair-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetHostPair
       parameters:
         - name: hostPair-id
@@ -22834,6 +22855,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get childHost from security
+      description: Host reached via the parentHost.
       operationId: security.threatIntelligence.hostPair_GetChildHost
       parameters:
         - name: hostPair-id
@@ -22909,6 +22931,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get parentHost from security
+      description: Host used to reach the childHost.
       operationId: security.threatIntelligence.hostPair_GetParentHost
       parameters:
         - name: hostPair-id
@@ -23244,7 +23267,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get childHostPairs from security
+      summary: List childHostPairs
+      description: 'Get the list of hostPair resources associated with a host, where that host is the *parent* and has an outgoing pairing to a *child*. '
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0
       operationId: security.threatIntelligence.host_ListChildHostPair
       parameters:
         - name: host-id
@@ -23324,6 +23351,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get childHostPairs from security
+      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
       operationId: security.threatIntelligence.host_GetChildHostPair
       parameters:
         - name: host-id
@@ -23753,7 +23781,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostPairs from security
+      summary: List hostPairs
+      description: 'Get the list of hostPair resources associated with a host, where that host is *either* the *parent* or the *child*.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-host-list-hostpairs?view=graph-rest-1.0
       operationId: security.threatIntelligence.host_ListHostPair
       parameters:
         - name: host-id
@@ -23833,6 +23865,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get hostPairs from security
+      description: 'The hostPairs that are associated with this host, where this host is either the parentHost or childHost.'
       operationId: security.threatIntelligence.host_GetHostPair
       parameters:
         - name: host-id
@@ -23918,7 +23951,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get parentHostPairs from security
+      summary: List parentHostPairs
+      description: 'Get the list of hostPair resources associated with a host, where that host is the *child* and has an incoming pairing with a *parent*.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-host-list-parenthostpairs?view=graph-rest-1.0
       operationId: security.threatIntelligence.host_ListParentHostPair
       parameters:
         - name: host-id
@@ -23998,6 +24035,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get parentHostPairs from security
+      description: 'The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.'
       operationId: security.threatIntelligence.host_GetParentHostPair
       parameters:
         - name: host-id
@@ -35300,6 +35338,8 @@ components:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            cloudRealtimeCommunicationInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
               description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -35470,6 +35510,8 @@ components:
               type: string
               description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
               nullable: true
+            onPremisesSipInfo:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
@@ -36151,6 +36193,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
+              description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hosts:
               type: array
@@ -36321,6 +36364,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
+              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
               x-ms-navigationProperty: true
             components:
               type: array
@@ -36338,11 +36382,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
+              description: 'The hostPairs that are associated with this host, where this host is either the parentHost or childHost.'
               x-ms-navigationProperty: true
             parentHostPairs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
+              description: 'The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.'
               x-ms-navigationProperty: true
             passiveDns:
               type: array
@@ -36414,15 +36460,18 @@ components:
             firstSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The first date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The last date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             linkKind:
               type: string
+              description: The reason the two hosts are identified as hostPairs.
               nullable: true
             childHost:
               $ref: '#/components/schemas/microsoft.graph.security.host'
@@ -38022,6 +38071,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Detailed description of the entity role/s in an alert. Values are free-form.
         remediationStatus:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceRemediationStatus'
         remediationStatusDetails:
@@ -38032,13 +38082,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.evidenceRole'
-          description: 'One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.'
+          description: 'The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.'
         tags:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.'
+          description: 'Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.'
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
@@ -40701,6 +40751,15 @@ components:
           description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
+    microsoft.graph.cloudRealtimeCommunicationInfo:
+      title: cloudRealtimeCommunicationInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.customSecurityAttributeValue:
       title: customSecurityAttributeValue
       type: object
@@ -40860,6 +40919,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesSipInfo:
+      title: onPremisesSipInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+        sipDeploymentLocation:
+          type: string
+          nullable: true
+        sipPrimaryAddress:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.passwordProfile:
       title: passwordProfile
       type: object
@@ -40874,7 +40947,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -42444,6 +42517,11 @@ components:
                 type: string
                 nullable: true
               description: List of Scope Tag IDs for this Device instance.
+            securityPatchLevel:
+              type: string
+              description: This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+              nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
@@ -43440,6 +43518,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -52266,11 +52345,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -54736,11 +54817,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -58821,6 +58902,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
               x-ms-navigationProperty: true
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -58977,6 +59060,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -61110,6 +61198,58 @@ components:
             contentType:
               type: string
               description: Indicates the type for the replied comment.
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+          additionalProperties:
+            type: object
+    microsoft.graph.workbookDocumentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTask
+          type: object
+          properties:
+            assignees:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startAndDueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
+            title:
+              type: string
+              nullable: true
+            changes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              x-ms-navigationProperty: true
+            comment:
+              $ref: '#/components/schemas/microsoft.graph.workbookComment'
           additionalProperties:
             type: object
     microsoft.graph.workbookOperationError:
@@ -62818,6 +62958,87 @@ components:
         - darkYellow
         - unknownFutureValue
       type: string
+    microsoft.graph.workbookEmailIdentity:
+      title: workbookEmailIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskSchedule:
+      title: workbookDocumentTaskSchedule
+      type: object
+      properties:
+        dueDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskChange:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTaskChange
+          type: object
+          properties:
+            assignee:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            changedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            commentId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            type:
+              type: string
+            undoChangeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

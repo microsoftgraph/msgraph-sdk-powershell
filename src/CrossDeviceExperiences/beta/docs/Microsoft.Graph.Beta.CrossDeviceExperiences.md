@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-Module Guid: c2183d24-24f1-404b-b9d9-fe16df035f4b
+Module Guid: c1a6918e-9183-499e-a04f-0df1d90027ab
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US

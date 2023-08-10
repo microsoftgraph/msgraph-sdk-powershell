@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Delete an inboundFlow object.
+Delete an inboundFileFlow object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaExternalIndustryDataInboundFlow -InputObject <ISearchIdentity> [-If
 ```
 
 ## DESCRIPTION
-Delete an inboundFlow object.
+Delete an inboundFileFlow object.
 
 ## EXAMPLES
 

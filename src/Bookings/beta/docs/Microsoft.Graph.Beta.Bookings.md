@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: 7de2ab1b-cbc0-4534-a005-0504f0dd9774
+Module Guid: 9954608f-eb51-47f1-9e31-30bd75efd3f4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -168,13 +168,14 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgBetaVirtualEventSessionRecordingContent](Get-MgBetaVirtualEventSessionRecordingContent.md)
-Get content for the navigation property recordings from solutions
+The content of the recording.
+Read-only.
 
 ### [Get-MgBetaVirtualEventSessionRecordingCount](Get-MgBetaVirtualEventSessionRecordingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionRegistration](Get-MgBetaVirtualEventSessionRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgBetaVirtualEventSessionRegistrationCustomQuestion](Get-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -269,13 +270,14 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRecordingContent](Get-MgBetaVirtualEventWebinarSessionRecordingContent.md)
-Get content for the navigation property recordings from solutions
+The content of the recording.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRecordingCount](Get-MgBetaVirtualEventWebinarSessionRecordingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistration](Get-MgBetaVirtualEventWebinarSessionRegistration.md)
-Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+Get the externalMeetingRegistration details associated with an onlineMeeting.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -487,7 +489,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventSessionRegistration](Remove-MgBetaVirtualEventSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -526,7 +528,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistration](Remove-MgBetaVirtualEventWebinarSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -556,7 +558,8 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Set-MgBetaVirtualEventSessionRecordingContent](Set-MgBetaVirtualEventSessionRecordingContent.md)
-Update content for the navigation property recordings in solutions
+The content of the recording.
+Read-only.
 
 ### [Set-MgBetaVirtualEventSessionTranscriptContent](Set-MgBetaVirtualEventSessionTranscriptContent.md)
 The content of the transcript.
@@ -582,7 +585,8 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionRecordingContent](Set-MgBetaVirtualEventWebinarSessionRecordingContent.md)
-Update content for the navigation property recordings in solutions
+The content of the recording.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionTranscriptContent](Set-MgBetaVirtualEventWebinarSessionTranscriptContent.md)
 The content of the transcript.
@@ -694,7 +698,7 @@ Update the navigation property registrants in solutions
 Update the navigation property transcripts in solutions
 
 ### [Update-MgBetaVirtualEventSessionVirtualAppointment](Update-MgBetaVirtualEventSessionVirtualAppointment.md)
-Create a new virtualAppointment object.
+Update the properties of a virtualAppointment object.
 
 ### [Update-MgBetaVirtualEventWebinar](Update-MgBetaVirtualEventWebinar.md)
 Update the navigation property webinars in solutions
@@ -733,5 +737,5 @@ Update the navigation property registrants in solutions
 Update the navigation property transcripts in solutions
 
 ### [Update-MgBetaVirtualEventWebinarSessionVirtualAppointment](Update-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
-Create a new virtualAppointment object.
+Update the properties of a virtualAppointment object.
 

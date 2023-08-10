@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: c19d7bb4-3a57-4e4b-9cf1-11c935a4676d
+Module Guid: bd53d7fc-4b10-4c8e-9d46-c2d9f45fb300
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US

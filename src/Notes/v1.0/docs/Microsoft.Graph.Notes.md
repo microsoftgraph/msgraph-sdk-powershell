@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Notes
-Module Guid: 62158233-c7a8-4913-af08-c10691282ebd
+Module Guid: 4f53ddeb-80ce-4810-9065-4211896bea1a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.notes
 Help Version: 1.0.0.0
 Locale: en-US

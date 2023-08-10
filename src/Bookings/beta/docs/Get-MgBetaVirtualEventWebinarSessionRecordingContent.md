@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarSessionRecordingContent
 
 ## SYNOPSIS
-Get content for the navigation property recordings from solutions
+The content of the recording.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgBetaVirtualEventWebinarSessionRecordingContent -InputObject <IBookingsIden
 ```
 
 ## DESCRIPTION
-Get content for the navigation property recordings from solutions
+The content of the recording.
+Read-only.
 
 ## EXAMPLES
 

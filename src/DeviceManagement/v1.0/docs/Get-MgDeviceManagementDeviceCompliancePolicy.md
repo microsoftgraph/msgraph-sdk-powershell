@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Read properties and relationships of the androidWorkProfileCompliancePolicy object.
+Read properties and relationships of the windowsPhone81CompliancePolicy object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceCompliancePolicy -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the androidWorkProfileCompliancePolicy object.
+Read properties and relationships of the windowsPhone81CompliancePolicy object.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: c7ceb73f-4112-48cd-bc67-cd68e89bb2a8
+Module Guid: 1c062252-6036-4ad7-83cb-d27968a1b55e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -94,6 +94,7 @@ Get the properties and relationships of an application object.
 
 ### [Get-MgApplicationById](Get-MgApplicationById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgApplicationCount](Get-MgApplicationCount.md)
@@ -276,6 +277,7 @@ Retrieve the properties and relationships of a servicePrincipal object.
 
 ### [Get-MgServicePrincipalById](Get-MgServicePrincipalById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgServicePrincipalClaimMappingPolicy](Get-MgServicePrincipalClaimMappingPolicy.md)

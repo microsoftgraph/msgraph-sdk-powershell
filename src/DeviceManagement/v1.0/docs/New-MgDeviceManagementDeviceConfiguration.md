@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Create a new macOSCustomConfiguration object.
+Create a new iosCustomConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgDeviceManagementDeviceConfiguration -BodyParameter <IMicrosoftGraphDeviceC
 ```
 
 ## DESCRIPTION
-Create a new macOSCustomConfiguration object.
+Create a new iosCustomConfiguration object.
 
 ## EXAMPLES
 

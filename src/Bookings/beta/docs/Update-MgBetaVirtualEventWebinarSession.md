@@ -636,7 +636,8 @@ Accept wildcard characters: False
 ```
 
 ### -Recordings
-.
+The recordings of an online meeting.
+Read-only.
 To construct, see NOTES section for RECORDINGS properties and create a hash table.
 
 ```yaml
@@ -984,10 +985,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
   - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
 
-`RECORDINGS <IMicrosoftGraphCallRecording[]>`: .
+`RECORDINGS <IMicrosoftGraphCallRecording[]>`: The recordings of an online meeting. Read-only.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <Byte[]>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Content <Byte[]>]`: The content of the recording. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 
 `REGISTRATION <IMicrosoftGraphMeetingRegistration>`: meetingRegistration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
