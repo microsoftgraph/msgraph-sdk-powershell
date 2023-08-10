@@ -25,9 +25,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const int DEFAULT_RETRY_DELAY = 3;
         internal const int DEFAULT_MAX_RETRY = 3;
         internal static readonly string GraphOptionsFilePath = Path.Combine(Core.Constants.GraphDirectoryPath, "mg.graphoptions.json");
-        internal static readonly string SdkReadmeLink = "https://github.com/microsoftgraph/msgraph-sdk-powershell/#readme";
-        internal static readonly string SdkDocsLink = "https://learn.microsoft.com/powershell/microsoftgraph";
-        internal static readonly string ApiDocsLink = "https://docs.microsoft.com/graph";
+        internal static readonly string SdkReadmeLink = "https://aka.ms/graph/sdk/powershell";
+        internal static readonly string SdkDocsLink = "https://aka.ms/graph/sdk/powershell/docs";
+        internal static readonly string ApiDocsLink = "https://aka.ms/graph/docs";
 
         public static class HelpMessages
         {

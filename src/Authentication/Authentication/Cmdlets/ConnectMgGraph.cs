@@ -267,7 +267,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"Welcome to Microsoft Graph!{System.Environment.NewLine}");
             stringBuilder.AppendLine($"Connected via {authType.ToLower()} access using {clientId}");
-            stringBuilder.AppendLine($"ReadMe: {Constants.SdkReadmeLink}");
+            stringBuilder.AppendLine($"Readme: {Constants.SdkReadmeLink}");
             stringBuilder.AppendLine($"SDK Docs: {Constants.SdkDocsLink}");
             stringBuilder.AppendLine($"API Docs: {Constants.ApiDocsLink}{System.Environment.NewLine}");
             stringBuilder.AppendLine($"NOTE: You can use the -NoWelcome parameter to suppress this message.");
