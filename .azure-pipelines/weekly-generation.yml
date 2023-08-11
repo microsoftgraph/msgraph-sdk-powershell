@@ -168,6 +168,7 @@ jobs:
           script: |
             git fetch "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(GenerationBranch)
             git checkout $(GenerationBranch)
+            git pull origin $(GenerationBranch) --allow-unrelated-histories
             git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
             git merge $(GenerationBranch) -s ours
             git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
