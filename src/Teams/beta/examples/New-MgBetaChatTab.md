@@ -1,20 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
-
-$params = @{
-	displayName = "My Contoso Tab"
-	"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps/06805b9e-77e3-4b93-ac81-525eb87513b8"
-	configuration = @{
-		entityId = "2DCA2E6C7A10415CAF6B8AB6661B3154"
-		contentUrl = "https://www.contoso.com/Orders/2DCA2E6C7A10415CAF6B8AB6661B3154/tabView"
-		websiteUrl = "https://www.contoso.com/Orders/2DCA2E6C7A10415CAF6B8AB6661B3154"
-		removeUrl = "https://www.contoso.com/Orders/2DCA2E6C7A10415CAF6B8AB6661B3154/uninstallTab"
-	}
-}
-
-New-MgBetaChatTab -ChatId $chatId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

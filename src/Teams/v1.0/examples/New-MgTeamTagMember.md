@@ -1,13 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Teams
-
-$params = @{
-	userId = "97f62344-57dc-409c-88ad-c4af14158ff5"
-}
-
-New-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the New-MgTeamTagMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

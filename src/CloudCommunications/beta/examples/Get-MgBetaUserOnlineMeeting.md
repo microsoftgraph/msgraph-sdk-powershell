@@ -1,4 +1,4 @@
-### Example 1: Retrieve an online meeting by meeting ID
+### Example 1: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
@@ -10,7 +10,7 @@ This example shows how to use the Get-MgBetaUserOnlineMeeting Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Retrieve an online meeting by joinWebUrl
+### Example 2: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
@@ -22,25 +22,13 @@ This example shows how to use the Get-MgBetaUserOnlineMeeting Cmdlet.
 
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Retrieve an online meeting by joinMeetingId
+### Example 3: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 
 # A UPN can also be used as -UserId.
 Get-MgBetaUserOnlineMeeting -UserId $userId -Filter "joinMeetingIdSettings/joinMeetingId eq '1234567890'"
-```
-This example shows how to use the Get-MgBetaUserOnlineMeeting Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 4: Fetch attendee report of a Teams live event
-
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
 ```
 This example shows how to use the Get-MgBetaUserOnlineMeeting Cmdlet.
 

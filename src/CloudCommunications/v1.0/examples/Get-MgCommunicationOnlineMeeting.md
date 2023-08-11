@@ -1,4 +1,4 @@
-### Example 1: Retrieve an online meeting by videoTeleconferenceId
+### Example 1: Code snippet
 
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications

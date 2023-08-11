@@ -1,29 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Groups
-
-$params = @{
-	topic = "New Conversation Thread Topic"
-	posts = @(
-		@{
-			body = @{
-				contentType = "html"
-				content = "this is body content"
-			}
-			newParticipants = @(
-				@{
-					emailAddress = @{
-						name = "Alex Darrow"
-						address = "alexd@contoso.com"
-					}
-				}
-			)
-		}
-	)
-}
-
-New-MgBetaGroupThread -GroupId $groupId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupThread Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

@@ -19,30 +19,6 @@ This example shows how to use the New-MgBetaTeam Cmdlet.
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	displayName = "My Sample Team"
-	description = "My Sample Team???s Description"
-	members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			roles = @(
-				"owner"
-			)
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('0040b377-61d8-43db-94f5-81374122dc7e')"
-		}
-	)
-}
-
-New-MgBetaTeam -BodyParameter $params
-```
-This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: Code snippet
-
-```powershellImport-Module Microsoft.Graph.Beta.Teams
-
-$params = @{
-	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
 	visibility = "Private"
 	displayName = "Sample Engineering Team"
 	description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
@@ -123,7 +99,7 @@ New-MgBetaTeam -BodyParameter $params
 This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Code snippet
+### Example 3: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -137,7 +113,7 @@ New-MgBetaTeam -BodyParameter $params
 This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Code snippet
+### Example 4: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -176,7 +152,7 @@ New-MgBetaTeam -BodyParameter $params
 This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Code snippet
+### Example 5: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -191,7 +167,7 @@ New-MgBetaTeam -BodyParameter $params
 This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 7: Code snippet
+### Example 6: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -231,7 +207,7 @@ New-MgBetaTeam -BodyParameter $params
 This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 8: Code snippet
+### Example 7: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
