@@ -139,12 +139,24 @@ jobs:
             Write-Host "##vso[task.setvariable variable=WeeklyGenerationBranch;isOutput=true]$branch"
       - task: Bash@3
         displayName: "Create weekly generation branch"
+        enabled: false
         inputs:
           targetType: inline
           script: |
             git status
             git branch $(ComputeGenerationBranch.WeeklyGenerationBranch)
             git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
+            git status
+      - task: Bash@3
+        displayName: Checkout generation branch
+        enabled: true
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+        inputs:
+          targetType: inline
+          script: |
+            git fetch "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" "po/generation"
+            git checkout "po/generation"
             git status
       - task: Bash@3
         displayName: Commit Generated SDK artifacts
@@ -155,12 +167,12 @@ jobs:
           targetType: inline
           script: |
             git add .
-            git commit -m 'Adds generated module artifacts'
+            git commit -m 'Adds generated module artifacts for $(ComputeGenerationBranch.WeeklyGenerationBranch)'
             git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
             git status
       - task: Bash@3
         displayName: Sync with generation branch
-        enabled: true
+        enabled: false
         env:
           GITHUB_TOKEN: $(GITHUB_TOKEN)
         inputs:
@@ -170,6 +182,7 @@ jobs:
             git checkout $(GenerationBranch)
             git pull origin $(GenerationBranch) --allow-unrelated-histories
             git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
+            git pull origin $(ComputeGenerationBranch.WeeklyGenerationBranch) --allow-unrelated-histories
             git merge $(GenerationBranch) -s ours
             git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
             git status
