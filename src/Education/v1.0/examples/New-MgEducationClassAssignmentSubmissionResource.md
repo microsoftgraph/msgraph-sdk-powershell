@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Create an educationWordResource
 
 ```powershell
 
@@ -15,9 +15,28 @@ $params = @{
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example will create an educationwordresource
 
-### Example 2: Code snippet
+### Example 2: Create an educationLinkResource
+
+```powershell
+
+Import-Module Microsoft.Graph.Education
+
+$params = @{
+	resource = @{
+		displayName = "Wikipedia"
+		link = "https://en.wikipedia.org/wiki/Main_Page"
+		"@odata.type" = "#microsoft.graph.educationLinkResource"
+	}
+}
+
+New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+
+```
+This example will create an educationlinkresource
+
+### Example 3: Create an educationFileResource
 
 ```powershell
 
@@ -34,9 +53,9 @@ $params = @{
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example will create an educationfileresource
 
-### Example 3: Code snippet
+### Example 4: Create an educationExcelResource
 
 ```powershell
 
@@ -53,9 +72,9 @@ $params = @{
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example will create an educationexcelresource
 
-### Example 4: Code snippet
+### Example 5: Create an educationPowerPointResource
 
 ```powershell
 
@@ -72,9 +91,9 @@ $params = @{
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example will create an educationpowerpointresource
 
-### Example 5: Code snippet
+### Example 6: Create an educationMediaResource
 
 ```powershell
 
@@ -91,5 +110,5 @@ $params = @{
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionResource Cmdlet.
+This example will create an educationmediaresource
 

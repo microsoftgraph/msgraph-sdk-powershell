@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Successful request
 
 ```powershell
 
@@ -7,5 +7,16 @@ Import-Module Microsoft.Graph.Reports
 Get-MgAuditLogProvisioning
 
 ```
-This example shows how to use the Get-MgAuditLogProvisioning Cmdlet.
+This example will successful request
+
+### Example 2: Error reponse
+
+```powershell
+
+Import-Module Microsoft.Graph.Reports
+
+Get-MgAuditLogProvisioning
+
+```
+This example will error reponse
 

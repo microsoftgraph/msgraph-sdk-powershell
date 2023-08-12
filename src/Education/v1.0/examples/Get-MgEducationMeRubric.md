@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Education
 
-Get-MgEducationMeRubric -EducationRubricId $educationRubricId
+Get-MgEducationMeRubric
 
 ```
 This example shows how to use the Get-MgEducationMeRubric Cmdlet.
