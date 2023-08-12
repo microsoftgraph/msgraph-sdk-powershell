@@ -217,7 +217,7 @@ function Start-WebScrapping {
     $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
     $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
 
-    $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
+    $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs-contrib/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
     $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
     $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
     $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
