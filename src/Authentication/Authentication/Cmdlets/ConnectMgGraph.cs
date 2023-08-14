@@ -99,6 +99,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.EnvironmentVariable)]
         public SwitchParameter EnvironmentVariable { get; set; }
 
+        [Parameter(Mandatory = false, HelpMessage = HelpMessages.NoWelcome)]
+        public SwitchParameter NoWelcome { get; set; }
+
         [Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         public SwitchParameter Break { get; set; }
 
@@ -248,13 +251,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     await AuthenticationHelpers.LogoutAsync();
                     throw;
                 }
-                WriteObject("Welcome To Microsoft Graph!");
+
+                if (!NoWelcome.IsPresent)
+                    WriteObject(GetWelcomeMessage(authContext.ClientId, authContext.AuthType.ToString()));
             }
         }
         protected override void StopProcessing()
         {
             _cancellationTokenSource.Cancel();
             base.StopProcessing();
+        }
+
+        private static string GetWelcomeMessage(string clientId, string authType)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"Welcome to Microsoft Graph!{System.Environment.NewLine}");
+            stringBuilder.AppendLine($"Connected via {authType.ToLower()} access using {clientId}");
+            stringBuilder.AppendLine($"Readme: {Constants.SdkReadmeLink}");
+            stringBuilder.AppendLine($"SDK Docs: {Constants.SdkDocsLink}");
+            stringBuilder.AppendLine($"API Docs: {Constants.ApiDocsLink}{System.Environment.NewLine}");
+            stringBuilder.AppendLine($"NOTE: You can use the -NoWelcome parameter to suppress this message.");
+            return stringBuilder.ToString();
         }
 
         /// <summary>
