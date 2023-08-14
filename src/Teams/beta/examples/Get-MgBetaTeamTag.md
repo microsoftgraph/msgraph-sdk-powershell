@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
 
-Get-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
+Import-Module Microsoft.Graph.Beta.Teams
+
+Get-MgBetaTeamTag -TeamId $teamId
+
 ```
 This example shows how to use the Get-MgBetaTeamTag Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

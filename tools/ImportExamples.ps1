@@ -212,65 +212,73 @@ function Start-WebScrapping {
         [string] $Module = "Users",
         [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
     )
-    
-    $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
-    $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
-    $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
+        $ExternalDocUrlPaths = $ExternalDocUrl.Split("://")[1].Split("/")
+        $LastExternalDocUrlPathSegmentWithQueryParam = $ExternalDocUrlPaths[$ExternalDocUrlPaths.Length - 1]
+        $LastExternalDocUrlPathSegmentWithoutQueryParam = $LastExternalDocUrlPathSegmentWithQueryParam.Split("?")[0]
 
-    $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
-    $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
-    $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
-    $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
-    $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
-    $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
-    ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
+        $GraphDocsUrl = "https://raw.githubusercontent.com/microsoftgraph/microsoft-graph-docs-contrib/main/api-reference/$GraphProfile/api/$LastExternalDocUrlPathSegmentWithoutQueryParam.md"
+        $UrlPaths = $GraphDocsUrl.Split("://")[1].Split("/")
+        $LastPathSegment = $UrlPaths[$UrlPaths.Length - 1]
+        $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
+        $ExampleLinks = New-Object -TypeName 'System.Collections.ArrayList';
+        $Snippets = New-Object -TypeName 'System.Collections.ArrayList';
+    try{
+        ($readStream, $HttpWebResponse) = FetchStream -GraphDocsUrl $GraphDocsUrl
 
-    while (-not $readStream.EndOfStream) {
-        $Line = $readStream.ReadLine()
-        if ($Line -match "^### Example") {
-            $H = $HeaderList.Add($Line)
+        while (-not $readStream.EndOfStream) {
+            $Line = $readStream.ReadLine()
+            if ($Line -match "^### Example") {
+                $H = $HeaderList.Add($Line)
+            }
+            if ($Line -match "/includes/snippets/powershell/") {
+                $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
+                $SnippetPath = $Line.Replace(")", "").Replace("]", "")
+                $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
+                $E = $ExampleLinks.Add($SnippetUrl)
+            }
         }
-        if ($Line -match "/includes/snippets/powershell/") {
-            $Line = $Line.Replace("[!INCLUDE [sample-code](..", "")
-            $SnippetPath = $Line.Replace(")", "").Replace("]", "")
-            $SnippetUrl = $GraphDocsUrl.Replace("/api/$LastPathSegment", $SnippetPath)
-            $E = $ExampleLinks.Add($SnippetUrl)
-        }
-    }
-    $HttpWebResponse.Close() 
-    $readStream.Close()
+        $HttpWebResponse.Close() 
+        $readStream.Close()
 
-    foreach ($Link in $ExampleLinks) {
-        $ConstructedSnippet = "";
-            ($Rs, $HttpResponse) = FetchStream -GraphDocsUrl $Link
-        while (-not $Rs.EndOfStream) {
-            $Snippet = $Rs.ReadLine()
-            
-            #Write-Host $desc
-            $Snippet = $Snippet.Replace("---", "")
-            $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
-            $ConstructedSnippet += $Snippet + "`n"
+        foreach ($Link in $ExampleLinks) {
+            $ConstructedSnippet = "";
+                ($Rs, $HttpResponse) = FetchStream -GraphDocsUrl $Link
+            while (-not $Rs.EndOfStream) {
+                $Snippet = $Rs.ReadLine()
                 
+                #Write-Host $desc
+                $Snippet = $Snippet.Replace("---", "")
+                $Snippet = $Snippet.Replace('description: "Automatically generated file. DO NOT MODIFY"', "")
+                $ConstructedSnippet += $Snippet + "`n"
+                    
+            }
+            $S = $Snippets.Add($ConstructedSnippet)
         }
-        $S = $Snippets.Add($ConstructedSnippet)
-    }
-    if ($HeaderList.Count -ne $Snippets.Count) {
-        $HeaderList.Clear()
-        for ($d = 0; $d -lt $Snippets.Count; $d++) {
-            $sum = $d + 1
-            $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+        if ($HeaderList.Count -ne $Snippets.Count) {
+            $HeaderList.Clear()
+            for ($d = 0; $d -lt $Snippets.Count; $d++) {
+                $sum = $d + 1
+                $H = $HeaderList.Add("### Example " + $sum + ": Code snippet".Trim())
+            }
         }
-    }
 
-    $ExampleFile = "$GraphProfilePath/$Command.md"
-    $url = $ExternalDocUrl
-    if ($GraphProfile -eq "beta") {
-        $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
+        $ExampleFile = "$GraphProfilePath/$Command.md"
+        $url = $ExternalDocUrl
+        if ($GraphProfile -eq "beta") {
+            $url = $url.Replace("graph-rest-1.0", "graph-rest-beta")
+        }
+        $DescriptionCommand = $Command  
+        $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
+    
+        Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
+    }catch {
+        Write-Host "`nError Message: " $_.Exception.Message
+        Write-Host "`nError in Line: " $_.InvocationInfo.Line
+        Write-Host "`nError in Line Number: "$_.InvocationInfo.ScriptLineNumber
+        Write-Host "`nError Item Name: "$_.Exception.ItemName
+        Write-Host "`nRaw docs url : "  $GraphDocsUrl
+        Write-Host "`nExternal docs url : "  $ExternalDocUrl
     }
-    $DescriptionCommand = $Command  
-    $Description = "This example shows how to use the $DescriptionCommand Cmdlet."
-  
-    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $Snippets -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
 }
 function FetchStream {
     param(
@@ -613,4 +621,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/identitygovernance-run-get?view=graph-rest-beta&tabs=http" -GraphCommand "Get-MgBetaGroupCalendarPermission" -GraphModule "Calendar" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/teamsappsettings-update?view=graph-rest-beta&tabs=powershell" -GraphCommand "Update-MgBetaTeamworkTeamAppSetting" -GraphModule "Teams" -Profile "v1.0"

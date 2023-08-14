@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 
-Get-MgBetaCommunicationCallContentSharingSession -CallId $callId -ContentSharingSessionId $contentSharingSessionId
+Get-MgBetaCommunicationCallContentSharingSession -CallId $callId
 
 ```
 This example shows how to use the Get-MgBetaCommunicationCallContentSharingSession Cmdlet.

@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: List attendance records
 
 ```powershell
 
@@ -8,5 +8,17 @@ Import-Module Microsoft.Graph.Beta.CloudCommunications
 Get-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId
 
 ```
-This example shows how to use the Get-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord Cmdlet.
+This example will list attendance records
+
+### Example 2: List attendance records containing Azure Communication Services users
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord -UserId $userId -OnlineMeetingId $onlineMeetingId -MeetingAttendanceReportId $meetingAttendanceReportId
+
+```
+This example will list attendance records containing azure communication services users
 
