@@ -10,7 +10,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get people from admin
+      summary: Get peopleAdminSettings
+      description: Retrieve the properties and relationships of a peopleAdminSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
       operationId: admin_GetPerson
       parameters:
         - name: $select
@@ -95,7 +99,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get profileCardProperties from admin
+      summary: List profileCardProperties
+      description: Get a collection of profileCardProperty resources for an organization. Each resource is identified by its directoryPropertyName property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-list-profilecardproperties?view=graph-rest-1.0
       operationId: admin.person_ListProfileCardProperty
       parameters:
         - $ref: '#/components/parameters/top'
@@ -158,7 +166,11 @@ paths:
     post:
       tags:
         - admin.peopleAdminSettings
-      summary: Create new navigation property to profileCardProperties for admin
+      summary: Create profileCardProperty
+      description: 'Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0
       operationId: admin.person_CreateProfileCardProperty
       requestBody:
         description: New navigation property
@@ -181,7 +193,11 @@ paths:
     get:
       tags:
         - admin.peopleAdminSettings
-      summary: Get profileCardProperties from admin
+      summary: Get profileCardProperty
+      description: Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
       operationId: admin.person_GetProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -231,7 +247,11 @@ paths:
     patch:
       tags:
         - admin.peopleAdminSettings
-      summary: Update the navigation property profileCardProperties in admin
+      summary: Update profileCardProperty
+      description: 'Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-update?view=graph-rest-1.0
       operationId: admin.person_UpdateProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -262,7 +282,11 @@ paths:
     delete:
       tags:
         - admin.peopleAdminSettings
-      summary: Delete navigation property profileCardProperties for admin
+      summary: Delete profileCardProperty
+      description: 'Delete the profileCardProperty object specified by its directoryPropertyName from the organization''s profile card, and remove any localized customizations for that property.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/profilecardproperty-delete?view=graph-rest-1.0
       operationId: admin.person_DeleteProfileCardProperty
       parameters:
         - name: profileCardProperty-id
@@ -24579,6 +24603,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/domains/{domain-id}/microsoft.graph.promoteToInitial':
+    post:
+      tags:
+        - domains.Actions
+      summary: Invoke action promoteToInitial
+      operationId: domain_promoteToInitial
+      parameters:
+        - name: domain-id
+          in: path
+          description: The unique identifier of domain
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/domains/{domain-id}/microsoft.graph.verify':
     post:
       tags:
@@ -27777,11 +27822,8 @@ paths:
     get:
       tags:
         - organization.organizationSettings
-      summary: Get organizationSettings
-      description: 'Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organizationsettings-get?view=graph-rest-1.0
+      summary: Get settings from organization
+      description: Retrieve the properties and relationships of organizationSettings object. Nullable.
       operationId: organization_GetSetting
       parameters:
         - name: organization-id
@@ -28363,11 +28405,7 @@ paths:
     get:
       tags:
         - organization.organizationSettings
-      summary: List profileCardProperties
-      description: Get a collection of profileCardProperty resources of an organization. Each resource is identified by its directoryPropertyName property.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organizationsettings-list-profilecardproperties?view=graph-rest-1.0
+      summary: Get profileCardProperties from organization
       operationId: organization.setting_ListProfileCardProperty
       parameters:
         - name: organization-id
@@ -28438,11 +28476,7 @@ paths:
     post:
       tags:
         - organization.organizationSettings
-      summary: Create profileCardProperty
-      description: 'Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information on adding properties to the profile card for an organization, see customize the profile card.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organizationsettings-post-profilecardproperties?view=graph-rest-1.0
+      summary: Create new navigation property to profileCardProperties for organization
       operationId: organization.setting_CreateProfileCardProperty
       parameters:
         - name: organization-id
@@ -28474,11 +28508,7 @@ paths:
     get:
       tags:
         - organization.organizationSettings
-      summary: Get profileCardProperty
-      description: 'Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.'
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0
+      summary: Get profileCardProperties from organization
       operationId: organization.setting_GetProfileCardProperty
       parameters:
         - name: organization-id
@@ -29979,6 +30009,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
+              description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
               x-ms-navigationProperty: true
             pronouns:
               $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
@@ -30240,7 +30271,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -30634,6 +30665,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             visibility:
               type: string
@@ -31178,7 +31212,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -31238,6 +31272,8 @@ components:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            cloudRealtimeCommunicationInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
               description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -31408,6 +31444,8 @@ components:
               type: string
               description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
               nullable: true
+            onPremisesSipInfo:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
@@ -31866,6 +31904,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -32837,7 +32876,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profileCardProperty'
-              description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
               x-ms-navigationProperty: true
             pronouns:
               $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
@@ -35121,6 +35159,16 @@ components:
           description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
+    microsoft.graph.cloudRealtimeCommunicationInfo:
+      title: cloudRealtimeCommunicationInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.deviceKey:
       title: deviceKey
       type: object
@@ -35209,6 +35257,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesSipInfo:
+      title: onPremisesSipInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
+        sipDeploymentLocation:
+          type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
+          nullable: true
+        sipPrimaryAddress:
+          type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.passwordProfile:
       title: passwordProfile
       type: object
@@ -35223,7 +35288,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -36507,6 +36572,11 @@ components:
                 type: string
                 nullable: true
               description: List of Scope Tag IDs for this Device instance.
+            securityPatchLevel:
+              type: string
+              description: This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+              nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
@@ -37213,6 +37283,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -37279,8 +37351,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -37295,6 +37365,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -37584,11 +37655,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -45551,6 +45622,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -45623,33 +45703,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -45741,11 +45794,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -47711,6 +47766,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -49517,6 +49574,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -51836,34 +51894,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53014,6 +53044,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
               x-ms-navigationProperty: true
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -53170,6 +53202,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -55736,6 +55773,58 @@ components:
             contentType:
               type: string
               description: Indicates the type for the replied comment.
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+          additionalProperties:
+            type: object
+    microsoft.graph.workbookDocumentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTask
+          type: object
+          properties:
+            assignees:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startAndDueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
+            title:
+              type: string
+              nullable: true
+            changes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              x-ms-navigationProperty: true
+            comment:
+              $ref: '#/components/schemas/microsoft.graph.workbookComment'
           additionalProperties:
             type: object
     microsoft.graph.workbookOperationError:
@@ -57472,6 +57561,87 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.workbookEmailIdentity:
+      title: workbookEmailIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskSchedule:
+      title: workbookDocumentTaskSchedule
+      type: object
+      properties:
+        dueDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskChange:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTaskChange
+          type: object
+          properties:
+            assignee:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            changedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            commentId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            type:
+              type: string
+            undoChangeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

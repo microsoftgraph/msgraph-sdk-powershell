@@ -4324,6 +4324,11 @@ components:
       properties:
         aggregationType:
           $ref: '#/components/schemas/microsoft.graph.deviceManagement.aggregationType'
+        alertImpactDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: 'The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.'
         value:
           maximum: 2147483647
           minimum: -2147483648
@@ -4341,6 +4346,7 @@ components:
         - cloudPcOnPremiseNetworkConnectionCheckScenario
         - unknownFutureValue
         - cloudPcInGracePeriodScenario
+        - cloudPcFrontlineInsufficientLicensesScenario
       type: string
     microsoft.graph.deviceManagement.ruleSeverityType:
       title: ruleSeverityType
@@ -4660,6 +4666,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.ODataErrors.MainError:
       required:

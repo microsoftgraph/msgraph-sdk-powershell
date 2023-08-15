@@ -22534,6 +22534,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -24540,6 +24541,10 @@ components:
         - sourceImageInvalid
         - sourceImageNotGeneralized
         - unknownFutureValue
+        - vmAlreadyAzureAdjoined
+        - paidSourceImageNotSupport
+        - sourceImageNotSupportCustomizeVMName
+        - sourceImageSizeExceedsLimitation
       type: string
     microsoft.graph.cloudPcExternalPartnerStatus:
       title: cloudPcExternalPartnerStatus
@@ -24759,6 +24764,7 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -24951,11 +24957,14 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
         sipDeploymentLocation:
           type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           nullable: true
         sipPrimaryAddress:
           type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
           nullable: true
       additionalProperties:
         type: object
@@ -25330,7 +25339,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -26133,6 +26142,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             visibility:
               type: string
@@ -28317,6 +28329,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -28383,8 +28397,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -28899,6 +28911,7 @@ components:
         - unknownFutureValue
         - noLicenseAvailableConnectivityFailureReport
         - remoteConnectionQualityReports
+        - inaccessibleCloudPcReports
       type: string
     microsoft.graph.cloudPcSnapshotType:
       title: cloudPcSnapshotType
@@ -29969,6 +29982,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.keyValuePair:
       title: keyValuePair
@@ -35452,6 +35466,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -35524,33 +35547,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -38296,6 +38292,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -41291,34 +41289,6 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
           nullable: true
       additionalProperties:
         type: object

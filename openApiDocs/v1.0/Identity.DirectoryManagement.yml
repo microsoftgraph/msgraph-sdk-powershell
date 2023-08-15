@@ -2393,7 +2393,7 @@ paths:
       tags:
         - contacts.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -3078,7 +3078,7 @@ paths:
       tags:
         - contracts.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -7350,7 +7350,7 @@ paths:
       tags:
         - devices.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -11551,7 +11551,7 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -14630,7 +14630,7 @@ paths:
       tags:
         - directoryRoles.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -15306,7 +15306,7 @@ paths:
       tags:
         - directoryRoleTemplates.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -16810,11 +16810,11 @@ paths:
     get:
       tags:
         - organization.organization
-      summary: List organization
-      description: Retrieve a list of organization objects.
+      summary: List organizations
+      description: List properties and relationships of the organization objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16976,10 +16976,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.'
+      description: Read properties and relationships of the organization object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -17059,10 +17059,10 @@ paths:
       tags:
         - organization.organization
       summary: Update organization
-      description: Update the properties of a organization object.
+      description: 'Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0
       operationId: organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -19197,7 +19197,7 @@ paths:
       tags:
         - organization.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -21243,7 +21243,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -21473,7 +21473,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -22297,7 +22297,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -23940,6 +23940,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -23995,6 +23996,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -28673,6 +28676,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.watermarkProtectionValues:
       title: watermarkProtectionValues
       type: object

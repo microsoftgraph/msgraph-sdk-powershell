@@ -476,6 +476,8 @@ paths:
                 - serviceProvisioningErrors desc
                 - theme
                 - theme desc
+                - uniqueName
+                - uniqueName desc
                 - visibility
                 - visibility desc
                 - writebackConfiguration
@@ -554,6 +556,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - visibility
                 - writebackConfiguration
                 - accessType
@@ -740,6 +743,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - visibility
                 - writebackConfiguration
                 - accessType
@@ -42268,11 +42272,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
-      description: Delete conversationThread.
+      summary: Delete conversation thread
+      description: Delete a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -46848,6 +46852,233 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/groups(uniqueName=''{uniqueName}'')':
+    get:
+      tags:
+        - groups.group
+      summary: Get group
+      description: 'Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that are not returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query. Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-get?view=graph-rest-1.0
+      operationId: group_GetGroupGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of group
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - assignedLabels
+                - assignedLicenses
+                - classification
+                - createdByAppId
+                - createdDateTime
+                - description
+                - displayName
+                - expirationDateTime
+                - groupTypes
+                - hasMembersWithLicenseErrors
+                - infoCatalogs
+                - isAssignableToRole
+                - isManagementRestricted
+                - licenseProcessingState
+                - mail
+                - mailEnabled
+                - mailNickname
+                - membershipRule
+                - membershipRuleProcessingState
+                - onPremisesDomainName
+                - onPremisesLastSyncDateTime
+                - onPremisesNetBiosName
+                - onPremisesProvisioningErrors
+                - onPremisesSamAccountName
+                - onPremisesSecurityIdentifier
+                - onPremisesSyncEnabled
+                - organizationId
+                - preferredDataLocation
+                - preferredLanguage
+                - proxyAddresses
+                - renewedDateTime
+                - resourceBehaviorOptions
+                - resourceProvisioningOptions
+                - securityEnabled
+                - securityIdentifier
+                - serviceProvisioningErrors
+                - theme
+                - uniqueName
+                - visibility
+                - writebackConfiguration
+                - accessType
+                - allowExternalSenders
+                - autoSubscribeNewMembers
+                - hideFromAddressLists
+                - hideFromOutlookClients
+                - isFavorite
+                - isSubscribedByMail
+                - unseenConversationsCount
+                - unseenCount
+                - unseenMessagesCount
+                - membershipRuleProcessingStatus
+                - isArchived
+                - appRoleAssignments
+                - createdOnBehalfOf
+                - endpoints
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - owners
+                - permissionGrants
+                - settings
+                - transitiveMemberOf
+                - transitiveMembers
+                - acceptedSenders
+                - calendar
+                - calendarView
+                - conversations
+                - events
+                - rejectedSenders
+                - threads
+                - drive
+                - drives
+                - sites
+                - extensions
+                - groupLifecyclePolicies
+                - planner
+                - onenote
+                - photo
+                - photos
+                - team
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appRoleAssignments
+                - createdOnBehalfOf
+                - endpoints
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - owners
+                - permissionGrants
+                - settings
+                - transitiveMemberOf
+                - transitiveMembers
+                - acceptedSenders
+                - calendar
+                - calendarView
+                - conversations
+                - events
+                - rejectedSenders
+                - threads
+                - drive
+                - drives
+                - sites
+                - extensions
+                - groupLifecyclePolicies
+                - planner
+                - onenote
+                - photo
+                - photos
+                - team
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.group'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groups.group
+      summary: Update group
+      description: Update the properties of a group object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+      operationId: group_UpdateGroupGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of group
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.group'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.group'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.group
+      summary: Delete group
+      description: 'Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn''t applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/group-delete?view=graph-rest-1.0
+      operationId: group_DeleteGroupGraphBPreUniqueName
+      parameters:
+        - name: uniqueName
+          in: path
+          description: Alternate key of group
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /groups/$count:
     get:
       tags:
@@ -46933,6 +47164,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - visibility
                 - writebackConfiguration
                 - accessType
@@ -47064,6 +47296,8 @@ paths:
                 - serviceProvisioningErrors desc
                 - theme
                 - theme desc
+                - uniqueName
+                - uniqueName desc
                 - visibility
                 - visibility desc
                 - writebackConfiguration
@@ -47391,6 +47625,8 @@ paths:
                 - serviceProvisioningErrors desc
                 - theme
                 - theme desc
+                - uniqueName
+                - uniqueName desc
                 - visibility
                 - visibility desc
                 - writebackConfiguration
@@ -47469,6 +47705,7 @@ paths:
                 - securityIdentifier
                 - serviceProvisioningErrors
                 - theme
+                - uniqueName
                 - visibility
                 - writebackConfiguration
                 - accessType
@@ -47713,6 +47950,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             visibility:
               type: string
@@ -49102,7 +49342,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -49672,7 +49912,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -56459,6 +56699,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -59963,11 +60205,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -63835,6 +64077,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -66511,6 +66762,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
