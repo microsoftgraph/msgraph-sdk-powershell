@@ -54,7 +54,7 @@ directive:
       subject: All$1
   - where:
       verb: Get
-      variant: ^Get|GetViaIdentity|List$
+      variant: ^Get$|^GetViaIdentity$|^List$
       subject: ^(TeamChannel|GroupTeamChannel)$
     set:
       subject: All$1
