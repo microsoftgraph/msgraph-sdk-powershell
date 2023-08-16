@@ -491,6 +491,10 @@ directive:
           // Unescape -Filter values before escaping.
           let filterQueryRegex = /(this\.InvocationInformation\.BoundParameters\.ContainsKey\("Filter"\)\s*\?\s*)(Filter)(\s*:\s*null)/gm
           $ = $.replace(filterQueryRegex, '$1this.UnescapeString($2)$3');
+
+          // Extract ODataDeltaLink to a global variable.
+          let resultRegex = /((.*)var\s*result\s*=\s*await\s*response;)/gm
+          $ = $.replace(resultRegex, '$1\n$2System.Management.Automation.SessionState.PSVariable.Set(new PSVariable("ODataDeltaLink", result.OdataDeltaLink));\n')
         }
         return $;
       }
