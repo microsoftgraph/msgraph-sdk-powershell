@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaEducationClassModuleResource
 
 ## SYNOPSIS
-Delete navigation property resources for education
+Delete a specific educationModuleResource attached to a module.
+Only teachers in the class can remove a resource.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgBetaEducationClassModuleResource -InputObject <IEducationIdentity> [-If
 ```
 
 ## DESCRIPTION
-Delete navigation property resources for education
+Delete a specific educationModuleResource attached to a module.
+Only teachers in the class can remove a resource.
 
 ## EXAMPLES
 

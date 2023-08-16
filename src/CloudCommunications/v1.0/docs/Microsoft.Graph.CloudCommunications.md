@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 175f69c9-2095-49f9-a2e3-57e2629b0cf1
+Module Guid: 2466151f-7771-4b0f-849d-3e2edbc599b3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -55,7 +55,8 @@ Get the number of the resource
 
 ### [Get-MgCommunicationCallRecord](Get-MgCommunicationCallRecord.md)
 Retrieve the properties and relationships of a callRecord object.
-There are two ways to get the id of a callRecord:
+There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example.
+When you expand session details, the maximum page size is 60 sessions.
 
 ### [Get-MgCommunicationCallRecordCount](Get-MgCommunicationCallRecordCount.md)
 Get the number of the resource

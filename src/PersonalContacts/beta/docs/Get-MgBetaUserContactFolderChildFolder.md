@@ -45,11 +45,10 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.PersonalContacts
-# A UPN can also be used as -UserId.
-Get-MgBetaUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserContactFolderChildFolder -UserId $userId -ContactFolderId $contactFolderId
 
 ## PARAMETERS
 

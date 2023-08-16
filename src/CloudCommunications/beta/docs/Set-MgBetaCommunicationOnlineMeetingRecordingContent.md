@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgBetaCommunicationOnlineMeetingRecordingContent
 
 ## SYNOPSIS
-Update content for the navigation property recordings in communications
+The content of the recording.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgBetaCommunicationOnlineMeetingRecordingContent -InputObject <ICloudCommuni
 ```
 
 ## DESCRIPTION
-Update content for the navigation property recordings in communications
+The content of the recording.
+Read-only.
 
 ## EXAMPLES
 

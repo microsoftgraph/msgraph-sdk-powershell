@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 0e0b7372-b2f4-4039-a9db-0d8fbd1b73be
+Module Guid: 1f7943c4-16a9-4a86-a5c4-974ef1873f94
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -58,7 +58,7 @@ Read properties and relationships of the deviceCategory object.
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicy](Get-MgDeviceManagementDeviceCompliancePolicy.md)
-Read properties and relationships of the windowsPhone81CompliancePolicy object.
+Read properties and relationships of the windows10CompliancePolicy object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyAssignment](Get-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Read properties and relationships of the deviceCompliancePolicyAssignment object.
@@ -121,7 +121,7 @@ Get the number of the resource
 Read properties and relationships of the deviceComplianceUserOverview object.
 
 ### [Get-MgDeviceManagementDeviceConfiguration](Get-MgDeviceManagementDeviceConfiguration.md)
-Read properties and relationships of the androidGeneralDeviceConfiguration object.
+Read properties and relationships of the iosCustomConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignment](Get-MgDeviceManagementDeviceConfigurationAssignment.md)
 Read properties and relationships of the deviceConfigurationAssignment object.
@@ -466,7 +466,7 @@ Create a new deviceComplianceSettingState object.
 Create a new deviceComplianceUserStatus object.
 
 ### [New-MgDeviceManagementDeviceConfiguration](New-MgDeviceManagementDeviceConfiguration.md)
-Create a new iosCustomConfiguration object.
+Create a new windows81GeneralConfiguration object.
 
 ### [New-MgDeviceManagementDeviceConfigurationAssignment](New-MgDeviceManagementDeviceConfigurationAssignment.md)
 Create a new deviceConfigurationAssignment object.
@@ -607,7 +607,7 @@ Deletes a detectedApp.
 Deletes a deviceCategory.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicy](Remove-MgDeviceManagementDeviceCompliancePolicy.md)
-Deletes a windows10CompliancePolicy.
+Deletes a macOSCompliancePolicy.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyAssignment](Remove-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Deletes a deviceCompliancePolicyAssignment.
@@ -643,7 +643,7 @@ Deletes a deviceComplianceUserStatus.
 Delete navigation property userStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceConfiguration](Remove-MgDeviceManagementDeviceConfiguration.md)
-Deletes a androidGeneralDeviceConfiguration.
+Deletes a windowsUpdateForBusinessConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationAssignment](Remove-MgDeviceManagementDeviceConfigurationAssignment.md)
 Deletes a deviceConfigurationAssignment.
@@ -814,7 +814,7 @@ Update the properties of a detectedApp object.
 Update the properties of a deviceCategory object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicy](Update-MgDeviceManagementDeviceCompliancePolicy.md)
-Update the properties of a iosCompliancePolicy object.
+Update the properties of a macOSCompliancePolicy object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyAssignment](Update-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Update the properties of a deviceCompliancePolicyAssignment object.
@@ -850,7 +850,7 @@ Update the properties of a deviceComplianceUserStatus object.
 Update the properties of a deviceComplianceUserOverview object.
 
 ### [Update-MgDeviceManagementDeviceConfiguration](Update-MgDeviceManagementDeviceConfiguration.md)
-Update the properties of a iosGeneralDeviceConfiguration object.
+Update the properties of a macOSGeneralDeviceConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationAssignment](Update-MgDeviceManagementDeviceConfigurationAssignment.md)
 Update the properties of a deviceConfigurationAssignment object.

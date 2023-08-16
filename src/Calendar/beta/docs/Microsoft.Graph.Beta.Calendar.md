@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Calendar
-Module Guid: c383d79c-f2f7-4383-ac93-dc43b0510d15
+Module Guid: 10e98aa5-d5b9-4b4c-9fa1-3549b2060c5a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -391,7 +391,6 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ### [New-MgBetaGroupEventExceptionOccurrenceExtension](New-MgBetaGroupEventExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaGroupEventExceptionOccurrenceInstanceAttachment](New-MgBetaGroupEventExceptionOccurrenceInstanceAttachment.md)
@@ -402,13 +401,11 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ### [New-MgBetaGroupEventExceptionOccurrenceInstanceExtension](New-MgBetaGroupEventExceptionOccurrenceInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaGroupEventExtension](New-MgBetaGroupEventExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaGroupEventInstanceAttachment](New-MgBetaGroupEventInstanceAttachment.md)
@@ -424,13 +421,11 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ### [New-MgBetaGroupEventInstanceExceptionOccurrenceExtension](New-MgBetaGroupEventInstanceExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaGroupEventInstanceExtension](New-MgBetaGroupEventInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserCalendar](New-MgBetaUserCalendar.md)
@@ -480,7 +475,6 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ### [New-MgBetaUserEventExceptionOccurrenceExtension](New-MgBetaUserEventExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserEventExceptionOccurrenceInstanceAttachment](New-MgBetaUserEventExceptionOccurrenceInstanceAttachment.md)
@@ -491,13 +485,11 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ### [New-MgBetaUserEventExceptionOccurrenceInstanceExtension](New-MgBetaUserEventExceptionOccurrenceInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserEventExtension](New-MgBetaUserEventExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserEventInstanceAttachment](New-MgBetaUserEventInstanceAttachment.md)
@@ -513,13 +505,11 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 ### [New-MgBetaUserEventInstanceExceptionOccurrenceExtension](New-MgBetaUserEventInstanceExceptionOccurrenceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserEventInstanceExtension](New-MgBetaUserEventInstanceExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [Remove-MgBetaGroupCalendarEvent](Remove-MgBetaGroupCalendarEvent.md)

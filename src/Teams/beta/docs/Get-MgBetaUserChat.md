@@ -45,7 +45,14 @@ To access a chat, at least one chat member must belong to the tenant the request
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaUserChat -UserId $userId -ChatId $chatId
+Get-MgBetaUserChat -UserId $userId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+```
+
+Get-MgBetaUserChat -UserId $userId -ExpandProperty "members" -Filter "members/any(o: o/displayname eq 'Peter Parker')"
 
 ## PARAMETERS
 

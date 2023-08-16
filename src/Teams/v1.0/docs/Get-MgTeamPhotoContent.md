@@ -29,17 +29,10 @@ Get media content for the navigation property photo from teams
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgTeamPhotoContent -TeamId $teamId -OutFile $outFileId
 
 ## PARAMETERS
 

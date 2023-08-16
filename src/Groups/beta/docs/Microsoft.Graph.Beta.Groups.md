@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: c25ad8f4-a1d4-4e65-91fc-178b59aa00ae
+Module Guid: 52996405-e214-4309-bc7a-461d8caadc7c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -135,6 +135,13 @@ Get the number of the resource
 ### [Get-MgBetaGroupById](Get-MgBetaGroupById.md)
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
+
+### [Get-MgBetaGroupByUniqueName](Get-MgBetaGroupByUniqueName.md)
+Get the properties and relationships of a group object.
+This operation returns by default only a subset of all the available properties, as noted in the Properties section.
+To get properties that are not returned by default, specify them in a $select OData query option.
+The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query.
+Because the group resource supports extensions, you can also use the GET operation to get custom properties and extension data in a group instance.
 
 ### [Get-MgBetaGroupCalendarEventDelta](Get-MgBetaGroupCalendarEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
@@ -1102,6 +1109,13 @@ To learn more, see deletedItems.
 ### [Remove-MgBetaGroupAcceptedSenderByRef](Remove-MgBetaGroupAcceptedSenderByRef.md)
 Remove a user or group from the accepted-senders list of the specified group.
 
+### [Remove-MgBetaGroupByUniqueName](Remove-MgBetaGroupByUniqueName.md)
+Deletes a group.
+When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
+After that time, they are permanently deleted.
+This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
+To learn more, see deletedItems.
+
 ### [Remove-MgBetaGroupConversation](Remove-MgBetaGroupConversation.md)
 Delete conversation.
 
@@ -1172,7 +1186,7 @@ Delete navigation property settings for groups
 Unfollow a user's site or multiple sites.
 
 ### [Remove-MgBetaGroupThread](Remove-MgBetaGroupThread.md)
-Delete conversationThread.
+Delete a thread object.
 
 ### [Remove-MgBetaGroupThreadPostAttachment](Remove-MgBetaGroupThreadPostAttachment.md)
 Delete navigation property attachments for groups
@@ -1357,6 +1371,9 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgBetaGroup](Update-MgBetaGroup.md)
+Update the properties of a group object.
+
+### [Update-MgBetaGroupByUniqueName](Update-MgBetaGroupByUniqueName.md)
 Update the properties of a group object.
 
 ### [Update-MgBetaGroupConversationThread](Update-MgBetaGroupConversationThread.md)

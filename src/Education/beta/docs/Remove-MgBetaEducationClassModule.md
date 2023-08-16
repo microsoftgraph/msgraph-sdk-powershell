@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaEducationClassModule
 
 ## SYNOPSIS
-Delete navigation property modules for education
+Delete an existing module in a class.
+Only teachers within a class can delete modules.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgBetaEducationClassModule -InputObject <IEducationIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Delete navigation property modules for education
+Delete an existing module in a class.
+Only teachers within a class can delete modules.
 
 ## EXAMPLES
 

@@ -31,17 +31,10 @@ Disable lost mode
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DeviceManagement.Actions
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Disable-MgDeviceManagementManagedDeviceLostMode -ManagedDeviceId $managedDeviceId
 
 ## PARAMETERS
 

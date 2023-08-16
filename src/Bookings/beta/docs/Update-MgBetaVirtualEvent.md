@@ -418,6 +418,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
       - `[ReplyChainMessageId <String>]`: The ID of the reply message.
       - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
+    - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AllowTextOnly <Boolean?>]`: 
     - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
     - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
     - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
@@ -504,6 +507,22 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
       - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CancelationDateTime <DateTime?>]`: 
+      - `[Email <String>]`: 
+      - `[FirstName <String>]`: 
+      - `[LastName <String>]`: 
+      - `[RegistrationDateTime <DateTime?>]`: 
+      - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: 
+        - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+        - `[DisplayName <String>]`: Display name of the registration question.
+        - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+        - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
+        - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+      - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+      - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
+      - `[UserId <String>]`: 
   - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <String>]`: virtualEventStatus
 
@@ -548,6 +567,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
+  - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 
@@ -629,6 +649,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
+  - `[ChatRestrictions <IMicrosoftGraphChatRestrictions>]`: chatRestrictions
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AllowTextOnly <Boolean?>]`: 
   - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
   - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
   - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
@@ -718,6 +741,22 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsEnabledForContentSharing <Boolean?>]`: Indicates whether to apply a watermark to any shared content.
     - `[IsEnabledForVideo <Boolean?>]`: Indicates whether to apply a watermark to everyone's video feed.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[CancelationDateTime <DateTime?>]`: 
+    - `[Email <String>]`: 
+    - `[FirstName <String>]`: 
+    - `[LastName <String>]`: 
+    - `[RegistrationDateTime <DateTime?>]`: 
+    - `[RegistrationQuestionAnswers <IMicrosoftGraphVirtualEventRegistrationQuestionAnswer[]>]`: 
+      - `[BooleanValue <Boolean?>]`: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+      - `[DisplayName <String>]`: Display name of the registration question.
+      - `[MultiChoiceValues <String[]>]`: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+      - `[QuestionId <String>]`: id of the virtualEventRegistrationQuestion.
+      - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+    - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: 
+    - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
+    - `[UserId <String>]`: 
 
 `STARTDATETIME <IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

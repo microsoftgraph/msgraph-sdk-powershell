@@ -41,7 +41,7 @@ Retrieve the properties and relationships of an offerShiftRequest object.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamScheduleOfferShiftRequest -TeamId $teamId -OfferShiftRequestId $offerShiftRequestId
+Get-MgTeamScheduleOfferShiftRequest -TeamId $teamId
 
 ## PARAMETERS
 

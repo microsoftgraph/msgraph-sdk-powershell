@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: ea6f11f2-4eca-4ac0-b60e-d1c359bf5187
+Module Guid: 9abd1e27-8649-4caa-9a41-c19a7597d1c2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -127,6 +127,7 @@ In scenarios like test environments where the input parameters and calendar data
 
 ### [Get-MgUserById](Get-MgUserById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgUserCalendarSchedule](Get-MgUserCalendarSchedule.md)
@@ -134,6 +135,7 @@ Get the free/busy availability information for a collection of users, distributi
 
 ### [Get-MgUserChatPermissionGrantById](Get-MgUserChatPermissionGrantById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgUserChatPermissionGrantMemberGroup](Get-MgUserChatPermissionGrantMemberGroup.md)

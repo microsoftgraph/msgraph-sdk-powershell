@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: e7ff9602-f88d-4c94-86b6-c6e90f9240a4
+Module Guid: bd816ce3-8ac0-44dc-ad51-9ae778c224e0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -71,7 +71,7 @@ Retrieve the properties of a schema for an externalConnection.
 Get industryData from external
 
 ### [Get-MgBetaExternalIndustryDataConnector](Get-MgBetaExternalIndustryDataConnector.md)
-Read the properties and relationships of an azureDataLakeConnector object.
+Read the properties and relationships of an industryDataConnector object.
 
 ### [Get-MgBetaExternalIndustryDataConnectorCount](Get-MgBetaExternalIndustryDataConnectorCount.md)
 Get the number of the resource
@@ -180,11 +180,11 @@ Create new navigation property to activities for external
 Create new navigation property to operations for external
 
 ### [New-MgBetaExternalIndustryDataConnector](New-MgBetaExternalIndustryDataConnector.md)
-Create a new industryDataConnector object.
+Create a new azureDataLakeConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an inboundFileFlow:
 
 ### [New-MgBetaExternalIndustryDataOperation](New-MgBetaExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -235,10 +235,10 @@ Delete navigation property quota for external
 Delete navigation property schema for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
-Delete an inboundFileFlow object.
+Delete an inboundFlow object.
 
 ### [Remove-MgBetaExternalIndustryDataOperation](Remove-MgBetaExternalIndustryDataOperation.md)
 Delete navigation property operations for external
@@ -298,7 +298,7 @@ Update the properties of a schema for an externalConnection.
 Update the properties of an industryDataConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
-Update the properties of an inboundFlow object.
+Update the properties of an inboundFileFlow object.
 
 ### [Update-MgBetaExternalIndustryDataOperation](Update-MgBetaExternalIndustryDataOperation.md)
 Update the navigation property operations in external

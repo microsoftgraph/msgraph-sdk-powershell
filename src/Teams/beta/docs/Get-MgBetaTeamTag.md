@@ -41,7 +41,7 @@ Read the properties and relationships of a tag object.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
+Get-MgBetaTeamTag -TeamId $teamId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementManagedAppRegistration
 
 ## SYNOPSIS
-Read properties and relationships of the androidManagedAppRegistration object.
+Read properties and relationships of the managedAppRegistration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementManagedAppRegistration -InputObject <IDevicesCorporateM
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the androidManagedAppRegistration object.
+Read properties and relationships of the managedAppRegistration object.
 
 ## EXAMPLES
 

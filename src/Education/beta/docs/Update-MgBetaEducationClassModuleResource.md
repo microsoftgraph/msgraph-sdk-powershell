@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgBetaEducationClassModuleResource
 
 ## SYNOPSIS
-Update the navigation property resources in education
+Update a resource in a module.
+Only teachers can perform this operation.
+The only one property that can be updated is displayName, for all resource types.
 
 ## SYNTAX
 
@@ -40,7 +42,9 @@ Update-MgBetaEducationClassModuleResource -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property resources in education
+Update a resource in a module.
+Only teachers can perform this operation.
+The only one property that can be updated is displayName, for all resource types.
 
 ## EXAMPLES
 

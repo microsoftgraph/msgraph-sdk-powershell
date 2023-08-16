@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 3a4e8687-8f6b-4471-95be-caaa2d6849d9
+Module Guid: 40b515a3-dabd-44e5-a75e-953f40ce15a0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -139,8 +139,8 @@ Invoke action getAppsInstallSummaryReport
 ### [Get-MgBetaDeviceManagementReportAppStatusOverviewReport](Get-MgBetaDeviceManagementReportAppStatusOverviewReport.md)
 Invoke action getAppStatusOverviewReport
 
-### [Get-MgBetaDeviceManagementReportAutopilotDeploymentStatus](Get-MgBetaDeviceManagementReportAutopilotDeploymentStatus.md)
-Invoke action getAutopilotDeploymentStatus
+### [Get-MgBetaDeviceManagementReportAutopilotDeploymentDeviceInformation](Get-MgBetaDeviceManagementReportAutopilotDeploymentDeviceInformation.md)
+Invoke action getAutopilotDeploymentDeviceInformation
 
 ### [Get-MgBetaDeviceManagementReportCachedReport](Get-MgBetaDeviceManagementReportCachedReport.md)
 Invoke action getCachedReport

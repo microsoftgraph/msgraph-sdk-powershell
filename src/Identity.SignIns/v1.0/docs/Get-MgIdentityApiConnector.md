@@ -41,7 +41,7 @@ Read the properties of an identityApiConnector object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
+Get-MgIdentityApiConnector
 
 ## PARAMETERS
 

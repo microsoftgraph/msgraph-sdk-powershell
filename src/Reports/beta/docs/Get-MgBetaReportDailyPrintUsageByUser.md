@@ -43,7 +43,7 @@ See the printUsageByUser documentation for descriptions of each of the endpoints
 Import-Module Microsoft.Graph.Beta.Reports
 ```
 
-Get-MgBetaReportDailyPrintUsageByUser -PrintUsageByUserId $printUsageByUserId
+Get-MgBetaReportDailyPrintUsageByUser
 
 ## PARAMETERS
 

@@ -41,7 +41,7 @@ Get an Azure Active Directory (Azure AD) role assignment with administrative uni
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -ScopedRoleMembershipId $scopedRoleMembershipId
+Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId
 
 ## PARAMETERS
 

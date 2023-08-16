@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field.
-The profileCardProperty is identified by its directoryPropertyName property.
+Get profileCardProperties from organization
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaOrganizationSettingProfileCardProperty -InputObject <IIdentityDirector
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field.
-The profileCardProperty is identified by its directoryPropertyName property.
+Get profileCardProperties from organization
 
 ## EXAMPLES
 

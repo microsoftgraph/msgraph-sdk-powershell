@@ -393,7 +393,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModuleUrl
-.
+The URL of the module from which to access the assignment.
 
 ```yaml
 Type: System.String
@@ -581,7 +581,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Content <String>]`: 
     - `[ContentType <String>]`: bodyType
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[ModuleUrl <String>]`: 
+  - `[ModuleUrl <String>]`: The URL of the module from which to access the assignment.
   - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
   - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.

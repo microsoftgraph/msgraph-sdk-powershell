@@ -50,13 +50,13 @@ Note: Only users and role-enabled groups can be members of directory roles.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.DirectoryObjects
-$params = @{
-	SecurityEnabledOnly = $true
-}
-Get-MgDirectoryObjectMemberObject -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
 
+$params = @{
+	securityEnabledOnly = $true
+}
 
+Get-MgDirectoryObjectMemberObject -DirectoryObjectId $directoryObjectId -BodyParameter $params
 
 ## PARAMETERS
 

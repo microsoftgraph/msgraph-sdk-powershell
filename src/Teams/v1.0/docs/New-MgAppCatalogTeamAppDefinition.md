@@ -56,7 +56,17 @@ This API specifically updates an app published to your organization's app catalo
 Import-Module Microsoft.Graph.Teams
 ```
 
-$params = [Zip file containing a Teams app package]
+$params = app.zip
+
+
+New-MgAppCatalogTeamAppDefinition -TeamsAppId $teamsAppId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+$params = app.zip
 
 
 New-MgAppCatalogTeamAppDefinition -TeamsAppId $teamsAppId -Requiresreview true  -BodyParameter $params

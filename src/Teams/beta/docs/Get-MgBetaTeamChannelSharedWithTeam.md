@@ -55,7 +55,7 @@ This operation is allowed only for channels with a membershipType value of share
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+Get-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

@@ -535,6 +535,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserSourceId <String>]`: The unique identifier of userSource
   - `[VulnerabilityComponentId <String>]`: The unique identifier of vulnerabilityComponent
   - `[VulnerabilityId <String>]`: The unique identifier of vulnerability
+  - `[WhoisHistoryRecordId <String>]`: The unique identifier of whoisHistoryRecord
   - `[WhoisRecordId <String>]`: The unique identifier of whoisRecord
 
 `PARAMETERS <IMicrosoftGraphKeyValuePair[]>`: Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Read properties and relationships of the windowsUniversalAppX object.
+Read properties and relationships of the windowsMicrosoftEdgeApp object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementIden
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the windowsUniversalAppX object.
+Read properties and relationships of the windowsMicrosoftEdgeApp object.
 
 ## EXAMPLES
 

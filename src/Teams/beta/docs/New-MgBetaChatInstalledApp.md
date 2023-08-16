@@ -51,17 +51,6 @@ Import-Module Microsoft.Graph.Beta.Teams
 ```
 
 $params = @{
-	"teamsApp@odata.bind" = "https://graph.microsoft.com/beta/appCatalogs/teamsApps/12345678-9abc-def0-123456789a"
-}
-
-New-MgBetaChatInstalledApp -ChatId $chatId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-$params = @{
 	"teamsApp@odata.bind" = "https://graph.microsoft.com/beta/appCatalogs/teamsApps/2b524e28-95ce-4c9b-9773-4a5bd6ec1770"
 	consentedPermissionSet = @{
 		resourceSpecificPermissions = @(

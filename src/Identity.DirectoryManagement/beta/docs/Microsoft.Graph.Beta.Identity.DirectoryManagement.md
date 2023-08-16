@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: 3b99c490-2a86-4348-b0cd-7a5e5690b67f
+Module Guid: 285892f9-aa58-40a6-a742-173822184cfa
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -219,16 +219,17 @@ Get the number of the resource
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
-### [Get-MgBetaAdminPerson](Get-MgBetaAdminPerson.md)
-Get people from admin
+### [Get-MgBetaAdminPeople](Get-MgBetaAdminPeople.md)
+Retrieve the properties and relationships of a peopleAdminSettings object.
 
-### [Get-MgBetaAdminPersonProfileCardProperty](Get-MgBetaAdminPersonProfileCardProperty.md)
-Get profileCardProperties from admin
+### [Get-MgBetaAdminPeopleProfileCardProperty](Get-MgBetaAdminPeopleProfileCardProperty.md)
+Retrieve the properties of a profileCardProperty entity.
+The profileCardProperty is identified by its directoryPropertyName property.
 
-### [Get-MgBetaAdminPersonProfileCardPropertyCount](Get-MgBetaAdminPersonProfileCardPropertyCount.md)
+### [Get-MgBetaAdminPeopleProfileCardPropertyCount](Get-MgBetaAdminPeopleProfileCardPropertyCount.md)
 Get the number of the resource
 
-### [Get-MgBetaAdminPersonPronoun](Get-MgBetaAdminPersonPronoun.md)
+### [Get-MgBetaAdminPeoplePronoun](Get-MgBetaAdminPeoplePronoun.md)
 Get the properties of the pronounsSettings resource for an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 
@@ -1069,11 +1070,8 @@ This function is transitive.
 Invoke action getMemberObjects
 
 ### [Get-MgBetaOrganizationSetting](Get-MgBetaOrganizationSetting.md)
-Retrieve the properties and relationships of an organizationSettings object, including profileCardProperties.
-This operation does not return insightsSettings.
-Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
-This operation does not return microsoftApplicationDataAccessSettings.
-To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
 
 ### [Get-MgBetaOrganizationSettingContactInsight](Get-MgBetaOrganizationSettingContactInsight.md)
 Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
@@ -1090,8 +1088,7 @@ Get the properties of an insightsSettings object for displaying or returning peo
 To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
 
 ### [Get-MgBetaOrganizationSettingProfileCardProperty](Get-MgBetaOrganizationSettingProfileCardProperty.md)
-Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field.
-The profileCardProperty is identified by its directoryPropertyName property.
+Get profileCardProperties from organization
 
 ### [Get-MgBetaOrganizationSettingProfileCardPropertyCount](Get-MgBetaOrganizationSettingProfileCardPropertyCount.md)
 Get the number of the resource
@@ -1152,6 +1149,9 @@ On the specified date and time, Azure AD will automatically mark the status of t
 Promote a verified subdomain to the root domain.
 A verified domain has its isVerified property set to true.
 
+### [Invoke-MgBetaPromoteDomainToInitial](Invoke-MgBetaPromoteDomainToInitial.md)
+Invoke action promoteToInitial
+
 ### [Invoke-MgBetaReactivateDirectoryImpactedResource](Invoke-MgBetaReactivateDirectoryImpactedResource.md)
 Reactivate an accidentally dismissed, completed, or postponed impactedResource object.
 This action updates the status of the resource to active.
@@ -1197,8 +1197,10 @@ Create new navigation property ref to members for administrativeUnits
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 
-### [New-MgBetaAdminPersonProfileCardProperty](New-MgBetaAdminPersonProfileCardProperty.md)
-Create new navigation property to profileCardProperties for admin
+### [New-MgBetaAdminPeopleProfileCardProperty](New-MgBetaAdminPeopleProfileCardProperty.md)
+Create a new profileCardProperty for an organization.
+The new property is identified by its directoryPropertyName property.
+For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
 
 ### [New-MgBetaContact](New-MgBetaContact.md)
 Add new entity to contacts
@@ -1359,9 +1361,7 @@ To retrieve the default branding, see Get branding.
 Create new navigation property to extensions for organization
 
 ### [New-MgBetaOrganizationSettingProfileCardProperty](New-MgBetaOrganizationSettingProfileCardProperty.md)
-Create a new profileCardProperty for an organization.
-The new property is identified by its directoryPropertyName property.
-For more information on adding properties to the profile card for an organization, see customize the profile card.
+Create new navigation property to profileCardProperties for organization
 
 ### [New-MgBetaSubscribedSku](New-MgBetaSubscribedSku.md)
 Add new entity to subscribedSkus
@@ -1381,13 +1381,13 @@ Delete ref of navigation property members for administrativeUnits
 ### [Remove-MgBetaAdministrativeUnitScopedRoleMember](Remove-MgBetaAdministrativeUnitScopedRoleMember.md)
 Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 
-### [Remove-MgBetaAdminPerson](Remove-MgBetaAdminPerson.md)
+### [Remove-MgBetaAdminPeople](Remove-MgBetaAdminPeople.md)
 Delete navigation property people for admin
 
-### [Remove-MgBetaAdminPersonProfileCardProperty](Remove-MgBetaAdminPersonProfileCardProperty.md)
-Delete navigation property profileCardProperties for admin
+### [Remove-MgBetaAdminPeopleProfileCardProperty](Remove-MgBetaAdminPeopleProfileCardProperty.md)
+Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
 
-### [Remove-MgBetaAdminPersonPronoun](Remove-MgBetaAdminPersonPronoun.md)
+### [Remove-MgBetaAdminPeoplePronoun](Remove-MgBetaAdminPeoplePronoun.md)
 Delete navigation property pronouns for admin
 
 ### [Remove-MgBetaContact](Remove-MgBetaContact.md)
@@ -1786,13 +1786,13 @@ Update the navigation property extensions in administrativeUnits
 ### [Update-MgBetaAdministrativeUnitScopedRoleMember](Update-MgBetaAdministrativeUnitScopedRoleMember.md)
 Update the navigation property scopedRoleMembers in administrativeUnits
 
-### [Update-MgBetaAdminPerson](Update-MgBetaAdminPerson.md)
+### [Update-MgBetaAdminPeople](Update-MgBetaAdminPeople.md)
 Update the navigation property people in admin
 
-### [Update-MgBetaAdminPersonProfileCardProperty](Update-MgBetaAdminPersonProfileCardProperty.md)
-Update the navigation property profileCardProperties in admin
+### [Update-MgBetaAdminPeopleProfileCardProperty](Update-MgBetaAdminPeopleProfileCardProperty.md)
+Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
 
-### [Update-MgBetaAdminPersonPronoun](Update-MgBetaAdminPersonPronoun.md)
+### [Update-MgBetaAdminPeoplePronoun](Update-MgBetaAdminPeoplePronoun.md)
 Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
 

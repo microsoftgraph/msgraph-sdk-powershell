@@ -48,10 +48,31 @@ Upgrade an app installation within a chat.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-Update-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 ```
 
+Update-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+$params = @{
+	consentedPermissionSet = @{
+		resourceSpecificPermissions = @(
+			@{
+				permissionValue = "OnlineMeeting.ReadBasic.Chat"
+				permissionType = "Delegated"
+			}
+			@{
+				permissionValue = "ChatMember.Read.Chat"
+				permissionType = "Application"
+			}
+		)
+	}
+}
+
+Update-MgChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId -BodyParameter $params
 
 ## PARAMETERS
 

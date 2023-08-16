@@ -26,10 +26,9 @@ Retrieve a list of plannerBucket objects contained by a plannerPlan object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-Get-MgPlannerPlanBucket -PlannerPlanId $plannerPlanId
 ```
 
-
+Get-MgPlannerPlanBucket -PlannerPlanId $plannerPlanId
 
 ## PARAMETERS
 

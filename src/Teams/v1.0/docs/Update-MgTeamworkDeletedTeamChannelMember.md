@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkDeletedTeamChannelMember
 
 ## SYNOPSIS
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Update-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 
 ## EXAMPLES
 

@@ -36,17 +36,10 @@ You can get the metadata of the largest available photo, or specify a size to ge
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgTeamPhoto -TeamId $teamId
 
 ## PARAMETERS
 

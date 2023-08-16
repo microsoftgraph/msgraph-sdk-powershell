@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaVirtualEventSessionVirtualAppointment
 
 ## SYNOPSIS
-Update the properties of a virtualAppointment object.
+Create a new virtualAppointment object.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgBetaVirtualEventSessionVirtualAppointment -InputObject <IBookingsIdenti
 ```
 
 ## DESCRIPTION
-Update the properties of a virtualAppointment object.
+Create a new virtualAppointment object.
 
 ## EXAMPLES
 
@@ -328,6 +328,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
+  - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 

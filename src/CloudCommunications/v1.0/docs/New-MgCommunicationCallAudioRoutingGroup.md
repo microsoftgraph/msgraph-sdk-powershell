@@ -45,17 +45,21 @@ Create a new audioRoutingGroup.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-{{ Add output here }}
+$params = @{
+	id = "oneToOne"
+	routingMode = "oneToOne"
+	sources = @(
+		"632899f8-2ea1-4604-8413-27bd2892079f"
+	)
+	receivers = @(
+		"550fae72-d251-43ec-868c-373732c2704f"
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgCommunicationCallAudioRoutingGroup -CallId $callId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -38,17 +38,10 @@ List of channels shared with the team.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBetaTeamIncomingChannel -TeamId $teamId
 
 ## PARAMETERS
 

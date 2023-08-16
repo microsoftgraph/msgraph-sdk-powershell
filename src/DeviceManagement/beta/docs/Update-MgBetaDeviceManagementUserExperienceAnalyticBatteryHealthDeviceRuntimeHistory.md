@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ### -EstimatedRuntimeInMinutes
 The estimated runtime of the device when the battery is fully charged.
 Unit in minutes.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -247,7 +247,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeviceId <String>]`: The unique identifier of the device, Intune DeviceID or SCCM device id.
-  - `[EstimatedRuntimeInMinutes <Int32?>]`: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+  - `[EstimatedRuntimeInMinutes <Int32?>]`: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
   - `[RuntimeDateTime <String>]`: The datetime for the instance of runtime history.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter

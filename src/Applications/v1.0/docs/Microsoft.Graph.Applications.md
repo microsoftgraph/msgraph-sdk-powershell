@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: 1c062252-6036-4ad7-83cb-d27968a1b55e
+Module Guid: 4c4d2a24-75fe-4e40-9297-4d1fc7d8fc27
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -142,7 +142,7 @@ Note: Only users and role-enabled groups can be members of directory roles.
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgApplicationOwnerAsAppRoleAssignment](Get-MgApplicationOwnerAsAppRoleAssignment.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
@@ -160,7 +160,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgApplicationOwnerCount](Get-MgApplicationOwnerCount.md)
 Get the number of the resource
@@ -418,7 +418,7 @@ Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgServicePrincipalOwnerAsAppRoleAssignment](Get-MgServicePrincipalOwnerAsAppRoleAssignment.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
@@ -437,7 +437,7 @@ Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgServicePrincipalOwnerCount](Get-MgServicePrincipalOwnerCount.md)
 Get the number of the resource

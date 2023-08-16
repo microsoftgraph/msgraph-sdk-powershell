@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBetaEducationClassModule
 
 ## SYNOPSIS
-Get modules from education
+Get the properties and relationships of a module.
+Only teachers, students, and applications with application permissions can perform this operation.
+Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgBetaEducationClassModule -InputObject <IEducationIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get modules from education
+Get the properties and relationships of a module.
+Only teachers, students, and applications with application permissions can perform this operation.
+Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 
 ## EXAMPLES
 

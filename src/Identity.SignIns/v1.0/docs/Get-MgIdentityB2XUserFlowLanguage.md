@@ -45,7 +45,7 @@ Note: Language customization is enabled by default in Azure Active Directory use
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityB2XUserFlowLanguage -B2xIdentityUserFlowId $b2xIdentityUserFlowId
+Get-MgIdentityB2XUserFlowLanguage -B2xIdentityUserFlowId $b2xIdentityUserFlowId -UserFlowLanguageConfigurationId $userFlowLanguageConfigurationId
 
 ## PARAMETERS
 

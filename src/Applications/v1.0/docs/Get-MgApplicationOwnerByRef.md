@@ -11,7 +11,7 @@ schema: 2.0.0
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgApplicationOwnerByRef -ApplicationId <String> [-Filter <String>] [-Search 
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ## EXAMPLES
 

@@ -12687,6 +12687,7 @@ components:
               nullable: true
             tenantLicenseType:
               type: string
+              description: 'The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.'
               nullable: true
             totalUserCount:
               maximum: 2147483647

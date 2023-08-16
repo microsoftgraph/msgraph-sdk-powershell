@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Delete a countryNamedLocation object.
+Delete a namedLocation object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Delete a countryNamedLocation object.
+Delete a namedLocation object.
 
 ## EXAMPLES
 

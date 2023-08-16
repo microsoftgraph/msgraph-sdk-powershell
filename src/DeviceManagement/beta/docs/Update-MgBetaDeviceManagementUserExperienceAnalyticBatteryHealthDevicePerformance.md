@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ### -BatteryAgeInDays
 Estimated battery age.
 Unit in days.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ### -DeviceBatteryHealthScore
 A weighted average of a device’s maximum capacity score and runtime estimate score.
 Values range from 0-100.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ### -EstimatedRuntimeInMinutes
 The estimated runtime of the device when the battery is fully charged.
 Unit in minutes.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 ### -MaxCapacityPercentage
 Ratio of current capacity and design capacity of the battery with the lowest capacity.
 Unit in percentage and values range from 0-100.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -379,16 +379,16 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthDevicePerformance>`: The user experience analytics battery health device performance entity contains device level battery information.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[BatteryAgeInDays <Int32?>]`: Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
+  - `[BatteryAgeInDays <Int32?>]`: Estimated battery age. Unit in days. Valid values 0 to 2147483647
   - `[DeviceBatteryCount <Int32?>]`: Number of batteries in a user device. Valid values 1 to 2147483647
-  - `[DeviceBatteryHealthScore <Int32?>]`: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+  - `[DeviceBatteryHealthScore <Int32?>]`: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
   - `[DeviceId <String>]`: The unique identifier of the device, Intune DeviceID.
   - `[DeviceName <String>]`: Device friendly name.
-  - `[EstimatedRuntimeInMinutes <Int32?>]`: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+  - `[EstimatedRuntimeInMinutes <Int32?>]`: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
   - `[FullBatteryDrainCount <Int32?>]`: Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
   - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
   - `[Manufacturer <String>]`: The manufacturer name of the device.
-  - `[MaxCapacityPercentage <Int32?>]`: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+  - `[MaxCapacityPercentage <Int32?>]`: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
   - `[Model <String>]`: The model name of the device.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter

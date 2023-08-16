@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a schedulingGroup by ID.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId -SchedulingGroupId $schedulingGroupId
+Get-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId
 
 ## PARAMETERS
 

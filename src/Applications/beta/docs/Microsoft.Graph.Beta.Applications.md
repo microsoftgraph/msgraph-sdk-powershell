@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: 9bca8add-9fc2-470b-b0ec-5c6ec504e430
+Module Guid: adda8768-d0d1-4b2a-85b7-d77ba706ed67
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -86,6 +86,9 @@ Get the properties and relationships of an application object.
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgBetaApplicationByUniqueName](Get-MgBetaApplicationByUniqueName.md)
+Get the properties and relationships of an application object.
+
 ### [Get-MgBetaApplicationConnectorGroup](Get-MgBetaApplicationConnectorGroup.md)
 The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
@@ -137,7 +140,7 @@ Invoke action getMemberObjects
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgBetaApplicationOwnerAsEndpoint](Get-MgBetaApplicationOwnerAsEndpoint.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
@@ -152,7 +155,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgBetaApplicationOwnerCount](Get-MgBetaApplicationOwnerCount.md)
 Get the number of the resource
@@ -528,7 +531,7 @@ Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgBetaServicePrincipalOwnerAsEndpoint](Get-MgBetaServicePrincipalOwnerAsEndpoint.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
@@ -544,7 +547,7 @@ Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgBetaServicePrincipalOwnerCount](Get-MgBetaServicePrincipalOwnerCount.md)
 Get the number of the resource
@@ -779,7 +782,7 @@ Create new navigation property ref to agentGroups for onPremisesPublishingProfil
 Create new navigation property to connectors for onPremisesPublishingProfiles
 
 ### [New-MgBetaOnPremisePublishingProfileConnectorGroup](New-MgBetaOnPremisePublishingProfileConnectorGroup.md)
-Create a connectorGroup object.
+Create a new connectorGroup.
 
 ### [New-MgBetaOnPremisePublishingProfileConnectorGroupMemberByRef](New-MgBetaOnPremisePublishingProfileConnectorGroupMemberByRef.md)
 Create new navigation property ref to members for onPremisesPublishingProfiles
@@ -872,6 +875,11 @@ Remove an appManagementPolicy policy object from an application or service princ
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
 
 ### [Remove-MgBetaApplicationByAppId](Remove-MgBetaApplicationByAppId.md)
+Deletes an application.
+When deleted, apps are moved to a temporary container and can be restored within 30 days.
+After that time, they are permanently deleted.
+
+### [Remove-MgBetaApplicationByUniqueName](Remove-MgBetaApplicationByUniqueName.md)
 Deletes an application.
 When deleted, apps are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
@@ -1135,6 +1143,9 @@ Validate that the credentials are valid in the tenant.
 Update the properties of an application object.
 
 ### [Update-MgBetaApplicationByAppId](Update-MgBetaApplicationByAppId.md)
+Update the properties of an application object.
+
+### [Update-MgBetaApplicationByUniqueName](Update-MgBetaApplicationByUniqueName.md)
 Update the properties of an application object.
 
 ### [Update-MgBetaApplicationExtensionProperty](Update-MgBetaApplicationExtensionProperty.md)

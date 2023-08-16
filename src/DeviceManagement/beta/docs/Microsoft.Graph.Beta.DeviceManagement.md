@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement
-Module Guid: 2e94adcd-776a-47ab-9a9d-29d5e6c991e5
+Module Guid: 9573ee55-4d02-40ba-aa7f-8adc151b6da1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -43,7 +43,7 @@ Get deviceManagement
 The summary state of ATP onboarding state for this account.
 
 ### [Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState](Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState.md)
-Not yet documented
+Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
 
 ### [Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStateCount](Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStateCount.md)
 Get the number of the resource
@@ -335,7 +335,7 @@ The summary states of compliance policy settings for this account.
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState](Get-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingState.md)
-Not yet documented
+Get deviceComplianceSettingStates from deviceManagement
 
 ### [Get-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStateCount](Get-MgBetaDeviceManagementDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStateCount.md)
 Get the number of the resource

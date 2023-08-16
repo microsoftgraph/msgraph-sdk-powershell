@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
 
-Get-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
+Import-Module Microsoft.Graph.Teams
+
+Get-MgTeamworkWorkforceIntegration
+
 ```
 This example shows how to use the Get-MgTeamworkWorkforceIntegration Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

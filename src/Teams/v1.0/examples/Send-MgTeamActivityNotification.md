@@ -1,117 +1,238 @@
-### Example 1: Using the Send-MgTeamActivityNotification Cmdlet
+### Example 1: Notify a user about pending finance approval requests
+
 ```powershell
+
 Import-Module Microsoft.Graph.Teams
+
 $params = @{
-	Topic = @{
-		Source = "text"
-		Value = "Deployment Approvals Channel"
-		WebUrl = "https://teams.microsoft.com/l/message/19:448cfd2ac2a7490a9084a9ed14cttr78c@thread.skype/1605223780000?tenantId=c8b1bf45-3834-4ecf-971a-b4c755ee677d&groupId=d4c2a937-f097-435a-bc91-5c1683ca7245&parentMessageId=1605223771864&teamName=Approvals&channelName=Azure%20DevOps&createdTime=1605223780000"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/v1.0/teams/{teamId}"
 	}
-	ActivityType = "deploymentApprovalRequired"
-	PreviewText = @{
-		Content = "New deployment requires your approval"
+	activityType = "pendingFinanceApprovalRequests"
+	previewText = @{
+		content = "Internal spending team has a pending finance approval requests"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+		userId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "deploymentId"
-			Value = "6788662"
+			name = "pendingRequestCount"
+			value = "5"
 		}
 	)
 }
+
 Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
 ```
-This example shows how to use the Send-MgTeamActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Send-MgTeamActivityNotification Cmdlet
+This example will notify a user about pending finance approval requests
+
+### Example 2: Notify a user about a channel tab
+
 ```powershell
+
 Import-Module Microsoft.Graph.Teams
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/v1.0/teams/{teamId}"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/v1.0/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
 	}
-	ActivityType = "pendingFinanceApprovalRequests"
-	PreviewText = @{
-		Content = "Internal spending team has a pending finance approval requests"
+	activityType = "reservationUpdated"
+	previewText = @{
+		content = "You have moved up the queue"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+		userId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "pendingRequestCount"
-			Value = "5"
+			name = "reservationId"
+			value = "TREEE433"
+		}
+		@{
+			name = "currentSlot"
+			value = "23"
 		}
 	)
 }
+
 Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
 ```
-This example shows how to use the Send-MgTeamActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Send-MgTeamActivityNotification Cmdlet
+This example will notify a user about a channel tab
+
+### Example 3: Notify a user about a channel tab using user principal name
+
 ```powershell
+
 Import-Module Microsoft.Graph.Teams
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/v1.0/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/v1.0/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
 	}
-	ActivityType = "reservationUpdated"
-	PreviewText = @{
-		Content = "You have moved up the queue"
+	activityType = "reservationUpdated"
+	previewText = @{
+		content = "You have moved up the queue"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+		userId = "jacob@contoso.com"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "reservationId"
-			Value = "TREEE433"
+			name = "reservationId"
+			value = "TREEE433"
 		}
 		@{
-			Name = "currentSlot"
-			Value = "23"
+			name = "currentSlot"
+			value = "23"
 		}
 	)
 }
+
 Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
 ```
-This example shows how to use the Send-MgTeamActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Send-MgTeamActivityNotification Cmdlet
+This example will notify a user about a channel tab using user principal name
+
+### Example 4: Notify a user about an event using custom topic
+
 ```powershell
+
 Import-Module Microsoft.Graph.Teams
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/v1.0/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
+	topic = @{
+		source = "text"
+		value = "Deployment Approvals Channel"
+		webUrl = "https://teams.microsoft.com/l/message/19:448cfd2ac2a7490a9084a9ed14cttr78c@thread.skype/1605223780000?tenantId=c8b1bf45-3834-4ecf-971a-b4c755ee677d&groupId=d4c2a937-f097-435a-bc91-5c1683ca7245&parentMessageId=1605223771864&teamName=Approvals&channelName=Azure%20DevOps&createdTime=1605223780000"
 	}
-	ActivityType = "reservationUpdated"
-	PreviewText = @{
-		Content = "You have moved up the queue"
+	activityType = "deploymentApprovalRequired"
+	previewText = @{
+		content = "New deployment requires your approval"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "jacob@contoso.com"
+		userId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "reservationId"
-			Value = "TREEE433"
-		}
-		@{
-			Name = "currentSlot"
-			Value = "23"
+			name = "deploymentId"
+			value = "6788662"
 		}
 	)
 }
+
 Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
 ```
-This example shows how to use the Send-MgTeamActivityNotification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will notify a user about an event using custom topic
+
+### Example 5: Notify the team members about pending finance approval requests
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/v1.0/teams/e8bece96-d393-4b9b-b8da-69cedef1a7e7"
+	}
+	activityType = "pendingFinanceApprovalRequests"
+	previewText = @{
+		content = "Internal spending team has a pending finance approval requests"
+	}
+	recipient = @{
+		"@odata.type" = "microsoft.graph.teamMembersNotificationRecipient"
+		teamId = "e8bece96-d393-4b9b-b8da-69cedef1a7e7"
+	}
+	templateParameters = @(
+		@{
+			name = "pendingRequestCount"
+			value = "5"
+		}
+	)
+}
+
+Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
+```
+This example will notify the team members about pending finance approval requests
+
+### Example 6: Notify the channel members about pending finance approval requests
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/v1.0/teams/e8bece96-d393-4b9b-b8da-69cedef1a7e7"
+	}
+	activityType = "pendingFinanceApprovalRequests"
+	previewText = @{
+		content = "Internal spending team has a pending finance approval requests"
+	}
+	recipient = @{
+		"@odata.type" = "microsoft.graph.channelMembersNotificationRecipient"
+		teamId = "e8bece96-d393-4b9b-b8da-69cedef1a7e7"
+		channelId = "19:3d61a2309f094f4a9310b20f1db37520@thread.tacv2"
+	}
+	templateParameters = @(
+		@{
+			name = "pendingRequestCount"
+			value = "5"
+		}
+	)
+}
+
+Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
+```
+This example will notify the channel members about pending finance approval requests
+
+### Example 7: Notify about pending finance approval requests in channel message reply location
+
+```powershell
+
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/beta/teams/{teamId}/channels/{channelId}/messages/{messageId}/replies/{replyId}"
+	}
+	activityType = "reservationStatusUpdated"
+	previewText = @{
+		content = "You have moved up the queue"
+	}
+	recipient = @{
+		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
+		userId = "jacob@contoso.com"
+	}
+	templateParameters = @(
+		@{
+			name = "reservationId"
+			value = "TREEE433"
+		}
+		@{
+			name = "currentSlot"
+			value = "23"
+		}
+	)
+}
+
+Send-MgTeamActivityNotification -TeamId $teamId -BodyParameter $params
+
+```
+This example will notify about pending finance approval requests in channel message reply location
+

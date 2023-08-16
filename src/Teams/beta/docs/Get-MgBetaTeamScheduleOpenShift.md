@@ -41,7 +41,7 @@ Retrieve the properties and relationships of an openshift object.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamScheduleOpenShift -TeamId $teamId -OpenShiftId $openShiftId
+Get-MgBetaTeamScheduleOpenShift -TeamId $teamId
 
 ## PARAMETERS
 

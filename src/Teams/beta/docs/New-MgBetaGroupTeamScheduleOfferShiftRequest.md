@@ -49,10 +49,17 @@ Create an instance of an offerShiftRequest.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+{{ Add code here }}
 ```
 
-Get-MgBetaTeamScheduleOfferShiftRequest -TeamId $teamId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

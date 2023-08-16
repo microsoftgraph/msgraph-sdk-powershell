@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLicenseType
-.
+The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
 
 ```yaml
 Type: System.String
@@ -363,7 +363,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SsprRegisteredUserCount <Int32?>]`: The number of users registered for self service password reset. Optional. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
   - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
-  - `[TenantLicenseType <String>]`: 
+  - `[TenantLicenseType <String>]`: The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
   - `[TotalUserCount <Int32?>]`: The total number of users in the given managed tenant. Optional. Read-only.
 
 ## RELATED LINKS

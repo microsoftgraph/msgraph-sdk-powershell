@@ -38,10 +38,9 @@ A team is unarchived once the async operation completes successfully, which may 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-Invoke-MgUnarchiveTeam -TeamId $teamId
 ```
 
-
+Invoke-MgUnarchiveTeam -TeamId $teamId
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: b714c9d2-7554-491e-ac09-d03bc815642e
+Module Guid: a1553f55-cba1-4d75-8390-5cd128ae954b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -135,13 +135,16 @@ Note that if the delegated token is used, members can only be seen by other memb
 Get the number of the resource
 
 ### [Get-MgBetaEducationClassModule](Get-MgBetaEducationClassModule.md)
-Get modules from education
+Get the properties and relationships of a module.
+Only teachers, students, and applications with application permissions can perform this operation.
+Students can only see published modules; teachers and applications with application permissions can see all modules in a class.
 
 ### [Get-MgBetaEducationClassModuleCount](Get-MgBetaEducationClassModuleCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaEducationClassModuleResource](Get-MgBetaEducationClassModuleResource.md)
-Get resources from education
+Get the properties of a resource associated with a module.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ### [Get-MgBetaEducationClassModuleResourceCount](Get-MgBetaEducationClassModuleResourceCount.md)
 Get the number of the resource
@@ -477,7 +480,9 @@ Mark an assigned educationAssignment as inactive to signal that the assignment h
 This action can only be performed by a teacher on assigned assignments.
 
 ### [Invoke-MgBetaPinEducationClassModule](Invoke-MgBetaPinEducationClassModule.md)
-Invoke action pin
+Pin an educationModule in the classwork list.
+This action sets the isPinned property to true for an educationModule.
+Only teachers can perform this action and only one module at a time can be pinned in the classwork list.
 
 ### [Invoke-MgBetaReassignEducationClassAssignmentSubmission](Invoke-MgBetaReassignEducationClassAssignmentSubmission.md)
 Reassign the submission to the student with feedback for review.
@@ -519,7 +524,9 @@ This will change the status of the submission from 'submitted' to 'returned' and
 This action can only be done by the teacher.
 
 ### [Invoke-MgBetaUnpinEducationClassModule](Invoke-MgBetaUnpinEducationClassModule.md)
-Invoke action unpin
+Unpin an educationModule in the classwork list.
+This action sets the isPinned property to false for an educationModule.
+Only teachers in the class can perform this operation.
 
 ### [Invoke-MgBetaUnsubmitEducationClassAssignmentSubmission](Invoke-MgBetaUnsubmitEducationClassAssignmentSubmission.md)
 Indicate that a student wants to work on the submitted assignment after it was turned in.
@@ -598,10 +605,14 @@ Create new navigation property to submittedResources for education
 Add an educationUser member to an educationClass.
 
 ### [New-MgBetaEducationClassModule](New-MgBetaEducationClassModule.md)
-Create new navigation property to modules for education
+Create a new module in a class.
+Only teachers in a class can create a module.
+Modules start in the draft state, which means that students will not see the modules until publication.
 
 ### [New-MgBetaEducationClassModuleResource](New-MgBetaEducationClassModuleResource.md)
-Create new navigation property to resources for education
+Create a resource in a module.
+Only teachers can perform this operation.
+You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ### [New-MgBetaEducationClassTeacherByRef](New-MgBetaEducationClassTeacherByRef.md)
 Add a teacher to a class.
@@ -707,7 +718,10 @@ To update the properties of a published assignment, see update an assignment.
 To update the properties of a published assignment, see update an assignment.
 
 ### [Publish-MgBetaEducationClassModule](Publish-MgBetaEducationClassModule.md)
-Invoke action publish
+Change the state of an educationModule from its original draft status to the published status.
+Only teachers in the class can perform this operation.
+When a module is in draft status, students will not see the module.
+When you call this API, the module appears in the student's classwork list.
 
 ### [Publish-MgBetaEducationMeAssignment](Publish-MgBetaEducationMeAssignment.md)
 Change the state of an educationAssignment from its original draft status to the published status.
@@ -791,10 +805,12 @@ Delete navigation property submittedResources for education
 Remove an educationUser from an educationClass.
 
 ### [Remove-MgBetaEducationClassModule](Remove-MgBetaEducationClassModule.md)
-Delete navigation property modules for education
+Delete an existing module in a class.
+Only teachers within a class can delete modules.
 
 ### [Remove-MgBetaEducationClassModuleResource](Remove-MgBetaEducationClassModuleResource.md)
-Delete navigation property resources for education
+Delete a specific educationModuleResource attached to a module.
+Only teachers in the class can remove a resource.
 
 ### [Remove-MgBetaEducationClassTeacherByRef](Remove-MgBetaEducationClassTeacherByRef.md)
 Remove a teacher from a class.
@@ -938,7 +954,9 @@ Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
 
 ### [Set-MgBetaEducationClassModuleUpResourceFolder](Set-MgBetaEducationClassModuleUpResourceFolder.md)
-Invoke action setUpResourcesFolder
+Create a SharePoint folder to upload files for a given educationModule.
+Only teachers can perform this operation.
+The teacher determines what resources to upload to the SharePoint folder for the module.
 
 ### [Set-MgBetaEducationMeAssignmentRubricByRef](Set-MgBetaEducationMeAssignmentRubricByRef.md)
 Attach an existing educationRubric object to an educationAssignment.
@@ -1058,10 +1076,15 @@ Update the navigation property resources in education
 Update the navigation property submittedResources in education
 
 ### [Update-MgBetaEducationClassModule](Update-MgBetaEducationClassModule.md)
-Update the navigation property modules in education
+Update an educationModule object in a class.
+Only teachers in the class can perform this operation.
+Note that you can't use a PATCH request to change the status of a module.
+Use the publish action to change the module status.
 
 ### [Update-MgBetaEducationClassModuleResource](Update-MgBetaEducationClassModuleResource.md)
-Update the navigation property resources in education
+Update a resource in a module.
+Only teachers can perform this operation.
+The only one property that can be updated is displayName, for all resource types.
 
 ### [Update-MgBetaEducationMe](Update-MgBetaEducationMe.md)
 Update the navigation property me in education

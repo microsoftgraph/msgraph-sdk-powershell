@@ -40,17 +40,11 @@ Getting page information Access a page's metadata by page identifier: Getting pa
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Notes
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+# A UPN can also be used as -UserId.
+Get-MgUserOnenotePage -UserId $userId
 
 ## PARAMETERS
 

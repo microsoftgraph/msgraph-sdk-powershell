@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a workforceIntegration object.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
+Get-MgTeamworkWorkforceIntegration
 
 ## PARAMETERS
 

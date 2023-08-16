@@ -40,7 +40,21 @@ Retrieve the properties and relationships of the specified team.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeam -TeamId $teamId
+Get-MgBetaTeam
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+```
+
+Get-MgBetaTeam -Filter "startswith(displayName, 'A')" -Top 2
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+```
+
+Get-MgBetaTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description"
 
 ## PARAMETERS
 

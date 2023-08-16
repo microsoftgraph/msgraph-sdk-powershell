@@ -131,7 +131,7 @@ Accept wildcard characters: False
 ### -BatteryUsagePercentage
 The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days.
 Unit in percentage.
-Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+Valid values 0 to 1.79769313486232E+308
 
 ```yaml
 Type: System.Double
@@ -297,7 +297,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppDisplayName <String>]`: User friendly display name for the app. Eg: Outlook
   - `[AppName <String>]`: App name. Eg: oltk.exe
   - `[AppPublisher <String>]`: App publisher. Eg: Microsoft Corporation
-  - `[BatteryUsagePercentage <Double?>]`: The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[BatteryUsagePercentage <Double?>]`: The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308
   - `[DeviceId <String>]`: The unique identifier of the device, Intune DeviceID or SCCM device id.
   - `[IsForegroundApp <Boolean?>]`: true if the user had active interaction with the app.
 

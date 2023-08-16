@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Read properties and relationships of the windowsPhone81CompliancePolicy object.
+Read properties and relationships of the windows10CompliancePolicy object.
 
 ## SYNTAX
 
@@ -32,23 +32,16 @@ Get-MgDeviceManagementDeviceCompliancePolicy -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the windowsPhone81CompliancePolicy object.
+Read properties and relationships of the windows10CompliancePolicy object.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.DeviceManagement
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgDeviceManagementDeviceCompliancePolicy
 
 ## PARAMETERS
 

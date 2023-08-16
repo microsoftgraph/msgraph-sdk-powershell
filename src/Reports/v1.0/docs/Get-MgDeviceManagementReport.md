@@ -23,17 +23,10 @@ Read properties and relationships of the deviceManagementReports object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Reports
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgDeviceManagementReport
 
 ## PARAMETERS
 

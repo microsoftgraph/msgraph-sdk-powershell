@@ -74,6 +74,21 @@ Import-Module Microsoft.Graph.Education
 
 $params = @{
 	resource = @{
+		displayName = "Wikipedia"
+		link = "https://en.wikipedia.org/wiki/Main_Page"
+		"@odata.type" = "#microsoft.graph.educationLinkResource"
+	}
+}
+
+New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Education
+```
+
+$params = @{
+	resource = @{
 		displayName = "_FTP_EDC-61424749-250820211136.pdf"
 		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXodJYOAkI7rTLhw7ME_e42J/items/01QTY63RL45XVPGDBRW5FLDR62Z5TCMGG3"
 		"@odata.type" = "#microsoft.graph.educationFileResource"
@@ -82,7 +97,7 @@ $params = @{
 
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
-### -------------------------- EXAMPLE 3 --------------------------
+### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
 ```
@@ -97,7 +112,7 @@ $params = @{
 
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
-### -------------------------- EXAMPLE 4 --------------------------
+### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
 ```
@@ -112,7 +127,7 @@ $params = @{
 
 New-MgEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
-### -------------------------- EXAMPLE 5 --------------------------
+### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
 ```

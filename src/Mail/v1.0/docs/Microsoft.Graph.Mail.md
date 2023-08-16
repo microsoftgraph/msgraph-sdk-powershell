@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 15acabe5-0a98-4699-9220-cda1cbd965e8
+Module Guid: 60407622-bd8c-456a-90ba-04b5f5c3f348
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -172,12 +172,9 @@ Create a messageRule object by specifying a set of conditions and actions.
 Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
 
 ### [New-MgUserMessage](New-MgUserMessage.md)
-Create a draft of a new message in either JSON or MIME format.
-When using JSON format, you can:\n- Include an attachment to the message.\n- Update the draft later to add content to the body or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
-By default, this operation saves the draft in the Drafts folder.
-Send the draft message in a subsequent operation.
-Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
 Use this API to add an attachment to a message.
@@ -280,7 +277,7 @@ Update the navigation property extensions in users
 Change writable properties on a messageRule object and save the changes.
 
 ### [Update-MgUserMessage](Update-MgUserMessage.md)
-Update the properties of a message object.
+Update the properties of an eventMessage object.
 
 ### [Update-MgUserMessageExtension](Update-MgUserMessageExtension.md)
 Update the navigation property extensions in users

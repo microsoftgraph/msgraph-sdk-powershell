@@ -60,10 +60,10 @@ This API specifically updates an app published to your organization's app catalo
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-$params = [Zip file containing a Teams app package]
+$params = app.zip
 
 
-New-MgBetaAppCatalogTeamAppDefinition -TeamsAppId $teamsAppId -Requiresreview true  -BodyParameter $params
+New-MgBetaAppCatalogTeamAppDefinition -TeamsAppId $teamsAppId -BodyParameter $params
 
 ## PARAMETERS
 

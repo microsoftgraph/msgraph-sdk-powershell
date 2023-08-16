@@ -39,10 +39,9 @@ A collection of deleted teams.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamworkDeletedTeam
 ```
 
-
+Get-MgBetaTeamworkDeletedTeam
 
 ## PARAMETERS
 

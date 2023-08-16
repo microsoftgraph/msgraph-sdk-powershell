@@ -36,10 +36,9 @@ To remove the email address of a channel, use the removeEmail method.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-New-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 ```
 
-
+New-MgTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

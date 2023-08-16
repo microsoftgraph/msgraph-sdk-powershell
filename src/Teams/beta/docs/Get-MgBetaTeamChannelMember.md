@@ -41,7 +41,7 @@ Get a conversationMember from a channel.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId
+Get-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

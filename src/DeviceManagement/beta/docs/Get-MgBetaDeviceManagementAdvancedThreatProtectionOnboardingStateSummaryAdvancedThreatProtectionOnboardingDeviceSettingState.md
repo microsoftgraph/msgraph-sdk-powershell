@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingState
 
 ## SYNOPSIS
-Not yet documented
+Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaDeviceManagementAdvancedThreatProtectionOnboardingStateSummaryAdvanced
 ```
 
 ## DESCRIPTION
-Not yet documented
+Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
 
 ## EXAMPLES
 

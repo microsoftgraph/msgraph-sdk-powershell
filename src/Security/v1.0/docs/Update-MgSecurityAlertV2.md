@@ -14,16 +14,17 @@ Update the properties of an alert object in an organization based on the specifi
 
 ### UpdateExpanded (Default)
 ```
-Update-MgSecurityAlertV2 -AlertId <String> [-ActorDisplayName <String>] [-AdditionalProperties <Hashtable>]
- [-AlertWebUrl <String>] [-AssignedTo <String>] [-Category <String>] [-Classification <String>]
- [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DetectionSource <String>] [-DetectorId <String>] [-Determination <String>]
- [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>] [-FirstActivityDateTime <DateTime>] [-Id <String>]
- [-IncidentId <String>] [-IncidentWebUrl <String>] [-LastActivityDateTime <DateTime>]
- [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>] [-ProviderAlertId <String>]
- [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>]
- [-Status <String>] [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>]
- [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgSecurityAlertV2 -AlertId <String> [-ActorDisplayName <String>] [-AdditionalData <Hashtable>]
+ [-AdditionalProperties <Hashtable>] [-AlertPolicyId <String>] [-AlertWebUrl <String>] [-AssignedTo <String>]
+ [-Category <String>] [-Classification <String>] [-Comments <IMicrosoftGraphSecurityAlertComment[]>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DetectionSource <String>] [-DetectorId <String>]
+ [-Determination <String>] [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]
+ [-FirstActivityDateTime <DateTime>] [-Id <String>] [-IncidentId <String>] [-IncidentWebUrl <String>]
+ [-LastActivityDateTime <DateTime>] [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>]
+ [-ProviderAlertId <String>] [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>]
+ [-ServiceSource <String>] [-Severity <String>] [-Status <String>] [-TenantId <String>]
+ [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -41,9 +42,10 @@ Update-MgSecurityAlertV2 -InputObject <ISecurityIdentity> -BodyParameter <IMicro
 ### UpdateViaIdentityExpanded
 ```
 Update-MgSecurityAlertV2 -InputObject <ISecurityIdentity> [-ActorDisplayName <String>]
- [-AdditionalProperties <Hashtable>] [-AlertWebUrl <String>] [-AssignedTo <String>] [-Category <String>]
- [-Classification <String>] [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>]
- [-Description <String>] [-DetectionSource <String>] [-DetectorId <String>] [-Determination <String>]
+ [-AdditionalData <Hashtable>] [-AdditionalProperties <Hashtable>] [-AlertPolicyId <String>]
+ [-AlertWebUrl <String>] [-AssignedTo <String>] [-Category <String>] [-Classification <String>]
+ [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-DetectionSource <String>] [-DetectorId <String>] [-Determination <String>]
  [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>] [-FirstActivityDateTime <DateTime>] [-Id <String>]
  [-IncidentId <String>] [-IncidentWebUrl <String>] [-LastActivityDateTime <DateTime>]
  [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>] [-ProviderAlertId <String>]
@@ -88,6 +90,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AdditionalData
+dictionary
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AdditionalProperties
 Additional Parameters
 
@@ -112,6 +129,21 @@ Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlertPolicyId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -631,6 +663,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
+  - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AlertPolicyId <String>]`: 
   - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
@@ -646,11 +681,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Determination <String>]`: alertDetermination
   - `[Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]`: Collection of evidence related to the alert.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[DetailedRoles <String[]>]`: 
+    - `[DetailedRoles <String[]>]`: Detailed description of the entity role/s in an alert. Values are free-form.
     - `[RemediationStatus <String>]`: evidenceRemediationStatus
     - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-    - `[Roles <String[]>]`: One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
-    - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
+    - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+    - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
     - `[Verdict <String>]`: evidenceVerdict
   - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.
   - `[IncidentId <String>]`: Unique identifier to represent the incident this alert resource is associated with.
@@ -676,11 +711,11 @@ To create the parameters described below, construct a hash table containing the 
 
 `EVIDENCE <IMicrosoftGraphSecurityAlertEvidence[]>`: Collection of evidence related to the alert.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[DetailedRoles <String[]>]`: 
+  - `[DetailedRoles <String[]>]`: Detailed description of the entity role/s in an alert. Values are free-form.
   - `[RemediationStatus <String>]`: evidenceRemediationStatus
   - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-  - `[Roles <String[]>]`: One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
-  - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
+  - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+  - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
   - `[Verdict <String>]`: evidenceVerdict
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter

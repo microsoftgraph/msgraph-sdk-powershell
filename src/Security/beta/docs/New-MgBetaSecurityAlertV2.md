@@ -14,16 +14,17 @@ Create new navigation property to alerts_v2 for security
 
 ### CreateExpanded (Default)
 ```
-New-MgBetaSecurityAlertV2 [-ActorDisplayName <String>] [-AdditionalProperties <Hashtable>]
- [-AlertWebUrl <String>] [-AssignedTo <String>] [-Category <String>] [-Classification <String>]
- [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DetectionSource <String>] [-DetectorId <String>] [-Determination <String>]
- [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>] [-FirstActivityDateTime <DateTime>] [-Id <String>]
- [-IncidentId <String>] [-IncidentWebUrl <String>] [-LastActivityDateTime <DateTime>]
- [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>] [-ProviderAlertId <String>]
- [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>]
- [-Status <String>] [-SystemTags <String[]>] [-TenantId <String>] [-ThreatDisplayName <String>]
- [-ThreatFamilyName <String>] [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgBetaSecurityAlertV2 [-ActorDisplayName <String>] [-AdditionalData <Hashtable>]
+ [-AdditionalProperties <Hashtable>] [-AlertPolicyId <String>] [-AlertWebUrl <String>] [-AssignedTo <String>]
+ [-Category <String>] [-Classification <String>] [-Comments <IMicrosoftGraphSecurityAlertComment[]>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DetectionSource <String>] [-DetectorId <String>]
+ [-Determination <String>] [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]
+ [-FirstActivityDateTime <DateTime>] [-Id <String>] [-IncidentId <String>] [-IncidentWebUrl <String>]
+ [-LastActivityDateTime <DateTime>] [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>]
+ [-ProviderAlertId <String>] [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>]
+ [-ServiceSource <String>] [-Severity <String>] [-Status <String>] [-SystemTags <String[]>]
+ [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -68,11 +69,41 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AdditionalData
+dictionary
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AdditionalProperties
 Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AlertPolicyId
+.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -593,6 +624,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
+  - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AlertPolicyId <String>]`: 
   - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.

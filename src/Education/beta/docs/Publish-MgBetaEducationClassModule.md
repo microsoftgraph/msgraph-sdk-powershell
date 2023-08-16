@@ -8,7 +8,10 @@ schema: 2.0.0
 # Publish-MgBetaEducationClassModule
 
 ## SYNOPSIS
-Invoke action publish
+Change the state of an educationModule from its original draft status to the published status.
+Only teachers in the class can perform this operation.
+When a module is in draft status, students will not see the module.
+When you call this API, the module appears in the student's classwork list.
 
 ## SYNTAX
 
@@ -24,7 +27,10 @@ Publish-MgBetaEducationClassModule -InputObject <IEducationIdentity> [-Confirm] 
 ```
 
 ## DESCRIPTION
-Invoke action publish
+Change the state of an educationModule from its original draft status to the published status.
+Only teachers in the class can perform this operation.
+When a module is in draft status, students will not see the module.
+When you call this API, the module appears in the student's classwork list.
 
 ## EXAMPLES
 

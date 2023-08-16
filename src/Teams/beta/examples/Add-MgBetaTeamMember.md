@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Add members in bulk to a team
 
 ```powershell
 
@@ -25,9 +25,9 @@ $params = @{
 Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Add-MgBetaTeamMember Cmdlet.
+This example will add members in bulk to a team
 
-### Example 2: Code snippet
+### Example 2: Add members in bulk and encounter partial failure
 
 ```powershell
 
@@ -54,5 +54,34 @@ $params = @{
 Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 
 ```
-This example shows how to use the Add-MgBetaTeamMember Cmdlet.
+This example will add members in bulk and encounter partial failure
+
+### Example 3: Add members in bulk to a team using user principal name
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	values = @(
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			roles = @(
+			)
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
+		}
+		@{
+			"@odata.type" = "microsoft.graph.aadUserConversationMember"
+			roles = @(
+				"owner"
+			)
+			"user@odata.bind" = "https://graph.microsoft.com/beta/users('alex@contoso.com')"
+		}
+	)
+}
+
+Add-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
+
+```
+This example will add members in bulk to a team using user principal name
 

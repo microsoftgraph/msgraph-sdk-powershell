@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgChatMember
 
 ## SYNOPSIS
-Retrieve a conversationMember from a chat or channel.
+Retrieve a conversationMember from a chat.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgChatMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Pr
 ```
 
 ## DESCRIPTION
-Retrieve a conversationMember from a chat or channel.
+Retrieve a conversationMember from a chat.
 
 ## EXAMPLES
 
@@ -41,7 +41,7 @@ Retrieve a conversationMember from a chat or channel.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgChatMember -ChatId $chatId -ConversationMemberId $conversationMemberId
+Get-MgChatMember -ChatId $chatId
 
 ## PARAMETERS
 

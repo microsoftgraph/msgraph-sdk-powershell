@@ -53,7 +53,7 @@ Retrieve the properties and relationships of chatMessageHostedContent object.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId -ChatMessageHostedContentId $chatMessageHostedContentId
+Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId
 
 ## PARAMETERS
 

@@ -62,14 +62,14 @@ The endDateTime can be up to three years after the certificate is created.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-$params = @{
-	DisplayName = "CN=customDisplayName"
-	EndDateTime = [System.DateTime]::Parse("2024-01-25T00:00:00Z")
-}
-Add-MgBetaServicePrincipalTokenSigningCertificate -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "CN=customDisplayName"
+	endDateTime = [System.DateTime]::Parse("2024-01-25T00:00:00Z")
+}
 
+Add-MgBetaServicePrincipalTokenSigningCertificate -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -252,6 +252,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

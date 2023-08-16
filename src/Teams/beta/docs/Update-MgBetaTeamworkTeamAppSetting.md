@@ -33,14 +33,26 @@ Update the properties of a teamsAppSettings object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.teamsAppSettings"
-	IsChatResourceSpecificConsentEnabled = "true"
-}
-Update-MgBetaTeamworkTeamAppSetting -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.teamsAppSettings"
+	isChatResourceSpecificConsentEnabled = "true"
+}
 
+Update-MgBetaTeamworkTeamAppSetting -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Teams
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.teamsAppSettings"
+	allowUserRequestsForAppAccess = "true"
+}
+
+Update-MgBetaTeamworkTeamAppSetting -BodyParameter $params
 
 ## PARAMETERS
 

@@ -336,6 +336,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 `PUBLISHEDRESOURCES <IMicrosoftGraphPublishedResource[]>`: List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.

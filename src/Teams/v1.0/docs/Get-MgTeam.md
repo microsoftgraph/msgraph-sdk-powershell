@@ -40,7 +40,21 @@ Retrieve the properties and relationships of the specified team.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeam -TeamId $teamId
+Get-MgTeam
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgTeam -Filter "startswith(displayName, 'A')" -Top 2
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description"
 
 ## PARAMETERS
 

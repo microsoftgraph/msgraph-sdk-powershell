@@ -17,8 +17,8 @@ Create new navigation property to incidents for security
 New-MgBetaSecurityIncident [-AdditionalProperties <Hashtable>] [-Alerts <IMicrosoftGraphSecurityAlert[]>]
  [-AssignedTo <String>] [-Classification <String>] [-Comments <IMicrosoftGraphSecurityAlertComment[]>]
  [-CreatedDateTime <DateTime>] [-CustomTags <String[]>] [-Description <String>] [-Determination <String>]
- [-DisplayName <String>] [-Id <String>] [-IncidentWebUrl <String>] [-LastUpdateDateTime <DateTime>]
- [-RecommendedActions <String>]
+ [-DisplayName <String>] [-Id <String>] [-IncidentWebUrl <String>] [-LastModifiedBy <String>]
+ [-LastUpdateDateTime <DateTime>] [-RecommendedActions <String>]
  [-RecommendedHuntingQueries <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>]
  [-RedirectIncidentId <String>] [-Severity <String>] [-Status <String>] [-SystemTags <String[]>]
  [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -252,6 +252,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LastModifiedBy
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastUpdateDateTime
 Time when the incident was last updated.
 
@@ -428,6 +443,9 @@ To create the parameters described below, construct a hash table containing the 
 `ALERTS <IMicrosoftGraphSecurityAlert[]>`: The list of related alerts. Supports $expand.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
+  - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AlertPolicyId <String>]`: 
   - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
@@ -473,6 +491,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Alerts <IMicrosoftGraphSecurityAlert[]>]`: The list of related alerts. Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
+    - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AlertPolicyId <String>]`: 
     - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
     - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
     - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
@@ -520,6 +541,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Determination <String>]`: alertDetermination
   - `[DisplayName <String>]`: The incident name.
   - `[IncidentWebUrl <String>]`: The URL for the incident page in the Microsoft 365 Defender portal.
+  - `[LastModifiedBy <String>]`: 
   - `[LastUpdateDateTime <DateTime?>]`: Time when the incident was last updated.
   - `[RecommendedActions <String>]`: 
   - `[RecommendedHuntingQueries <IMicrosoftGraphSecurityRecommendedHuntingQuery[]>]`: 

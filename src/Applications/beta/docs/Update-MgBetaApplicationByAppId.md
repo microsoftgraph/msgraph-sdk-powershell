@@ -14,7 +14,7 @@ Update the properties of an application object.
 
 ### UpdateExpanded (Default)
 ```
-Update-MgBetaApplicationByAppId -AppId <String> [-AdditionalProperties <Hashtable>]
+Update-MgBetaApplicationByAppId -AppId <String> -UniqueName <String> [-AdditionalProperties <Hashtable>]
  [-Api <IMicrosoftGraphApiApplication>] [-AppId1 <String>]
  [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
  [-AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]
@@ -39,15 +39,15 @@ Update-MgBetaApplicationByAppId -AppId <String> [-AdditionalProperties <Hashtabl
  [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
  [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
- [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>] [-UniqueName <String>]
+ [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>] [-UniqueName1 <String>]
  [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>]
  [-Windows <IMicrosoftGraphWindowsApplication>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgBetaApplicationByAppId -AppId <String> -BodyParameter <IMicrosoftGraphApplication> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgBetaApplicationByAppId -AppId <String> -UniqueName <String>
+ -BodyParameter <IMicrosoftGraphApplication> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
@@ -58,7 +58,7 @@ Update-MgBetaApplicationByAppId -InputObject <IApplicationsIdentity>
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgBetaApplicationByAppId -InputObject <IApplicationsIdentity> [-AppId <String>]
+Update-MgBetaApplicationByAppId -InputObject <IApplicationsIdentity> [-AppId <String>] [-UniqueName <String>]
  [-AdditionalProperties <Hashtable>] [-Api <IMicrosoftGraphApiApplication>]
  [-AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>] [-AppRoles <IMicrosoftGraphAppRole[]>]
  [-AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]
@@ -83,7 +83,7 @@ Update-MgBetaApplicationByAppId -InputObject <IApplicationsIdentity> [-AppId <St
  [-SignInAudience <String>] [-Spa <IMicrosoftGraphSpaApplication>]
  [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
  [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
- [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>] [-UniqueName <String>]
+ [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>]
  [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Web <IMicrosoftGraphWebApplication>]
  [-Windows <IMicrosoftGraphWindowsApplication>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -646,7 +646,7 @@ Accept wildcard characters: False
 Directory objects that are owners of the application.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 To construct, see NOTES section for OWNERS properties and create a hash table.
 
 ```yaml
@@ -937,13 +937,28 @@ Accept wildcard characters: False
 ```
 
 ### -UniqueName
+Alternate key of application
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UniqueName1
 The unique identifier that can be assigned to an application as an alternative identifier.
 Immutable.
 Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -1298,7 +1313,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Source <String>]`: The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
     - `[IdToken <IMicrosoftGraphOptionalClaim[]>]`: The optional claims returned in the JWT ID token.
     - `[Saml2Token <IMicrosoftGraphOptionalClaim[]>]`: The optional claims returned in the SAML token.
-  - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+  - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
   - `[ParentalControlSettings <IMicrosoftGraphParentalControlSettings>]`: parentalControlSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CountriesBlockedForMinors <String[]>]`: Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
@@ -1719,7 +1734,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Source <String>]`: The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
       - `[IdToken <IMicrosoftGraphOptionalClaim[]>]`: The optional claims returned in the JWT ID token.
       - `[Saml2Token <IMicrosoftGraphOptionalClaim[]>]`: The optional claims returned in the SAML token.
-    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+    - `[Owners <IMicrosoftGraphDirectoryObject[]>]`: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
     - `[ParentalControlSettings <IMicrosoftGraphParentalControlSettings>]`: parentalControlSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CountriesBlockedForMinors <String[]>]`: Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
@@ -2038,6 +2053,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[UniqueName <String>]`: Alternate key of application
   - `[UserId <String>]`: The unique identifier of user
 
 `KEYCREDENTIALS <IMicrosoftGraphKeyCredential[]>`: The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
@@ -2124,7 +2140,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IdToken <IMicrosoftGraphOptionalClaim[]>]`: The optional claims returned in the JWT ID token.
   - `[Saml2Token <IMicrosoftGraphOptionalClaim[]>]`: The optional claims returned in the SAML token.
 
-`OWNERS <IMicrosoftGraphDirectoryObject[]>`: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+`OWNERS <IMicrosoftGraphDirectoryObject[]>`: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 

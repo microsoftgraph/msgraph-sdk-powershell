@@ -52,269 +52,152 @@ For more details about sending notifications and the requirements for doing so, 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+```
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/{teamId}"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/beta/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
 	}
-	ActivityType = "pendingFinanceApprovalRequests"
-	PreviewText = @{
-		Content = "Internal spending team has a pending finance approval requests"
+	activityType = "reservationUpdated"
+	previewText = @{
+		content = "You have moved up the queue"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+		userId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "pendingRequestCount"
-			Value = "5"
+			name = "reservationId"
+			value = "TREEE433"
+		}
+		@{
+			name = "currentSlot"
+			value = "23"
 		}
 	)
 }
+
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+```
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/beta/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
 	}
-	ActivityType = "reservationUpdated"
-	PreviewText = @{
-		Content = "You have moved up the queue"
+	activityType = "reservationUpdated"
+	previewText = @{
+		content = "You have moved up the queue"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+		userId = "jacob@contoso.com"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "reservationId"
-			Value = "TREEE433"
+			name = "reservationId"
+			value = "TREEE433"
 		}
 		@{
-			Name = "currentSlot"
-			Value = "23"
+			name = "currentSlot"
+			value = "23"
 		}
 	)
 }
+
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+```
+
 $params = @{
-	Topic = @{
-		Source = "text"
-		Value = "Deployment Approvals Channel"
-		WebUrl = "https://teams.microsoft.com/l/message/19:448cfd2ac2a7490a9084a9ed14cttr78c@thread.skype/1605223780000?tenantId=c8b1bf45-3834-4ecf-971a-b4c755ee677d&groupId=d4c2a937-f097-435a-bc91-5c1683ca7245&parentMessageId=1605223771864&teamName=Approvals&channelName=Azure%20DevOps&createdTime=1605223780000"
+	topic = @{
+		source = "text"
+		value = "Deployment Approvals Channel"
+		webUrl = "https://teams.microsoft.com/l/message/19:448cfd2ac2a7490a9084a9ed14cttr78c@thread.skype/1605223780000?tenantId=c8b1bf45-3834-4ecf-971a-b4c755ee677d&groupId=d4c2a937-f097-435a-bc91-5c1683ca7245&parentMessageId=1605223771864&teamName=Approvals&channelName=Azure%20DevOps&createdTime=1605223780000"
 	}
-	ActivityType = "deploymentApprovalRequired"
-	PreviewText = @{
-		Content = "New deployment requires your approval"
+	activityType = "deploymentApprovalRequired"
+	previewText = @{
+		content = "New deployment requires your approval"
 	}
-	Recipient = @{
+	recipient = @{
 		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+		userId = "569363e2-4e49-4661-87f2-16f245c5d66a"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "deploymentId"
-			Value = "6788662"
+			name = "deploymentId"
+			value = "6788662"
 		}
 	)
 }
+
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+```
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/e8bece96-d393-4b9b-b8da-69cedef1a7e7"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/beta/teams/e8bece96-d393-4b9b-b8da-69cedef1a7e7"
 	}
-	ActivityType = "pendingFinanceApprovalRequests"
-	PreviewText = @{
-		Content = "Internal spending team has a pending finance approval requests"
+	activityType = "pendingFinanceApprovalRequests"
+	previewText = @{
+		content = "Internal spending team has a pending finance approval requests"
 	}
-	Recipient = @{
-		"@odata.type" = "microsoft.graph.channelMembersNotificationRecipient"
-		TeamId = "e8bece96-d393-4b9b-b8da-69cedef1a7e7"
-		ChannelId = "19:3d61a2309f094f4a9310b20f1db37520@thread.tacv2"
+	recipient = @{
+		"@odata.type" = "microsoft.graph.teamMembersNotificationRecipient"
+		teamId = "e8bece96-d393-4b9b-b8da-69cedef1a7e7"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "pendingRequestCount"
-			Value = "5"
+			name = "pendingRequestCount"
+			value = "5"
 		}
 	)
 }
+
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+```
+
 $params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
+	topic = @{
+		source = "entityUrl"
+		value = "https://graph.microsoft.com/beta/teams/e8bece96-d393-4b9b-b8da-69cedef1a7e7"
 	}
-	ActivityType = "reservationUpdated"
-	PreviewText = @{
-		Content = "You have moved up the queue"
+	activityType = "pendingFinanceApprovalRequests"
+	previewText = @{
+		content = "Internal spending team has a pending finance approval requests"
 	}
-	Recipient = @{
-		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
+	recipient = @{
+		"@odata.type" = "microsoft.graph.channelMembersNotificationRecipient"
+		teamId = "e8bece96-d393-4b9b-b8da-69cedef1a7e7"
+		channelId = "19:3d61a2309f094f4a9310b20f1db37520@thread.tacv2"
 	}
-	TemplateParameters = @(
+	templateParameters = @(
 		@{
-			Name = "reservationId"
-			Value = "TREEE433"
-		}
-		@{
-			Name = "currentSlot"
-			Value = "23"
+			name = "pendingRequestCount"
+			value = "5"
 		}
 	)
 }
+
 Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/{teamId}"
-	}
-	ActivityType = "pendingFinanceApprovalRequests"
-	PreviewText = @{
-		Content = "Internal spending team has a pending finance approval requests"
-	}
-	Recipient = @{
-		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
-	}
-	TemplateParameters = @(
-		@{
-			Name = "pendingRequestCount"
-			Value = "5"
-		}
-	)
-}
-Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/e8bece96-d393-4b9b-b8da-69cedef1a7e7"
-	}
-	ActivityType = "pendingFinanceApprovalRequests"
-	PreviewText = @{
-		Content = "Internal spending team has a pending finance approval requests"
-	}
-	Recipient = @{
-		"@odata.type" = "microsoft.graph.teamMembersNotificationRecipient"
-		TeamId = "e8bece96-d393-4b9b-b8da-69cedef1a7e7"
-	}
-	TemplateParameters = @(
-		@{
-			Name = "pendingRequestCount"
-			Value = "5"
-		}
-	)
-}
-Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 8 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	Topic = @{
-		Source = "text"
-		Value = "Deployment Approvals Channel"
-		WebUrl = "https://teams.microsoft.com/l/message/19:448cfd2ac2a7490a9084a9ed14cttr78c@thread.skype/1605223780000?tenantId=c8b1bf45-3834-4ecf-971a-b4c755ee677d&groupId=d4c2a937-f097-435a-bc91-5c1683ca7245&parentMessageId=1605223771864&teamName=Approvals&channelName=Azure%20DevOps&createdTime=1605223780000"
-	}
-	ActivityType = "deploymentApprovalRequired"
-	PreviewText = @{
-		Content = "New deployment requires your approval"
-	}
-	Recipient = @{
-		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "569363e2-4e49-4661-87f2-16f245c5d66a"
-	}
-	TemplateParameters = @(
-		@{
-			Name = "deploymentId"
-			Value = "6788662"
-		}
-	)
-}
-Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 9 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	Topic = @{
-		Source = "entityUrl"
-		Value = "https://graph.microsoft.com/beta/teams/{teamId}/channels/{channelId}/tabs/{tabId}"
-	}
-	ActivityType = "reservationUpdated"
-	PreviewText = @{
-		Content = "You have moved up the queue"
-	}
-	Recipient = @{
-		"@odata.type" = "microsoft.graph.aadUserNotificationRecipient"
-		UserId = "jacob@contoso.com"
-	}
-	TemplateParameters = @(
-		@{
-			Name = "reservationId"
-			Value = "TREEE433"
-		}
-		@{
-			Name = "currentSlot"
-			Value = "23"
-		}
-	)
-}
-Send-MgBetaTeamActivityNotification -TeamId $teamId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

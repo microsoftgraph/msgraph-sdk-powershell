@@ -48,6 +48,41 @@ Import-Module Microsoft.Graph.CloudCommunications
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
 	callbackUri = "https://bot.contoso.com/callback"
+	targets = @(
+		@{
+			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			identity = @{
+				"@odata.type" = "#microsoft.graph.identitySet"
+				user = @{
+					"@odata.type" = "#microsoft.graph.identity"
+					displayName = "John"
+					id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
+				}
+			}
+		}
+	)
+	requestedModalities = @(
+		"audio"
+	)
+	callOptions = @{
+		"@odata.type" = "#microsoft.graph.outgoingCallOptions"
+		isContentSharingNotificationEnabled = $true
+	}
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+	}
+}
+
+New-MgCommunicationCall -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
 	source = @{
 		"@odata.type" = "#microsoft.graph.participantInfo"
 		identity = @{
@@ -85,7 +120,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 2 --------------------------
+### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -141,7 +176,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 3 --------------------------
+### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -197,7 +232,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 4 --------------------------
+### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -236,7 +271,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 5 --------------------------
+### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -274,7 +309,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 6 --------------------------
+### -------------------------- EXAMPLE 7 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -300,7 +335,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 7 --------------------------
+### -------------------------- EXAMPLE 8 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -326,7 +361,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 8 --------------------------
+### -------------------------- EXAMPLE 9 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
@@ -372,7 +407,7 @@ $params = @{
 
 New-MgCommunicationCall -BodyParameter $params
 
-### -------------------------- EXAMPLE 9 --------------------------
+### -------------------------- EXAMPLE 10 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```

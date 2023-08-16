@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 299d65bc-69f9-4c06-b2a5-68c9935b0cac
+Module Guid: e3a352fe-223a-46bd-bf79-7ac8acc56af8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,7 +99,7 @@ Specifies the assets to include in the audience.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChange](Get-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Read the properties and relationships of a contentApproval object.
+Read the properties and relationships of a complianceChange object.
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount](Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount.md)
 Get the number of the resource
@@ -111,7 +111,7 @@ The policy this compliance change is a member of.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesResourceConnection](Get-MgBetaWindowsUpdatesResourceConnection.md)
-Read the properties and relationships of a resourceConnection object.
+Read the properties and relationships of an operationalInsightsConnection object.
 
 ### [Get-MgBetaWindowsUpdatesResourceConnectionCount](Get-MgBetaWindowsUpdatesResourceConnectionCount.md)
 Get the number of the resource
@@ -228,14 +228,13 @@ Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
 
 ### [Remove-MgBetaWindowsUpdatesPolicyComplianceChange](Remove-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Delete a contentApproval object.
+Delete a complianceChange object.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
 Delete a resourceConnection object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
-Delete an updatableAssetGroup object.
-When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+Delete an updatableAsset object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAssetMember](Remove-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Remove members from an updatableAssetGroup.
@@ -279,7 +278,7 @@ Update the navigation property exclusions in admin
 Update the navigation property members in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyComplianceChange](Update-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Update the properties of a contentApproval object.
+Update the properties of a complianceChange object.
 
 ### [Update-MgBetaWindowsUpdatesResourceConnection](Update-MgBetaWindowsUpdatesResourceConnection.md)
 Update the navigation property resourceConnections in admin

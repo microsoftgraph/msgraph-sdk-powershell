@@ -237,6 +237,13 @@
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
+                    MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection =
+                        await this.Client.GetPermissionGrantPolicies(selectQuery: "id, resourceScopeType", eventListener: this, sender: this.Pipeline);
+
+                    WriteVerbose($"Fetched permission grant policies for tenant.");
+
+                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
                     // Get Teams App Settings
                     Models.IMicrosoftGraphTeamsAppSettings teamsAppSettings = await this.Client.GetTeamsAppSettings(this, Pipeline);
 
@@ -253,7 +260,11 @@
 
                     RscConfigurationSynthesizer rscConfigurationConverter = new RscConfigurationSynthesizer();
                     Models.IMicrosoftGraphRscConfiguration microsoftGraphRscConfiguration =
-                        rscConfigurationConverter.ConvertToChatRscConfiguration(teamsAppSettings, authorizationPolicy, this);
+                        rscConfigurationConverter.ConvertToChatRscConfiguration(
+                            permissionGrantPolicyCollection: permissionGrantPolicyCollection,
+                            teamsAppSettings: teamsAppSettings,
+                            authorizationPolicy: authorizationPolicy,
+                            eventListener: this);
 
                     WriteObject(microsoftGraphRscConfiguration);
 

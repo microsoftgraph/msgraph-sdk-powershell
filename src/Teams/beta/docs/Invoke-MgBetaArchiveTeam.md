@@ -56,10 +56,9 @@ To restore a team from its archived state, use the API to unarchive.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Invoke-MgBetaArchiveTeam -TeamId $teamId
 ```
 
-
+Invoke-MgBetaArchiveTeam -TeamId $teamId
 
 ## PARAMETERS
 

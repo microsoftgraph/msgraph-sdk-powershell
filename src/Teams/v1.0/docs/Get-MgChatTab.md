@@ -41,7 +41,14 @@ Retrieve the properties and relationships of the specified tab in a chat.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp"
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp"
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'"
 
 ## PARAMETERS
 

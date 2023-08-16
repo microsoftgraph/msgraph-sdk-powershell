@@ -8,7 +8,9 @@ schema: 2.0.0
 # Invoke-MgBetaPinEducationClassModule
 
 ## SYNOPSIS
-Invoke action pin
+Pin an educationModule in the classwork list.
+This action sets the isPinned property to true for an educationModule.
+Only teachers can perform this action and only one module at a time can be pinned in the classwork list.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Invoke-MgBetaPinEducationClassModule -InputObject <IEducationIdentity> [-Confirm
 ```
 
 ## DESCRIPTION
-Invoke action pin
+Pin an educationModule in the classwork list.
+This action sets the isPinned property to true for an educationModule.
+Only teachers can perform this action and only one module at a time can be pinned in the classwork list.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: b65f538b-392f-46b8-960a-8aa71f6c0efd
+Module Guid: 9561e265-7ec1-4da9-b36b-c859a8e52d94
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -686,6 +686,12 @@ Get the number of the resource
 Get whoisRecords from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordCount](Get-MgBetaSecurityThreatIntelligenceWhoisRecordCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistory](Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistory.md)
+Get history from security
+
+### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistoryCount](Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistoryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordHost](Get-MgBetaSecurityThreatIntelligenceWhoisRecordHost.md)

@@ -41,7 +41,21 @@ Get a conversationMember from a team.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId
+Get-MgTeamMember -TeamId $teamId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgTeamMember -TeamId $teamId -Filter "(microsoft.graph.aadUserConversationMember/userId eq '73761f06-2ac9-469c-9f10-279a8cc267f9')"
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgTeamMember -TeamId $teamId -Filter "(microsoft.graph.aadUserConversationMember/displayName eq 'Harry Johnson' or microsoft.graph.aadUserConversationMember/email eq 'admin@M365x987948.OnMicrosoft.com')"
 
 ## PARAMETERS
 

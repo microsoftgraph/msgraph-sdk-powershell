@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: e69eb122-135b-4923-9624-728370483dcc
+Module Guid: ff26e3c8-111b-491c-a247-9442d3c38af6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -89,6 +89,7 @@ Get the properties and relationships of an organizational contact.
 
 ### [Get-MgContactById](Get-MgContactById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgContactCount](Get-MgContactCount.md)
@@ -176,6 +177,7 @@ Retrieve the properties and relationships of contract object.
 
 ### [Get-MgContractById](Get-MgContractById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgContractCount](Get-MgContractCount.md)
@@ -201,6 +203,7 @@ Get the properties and relationships of a device object.
 
 ### [Get-MgDeviceById](Get-MgDeviceById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgDeviceCount](Get-MgDeviceCount.md)
@@ -462,6 +465,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgDirectoryDeletedItemById](Get-MgDirectoryDeletedItemById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgDirectoryDeletedItemCountAsAdministrativeUnit](Get-MgDirectoryDeletedItemCountAsAdministrativeUnit.md)
@@ -512,6 +516,7 @@ For details, see Role template IDs.
 
 ### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgDirectoryRoleByRoleTemplateId](Get-MgDirectoryRoleByRoleTemplateId.md)
@@ -602,6 +607,7 @@ Retrieve the properties and relationships of a directoryroletemplate object.
 
 ### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgDirectoryRoleTemplateCount](Get-MgDirectoryRoleTemplateCount.md)
@@ -657,8 +663,7 @@ Supports $expand.
 Get the number of the resource
 
 ### [Get-MgOrganization](Get-MgOrganization.md)
-Get the properties and relationships of the currently authenticated organization.
-Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+Read properties and relationships of the organization object.
 
 ### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
 Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default.
@@ -740,6 +745,7 @@ We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgOrganizationById](Get-MgOrganizationById.md)
 Return the directory objects specified in a list of IDs.
+Only a subset of user properties are returned by default in v1.0.
 Some common uses for this function are to:
 
 ### [Get-MgOrganizationCount](Get-MgOrganizationCount.md)
@@ -1225,7 +1231,9 @@ Update the navigation property serviceConfigurationRecords in domains
 Update the navigation property verificationDnsRecords in domains
 
 ### [Update-MgOrganization](Update-MgOrganization.md)
-Update the properties of a organization object.
+Update the properties of the currently authenticated organization.
+In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
+The ID is also known as the tenantId of the organization.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.

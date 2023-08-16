@@ -53,7 +53,7 @@ Create new navigation property to userExperienceAnalyticsBatteryHealthModelPerfo
 
 ### -ActiveDevices
 Number of active devices for that model.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ### -AverageBatteryAgeInDays
 The mean of the battery age for all devices of a given model in a tenant.
 Unit in days.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ### -AverageEstimatedRuntimeInMinutes
 The mean of the estimated runtimes on full charge for all devices of a given model.
 Unit in minutes.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 The mean of the maximum capacity for all devices of a given model.
 Maximum capacity measures the full charge vs.
 design capacity for a device’s batteries..
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 ### -ModelBatteryHealthScore
 A weighted average of a model’s maximum capacity score and runtime estimate score.
 Values range from 0-100.
-Valid values -2147483648 to 2147483647
+Valid values 0 to 2147483647
 
 ```yaml
 Type: System.Int32
@@ -349,17 +349,17 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthModelPerformance>`: The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ActiveDevices <Int32?>]`: Number of active devices for that model. Valid values -2147483648 to 2147483647
-  - `[AverageBatteryAgeInDays <Int32?>]`: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
-  - `[AverageEstimatedRuntimeInMinutes <Int32?>]`: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
-  - `[AverageMaxCapacityPercentage <Int32?>]`: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+  - `[ActiveDevices <Int32?>]`: Number of active devices for that model. Valid values 0 to 2147483647
+  - `[AverageBatteryAgeInDays <Int32?>]`: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
+  - `[AverageEstimatedRuntimeInMinutes <Int32?>]`: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
+  - `[AverageMaxCapacityPercentage <Int32?>]`: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
   - `[Manufacturer <String>]`: Name of the device manufacturer.
   - `[MeanFullBatteryDrainCount <Int32?>]`: The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
   - `[MedianEstimatedRuntimeInMinutes <Int32?>]`: The median of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
   - `[MedianFullBatteryDrainCount <Int32?>]`: The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
   - `[MedianMaxCapacityPercentage <Int32?>]`: The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
   - `[Model <String>]`: The model name of the device.
-  - `[ModelBatteryHealthScore <Int32?>]`: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+  - `[ModelBatteryHealthScore <Int32?>]`: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
   - `[ModelHealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
 
 ## RELATED LINKS

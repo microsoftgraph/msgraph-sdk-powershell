@@ -350,7 +350,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
         - `[IncludeAuthenticationContextClassReferences <String[]>]`: Authentication context class references include. Supported values are c1 through c25.
         - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-      - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+      - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
       - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
@@ -366,7 +366,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ExcludeDeviceStates <String[]>]`: 
         - `[ExcludeDevices <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
         - `[IncludeDeviceStates <String[]>]`: 
-        - `[IncludeDevices <String[]>]`: States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+        - `[IncludeDevices <String[]>]`: States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
       - `[Locations <IMicrosoftGraphConditionalAccessLocations>]`: conditionalAccessLocations
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ExcludeLocations <String[]>]`: Location IDs excluded from scope of policy.
@@ -463,7 +463,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
       - `[IncludeAuthenticationContextClassReferences <String[]>]`: Authentication context class references include. Supported values are c1 through c25.
       - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-    - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+    - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
     - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
@@ -479,7 +479,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ExcludeDeviceStates <String[]>]`: 
       - `[ExcludeDevices <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
       - `[IncludeDeviceStates <String[]>]`: 
-      - `[IncludeDevices <String[]>]`: States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+      - `[IncludeDevices <String[]>]`: States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
     - `[Locations <IMicrosoftGraphConditionalAccessLocations>]`: conditionalAccessLocations
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeLocations <String[]>]`: Location IDs excluded from scope of policy.
@@ -575,7 +575,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
         - `[IncludeAuthenticationContextClassReferences <String[]>]`: Authentication context class references include. Supported values are c1 through c25.
         - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-      - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+      - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
       - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
@@ -591,7 +591,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ExcludeDeviceStates <String[]>]`: 
         - `[ExcludeDevices <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
         - `[IncludeDeviceStates <String[]>]`: 
-        - `[IncludeDevices <String[]>]`: States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+        - `[IncludeDevices <String[]>]`: States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
       - `[Locations <IMicrosoftGraphConditionalAccessLocations>]`: conditionalAccessLocations
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ExcludeLocations <String[]>]`: Location IDs excluded from scope of policy.

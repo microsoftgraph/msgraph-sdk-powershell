@@ -46,17 +46,14 @@ Update the properties of the specified tab.\nThis can be used to configure the c
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
 ```
 
-{{ Add output here }}
+$params = @{
+	displayName = "My Contoso Tab - updated"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgTeamChannelTab -TeamId $teamId -ChannelId $channelId -TeamsTabId $teamsTabId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -38,17 +38,10 @@ Retrieve the properties and relationships of an audioRoutingGroup object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgCommunicationCallAudioRoutingGroup -CallId $callId
 
 ## PARAMETERS
 

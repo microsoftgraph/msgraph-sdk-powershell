@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaEducationClassModuleResource
 
 ## SYNOPSIS
-Get resources from education
+Get the properties of a resource associated with a module.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaEducationClassModuleResource -InputObject <IEducationIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get resources from education
+Get the properties of a resource associated with a module.
+Only teachers, students, and applications with application permissions can perform this operation.
 
 ## EXAMPLES
 

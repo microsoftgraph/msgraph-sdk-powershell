@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgGroupTeamChannelMember
 
 ## SYNOPSIS
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgGroupTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 
 ## EXAMPLES
 
@@ -50,14 +48,14 @@ This operation is allowed only for channels with a membershipType value of priva
 {{ Add code here }}
 ```
 
-{{ Add output here }}
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 {{ Add code here }}
 ```
 
-{{ Add output here }}
+
 
 ## PARAMETERS
 

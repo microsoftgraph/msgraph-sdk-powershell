@@ -40,7 +40,7 @@ Retrieve the properties and relationships of a timeOffReason object by ID.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamScheduleTimeOffReason -TeamId $teamId -TimeOffReasonId $timeOffReasonId
+Get-MgTeamScheduleTimeOffReason -TeamId $teamId
 
 ## PARAMETERS
 

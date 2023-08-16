@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaUserOnlineMeetingRecordingContent
 
 ## SYNOPSIS
-Get content for the navigation property recordings from users
+The content of the recording.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgBetaUserOnlineMeetingRecordingContent -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Get content for the navigation property recordings from users
+The content of the recording.
+Read-only.
 
 ## EXAMPLES
 

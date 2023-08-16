@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.SchemaExtensions
-Module Guid: 6d555054-e3a1-48e0-be3a-38f78417c818
+Module Guid: 27efc66a-105b-4dcd-a524-7f973d1ea723
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.schemaextensions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -39,5 +39,4 @@ For delegated flows, the signed-in user can update a schema extension as long as
 That application can be the one that initially created the extension, or some other application owned by the signed-in user.
 This criteria for the owner property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer.
 When using Graph Explorer to update a schemaExtension resource, include the owner property in the PATCH request body.
-For more information, see the Extensions section in Known issues with Microsoft Graph.
 

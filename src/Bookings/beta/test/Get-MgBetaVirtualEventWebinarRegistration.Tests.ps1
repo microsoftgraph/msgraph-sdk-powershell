@@ -15,6 +15,10 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgBetaVirtualEventWebinar
 }
 
 Describe 'Get-MgBetaVirtualEventWebinarRegistration' {
+    It 'List' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
     It 'Get' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }

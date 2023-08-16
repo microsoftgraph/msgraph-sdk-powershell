@@ -8,7 +8,9 @@ schema: 2.0.0
 # Set-MgBetaEducationClassModuleUpResourceFolder
 
 ## SYNOPSIS
-Invoke action setUpResourcesFolder
+Create a SharePoint folder to upload files for a given educationModule.
+Only teachers can perform this operation.
+The teacher determines what resources to upload to the SharePoint folder for the module.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Set-MgBetaEducationClassModuleUpResourceFolder -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Invoke action setUpResourcesFolder
+Create a SharePoint folder to upload files for a given educationModule.
+Only teachers can perform this operation.
+The teacher determines what resources to upload to the SharePoint folder for the module.
 
 ## EXAMPLES
 

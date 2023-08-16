@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: 6dd60a72-2052-4e4a-9b23-81281c2d0bf0
+Module Guid: fb158253-2087-4368-b8dc-748da1ac5c16
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -164,15 +164,15 @@ Use this API to create a new mail folder in the root folder of the user's mailbo
 If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolder](New-MgBetaUserMailFolderChildFolder.md)
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+Create a new mailSearchFolder in the specified user's mailbox.
 
 ### [New-MgBetaUserMailFolderChildFolderMessage](New-MgBetaUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageAttachment](New-MgBetaUserMailFolderChildFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMailFolderChildFolderMessageExtension](New-MgBetaUserMailFolderChildFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -190,8 +190,9 @@ Outlook carries out those actions if an incoming message in the user's Inbox mee
 Use this API to create a new Message in a mailfolder.
 
 ### [New-MgBetaUserMailFolderMessageAttachment](New-MgBetaUserMailFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMailFolderMessageExtension](New-MgBetaUserMailFolderMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -211,8 +212,9 @@ You can create an open extension in a resource instance and store custom data to
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaUserMessageAttachment](New-MgBetaUserMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ### [New-MgBetaUserMessageExtension](New-MgBetaUserMessageExtension.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -300,7 +302,7 @@ If an override exists for a sender and the sender changes his/her display name, 
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgBetaUserMailFolder](Update-MgBetaUserMailFolder.md)
-Update the properties of mailFolder object.
+Update the writable properties of a mailSearchFolder object.
 
 ### [Update-MgBetaUserMailFolderChildFolder](Update-MgBetaUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users
@@ -324,7 +326,7 @@ Update the navigation property extensions in users
 Change writable properties on a messageRule object and save the changes.
 
 ### [Update-MgBetaUserMessage](Update-MgBetaUserMessage.md)
-Update the properties of a message object.
+Update the properties of an eventMessage object.
 
 ### [Update-MgBetaUserMessageExtension](Update-MgBetaUserMessageExtension.md)
 Update the navigation property extensions in users

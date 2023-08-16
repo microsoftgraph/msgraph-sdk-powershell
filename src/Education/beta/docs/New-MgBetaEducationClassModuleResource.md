@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgBetaEducationClassModuleResource
 
 ## SYNOPSIS
-Create new navigation property to resources for education
+Create a resource in a module.
+Only teachers can perform this operation.
+You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ## SYNTAX
 
@@ -38,7 +40,9 @@ New-MgBetaEducationClassModuleResource -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Create new navigation property to resources for education
+Create a resource in a module.
+Only teachers can perform this operation.
+You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.
 
 ## EXAMPLES
 

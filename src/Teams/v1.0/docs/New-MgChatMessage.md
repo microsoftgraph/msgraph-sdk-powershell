@@ -66,7 +66,8 @@ Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	body = @{
-		content = "Hello world"
+		contentType = "html"
+		content = "\<emoji alt="😶‍🌫️"\>\</emoji\>"
 	}
 }
 

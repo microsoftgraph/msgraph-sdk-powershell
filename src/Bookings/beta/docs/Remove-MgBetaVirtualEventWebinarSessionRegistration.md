@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaVirtualEventWebinarSessionRegistration
 
 ## SYNOPSIS
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaVirtualEventWebinarSessionRegistration -InputObject <IBookingsIdent
 ```
 
 ## DESCRIPTION
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ## EXAMPLES
 
@@ -191,6 +191,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
+  - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
 

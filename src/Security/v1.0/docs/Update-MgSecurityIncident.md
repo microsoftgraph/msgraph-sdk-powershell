@@ -18,8 +18,8 @@ Update-MgSecurityIncident -IncidentId <String> [-AdditionalProperties <Hashtable
  [-Alerts <IMicrosoftGraphSecurityAlert[]>] [-AssignedTo <String>] [-Classification <String>]
  [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-CustomTags <String[]>]
  [-Determination <String>] [-DisplayName <String>] [-Id <String>] [-IncidentWebUrl <String>]
- [-LastUpdateDateTime <DateTime>] [-RedirectIncidentId <String>] [-Severity <String>] [-Status <String>]
- [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedBy <String>] [-LastUpdateDateTime <DateTime>] [-RedirectIncidentId <String>]
+ [-Severity <String>] [-Status <String>] [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -40,8 +40,8 @@ Update-MgSecurityIncident -InputObject <ISecurityIdentity> [-AdditionalPropertie
  [-Alerts <IMicrosoftGraphSecurityAlert[]>] [-AssignedTo <String>] [-Classification <String>]
  [-Comments <IMicrosoftGraphSecurityAlertComment[]>] [-CreatedDateTime <DateTime>] [-CustomTags <String[]>]
  [-Determination <String>] [-DisplayName <String>] [-Id <String>] [-IncidentWebUrl <String>]
- [-LastUpdateDateTime <DateTime>] [-RedirectIncidentId <String>] [-Severity <String>] [-Status <String>]
- [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-LastModifiedBy <String>] [-LastUpdateDateTime <DateTime>] [-RedirectIncidentId <String>]
+ [-Severity <String>] [-Status <String>] [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -282,6 +282,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -LastModifiedBy
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastUpdateDateTime
 Time when the incident was last updated.
 
@@ -414,6 +429,9 @@ To create the parameters described below, construct a hash table containing the 
 `ALERTS <IMicrosoftGraphSecurityAlert[]>`: The list of related alerts. Supports $expand.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
+  - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AlertPolicyId <String>]`: 
   - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
   - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
   - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
@@ -429,11 +447,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Determination <String>]`: alertDetermination
   - `[Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]`: Collection of evidence related to the alert.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[DetailedRoles <String[]>]`: 
+    - `[DetailedRoles <String[]>]`: Detailed description of the entity role/s in an alert. Values are free-form.
     - `[RemediationStatus <String>]`: evidenceRemediationStatus
     - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-    - `[Roles <String[]>]`: One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
-    - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
+    - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+    - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
     - `[Verdict <String>]`: evidenceVerdict
   - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.
   - `[IncidentId <String>]`: Unique identifier to represent the incident this alert resource is associated with.
@@ -458,6 +476,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Alerts <IMicrosoftGraphSecurityAlert[]>]`: The list of related alerts. Supports $expand.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActorDisplayName <String>]`: The adversary or activity group that is associated with this alert.
+    - `[AdditionalData <IMicrosoftGraphSecurityDictionary>]`: dictionary
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AlertPolicyId <String>]`: 
     - `[AlertWebUrl <String>]`: URL for the alert page in the Microsoft 365 Defender portal.
     - `[AssignedTo <String>]`: Owner of the alert, or null if no owner is assigned.
     - `[Category <String>]`: The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
@@ -473,11 +494,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[Determination <String>]`: alertDetermination
     - `[Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]`: Collection of evidence related to the alert.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[DetailedRoles <String[]>]`: 
+      - `[DetailedRoles <String[]>]`: Detailed description of the entity role/s in an alert. Values are free-form.
       - `[RemediationStatus <String>]`: evidenceRemediationStatus
       - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-      - `[Roles <String[]>]`: One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
-      - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
+      - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+      - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
       - `[Verdict <String>]`: evidenceVerdict
     - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.
     - `[IncidentId <String>]`: Unique identifier to represent the incident this alert resource is associated with.
@@ -503,6 +524,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Determination <String>]`: alertDetermination
   - `[DisplayName <String>]`: The incident name.
   - `[IncidentWebUrl <String>]`: The URL for the incident page in the Microsoft 365 Defender portal.
+  - `[LastModifiedBy <String>]`: 
   - `[LastUpdateDateTime <DateTime?>]`: Time when the incident was last updated.
   - `[RedirectIncidentId <String>]`: Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
   - `[Severity <String>]`: alertSeverity

@@ -53,7 +53,7 @@ Read the properties and relationships of an educationUser object.
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationUser -EducationUserId $educationUserId
+Get-MgEducationUser
 
 ## PARAMETERS
 

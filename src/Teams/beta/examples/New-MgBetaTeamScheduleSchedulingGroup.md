@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	displayName = "Cashiers"
@@ -12,7 +14,7 @@ $params = @{
 }
 
 New-MgBetaTeamScheduleSchedulingGroup -TeamId $teamId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeamScheduleSchedulingGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

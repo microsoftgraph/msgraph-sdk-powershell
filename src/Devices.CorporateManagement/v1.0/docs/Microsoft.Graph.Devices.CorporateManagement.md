@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 5e42af6e-d0b8-4fab-920e-d8fe351df98e
+Module Guid: 797f3b09-c67a-45e5-9f28-51d1095d3fff
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,13 +72,13 @@ Get the number of the resource
 Read properties and relationships of the managedAppPolicyDeploymentSummary object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicy](Get-MgDeviceAppManagementManagedAppPolicy.md)
-Read properties and relationships of the targetedManagedAppProtection object.
+Read properties and relationships of the managedAppPolicy object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicyCount](Get-MgDeviceAppManagementManagedAppPolicyCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedAppRegistration](Get-MgDeviceAppManagementManagedAppRegistration.md)
-Read properties and relationships of the androidManagedAppRegistration object.
+Read properties and relationships of the managedAppRegistration object.
 
 ### [Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy](Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy.md)
 Zero or more policys already applied on the registered app when it last synchronized with managment service.
@@ -105,16 +105,16 @@ Get the number of the resource
 Invoke function getUserIdsWithFlaggedAppRegistration
 
 ### [Get-MgDeviceAppManagementManagedAppStatus](Get-MgDeviceAppManagementManagedAppStatus.md)
-Read properties and relationships of the managedAppStatusRaw object.
+Read properties and relationships of the managedAppStatus object.
 
 ### [Get-MgDeviceAppManagementManagedAppStatusCount](Get-MgDeviceAppManagementManagedAppStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedEBook](Get-MgDeviceAppManagementManagedEBook.md)
-Read properties and relationships of the managedEBook object.
+Read properties and relationships of the iosVppEBook object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignment](Get-MgDeviceAppManagementManagedEBookAssignment.md)
-Read properties and relationships of the managedEBookAssignment object.
+Read properties and relationships of the iosVppEBookAssignment object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignmentCount](Get-MgDeviceAppManagementManagedEBookAssignmentCount.md)
 Get the number of the resource
@@ -168,7 +168,7 @@ Another way to input protected apps through xml files
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileApp](Get-MgDeviceAppManagementMobileApp.md)
-Read properties and relationships of the windowsUniversalAppX object.
+Read properties and relationships of the windowsMicrosoftEdgeApp object.
 
 ### [Get-MgDeviceAppManagementMobileAppAsManagedMobileLobApp](Get-MgDeviceAppManagementMobileAppAsManagedMobileLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
@@ -189,7 +189,7 @@ Read properties and relationships of the mobileAppCategory object.
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfiguration](Get-MgDeviceAppManagementMobileAppConfiguration.md)
-Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+Read properties and relationships of the iosMobileAppConfiguration object.
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationAssignment](Get-MgDeviceAppManagementMobileAppConfigurationAssignment.md)
 Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
@@ -411,7 +411,7 @@ Create new navigation property to exemptAppLockerFiles for deviceAppManagement
 Create new navigation property to protectedAppLockerFiles for deviceAppManagement
 
 ### [New-MgDeviceAppManagementMobileApp](New-MgDeviceAppManagementMobileApp.md)
-Create a new windowsMicrosoftEdgeApp object.
+Create a new microsoftStoreForBusinessApp object.
 
 ### [New-MgDeviceAppManagementMobileAppAssignment](New-MgDeviceAppManagementMobileAppAssignment.md)
 Create a new mobileAppAssignment object.
@@ -555,7 +555,7 @@ Delete navigation property exemptAppLockerFiles for deviceAppManagement
 Delete navigation property protectedAppLockerFiles for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMobileApp](Remove-MgDeviceAppManagementMobileApp.md)
-Deletes a managedIOSStoreApp.
+Deletes a iosLobApp.
 
 ### [Remove-MgDeviceAppManagementMobileAppAssignment](Remove-MgDeviceAppManagementMobileAppAssignment.md)
 Deletes a mobileAppAssignment.
@@ -708,7 +708,7 @@ Update the navigation property managedAppStatuses in deviceAppManagement
 Update the properties of a iosVppEBook object.
 
 ### [Update-MgDeviceAppManagementManagedEBookAssignment](Update-MgDeviceAppManagementManagedEBookAssignment.md)
-Update the properties of a iosVppEBookAssignment object.
+Update the properties of a managedEBookAssignment object.
 
 ### [Update-MgDeviceAppManagementManagedEBookDeviceState](Update-MgDeviceAppManagementManagedEBookDeviceState.md)
 Update the properties of a deviceInstallState object.
@@ -735,7 +735,7 @@ Update the navigation property exemptAppLockerFiles in deviceAppManagement
 Update the navigation property protectedAppLockerFiles in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementMobileApp](Update-MgDeviceAppManagementMobileApp.md)
-Update the properties of a windowsWebApp object.
+Update the properties of a macOSLobApp object.
 
 ### [Update-MgDeviceAppManagementMobileAppAssignment](Update-MgDeviceAppManagementMobileAppAssignment.md)
 Update the properties of a mobileAppAssignment object.

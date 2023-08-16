@@ -34,10 +34,9 @@ You can remove an email address only if it was provisioned using the provisionEm
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Remove-MgBetaTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 ```
 
-
+Remove-MgBetaTeamChannelEmail -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

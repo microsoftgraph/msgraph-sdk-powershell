@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: 2ef55e05-484c-467e-aa77-3d619a50caef
+Module Guid: 412a9163-fa3f-4334-85db-4e55c1e29195
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -55,7 +55,8 @@ Get the number of the resource
 
 ### [Get-MgBetaCommunicationCallRecord](Get-MgBetaCommunicationCallRecord.md)
 Retrieve the properties and relationships of a callRecord object.
-There are two ways to get the id of a callRecord:
+There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example.
+When you expand session details, the maximum page size is 60 sessions.
 
 ### [Get-MgBetaCommunicationCallRecordCount](Get-MgBetaCommunicationCallRecordCount.md)
 Get the number of the resource
@@ -117,7 +118,8 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgBetaCommunicationOnlineMeetingRecordingContent](Get-MgBetaCommunicationOnlineMeetingRecordingContent.md)
-Get content for the navigation property recordings from communications
+The content of the recording.
+Read-only.
 
 ### [Get-MgBetaCommunicationOnlineMeetingRecordingCount](Get-MgBetaCommunicationOnlineMeetingRecordingCount.md)
 Get the number of the resource
@@ -152,9 +154,6 @@ Get the number of the resource
 ### [Get-MgBetaCommunicationOnlineMeetingTranscriptMetadataContent](Get-MgBetaCommunicationOnlineMeetingTranscriptMetadataContent.md)
 The time-aligned metadata of the utterances in the transcript.
 Read-only.
-
-### [Get-MgBetaCommunicationOnlineMeetingVirtualAppointment](Get-MgBetaCommunicationOnlineMeetingVirtualAppointment.md)
-Read the properties and relationships of a virtualAppointment object.
 
 ### [Get-MgBetaCommunicationOnlineMeetingVirtualAppointmentJoinWebUrl](Get-MgBetaCommunicationOnlineMeetingVirtualAppointmentJoinWebUrl.md)
 Invoke function getVirtualAppointmentJoinWebUrl
@@ -204,7 +203,8 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgBetaUserOnlineMeetingRecordingContent](Get-MgBetaUserOnlineMeetingRecordingContent.md)
-Get content for the navigation property recordings from users
+The content of the recording.
+Read-only.
 
 ### [Get-MgBetaUserOnlineMeetingRecordingCount](Get-MgBetaUserOnlineMeetingRecordingCount.md)
 Get the number of the resource
@@ -240,12 +240,8 @@ Get the number of the resource
 The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
-### [Get-MgBetaUserOnlineMeetingVirtualAppointment](Get-MgBetaUserOnlineMeetingVirtualAppointment.md)
-Read the properties and relationships of a virtualAppointment object.
-
 ### [Get-MgBetaUserPresence](Get-MgBetaUserPresence.md)
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Get a user's presence information.
 
 ### [Invoke-MgBetaAnswerCommunicationCall](Invoke-MgBetaAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -441,7 +437,7 @@ Delete navigation property attendanceRecords for communications
 Delete navigation property recordings for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -451,9 +447,6 @@ Delete navigation property registrants for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingTranscript](Remove-MgBetaCommunicationOnlineMeetingTranscript.md)
 Delete navigation property transcripts for communications
-
-### [Remove-MgBetaCommunicationOnlineMeetingVirtualAppointment](Remove-MgBetaCommunicationOnlineMeetingVirtualAppointment.md)
-Delete a virtualAppointment object.
 
 ### [Remove-MgBetaCommunicationPresence](Remove-MgBetaCommunicationPresence.md)
 Delete navigation property presences for communications
@@ -471,7 +464,7 @@ Delete navigation property attendanceRecords for users
 Delete navigation property recordings for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -481,9 +474,6 @@ Delete navigation property registrants for users
 
 ### [Remove-MgBetaUserOnlineMeetingTranscript](Remove-MgBetaUserOnlineMeetingTranscript.md)
 Delete navigation property transcripts for users
-
-### [Remove-MgBetaUserOnlineMeetingVirtualAppointment](Remove-MgBetaUserOnlineMeetingVirtualAppointment.md)
-Delete a virtualAppointment object.
 
 ### [Remove-MgBetaUserPresence](Remove-MgBetaUserPresence.md)
 Delete navigation property presence for users
@@ -507,7 +497,8 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Set-MgBetaCommunicationOnlineMeetingRecordingContent](Set-MgBetaCommunicationOnlineMeetingRecordingContent.md)
-Update content for the navigation property recordings in communications
+The content of the recording.
+Read-only.
 
 ### [Set-MgBetaCommunicationOnlineMeetingTranscriptContent](Set-MgBetaCommunicationOnlineMeetingTranscriptContent.md)
 The content of the transcript.
@@ -548,7 +539,8 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Set-MgBetaUserOnlineMeetingRecordingContent](Set-MgBetaUserOnlineMeetingRecordingContent.md)
-Update content for the navigation property recordings in users
+The content of the recording.
+Read-only.
 
 ### [Set-MgBetaUserOnlineMeetingTranscriptContent](Set-MgBetaUserOnlineMeetingTranscriptContent.md)
 The content of the transcript.
@@ -614,9 +606,6 @@ Update the navigation property registrants in communications
 ### [Update-MgBetaCommunicationOnlineMeetingTranscript](Update-MgBetaCommunicationOnlineMeetingTranscript.md)
 Update the navigation property transcripts in communications
 
-### [Update-MgBetaCommunicationOnlineMeetingVirtualAppointment](Update-MgBetaCommunicationOnlineMeetingVirtualAppointment.md)
-Create a new virtualAppointment object.
-
 ### [Update-MgBetaCommunicationPresence](Update-MgBetaCommunicationPresence.md)
 Update the navigation property presences in communications
 
@@ -644,9 +633,6 @@ Update the navigation property registrants in users
 
 ### [Update-MgBetaUserOnlineMeetingTranscript](Update-MgBetaUserOnlineMeetingTranscript.md)
 Update the navigation property transcripts in users
-
-### [Update-MgBetaUserOnlineMeetingVirtualAppointment](Update-MgBetaUserOnlineMeetingVirtualAppointment.md)
-Create a new virtualAppointment object.
 
 ### [Update-MgBetaUserPresence](Update-MgBetaUserPresence.md)
 Update the navigation property presence in users
