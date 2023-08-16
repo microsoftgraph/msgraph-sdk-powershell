@@ -2117,7 +2117,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
-      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
@@ -2479,7 +2479,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
@@ -6138,6 +6138,14 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
         - name: $select
           in: query
           description: Select properties to be returned
@@ -6248,6 +6256,14 @@ paths:
           schema:
             type: string
             nullable: true
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
       requestBody:
         description: New property values
         content:
@@ -6276,6 +6292,214 @@ paths:
       operationId: application_DeleteApplicationGraphBPreAppId
       parameters:
         - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications(uniqueName=''{uniqueName}'')':
+    get:
+      tags:
+        - applications.application
+      summary: Get application
+      description: Get the properties and relationships of an application object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
+      operationId: application_GetApplicationGraphBPreUniqueName
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - api
+                - appId
+                - appRoles
+                - authenticationBehaviors
+                - certification
+                - createdDateTime
+                - defaultRedirectUri
+                - description
+                - disabledByMicrosoftStatus
+                - displayName
+                - groupMembershipClaims
+                - identifierUris
+                - info
+                - isDeviceOnlyAuthSupported
+                - isFallbackPublicClient
+                - keyCredentials
+                - logo
+                - notes
+                - optionalClaims
+                - parentalControlSettings
+                - passwordCredentials
+                - publicClient
+                - publisherDomain
+                - requestSignatureVerification
+                - requiredResourceAccess
+                - samlMetadataUrl
+                - serviceManagementReference
+                - servicePrincipalLockConfiguration
+                - signInAudience
+                - spa
+                - tags
+                - tokenEncryptionKeyId
+                - uniqueName
+                - verifiedPublisher
+                - web
+                - windows
+                - onPremisesPublishing
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appManagementPolicies
+                - createdOnBehalfOf
+                - extensionProperties
+                - federatedIdentityCredentials
+                - homeRealmDiscoveryPolicies
+                - owners
+                - tokenIssuancePolicies
+                - tokenLifetimePolicies
+                - connectorGroup
+                - synchronization
+              type: string
+      responses:
+        2XX:
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - applications.application
+      summary: Update application
+      description: Update the properties of an application object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+      operationId: application_UpdateApplicationGraphBPreUniqueName
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: uniqueName
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.application'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.application'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - applications.application
+      summary: Delete application
+      description: 'Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
+      operationId: application_DeleteApplicationGraphBPreUniqueName
+      parameters:
+        - name: appId
+          in: path
+          description: Alternate key of application
+          required: true
+          style: simple
+          schema:
+            type: string
+            nullable: true
+        - name: uniqueName
           in: path
           description: Alternate key of application
           required: true
@@ -9567,10 +9791,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a connectorGroup object.
+      description: Create a new connectorGroup.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_CreateConnectorGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -16814,7 +17038,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
-      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
@@ -17176,7 +17400,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
-      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
@@ -22429,7 +22653,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -22909,7 +23133,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -22969,6 +23193,8 @@ components:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            cloudRealtimeCommunicationInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
               description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -23139,6 +23365,8 @@ components:
               type: string
               description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
               nullable: true
+            onPremisesSipInfo:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
@@ -24466,6 +24694,9 @@ components:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
+            uniqueName:
+              type: string
+              nullable: true
             visibility:
               type: string
               description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
@@ -25413,6 +25644,15 @@ components:
           description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
+    microsoft.graph.cloudRealtimeCommunicationInfo:
+      title: cloudRealtimeCommunicationInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.deviceKey:
       title: deviceKey
       type: object
@@ -25591,6 +25831,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesSipInfo:
+      title: onPremisesSipInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+        sipDeploymentLocation:
+          type: string
+          nullable: true
+        sipPrimaryAddress:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.passwordProfile:
       title: passwordProfile
       type: object
@@ -25605,7 +25859,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -27352,6 +27606,11 @@ components:
                 type: string
                 nullable: true
               description: List of Scope Tag IDs for this Device instance.
+            securityPatchLevel:
+              type: string
+              description: This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+              nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
@@ -28332,6 +28591,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -28414,6 +28675,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -35486,6 +35748,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -35676,11 +35947,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -37539,6 +37812,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -43637,6 +43911,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
               x-ms-navigationProperty: true
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -43793,6 +44069,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -46737,6 +47018,58 @@ components:
             contentType:
               type: string
               description: Indicates the type for the replied comment.
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+          additionalProperties:
+            type: object
+    microsoft.graph.workbookDocumentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTask
+          type: object
+          properties:
+            assignees:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startAndDueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
+            title:
+              type: string
+              nullable: true
+            changes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              x-ms-navigationProperty: true
+            comment:
+              $ref: '#/components/schemas/microsoft.graph.workbookComment'
           additionalProperties:
             type: object
     microsoft.graph.workbookOperationError:
@@ -47254,6 +47587,87 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.workbookEmailIdentity:
+      title: workbookEmailIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskSchedule:
+      title: workbookDocumentTaskSchedule
+      type: object
+      properties:
+        dueDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskChange:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTaskChange
+          type: object
+          properties:
+            assignee:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            changedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            commentId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            type:
+              type: string
+            undoChangeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

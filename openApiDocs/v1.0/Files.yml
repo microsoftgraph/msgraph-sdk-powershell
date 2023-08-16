@@ -1760,11 +1760,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Update DriveItem properties
-      description: Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
+      summary: Move a DriveItem to a new folder
+      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
       operationId: drive_UpdateItem
       parameters:
         - name: drive-id
@@ -27238,11 +27238,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Update DriveItem properties
-      description: Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
+      summary: Move a DriveItem to a new folder
+      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
       operationId: group.drive_UpdateItem
       parameters:
         - name: group-id
@@ -61039,11 +61039,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Update DriveItem properties
-      description: Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
+      summary: Move a DriveItem to a new folder
+      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
       operationId: user.drive_UpdateItem
       parameters:
         - name: user-id
@@ -83892,6 +83892,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -84387,7 +84389,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -85929,6 +85931,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -85984,6 +85987,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -89627,6 +89632,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.watermarkProtectionValues:
       title: watermarkProtectionValues
       type: object

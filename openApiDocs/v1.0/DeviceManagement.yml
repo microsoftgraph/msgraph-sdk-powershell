@@ -1076,7 +1076,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-reporting-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-devices-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -1239,7 +1239,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -2121,11 +2121,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: List windows10MobileCompliancePolicies
-      description: List properties and relationships of the windows10MobileCompliancePolicy objects.
+      summary: List macOSCompliancePolicies
+      description: List properties and relationships of the macOSCompliancePolicy objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2238,11 +2238,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get windowsPhone81CompliancePolicy
-      description: Read properties and relationships of the windowsPhone81CompliancePolicy object.
+      summary: Get windows10CompliancePolicy
+      description: Read properties and relationships of the windows10CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2309,11 +2309,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update iosCompliancePolicy
-      description: Update the properties of a iosCompliancePolicy object.
+      summary: Update macOSCompliancePolicy
+      description: Update the properties of a macOSCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2344,11 +2344,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete windows10CompliancePolicy
-      description: Deletes a windows10CompliancePolicy.
+      summary: Delete macOSCompliancePolicy
+      description: Deletes a macOSCompliancePolicy.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -5158,11 +5158,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List windows81GeneralConfigurations
-      description: List properties and relationships of the windows81GeneralConfiguration objects.
+      summary: List androidCustomConfigurations
+      description: List properties and relationships of the androidCustomConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81generalconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5246,11 +5246,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Create iosCustomConfiguration
-      description: Create a new iosCustomConfiguration object.
+      summary: Create windows81GeneralConfiguration
+      description: Create a new windows81GeneralConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81generalconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceConfiguration
       requestBody:
         description: New navigation property
@@ -5273,11 +5273,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get androidGeneralDeviceConfiguration
-      description: Read properties and relationships of the androidGeneralDeviceConfiguration object.
+      summary: Get iosCustomConfiguration
+      description: Read properties and relationships of the iosCustomConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidgeneraldeviceconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscustomconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5342,11 +5342,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update iosGeneralDeviceConfiguration
-      description: Update the properties of a iosGeneralDeviceConfiguration object.
+      summary: Update macOSGeneralDeviceConfiguration
+      description: Update the properties of a macOSGeneralDeviceConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosgeneraldeviceconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macosgeneraldeviceconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5377,11 +5377,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete androidGeneralDeviceConfiguration
-      description: Deletes a androidGeneralDeviceConfiguration.
+      summary: Delete windowsUpdateForBusinessConfiguration
+      description: Deletes a windowsUpdateForBusinessConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidgeneraldeviceconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsupdateforbusinessconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -32039,6 +32039,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.

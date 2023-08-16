@@ -1323,6 +1323,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -1363,6 +1364,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -2409,11 +2411,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: drive_UpdateItem
       parameters:
         - name: drive-id
@@ -4559,6 +4561,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -4599,6 +4602,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -4937,6 +4941,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -4977,6 +4982,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -6166,6 +6172,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -6206,6 +6213,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -7417,6 +7425,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -7457,6 +7466,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -11739,6 +11749,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -11779,6 +11790,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -15024,6 +15036,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -15064,6 +15077,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -16482,6 +16496,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -16522,6 +16537,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -17733,6 +17749,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -17773,6 +17790,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -19074,6 +19092,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -19114,6 +19133,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -22525,6 +22545,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -22565,6 +22586,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -22879,6 +22901,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -22919,6 +22942,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -23972,6 +23996,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -24012,6 +24037,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -25071,6 +25097,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -25111,6 +25138,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -30809,6 +30837,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -30849,6 +30878,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -31975,11 +32005,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: group.drive_UpdateItem
       parameters:
         - name: group-id
@@ -34405,6 +34435,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -34445,6 +34476,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -34807,6 +34839,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -34847,6 +34880,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -36172,6 +36206,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -36212,6 +36247,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -37526,6 +37562,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -37566,6 +37603,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -40311,6 +40349,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -40351,6 +40390,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -43522,6 +43562,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -43562,6 +43603,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -45140,6 +45182,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -45180,6 +45223,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -46494,6 +46538,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -46534,6 +46579,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -47430,6 +47476,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -47470,6 +47517,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -50727,6 +50775,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -50767,6 +50816,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -51105,6 +51155,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -51145,6 +51196,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -52334,6 +52386,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -52374,6 +52427,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -53544,6 +53598,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -53584,6 +53639,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -56714,6 +56770,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -56754,6 +56811,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -57654,6 +57712,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -57694,6 +57753,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -60939,6 +60999,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -60979,6 +61040,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -62397,6 +62459,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -62437,6 +62500,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -63648,6 +63712,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -63688,6 +63753,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -64967,6 +65033,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -65007,6 +65074,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -66691,6 +66759,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -66731,6 +66800,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -67790,6 +67860,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -67830,6 +67901,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -70811,6 +70883,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -70851,6 +70924,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -71977,11 +72051,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: user.drive_UpdateItem
       parameters:
         - name: user-id
@@ -74407,6 +74481,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -74447,6 +74522,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -74809,6 +74885,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -74849,6 +74926,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -76174,6 +76252,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -76214,6 +76293,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -77528,6 +77608,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -77568,6 +77649,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -80313,6 +80395,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -80353,6 +80436,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -83524,6 +83608,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -83564,6 +83649,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -85142,6 +85228,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -85182,6 +85269,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -86496,6 +86584,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -86536,6 +86625,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -87432,6 +87522,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -87472,6 +87563,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -90729,6 +90821,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -90769,6 +90862,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -91107,6 +91201,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -91147,6 +91242,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -92336,6 +92432,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -92376,6 +92473,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -93546,6 +93644,7 @@ paths:
                 - authorizationInfo
                 - businessPhones
                 - city
+                - cloudRealtimeCommunicationInfo
                 - companyName
                 - consentProvidedForMinor
                 - country
@@ -93586,6 +93685,7 @@ paths:
                 - onPremisesProvisioningErrors
                 - onPremisesSamAccountName
                 - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
                 - onPremisesSyncEnabled
                 - onPremisesUserPrincipalName
                 - otherMails
@@ -96677,6 +96777,8 @@ components:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
+            cloudRealtimeCommunicationInfo:
+              $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
               description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -96847,6 +96949,8 @@ components:
               type: string
               description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
               nullable: true
+            onPremisesSipInfo:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
               description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
@@ -97305,6 +97409,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -98658,6 +98763,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -99005,6 +99112,16 @@ components:
           description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
+    microsoft.graph.cloudRealtimeCommunicationInfo:
+      title: cloudRealtimeCommunicationInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.customSecurityAttributeValue:
       title: customSecurityAttributeValue
       type: object
@@ -99188,6 +99305,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onPremisesSipInfo:
+      title: onPremisesSipInfo
+      type: object
+      properties:
+        isSipEnabled:
+          type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
+        sipDeploymentLocation:
+          type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
+          nullable: true
+        sipPrimaryAddress:
+          type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.passwordProfile:
       title: passwordProfile
       type: object
@@ -99202,7 +99336,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -99651,7 +99785,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -100454,6 +100588,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             visibility:
               type: string
@@ -101507,6 +101644,11 @@ components:
                 type: string
                 nullable: true
               description: List of Scope Tag IDs for this Device instance.
+            securityPatchLevel:
+              type: string
+              description: This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+              nullable: true
+              readOnly: true
             serialNumber:
               type: string
               description: SerialNumber. This property is read-only.
@@ -102487,6 +102629,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -102553,8 +102697,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -102569,6 +102711,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -104217,6 +104360,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookCommentReply'
               x-ms-navigationProperty: true
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
           additionalProperties:
             type: object
     microsoft.graph.workbookFunctions:
@@ -104373,6 +104518,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookTable'
               description: Collection of tables that are part of the worksheet. Read-only.
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -109589,6 +109739,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -109661,33 +109820,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -109779,11 +109911,13 @@ components:
           properties:
             content:
               type: string
+              description: The content of the recording. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
           additionalProperties:
@@ -111163,6 +111297,58 @@ components:
             contentType:
               type: string
               description: Indicates the type for the replied comment.
+            task:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+          additionalProperties:
+            type: object
+    microsoft.graph.workbookDocumentTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTask
+          type: object
+          properties:
+            assignees:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startAndDueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
+            title:
+              type: string
+              nullable: true
+            changes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              x-ms-navigationProperty: true
+            comment:
+              $ref: '#/components/schemas/microsoft.graph.workbookComment'
           additionalProperties:
             type: object
     microsoft.graph.workbookOperationError:
@@ -111479,6 +111665,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -111670,11 +111857,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -114471,34 +114658,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -115486,6 +115645,87 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.workbookEmailIdentity:
+      title: workbookEmailIdentity
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskSchedule:
+      title: workbookDocumentTaskSchedule
+      type: object
+      properties:
+        dueDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.workbookDocumentTaskChange:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: workbookDocumentTaskChange
+          type: object
+          properties:
+            assignee:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            changedBy:
+              $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+            commentId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            dueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            percentComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            type:
+              type: string
+            undoChangeId:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

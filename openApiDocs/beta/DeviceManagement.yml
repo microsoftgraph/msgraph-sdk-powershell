@@ -1569,7 +1569,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.advancedThreatProtectionOnboardingStateSummary_ListAdvancedThreatProtectionOnboardingDeviceSettingState
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1686,7 +1685,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.advancedThreatProtectionOnboardingStateSummary_GetAdvancedThreatProtectionOnboardingDeviceSettingState
       parameters:
         - name: advancedThreatProtectionOnboardingDeviceSettingState-id
@@ -15215,7 +15213,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_ListDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -15349,7 +15346,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_GetDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -53434,7 +53430,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState'
-              description: Not yet documented
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -55648,7 +55643,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
-              description: Not yet documented
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -58930,7 +58924,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+              description: Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
               format: int32
             appDisplayName:
               type: string
@@ -58946,7 +58940,7 @@ components:
               nullable: true
             batteryUsagePercentage:
               type: number
-              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
+              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308'
               format: double
             isForegroundApp:
               type: boolean
@@ -58964,25 +58958,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+              description: Number of active devices within the tenant. Valid values 0 to 2147483647
               format: int32
             batteryCapacityFair:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
+              description: Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
               format: int32
             batteryCapacityGood:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
+              description: Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
               format: int32
             batteryCapacityPoor:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+              description: Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
               format: int32
             lastRefreshedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -59012,7 +59006,7 @@ components:
               nullable: true
             batteryUsagePercentage:
               type: number
-              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
+              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308'
               format: double
             deviceId:
               type: string
@@ -59034,7 +59028,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
+              description: Estimated battery age. Unit in days. Valid values 0 to 2147483647
               format: int32
             deviceBatteryCount:
               maximum: 2147483647
@@ -59046,7 +59040,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+              description: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
               format: int32
             deviceId:
               type: string
@@ -59060,7 +59054,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             fullBatteryDrainCount:
               maximum: 2147483647
@@ -59078,7 +59072,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+              description: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
               format: int32
             model:
               type: string
@@ -59101,7 +59095,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             runtimeDateTime:
               type: string
@@ -59120,25 +59114,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices for that model. Valid values -2147483648 to 2147483647
+              description: Number of active devices for that model. Valid values 0 to 2147483647
               format: int32
             averageBatteryAgeInDays:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+              description: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
               format: int32
             averageEstimatedRuntimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             averageMaxCapacityPercentage:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+              description: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
               format: int32
             manufacturer:
               type: string
@@ -59176,7 +59170,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+              description: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
               format: int32
             modelHealthStatus:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
@@ -59193,25 +59187,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices for that os version. Valid values -2147483648 to 2147483647
+              description: Number of active devices for that os version. Valid values 0 to 2147483647
               format: int32
             averageBatteryAgeInDays:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+              description: The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647
               format: int32
             averageEstimatedRuntimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             averageMaxCapacityPercentage:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+              description: The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
               format: int32
             meanFullBatteryDrainCount:
               maximum: 2147483647
@@ -59266,25 +59260,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+              description: Number of active devices within the tenant. Valid values 0 to 2147483647
               format: int32
             batteryRuntimeFair:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+              description: Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
               format: int32
             batteryRuntimeGood:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+              description: Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
               format: int32
             batteryRuntimePoor:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+              description: Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
               format: int32
             lastRefreshedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -66315,6 +66309,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -67527,7 +67522,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object
@@ -74545,7 +74540,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the cached report expires
+              description: Time that the cached report expires. This property is read-only.
               format: date-time
               readOnly: true
             filter:
@@ -74555,7 +74550,7 @@ components:
             lastRefreshDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the cached report was last refreshed
+              description: Time that the cached report was last refreshed. This property is read-only.
               format: date-time
               readOnly: true
             metadata:
@@ -74570,7 +74565,7 @@ components:
               description: Ordering of columns in the report
             reportName:
               type: string
-              description: Name of the report
+              description: Name of the report. This property is read-only.
               nullable: true
               readOnly: true
             select:
@@ -74593,7 +74588,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report expires
+              description: Time that the exported report expires. This property is read-only.
               format: date-time
               readOnly: true
             filter:
@@ -74610,7 +74605,7 @@ components:
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report was requested
+              description: Time that the exported report was requested. This property is read-only.
               format: date-time
               readOnly: true
             select:
@@ -74627,7 +74622,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
             url:
               type: string
-              description: Temporary location of the exported report
+              description: Temporary location of the exported report. This property is read-only.
               nullable: true
               readOnly: true
           additionalProperties:
@@ -75387,6 +75382,7 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -75579,11 +75575,14 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
         sipDeploymentLocation:
           type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           nullable: true
         sipPrimaryAddress:
           type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
           nullable: true
       additionalProperties:
         type: object
@@ -75992,7 +75991,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -76795,6 +76794,9 @@ components:
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
+              nullable: true
+            uniqueName:
+              type: string
               nullable: true
             visibility:
               type: string
@@ -78441,6 +78443,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -78507,8 +78511,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -79509,6 +79511,10 @@ components:
         - sourceImageInvalid
         - sourceImageNotGeneralized
         - unknownFutureValue
+        - vmAlreadyAzureAdjoined
+        - paidSourceImageNotSupport
+        - sourceImageNotSupportCustomizeVMName
+        - sourceImageSizeExceedsLimitation
       type: string
     microsoft.graph.cloudPcExternalPartnerStatus:
       title: cloudPcExternalPartnerStatus
@@ -84626,6 +84632,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -84698,33 +84713,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -86032,6 +86020,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheck:
       title: cloudPcOnPremisesConnectionHealthCheck
@@ -86110,6 +86099,7 @@ components:
         - unknownFutureValue
         - noLicenseAvailableConnectivityFailureReport
         - remoteConnectionQualityReports
+        - inaccessibleCloudPcReports
       type: string
     microsoft.graph.deviceManagementConfigurationSettingValueTemplateReference:
       title: deviceManagementConfigurationSettingValueTemplateReference
@@ -87560,6 +87550,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -89716,34 +89708,6 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
           nullable: true
       additionalProperties:
         type: object
