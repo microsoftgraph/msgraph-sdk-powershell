@@ -320,6 +320,10 @@ paths:
                 - id desc
                 - actorDisplayName
                 - actorDisplayName desc
+                - additionalData
+                - additionalData desc
+                - alertPolicyId
+                - alertPolicyId desc
                 - alertWebUrl
                 - alertWebUrl desc
                 - assignedTo
@@ -387,6 +391,8 @@ paths:
               enum:
                 - id
                 - actorDisplayName
+                - additionalData
+                - alertPolicyId
                 - alertWebUrl
                 - assignedTo
                 - category
@@ -489,6 +495,8 @@ paths:
               enum:
                 - id
                 - actorDisplayName
+                - additionalData
+                - alertPolicyId
                 - alertWebUrl
                 - assignedTo
                 - category
@@ -7924,6 +7932,8 @@ paths:
                 - displayName desc
                 - incidentWebUrl
                 - incidentWebUrl desc
+                - lastModifiedBy
+                - lastModifiedBy desc
                 - lastUpdateDateTime
                 - lastUpdateDateTime desc
                 - redirectIncidentId
@@ -7954,6 +7964,7 @@ paths:
                 - determination
                 - displayName
                 - incidentWebUrl
+                - lastModifiedBy
                 - lastUpdateDateTime
                 - redirectIncidentId
                 - severity
@@ -8043,6 +8054,7 @@ paths:
                 - determination
                 - displayName
                 - incidentWebUrl
+                - lastModifiedBy
                 - lastUpdateDateTime
                 - redirectIncidentId
                 - severity
@@ -8169,6 +8181,10 @@ paths:
                 - id desc
                 - actorDisplayName
                 - actorDisplayName desc
+                - additionalData
+                - additionalData desc
+                - alertPolicyId
+                - alertPolicyId desc
                 - alertWebUrl
                 - alertWebUrl desc
                 - assignedTo
@@ -8236,6 +8252,8 @@ paths:
               enum:
                 - id
                 - actorDisplayName
+                - additionalData
+                - alertPolicyId
                 - alertWebUrl
                 - assignedTo
                 - category
@@ -8321,6 +8339,8 @@ paths:
               enum:
                 - id
                 - actorDisplayName
+                - additionalData
+                - alertPolicyId
                 - alertWebUrl
                 - assignedTo
                 - category
@@ -14539,6 +14559,11 @@ components:
               type: string
               description: The adversary or activity group that is associated with this alert.
               nullable: true
+            additionalData:
+              $ref: '#/components/schemas/microsoft.graph.security.dictionary'
+            alertPolicyId:
+              type: string
+              nullable: true
             alertWebUrl:
               type: string
               description: URL for the alert page in the Microsoft 365 Defender portal.
@@ -15644,6 +15669,9 @@ components:
             incidentWebUrl:
               type: string
               description: The URL for the incident page in the Microsoft 365 Defender portal.
+              nullable: true
+            lastModifiedBy:
+              type: string
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -16983,6 +17011,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.dictionary:
+      title: dictionary
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.security.alertClassification:
       title: alertClassification
       enum:
@@ -17068,6 +17101,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Detailed description of the entity role/s in an alert. Values are free-form.
         remediationStatus:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceRemediationStatus'
         remediationStatusDetails:
@@ -17078,13 +17112,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.evidenceRole'
-          description: 'One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.'
+          description: 'The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.'
         tags:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.'
+          description: 'Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.'
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
@@ -22662,7 +22696,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -23887,6 +23921,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -23942,6 +23977,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -27479,6 +27516,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.watermarkProtectionValues:
       title: watermarkProtectionValues
       type: object
