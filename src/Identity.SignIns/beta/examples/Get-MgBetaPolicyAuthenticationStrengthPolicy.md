@@ -1,9 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Get all authentication strength policies
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
 
-Get-MgBetaPolicyAuthenticationStrengthPolicy -AuthenticationStrengthPolicyId $authenticationStrengthPolicyId
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
+Get-MgBetaPolicyAuthenticationStrengthPolicy
+
 ```
-This example shows how to use the Get-MgBetaPolicyAuthenticationStrengthPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will get all authentication strength policies
+
+### Example 2: Get policies that include specific authentication method modes
+
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
+Get-MgBetaPolicyAuthenticationStrengthPolicy -Filter "allowedCombinations/any(x:x has 'sms, password')" 
+
+```
+This example will get policies that include specific authentication method modes
 
