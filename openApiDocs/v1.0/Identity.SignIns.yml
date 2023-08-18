@@ -4523,11 +4523,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get namedLocation
-      description: Retrieve the properties and relationships of a namedLocation object.
+      summary: Get ipNamedLocation
+      description: Retrieve the properties and relationships of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6747,11 +6747,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List history
-      description: Get the riskyUserHistoryItems from the history navigation property.
+      summary: Get history
+      description: Read the properties and relationships of a riskyUserHistoryItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_ListHistory
       parameters:
         - name: riskyUser-id
@@ -22278,7 +22278,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApp'
-          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.'
+          description: 'Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.'
         devices:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevices'
         locations:
@@ -31046,6 +31046,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
