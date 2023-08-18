@@ -451,11 +451,11 @@ directive:
         return $;
       }
 
-# Modify generated .cs list cmdlets.
+# Modify generated .cs list/delta cmdlets.
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_(List|Delta)\d*.cs/gm))
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_(List|Delta|DeltaViaIdentity)\d*.cs/gm))
       {
         return $;
       } else {
@@ -465,8 +465,13 @@ directive:
           let initializePageCountPlaceholder = 'this.InitializePageCount(result.Value.Length);'
           $ = $.replace(odataNextLinkRegex, `$1${initializePageCountPlaceholder}\n$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))$1`);
 
+          let deltaCmdletClassRegex = /public\s*partial\s*class\s*Get\w*_(Delta|DeltaViaIdentity)/gmi
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
-          $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.ListCmdlet');
+          if($.match(deltaCmdletClassRegex)) {
+            $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.DeltaCmdlet');
+          } else {
+            $ = $.replace(psBaseClassImplementationRegex, '$1PowerShell.Cmdlets.Custom.ListCmdlet');
+          }
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
           let topPlaceholder = (!$.includes("private int _top;")) ? 'int _top = default;': ''
@@ -494,7 +499,11 @@ directive:
 
           // Extract ODataDeltaLink to a global variable.
           let resultRegex = /((.*)var\s*result\s*=\s*await\s*response;)/gm
-          $ = $.replace(resultRegex, '$1\n$2System.Management.Automation.SessionState.PSVariable.Set(new PSVariable("ODataDeltaLink", result.OdataDeltaLink));\n')
+          $ = $.replace(resultRegex, '$1\n$2SetDeltaLinkVariable(result?.OdataDeltaLink);\n')
+
+          // Modify client's delta method to accept DeltaLinkUrl as a parameter.
+          let clientDeltaCallRegex = /(await\s*this\.Client\.\w*Delta\()/gmi
+          $ = $.replace(clientDeltaCallRegex, '$1this.DeltaLink,')
         }
         return $;
       }
@@ -644,6 +653,10 @@ directive:
         // Fix double = in date parameter. Temp fix for https://github.com/Azure/autorest.powershell/issues/1025.
         let dateAssignmentRegex = /(date="\n.*)(\+.*"=")(.*\+.*date)/gmi
         $ = $.replace(dateAssignmentRegex, '$1 $3');
+
+        // Modify client's delta method to use provide deltaLink URL.
+        let deltaApiCallMethodRegex = /(async\s*global::System\.Threading\.Tasks\.Task\s*\w*Delta\()([\s\S]*?.*var\s*_url\s*=\s*new\s*global::System\.Uri\()(.*)\);/gmi
+        $ = $.replace(deltaApiCallMethodRegex, '$1string deltaLinkUrl,$2 deltaLinkUrl ?? $3);')
         return $;
       }
 
