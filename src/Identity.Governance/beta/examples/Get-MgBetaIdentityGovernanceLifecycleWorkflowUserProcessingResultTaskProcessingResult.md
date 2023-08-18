@@ -4,17 +4,6 @@
 
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 
-Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult -WorkflowId $workflowId -UserProcessingResultId $userProcessingResultId
-
-```
-This example shows how to use the Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult Cmdlet.
-
-### Example 2: Code snippet
-
-```powershell
-
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-
 Get-MgBetaIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult -WorkflowId $workflowId -UserProcessingResultId $userProcessingResultId -Property "id,processingStatus,failureReason,subject,task" 
 
 ```
