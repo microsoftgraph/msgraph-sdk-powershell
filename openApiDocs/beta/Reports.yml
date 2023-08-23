@@ -1256,6 +1256,8 @@ paths:
                 - appliedConditionalAccessPolicies desc
                 - appliedEventListeners
                 - appliedEventListeners desc
+                - appTokenProtectionStatus
+                - appTokenProtectionStatus desc
                 - authenticationAppDeviceDetails
                 - authenticationAppDeviceDetails desc
                 - authenticationAppPolicyEvaluationDetails
@@ -1320,6 +1322,8 @@ paths:
                 - networkLocationDetails desc
                 - originalRequestId
                 - originalRequestId desc
+                - originalTransferMethod
+                - originalTransferMethod desc
                 - privateLinkDetails
                 - privateLinkDetails desc
                 - processingTimeInMilliseconds
@@ -1358,6 +1362,8 @@ paths:
                 - signInIdentifier desc
                 - signInIdentifierType
                 - signInIdentifierType desc
+                - signInTokenProtectionStatus
+                - signInTokenProtectionStatus desc
                 - status
                 - status desc
                 - tokenIssuerName
@@ -1392,6 +1398,7 @@ paths:
                 - appId
                 - appliedConditionalAccessPolicies
                 - appliedEventListeners
+                - appTokenProtectionStatus
                 - authenticationAppDeviceDetails
                 - authenticationAppPolicyEvaluationDetails
                 - authenticationContextClassReferences
@@ -1424,6 +1431,7 @@ paths:
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
+                - originalTransferMethod
                 - privateLinkDetails
                 - processingTimeInMilliseconds
                 - resourceDisplayName
@@ -1443,6 +1451,7 @@ paths:
                 - signInEventTypes
                 - signInIdentifier
                 - signInIdentifierType
+                - signInTokenProtectionStatus
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
@@ -1530,6 +1539,7 @@ paths:
                 - appId
                 - appliedConditionalAccessPolicies
                 - appliedEventListeners
+                - appTokenProtectionStatus
                 - authenticationAppDeviceDetails
                 - authenticationAppPolicyEvaluationDetails
                 - authenticationContextClassReferences
@@ -1562,6 +1572,7 @@ paths:
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
+                - originalTransferMethod
                 - privateLinkDetails
                 - processingTimeInMilliseconds
                 - resourceDisplayName
@@ -1581,6 +1592,7 @@ paths:
                 - signInEventTypes
                 - signInIdentifier
                 - signInIdentifierType
+                - signInTokenProtectionStatus
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
@@ -11979,6 +11991,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedAuthenticationEventListener'
               description: 'Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.'
+            appTokenProtectionStatus:
+              $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatus'
             authenticationAppDeviceDetails:
               $ref: '#/components/schemas/microsoft.graph.authenticationAppDeviceDetails'
             authenticationAppPolicyEvaluationDetails:
@@ -12099,6 +12113,8 @@ components:
               type: string
               description: The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
               nullable: true
+            originalTransferMethod:
+              $ref: '#/components/schemas/microsoft.graph.originalTransferMethods'
             privateLinkDetails:
               $ref: '#/components/schemas/microsoft.graph.privateLinkDetails'
             processingTimeInMilliseconds:
@@ -12170,6 +12186,8 @@ components:
               nullable: true
             signInIdentifierType:
               $ref: '#/components/schemas/microsoft.graph.signInIdentifierType'
+            signInTokenProtectionStatus:
+              $ref: '#/components/schemas/microsoft.graph.tokenProtectionStatus'
             status:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             tokenIssuerName:
@@ -13860,6 +13878,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationEventHandlerResult'
       additionalProperties:
         type: object
+    microsoft.graph.tokenProtectionStatus:
+      title: tokenProtectionStatus
+      enum:
+        - none
+        - bound
+        - unbound
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationAppDeviceDetails:
       title: authenticationAppDeviceDetails
       type: object
@@ -14070,6 +14096,14 @@ components:
           type: string
           description: The ARM resource ID of the Azure resource associated with the managed identity used for sign in.
           nullable: true
+        federatedTokenId:
+          type: string
+          description: The unique ID of the federated token.
+          nullable: true
+        federatedTokenIssuer:
+          type: string
+          description: The issuer of the federated token.
+          nullable: true
         msiType:
           $ref: '#/components/schemas/microsoft.graph.msiType'
       additionalProperties:
@@ -14102,6 +14136,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.networkType'
       additionalProperties:
         type: object
+    microsoft.graph.originalTransferMethods:
+      title: originalTransferMethods
+      enum:
+        - none
+        - deviceCodeFlow
+        - authenticationTransfer
+        - unknownFutureValue
+      type: string
     microsoft.graph.privateLinkDetails:
       title: privateLinkDetails
       type: object
@@ -14535,10 +14577,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -14820,11 +14862,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -14920,6 +14962,8 @@ components:
         - unknownFutureValue
         - servicePrincipals
         - servicePrincipalRisk
+        - authenticationFlows
+        - insiderRisk
       type: string
     microsoft.graph.conditionalAccessRuleSatisfied:
       title: conditionalAccessRuleSatisfied
@@ -15186,6 +15230,9 @@ components:
         - otherExternalUser
         - serviceProvider
         - microsoftAdminPortals
+        - deviceCodeFlow
+        - authenticationTransfer
+        - insiderRisk
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:

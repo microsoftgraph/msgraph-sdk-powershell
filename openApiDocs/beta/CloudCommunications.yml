@@ -3392,10 +3392,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -5214,6 +5214,12 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -5228,6 +5234,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -5321,6 +5330,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -6225,8 +6237,14 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
                 - metadataContent
                 - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -6241,7 +6259,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -6335,7 +6356,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -6671,6 +6695,161 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /communications/onlineMeetings/microsoft.graph.getAllRecordings():
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getAllRecordings
+      operationId: communication.onlineMeeting_getAllRecording
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecording
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecording'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /communications/onlineMeetings/microsoft.graph.getAllTranscripts():
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getAllTranscripts
+      operationId: communication.onlineMeeting_getAllTranscript
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - metadataContent
+                - transcriptContentUrl
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - metadataContent
+                - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callTranscript
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /communications/presences:
     get:
       tags:
@@ -8990,6 +9169,12 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -9004,6 +9189,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -9113,6 +9301,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -10185,8 +10376,14 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
                 - metadataContent
                 - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -10201,7 +10398,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -10311,7 +10511,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -11819,6 +12022,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.meetingRegistration:
@@ -11924,10 +12139,22 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -12655,11 +12882,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
