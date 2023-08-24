@@ -43,7 +43,7 @@ Read the properties and relationships of an allowedValue object.
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId
+Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId -AllowedValueId $allowedValueId
 
 ## PARAMETERS
 

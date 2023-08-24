@@ -19,7 +19,7 @@ Update-MgIdentityConditionalAccessPolicy -ConditionalAccessPolicyId <String>
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-GrantControls <IMicrosoftGraphConditionalAccessGrantControls>] [-Id <String>]
  [-ModifiedDateTime <DateTime>] [-SessionControls <IMicrosoftGraphConditionalAccessSessionControls>]
- [-State <String>] [-TemplateId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -41,7 +41,7 @@ Update-MgIdentityConditionalAccessPolicy -InputObject <IIdentitySignInsIdentity>
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>]
  [-GrantControls <IMicrosoftGraphConditionalAccessGrantControls>] [-Id <String>]
  [-ModifiedDateTime <DateTime>] [-SessionControls <IMicrosoftGraphConditionalAccessSessionControls>]
- [-State <String>] [-TemplateId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-State <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -273,21 +273,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -356,7 +341,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
       - `[IncludeAuthenticationContextClassReferences <String[]>]`: 
       - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-    - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
+    - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
     - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
@@ -436,7 +421,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[Type <String>]`: signinFrequencyType
       - `[Value <Int32?>]`: The number of days or hours.
   - `[State <String>]`: conditionalAccessPolicyState
-  - `[TemplateId <String>]`: 
 
 `CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>`: conditionalAccessConditionSet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -450,7 +434,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     - `[IncludeAuthenticationContextClassReferences <String[]>]`: 
     - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-  - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
+  - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
   - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.

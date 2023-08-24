@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 0db5fcd3-1086-4232-bfe9-72b5c2ea463d
+Module Guid: e3a352fe-223a-46bd-bf79-7ac8acc56af8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,7 +99,7 @@ Specifies the assets to include in the audience.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChange](Get-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Read the properties and relationships of a contentApproval object.
+Read the properties and relationships of a complianceChange object.
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount](Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount.md)
 Get the number of the resource
@@ -117,7 +117,7 @@ Read the properties and relationships of an operationalInsightsConnection object
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties and relationships of an updatableAssetGroup object.
+Read the properties of an azureADDevice object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -228,7 +228,7 @@ Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
 
 ### [Remove-MgBetaWindowsUpdatesPolicyComplianceChange](Remove-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Delete a contentApproval object.
+Delete a complianceChange object.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
 Delete a resourceConnection object.
@@ -278,7 +278,7 @@ Update the navigation property exclusions in admin
 Update the navigation property members in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyComplianceChange](Update-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Update the properties of a contentApproval object.
+Update the properties of a complianceChange object.
 
 ### [Update-MgBetaWindowsUpdatesResourceConnection](Update-MgBetaWindowsUpdatesResourceConnection.md)
 Update the navigation property resourceConnections in admin

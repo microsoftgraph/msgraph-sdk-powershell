@@ -16,8 +16,7 @@ Create new navigation property to transcripts for users
 ```
 New-MgBetaUserOnlineMeetingTranscript -OnlineMeetingId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-MeetingId <String>] [-MeetingOrganizerId <String>] [-MetadataContentInputFile <String>]
- [-TranscriptContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MetadataContentInputFile <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -36,8 +35,7 @@ New-MgBetaUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity
 ```
 New-MgBetaUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-MeetingId <String>] [-MeetingOrganizerId <String>] [-MetadataContentInputFile <String>]
- [-TranscriptContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MetadataContentInputFile <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -158,38 +156,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -MeetingId
-The unique identifier of the online meeting related to this transcript.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MeetingOrganizerId
-The unique identifier of the organizer of the onlineMeeting related to this transcript.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -MetadataContentInputFile
 Input File for MetadataContent (The time-aligned metadata of the utterances in the transcript.
 Read-only.)
@@ -215,22 +181,6 @@ Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TranscriptContentUrl
-The URL which can be used to access the content of the transcript.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -310,10 +260,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Content <Byte[]>]`: The content of the transcript. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
-  - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
   - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
-  - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

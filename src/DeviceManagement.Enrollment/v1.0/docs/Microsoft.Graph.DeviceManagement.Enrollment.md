@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: a6762663-1c94-49ef-b32f-37c1b2682a97
+Module Guid: 7780b5c2-8cce-4d93-bbc1-8f0204614f60
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Read properties and relationships of the onPremisesConditionalAccessSettings object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
+Read properties and relationships of the deviceEnrollmentConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Read properties and relationships of the enrollmentConfigurationAssignment object.
@@ -42,7 +42,7 @@ Get the number of the resource
 Get roleManagement
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfiguration](New-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Create a new deviceEnrollmentLimitConfiguration object.
+Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Create a new enrollmentConfigurationAssignment object.
@@ -57,7 +57,7 @@ Create a new windowsAutopilotDeviceIdentity object.
 Delete navigation property conditionalAccessSettings for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfiguration](Remove-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Deletes a deviceEnrollmentLimitConfiguration.
+Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Deletes a enrollmentConfigurationAssignment.

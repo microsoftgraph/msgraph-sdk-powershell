@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 384ce8c5-9a5b-42de-886a-e51449397f4b
+Module Guid: ff26e3c8-111b-491c-a247-9442d3c38af6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -663,8 +663,7 @@ Supports $expand.
 Get the number of the resource
 
 ### [Get-MgOrganization](Get-MgOrganization.md)
-Get the properties and relationships of the currently authenticated organization.
-Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+Read properties and relationships of the organization object.
 
 ### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
 Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default.
@@ -1232,7 +1231,9 @@ Update the navigation property serviceConfigurationRecords in domains
 Update the navigation property verificationDnsRecords in domains
 
 ### [Update-MgOrganization](Update-MgOrganization.md)
-Update the properties of a organization object.
+Update the properties of the currently authenticated organization.
+In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
+The ID is also known as the tenantId of the organization.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.

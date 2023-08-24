@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Create a new deviceEnrollmentLimitConfiguration object.
+Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementDeviceEnrollmentConfiguration
 ```
 
 ## DESCRIPTION
-Create a new deviceEnrollmentLimitConfiguration object.
+Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ## EXAMPLES
 

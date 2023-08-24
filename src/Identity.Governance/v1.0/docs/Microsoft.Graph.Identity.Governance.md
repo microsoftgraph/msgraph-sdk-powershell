@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: b4fc9745-9aa1-40f6-9bdf-2f493548654c
+Module Guid: cd419a69-cbfb-4f15-bd17-55d8bc566714
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1053,8 +1053,7 @@ Returned only on $select.
 The related workflow task
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreement](Get-MgIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve all files related to an agreement.
-This includes the default file and all localized files.
+Retrieve the properties and relationships of an agreement object.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.

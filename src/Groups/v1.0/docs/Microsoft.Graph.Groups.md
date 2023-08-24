@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: bdb362fb-4faa-4b08-b3bd-7cd07bd2021c
+Module Guid: fc7ab2f8-e644-4ac6-8039-0cbe982ae170
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -312,9 +312,6 @@ Get the number of the resource
 ### [Get-MgGroupMemberGroup](Get-MgGroupMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgGroupMemberObject](Get-MgGroupMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -468,9 +465,6 @@ Invoke function delta
 ### [Get-MgGroupPermissionGrantMemberGroup](Get-MgGroupPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgGroupPermissionGrantMemberObject](Get-MgGroupPermissionGrantMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -522,9 +516,6 @@ This operation allows retrieval of the properties of the groupSettingTemplate ob
 ### [Get-MgGroupSettingTemplateMemberGroup](Get-MgGroupSettingTemplateMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgGroupSettingTemplateMemberObject](Get-MgGroupSettingTemplateMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -550,7 +541,8 @@ Invoke function getCompatibleHubContentTypes
 Invoke function getActivitiesByInterval
 
 ### [Get-MgGroupThread](Get-MgGroupThread.md)
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ### [Get-MgGroupThreadCount](Get-MgGroupThreadCount.md)
 Get the number of the resource
@@ -791,8 +783,9 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -805,8 +798,9 @@ You can create an open extension in a resource instance and store custom data to
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -817,9 +811,6 @@ The table in the Permissions section lists the resources that support open exten
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 The table in the Permissions section lists the resources that support open extensions.
-
-### [Invoke-MgRetryGroupServiceProvisioning](Invoke-MgRetryGroupServiceProvisioning.md)
-Invoke action retryServiceProvisioning
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
 Postpone a reminder for an event in a user calendar until a new time.
@@ -858,9 +849,7 @@ Users in the accepted senders list can post to conversations of the group .
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.

@@ -15,7 +15,7 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgBetaTeamChannel'))
 }
 
 Describe 'Get-MgBetaTeamChannel' {
-    It 'List1' -skip {
+    It 'List' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
@@ -23,7 +23,19 @@ Describe 'Get-MgBetaTeamChannel' {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
+    It 'Get' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'List1' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
     It 'GetViaIdentity1' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'GetViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 8da1b2dd-517b-4b4e-9e64-b32edde9e0e0
+Module Guid: d850f946-8957-46dc-a4df-5f305a228a87
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -207,9 +207,6 @@ Some common uses for this function are to:
 ### [Get-MgBetaUserChatPermissionGrantMemberGroup](Get-MgBetaUserChatPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaUserChatPermissionGrantMemberObject](Get-MgBetaUserChatPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
@@ -228,9 +225,6 @@ Some common uses for this function are to:
 ### [Get-MgBetaUserDeviceMemberGroup](Get-MgBetaUserDeviceMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaUserDeviceMemberObject](Get-MgBetaUserDeviceMemberObject.md)
 Invoke action getMemberObjects
@@ -255,9 +249,6 @@ The requested MailTips are returned in a mailTips collection.
 ### [Get-MgBetaUserMemberGroup](Get-MgBetaUserMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaUserMemberObject](Get-MgBetaUserMemberObject.md)
 Invoke action getMemberObjects
@@ -277,9 +268,6 @@ Some common uses for this function are to:
 ### [Get-MgBetaUserPermissionGrantMemberGroup](Get-MgBetaUserPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaUserPermissionGrantMemberObject](Get-MgBetaUserPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
@@ -463,7 +451,7 @@ Perform MDM key recovery and TPM attestation
 ### [Invoke-MgBetaInitiateUserManagedDeviceOnDemandProactiveRemediation](Invoke-MgBetaInitiateUserManagedDeviceOnDemandProactiveRemediation.md)
 Perform On Demand Proactive Remediation
 
-### [Invoke-MgBetaInvalidateAllUserRefreshToken](Invoke-MgBetaInvalidateAllUserRefreshToken.md)
+### [Invoke-MgBetaInvalidateUserRefreshToken](Invoke-MgBetaInvalidateUserRefreshToken.md)
 Invalidates all of the user's refresh tokens issued to applications (as well as session cookies in a user's browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time.
 Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.
 This operation would prevent access to any of the organization's data accessed through applications on the device without the user first being required to sign in again.
@@ -921,7 +909,7 @@ The following are the steps to attach a file to a Microsoft To Do task using an 
 ### [Publish-MgBetaUserDriveListContentType](Publish-MgBetaUserDriveListContentType.md)
 Publishes a [contentType][] present in a content type hub site.
 
-### [Remove-MgBetaAllUserDeviceFromManagement](Remove-MgBetaAllUserDeviceFromManagement.md)
+### [Remove-MgBetaUserDeviceFromManagement](Remove-MgBetaUserDeviceFromManagement.md)
 Retire all devices from management for this user
 
 ### [Remove-MgBetaUserDriveItemPermanent](Remove-MgBetaUserDriveItemPermanent.md)

@@ -10399,11 +10399,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: Get riskDetection
-      description: Retrieve the properties of a riskDetection object.
+      summary: List riskDetection
+      description: Retrieve the properties of a collection of riskDetection objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -11167,11 +11167,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: Get riskyUser
-      description: Retrieve the properties and relationships of a riskyUser object.
+      summary: List riskyUsers
+      description: Retrieve the properties and relationships of a collection of riskyUser objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'

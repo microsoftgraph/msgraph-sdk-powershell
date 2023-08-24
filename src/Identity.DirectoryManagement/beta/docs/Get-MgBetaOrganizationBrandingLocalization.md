@@ -43,7 +43,7 @@ To retrieve a localization branding object, specify the value of id in the URL.
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId
+Get-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ## PARAMETERS
 

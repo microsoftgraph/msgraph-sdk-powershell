@@ -41,16 +41,18 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions"
 ```
 
-Get-MgBetaEducationUserAssignment -EducationUserId $educationUserId
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationUserAssignment -EducationUserId $educationUserId
 ```
 
-Get-MgBetaEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions"
+
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 4b6b7335-0d80-4967-8f12-a0e7629f0898
+Module Guid: df518a0d-d92b-4ed1-975b-2d3307bfa722
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -112,7 +112,7 @@ Retrieve the properties and relationships of a authenticationContextClassReferen
 Get the number of the resource
 
 ### [Get-MgIdentityConditionalAccessNamedLocation](Get-MgIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
 
 ### [Get-MgIdentityConditionalAccessNamedLocationCount](Get-MgIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource

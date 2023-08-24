@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: ff6cd481-a0e4-470a-b46d-212bc09ac892
+Module Guid: 4705fd52-ac1a-43df-a248-832e1fefdbbd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -122,7 +122,7 @@ Presenters' information of the virtual event.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSession](Get-MgBetaVirtualEventSession.md)
-Sessions of the virtual event.
+Read the properties and relationships of a virtualEventSession object.
 
 ### [Get-MgBetaVirtualEventSessionAlternativeRecording](Get-MgBetaVirtualEventSessionAlternativeRecording.md)
 The content stream of the alternative recording of a Microsoft Teams live event.
@@ -208,6 +208,9 @@ Get the number of the resource
 The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
+### [Get-MgBetaVirtualEventSessionVirtualAppointment](Get-MgBetaVirtualEventSessionVirtualAppointment.md)
+Read the properties and relationships of a virtualAppointment object.
+
 ### [Get-MgBetaVirtualEventWebinar](Get-MgBetaVirtualEventWebinar.md)
 Read the properties and relationships of a virtualEventWebinar object.
 
@@ -251,7 +254,7 @@ The content stream of the recording of a Teams live event.
 Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSession](Get-MgBetaVirtualEventWebinarSession.md)
-Sessions of the virtual event.
+Read the properties and relationships of a virtualEventSession object.
 
 ### [Get-MgBetaVirtualEventWebinarSessionAlternativeRecording](Get-MgBetaVirtualEventWebinarSessionAlternativeRecording.md)
 The content stream of the alternative recording of a Microsoft Teams live event.
@@ -336,6 +339,9 @@ Get the number of the resource
 ### [Get-MgBetaVirtualEventWebinarSessionTranscriptMetadataContent](Get-MgBetaVirtualEventWebinarSessionTranscriptMetadataContent.md)
 The time-aligned metadata of the utterances in the transcript.
 Read-only.
+
+### [Get-MgBetaVirtualEventWebinarSessionVirtualAppointment](Get-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
+Read the properties and relationships of a virtualAppointment object.
 
 ### [New-MgBetaBookingBusiness](New-MgBetaBookingBusiness.md)
 Create a new Microsoft Bookings business in a tenant.
@@ -519,7 +525,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventSessionRegistration](Remove-MgBetaVirtualEventSessionRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -529,6 +535,9 @@ Delete navigation property registrants for solutions
 
 ### [Remove-MgBetaVirtualEventSessionTranscript](Remove-MgBetaVirtualEventSessionTranscript.md)
 Delete navigation property transcripts for solutions
+
+### [Remove-MgBetaVirtualEventSessionVirtualAppointment](Remove-MgBetaVirtualEventSessionVirtualAppointment.md)
+Delete a virtualAppointment object.
 
 ### [Remove-MgBetaVirtualEventWebinar](Remove-MgBetaVirtualEventWebinar.md)
 Delete navigation property webinars for solutions
@@ -558,7 +567,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistration](Remove-MgBetaVirtualEventWebinarSessionRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -568,6 +577,9 @@ Delete navigation property registrants for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionTranscript](Remove-MgBetaVirtualEventWebinarSessionTranscript.md)
 Delete navigation property transcripts for solutions
+
+### [Remove-MgBetaVirtualEventWebinarSessionVirtualAppointment](Remove-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
+Delete a virtualAppointment object.
 
 ### [Set-MgBetaVirtualEventSessionAlternativeRecording](Set-MgBetaVirtualEventSessionAlternativeRecording.md)
 The content stream of the alternative recording of a Microsoft Teams live event.
@@ -739,6 +751,9 @@ Update the navigation property registrants in solutions
 ### [Update-MgBetaVirtualEventSessionTranscript](Update-MgBetaVirtualEventSessionTranscript.md)
 Update the navigation property transcripts in solutions
 
+### [Update-MgBetaVirtualEventSessionVirtualAppointment](Update-MgBetaVirtualEventSessionVirtualAppointment.md)
+Create a new virtualAppointment object.
+
 ### [Update-MgBetaVirtualEventWebinar](Update-MgBetaVirtualEventWebinar.md)
 Update the navigation property webinars in solutions
 
@@ -777,4 +792,7 @@ Update the navigation property registrants in solutions
 
 ### [Update-MgBetaVirtualEventWebinarSessionTranscript](Update-MgBetaVirtualEventWebinarSessionTranscript.md)
 Update the navigation property transcripts in solutions
+
+### [Update-MgBetaVirtualEventWebinarSessionVirtualAppointment](Update-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
+Create a new virtualAppointment object.
 

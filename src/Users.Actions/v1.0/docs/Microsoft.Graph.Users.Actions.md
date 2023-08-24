@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: eec24f3a-5000-4e08-95b3-d3fb4fdd45eb
+Module Guid: 9abd1e27-8649-4caa-9a41-c19a7597d1c2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -141,9 +141,6 @@ Some common uses for this function are to:
 ### [Get-MgUserChatPermissionGrantMemberGroup](Get-MgUserChatPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgUserChatPermissionGrantMemberObject](Get-MgUserChatPermissionGrantMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -161,9 +158,6 @@ The requested MailTips are returned in a mailTips collection.
 ### [Get-MgUserMemberGroup](Get-MgUserMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgUserMemberObject](Get-MgUserMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -375,9 +369,6 @@ Alternatively, create a draft to reply to an existing message and send it later.
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
 Retire a device
 
-### [Invoke-MgRetryUserServiceProvisioning](Invoke-MgRetryUserServiceProvisioning.md)
-Invoke action retryServiceProvisioning
-
 ### [Invoke-MgScanUserManagedDeviceWindowsDefender](Invoke-MgScanUserManagedDeviceWindowsDefender.md)
 Not yet documented
 
@@ -586,7 +577,7 @@ The following are the steps to attach a file to a Microsoft To Do task using an 
 ### [Publish-MgUserDriveListContentType](Publish-MgUserDriveListContentType.md)
 Publishes a [contentType][] present in the content type hub site.
 
-### [Remove-MgAllUserDeviceFromManagement](Remove-MgAllUserDeviceFromManagement.md)
+### [Remove-MgUserDeviceFromManagement](Remove-MgUserDeviceFromManagement.md)
 Retire all devices from management for this user
 
 ### [Remove-MgUserDriveItemPermanent](Remove-MgUserDriveItemPermanent.md)

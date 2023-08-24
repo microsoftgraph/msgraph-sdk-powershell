@@ -25,17 +25,10 @@ Retrieve a list of classes owned by a school.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Education
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+Get-MgBetaEducationSchoolClass -EducationSchoolId $educationSchoolId
 
 ## PARAMETERS
 

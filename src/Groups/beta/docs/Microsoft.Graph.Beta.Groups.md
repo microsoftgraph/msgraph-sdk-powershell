@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: 06ead008-547e-4d51-8e8c-accb4ea9ac34
+Module Guid: 52996405-e214-4309-bc7a-461d8caadc7c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -352,9 +352,6 @@ Get the number of the resource
 ### [Get-MgBetaGroupMemberGroup](Get-MgBetaGroupMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaGroupMemberObject](Get-MgBetaGroupMemberObject.md)
 Invoke action getMemberObjects
@@ -501,9 +498,6 @@ Invoke function delta
 ### [Get-MgBetaGroupPermissionGrantMemberGroup](Get-MgBetaGroupPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaGroupPermissionGrantMemberObject](Get-MgBetaGroupPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
@@ -857,30 +851,32 @@ Renew a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgBetaReplyGroupConversationThread](Invoke-MgBetaReplyGroupConversationThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgBetaReplyGroupConversationThreadPost](Invoke-MgBetaReplyGroupConversationThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgBetaReplyGroupConversationThreadPostInReplyTo](Invoke-MgBetaReplyGroupConversationThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgBetaReplyGroupThread](Invoke-MgBetaReplyGroupThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgBetaReplyGroupThreadPost](Invoke-MgBetaReplyGroupThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgBetaReplyGroupThreadPostInReplyTo](Invoke-MgBetaReplyGroupThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgBetaRetryGroupServiceProvisioning](Invoke-MgBetaRetryGroupServiceProvisioning.md)
 Retry the group service provisioning.
@@ -1190,7 +1186,7 @@ Delete navigation property settings for groups
 Unfollow a user's site or multiple sites.
 
 ### [Remove-MgBetaGroupThread](Remove-MgBetaGroupThread.md)
-Delete conversationThread.
+Delete a thread object.
 
 ### [Remove-MgBetaGroupThreadPostAttachment](Remove-MgBetaGroupThreadPostAttachment.md)
 Delete navigation property attachments for groups

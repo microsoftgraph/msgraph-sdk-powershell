@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: aef0bacb-20a2-4c16-877b-088e1d27a502
+Module Guid: 01c3b3e7-54c4-44d3-bd32-42b246d26140
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -299,7 +299,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1142,7 +1142,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1286,30 +1286,6 @@ Read the properties of a richLongRunningOperation object.
 
 ### [Get-MgBetaSiteOperationCount](Get-MgBetaSiteOperationCount.md)
 Get the number of the resource
-
-### [Get-MgBetaSitePage](Get-MgBetaSitePage.md)
-Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
-
-### [Get-MgBetaSitePageCount](Get-MgBetaSitePageCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSitePageCreatedByUser](Get-MgBetaSitePageCreatedByUser.md)
-Get createdByUser from sites
-
-### [Get-MgBetaSitePageCreatedByUserMailboxSetting](Get-MgBetaSitePageCreatedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
-### [Get-MgBetaSitePageLastModifiedByUser](Get-MgBetaSitePageLastModifiedByUser.md)
-Get lastModifiedByUser from sites
-
-### [Get-MgBetaSitePageLastModifiedByUserMailboxSetting](Get-MgBetaSitePageLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
 
 ### [Get-MgBetaSitePermission](Get-MgBetaSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
@@ -1963,9 +1939,6 @@ Create new navigation property to subscriptions for sites
 ### [New-MgBetaSiteOperation](New-MgBetaSiteOperation.md)
 Create new navigation property to operations for sites
 
-### [New-MgBetaSitePage](New-MgBetaSitePage.md)
-Create a new [sitePage][] in the site pages [list][] in a [site][].
-
 ### [New-MgBetaSitePermission](New-MgBetaSitePermission.md)
 Create a new permission object on a site.
 
@@ -2349,9 +2322,6 @@ Delete navigation property subscriptions for sites
 
 ### [Remove-MgBetaSiteOperation](Remove-MgBetaSiteOperation.md)
 Delete navigation property operations for sites
-
-### [Remove-MgBetaSitePage](Remove-MgBetaSitePage.md)
-Delete navigation property pages for sites
 
 ### [Remove-MgBetaSitePermission](Remove-MgBetaSitePermission.md)
 Delete navigation property permissions for sites
@@ -2877,15 +2847,6 @@ Invoke action onenotePatchContent
 
 ### [Update-MgBetaSiteOperation](Update-MgBetaSiteOperation.md)
 Update the navigation property operations in sites
-
-### [Update-MgBetaSitePage](Update-MgBetaSitePage.md)
-Update the navigation property pages in sites
-
-### [Update-MgBetaSitePageCreatedByUserMailboxSetting](Update-MgBetaSitePageCreatedByUserMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgBetaSitePageLastModifiedByUserMailboxSetting](Update-MgBetaSitePageLastModifiedByUserMailboxSetting.md)
-Update property mailboxSettings value.
 
 ### [Update-MgBetaSitePermission](Update-MgBetaSitePermission.md)
 Update the permission object on a site.

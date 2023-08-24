@@ -212,8 +212,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[ParentIndex <Int32?>]`: Index of parent schema item to track nested schema items
     - `[SchemaItemKey <String>]`: Unique key the application uses to identify the item
     - `[Selections <IMicrosoftGraphKeyValuePair[]>]`: List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-      - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-      - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+      - `[Name <String>]`: Name for this key-value pair
+      - `[Value <String>]`: Value for this key-value pair
   - `[SchemaItems <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]>]`: Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
 
 `NESTEDSCHEMAITEMS <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]>`: Collection of items each representing a named configuration option in the schema. It contains a flat list of all configuration.
@@ -228,8 +228,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ParentIndex <Int32?>]`: Index of parent schema item to track nested schema items
   - `[SchemaItemKey <String>]`: Unique key the application uses to identify the item
   - `[Selections <IMicrosoftGraphKeyValuePair[]>]`: List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Name <String>]`: Name for this key-value pair
+    - `[Value <String>]`: Value for this key-value pair
 
 `SCHEMAITEMS <IMicrosoftGraphAndroidManagedStoreAppConfigurationSchemaItem[]>`: Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.
   - `[DataType <String>]`: Data type for a configuration item inside an Android application's custom configuration schema
@@ -243,8 +243,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[ParentIndex <Int32?>]`: Index of parent schema item to track nested schema items
   - `[SchemaItemKey <String>]`: Unique key the application uses to identify the item
   - `[Selections <IMicrosoftGraphKeyValuePair[]>]`: List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
-    - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-    - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+    - `[Name <String>]`: Name for this key-value pair
+    - `[Value <String>]`: Value for this key-value pair
 
 ## RELATED LINKS
 

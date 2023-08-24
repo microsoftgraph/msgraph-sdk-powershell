@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Create a new win32LobApp object.
+Create a new microsoftStoreForBusinessApp object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-C
 ```
 
 ## DESCRIPTION
-Create a new win32LobApp object.
+Create a new microsoftStoreForBusinessApp object.
 
 ## EXAMPLES
 

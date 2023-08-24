@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Deletes a managedAndroidStoreApp.
+Deletes a iosLobApp.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Deletes a managedAndroidStoreApp.
+Deletes a iosLobApp.
 
 ## EXAMPLES
 

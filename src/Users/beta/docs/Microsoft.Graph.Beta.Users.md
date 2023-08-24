@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: d8f52631-6831-4e1d-bde1-eadecc4ff564
+Module Guid: 3fd28d00-d9eb-4857-bcee-1e1b2e3730cf
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -265,7 +265,7 @@ Get the number of the resource
 Directory objects that are owned by the user.
 Read-only.
 Nullable.
-Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgBetaUserOwnedObjectAsApplication](Get-MgBetaUserOwnedObjectAsApplication.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.application

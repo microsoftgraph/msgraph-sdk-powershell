@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementManagedEBookAssignment
 
 ## SYNOPSIS
-Deletes a managedEBookAssignment.
+Deletes a iosVppEBookAssignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementManagedEBookAssignment -InputObject <IDevicesCorpora
 ```
 
 ## DESCRIPTION
-Deletes a managedEBookAssignment.
+Deletes a iosVppEBookAssignment.
 
 ## EXAMPLES
 

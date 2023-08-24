@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 
 ## SYNOPSIS
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 ```
 
 ## DESCRIPTION
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ## EXAMPLES
 
@@ -278,7 +278,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy
-  - `[MultiTenantOrganizationMemberId <String>]`: The unique identifier of multiTenantOrganizationMember
   - `[NamedLocationId <String>]`: The unique identifier of namedLocation
   - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
   - `[OrganizationId <String>]`: The unique identifier of organization

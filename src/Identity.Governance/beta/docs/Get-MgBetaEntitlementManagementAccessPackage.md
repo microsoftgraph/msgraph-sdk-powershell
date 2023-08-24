@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBetaEntitlementManagementAccessPackage
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ## SYNTAX
 
@@ -56,7 +58,9 @@ Get-MgBetaEntitlementManagementAccessPackage -DisplayNameEq <String> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ## EXAMPLES
 

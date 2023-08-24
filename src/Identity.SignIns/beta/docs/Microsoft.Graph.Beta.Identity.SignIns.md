@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: a1facae9-8e7e-406e-b87b-c346a4b598d8
+Module Guid: 23a46484-03ed-4450-90fe-528a06f1fee4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -215,7 +215,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -236,8 +236,7 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of an authenticationEventListener object.
-The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -636,7 +635,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a riskDetection object.
+Retrieve the properties of a collection of riskDetection objects.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -669,18 +668,6 @@ Get the number of the resource
 Read the properties and relationships of a servicePrincipalRiskDetection object.
 
 ### [Get-MgBetaServicePrincipalRiskDetectionCount](Get-MgBetaServicePrincipalRiskDetectionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaTenantRelationshipMultiTenantOrganization](Get-MgBetaTenantRelationshipMultiTenantOrganization.md)
-Get multiTenantOrganization from tenantRelationships
-
-### [Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
-Get joinRequest from tenantRelationships
-
-### [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
-Get tenants from tenantRelationships
-
-### [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenantCount](Get-MgBetaTenantRelationshipMultiTenantOrganizationTenantCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTrustFramework](Get-MgBetaTrustFramework.md)
@@ -1135,9 +1122,6 @@ Create new navigation property to history for identityProtection
 ### [New-MgBetaServicePrincipalRiskDetection](New-MgBetaServicePrincipalRiskDetection.md)
 Create new navigation property to servicePrincipalRiskDetections for identityProtection
 
-### [New-MgBetaTenantRelationshipMultiTenantOrganizationTenant](New-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
-Create new navigation property to tenants for tenantRelationships
-
 ### [New-MgBetaTrustFrameworkKeySet](New-MgBetaTrustFrameworkKeySet.md)
 Create a new trustFrameworkKeySet.
 The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
@@ -1476,15 +1460,6 @@ Delete navigation property history for identityProtection
 ### [Remove-MgBetaServicePrincipalRiskDetection](Remove-MgBetaServicePrincipalRiskDetection.md)
 Delete navigation property servicePrincipalRiskDetections for identityProtection
 
-### [Remove-MgBetaTenantRelationshipMultiTenantOrganization](Remove-MgBetaTenantRelationshipMultiTenantOrganization.md)
-Delete navigation property multiTenantOrganization for tenantRelationships
-
-### [Remove-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Remove-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
-Delete navigation property joinRequest for tenantRelationships
-
-### [Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant](Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
-Delete navigation property tenants for tenantRelationships
-
 ### [Remove-MgBetaTrustFrameworkKeySet](Remove-MgBetaTrustFrameworkKeySet.md)
 Delete a trustFrameworkKeySet.
 
@@ -1575,9 +1550,6 @@ Update the ref of navigation property postFederationSignup in identity
 
 ### [Set-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder](Set-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder.md)
 Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-
-### [Set-MgBetaTenantRelationshipMultiTenantOrganization](Set-MgBetaTenantRelationshipMultiTenantOrganization.md)
-Update the navigation property multiTenantOrganization in tenantRelationships
 
 ### [Set-MgBetaTrustFrameworkPolicyContent](Set-MgBetaTrustFrameworkPolicyContent.md)
 Update media content for the navigation property policies in trustFramework
@@ -1804,7 +1776,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ### [Update-MgBetaPolicyDefaultAppManagementPolicy](Update-MgBetaPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.
@@ -1891,12 +1863,6 @@ Update the navigation property history in identityProtection
 
 ### [Update-MgBetaServicePrincipalRiskDetection](Update-MgBetaServicePrincipalRiskDetection.md)
 Update the navigation property servicePrincipalRiskDetections in identityProtection
-
-### [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
-Update the navigation property joinRequest in tenantRelationships
-
-### [Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant](Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
-Update the navigation property tenants in tenantRelationships
 
 ### [Update-MgBetaTrustFramework](Update-MgBetaTrustFramework.md)
 Update trustFramework

@@ -9791,10 +9791,10 @@ paths:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
       summary: Create connectorGroup
-      description: Create a connectorGroup object.
+      description: Create a new connectorGroup.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_CreateConnectorGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -25652,7 +25652,6 @@ components:
       properties:
         isSipEnabled:
           type: boolean
-          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -25840,14 +25839,11 @@ components:
       properties:
         isSipEnabled:
           type: boolean
-          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
         sipDeploymentLocation:
           type: string
-          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           nullable: true
         sipPrimaryAddress:
           type: string
-          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
           nullable: true
       additionalProperties:
         type: object

@@ -14,10 +14,11 @@ Retrieving the content of the transcript returns the stream of text associated w
 
 ## SYNTAX
 
-### Get1 (Default)
+### List (Default)
 ```
-Get-MgBetaCommunicationOnlineMeetingTranscript [-Count] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+Get-MgBetaCommunicationOnlineMeetingTranscript -OnlineMeetingId <String> [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -30,13 +31,6 @@ Get-MgBetaCommunicationOnlineMeetingTranscript -CallTranscriptId <String> -Onlin
 ```
 Get-MgBetaCommunicationOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### List
-```
-Get-MgBetaCommunicationOnlineMeetingTranscript -OnlineMeetingId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,21 +86,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Get1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -CountVariable
 Specifies a count of the total number of items in a collection.
 By default, this variable will be set in the global scope.
@@ -128,7 +107,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: (All)
 Aliases: Expand
 
 Required: False
@@ -143,7 +122,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -219,7 +198,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -234,7 +213,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Get1, List
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -249,7 +228,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get1, List
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -264,7 +243,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Get1, List
+Parameter Sets: List
 Aliases: Limit
 
 Required: False

@@ -50,13 +50,13 @@ Read more about presence sessions and their time-out and expiration.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users.Actions
+$params = @{
+	SessionId = "22553876-f5ab-4529-bffb-cfe50aa89f87"
+}
+Clear-MgBetaUserPresence -UserId $userId -BodyParameter $params
 ```
 
-$params = @{
-	sessionId = "22553876-f5ab-4529-bffb-cfe50aa89f87"
-}
 
-Clear-MgBetaUserPresence -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

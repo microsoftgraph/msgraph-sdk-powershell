@@ -16,8 +16,7 @@ Update the navigation property recordings in solutions
 ```
 Update-MgBetaVirtualEventSessionRecording -CallRecordingId <String> -VirtualEventId <String>
  -VirtualEventSessionId <String> [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>]
- [-CreatedDateTime <DateTime>] [-Id <String>] [-MeetingId <String>] [-MeetingOrganizerId <String>]
- [-RecordingContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -36,8 +35,8 @@ Update-MgBetaVirtualEventSessionRecording -InputObject <IBookingsIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaVirtualEventSessionRecording -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-MeetingId <String>]
- [-MeetingOrganizerId <String>] [-RecordingContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -173,54 +172,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -MeetingId
-The unique identifier of the onlineMeeting related to this recording.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MeetingOrganizerId
-The unique identifier of the organizer of the onlineMeeting related to this recording.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RecordingContentUrl
-The URL which can be used to access the content of the recording.
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -VirtualEventId
 The unique identifier of virtualEvent
 
@@ -309,9 +260,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Content <Byte[]>]`: The content of the recording. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
-  - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
-  - `[RecordingContentUrl <String>]`: The URL which can be used to access the content of the recording. Read-only.
 
 `INPUTOBJECT <IBookingsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

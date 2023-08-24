@@ -51,13 +51,6 @@ Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 Get-MgBetaOrganizationBranding -OrganizationId $organizationId
 
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-```
-
-Get-MgBetaOrganizationBranding -OrganizationId $organizationId
-
 ## PARAMETERS
 
 ### -ExpandProperty

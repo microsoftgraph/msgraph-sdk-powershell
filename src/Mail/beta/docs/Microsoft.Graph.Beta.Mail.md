@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: 642c24de-3a24-4621-9414-e041adc4d083
+Module Guid: fb158253-2087-4368-b8dc-748da1ac5c16
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -302,7 +302,7 @@ If an override exists for a sender and the sender changes his/her display name, 
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgBetaUserMailFolder](Update-MgBetaUserMailFolder.md)
-Update the properties of mailFolder object.
+Update the writable properties of a mailSearchFolder object.
 
 ### [Update-MgBetaUserMailFolderChildFolder](Update-MgBetaUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users
@@ -326,7 +326,7 @@ Update the navigation property extensions in users
 Change writable properties on a messageRule object and save the changes.
 
 ### [Update-MgBetaUserMessage](Update-MgBetaUserMessage.md)
-Update the properties of a message object.
+Update the properties of an eventMessage object.
 
 ### [Update-MgBetaUserMessageExtension](Update-MgBetaUserMessageExtension.md)
 Update the navigation property extensions in users

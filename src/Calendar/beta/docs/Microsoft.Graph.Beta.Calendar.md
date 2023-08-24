@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Calendar
-Module Guid: 175e7433-6d76-4064-bf5e-b91283863eca
+Module Guid: 10e98aa5-d5b9-4b4c-9fa1-3549b2060c5a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.calendar
 Help Version: 1.0.0.0
 Locale: en-US

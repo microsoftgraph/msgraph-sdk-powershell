@@ -41,21 +41,7 @@ Read the properties and relationships of a customSecurityAttributeDefinition obj
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaDirectoryCustomSecurityAttributeDefinition
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-```
-
-Get-MgBetaDirectoryCustomSecurityAttributeDefinition -Filter "name eq 'Project' and status eq 'Available'"
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-```
-
-Get-MgBetaDirectoryCustomSecurityAttributeDefinition -Filter "attributeSet eq 'Engineering' and status eq 'Available' and type eq 'String'"
+Get-MgBetaDirectoryCustomSecurityAttributeDefinition -CustomSecurityAttributeDefinitionId $customSecurityAttributeDefinitionId
 
 ## PARAMETERS
 

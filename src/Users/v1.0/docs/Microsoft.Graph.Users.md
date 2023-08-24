@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: e622a59c-0ba8-4fa7-ad3e-09de4d5fd5e1
+Module Guid: 438be6cc-3432-45b1-a16a-528e7cc315a7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -301,7 +301,9 @@ Get the number of the resource
 Get the number of the resource
 
 ### [New-MgUser](New-MgUser.md)
-Create a new user object.
+Create a new user.\nThe request body contains the user to create.
+At a minimum, you must specify the required properties for the user.
+You can optionally specify any other writable properties.
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
 Create new navigation property to extensions for users
@@ -335,7 +337,10 @@ For example, you can associate a task with an email item in Outlook that spurred
 You can also create a linkedResource object while creating a task.
 
 ### [Remove-MgUser](Remove-MgUser.md)
-Deletes a user.
+Delete user.
+ When deleted, user resources are moved to a temporary container and can be restored within 30 days.
+After that time, they are permanently deleted.
+To learn more, see deletedItems.
 
 ### [Remove-MgUserExtension](Remove-MgUserExtension.md)
 Delete navigation property extensions for users

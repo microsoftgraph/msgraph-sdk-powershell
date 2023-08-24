@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: be78f6f6-8deb-4b3a-b0ba-e1c7113e2301
+Module Guid: 3f6fbf87-d406-47c0-955a-b2d47af92c86
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -197,12 +197,6 @@ This allows you to maintain and synchronize a local store of a user's messages w
 
 ### [Get-MgBetaUserOnenoteRecentNotebook](Get-MgBetaUserOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
-
-### [Get-MgBetaUserOnlineMeetingRecording](Get-MgBetaUserOnlineMeetingRecording.md)
-Invoke function getAllRecordings
-
-### [Get-MgBetaUserOnlineMeetingTranscript](Get-MgBetaUserOnlineMeetingTranscript.md)
-Invoke function getAllTranscripts
 
 ### [Get-MgBetaUserOnlineMeetingVirtualAppointmentJoinWebUrl](Get-MgBetaUserOnlineMeetingVirtualAppointmentJoinWebUrl.md)
 Invoke function getVirtualAppointmentJoinWebUrl

@@ -42272,11 +42272,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
-      description: Delete conversationThread.
+      summary: Delete conversation thread
+      description: Delete a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -60211,11 +60211,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object

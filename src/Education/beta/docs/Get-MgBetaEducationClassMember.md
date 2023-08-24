@@ -28,9 +28,10 @@ Note that if the delegated token is used, members can only be seen by other memb
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
+Get-MgBetaEducationClassMember -EducationClassId $educationClassId
 ```
 
-Get-MgBetaEducationClassMember -EducationClassId $educationClassId
+
 
 ## PARAMETERS
 

@@ -1120,8 +1120,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `AUTHENTICATIONBEHAVIORS <IMicrosoftGraphAuthenticationBehaviors>`: authenticationBehaviors
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[RemoveUnverifiedEmailClaim <Boolean?>]`: Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
-  - `[RequireClientServicePrincipal <Boolean?>]`: Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+  - `[RemoveUnverifiedEmailClaim <Boolean?>]`: Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+  - `[RequireClientServicePrincipal <Boolean?>]`: 
 
 `BODYPARAMETER <IMicrosoftGraphApplication>`: application
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1176,8 +1176,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
   - `[AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]`: authenticationBehaviors
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[RemoveUnverifiedEmailClaim <Boolean?>]`: Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
-    - `[RequireClientServicePrincipal <Boolean?>]`: Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+    - `[RemoveUnverifiedEmailClaim <Boolean?>]`: Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+    - `[RequireClientServicePrincipal <Boolean?>]`: 
   - `[Certification <IMicrosoftGraphCertification>]`: certification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CertificationExpirationDateTime <DateTime?>]`: The timestamp when the current certification for the application will expire.
@@ -1491,8 +1491,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Value <Int64?>]`: Total number of synchronized objects.
         - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
       - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-        - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-        - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+        - `[Name <String>]`: Name for this key-value pair
+        - `[Value <String>]`: Value for this key-value pair
       - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
     - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
       - `[Key <String>]`: synchronizationSecret
@@ -1611,8 +1611,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Value <String>]`: Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..
     - `[AuthenticationBehaviors <IMicrosoftGraphAuthenticationBehaviors>]`: authenticationBehaviors
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[RemoveUnverifiedEmailClaim <Boolean?>]`: Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
-      - `[RequireClientServicePrincipal <Boolean?>]`: Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+      - `[RemoveUnverifiedEmailClaim <Boolean?>]`: Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+      - `[RequireClientServicePrincipal <Boolean?>]`: 
     - `[Certification <IMicrosoftGraphCertification>]`: certification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CertificationExpirationDateTime <DateTime?>]`: The timestamp when the current certification for the application will expire.
@@ -1912,8 +1912,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Value <Int64?>]`: Total number of synchronized objects.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-          - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-          - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+          - `[Name <String>]`: Name for this key-value pair
+          - `[Value <String>]`: Value for this key-value pair
         - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
       - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
         - `[Key <String>]`: synchronizationSecret
@@ -2331,8 +2331,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Value <Int64?>]`: Total number of synchronized objects.
       - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
     - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-      - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
-      - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+      - `[Name <String>]`: Name for this key-value pair
+      - `[Value <String>]`: Value for this key-value pair
     - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
   - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
     - `[Key <String>]`: synchronizationSecret

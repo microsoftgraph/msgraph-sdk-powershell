@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Teams
-Module Guid: 44be9891-41a3-4ad4-9413-a6712d0a7a0b
+Module Guid: 08cd8c09-b195-44a7-b2b2-f92ba46832e7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -108,24 +108,6 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation \nreturned by the Location: header to see if it's 'running' or 'succeeded' or 'failed'.
 \nYou should continue to GET until the status is not 'running'.
 \nThe recommended delay between GETs is 5 seconds.
-
-### [Get-MgBetaAllGroupTeamChannel](Get-MgBetaAllGroupTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
-
-### [Get-MgBetaAllGroupTeamChannelCount](Get-MgBetaAllGroupTeamChannelCount.md)
-Get the number of the resource
-
-### [Get-MgBetaAllTeamChannel](Get-MgBetaAllTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
-
-### [Get-MgBetaAllTeamChannelCount](Get-MgBetaAllTeamChannelCount.md)
-Get the number of the resource
-
-### [Get-MgBetaAllTeamMessage](Get-MgBetaAllTeamMessage.md)
-Invoke function getAllMessages
-
-### [Get-MgBetaAllTeamworkDeletedTeamMessage](Get-MgBetaAllTeamworkDeletedTeamMessage.md)
-Invoke function getAllMessages
 
 ### [Get-MgBetaAppCatalogTeamApp](Get-MgBetaAppCatalogTeamApp.md)
 Get teamsApps from appCatalogs
@@ -237,9 +219,6 @@ Invoke function delta
 ### [Get-MgBetaChatPermissionGrantMemberGroup](Get-MgBetaChatPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaChatPermissionGrantMemberObject](Get-MgBetaChatPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
@@ -270,10 +249,11 @@ The application that is linked to the tab.
 ### [Get-MgBetaGroupTeam](Get-MgBetaGroupTeam.md)
 The team associated with this group.
 
+### [Get-MgBetaGroupTeamAllChannelCount](Get-MgBetaGroupTeamAllChannelCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupTeamChannel](Get-MgBetaGroupTeamChannel.md)
-Retrieve the properties and relationships of a channel.
-This method supports federation.
-Only a user who is a member of the shared channel can retrieve channel information.
+List of channels either hosted in or shared with the team (incoming channels).
 
 ### [Get-MgBetaGroupTeamChannelCount](Get-MgBetaGroupTeamChannelCount.md)
 Get the number of the resource
@@ -548,13 +528,14 @@ Generic representation of a team template definition for a team with a specific 
 ### [Get-MgBetaTeam](Get-MgBetaTeam.md)
 Retrieve the properties and relationships of the specified team.
 
+### [Get-MgBetaTeamAllChannelCount](Get-MgBetaTeamAllChannelCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaTeamAppPreApproval](Get-MgBetaTeamAppPreApproval.md)
 Get Preapproval policy associated with a Teams App.
 
 ### [Get-MgBetaTeamChannel](Get-MgBetaTeamChannel.md)
-Retrieve the properties and relationships of a channel.
-This method supports federation.
-Only a user who is a member of the shared channel can retrieve channel information.
+List of channels either hosted in or shared with the team (incoming channels).
 
 ### [Get-MgBetaTeamChannelCount](Get-MgBetaTeamChannelCount.md)
 Get the number of the resource
@@ -651,6 +632,9 @@ Get a conversationMember from a team.
 ### [Get-MgBetaTeamMemberCount](Get-MgBetaTeamMemberCount.md)
 Get the number of the resource
 
+### [Get-MgBetaTeamMessage](Get-MgBetaTeamMessage.md)
+Invoke function getAllMessages
+
 ### [Get-MgBetaTeamOperation](Get-MgBetaTeamOperation.md)
 The async operations that ran or are running on this team.
 
@@ -688,9 +672,6 @@ Invoke function delta
 ### [Get-MgBetaTeamPermissionGrantMemberGroup](Get-MgBetaTeamPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaTeamPermissionGrantMemberObject](Get-MgBetaTeamPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
@@ -947,6 +928,9 @@ The application that is linked to the tab.
 
 ### [Get-MgBetaTeamworkDeletedTeamCount](Get-MgBetaTeamworkDeletedTeamCount.md)
 Get the number of the resource
+
+### [Get-MgBetaTeamworkDeletedTeamMessage](Get-MgBetaTeamworkDeletedTeamMessage.md)
+Invoke function getAllMessages
 
 ### [Get-MgBetaTeamworkDevice](Get-MgBetaTeamworkDevice.md)
 Get the properties of a Microsoft Teams-enabled device.
@@ -1208,7 +1192,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaChatMessage](New-MgBetaChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
 
 ### [New-MgBetaChatMessageHostedContent](New-MgBetaChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1511,7 +1496,8 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaUserChatMessage](New-MgBetaUserChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
 
 ### [New-MgBetaUserChatMessageHostedContent](New-MgBetaUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users

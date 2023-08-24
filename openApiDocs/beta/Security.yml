@@ -28409,6 +28409,7 @@ paths:
                 - whoisServer
                 - zone
                 - host
+                - history
               type: string
         - name: $expand
           in: query
@@ -28422,6 +28423,7 @@ paths:
               enum:
                 - '*'
                 - host
+                - history
               type: string
       responses:
         2XX:
@@ -46237,6 +46239,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.whoisHistoryRecordCollectionResponse:
+      title: Collection of whoisHistoryRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.emailThreatSubmissionCollectionResponse:
       title: Collection of emailThreatSubmission
       type: object
@@ -55477,11 +55492,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -65166,6 +65181,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.whoisRecordCollectionResponse'
+    microsoft.graph.security.whoisHistoryRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.whoisHistoryRecordCollectionResponse'
     microsoft.graph.security.emailThreatSubmissionCollectionResponse:
       description: Retrieved collection
       content:

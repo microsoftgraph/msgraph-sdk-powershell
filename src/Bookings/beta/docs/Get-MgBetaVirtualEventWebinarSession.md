@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarSession
 
 ## SYNOPSIS
-Sessions of the virtual event.
+Read the properties and relationships of a virtualEventSession object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaVirtualEventWebinarSession -InputObject <IBookingsIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Sessions of the virtual event.
+Read the properties and relationships of a virtualEventSession object.
 
 ## EXAMPLES
 

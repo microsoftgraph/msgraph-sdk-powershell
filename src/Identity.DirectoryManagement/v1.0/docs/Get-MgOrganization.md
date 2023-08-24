@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgOrganization
 
 ## SYNOPSIS
-Get the properties and relationships of the currently authenticated organization.
-Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+Read properties and relationships of the organization object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of the currently authenticated organization.
-Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+Read properties and relationships of the organization object.
 
 ## EXAMPLES
 

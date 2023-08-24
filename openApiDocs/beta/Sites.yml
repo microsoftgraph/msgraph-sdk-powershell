@@ -8877,11 +8877,11 @@ paths:
     get:
       tags:
         - groups.site
-      summary: Get metadata for a list
-      description: 'Return the metadata for a [list][].'
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
       operationId: group.site_GetList
       parameters:
         - name: group-id
@@ -53603,11 +53603,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: Get metadata for a list
-      description: 'Return the metadata for a [list][].'
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a list.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
       operationId: site_GetList
       parameters:
         - name: site-id

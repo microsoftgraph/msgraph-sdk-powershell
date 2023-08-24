@@ -32,12 +32,12 @@ Clear the preferred availability and activity status for a user.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users.Actions
-```
-
 $params = @{
 }
-
 Clear-MgBetaUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
+```
+
+
 
 ## PARAMETERS
 
