@@ -1866,6 +1866,7 @@ components:
         - approve
         - terminate
         - unknownFutureValue
+        - reject
       type: string
     microsoft.graph.delegatedAdminRelationshipRequestStatus:
       title: delegatedAdminRelationshipRequestStatus

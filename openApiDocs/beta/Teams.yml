@@ -2693,11 +2693,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -5702,7 +5702,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -29367,7 +29367,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -44945,7 +44945,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action sendActivityNotificationToRecipients
-      description: "Send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
+      description: "Send activity feed notifications to multiple users, in bulk. For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/teamwork-sendactivitynotificationtorecipients?view=graph-rest-1.0
@@ -45084,11 +45084,11 @@ paths:
     get:
       tags:
         - teamwork.teamTemplate
-      summary: List definitions
-      description: 'List the teamTemplateDefinition objects associated with a teamTemplate. '
+      summary: List teamTemplates
+      description: 'Get the list of teamTemplate objects that are available for a tenant. '
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0
       operationId: teamwork_ListTeamTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -54858,7 +54858,7 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -66549,11 +66549,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -71463,10 +71463,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -72097,7 +72097,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -72724,7 +72724,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -72964,6 +72964,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -73765,10 +73766,11 @@ components:
               nullable: true
             isChatResourceSpecificConsentEnabled:
               type: boolean
-              description: 'Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.'
+              description: Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. False blocks the installation of any Teams app that requires resource-specific permissions in a chat or a meeting.
               nullable: true
             isUserPersonalScopeResourceSpecificConsentEnabled:
               type: boolean
+              description: Indicates whether resource-specific consent for personal scope in Teams apps has been enabled for the tenant. True indicates that Teams apps that are allowed in the tenant and require resource-specific permissions can be installed in the personal scope. False blocks the installation of any Teams app that requires resource-specific permissions in the personal scope.
               nullable: true
           additionalProperties:
             type: object
@@ -74138,11 +74140,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -74774,6 +74776,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -76158,6 +76162,7 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -76326,11 +76331,14 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
         sipDeploymentLocation:
           type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           nullable: true
         sipPrimaryAddress:
           type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
           nullable: true
       additionalProperties:
         type: object
@@ -76771,7 +76779,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
@@ -78944,8 +78952,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -86546,33 +86552,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -86673,6 +86652,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -86692,10 +86683,22 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -89034,11 +89037,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -91340,34 +91343,6 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
           nullable: true
       additionalProperties:
         type: object
