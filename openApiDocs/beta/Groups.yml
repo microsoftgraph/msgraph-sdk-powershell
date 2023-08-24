@@ -12063,10 +12063,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -14570,10 +14570,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -15057,10 +15057,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -16765,7 +16765,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. '
+      description: Restore a driveItem that has been deleted and is currently in the recycle bin.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
@@ -20363,7 +20363,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. '
+      description: Restore a driveItem that has been deleted and is currently in the recycle bin.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
@@ -28653,7 +28653,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -32255,7 +32255,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -40555,7 +40555,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -42312,10 +42312,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -44539,10 +44539,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -44970,10 +44970,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -47956,7 +47956,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -49906,7 +49906,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
@@ -50364,7 +50364,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -50604,6 +50604,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -51548,10 +51549,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -52873,6 +52874,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -53613,10 +53616,11 @@ components:
       properties:
         removeUnverifiedEmailClaim:
           type: boolean
-          description: Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
+          description: Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
           nullable: true
         requireClientServicePrincipal:
           type: boolean
+          description: Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
           nullable: true
       additionalProperties:
         type: object
@@ -54585,6 +54589,7 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -54682,11 +54687,14 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
         sipDeploymentLocation:
           type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           nullable: true
         sipPrimaryAddress:
           type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
           nullable: true
       additionalProperties:
         type: object
@@ -56767,8 +56775,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -59108,11 +59114,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -64158,33 +64164,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -64285,6 +64264,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -64304,10 +64295,22 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -68929,34 +68932,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.attendanceRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -69288,9 +69263,6 @@ components:
     microsoft.graph.dlpActionInfo:
       title: dlpActionInfo
       type: object
-      properties:
-        action:
-          $ref: '#/components/schemas/microsoft.graph.dlpAction'
       additionalProperties:
         type: object
     microsoft.graph.ruleMode:
@@ -71626,13 +71598,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.dlpAction:
-      title: dlpAction
-      enum:
-        - notifyUser
-        - blockAccess
-        - deviceRestriction
-      type: string
     microsoft.graph.termStore.relationType:
       title: relationType
       enum:

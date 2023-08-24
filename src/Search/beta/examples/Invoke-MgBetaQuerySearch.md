@@ -1,28 +1,33 @@
-### Example 1: Using the Invoke-MgBetaQuerySearch Cmdlet
+### Example 1: Code snippet
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Search
+
 $params = @{
-	Requests = @(
+	requests = @(
 		@{
-			EntityTypes = @(
+			entityTypes = @(
 				"externalItem"
 			)
-			ContentSources = @(
+			contentSources = @(
 				"/external/connections/connectionfriendlyname"
 			)
-			Query = @{
-				QueryString = "contoso product"
+			query = @{
+				queryString = "contoso product"
 			}
-			From = 0
-			Size = 25
-			Fields = @(
+			from = 0
+			size = 25
+			fields = @(
 				"title"
 				"description"
 			)
 		}
 	)
 }
+
 Invoke-MgBetaQuerySearch -BodyParameter $params
+
 ```
 This example shows how to use the Invoke-MgBetaQuerySearch Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -30961,6 +30961,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.

@@ -64672,6 +64672,1083 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/sites/{site-id}/pages':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: List baseSitePages
+      description: 'Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/basesitepage-list?view=graph-rest-1.0
+      operationId: site_ListPage
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - eTag
+                - eTag desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - name
+                - name desc
+                - parentReference
+                - parentReference desc
+                - webUrl
+                - webUrl desc
+                - pageLayout
+                - pageLayout desc
+                - publishingState
+                - publishingState desc
+                - title
+                - title desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - eTag
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - name
+                - parentReference
+                - webUrl
+                - pageLayout
+                - publishingState
+                - title
+                - createdByUser
+                - lastModifiedByUser
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.baseSitePageCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.baseSitePage
+      summary: Create a page in the site pages list of a site
+      description: 'Create a new [sitePage][] in the site pages [list][] in a [site][].'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-1.0
+      operationId: site_CreatePage
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{baseSitePage-id}':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: Get baseSitePage
+      description: 'Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0
+      operationId: site_GetPage
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - eTag
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - name
+                - parentReference
+                - webUrl
+                - pageLayout
+                - publishingState
+                - title
+                - createdByUser
+                - lastModifiedByUser
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - createdByUser
+                - lastModifiedByUser
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.baseSitePage
+      summary: Update the navigation property pages in sites
+      operationId: site_UpdatePage
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.baseSitePage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.baseSitePage
+      summary: Delete navigation property pages for sites
+      operationId: site_DeletePage
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{baseSitePage-id}/createdByUser':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: Get createdByUser from sites
+      operationId: site.page_GetCreatedGraphBPreUser
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - signInActivity
+                - accountEnabled
+                - ageGroup
+                - assignedLicenses
+                - assignedPlans
+                - authorizationInfo
+                - businessPhones
+                - city
+                - cloudRealtimeCommunicationInfo
+                - companyName
+                - consentProvidedForMinor
+                - country
+                - createdDateTime
+                - creationType
+                - customSecurityAttributes
+                - department
+                - deviceKeys
+                - displayName
+                - employeeHireDate
+                - employeeId
+                - employeeLeaveDateTime
+                - employeeOrgData
+                - employeeType
+                - externalUserState
+                - externalUserStateChangeDateTime
+                - faxNumber
+                - givenName
+                - identities
+                - imAddresses
+                - infoCatalogs
+                - isLicenseReconciliationNeeded
+                - isManagementRestricted
+                - isResourceAccount
+                - jobTitle
+                - lastPasswordChangeDateTime
+                - legalAgeGroupClassification
+                - licenseAssignmentStates
+                - mail
+                - mailNickname
+                - mobilePhone
+                - officeLocation
+                - onPremisesDistinguishedName
+                - onPremisesDomainName
+                - onPremisesExtensionAttributes
+                - onPremisesImmutableId
+                - onPremisesLastSyncDateTime
+                - onPremisesProvisioningErrors
+                - onPremisesSamAccountName
+                - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
+                - onPremisesSyncEnabled
+                - onPremisesUserPrincipalName
+                - otherMails
+                - passwordPolicies
+                - passwordProfile
+                - postalCode
+                - preferredDataLocation
+                - preferredLanguage
+                - provisionedPlans
+                - proxyAddresses
+                - refreshTokensValidFromDateTime
+                - securityIdentifier
+                - serviceProvisioningErrors
+                - showInAddressList
+                - signInSessionsValidFromDateTime
+                - state
+                - streetAddress
+                - surname
+                - usageLocation
+                - userPrincipalName
+                - userType
+                - mailboxSettings
+                - deviceEnrollmentLimit
+                - print
+                - aboutMe
+                - birthday
+                - hireDate
+                - interests
+                - mySite
+                - pastProjects
+                - preferredName
+                - responsibilities
+                - schools
+                - skills
+                - analytics
+                - cloudPCs
+                - usageRights
+                - informationProtection
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - sponsors
+                - transitiveMemberOf
+                - transitiveReports
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - joinedGroups
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - appConsentRequestsForApproval
+                - approvals
+                - pendingAccessReviewInstances
+                - agreementAcceptances
+                - security
+                - deviceEnrollmentConfigurations
+                - managedDevices
+                - managedAppRegistrations
+                - windowsInformationProtectionDeviceRegistrations
+                - deviceManagementTroubleshootingEvents
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - profile
+                - activities
+                - devices
+                - onlineMeetings
+                - presence
+                - authentication
+                - chats
+                - joinedTeams
+                - permissionGrants
+                - teamwork
+                - todo
+                - employeeExperience
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - analytics
+                - cloudPCs
+                - usageRights
+                - informationProtection
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - sponsors
+                - transitiveMemberOf
+                - transitiveReports
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - joinedGroups
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - appConsentRequestsForApproval
+                - approvals
+                - pendingAccessReviewInstances
+                - agreementAcceptances
+                - security
+                - deviceEnrollmentConfigurations
+                - managedDevices
+                - managedAppRegistrations
+                - windowsInformationProtectionDeviceRegistrations
+                - deviceManagementTroubleshootingEvents
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - profile
+                - activities
+                - devices
+                - onlineMeetings
+                - presence
+                - authentication
+                - chats
+                - joinedTeams
+                - permissionGrants
+                - teamwork
+                - todo
+                - employeeExperience
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.user'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{baseSitePage-id}/createdByUser/mailboxSettings':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: site.page.createdGraphBPreUser_GetMailboxSetting
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - sites.baseSitePage
+      summary: Update property mailboxSettings value.
+      operationId: site.page.createdGraphBPreUser_UpdateMailboxSetting
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/pages/{baseSitePage-id}/lastModifiedByUser':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: Get lastModifiedByUser from sites
+      operationId: site.page_GetLastModifiedGraphBPreUser
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - signInActivity
+                - accountEnabled
+                - ageGroup
+                - assignedLicenses
+                - assignedPlans
+                - authorizationInfo
+                - businessPhones
+                - city
+                - cloudRealtimeCommunicationInfo
+                - companyName
+                - consentProvidedForMinor
+                - country
+                - createdDateTime
+                - creationType
+                - customSecurityAttributes
+                - department
+                - deviceKeys
+                - displayName
+                - employeeHireDate
+                - employeeId
+                - employeeLeaveDateTime
+                - employeeOrgData
+                - employeeType
+                - externalUserState
+                - externalUserStateChangeDateTime
+                - faxNumber
+                - givenName
+                - identities
+                - imAddresses
+                - infoCatalogs
+                - isLicenseReconciliationNeeded
+                - isManagementRestricted
+                - isResourceAccount
+                - jobTitle
+                - lastPasswordChangeDateTime
+                - legalAgeGroupClassification
+                - licenseAssignmentStates
+                - mail
+                - mailNickname
+                - mobilePhone
+                - officeLocation
+                - onPremisesDistinguishedName
+                - onPremisesDomainName
+                - onPremisesExtensionAttributes
+                - onPremisesImmutableId
+                - onPremisesLastSyncDateTime
+                - onPremisesProvisioningErrors
+                - onPremisesSamAccountName
+                - onPremisesSecurityIdentifier
+                - onPremisesSipInfo
+                - onPremisesSyncEnabled
+                - onPremisesUserPrincipalName
+                - otherMails
+                - passwordPolicies
+                - passwordProfile
+                - postalCode
+                - preferredDataLocation
+                - preferredLanguage
+                - provisionedPlans
+                - proxyAddresses
+                - refreshTokensValidFromDateTime
+                - securityIdentifier
+                - serviceProvisioningErrors
+                - showInAddressList
+                - signInSessionsValidFromDateTime
+                - state
+                - streetAddress
+                - surname
+                - usageLocation
+                - userPrincipalName
+                - userType
+                - mailboxSettings
+                - deviceEnrollmentLimit
+                - print
+                - aboutMe
+                - birthday
+                - hireDate
+                - interests
+                - mySite
+                - pastProjects
+                - preferredName
+                - responsibilities
+                - schools
+                - skills
+                - analytics
+                - cloudPCs
+                - usageRights
+                - informationProtection
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - sponsors
+                - transitiveMemberOf
+                - transitiveReports
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - joinedGroups
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - appConsentRequestsForApproval
+                - approvals
+                - pendingAccessReviewInstances
+                - agreementAcceptances
+                - security
+                - deviceEnrollmentConfigurations
+                - managedDevices
+                - managedAppRegistrations
+                - windowsInformationProtectionDeviceRegistrations
+                - deviceManagementTroubleshootingEvents
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - profile
+                - activities
+                - devices
+                - onlineMeetings
+                - presence
+                - authentication
+                - chats
+                - joinedTeams
+                - permissionGrants
+                - teamwork
+                - todo
+                - employeeExperience
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - analytics
+                - cloudPCs
+                - usageRights
+                - informationProtection
+                - appRoleAssignedResources
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - sponsors
+                - transitiveMemberOf
+                - transitiveReports
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - joinedGroups
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - appConsentRequestsForApproval
+                - approvals
+                - pendingAccessReviewInstances
+                - agreementAcceptances
+                - security
+                - deviceEnrollmentConfigurations
+                - managedDevices
+                - managedAppRegistrations
+                - windowsInformationProtectionDeviceRegistrations
+                - deviceManagementTroubleshootingEvents
+                - mobileAppIntentAndStates
+                - mobileAppTroubleshootingEvents
+                - notifications
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - profile
+                - activities
+                - devices
+                - onlineMeetings
+                - presence
+                - authentication
+                - chats
+                - joinedTeams
+                - permissionGrants
+                - teamwork
+                - todo
+                - employeeExperience
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.user'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/pages/{baseSitePage-id}/lastModifiedByUser/mailboxSettings':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: Get mailboxSettings property value
+      description: 'Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.'
+      operationId: site.page.lastModifiedGraphBPreUser_GetMailboxSetting
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - archiveFolder
+                - automaticRepliesSetting
+                - dateFormat
+                - delegateMeetingMessageDeliveryOptions
+                - language
+                - timeFormat
+                - timeZone
+                - userPurpose
+                - userPurposeV2
+                - workingHours
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+    patch:
+      tags:
+        - sites.baseSitePage
+      summary: Update property mailboxSettings value.
+      operationId: site.page.lastModifiedGraphBPreUser_UpdateMailboxSetting
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: baseSitePage-id
+          in: path
+          description: The unique identifier of baseSitePage
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: baseSitePage
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/pages/$count':
+    get:
+      tags:
+        - sites.baseSitePage
+      summary: Get the number of the resource
+      operationId: site.page_GetCount
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/permissions':
     get:
       tags:
@@ -84711,7 +85788,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -88283,7 +89360,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
@@ -89098,7 +90175,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -92313,10 +93390,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -92857,11 +93934,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -98265,6 +99342,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -98284,10 +99373,22 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -103659,9 +104760,6 @@ components:
     microsoft.graph.dlpActionInfo:
       title: dlpActionInfo
       type: object
-      properties:
-        action:
-          $ref: '#/components/schemas/microsoft.graph.dlpAction'
       additionalProperties:
         type: object
     microsoft.graph.ruleMode:
@@ -106256,13 +107354,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.dlpAction:
-      title: dlpAction
-      enum:
-        - notifyUser
-        - blockAccess
-        - deviceRestriction
-      type: string
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object

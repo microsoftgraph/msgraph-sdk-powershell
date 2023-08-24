@@ -430,6 +430,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -490,6 +492,7 @@ paths:
                 - renewedDateTime
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - allowExternalSenders
@@ -661,6 +664,7 @@ paths:
                 - renewedDateTime
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - allowExternalSenders
@@ -5432,10 +5436,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -5484,11 +5488,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
+      summary: Get post
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -18522,7 +18526,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -18730,6 +18734,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/groups/{group-id}/microsoft.graph.retryServiceProvisioning':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action retryServiceProvisioning
+      operationId: group_retryServiceProvisioning
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -22103,7 +22128,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -28796,7 +28821,7 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -30179,11 +30204,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -30318,10 +30343,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -30362,11 +30387,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
+      summary: Get post
+      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -34233,6 +34258,7 @@ paths:
                 - renewedDateTime
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - allowExternalSenders
@@ -34342,6 +34368,8 @@ paths:
                 - securityEnabled desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - theme
                 - theme desc
                 - visibility
@@ -35084,7 +35112,7 @@ paths:
       tags:
         - groupSettingTemplates.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -35598,13 +35626,17 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -37043,6 +37075,10 @@ components:
               items:
                 type: string
               description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).'
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             surname:
               type: string
               description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
@@ -37285,7 +37321,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
@@ -37551,6 +37587,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -37694,7 +37734,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -38484,6 +38524,23 @@ components:
         value:
           type: string
           description: Value of the property causing the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -39541,6 +39598,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.

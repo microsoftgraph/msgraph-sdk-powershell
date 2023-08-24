@@ -1,22 +1,22 @@
-### Example 1: Get the details of an identityUserFlowAttributeAssignment
+### Example 1: List userAttributeAssignments in a b2xIdentityUserFlow
 
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId
+Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId
+
 ```
-This example shows how to use the Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
+This example will list userattributeassignments in a b2xidentityuserflow
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 2: Get the details of an identityUserFlowAttributeAssignment and expand userAttribute
+### Example 2: List userAttributeAssignments in a b2xIdentityUserFlow and expand userAttribute
 
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -ExpandProperty "userAttribute"
-```
-This example shows how to use the Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
+Get-MgBetaIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -ExpandProperty "userAttribute" 
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+```
+This example will list userattributeassignments in a b2xidentityuserflow and expand userattribute
 

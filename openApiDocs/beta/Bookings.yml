@@ -5321,8 +5321,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
       operationId: solution.virtualEvent.event_ListSession
       parameters:
         - name: virtualEvent-id
@@ -5467,7 +5467,6 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -5486,7 +5485,6 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -5538,11 +5536,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
       operationId: solution.virtualEvent.event_GetSession
       parameters:
         - name: virtualEvent-id
@@ -5607,7 +5602,6 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -5626,7 +5620,6 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -7208,6 +7201,12 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -7222,6 +7221,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -7331,6 +7333,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -8608,8 +8613,14 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
                 - metadataContent
                 - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -8624,7 +8635,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -8734,7 +8748,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -10795,9 +10812,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
-      operationId: solution.virtualEvent.webinar_ListSession
+      summary: Update the navigation property registrations in solutions
+      operationId: solution.virtualEvent.webinar_UpdateRegistration
       parameters:
         - name: virtualEventWebinar-id
           in: path
@@ -10807,6 +10823,88 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solution.virtualEvent.webinar_DeleteRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.webinar.registration_ListSession
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -10941,7 +11039,6 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -10960,7 +11057,6 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -11012,11 +11108,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
       operationId: solution.virtualEvent.webinar_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -11081,7 +11174,6 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -11100,7 +11192,6 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
@@ -12682,6 +12773,12 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -12696,6 +12793,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -12805,6 +12905,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -14082,8 +14185,14 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
                 - metadataContent
                 - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -14098,7 +14207,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -14208,7 +14320,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -15576,6 +15691,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.meetingRegistration:
@@ -15722,38 +15849,23 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
+            transcriptContentUrl:
               type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
           additionalProperties:
             type: object
     microsoft.graph.virtualEventWebinar:
@@ -16533,8 +16645,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -16590,11 +16700,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -16670,30 +16780,40 @@ components:
       title: virtualAppointmentUser
       type: object
       properties:
+        booleanValue:
+          type: boolean
+          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          nullable: true
         displayName:
           type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
+          description: Display name of the registration question.
           nullable: true
-        emailAddress:
+        multiChoiceValues:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+        questionId:
           type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
+          description: id of the virtualEventRegistrationQuestion.
           nullable: true
-        smsCapablePhoneNumber:
+        value:
           type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.virtualEventAttendeeRegistrationStatus:
+      title: virtualEventAttendeeRegistrationStatus
+      enum:
+        - registered
+        - canceled
+        - waitlisted
+        - pendingApproval
+        - rejectedByOrganizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.meetingAudience:
       title: meetingAudience
       enum:

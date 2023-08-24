@@ -12473,7 +12473,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -13100,7 +13100,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -13774,11 +13774,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -15454,7 +15454,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
@@ -23881,10 +23881,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -25217,6 +25217,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -25236,10 +25248,22 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object

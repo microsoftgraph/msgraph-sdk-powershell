@@ -550,11 +550,11 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailSearchFolder
-      description: Update the writable properties of a mailSearchFolder object.
+      summary: Update mailfolder
+      description: Update the properties of mailfolder object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -4485,7 +4485,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -4629,11 +4629,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete message
-      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message.'
+      summary: Delete eventMessage
+      description: Delete eventMessage.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
