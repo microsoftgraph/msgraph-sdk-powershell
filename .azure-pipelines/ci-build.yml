@@ -40,7 +40,6 @@ jobs:
     steps:
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
-      - template: ./common-templates/guardian-analyzer.yml
 
       - template: ./generation-templates/authentication-module.yml
         parameters:
@@ -59,6 +58,8 @@ jobs:
           Test: ${{ parameters.Test }}
           Pack: ${{ parameters.Pack }}
           Sign: ${{ parameters.Sign }}
+
+      - template: ./common-templates/guardian-analyzer.yml
 
       - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
           - template: ./common-templates/esrp/codesign-nuget.yml
