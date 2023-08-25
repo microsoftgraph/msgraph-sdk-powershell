@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Reports
 
-Get-MgBetaAuditLogDirectoryAudit -DirectoryAuditId $directoryAuditId
+Get-MgBetaAuditLogDirectoryAudit
 
 ```
 This example shows how to use the Get-MgBetaAuditLogDirectoryAudit Cmdlet.
