@@ -1,0 +1,12 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# Managed code static analysis (aka.ms/sdtvsts)
+# https://marketplace.visualstudio.com/items?itemName=securedevelopmentteam.vss-secure-development-tools
+
+steps:
+- task: RoslynAnalyzers@3
+  inputs:
+    userProvideBuildInfo: 'autoMsBuildInfo'
+    setupCommandlinePicker: 'vs2022'
+    policyName: 'M365'
