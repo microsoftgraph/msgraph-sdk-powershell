@@ -21,6 +21,8 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -EnableSigning:$${{ parameters.Sign }} -Build
 
+  - template: ../common-templates/guardian-analyzer.yml
+
   - ${{ if eq(parameters.Test, true) }}:
       - task: PowerShell@2
         displayName: Test Authentication Module

@@ -21,6 +21,8 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
 
+  - template: ../common-templates/guardian-analyzer.yml
+
   - task: PowerShell@2
     displayName: Test Workload Modules
     enabled: false
