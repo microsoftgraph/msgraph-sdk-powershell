@@ -10,3 +10,5 @@ steps:
     userProvideBuildInfo: 'autoMsBuildInfo'
     setupCommandlinePicker: 'vs2022'
     policyName: 'M365'
+  env:
+    SYSTEM_ACCESSTOKEN: $(system.accesstoken)
