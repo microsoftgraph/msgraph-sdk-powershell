@@ -1,6 +1,7 @@
-### Example 1: Code snippet
+### Example 1: Update the backgroundColor and signInPageText for the fr-FR localization using PATCH
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 $params = @{
 	backgroundColor = "#00000F"
@@ -10,11 +11,13 @@ $params = @{
 Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaOrganizationBrandingLocalization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Code snippet
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+### Example 2: Override a default branding value with a blank string
+
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 $params = @{
 	signInPageText = "Welcome to Contoso France."
@@ -24,5 +27,6 @@ $params = @{
 Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaOrganizationBrandingLocalization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
