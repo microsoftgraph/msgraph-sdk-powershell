@@ -4,7 +4,7 @@
 parameters:
   - name: BaseBranch
     type: string
-    default: features/2.0
+    default: dev
   - name: TargetBranch
     type: string
     default: ""
