@@ -2411,11 +2411,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: drive_UpdateItem
       parameters:
         - name: drive-id
@@ -32005,11 +32005,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: group.drive_UpdateItem
       parameters:
         - name: group-id
@@ -72051,11 +72051,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: user.drive_UpdateItem
       parameters:
         - name: user-id
@@ -98310,7 +98310,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -108344,10 +108344,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -111881,11 +111881,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
