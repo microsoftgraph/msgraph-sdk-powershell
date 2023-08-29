@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: a1553f55-cba1-4d75-8390-5cd128ae954b
+Module Guid: fceae7f2-c55f-4eda-b03b-38f469ffc290
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1057,7 +1057,7 @@ Only teachers can perform this operation.
 
 ### [Update-MgBetaEducationClassAssignmentSetting](Update-MgBetaEducationClassAssignmentSetting.md)
 Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Only teachers can update these settings.
 
 ### [Update-MgBetaEducationClassAssignmentSettingGradingCategory](Update-MgBetaEducationClassAssignmentSettingGradingCategory.md)
 Update the navigation property gradingCategories in education

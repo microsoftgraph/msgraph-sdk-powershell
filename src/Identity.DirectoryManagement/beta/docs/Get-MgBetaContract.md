@@ -41,7 +41,7 @@ Retrieve the properties and relationships of contract object.
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaContract -ContractId $contractId
+Get-MgBetaContract
 
 ## PARAMETERS
 

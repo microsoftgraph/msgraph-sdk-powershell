@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserChatMember
 
 ## SYNOPSIS
-Retrieve a conversationMember from a chat.
+Retrieve a conversationMember from a chat or channel.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserChatMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Retrieve a conversationMember from a chat.
+Retrieve a conversationMember from a chat or channel.
 
 ## EXAMPLES
 

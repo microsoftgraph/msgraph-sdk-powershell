@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMessage
 
 ## SYNOPSIS
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
+Delete eventMessage.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserMessage -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru
 ```
 
 ## DESCRIPTION
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
+Delete eventMessage.
 
 ## EXAMPLES
 

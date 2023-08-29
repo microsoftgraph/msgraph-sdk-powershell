@@ -43,7 +43,7 @@ Since the organization resource supports extensions, you can also use the GET op
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaOrganization -OrganizationId $organizationId
+Get-MgBetaOrganization
 
 ## PARAMETERS
 

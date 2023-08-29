@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DirectoryObjects
-Module Guid: c96ff23e-db79-4dc0-a5c1-b6d1a66b8005
+Module Guid: e42e06c3-4fc8-4d49-b71d-49fb0b64cb21
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
@@ -37,6 +37,9 @@ Invoke function delta
 ### [Get-MgBetaDirectoryObjectMemberGroup](Get-MgBetaDirectoryObjectMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
+This API returns up to 11,000 group IDs.
+If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
+As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgBetaDirectoryObjectMemberObject](Get-MgBetaDirectoryObjectMemberObject.md)
 Invoke action getMemberObjects

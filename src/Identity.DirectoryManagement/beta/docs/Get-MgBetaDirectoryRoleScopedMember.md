@@ -43,18 +43,9 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaDirectoryRoleScopedMember -DirectoryRoleId $directoryRoleId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 Get-MgBetaDirectoryRoleScopedMember -DirectoryRoleId $directoryRoleId
-```
-
-
 
 ## PARAMETERS
 

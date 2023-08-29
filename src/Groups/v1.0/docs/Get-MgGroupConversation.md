@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupConversation
 
 ## SYNOPSIS
-The group's conversations.
+Retrieve the properties and relationships of conversation object.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Get-MgGroupConversation -InputObject <IGroupsIdentity> [-Property <String[]>] [<
 ```
 
 ## DESCRIPTION
-The group's conversations.
+Retrieve the properties and relationships of conversation object.
 
 ## EXAMPLES
 

@@ -43,7 +43,7 @@ Only teachers and students can perform this operation.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-Get-MgBetaEducationMeRubric -EducationRubricId $educationRubricId
+Get-MgBetaEducationMeRubric
 
 ## PARAMETERS
 

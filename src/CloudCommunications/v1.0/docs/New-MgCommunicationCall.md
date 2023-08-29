@@ -616,7 +616,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -934,16 +934,16 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `AUDIOROUTINGGROUPS <IMicrosoftGraphAudioRoutingGroup[]>`: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Receivers <String[]>]`: List of receiving participant ids.
   - `[RoutingMode <String>]`: routingMode
   - `[Sources <String[]>]`: List of source participant ids.
 
 `BODYPARAMETER <IMicrosoftGraphCall>`: call
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AudioRoutingGroups <IMicrosoftGraphAudioRoutingGroup[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Receivers <String[]>]`: List of receiving participant ids.
     - `[RoutingMode <String>]`: routingMode
     - `[Sources <String[]>]`: List of source participant ids.
@@ -970,7 +970,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[ContentSharingSessions <IMicrosoftGraphContentSharingSession[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Direction <String>]`: callDirection
   - `[IncomingContext <IMicrosoftGraphIncomingContext>]`: incomingContext
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -987,7 +987,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[MyParticipantId <String>]`: 
   - `[Operations <IMicrosoftGraphCommsOperation[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ClientContext <String>]`: Unique Client Context string. Max limit is 256 chars.
     - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -996,7 +996,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Subcode <Int32?>]`: The result sub-code.
     - `[Status <String>]`: operationStatus
   - `[Participants <IMicrosoftGraphParticipant[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Info <IMicrosoftGraphParticipantInfo>]`: participantInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CountryCode <String>]`: The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
@@ -1067,7 +1067,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 
 `CONTENTSHARINGSESSIONS <IMicrosoftGraphContentSharingSession[]>`: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `INCOMINGCONTEXT <IMicrosoftGraphIncomingContext>`: incomingContext
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1088,7 +1088,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Audio <String>]`: mediaState
 
 `OPERATIONS <IMicrosoftGraphCommsOperation[]>`: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ClientContext <String>]`: Unique Client Context string. Max limit is 256 chars.
   - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1098,7 +1098,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: operationStatus
 
 `PARTICIPANTS <IMicrosoftGraphParticipant[]>`: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Info <IMicrosoftGraphParticipantInfo>]`: participantInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CountryCode <String>]`: The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.

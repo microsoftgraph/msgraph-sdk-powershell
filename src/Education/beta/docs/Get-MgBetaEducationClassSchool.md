@@ -41,10 +41,9 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassSchool -EducationClassId $educationClassId
 ```
 
-
+Get-MgBetaEducationClassSchool -EducationClassId $educationClassId
 
 ## PARAMETERS
 

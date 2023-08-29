@@ -8,7 +8,10 @@ schema: 2.0.0
 # Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest
 
 ## SYNOPSIS
-Update the navigation property joinRequest in tenantRelationships
+Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending.
+Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request.
+To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
+Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
 
 ## SYNTAX
 
@@ -28,7 +31,10 @@ Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest
 ```
 
 ## DESCRIPTION
-Update the navigation property joinRequest in tenantRelationships
+Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending.
+Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request.
+To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
+Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
 
 ## EXAMPLES
 
@@ -49,7 +55,9 @@ Update the navigation property joinRequest in tenantRelationships
 ## PARAMETERS
 
 ### -AddedByTenantId
-.
+Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization.
+To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000.
+Required.
 
 ```yaml
 Type: System.String
@@ -210,19 +218,19 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>`: multiTenantOrganizationJoinRequestRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AddedByTenantId <String>]`: 
+  - `[AddedByTenantId <String>]`: Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
   - `[MemberState <String>]`: multiTenantOrganizationMemberState
   - `[Role <String>]`: multiTenantOrganizationMemberRole
   - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationJoinRequestTransitionDetails>]`: multiTenantOrganizationJoinRequestTransitionDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DesiredMemberState <String>]`: multiTenantOrganizationMemberState
-    - `[Details <String>]`: 
+    - `[Details <String>]`: Details that explain the processing status if any. Read-only.
     - `[Status <String>]`: multiTenantOrganizationMemberProcessingStatus
 
 `TRANSITIONDETAILS <IMicrosoftGraphMultiTenantOrganizationJoinRequestTransitionDetails>`: multiTenantOrganizationJoinRequestTransitionDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DesiredMemberState <String>]`: multiTenantOrganizationMemberState
-  - `[Details <String>]`: 
+  - `[Details <String>]`: Details that explain the processing status if any. Read-only.
   - `[Status <String>]`: multiTenantOrganizationMemberProcessingStatus
 
 ## RELATED LINKS

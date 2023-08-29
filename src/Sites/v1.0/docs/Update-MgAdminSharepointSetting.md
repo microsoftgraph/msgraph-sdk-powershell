@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -597,7 +597,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSharepointSettings>`: sharepointSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AllowedDomainGuidsForSyncApp <String[]>]`: Collection of trusted domain GUIDs for the OneDrive sync app.
   - `[AvailableManagedPathsForSiteCreation <String[]>]`: Collection of managed paths available for site creation. Read-only.
   - `[DeletedUserPersonalSiteRetentionPeriodInDays <Int32?>]`: The number of days for preserving a deleted user's OneDrive.

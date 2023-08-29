@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a directoryroletemplate object.
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaDirectoryRoleTemplate -DirectoryRoleTemplateId $directoryRoleTemplateId
+Get-MgBetaDirectoryRoleTemplate
 
 ## PARAMETERS
 

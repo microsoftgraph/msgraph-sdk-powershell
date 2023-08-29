@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementRoleDefinition
 
 ## SYNOPSIS
-Deletes a deviceAndAppManagementRoleDefinition.
+Deletes a roleDefinition.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdministr
 ```
 
 ## DESCRIPTION
-Deletes a deviceAndAppManagementRoleDefinition.
+Deletes a roleDefinition.
 
 ## EXAMPLES
 

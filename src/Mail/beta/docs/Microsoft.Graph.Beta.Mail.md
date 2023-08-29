@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Mail
-Module Guid: fb158253-2087-4368-b8dc-748da1ac5c16
+Module Guid: 8c630d10-20c6-4679-8151-0ed603c66195
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -164,7 +164,8 @@ Use this API to create a new mail folder in the root folder of the user's mailbo
 If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolder](New-MgBetaUserMailFolderChildFolder.md)
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 
 ### [New-MgBetaUserMailFolderChildFolderMessage](New-MgBetaUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.
@@ -270,7 +271,8 @@ For example, you can delete a specific @-mention of the specified user in the me
 Delete the specified messageRule object.
 
 ### [Remove-MgBetaUserMessage](Remove-MgBetaUserMessage.md)
-Delete eventMessage.
+Delete a message in the specified user's mailbox, or delete a relationship of the message.
+For example, you can delete a specific @-mention of the specified user in the message.
 
 ### [Remove-MgBetaUserMessageAttachment](Remove-MgBetaUserMessageAttachment.md)
 Delete navigation property attachments for users

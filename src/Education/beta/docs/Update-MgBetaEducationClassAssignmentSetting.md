@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Only teachers can update these settings.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgBetaEducationClassAssignmentSetting -InputObject <IEducationIdentity>
 
 ## DESCRIPTION
 Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Only teachers can update these settings.
 
 ## EXAMPLES
 

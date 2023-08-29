@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -286,7 +286,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphEBookInstallSummary>`: Contains properties for the installation summary of a book for a device.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this book.
   - `[FailedUserCount <Int32?>]`: Number of Users that have 1 or more device that failed to install this book.
   - `[InstalledDeviceCount <Int32?>]`: Number of Devices that have successfully installed this book.

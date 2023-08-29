@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 76cc0a1e-959e-46e5-899f-35f2bb33eeae
+Module Guid: a763829a-6968-4a2f-8245-8fbe6b601ebb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -106,6 +106,24 @@ This operation also creates a copy of the corresponding group.\nYou can specify 
 \nYou should continue to GET until the status is not 'running'.
 \nThe recommended delay between GETs is 5 seconds.
 
+### [Get-MgAllGroupTeamChannel](Get-MgAllGroupTeamChannel.md)
+List of channels either hosted in or shared with the team (incoming channels).
+
+### [Get-MgAllGroupTeamChannelCount](Get-MgAllGroupTeamChannelCount.md)
+Get the number of the resource
+
+### [Get-MgAllTeamChannel](Get-MgAllTeamChannel.md)
+List of channels either hosted in or shared with the team (incoming channels).
+
+### [Get-MgAllTeamChannelCount](Get-MgAllTeamChannelCount.md)
+Get the number of the resource
+
+### [Get-MgAllTeamMessage](Get-MgAllTeamMessage.md)
+Invoke function getAllMessages
+
+### [Get-MgAllTeamworkDeletedTeamMessage](Get-MgAllTeamworkDeletedTeamMessage.md)
+Invoke function getAllMessages
+
 ### [Get-MgAppCatalogTeamApp](Get-MgAppCatalogTeamApp.md)
 Get teamsApps from appCatalogs
 
@@ -147,7 +165,7 @@ Null if no messages have been sent in the chat.
 Currently, only the list chats operation supports this property.
 
 ### [Get-MgChatMember](Get-MgChatMember.md)
-Retrieve a conversationMember from a chat.
+Retrieve a conversationMember from a chat or channel.
 
 ### [Get-MgChatMemberCount](Get-MgChatMemberCount.md)
 Get the number of the resource
@@ -199,6 +217,9 @@ Invoke function delta
 ### [Get-MgChatPermissionGrantMemberGroup](Get-MgChatPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
+This API returns up to 11,000 group IDs.
+If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
+As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgChatPermissionGrantMemberObject](Get-MgChatPermissionGrantMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -225,11 +246,10 @@ This cannot be changed after tab creation.
 ### [Get-MgGroupTeam](Get-MgGroupTeam.md)
 The team associated with this group.
 
-### [Get-MgGroupTeamAllChannelCount](Get-MgGroupTeamAllChannelCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupTeamChannel](Get-MgGroupTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
+Retrieve the properties and relationships of a channel.
+This method supports federation.
+Only a user who is a member of the shared channel can retrieve channel information.
 
 ### [Get-MgGroupTeamChannelCount](Get-MgGroupTeamChannelCount.md)
 Get the number of the resource
@@ -483,11 +503,10 @@ See available templates.
 ### [Get-MgTeam](Get-MgTeam.md)
 Retrieve the properties and relationships of the specified team.
 
-### [Get-MgTeamAllChannelCount](Get-MgTeamAllChannelCount.md)
-Get the number of the resource
-
 ### [Get-MgTeamChannel](Get-MgTeamChannel.md)
-List of channels either hosted in or shared with the team (incoming channels).
+Retrieve the properties and relationships of a channel.
+This method supports federation.
+Only a user who is a member of the shared channel can retrieve channel information.
 
 ### [Get-MgTeamChannelCount](Get-MgTeamChannelCount.md)
 Get the number of the resource
@@ -584,9 +603,6 @@ Get a conversationMember from a team.
 ### [Get-MgTeamMemberCount](Get-MgTeamMemberCount.md)
 Get the number of the resource
 
-### [Get-MgTeamMessage](Get-MgTeamMessage.md)
-Invoke function getAllMessages
-
 ### [Get-MgTeamOperation](Get-MgTeamOperation.md)
 The async operations that ran or are running on this team.
 
@@ -610,6 +626,9 @@ Invoke function delta
 ### [Get-MgTeamPermissionGrantMemberGroup](Get-MgTeamPermissionGrantMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
+This API returns up to 11,000 group IDs.
+If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
+As a workaround, use the List group transitive memberOf API.
 
 ### [Get-MgTeamPermissionGrantMemberObject](Get-MgTeamPermissionGrantMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -850,9 +869,6 @@ This cannot be changed after tab creation.
 ### [Get-MgTeamworkDeletedTeamCount](Get-MgTeamworkDeletedTeamCount.md)
 Get the number of the resource
 
-### [Get-MgTeamworkDeletedTeamMessage](Get-MgTeamworkDeletedTeamMessage.md)
-Invoke function getAllMessages
-
 ### [Get-MgTeamworkTeamAppSetting](Get-MgTeamworkTeamAppSetting.md)
 Get teamsAppSettings from teamwork
 
@@ -888,7 +904,7 @@ Null if no messages have been sent in the chat.
 Currently, only the list chats operation supports this property.
 
 ### [Get-MgUserChatMember](Get-MgUserChatMember.md)
-Retrieve a conversationMember from a chat.
+Retrieve a conversationMember from a chat or channel.
 
 ### [Get-MgUserChatMemberCount](Get-MgUserChatMemberCount.md)
 Get the number of the resource
@@ -1061,7 +1077,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1094,7 +1110,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1129,7 +1145,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1201,7 +1217,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1242,7 +1258,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1311,7 +1327,7 @@ Send a new chatMessage in the specified channel.
 Create new navigation property to hostedContents for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1342,7 +1358,7 @@ Send a new chatMessage in the specified channel or a chat.
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementManagedAppPolicy
 
 ## SYNOPSIS
-Read properties and relationships of the managedAppPolicy object.
+Read properties and relationships of the targetedManagedAppProtection object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementManagedAppPolicy -InputObject <IDevicesCorporateManagem
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the managedAppPolicy object.
+Read properties and relationships of the targetedManagedAppProtection object.
 
 ## EXAMPLES
 

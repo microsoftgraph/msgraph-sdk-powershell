@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 23a46484-03ed-4450-90fe-528a06f1fee4
+Module Guid: 96bc639a-bc69-448a-b36c-735cc0bad764
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -215,7 +215,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a countryNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -635,7 +635,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a collection of riskDetection objects.
+Retrieve the properties of a riskDetection object.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -668,6 +668,18 @@ Get the number of the resource
 Read the properties and relationships of a servicePrincipalRiskDetection object.
 
 ### [Get-MgBetaServicePrincipalRiskDetectionCount](Get-MgBetaServicePrincipalRiskDetectionCount.md)
+Get the number of the resource
+
+### [Get-MgBetaTenantRelationshipMultiTenantOrganization](Get-MgBetaTenantRelationshipMultiTenantOrganization.md)
+Get properties of the multi-tenant organization.
+
+### [Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
+Get the status of a tenant joining a multi-tenant organization.
+
+### [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant](Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
+Get a tenant and its properties in the multi-tenant organization.
+
+### [Get-MgBetaTenantRelationshipMultiTenantOrganizationTenantCount](Get-MgBetaTenantRelationshipMultiTenantOrganizationTenantCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaTrustFramework](Get-MgBetaTrustFramework.md)
@@ -1122,6 +1134,12 @@ Create new navigation property to history for identityProtection
 ### [New-MgBetaServicePrincipalRiskDetection](New-MgBetaServicePrincipalRiskDetection.md)
 Create new navigation property to servicePrincipalRiskDetections for identityProtection
 
+### [New-MgBetaTenantRelationshipMultiTenantOrganizationTenant](New-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
+Add a tenant to a multi-tenant organization.
+The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization.
+The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request.
+Note that a tenant can be part of only one multi-tenant organization.
+
 ### [New-MgBetaTrustFrameworkKeySet](New-MgBetaTrustFrameworkKeySet.md)
 Create a new trustFrameworkKeySet.
 The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
@@ -1266,7 +1284,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete an ipNamedLocation object.
+Delete a namedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1459,6 +1477,16 @@ Delete navigation property history for identityProtection
 
 ### [Remove-MgBetaServicePrincipalRiskDetection](Remove-MgBetaServicePrincipalRiskDetection.md)
 Delete navigation property servicePrincipalRiskDetections for identityProtection
+
+### [Remove-MgBetaTenantRelationshipMultiTenantOrganization](Remove-MgBetaTenantRelationshipMultiTenantOrganization.md)
+Delete navigation property multiTenantOrganization for tenantRelationships
+
+### [Remove-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Remove-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
+Delete navigation property joinRequest for tenantRelationships
+
+### [Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant](Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
+Remove a tenant from a multi-tenant organization.
+A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
 
 ### [Remove-MgBetaTrustFrameworkKeySet](Remove-MgBetaTrustFrameworkKeySet.md)
 Delete a trustFrameworkKeySet.
@@ -1863,6 +1891,18 @@ Update the navigation property history in identityProtection
 
 ### [Update-MgBetaServicePrincipalRiskDetection](Update-MgBetaServicePrincipalRiskDetection.md)
 Update the navigation property servicePrincipalRiskDetections in identityProtection
+
+### [Update-MgBetaTenantRelationshipMultiTenantOrganization](Update-MgBetaTenantRelationshipMultiTenantOrganization.md)
+Update the properties of a multi-tenant organization.
+
+### [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
+Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending.
+Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request.
+To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
+Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
+
+### [Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant](Update-MgBetaTenantRelationshipMultiTenantOrganizationTenant.md)
+Update the navigation property tenants in tenantRelationships
 
 ### [Update-MgBetaTrustFramework](Update-MgBetaTrustFramework.md)
 Update trustFramework

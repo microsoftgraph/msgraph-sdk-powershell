@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 11e5571c-bf7c-42b3-8c65-be7899fe57d7
+Module Guid: 5a9a8758-4d1e-4ec5-a2b1-b3a92f5896cd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -895,7 +895,7 @@ Only teachers can perform this operation.
 
 ### [Update-MgEducationClassAssignmentSetting](Update-MgEducationClassAssignmentSetting.md)
 Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Only teachers can update these settings.
 
 ### [Update-MgEducationClassAssignmentSubmission](Update-MgEducationClassAssignmentSubmission.md)
 Update the navigation property submissions in education

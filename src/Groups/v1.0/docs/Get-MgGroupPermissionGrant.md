@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPermissionGrant
 
 ## SYNOPSIS
-The permission that has been granted for a group to a specific application.
-Supports $expand.
+Get permissionGrants from groups
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgGroupPermissionGrant -InputObject <IGroupsIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-The permission that has been granted for a group to a specific application.
-Supports $expand.
+Get permissionGrants from groups
 
 ## EXAMPLES
 

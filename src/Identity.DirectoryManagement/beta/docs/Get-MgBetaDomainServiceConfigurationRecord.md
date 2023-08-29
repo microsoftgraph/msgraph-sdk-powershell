@@ -43,10 +43,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaDomainServiceConfigurationRecord -DomainId $domainId
 ```
 
-
+Get-MgBetaDomainServiceConfigurationRecord -DomainId $domainId
 
 ## PARAMETERS
 

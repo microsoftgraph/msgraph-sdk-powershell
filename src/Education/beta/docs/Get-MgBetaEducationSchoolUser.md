@@ -26,10 +26,9 @@ Retrieve a list of users at a school.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationSchoolUser -EducationSchoolId $educationSchoolId
 ```
 
-
+Get-MgBetaEducationSchoolUser -EducationSchoolId $educationSchoolId
 
 ## PARAMETERS
 

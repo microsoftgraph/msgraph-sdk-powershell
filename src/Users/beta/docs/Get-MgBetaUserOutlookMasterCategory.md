@@ -40,7 +40,7 @@ Import-Module Microsoft.Graph.Beta.Users
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
+Get-MgBetaUserOutlookMasterCategory -UserId $userId
 
 ## PARAMETERS
 

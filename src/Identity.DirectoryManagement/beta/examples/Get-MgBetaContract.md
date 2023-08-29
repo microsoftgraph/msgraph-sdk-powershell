@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-Get-MgBetaContract -ContractId $contractId
+Get-MgBetaContract
 
 ```
 This example shows how to use the Get-MgBetaContract Cmdlet.

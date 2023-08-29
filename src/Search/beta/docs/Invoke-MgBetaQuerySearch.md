@@ -35,31 +35,31 @@ Search results are provided in the response.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
+```
+
 $params = @{
-	Requests = @(
+	requests = @(
 		@{
-			EntityTypes = @(
+			entityTypes = @(
 				"externalItem"
 			)
-			ContentSources = @(
+			contentSources = @(
 				"/external/connections/connectionfriendlyname"
 			)
-			Query = @{
-				QueryString = "contoso product"
+			query = @{
+				queryString = "contoso product"
 			}
-			From = 0
-			Size = 25
-			Fields = @(
+			from = 0
+			size = 25
+			fields = @(
 				"title"
 				"description"
 			)
 		}
 	)
 }
+
 Invoke-MgBetaQuerySearch -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

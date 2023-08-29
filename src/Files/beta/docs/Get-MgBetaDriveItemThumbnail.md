@@ -49,6 +49,13 @@ Import-Module Microsoft.Graph.Beta.Files
 
 Get-MgBetaDriveItemThumbnail -DriveId $driveId -DriveItemId $driveItemId
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Files
+```
+
+Get-MgBetaDriveItemThumbnail -DriveId $driveId -DriveItemId $driveItemId -Property "c300x400_crop"
+
 ## PARAMETERS
 
 ### -All

@@ -41,7 +41,7 @@ Read the properties and relationships of a retentionEventType object.
 Import-Module Microsoft.Graph.Beta.Security
 ```
 
-Get-MgBetaSecurityTriggerTypeRetentionEventType -RetentionEventTypeId $retentionEventTypeId
+Get-MgBetaSecurityTriggerTypeRetentionEventType
 
 ## PARAMETERS
 

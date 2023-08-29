@@ -98,6 +98,28 @@ Import-Module Microsoft.Graph.CloudCommunications
 
 $params = @{
 	transferTarget = @{
+		endpointType = "default"
+		identity = @{
+			phone = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "+12345678901"
+			}
+		}
+		languageId = "languageId-value"
+		region = "region-value"
+	}
+	clientContext = "9e90d1c1-f61e-43e7-9f75-d420159aae08"
+}
+
+Move-MgCommunicationCall -CallId $callId -BodyParameter $params
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
+
+$params = @{
+	transferTarget = @{
 		"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
 		endpointType = "default"
 		identity = @{
@@ -116,7 +138,7 @@ $params = @{
 
 Move-MgCommunicationCall -CallId $callId -BodyParameter $params
 
-### -------------------------- EXAMPLE 4 --------------------------
+### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```

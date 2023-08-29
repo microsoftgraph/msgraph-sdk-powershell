@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Delete a resourceConnection object.
+Delete an operationalInsightsConnection object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdent
 ```
 
 ## DESCRIPTION
-Delete a resourceConnection object.
+Delete an operationalInsightsConnection object.
 
 ## EXAMPLES
 

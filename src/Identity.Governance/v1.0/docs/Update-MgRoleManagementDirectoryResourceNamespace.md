@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -223,10 +223,10 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceNamespace>`: unifiedRbacResourceNamespace
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Name <String>]`: 
   - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ActionVerb <String>]`: 
     - `[AuthenticationContextId <String>]`: 
     - `[Description <String>]`: 
@@ -299,7 +299,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkflowVersionNumber <Int32?>]`: The unique identifier of workflowVersion
 
 `RESOURCEACTIONS <IMicrosoftGraphUnifiedRbacResourceAction[]>`: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ActionVerb <String>]`: 
   - `[AuthenticationContextId <String>]`: 
   - `[Description <String>]`: 

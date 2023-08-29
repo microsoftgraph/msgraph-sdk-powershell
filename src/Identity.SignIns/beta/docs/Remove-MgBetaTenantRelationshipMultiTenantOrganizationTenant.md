@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant
 
 ## SYNOPSIS
-Delete navigation property tenants for tenantRelationships
+Remove a tenant from a multi-tenant organization.
+A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Delete navigation property tenants for tenantRelationships
+Remove a tenant from a multi-tenant organization.
+A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
 
 ## EXAMPLES
 

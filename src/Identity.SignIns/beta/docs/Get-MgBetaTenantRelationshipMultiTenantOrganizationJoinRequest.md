@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest
 
 ## SYNOPSIS
-Get joinRequest from tenantRelationships
+Get the status of a tenant joining a multi-tenant organization.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get joinRequest from tenantRelationships
+Get the status of a tenant joining a multi-tenant organization.
 
 ## EXAMPLES
 

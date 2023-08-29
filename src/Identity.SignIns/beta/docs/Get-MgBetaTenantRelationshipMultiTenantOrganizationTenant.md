@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant
 
 ## SYNOPSIS
-Get tenants from tenantRelationships
+Get a tenant and its properties in the multi-tenant organization.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIdentit
 ```
 
 ## DESCRIPTION
-Get tenants from tenantRelationships
+Get a tenant and its properties in the multi-tenant organization.
 
 ## EXAMPLES
 
