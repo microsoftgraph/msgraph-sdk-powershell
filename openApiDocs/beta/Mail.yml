@@ -558,11 +558,11 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailFolder
-      description: Update the properties of mailFolder object.
+      summary: Update mailSearchFolder
+      description: Update the writable properties of a mailSearchFolder object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -756,11 +756,11 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create mailSearchFolder
-      description: Create a new mailSearchFolder in the specified user's mailbox.
+      summary: Create child folder
+      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -5554,7 +5554,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -5660,11 +5660,11 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update message
-      description: Update the properties of a message object.
+      summary: Update eventMessage
+      description: Update the properties of an eventMessage object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -5703,11 +5703,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete eventMessage
-      description: Delete eventMessage.
+      summary: Delete message
+      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id

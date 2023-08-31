@@ -8507,11 +8507,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -8597,11 +8597,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object.
+      summary: Delete namedLocation
+      description: Delete a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9237,11 +9237,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get authenticationEventListener
-      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+      summary: Get customAuthenticationExtension
+      description: Read the properties and relationships of a customAuthenticationExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -11167,11 +11167,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: Get riskyUser
-      description: Retrieve the properties and relationships of a riskyUser object.
+      summary: List riskyUsers
+      description: Retrieve the properties and relationships of a collection of riskyUser objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20077,11 +20077,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantIdentitySyncPolicyPartner
-      description: Update the user synchronization policy of a partner-specific configuration.
+      summary: Create identitySynchronization
+      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -23589,7 +23589,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: List excludes collection of permissionGrantPolicy
-      description: Retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
+      description: Retrieve the condition sets that are *excluded* in a permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0
@@ -23887,7 +23887,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: List includes collection of permissionGrantPolicy
-      description: Retrieve the condition sets which are *included* in a permissionGrantPolicy.
+      description: Retrieve the condition sets that are *included* in a permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0
@@ -26796,7 +26796,11 @@ paths:
     get:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Get multiTenantOrganization from tenantRelationships
+      summary: Get multiTenantOrganization
+      description: Get properties of the multi-tenant organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0
       operationId: tenantRelationship_GetMultiTenantOrganization
       parameters:
         - name: $select
@@ -26841,11 +26845,15 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    put:
+    patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update the navigation property multiTenantOrganization in tenantRelationships
-      operationId: tenantRelationship_SetMultiTenantOrganization
+      summary: Update multiTenantOrganization
+      description: Update the properties of a multi-tenant organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0
+      operationId: tenantRelationship_UpdateMultiTenantOrganization
       requestBody:
         description: New navigation property values
         content:
@@ -26885,7 +26893,11 @@ paths:
     get:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Get joinRequest from tenantRelationships
+      summary: Get multiTenantOrganizationJoinRequestRecord
+      description: Get the status of a tenant joining a multi-tenant organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-get?view=graph-rest-1.0
       operationId: tenantRelationship.multiTenantOrganization_GetJoinRequest
       parameters:
         - name: $select
@@ -26929,7 +26941,11 @@ paths:
     patch:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Update the navigation property joinRequest in tenantRelationships
+      summary: Update multiTenantOrganizationJoinRequestRecord
+      description: 'Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-update?view=graph-rest-1.0
       operationId: tenantRelationship.multiTenantOrganization_UpdateJoinRequest
       requestBody:
         description: New navigation property values
@@ -26970,7 +26986,11 @@ paths:
     get:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Get tenants from tenantRelationships
+      summary: List multiTenantOrganizationMembers
+      description: List the tenants and their properties in the multi-tenant organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-list-tenants?view=graph-rest-1.0
       operationId: tenantRelationship.multiTenantOrganization_ListTenant
       parameters:
         - $ref: '#/components/parameters/top'
@@ -27054,7 +27074,11 @@ paths:
     post:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Create new navigation property to tenants for tenantRelationships
+      summary: Add multiTenantOrganizationMember
+      description: Add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-post-tenants?view=graph-rest-1.0
       operationId: tenantRelationship.multiTenantOrganization_CreateTenant
       requestBody:
         description: New navigation property
@@ -27077,7 +27101,11 @@ paths:
     get:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Get tenants from tenantRelationships
+      summary: Get multiTenantOrganizationMember
+      description: Get a tenant and its properties in the multi-tenant organization.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-1.0
       operationId: tenantRelationship.multiTenantOrganization_GetTenant
       parameters:
         - name: multiTenantOrganizationMember-id
@@ -27165,7 +27193,11 @@ paths:
     delete:
       tags:
         - tenantRelationships.multiTenantOrganization
-      summary: Delete navigation property tenants for tenantRelationships
+      summary: Remove multiTenantOrganizationMember
+      description: 'Remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-1.0
       operationId: tenantRelationship.multiTenantOrganization_DeleteTenant
       parameters:
         - name: multiTenantOrganizationMember-id
@@ -36136,6 +36168,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.crossTenantAccessPolicyInboundTrust'
         isInMultiTenantOrganization:
           type: boolean
+          description: Identifies whether a tenant is a member of a multi-tenant organization.
           nullable: true
         isServiceProvider:
           type: boolean
@@ -36551,13 +36584,16 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date when multi-tenant organization was created. Read-only.
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description of the multi-tenant organization.
               nullable: true
             displayName:
               type: string
+              description: Display name of the multi-tenant organization.
               nullable: true
             state:
               $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationState'
@@ -36567,6 +36603,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMember'
+              description: Defines tenants added to a multi-tenant organization.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -36578,6 +36615,7 @@ components:
           properties:
             addedByTenantId:
               type: string
+              description: 'Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.'
               nullable: true
             memberState:
               $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberState'
@@ -36596,19 +36634,23 @@ components:
             addedByTenantId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
+              description: Tenant ID of the tenant that added the tenant to the multi-tenant organization. Read-only.
               format: uuid
               nullable: true
             addedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time when the tenant was added to the multi-tenant organization. Read-only.
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Display name of the tenant added to the multi-tenant organization.
               nullable: true
             joinedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time when the tenant joined the multi-tenant organization. Read-only.
               format: date-time
               nullable: true
             role:
@@ -36617,6 +36659,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberState'
             tenantId:
               type: string
+              description: Tenant ID of the Azure Active Directory tenant added to the multi-tenant organization. Set at the time tenant is added.Supports $filter. Key.
             transitionDetails:
               $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberTransitionDetails'
           additionalProperties:
@@ -37780,10 +37823,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -42455,6 +42498,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberState'
         details:
           type: string
+          description: Details that explain the processing status if any. Read-only.
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberProcessingStatus'
@@ -42470,6 +42514,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberState'
         details:
           type: string
+          description: Details that explain the processing status if any. Read-only.
           nullable: true
         status:
           $ref: '#/components/schemas/microsoft.graph.multiTenantOrganizationMemberProcessingStatus'
@@ -45479,7 +45524,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -51189,11 +51234,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object

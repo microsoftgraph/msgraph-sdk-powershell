@@ -517,11 +517,11 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Create or replace a historyItem
-      description: Create a new or replace an existing history item for an existing user activity.
+      summary: Delete a historyItem
+      description: Delete an existing history item for an existing user activity.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
@@ -863,7 +863,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.Json:
