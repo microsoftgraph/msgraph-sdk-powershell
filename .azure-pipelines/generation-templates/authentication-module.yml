@@ -21,6 +21,8 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -EnableSigning:$${{ parameters.Sign }} -Build
 
+  - template: ../common-templates/guardian-analyzer.yml
+
   - ${{ if eq(parameters.Test, true) }}:
       - task: PowerShell@2
         displayName: Test Authentication Module
@@ -51,9 +53,6 @@ steps:
             $ModulePsm1 = "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/Microsoft.Graph.Authentication.psm1"
             ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
             ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
-  
-  # Run analyzer after signing is complete.
-  - template: ../common-templates/guardian-analyzer.yml
 
   - ${{ if eq(parameters.Pack, true) }}:
       - task: PowerShell@2

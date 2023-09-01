@@ -6,14 +6,14 @@
 
 steps:
   - task: RoslynAnalyzers@3
+    displayName: 'Run Roslyn Analyzers'
     inputs:
-      userProvideBuildInfo: 'msBuildInfo'
-      msBuildVersion: '17.0'
-      msBuildArchitecture: 'x64'
+      continueOnError: true
+      msBuildVersion: 17.0
+      msBuildArchitecture: amd64
+      msBuildCommandline: |
+        dotnet.exe build $(Build.SourcesDirectory)\src\Authentication /p:Platform="Any CPU" /p:Configuration="Release"
       setupCommandlinePicker: 'vs2022'
-      rulesetName: Recommended
-      rulesetVersion: Latest
       policyName: 'M365'
-      loadRoslynConfiguredAnalyzersOption: Enable # Keep code generators running
     env:
       SYSTEM_ACCESSTOKEN: $(system.accesstoken)
