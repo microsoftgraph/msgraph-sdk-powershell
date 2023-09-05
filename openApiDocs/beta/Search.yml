@@ -2283,11 +2283,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get azureDataLakeConnector
-      description: Read the properties and relationships of an azureDataLakeConnector object.
+      summary: Get industryDataConnector
+      description: Read the properties and relationships of an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2338,11 +2338,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update industryDataConnector
-      description: Update the properties of an industryDataConnector object.
+      summary: Update azureDataLakeConnector
+      description: Update the properties of an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2373,11 +2373,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete industryDataConnector
-      description: Delete an industryDataConnector object.
+      summary: Delete azureDataLakeConnector
+      description: Delete an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2576,11 +2576,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFlow
-      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:'
+      summary: Create inboundFileFlow
+      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -2603,11 +2603,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFileFlow
-      description: Read the properties and relationships of an inboundFileFlow object.
+      summary: Get inboundFlow
+      description: Read the properties and relationships of an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2664,11 +2664,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFileFlow
-      description: Update the properties of an inboundFileFlow object.
+      summary: Update inboundFlow
+      description: Update the properties of an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2699,11 +2699,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete inboundFileFlow
-      description: Delete an inboundFileFlow object.
+      summary: Delete inboundFlow
+      description: Delete an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id

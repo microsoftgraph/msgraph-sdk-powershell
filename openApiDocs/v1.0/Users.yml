@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: List properties and relationships of the user objects.
+      description: Retrieve a list of user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -155,6 +155,8 @@ paths:
                 - proxyAddresses desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -265,6 +267,7 @@ paths:
                 - provisionedPlans
                 - proxyAddresses
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -409,7 +412,7 @@ paths:
       description: Create a new user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -514,6 +517,7 @@ paths:
                 - provisionedPlans
                 - proxyAddresses
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -656,10 +660,10 @@ paths:
       tags:
         - users.user
       summary: Update user
-      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+      description: Update the properties of a user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -694,7 +698,7 @@ paths:
       description: Deletes a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -4222,7 +4226,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
-      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+      description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
@@ -4305,7 +4309,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
-      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+      description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
       operationId: user_GetOwnedObject
       parameters:
         - name: user-id
@@ -10215,6 +10219,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -10358,7 +10366,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -10759,7 +10767,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
@@ -10852,6 +10860,10 @@ components:
               items:
                 type: string
               description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).'
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             surname:
               type: string
               description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).'
@@ -11141,13 +11153,17 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -12317,6 +12333,23 @@ components:
         service:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
