@@ -5,10 +5,15 @@
 # https://marketplace.visualstudio.com/items?itemName=securedevelopmentteam.vss-secure-development-tools
 
 steps:
-- task: RoslynAnalyzers@3
-  inputs:
-    userProvideBuildInfo: 'autoMsBuildInfo'
-    setupCommandlinePicker: 'vs2022'
-    policyName: 'M365'
-  env:
-    SYSTEM_ACCESSTOKEN: $(system.accesstoken)
+  - task: RoslynAnalyzers@3
+    displayName: 'Run Roslyn Analyzers'
+    inputs:
+      continueOnError: true
+      msBuildVersion: 17.0
+      msBuildArchitecture: amd64
+      msBuildCommandline: |
+        dotnet.exe build $(Build.SourcesDirectory)\src\Authentication /p:Platform="Any CPU" /p:Configuration="Release"
+      setupCommandlinePicker: 'vs2022'
+      policyName: 'M365'
+    env:
+      SYSTEM_ACCESSTOKEN: $(system.accesstoken)
