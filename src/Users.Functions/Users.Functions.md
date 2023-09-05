@@ -32,7 +32,7 @@ directive:
       subject: $1AllowedCalendarSharingRoles
   - where:
       verb: Get
-      subject: ^(UserChatMessage)$
+      subject: ^(User)(ChatMessage|OnlineMeetingTranscript|OnlineMeetingRecording)$
     set:
-      subject: All$1
+      subject: All$1$2
 ```

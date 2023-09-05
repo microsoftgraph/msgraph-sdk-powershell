@@ -30,6 +30,14 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
 
+  - task: PowerShell@2
+    displayName: Find Duplicate Commands
+    inputs:
+      targetType: inline
+      pwsh: true
+      script: |
+        . $(System.DefaultWorkingDirectory)/tools/PostGeneration/FindDuplicateCommand.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/"
+
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/strongname.yml
         parameters:
