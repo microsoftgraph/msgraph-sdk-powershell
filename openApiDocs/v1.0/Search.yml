@@ -2961,6 +2961,9 @@ components:
         - privateContent
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.searchAggregation:
       title: searchAggregation
       type: object

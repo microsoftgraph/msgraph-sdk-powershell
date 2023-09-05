@@ -14307,6 +14307,9 @@ components:
         - sms
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.managedTenants.notificationTarget:
       title: notificationTarget
       type: object
