@@ -4523,11 +4523,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4578,11 +4578,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -6751,11 +6751,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List history
-      description: Get the riskyUserHistoryItems from the history navigation property.
+      summary: Get history
+      description: Read the properties and relationships of a riskyUserHistoryItem object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/riskyuser-get-riskyuserhistoryitem?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_ListHistory
       parameters:
         - name: riskyUser-id
@@ -12806,11 +12806,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantIdentitySyncPolicyPartner
-      description: Update the user synchronization policy of a partner-specific configuration.
+      summary: Create identitySynchronization
+      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -19904,6 +19904,9 @@ components:
         - federatedMultiFactor
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.updateAllowedCombinationsResult:
       title: updateAllowedCombinationsResult
       type: object
@@ -22171,7 +22174,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     ReferenceNumeric:
@@ -22282,6 +22285,9 @@ components:
         - mfa
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.conditionalAccessConditionSet:
       title: conditionalAccessConditionSet
       type: object
@@ -22395,6 +22401,9 @@ components:
         - emergingThreats
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.activityType:
       title: activityType
       enum:
@@ -24609,6 +24618,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -24671,6 +24682,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
@@ -24782,6 +24794,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps to access the team.
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -26844,7 +26857,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -28978,6 +28991,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.chatType:
       title: chatType
       enum:
@@ -29657,7 +29685,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permission that has been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -32273,6 +32300,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -32326,6 +32356,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -33860,6 +33893,9 @@ components:
         - serviceProvider
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -35548,6 +35584,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -35556,6 +35595,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -35583,6 +35625,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -35591,6 +35636,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
