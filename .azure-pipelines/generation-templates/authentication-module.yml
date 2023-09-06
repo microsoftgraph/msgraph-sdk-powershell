@@ -60,3 +60,6 @@ steps:
           pwsh: true
           script: |
             . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+
+  # Run analyzer after build & sign.
+  - template: ../common-templates/guardian-analyzer.yml
