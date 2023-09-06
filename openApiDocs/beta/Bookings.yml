@@ -7784,11 +7784,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteRegistration
       parameters:
         - name: virtualEvent-id
@@ -13299,11 +13299,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -17253,6 +17253,9 @@ components:
         - checklistCompletion
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object

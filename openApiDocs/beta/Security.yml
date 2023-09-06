@@ -23374,7 +23374,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get childHostPairs from security
-      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
+      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.'
       operationId: security.threatIntelligence.host_GetChildHostPair
       parameters:
         - name: host-id
@@ -25098,7 +25098,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get whois from security
+      summary: Get whoisRecord for a host
+      description: Get the current whoisRecord resource for a host.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-host-get-whois?view=graph-rest-1.0
       operationId: security.threatIntelligence.host_GetWhoi
       parameters:
         - name: host-id
@@ -28326,6 +28330,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get whoisHistoryRecords from security
+      description: 'Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.'
       operationId: security.threatIntelligence_ListWhoisHistoryRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28459,6 +28464,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get whoisHistoryRecords from security
+      description: 'Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.'
       operationId: security.threatIntelligence_GetWhoisHistoryRecord
       parameters:
         - name: whoisHistoryRecord-id
@@ -28584,6 +28590,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get host from security
+      description: The host associated to this WHOIS object.
       operationId: security.threatIntelligence.whoisHistoryRecord_GetHost
       parameters:
         - name: whoisHistoryRecord-id
@@ -28672,7 +28679,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get whoisRecords from security
+      summary: List whoisRecords
+      description: Get a list of whoisRecord objects.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-whoisrecord-list?view=graph-rest-1.0
       operationId: security.threatIntelligence_ListWhoisRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -28807,7 +28818,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get whoisRecords from security
+      summary: Get whoisRecord
+      description: Read the properties and relationships of a whoisRecord object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-whoisrecord-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetWhoisRecord
       parameters:
         - name: whoisRecord-id
@@ -28934,7 +28949,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get history from security
+      summary: List whoisHistoryRecords for a whoisRecord
+      description: 'Get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-whoisrecord-list-history?view=graph-rest-1.0
       operationId: security.threatIntelligence.whoisRecord_ListHistory
       parameters:
         - name: whoisRecord-id
@@ -29054,6 +29073,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get history from security
+      description: The collection of historical records associated to this WHOIS object.
       operationId: security.threatIntelligence.whoisRecord_GetHistory
       parameters:
         - name: whoisRecord-id
@@ -29152,6 +29172,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get host from security
+      description: The host associated to this WHOIS object.
       operationId: security.threatIntelligence.whoisRecord_GetHost
       parameters:
         - name: whoisRecord-id
@@ -34590,6 +34611,9 @@ components:
         - linkedFiles
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.security.exportOptions:
       title: exportOptions
       enum:
@@ -34600,6 +34624,9 @@ components:
         - tags
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.security.exportFileStructure:
       title: exportFileStructure
       enum:
@@ -34685,6 +34712,9 @@ components:
         - teamsMessages
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.security.ediscoveryCaseSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -36774,7 +36804,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.articleIndicator'
-              description: 'Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.'
+              description: 'Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             articles:
               type: array
@@ -36786,25 +36816,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostComponent'
-              description: 'Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hostCookies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostCookie'
-              description: 'Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hostPairs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
-              description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hosts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.host'
-              description: 'Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.'
+              description: 'Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hostSslCertificates:
               type: array
@@ -36815,7 +36845,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostTracker'
-              description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             intelligenceProfileIndicators:
               type: array
@@ -36832,7 +36862,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.passiveDnsRecord'
-              description: 'Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             sslCertificates:
               type: array
@@ -36843,23 +36873,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.subdomain'
-              description: 'Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about the subdomain.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             vulnerabilities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.vulnerability'
-              description: 'Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.'
+              description: 'Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             whoisHistoryRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
+              description: 'Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             whoisRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.whoisRecord'
+              description: A list of whoisRecord objects.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -36974,7 +37006,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
-              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
+              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.'
               x-ms-navigationProperty: true
             components:
               type: array
@@ -37218,6 +37250,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
+              description: The collection of historical records associated to this WHOIS object.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -39729,6 +39762,9 @@ components:
         - site
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -40586,6 +40622,9 @@ components:
         - allCaseNoncustodialDataSources
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.security.ocrSettings:
       title: ocrSettings
       type: object
@@ -45013,35 +45052,42 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.whoisContact'
             domainStatus:
               type: string
+              description: The domain status for this WHOIS object.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this WHOIS record expires with the registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             firstSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The first seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The last seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastUpdateDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this WHOIS record was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             nameservers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.whoisNameserver'
+              description: The nameservers for this WHOIS object.
             noc:
               $ref: '#/components/schemas/microsoft.graph.security.whoisContact'
             rawWhoisText:
               type: string
+              description: The raw WHOIS details for this WHOIS object.
               nullable: true
             registrant:
               $ref: '#/components/schemas/microsoft.graph.security.whoisContact'
@@ -45050,12 +45096,14 @@ components:
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when this WHOIS record was registered with a registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             technical:
               $ref: '#/components/schemas/microsoft.graph.security.whoisContact'
             whoisServer:
               type: string
+              description: The WHOIS server that provides the details.
               nullable: true
             zone:
               $ref: '#/components/schemas/microsoft.graph.security.whoisContact'
@@ -50256,6 +50304,8 @@ components:
           type: string
           description: ELAM provides protection for the computers in your network when they start up
           nullable: true
+        firmwareProtection:
+          $ref: '#/components/schemas/microsoft.graph.firmwareProtectionType'
         healthAttestationSupportedStatus:
           type: string
           description: This attribute indicates if DHA is supported for the device
@@ -50273,6 +50323,10 @@ components:
           type: string
           description: The Timestamp of the last update.
           nullable: true
+        memoryAccessProtection:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
+        memoryIntegrityProtection:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         operatingSystemKernelDebugging:
           type: string
           description: 'When operatingSystemKernelDebugging is enabled, the device is used in development and testing'
@@ -50309,6 +50363,10 @@ components:
           type: string
           description: Fingerprint of the Custom Secure Boot Configuration Policy
           nullable: true
+        securedCorePC:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
+        systemManagementMode:
+          $ref: '#/components/schemas/microsoft.graph.systemManagementModeLevel'
         testSigning:
           type: string
           description: 'When test signing is allowed, the device does not enforce signature validation during boot'
@@ -50317,6 +50375,8 @@ components:
           type: string
           description: The security version number of the Boot Application
           nullable: true
+        virtualizationBasedSecurity:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
           description: VSM is a container that protects high value assets from a compromised kernel
@@ -54074,18 +54134,23 @@ components:
           $ref: '#/components/schemas/microsoft.graph.physicalAddress'
         email:
           type: string
+          description: The email of this WHOIS contact.
           nullable: true
         fax:
           type: string
+          description: The fax of this WHOIS contact. No format is guaranteed.
           nullable: true
         name:
           type: string
+          description: The name of this WHOIS contact.
           nullable: true
         organization:
           type: string
+          description: The organization of this WHOIS contact.
           nullable: true
         telephone:
           type: string
+          description: The telephone of this WHOIS contact. No format is guaranteed.
           nullable: true
       additionalProperties:
         type: object
@@ -54096,11 +54161,13 @@ components:
         firstSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The first seen date and time of this WHOIS contact. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         lastSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The last seen date and time of this WHOIS contact. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         host:
@@ -54476,6 +54543,9 @@ components:
         - teamwork
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.applicationMode:
       title: applicationMode
       enum:
@@ -56737,6 +56807,89 @@ components:
           - value: communicationError
             description: 'The configuration manager agent was able to reach the configuration manager service in the past but is now no longer able to. '
             name: communicationError
+    microsoft.graph.firmwareProtectionType:
+      title: firmwareProtectionType
+      enum:
+        - notApplicable
+        - systemGuardSecureLaunch
+        - firmwareAttackSurfaceReduction
+        - disabled
+        - unknownFutureValue
+      type: string
+      description: A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+      x-ms-enum:
+        name: firmwareProtectionType
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device is not a Windows 11 device.
+            name: notApplicable
+          - value: systemGuardSecureLaunch
+            description: Indicates that System Guard Secure Launch is enabled for Firmware protection.
+            name: systemGuardSecureLaunch
+          - value: firmwareAttackSurfaceReduction
+            description: Indicates that Firmware Attack Surface Reduction is enabled for Firmware protection. This is only applicable to Surface devices.
+            name: firmwareAttackSurfaceReduction
+          - value: disabled
+            description: Indicates that the device has Firmware protection disabled.
+            name: disabled
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.azureAttestationSettingStatus:
+      title: azureAttestationSettingStatus
+      enum:
+        - notApplicable
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+      description: A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+      x-ms-enum:
+        name: azureAttestationSettingStatus
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device is not a Windows 11 device.
+            name: notApplicable
+          - value: enabled
+            description: Indicates that the device has the Azure attestation setting enabled.
+            name: enabled
+          - value: disabled
+            description: Indicates that the device has the Azure attestation setting disabled.
+            name: disabled
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.systemManagementModeLevel:
+      title: systemManagementModeLevel
+      enum:
+        - notApplicable
+        - level1
+        - level2
+        - level3
+        - unknownFutureValue
+      type: string
+      description: 'A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".'
+      x-ms-enum:
+        name: systemManagementModeLevel
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device does not have Firmware protection (System Management Mode) enabled.
+            name: notApplicable
+          - value: level1
+            description: Indicates that deny System Management Mode (SMM) read/write access to OS and Virtualization-based security (VBS) memory. The benefit is that by design System Management Mode (SMM) cannot modify security of or exfiltrate secrets from the OS (including Virtualization-based security).
+            name: level1
+          - value: level2
+            description: 'Indicates that in addition to the System Management Mode (SMM) Level 1 protections, this level prevents System Management Mode (SMM) from tampering with Input-Output Memory Management Unit (IOMMU) config. The benefit is that by design System Management Mode (SMM) cannot disable Virtualization-based security (VBS) and kernel Direct memory access (DMA) protections.'
+            name: level2
+          - value: level3
+            description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
+            name: level3
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -57395,6 +57548,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -57448,6 +57604,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -57762,6 +57921,9 @@ components:
         - checklistCompletion
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -58788,6 +58950,9 @@ components:
         - personal
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -58939,6 +59104,9 @@ components:
         - manager
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.timeCardEntry:
       title: timeCardEntry
       type: object
@@ -59109,6 +59277,9 @@ components:
         - isJunkMailRuleEnabled
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.security.tenantAllowBlockListEntryType:
       title: tenantAllowBlockListEntryType
       enum:
@@ -60764,6 +60935,9 @@ components:
         - indirect
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -61433,6 +61607,9 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.inferenceData:
       title: inferenceData
       type: object
@@ -61564,6 +61741,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -61572,6 +61752,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -61599,6 +61782,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -61607,6 +61793,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -64155,6 +64344,9 @@ components:
         - ReferenceAttributes
         - UnknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -64399,6 +64591,9 @@ components:
         - Update
         - Delete
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object

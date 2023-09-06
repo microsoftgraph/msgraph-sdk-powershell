@@ -13980,6 +13980,9 @@ components:
         - unknownFutureValue
         - authenticationTransfer
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.authenticationRequirementPolicy:
       title: authenticationRequirementPolicy
       type: object
@@ -14021,6 +14024,9 @@ components:
         - serviceProvider
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.deviceDetail:
       title: deviceDetail
       type: object
@@ -14068,6 +14074,9 @@ components:
         - unknownFutureValue
         - remoteDesktopToken
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.signInLocation:
       title: signInLocation
       type: object
@@ -14965,6 +14974,9 @@ components:
         - authenticationFlows
         - insiderRisk
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.conditionalAccessRuleSatisfied:
       title: conditionalAccessRuleSatisfied
       type: object
