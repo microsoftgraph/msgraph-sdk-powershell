@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Enrollment
-Module Guid: 0f246599-1063-462e-8414-f7f78f8f9043
+Module Guid: 471b8f0e-f733-4874-823e-64b0a5419d1c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -190,7 +190,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementCloudPcRoleAssignmentDirectoryScope](Get-MgBetaRoleManagementCloudPcRoleAssignmentDirectoryScope.md)
-Read-only collection referencing the directory objects that are scope of the assignment.
+Read-only collection that references the directory objects that are scope of the assignment.
 Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment.
 Read-only.
 Supports $expand.
@@ -199,7 +199,7 @@ Supports $expand.
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementCloudPcRoleAssignmentPrincipal](Get-MgBetaRoleManagementCloudPcRoleAssignmentPrincipal.md)
-Read-only collection referencing the assigned principals.
+Read-only collection that references the assigned principals.
 Provided so that callers can get the principals using $expand at the same time as getting the role assignment.
 Read-only.
 Supports $expand.
@@ -260,7 +260,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleAssignmentDirectoryScope](Get-MgBetaRoleManagementDeviceManagementRoleAssignmentDirectoryScope.md)
-Read-only collection referencing the directory objects that are scope of the assignment.
+Read-only collection that references the directory objects that are scope of the assignment.
 Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment.
 Read-only.
 Supports $expand.
@@ -269,7 +269,7 @@ Supports $expand.
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleAssignmentPrincipal](Get-MgBetaRoleManagementDeviceManagementRoleAssignmentPrincipal.md)
-Read-only collection referencing the assigned principals.
+Read-only collection that references the assigned principals.
 Provided so that callers can get the principals using $expand at the same time as getting the role assignment.
 Read-only.
 Supports $expand.

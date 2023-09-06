@@ -319,7 +319,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
         - `[Action <String>]`: monitoringAction
         - `[Signal <String>]`: monitoringSignal
-        - `[Threshold <Int32?>]`: The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+        - `[Threshold <Int32?>]`: The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
     - `[Schedule <IMicrosoftGraphWindowsUpdatesScheduleSettings>]`: scheduleSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[GradualRollout <IMicrosoftGraphWindowsUpdatesGradualRolloutSettings>]`: gradualRolloutSettings
@@ -353,7 +353,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MonitoringRules <IMicrosoftGraphWindowsUpdatesMonitoringRule[]>]`: Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using 'or'.
       - `[Action <String>]`: monitoringAction
       - `[Signal <String>]`: monitoringSignal
-      - `[Threshold <Int32?>]`: The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+      - `[Threshold <Int32?>]`: The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
   - `[Schedule <IMicrosoftGraphWindowsUpdatesScheduleSettings>]`: scheduleSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[GradualRollout <IMicrosoftGraphWindowsUpdatesGradualRolloutSettings>]`: gradualRolloutSettings

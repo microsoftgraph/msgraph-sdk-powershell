@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -284,12 +284,12 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphTeamworkTag>`: teamworkTag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
   - `[DisplayName <String>]`: The name of the tag as it will appear to the user in Microsoft Teams.
   - `[MemberCount <Int32?>]`: The number of users assigned to the tag.
   - `[Members <IMicrosoftGraphTeamworkTagMember[]>]`: Users assigned to the tag.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DisplayName <String>]`: The member's display name.
     - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
     - `[UserId <String>]`: The user ID of the member.
@@ -331,7 +331,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkforceIntegrationId <String>]`: The unique identifier of workforceIntegration
 
 `MEMBERS <IMicrosoftGraphTeamworkTagMember[]>`: Users assigned to the tag.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The member's display name.
   - `[TenantId <String>]`: The ID of the tenant that the tag member is a part of.
   - `[UserId <String>]`: The user ID of the member.

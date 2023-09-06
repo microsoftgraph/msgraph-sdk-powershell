@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -295,7 +295,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSecurityArticle>`: article
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Body <IMicrosoftGraphSecurityFormattedContent>]`: formattedContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of this formattedContent.
@@ -305,9 +305,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Indicators <IMicrosoftGraphSecurityArticleIndicator[]>]`: Indicators related to this article.
     - `[Artifact <IMicrosoftGraphSecurityArtifact>]`: artifact
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Source <String>]`: indicatorSource
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IsFeatured <Boolean?>]`: Indicates whether this article is currently featured by Microsoft.
   - `[LastUpdatedDateTime <DateTime?>]`: The most recent date and time when this article was updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Summary <IMicrosoftGraphSecurityFormattedContent>]`: formattedContent
@@ -317,9 +317,9 @@ To create the parameters described below, construct a hash table containing the 
 `INDICATORS <IMicrosoftGraphSecurityArticleIndicator[]>`: Indicators related to this article.
   - `[Artifact <IMicrosoftGraphSecurityArtifact>]`: artifact
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Source <String>]`: indicatorSource
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `SUMMARY <IMicrosoftGraphSecurityFormattedContent>`: formattedContent
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostWhoi
 
 ## SYNOPSIS
-Get whois from security
+Get the current whoisRecord resource for a host.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaSecurityThreatIntelligenceHostWhoi -InputObject <ISecurityIdentity> [-
 ```
 
 ## DESCRIPTION
-Get whois from security
+Get the current whoisRecord resource for a host.
 
 ## EXAMPLES
 

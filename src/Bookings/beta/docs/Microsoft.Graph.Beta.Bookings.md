@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: 9d60a022-2220-4eb4-9ed8-2d56a19f829f
+Module Guid: 1aff5426-6170-4d8f-8b90-2cdc6b91b5c9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -531,7 +531,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventSessionRegistration](Remove-MgBetaVirtualEventSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -570,7 +570,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistration](Remove-MgBetaVirtualEventWebinarSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.

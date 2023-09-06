@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Create a new deviceEnrollmentLimitConfiguration object.
+Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDeviceManagementDeviceEnrollmentConfiguration
 ```
 
 ## DESCRIPTION
-Create a new deviceEnrollmentLimitConfiguration object.
+Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ## EXAMPLES
 
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -253,15 +253,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ASSIGNMENTS <IMicrosoftGraphEnrollmentConfigurationAssignment[]>`: The list of group assignments for the device configuration profile
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 `BODYPARAMETER <IMicrosoftGraphDeviceEnrollmentConfiguration>`: The Base Class of Device Enrollment Configuration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]`: The list of group assignments for the device configuration profile
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedDateTime <DateTime?>]`: Created date time in UTC of the device enrollment configuration

@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -243,10 +243,10 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphDelegatedAdminCustomer>`: delegatedAdminCustomer
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
   - `[ServiceManagementDetails <IMicrosoftGraphDelegatedAdminServiceManagementDetail[]>]`: Contains the management details of a service in the customer tenant that's managed by delegated administration.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ServiceManagementUrl <String>]`: The URL of the management portal for the managed service. Read-only.
     - `[ServiceName <String>]`: The name of a managed service. Read-only.
   - `[TenantId <String>]`: The Azure AD-assigned tenant ID of the customer. Read-only.
@@ -260,7 +260,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DelegatedAdminServiceManagementDetailId <String>]`: The unique identifier of delegatedAdminServiceManagementDetail
 
 `SERVICEMANAGEMENTDETAILS <IMicrosoftGraphDelegatedAdminServiceManagementDetail[]>`: Contains the management details of a service in the customer tenant that's managed by delegated administration.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ServiceManagementUrl <String>]`: The URL of the management portal for the managed service. Read-only.
   - `[ServiceName <String>]`: The name of a managed service. Read-only.
 

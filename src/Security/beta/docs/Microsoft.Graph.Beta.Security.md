@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 12985a9b-0178-4d16-9f7e-034d2bb3c519
+Module Guid: 3e3a124f-531b-4725-8441-936278337b81
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -520,7 +520,7 @@ The host resource is the abstract base type that returns an implementation.
 A host can be of one of the following types:
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPair](Get-MgBetaSecurityThreatIntelligenceHostChildHostPair.md)
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPairCount](Get-MgBetaSecurityThreatIntelligenceHostChildHostPairCount.md)
 Get the number of the resource
@@ -607,7 +607,7 @@ The host related to this hostTracker.
 When navigating to a hostTracker from a host, this should be assumed to be a return reference.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostWhoi](Get-MgBetaSecurityThreatIntelligenceHostWhoi.md)
-Get whois from security
+Get the current whoisRecord resource for a host.
 
 ### [Get-MgBetaSecurityThreatIntelligenceIntelProfile](Get-MgBetaSecurityThreatIntelligenceIntelProfile.md)
 Read the properties and relationships of a intelligenceProfile object.
@@ -683,28 +683,28 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecord](Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecord.md)
-Get whoisHistoryRecords from security
+Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecordCount](Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecordCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecordHost](Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecordHost.md)
-Get host from security
+The host associated to this WHOIS object.
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecord](Get-MgBetaSecurityThreatIntelligenceWhoisRecord.md)
-Get whoisRecords from security
+Read the properties and relationships of a whoisRecord object.
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordCount](Get-MgBetaSecurityThreatIntelligenceWhoisRecordCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistory](Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistory.md)
-Get history from security
+The collection of historical records associated to this WHOIS object.
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistoryCount](Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistoryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceWhoisRecordHost](Get-MgBetaSecurityThreatIntelligenceWhoisRecordHost.md)
-Get host from security
+The host associated to this WHOIS object.
 
 ### [Get-MgBetaSecurityThreatSubmission](Get-MgBetaSecurityThreatSubmission.md)
 A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.

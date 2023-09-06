@@ -263,7 +263,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -437,7 +437,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Street <String>]`: The street.
 
 `APPOINTMENTS <IMicrosoftGraphBookingAppointment[]>`: All the appointments of this business. Read-only. Nullable.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
   - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
@@ -490,7 +490,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphBookingBusiness>`: Represents a Microsot Bookings Business.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
@@ -499,7 +499,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
   - `[Appointments <IMicrosoftGraphBookingAppointment[]>]`: All the appointments of this business. Read-only. Nullable.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
     - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
     - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
@@ -551,12 +551,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[BusinessType <String>]`: The type of business.
   - `[CalendarView <IMicrosoftGraphBookingAppointment[]>]`: The set of appointments of this business in a specified date range. Read-only. Nullable.
   - `[CustomQuestions <IMicrosoftGraphBookingCustomQuestion[]>]`: All the custom questions of this business. Read-only. Nullable.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AnswerInputType <String>]`: answerInputType
     - `[AnswerOptions <String[]>]`: List of possible answer values.
     - `[DisplayName <String>]`: The question.
   - `[Customers <IMicrosoftGraphBookingCustomerBase[]>]`: All the customers of this business. Read-only. Nullable.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DefaultCurrencyIso <String>]`: The code for the currency that the business operates in on Microsoft Bookings.
   - `[DisplayName <String>]`: The name of the business, which interfaces with customers. This name appears at the top of the business scheduling page.
   - `[Email <String>]`: The email address for the business.
@@ -570,7 +570,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SendConfirmationsToOwner <Boolean?>]`: True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
     - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot, denoted in ISO 8601 format.
   - `[Services <IMicrosoftGraphBookingService[]>]`: All the services offered by this business. Read-only. Nullable.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
     - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
       - `[IsRequired <Boolean?>]`: The ID of the custom question.
@@ -594,7 +594,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
     - `[StaffMemberIds <String[]>]`: Represents those staff members who provide this service.
   - `[StaffMembers <IMicrosoftGraphBookingStaffMemberBase[]>]`: All the staff members that provide services in this business. Read-only. Nullable.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[WebSiteUrl <String>]`: The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
 
 `BUSINESSHOURS <IMicrosoftGraphBookingWorkHours[]>`: The hours of operation for the business.
@@ -604,7 +604,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[StartTime <String>]`: The time of the day when work starts. For example, 08:00:00.0000000.
 
 `CALENDARVIEW <IMicrosoftGraphBookingAppointment[]>`: The set of appointments of this business in a specified date range. Read-only. Nullable.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[AnonymousJoinWebUrl <String>]`: The URL of the meeting to join anonymously.
   - `[CustomerTimeZone <String>]`: The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
@@ -656,10 +656,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 `CUSTOMERS <IMicrosoftGraphBookingCustomerBase[]>`: All the customers of this business. Read-only. Nullable.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `CUSTOMQUESTIONS <IMicrosoftGraphBookingCustomQuestion[]>`: All the custom questions of this business. Read-only. Nullable.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AnswerInputType <String>]`: answerInputType
   - `[AnswerOptions <String[]>]`: List of possible answer values.
   - `[DisplayName <String>]`: The question.
@@ -673,7 +673,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[TimeSlotInterval <TimeSpan?>]`: Duration of each time slot, denoted in ISO 8601 format.
 
 `SERVICES <IMicrosoftGraphBookingService[]>`: All the services offered by this business. Read-only. Nullable.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
     - `[IsRequired <Boolean?>]`: The ID of the custom question.
@@ -728,7 +728,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[StaffMemberIds <String[]>]`: Represents those staff members who provide this service.
 
 `STAFFMEMBERS <IMicrosoftGraphBookingStaffMemberBase[]>`: All the staff members that provide services in this business. Read-only. Nullable.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 ## RELATED LINKS
 

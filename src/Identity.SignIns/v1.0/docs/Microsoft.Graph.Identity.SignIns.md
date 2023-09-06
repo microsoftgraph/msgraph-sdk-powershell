@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: b0610717-f987-4ed1-bf12-8e9f130f854e
+Module Guid: 36c19c40-9529-41c9-927a-a052ae1b417e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -112,7 +112,7 @@ Retrieve the properties and relationships of a authenticationContextClassReferen
 Get the number of the resource
 
 ### [Get-MgIdentityConditionalAccessNamedLocation](Get-MgIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
 
 ### [Get-MgIdentityConditionalAccessNamedLocationCount](Get-MgIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -996,7 +996,7 @@ Create an authenticationContextClassReference object, if the ID has not been use
 If ID has been used, this call updates the authenticationContextClassReference object.
 
 ### [Update-MgIdentityConditionalAccessNamedLocation](Update-MgIdentityConditionalAccessNamedLocation.md)
-Update the properties of an ipNamedLocation object.
+Update the properties of a countryNamedLocation object.
 
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -1077,7 +1077,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Update the user synchronization policy of a partner-specific configuration.
+Create a cross-tenant user synchronization policy for a partner-specific configuration.
 
 ### [Update-MgPolicyDefaultAppManagementPolicy](Update-MgPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

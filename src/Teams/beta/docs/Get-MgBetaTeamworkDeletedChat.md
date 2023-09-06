@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaTeamworkDeletedChat
 
 ## SYNOPSIS
-Get deletedChats from teamwork
+Read the properties and relationships of a deletedChat object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaTeamworkDeletedChat -InputObject <ITeamsIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get deletedChats from teamwork
+Read the properties and relationships of a deletedChat object.
 
 ## EXAMPLES
 

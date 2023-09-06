@@ -660,10 +660,10 @@ paths:
       tags:
         - users.user
       summary: Update user
-      description: Update the properties of a user object.
+      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -698,7 +698,7 @@ paths:
       description: Deletes a user.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -11232,7 +11232,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permission that has been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -11707,6 +11706,8 @@ components:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.
               nullable: true
+            servicePrincipalLockConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.servicePrincipalLockConfiguration'
             signInAudience:
               type: string
               description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
@@ -14083,6 +14084,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
@@ -14194,6 +14196,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps to access the team.
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -14250,7 +14253,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.addIn:
@@ -15159,6 +15162,31 @@ components:
         resourceAppId:
           type: string
           description: The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
+      additionalProperties:
+        type: object
+    microsoft.graph.servicePrincipalLockConfiguration:
+      title: servicePrincipalLockConfiguration
+      type: object
+      properties:
+        allProperties:
+          type: boolean
+          description: 'Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.'
+          nullable: true
+        credentialsWithUsageSign:
+          type: boolean
+          description: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
+          nullable: true
+        credentialsWithUsageVerify:
+          type: boolean
+          description: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
+          nullable: true
+        isEnabled:
+          type: boolean
+          description: 'Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.'
+        tokenEncryptionKeyId:
+          type: boolean
+          description: Locks the tokenEncryptionKeyId property for modification on the service principal.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.spaApplication:
@@ -16145,7 +16173,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Read properties and relationships of the windows10EnterpriseModernAppManagementConfiguration object.
+Read properties and relationships of the iosDeviceFeaturesConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIdentit
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the windows10EnterpriseModernAppManagementConfiguration object.
+Read properties and relationships of the iosDeviceFeaturesConfiguration object.
 
 ## EXAMPLES
 

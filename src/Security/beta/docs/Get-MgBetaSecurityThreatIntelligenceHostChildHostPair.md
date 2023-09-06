@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostChildHostPair
 
 ## SYNOPSIS
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityThreatIntelligenceHostChildHostPair -InputObject <ISecurityIde
 ```
 
 ## DESCRIPTION
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 
 ## EXAMPLES
 

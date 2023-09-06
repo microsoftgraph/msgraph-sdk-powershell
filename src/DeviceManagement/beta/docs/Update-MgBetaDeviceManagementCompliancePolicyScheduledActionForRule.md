@@ -392,6 +392,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionNetworkLearningSummary
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
+  - `[WindowsQualityUpdateProfileAssignmentId <String>]`: The unique identifier of windowsQualityUpdateProfileAssignment
+  - `[WindowsQualityUpdateProfileId <String>]`: The unique identifier of windowsQualityUpdateProfile
 
 `SCHEDULEDACTIONCONFIGURATIONS <IMicrosoftGraphDeviceManagementComplianceActionItem[]>`: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

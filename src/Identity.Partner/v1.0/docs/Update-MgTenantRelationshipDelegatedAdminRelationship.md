@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -399,7 +399,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ACCESSASSIGNMENTS <IMicrosoftGraphDelegatedAdminAccessAssignment[]>`: The access assignments associated with the delegated admin relationship.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AccessContainer <IMicrosoftGraphDelegatedAdminAccessContainer>]`: delegatedAdminAccessContainer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AccessContainerId <String>]`: The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
@@ -419,9 +419,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphDelegatedAdminRelationship>`: delegatedAdminRelationship
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AccessAssignments <IMicrosoftGraphDelegatedAdminAccessAssignment[]>]`: The access assignments associated with the delegated admin relationship.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AccessContainer <IMicrosoftGraphDelegatedAdminAccessContainer>]`: delegatedAdminAccessContainer
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AccessContainerId <String>]`: The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
@@ -445,14 +445,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
   - `[Operations <IMicrosoftGraphDelegatedAdminRelationshipOperation[]>]`: The long running operations associated with the delegated admin relationship.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedDateTime <DateTime?>]`: The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
     - `[Data <String>]`: The data (payload) for the operation. Read-only.
     - `[LastModifiedDateTime <DateTime?>]`: The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
     - `[OperationType <String>]`: delegatedAdminRelationshipOperationType
     - `[Status <String>]`: longRunningOperationStatus
   - `[Requests <IMicrosoftGraphDelegatedAdminRelationshipRequest[]>]`: The requests associated with the delegated admin relationship.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Action <String>]`: delegatedAdminRelationshipRequestAction
     - `[CreatedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.
@@ -473,7 +473,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DelegatedAdminServiceManagementDetailId <String>]`: The unique identifier of delegatedAdminServiceManagementDetail
 
 `OPERATIONS <IMicrosoftGraphDelegatedAdminRelationshipOperation[]>`: The long running operations associated with the delegated admin relationship.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedDateTime <DateTime?>]`: The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
   - `[Data <String>]`: The data (payload) for the operation. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
@@ -481,7 +481,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: longRunningOperationStatus
 
 `REQUESTS <IMicrosoftGraphDelegatedAdminRelationshipRequest[]>`: The requests associated with the delegated admin relationship.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Action <String>]`: delegatedAdminRelationshipRequestAction
   - `[CreatedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship request was created. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time in ISO 8601 format and UTC time when this relationship request was last modified. Read-only.

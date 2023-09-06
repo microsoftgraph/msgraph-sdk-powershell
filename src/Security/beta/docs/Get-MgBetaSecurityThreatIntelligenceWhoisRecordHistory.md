@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistory
 
 ## SYNOPSIS
-Get history from security
+The collection of historical records associated to this WHOIS object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityThreatIntelligenceWhoisRecordHistory -InputObject <ISecurityId
 ```
 
 ## DESCRIPTION
-Get history from security
+The collection of historical records associated to this WHOIS object.
 
 ## EXAMPLES
 

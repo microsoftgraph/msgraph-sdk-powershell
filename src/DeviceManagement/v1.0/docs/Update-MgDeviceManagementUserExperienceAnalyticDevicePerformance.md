@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -512,7 +512,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance>`: The user experience analytics device performance entity contains device boot performance details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
   - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
   - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999

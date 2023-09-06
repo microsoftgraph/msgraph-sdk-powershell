@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -287,7 +287,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphLinkedResource>`: linkedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ApplicationName <String>]`: The app name of the source that sends the linkedResource.
   - `[DisplayName <String>]`: The title of the linkedResource.
   - `[ExternalId <String>]`: ID of the object that is associated with this task on the third-party/partner system.

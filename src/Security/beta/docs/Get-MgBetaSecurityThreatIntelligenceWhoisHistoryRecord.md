@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecord
 
 ## SYNOPSIS
-Get whoisHistoryRecords from security
+Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityThreatIntelligenceWhoisHistoryRecord -InputObject <ISecurityId
 ```
 
 ## DESCRIPTION
-Get whoisHistoryRecords from security
+Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
 
 ## EXAMPLES
 

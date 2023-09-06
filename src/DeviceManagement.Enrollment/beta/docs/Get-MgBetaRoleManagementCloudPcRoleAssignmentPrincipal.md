@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaRoleManagementCloudPcRoleAssignmentPrincipal
 
 ## SYNOPSIS
-Read-only collection referencing the assigned principals.
+Read-only collection that references the assigned principals.
 Provided so that callers can get the principals using $expand at the same time as getting the role assignment.
 Read-only.
 Supports $expand.
@@ -36,7 +36,7 @@ Get-MgBetaRoleManagementCloudPcRoleAssignmentPrincipal -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Read-only collection referencing the assigned principals.
+Read-only collection that references the assigned principals.
 Provided so that callers can get the principals using $expand at the same time as getting the role assignment.
 Read-only.
 Supports $expand.

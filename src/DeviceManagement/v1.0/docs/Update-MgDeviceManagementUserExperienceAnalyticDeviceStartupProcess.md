@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -285,7 +285,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess>`: The user experience analytics device startup process details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ManagedDeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
   - `[ProcessName <String>]`: The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
   - `[ProductName <String>]`: The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.

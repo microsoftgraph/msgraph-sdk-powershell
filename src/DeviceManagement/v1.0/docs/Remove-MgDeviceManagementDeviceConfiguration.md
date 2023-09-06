@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceConfiguration
 
 ## SYNOPSIS
-Deletes a iosUpdateConfiguration.
+Deletes a macOSGeneralDeviceConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceConfiguration -InputObject <IDeviceManagementIden
 ```
 
 ## DESCRIPTION
-Deletes a iosUpdateConfiguration.
+Deletes a macOSGeneralDeviceConfiguration.
 
 ## EXAMPLES
 

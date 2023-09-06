@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 33d03074-3741-451d-ba6f-b1bf4c44f9c4
+Module Guid: 736d006a-5d1e-49e4-8511-236d9bebb0fa
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -399,6 +399,8 @@ The content streams that are uploaded.
 
 ### [Update-MgUser](Update-MgUser.md)
 Update the properties of a user object.
+Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
+Compare member and guest default permissions to see properties they can manage.
 
 ### [Update-MgUserExtension](Update-MgUserExtension.md)
 Update the navigation property extensions in users

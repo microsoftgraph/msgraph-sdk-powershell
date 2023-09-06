@@ -266,7 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -414,7 +414,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ADDITIONALSOURCES <IMicrosoftGraphSecurityDataSource[]>`: Adds an additional source to the eDiscovery search.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -447,13 +447,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[Message <String>]`: The message.
     - `[Subcode <Int32?>]`: The result sub-code.
   - `[Status <String>]`: caseOperationStatus
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet>]`: ediscoveryReviewSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: 
     - `[DisplayName <String>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Queries <IMicrosoftGraphSecurityEdiscoveryReviewSetQuery[]>]`: Represents queries within the review set.
       - `[ContentQuery <String>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -462,7 +462,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: 
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[LastModifiedDateTime <DateTime?>]`: 
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContentQuery <String>]`: 
@@ -472,10 +472,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: 
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation>]`: ediscoveryAddToReviewSetOperation
     - `[AdditionalSources <IMicrosoftGraphSecurityDataSource[]>]`: Adds an additional source to the eDiscovery search.
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -491,7 +491,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[IndexedItemCount <Int64?>]`: The estimated count of items for the search that matched the content query.
       - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the search that matched the content query.
       - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
@@ -506,7 +506,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
       - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
       - `[Status <String>]`: dataSourceContainerStatus
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DataSource <IMicrosoftGraphSecurityDataSource>]`: dataSource
       - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation>]`: ediscoveryIndexOperation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -517,7 +517,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[PercentProgress <Int32?>]`: The progress of the operation.
         - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
         - `[Status <String>]`: caseOperationStatus
-        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `BODYPARAMETER <IMicrosoftGraphSecurityEdiscoverySearch>`: ediscoverySearch
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -535,7 +535,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation>]`: ediscoveryAddToReviewSetOperation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Action <String>]`: caseAction
@@ -549,13 +549,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[Message <String>]`: The message.
       - `[Subcode <Int32?>]`: The result sub-code.
     - `[Status <String>]`: caseOperationStatus
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet>]`: ediscoveryReviewSet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: 
       - `[DisplayName <String>]`: 
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Queries <IMicrosoftGraphSecurityEdiscoveryReviewSetQuery[]>]`: Represents queries within the review set.
         - `[ContentQuery <String>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -564,10 +564,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: 
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[LastModifiedDateTime <DateTime?>]`: 
-        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
   - `[AdditionalSources <IMicrosoftGraphSecurityDataSource[]>]`: Adds an additional source to the eDiscovery search.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -583,7 +583,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[PercentProgress <Int32?>]`: The progress of the operation.
     - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[Status <String>]`: caseOperationStatus
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[IndexedItemCount <Int64?>]`: The estimated count of items for the search that matched the content query.
     - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the search that matched the content query.
     - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
@@ -598,7 +598,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
     - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
     - `[Status <String>]`: dataSourceContainerStatus
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DataSource <IMicrosoftGraphSecurityDataSource>]`: dataSource
     - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation>]`: ediscoveryIndexOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -609,7 +609,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `CREATEDBY <IMicrosoftGraphIdentitySet>`: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -621,7 +621,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 `CUSTODIANSOURCES <IMicrosoftGraphSecurityDataSource[]>`: Custodian sources that are included in the eDiscovery search.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -689,7 +689,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Message <String>]`: The message.
     - `[Subcode <Int32?>]`: The result sub-code.
   - `[Status <String>]`: caseOperationStatus
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IndexedItemCount <Int64?>]`: The estimated count of items for the search that matched the content query.
   - `[IndexedItemsSize <Int64?>]`: The estimated size of items for the search that matched the content query.
   - `[MailboxCount <Int32?>]`: The number of mailboxes that had search hits.
@@ -702,7 +702,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: 
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddToReviewSetOperation <IMicrosoftGraphSecurityEdiscoveryAddToReviewSetOperation>]`: ediscoveryAddToReviewSetOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Action <String>]`: caseAction
@@ -712,13 +712,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[PercentProgress <Int32?>]`: The progress of the operation.
       - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
       - `[Status <String>]`: caseOperationStatus
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ReviewSet <IMicrosoftGraphSecurityEdiscoveryReviewSet>]`: ediscoveryReviewSet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedDateTime <DateTime?>]`: 
         - `[DisplayName <String>]`: 
-        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Queries <IMicrosoftGraphSecurityEdiscoveryReviewSetQuery[]>]`: Represents queries within the review set.
           - `[ContentQuery <String>]`: 
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -727,10 +727,10 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: 
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[LastModifiedDateTime <DateTime?>]`: 
-          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Search <IMicrosoftGraphSecurityEdiscoverySearch>]`: ediscoverySearch
     - `[AdditionalSources <IMicrosoftGraphSecurityDataSource[]>]`: Adds an additional source to the eDiscovery search.
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
@@ -745,7 +745,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
       - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
       - `[Status <String>]`: dataSourceContainerStatus
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DataSource <IMicrosoftGraphSecurityDataSource>]`: dataSource
       - `[LastIndexOperation <IMicrosoftGraphSecurityEdiscoveryIndexOperation>]`: ediscoveryIndexOperation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -756,7 +756,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[PercentProgress <Int32?>]`: The progress of the operation.
         - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
         - `[Status <String>]`: caseOperationStatus
-        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[SiteCount <Int32?>]`: The number of mailboxes that had search hits.
   - `[UnindexedItemCount <Int64?>]`: The estimated count of unindexed items for the collection.
   - `[UnindexedItemsSize <Int64?>]`: The estimated size of unindexed items for the collection.
@@ -777,10 +777,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastModifiedDateTime <DateTime?>]`: Last modified date and time of the dataSourceContainer.
   - `[ReleasedDateTime <DateTime?>]`: Date and time that the dataSourceContainer was released from the case.
   - `[Status <String>]`: dataSourceContainerStatus
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DataSource <IMicrosoftGraphSecurityDataSource>]`: dataSource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -805,7 +805,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Message <String>]`: The message.
       - `[Subcode <Int32?>]`: The result sub-code.
     - `[Status <String>]`: caseOperationStatus
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 ## RELATED LINKS
 

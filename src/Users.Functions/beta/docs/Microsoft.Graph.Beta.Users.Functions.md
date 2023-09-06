@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: 88f0396e-b2e5-4f64-9776-7d09680e9582
+Module Guid: 7bb2de0a-45b6-461e-8e72-baace566b4f3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -145,23 +145,23 @@ Invoke function getLoggedOnManagedDevices
 
 ### [Get-MgBetaUserMailFolderChildFolderDelta](Get-MgBetaUserMailFolderChildFolderDelta.md)
 Get a set of mail folders that have been added, deleted, or removed from the user's mailbox.
-A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders.
-This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
+A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders.
+This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
 
 ### [Get-MgBetaUserMailFolderChildFolderMessageDelta](Get-MgBetaUserMailFolderChildFolderMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.
-A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
-This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
+A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages).
+This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time.
 
 ### [Get-MgBetaUserMailFolderDelta](Get-MgBetaUserMailFolderDelta.md)
 Get a set of mail folders that have been added, deleted, or removed from the user's mailbox.
-A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders.
-This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
+A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders.
+This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time.
 
 ### [Get-MgBetaUserMailFolderMessageDelta](Get-MgBetaUserMailFolderMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.
-A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
-This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
+A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages).
+This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time.
 
 ### [Get-MgBetaUserManagedAppBlockedUser](Get-MgBetaUserManagedAppBlockedUser.md)
 Invoke function getManagedAppBlockedUsers
@@ -192,8 +192,8 @@ Retrieves the list of devices with failed or pending apps
 
 ### [Get-MgBetaUserMessageDelta](Get-MgBetaUserMessageDelta.md)
 Get a set of messages that have been added, deleted, or updated in a specified folder.
-A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
-This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
+A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages).
+This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time.
 
 ### [Get-MgBetaUserOnenoteRecentNotebook](Get-MgBetaUserOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
@@ -285,7 +285,7 @@ Invoke function recent
 ### [Invoke-MgBetaSupportedUserOutlookLanguage](Invoke-MgBetaSupportedUserOutlookLanguage.md)
 Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
 When setting up an Outlook client, the user selects the preferred language from this supported list.
-You can subsequently get the preferred language by \ngetting the user's mailbox settings.
+You can subsequently get the preferred language by\ngetting the user's mailbox settings.
 
 ### [Invoke-MgBetaTimeUserOutlook](Invoke-MgBetaTimeUserOutlook.md)
 Invoke function supportedTimeZones

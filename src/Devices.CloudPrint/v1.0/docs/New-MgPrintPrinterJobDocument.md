@@ -123,7 +123,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -255,7 +255,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphPrintDocument>`: printDocument
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ContentType <String>]`: The document's content (MIME) type. Read-only.
   - `[DisplayName <String>]`: The document's name. Read-only.
   - `[Size <Int64?>]`: The document's size in bytes. Read-only.

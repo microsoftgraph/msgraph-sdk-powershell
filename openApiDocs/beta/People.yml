@@ -8529,6 +8529,9 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.identitySet:
       title: identitySet
       type: object

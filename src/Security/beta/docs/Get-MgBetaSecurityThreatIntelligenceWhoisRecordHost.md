@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceWhoisRecordHost
 
 ## SYNOPSIS
-Get host from security
+The host associated to this WHOIS object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaSecurityThreatIntelligenceWhoisRecordHost -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-Get host from security
+The host associated to this WHOIS object.
 
 ## EXAMPLES
 

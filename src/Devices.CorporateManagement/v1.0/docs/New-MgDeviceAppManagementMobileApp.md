@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Create a new webApp object.
+Create a new macOSOfficeSuiteApp object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-C
 ```
 
 ## DESCRIPTION
-Create a new webApp object.
+Create a new macOSOfficeSuiteApp object.
 
 ## EXAMPLES
 

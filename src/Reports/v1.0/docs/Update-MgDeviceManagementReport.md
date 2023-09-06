@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -162,9 +162,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphDeviceManagementReports>`: Singleton entity that acts as a container for all reports functionality.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ExportJobs <IMicrosoftGraphDeviceManagementExportJob[]>]`: Entity representing a job to export a report
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires
     - `[Filter <String>]`: Filters applied on the report
     - `[Format <DeviceManagementReportFileFormat?>]`: Possible values for the file format of a report
@@ -177,7 +177,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Url <String>]`: Temporary location of the exported report
 
 `EXPORTJOBS <IMicrosoftGraphDeviceManagementExportJob[]>`: Entity representing a job to export a report
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ExpirationDateTime <DateTime?>]`: Time that the exported report expires
   - `[Filter <String>]`: Filters applied on the report
   - `[Format <DeviceManagementReportFileFormat?>]`: Possible values for the file format of a report

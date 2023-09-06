@@ -198,7 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -531,10 +531,10 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphWindowsProtectionState>`: Device protection status entity.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AntiMalwareVersion <String>]`: Current anti malware version
   - `[DetectedMalwareState <IMicrosoftGraphWindowsDeviceMalwareState[]>]`: Device malware list
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AdditionalInformationUrl <String>]`: Information URL to learn more about the malware
     - `[Category <WindowsMalwareCategory?>]`: Malware category id
     - `[DetectionCount <Int32?>]`: Number of times the malware is detected
@@ -566,7 +566,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
 
 `DETECTEDMALWARESTATE <IMicrosoftGraphWindowsDeviceMalwareState[]>`: Device malware list
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AdditionalInformationUrl <String>]`: Information URL to learn more about the malware
   - `[Category <WindowsMalwareCategory?>]`: Malware category id
   - `[DetectionCount <Int32?>]`: Number of times the malware is detected

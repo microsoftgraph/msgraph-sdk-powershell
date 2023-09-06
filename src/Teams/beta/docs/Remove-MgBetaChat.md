@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaChat
 
 ## SYNOPSIS
-Delete entity from chats
+Soft-delete a chat.
+When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
 
 ## SYNTAX
 
@@ -24,7 +25,8 @@ Remove-MgBetaChat -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] 
 ```
 
 ## DESCRIPTION
-Delete entity from chats
+Soft-delete a chat.
+When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
 
 ## EXAMPLES
 

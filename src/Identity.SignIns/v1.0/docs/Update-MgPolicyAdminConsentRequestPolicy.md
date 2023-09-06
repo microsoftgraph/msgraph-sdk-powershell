@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -244,7 +244,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphAdminConsentRequestPolicy>`: adminConsentRequestPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IsEnabled <Boolean?>]`: Specifies whether the admin consent request feature is enabled or disabled. Required.
   - `[NotifyReviewers <Boolean?>]`: Specifies whether reviewers will receive notifications. Required.
   - `[RemindersEnabled <Boolean?>]`: Specifies whether reviewers will receive reminder emails. Required.

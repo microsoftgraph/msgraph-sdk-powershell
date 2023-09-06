@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserChatPermissionGrant
 
 ## SYNOPSIS
-Get permissionGrants from users
+A collection of permissions granted to apps for the chat.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserChatPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get permissionGrants from users
+A collection of permissions granted to apps for the chat.
 
 ## EXAMPLES
 

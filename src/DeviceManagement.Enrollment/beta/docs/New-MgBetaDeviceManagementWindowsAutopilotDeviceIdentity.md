@@ -27,8 +27,9 @@ New-MgBetaDeviceManagementWindowsAutopilotDeviceIdentity [-AdditionalProperties 
  [-ProductKey <String>] [-PurchaseOrderIdentifier <String>]
  [-RemediationState <WindowsAutopilotDeviceRemediationState>]
  [-RemediationStateLastModifiedDateTime <DateTime>] [-ResourceName <String>] [-SerialNumber <String>]
- [-SkuNumber <String>] [-SystemFamily <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SkuNumber <String>] [-SystemFamily <String>]
+ [-UserlessEnrollmentStatus <WindowsAutopilotUserlessEnrollmentStatus>] [-UserPrincipalName <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -497,6 +498,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserlessEnrollmentStatus
+Userless enrollment block status, indicating whether the next device enrollment will be blocked.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Support.WindowsAutopilotUserlessEnrollmentStatus
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserPrincipalName
 User Principal Name.
 
@@ -632,6 +648,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SkuNumber <String>]`: SKU Number
   - `[SystemFamily <String>]`: System Family
   - `[UserPrincipalName <String>]`: User Principal Name.
+  - `[UserlessEnrollmentStatus <WindowsAutopilotUserlessEnrollmentStatus?>]`: Userless enrollment block status, indicating whether the next device enrollment will be blocked.
 
 `DEPLOYMENTPROFILE <IMicrosoftGraphWindowsAutopilotDeploymentProfile>`: Windows Autopilot Deployment Profile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -665,6 +682,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SkuNumber <String>]`: SKU Number
     - `[SystemFamily <String>]`: System Family
     - `[UserPrincipalName <String>]`: User Principal Name.
+    - `[UserlessEnrollmentStatus <WindowsAutopilotUserlessEnrollmentStatus?>]`: Userless enrollment block status, indicating whether the next device enrollment will be blocked.
   - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.
@@ -734,6 +752,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SkuNumber <String>]`: SKU Number
     - `[SystemFamily <String>]`: System Family
     - `[UserPrincipalName <String>]`: User Principal Name.
+    - `[UserlessEnrollmentStatus <WindowsAutopilotUserlessEnrollmentStatus?>]`: Userless enrollment block status, indicating whether the next device enrollment will be blocked.
   - `[Assignments <IMicrosoftGraphWindowsAutopilotDeploymentProfileAssignment[]>]`: The list of group assignments for the profile.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Source <DeviceAndAppManagementAssignmentSource?>]`: Represents source of assignment.

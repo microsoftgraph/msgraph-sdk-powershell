@@ -208,7 +208,10 @@ Accept wildcard characters: False
 ```
 
 ### -IsPrivileged
-.
+Flag indicating if the action is a sensitive resource action.
+Applies only for actions in the microsoft.directory resource namespace.
+Read-only.
+Supports $filter (eq).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -360,7 +363,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AuthenticationContextId <String>]`: 
   - `[Description <String>]`: Description for the action. Supports $filter (eq).
   - `[IsAuthenticationContextSettable <Boolean?>]`: 
-  - `[IsPrivileged <Boolean?>]`: 
+  - `[IsPrivileged <Boolean?>]`: Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
   - `[Name <String>]`: Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
   - `[ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>]`: unifiedRbacResourceScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

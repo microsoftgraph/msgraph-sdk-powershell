@@ -8,7 +8,7 @@ schema: 2.0.0
 # Undo-MgBetaTeamworkDeletedChatDelete
 
 ## SYNOPSIS
-Invoke action undoDelete
+Restore a  deletedChat to an active chat.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Undo-MgBetaTeamworkDeletedChatDelete -InputObject <ITeamsIdentity> [-PassThru] [
 ```
 
 ## DESCRIPTION
-Invoke action undoDelete
+Restore a  deletedChat to an active chat.
 
 ## EXAMPLES
 

@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -429,7 +429,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory>`: The user experience analytics device startup history entity contains device boot performance history details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CoreBootTimeInMS <Int32?>]`: The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
   - `[CoreLoginTimeInMS <Int32?>]`: The device core login time in milliseconds. Supports: $select, $OrderBy. Read-only.
   - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.

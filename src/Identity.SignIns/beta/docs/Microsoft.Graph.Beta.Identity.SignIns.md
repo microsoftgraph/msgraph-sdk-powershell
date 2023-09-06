@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 96bc639a-bc69-448a-b36c-735cc0bad764
+Module Guid: a523190d-ee40-4b05-8384-90f6b55e551d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -215,7 +215,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -236,7 +236,8 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of a customAuthenticationExtension object.
+Read the properties and relationships of an authenticationEventListener object.
+The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -1284,7 +1285,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete a countryNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1693,7 +1694,7 @@ Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they are the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -1804,7 +1805,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Create a cross-tenant user synchronization policy for a partner-specific configuration.
+Update the user synchronization policy of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyDefaultAppManagementPolicy](Update-MgBetaPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

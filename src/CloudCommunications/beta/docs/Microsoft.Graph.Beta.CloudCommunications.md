@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: c3095cec-e817-4823-b228-c34632267966
+Module Guid: b93649a2-2557-44fd-a7b2-d697b33ff0be
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -247,8 +247,7 @@ The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgBetaUserPresence](Get-MgBetaUserPresence.md)
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Get a user's presence information.
 
 ### [Invoke-MgBetaAnswerCommunicationCall](Invoke-MgBetaAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -263,11 +262,8 @@ Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [Invoke-MgBetaInviteCommunicationCallParticipant](Invoke-MgBetaInviteCommunicationCallParticipant.md)
-Delete a specific participant in a call.
-In some situations, it is appropriate for an application to remove a participant from an active call.
-This action can be done before or after the participant answers the call.
-When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
-When an invited participant is removed, any outstanding add participant request is canceled.
+Invite participants to the active call.
+For more information about how to handle operations, see commsOperation.
 
 ### [Invoke-MgBetaKeepCommunicationCallAlive](Invoke-MgBetaKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
@@ -444,7 +440,7 @@ Delete navigation property attendanceRecords for communications
 Delete navigation property recordings for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -471,7 +467,7 @@ Delete navigation property attendanceRecords for users
 Delete navigation property recordings for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.

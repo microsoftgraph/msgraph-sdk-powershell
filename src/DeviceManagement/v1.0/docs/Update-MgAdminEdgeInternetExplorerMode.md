@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -161,9 +161,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphInternetExplorerMode>`: internetExplorerMode
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[SiteLists <IMicrosoftGraphBrowserSiteList[]>]`: A collection of site lists to support Internet Explorer mode.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Description <String>]`: The description of the site list.
     - `[DisplayName <String>]`: The name of the site list.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -179,7 +179,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[PublishedDateTime <DateTime?>]`: The date and time when the site list was published.
     - `[Revision <String>]`: The current revision of the site list.
     - `[SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>]`: A collection of shared cookies defined for the site list.
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Comment <String>]`: The comment for the shared cookie.
       - `[CreatedDateTime <DateTime?>]`: The date and time when the shared cookie was created.
       - `[DeletedDateTime <DateTime?>]`: The date and time when the shared cookie was deleted.
@@ -201,7 +201,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[SourceEnvironment <BrowserSharedCookieSourceEnvironment?>]`: browserSharedCookieSourceEnvironment
       - `[Status <BrowserSharedCookieStatus?>]`: browserSharedCookieStatus
     - `[Sites <IMicrosoftGraphBrowserSite[]>]`: A collection of sites defined for the site list.
-      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AllowRedirect <Boolean?>]`: Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
       - `[Comment <String>]`: The comment for the site.
       - `[CompatibilityMode <BrowserSiteCompatibilityMode?>]`: browserSiteCompatibilityMode
@@ -224,7 +224,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Status <BrowserSiteListStatus?>]`: browserSiteListStatus
 
 `SITELISTS <IMicrosoftGraphBrowserSiteList[]>`: A collection of site lists to support Internet Explorer mode.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: The description of the site list.
   - `[DisplayName <String>]`: The name of the site list.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -240,7 +240,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PublishedDateTime <DateTime?>]`: The date and time when the site list was published.
   - `[Revision <String>]`: The current revision of the site list.
   - `[SharedCookies <IMicrosoftGraphBrowserSharedCookie[]>]`: A collection of shared cookies defined for the site list.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Comment <String>]`: The comment for the shared cookie.
     - `[CreatedDateTime <DateTime?>]`: The date and time when the shared cookie was created.
     - `[DeletedDateTime <DateTime?>]`: The date and time when the shared cookie was deleted.
@@ -262,7 +262,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SourceEnvironment <BrowserSharedCookieSourceEnvironment?>]`: browserSharedCookieSourceEnvironment
     - `[Status <BrowserSharedCookieStatus?>]`: browserSharedCookieStatus
   - `[Sites <IMicrosoftGraphBrowserSite[]>]`: A collection of sites defined for the site list.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AllowRedirect <Boolean?>]`: Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
     - `[Comment <String>]`: The comment for the site.
     - `[CompatibilityMode <BrowserSiteCompatibilityMode?>]`: browserSiteCompatibilityMode

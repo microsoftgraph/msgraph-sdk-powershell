@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -287,7 +287,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `APPLIESTO <IMicrosoftGraphDirectoryObject[]>`: .
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter

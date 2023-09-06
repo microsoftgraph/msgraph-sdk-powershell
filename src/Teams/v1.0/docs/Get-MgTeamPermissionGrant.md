@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamPermissionGrant
 
 ## SYNOPSIS
-Get permissionGrants from teams
+A collection of permissions granted to apps to access the team.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamPermissionGrant -InputObject <ITeamsIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get permissionGrants from teams
+A collection of permissions granted to apps to access the team.
 
 ## EXAMPLES
 

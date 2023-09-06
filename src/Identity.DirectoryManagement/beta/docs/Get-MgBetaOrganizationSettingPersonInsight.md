@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
-To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
+To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgBetaOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManag
 
 ## DESCRIPTION
 Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
-To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
+To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph.
 
 ## EXAMPLES
 

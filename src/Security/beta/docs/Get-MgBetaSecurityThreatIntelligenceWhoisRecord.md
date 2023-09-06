@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceWhoisRecord
 
 ## SYNOPSIS
-Get whoisRecords from security
+Read the properties and relationships of a whoisRecord object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityThreatIntelligenceWhoisRecord -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Get whoisRecords from security
+Read the properties and relationships of a whoisRecord object.
 
 ## EXAMPLES
 

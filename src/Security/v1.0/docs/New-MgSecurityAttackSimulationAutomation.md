@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -303,7 +303,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSimulationAutomation>`: simulationAutomation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -317,7 +317,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastRunDateTime <DateTime?>]`: Date and time of the latest run of the attack simulation automation.
   - `[NextRunDateTime <DateTime?>]`: Date and time of the upcoming run of the attack simulation automation.
   - `[Runs <IMicrosoftGraphSimulationAutomationRun[]>]`: A collection of simulation automation runs.
-    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[EndDateTime <DateTime?>]`: Date and time when the run ends in an attack simulation automation.
     - `[SimulationId <String>]`: Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
     - `[StartDateTime <DateTime?>]`: Date and time when the run starts in an attack simulation automation.
@@ -337,7 +337,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Email <String>]`: Email address of the user.
 
 `RUNS <IMicrosoftGraphSimulationAutomationRun[]>`: A collection of simulation automation runs.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[EndDateTime <DateTime?>]`: Date and time when the run ends in an attack simulation automation.
   - `[SimulationId <String>]`: Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
   - `[StartDateTime <DateTime?>]`: Date and time when the run starts in an attack simulation automation.

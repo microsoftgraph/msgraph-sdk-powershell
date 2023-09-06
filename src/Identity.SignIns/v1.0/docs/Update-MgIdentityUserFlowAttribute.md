@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -251,7 +251,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphIdentityUserFlowAttribute>`: identityUserFlowAttribute
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DataType <String>]`: identityUserFlowAttributeDataType
   - `[Description <String>]`: The description of the user flow attribute that's shown to the user at the time of sign-up.
   - `[DisplayName <String>]`: The display name of the user flow attribute.

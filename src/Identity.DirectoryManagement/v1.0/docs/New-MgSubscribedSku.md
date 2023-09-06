@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique idenfier for an entity.
+The unique identifier for an entity.
 Read-only.
 
 ```yaml
@@ -298,7 +298,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphSubscribedSku>`: subscribedSku
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AccountId <String>]`: The unique ID of the account this SKU belongs to.
   - `[AccountName <String>]`: The name of the account this SKU belongs to.
   - `[AppliesTo <String>]`: The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.

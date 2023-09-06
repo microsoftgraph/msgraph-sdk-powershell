@@ -18,8 +18,9 @@ New-MgBetaDeviceManagementWindowsFeatureUpdateProfile [-AdditionalProperties <Ha
  [-Assignments <IMicrosoftGraphWindowsFeatureUpdateProfileAssignment[]>] [-CreatedDateTime <DateTime>]
  [-DeployableContentDisplayName <String>] [-Description <String>] [-DisplayName <String>]
  [-EndOfSupportDate <DateTime>] [-FeatureUpdateVersion <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
- [-RolloutSettings <IMicrosoftGraphWindowsUpdateRolloutSettings>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-InstallLatestWindows10OnWindows11IneligibleDevice] [-LastModifiedDateTime <DateTime>]
+ [-RoleScopeTagIds <String[]>] [-RolloutSettings <IMicrosoftGraphWindowsUpdateRolloutSettings>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -203,6 +204,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InstallLatestWindows10OnWindows11IneligibleDevice
+If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedDateTime
 The date time that the profile was last modified.
 
@@ -322,6 +338,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: The display name of the profile.
   - `[EndOfSupportDate <DateTime?>]`: The last supported date for a feature update
   - `[FeatureUpdateVersion <String>]`: The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.
+  - `[InstallLatestWindows10OnWindows11IneligibleDevice <Boolean?>]`: If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
   - `[LastModifiedDateTime <DateTime?>]`: The date time that the profile was last modified.
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Feature Update entity.
   - `[RolloutSettings <IMicrosoftGraphWindowsUpdateRolloutSettings>]`: A complex type to store the windows update rollout settings including offer start date time, offer end date time, and days between each set of offers.

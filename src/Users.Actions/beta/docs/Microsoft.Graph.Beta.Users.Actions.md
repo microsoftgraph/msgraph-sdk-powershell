@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: d4ddc1df-844d-472a-aeca-1521d74825fe
+Module Guid: b9c38194-9b65-41f3-b811-9cb4b6dd0e60
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -249,7 +249,7 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 
 ### [Get-MgBetaUserMailTip](Get-MgBetaUserMailTip.md)
 Get the MailTips of one or more recipients as available to the signed-in user.
-Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time.
+Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
 
 ### [Get-MgBetaUserMemberGroup](Get-MgBetaUserMemberGroup.md)
@@ -773,7 +773,7 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ### [New-MgBetaUserMailFolderChildFolderMessageForward](New-MgBetaUserMailFolderChildFolderMessageForward.md)
 Create a draft to forward an existing message, in either JSON or MIME format.
-When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
 Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
@@ -791,8 +791,7 @@ Alternatively, reply to a message in a single operation.
 ### [New-MgBetaUserMailFolderChildFolderMessageReplyAll](New-MgBetaUserMailFolderChildFolderMessageReplyAll.md)
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
 When using JSON format:\n- Specify either a comment or the body property of the message parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
-\n- You can update the draft message later.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
@@ -809,7 +808,7 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ### [New-MgBetaUserMailFolderMessageForward](New-MgBetaUserMailFolderMessageForward.md)
 Create a draft to forward an existing message, in either JSON or MIME format.
-When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
 Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
@@ -827,8 +826,7 @@ Alternatively, reply to a message in a single operation.
 ### [New-MgBetaUserMailFolderMessageReplyAll](New-MgBetaUserMailFolderMessageReplyAll.md)
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
 When using JSON format:\n- Specify either a comment or the body property of the message parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
-\n- You can update the draft message later.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
@@ -854,7 +852,7 @@ The following are the steps to attach a file to an Outlook item using an upload 
 
 ### [New-MgBetaUserMessageForward](New-MgBetaUserMessageForward.md)
 Create a draft to forward an existing message, in either JSON or MIME format.
-When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter.
+When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter.
 Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter.
 Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
@@ -872,8 +870,7 @@ Alternatively, reply to a message in a single operation.
 ### [New-MgBetaUserMessageReplyAll](New-MgBetaUserMessageReplyAll.md)
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
 When using JSON format:\n- Specify either a comment or the body property of the message parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
-\n- You can update the draft message later.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
@@ -1035,9 +1032,8 @@ For more details about sending notifications and the requirements for doing so, 
 
 ### [Send-MgBetaUserMail](Send-MgBetaUserMail.md)
 Send the message specified in the request body using either JSON or MIME format.
-When using JSON format you can include an attachment and use a mention to call out another user in the new message.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-This method saves the message in the Sent Items folder.
+When using JSON format, you can include an attachment and use a mention to call out another user in the new message.
+When using MIME format: This method saves the message in the Sent Items folder.
 Alternatively, create a draft message to send later.
 To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
 

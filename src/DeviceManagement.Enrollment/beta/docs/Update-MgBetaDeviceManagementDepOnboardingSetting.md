@@ -479,6 +479,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SupportPhoneNumber <String>]`: Support phone number
     - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
     - `[TouchIdDisabled <Boolean?>]`: Indicates if touch id setup pane is disabled
+    - `[WaitForDeviceConfiguredConfirmation <Boolean?>]`: Indicates if the device will need to wait for configured confirmation
     - `[ConfigurationEndpointUrl <String>]`: Configuration endpoint url to use for Enrollment
     - `[Description <String>]`: Description of the profile
     - `[DisplayName <String>]`: Name of the profile
@@ -540,6 +541,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SupportPhoneNumber <String>]`: Support phone number
     - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
     - `[TouchIdDisabled <Boolean?>]`: Indicates if touch id setup pane is disabled
+    - `[WaitForDeviceConfiguredConfirmation <Boolean?>]`: Indicates if the device will need to wait for configured confirmation
     - `[ConfigurationEndpointUrl <String>]`: Configuration endpoint url to use for Enrollment
     - `[Description <String>]`: Description of the profile
     - `[DisplayName <String>]`: Name of the profile
@@ -623,6 +625,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SupportPhoneNumber <String>]`: Support phone number
   - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
   - `[TouchIdDisabled <Boolean?>]`: Indicates if touch id setup pane is disabled
+  - `[WaitForDeviceConfiguredConfirmation <Boolean?>]`: Indicates if the device will need to wait for configured confirmation
   - `[ConfigurationEndpointUrl <String>]`: Configuration endpoint url to use for Enrollment
   - `[Description <String>]`: Description of the profile
   - `[DisplayName <String>]`: Name of the profile
@@ -685,6 +688,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SupportPhoneNumber <String>]`: Support phone number
   - `[TermsAndConditionsDisabled <Boolean?>]`: Indicates if 'Terms and Conditions' setup pane is disabled
   - `[TouchIdDisabled <Boolean?>]`: Indicates if touch id setup pane is disabled
+  - `[WaitForDeviceConfiguredConfirmation <Boolean?>]`: Indicates if the device will need to wait for configured confirmation
   - `[ConfigurationEndpointUrl <String>]`: Configuration endpoint url to use for Enrollment
   - `[Description <String>]`: Description of the profile
   - `[DisplayName <String>]`: Name of the profile

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Deletes a managedIOSLobApp.
+Deletes a webApp.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Deletes a managedIOSLobApp.
+Deletes a webApp.
 
 ## EXAMPLES
 
