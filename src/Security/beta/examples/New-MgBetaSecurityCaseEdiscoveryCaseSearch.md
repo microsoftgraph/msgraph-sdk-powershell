@@ -1,6 +1,8 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Security
 
 $params = @{
 	displayName = "My search 2"
@@ -17,7 +19,7 @@ $params = @{
 }
 
 New-MgBetaSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseSearch Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

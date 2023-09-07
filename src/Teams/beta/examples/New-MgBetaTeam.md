@@ -1,26 +1,30 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
-	description = "My Sample Team???s Description"
+	description = "My Sample Team’s Description"
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
-	description = "My Sample Team???s Description"
+	description = "My Sample Team’s Description"
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -33,13 +37,15 @@ $params = @{
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
@@ -48,12 +54,12 @@ $params = @{
 	description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
 	channels = @(
 		@{
-			displayName = "Announcements ????"
+			displayName = "Announcements 📢"
 			isFavoriteByDefault = $true
 			description = "This is a sample announcements channel that is favorited by default. Use this channel to make important team, product, and service announcements."
 		}
 		@{
-			displayName = "Training ???????"
+			displayName = "Training 🏋️"
 			isFavoriteByDefault = $true
 			description = "This is a sample training channel, that is favorited by default, and contains an example of pinned website and YouTube tabs."
 			tabs = @(
@@ -75,12 +81,12 @@ $params = @{
 			)
 		}
 		@{
-			displayName = "Planning ???? "
+			displayName = "Planning 📅 "
 			description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu."
 			isFavoriteByDefault = $false
 		}
 		@{
-			displayName = "Issues and Feedback ????"
+			displayName = "Issues and Feedback 🐞"
 			description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu."
 		}
 	)
@@ -122,13 +128,15 @@ $params = @{
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
@@ -136,24 +144,26 @@ $params = @{
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	"group@odata.bind" = "https://graph.microsoft.com/beta/groups('dbd8de4f-5d47-48da-87f1-594bed003375')"
 	channels = @(
 		@{
-			displayName = "Class Announcements ????"
+			displayName = "Class Announcements 📢"
 			isFavoriteByDefault = $true
 		}
 		@{
-			displayName = "Homework ???????"
+			displayName = "Homework 🏋️"
 			isFavoriteByDefault = $true
 		}
 	)
@@ -175,40 +185,44 @@ $params = @{
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 6: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('educationClass')"
 	displayName = "My Class Team"
-	description = "My Class Team???s Description"
+	description = "My Class Team’s Description"
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 7: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('educationClass')"
 	displayName = "My Class Team"
-	description = "My Class Team???s Description"
+	description = "My Class Team’s Description"
 	channels = @(
 		@{
-			displayName = "Class Announcements ????"
+			displayName = "Class Announcements 📢"
 			isFavoriteByDefault = $true
 		}
 		@{
-			displayName = "Homework ???????"
+			displayName = "Homework 🏋️"
 			isFavoriteByDefault = $true
 		}
 	)
@@ -230,35 +244,20 @@ $params = @{
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 8: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+```powershell
 
-$params = @{
-	"@microsoft.graph.teamCreationMode" = "migration"
-	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
-	displayName = "My Sample Team"
-	description = "My Sample Team???s Description"
-	createdDateTime = [System.DateTime]::Parse("2020-03-14T11:22:17.067Z")
-}
-
-New-MgBetaTeam -BodyParameter $params
-```
-This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 9: Code snippet
-
-```powershellImport-Module Microsoft.Graph.Beta.Teams
+Import-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
 	"template@odata.bind" = "https://graph.microsoft.com/beta/teamsTemplates('standard')"
 	displayName = "My Sample Team"
-	description = "My Sample Team???s Description"
+	description = "My Sample Team’s Description"
 	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
@@ -271,7 +270,7 @@ $params = @{
 }
 
 New-MgBetaTeam -BodyParameter $params
+
 ```
 This example shows how to use the New-MgBetaTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

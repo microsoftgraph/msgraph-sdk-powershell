@@ -1,9 +1,11 @@
-### Example 1: Code snippet
+### Example 1: List hosted content for message in a chat
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
 
-Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId -ChatMessageHostedContentId $chatMessageHostedContentId
+Import-Module Microsoft.Graph.Teams
+
+Get-MgChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId
+
 ```
-This example shows how to use the Get-MgChatMessageHostedContent Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will list hosted content for message in a chat
 

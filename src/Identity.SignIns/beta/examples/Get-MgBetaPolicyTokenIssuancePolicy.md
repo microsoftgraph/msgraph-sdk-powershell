@@ -1,17 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+```powershell
 
-$params = @{
-	definition = @(
-		"definition-value"
-	)
-	displayName = "displayName-value"
-	isOrganizationDefault = $true
-}
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Update-MgBetaPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
+Get-MgBetaPolicyTokenIssuancePolicy
+
 ```
-This example shows how to use the Get-MgBetaBetaPolicyTokenIssuancePolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 

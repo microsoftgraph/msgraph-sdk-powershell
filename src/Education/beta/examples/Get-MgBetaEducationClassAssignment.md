@@ -1,27 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Get education assignment
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
 
-Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
-```
-This example shows how to use the Get-MgBetaEducationClassAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 2: Code snippet
-
-```powershellImport-Module Microsoft.Graph.Beta.Education
+Import-Module Microsoft.Graph.Beta.Education
 
 Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+
 ```
-This example shows how to use the Get-MgBetaEducationClassAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will get education assignment
 
-### Example 3: Code snippet
+### Example 2: Get assignment in inactive state with optional Prefer header
 
-```powershellImport-Module Microsoft.Graph.Beta.Education
+```powershell
+
+Import-Module Microsoft.Graph.Beta.Education
 
 Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+
 ```
-This example shows how to use the Get-MgBetaEducationClassAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will get assignment in inactive state with optional prefer header
 

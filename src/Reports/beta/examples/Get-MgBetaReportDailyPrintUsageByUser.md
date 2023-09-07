@@ -4,7 +4,7 @@
 
 Import-Module Microsoft.Graph.Beta.Reports
 
-Get-MgBetaReportDailyPrintUsageByUser -PrintUsageByUserId $printUsageByUserId
+Get-MgBetaReportDailyPrintUsageByUser
 
 ```
 This example shows how to use the Get-MgBetaReportDailyPrintUsageByUser Cmdlet.

@@ -1569,7 +1569,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.advancedThreatProtectionOnboardingStateSummary_ListAdvancedThreatProtectionOnboardingDeviceSettingState
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1686,7 +1685,6 @@ paths:
       tags:
         - deviceManagement.advancedThreatProtectionOnboardingStateSummary
       summary: Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.advancedThreatProtectionOnboardingStateSummary_GetAdvancedThreatProtectionOnboardingDeviceSettingState
       parameters:
         - name: advancedThreatProtectionOnboardingDeviceSettingState-id
@@ -15215,7 +15213,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_ListDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -15349,7 +15346,6 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicySettingStateSummary
       summary: Get deviceComplianceSettingStates from deviceManagement
-      description: Not yet documented
       operationId: deviceManagement.deviceCompliancePolicySettingStateSummary_GetDeviceComplianceSettingState
       parameters:
         - name: deviceCompliancePolicySettingStateSummary-id
@@ -52262,6 +52258,499 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /deviceManagement/windowsQualityUpdateProfiles:
+    get:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Get windowsQualityUpdateProfiles from deviceManagement
+      description: A collection of windows quality update profiles
+      operationId: deviceManagement_ListWindowsQualityUpdateProfile
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - deployableContentDisplayName
+                - deployableContentDisplayName desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - expeditedUpdateSettings
+                - expeditedUpdateSettings desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - releaseDateDisplayName
+                - releaseDateDisplayName desc
+                - roleScopeTagIds
+                - roleScopeTagIds desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - deployableContentDisplayName
+                - description
+                - displayName
+                - expeditedUpdateSettings
+                - lastModifiedDateTime
+                - releaseDateDisplayName
+                - roleScopeTagIds
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsQualityUpdateProfileCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Create new navigation property to windowsQualityUpdateProfiles for deviceManagement
+      operationId: deviceManagement_CreateWindowsQualityUpdateProfile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfile'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile-id}':
+    get:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Get windowsQualityUpdateProfiles from deviceManagement
+      description: A collection of windows quality update profiles
+      operationId: deviceManagement_GetWindowsQualityUpdateProfile
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - deployableContentDisplayName
+                - description
+                - displayName
+                - expeditedUpdateSettings
+                - lastModifiedDateTime
+                - releaseDateDisplayName
+                - roleScopeTagIds
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Update the navigation property windowsQualityUpdateProfiles in deviceManagement
+      operationId: deviceManagement_UpdateWindowsQualityUpdateProfile
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfile'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Delete navigation property windowsQualityUpdateProfiles for deviceManagement
+      operationId: deviceManagement_DeleteWindowsQualityUpdateProfile
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile-id}/assignments':
+    get:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Get assignments from deviceManagement
+      description: The list of group assignments of the profile.
+      operationId: deviceManagement.windowsQualityUpdateProfile_ListAssignment
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - target
+                - target desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.windowsQualityUpdateProfileAssignmentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Create new navigation property to assignments for deviceManagement
+      operationId: deviceManagement.windowsQualityUpdateProfile_CreateAssignment
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile-id}/assignments/{windowsQualityUpdateProfileAssignment-id}':
+    get:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Get assignments from deviceManagement
+      description: The list of group assignments of the profile.
+      operationId: deviceManagement.windowsQualityUpdateProfile_GetAssignment
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - name: windowsQualityUpdateProfileAssignment-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfileAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfileAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Update the navigation property assignments in deviceManagement
+      operationId: deviceManagement.windowsQualityUpdateProfile_UpdateAssignment
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - name: windowsQualityUpdateProfileAssignment-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfileAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfileAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Delete navigation property assignments for deviceManagement
+      operationId: deviceManagement.windowsQualityUpdateProfile_DeleteAssignment
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - name: windowsQualityUpdateProfileAssignment-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfileAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfileAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsQualityUpdateProfiles/{windowsQualityUpdateProfile-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsQualityUpdateProfile.assignment_GetCount
+      parameters:
+        - name: windowsQualityUpdateProfile-id
+          in: path
+          description: The unique identifier of windowsQualityUpdateProfile
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsQualityUpdateProfile
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/windowsQualityUpdateProfiles/$count:
+    get:
+      tags:
+        - deviceManagement.windowsQualityUpdateProfile
+      summary: Get the number of the resource
+      operationId: deviceManagement.windowsQualityUpdateProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.edge:
@@ -53434,7 +53923,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.advancedThreatProtectionOnboardingDeviceSettingState'
-              description: Not yet documented
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -54887,26 +55375,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -54930,7 +55418,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -55648,7 +56136,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceSettingState'
-              description: Not yet documented
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -58930,7 +59417,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+              description: Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
               format: int32
             appDisplayName:
               type: string
@@ -58946,7 +59433,7 @@ components:
               nullable: true
             batteryUsagePercentage:
               type: number
-              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
+              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308'
               format: double
             isForegroundApp:
               type: boolean
@@ -58964,25 +59451,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+              description: Number of active devices within the tenant. Valid values 0 to 2147483647
               format: int32
             batteryCapacityFair:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
+              description: Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
               format: int32
             batteryCapacityGood:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
+              description: Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
               format: int32
             batteryCapacityPoor:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+              description: Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
               format: int32
             lastRefreshedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -59012,7 +59499,7 @@ components:
               nullable: true
             batteryUsagePercentage:
               type: number
-              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308'
+              description: 'The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308'
               format: double
             deviceId:
               type: string
@@ -59034,7 +59521,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647
+              description: Estimated battery age. Unit in days. Valid values 0 to 2147483647
               format: int32
             deviceBatteryCount:
               maximum: 2147483647
@@ -59046,7 +59533,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+              description: A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
               format: int32
             deviceId:
               type: string
@@ -59060,7 +59547,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             fullBatteryDrainCount:
               maximum: 2147483647
@@ -59078,7 +59565,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647
+              description: Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
               format: int32
             model:
               type: string
@@ -59101,7 +59588,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             runtimeDateTime:
               type: string
@@ -59120,25 +59607,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices for that model. Valid values -2147483648 to 2147483647
+              description: Number of active devices for that model. Valid values 0 to 2147483647
               format: int32
             averageBatteryAgeInDays:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+              description: The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
               format: int32
             averageEstimatedRuntimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             averageMaxCapacityPercentage:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+              description: The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
               format: int32
             manufacturer:
               type: string
@@ -59176,7 +59663,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+              description: A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
               format: int32
             modelHealthStatus:
               $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
@@ -59193,25 +59680,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices for that os version. Valid values -2147483648 to 2147483647
+              description: Number of active devices for that os version. Valid values 0 to 2147483647
               format: int32
             averageBatteryAgeInDays:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+              description: The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647
               format: int32
             averageEstimatedRuntimeInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647
+              description: The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
               format: int32
             averageMaxCapacityPercentage:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+              description: The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
               format: int32
             meanFullBatteryDrainCount:
               maximum: 2147483647
@@ -59266,25 +59753,25 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+              description: Number of active devices within the tenant. Valid values 0 to 2147483647
               format: int32
             batteryRuntimeFair:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+              description: Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
               format: int32
             batteryRuntimeGood:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+              description: Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
               format: int32
             batteryRuntimePoor:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+              description: Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
               format: int32
             lastRefreshedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -60359,6 +60846,65 @@ components:
           additionalProperties:
             type: object
           description: Malware state for a windows device
+    microsoft.graph.windowsQualityUpdateProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsQualityUpdateProfile
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time that the profile was created.
+              format: date-time
+            deployableContentDisplayName:
+              type: string
+              description: Friendly display name of the quality update profile deployable content
+              nullable: true
+            description:
+              type: string
+              description: The description of the profile which is specified by the user.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the profile.
+            expeditedUpdateSettings:
+              $ref: '#/components/schemas/microsoft.graph.expeditedWindowsQualityUpdateSettings'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date time that the profile was last modified.
+              format: date-time
+            releaseDateDisplayName:
+              type: string
+              description: Friendly release date to display for a Quality Update release
+              nullable: true
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tags for this Quality Update entity.
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+              description: The list of group assignments of the profile.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Windows Quality Update Profile
+    microsoft.graph.windowsQualityUpdateProfileAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsQualityUpdateProfileAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: This entity contains the properties used to assign a windows quality update profile to a group.
     microsoft.graph.entity:
       title: entity
       type: object
@@ -60919,6 +61465,9 @@ components:
         - intune_SMB
       type: string
       description: Tenant mobile device management subscriptions.
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: deviceManagementSubscriptions
         modelAsString: false
@@ -62939,6 +63488,8 @@ components:
               type: string
               description: System Family
               nullable: true
+            userlessEnrollmentStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsAutopilotUserlessEnrollmentStatus'
             userPrincipalName:
               type: string
               description: User Principal Name.
@@ -63798,6 +64349,9 @@ components:
             featureUpdateVersion:
               type: string
               description: 'The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.'
+            installLatestWindows10OnWindows11IneligibleDevice:
+              type: boolean
+              description: 'If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -63820,54 +64374,6 @@ components:
           additionalProperties:
             type: object
           description: Windows Feature Update Profile
-    microsoft.graph.windowsQualityUpdateProfile:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: windowsQualityUpdateProfile
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date time that the profile was created.
-              format: date-time
-            deployableContentDisplayName:
-              type: string
-              description: Friendly display name of the quality update profile deployable content
-              nullable: true
-            description:
-              type: string
-              description: The description of the profile which is specified by the user.
-              nullable: true
-            displayName:
-              type: string
-              description: The display name for the profile.
-            expeditedUpdateSettings:
-              $ref: '#/components/schemas/microsoft.graph.expeditedWindowsQualityUpdateSettings'
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date time that the profile was last modified.
-              format: date-time
-            releaseDateDisplayName:
-              type: string
-              description: Friendly release date to display for a Quality Update release
-              nullable: true
-            roleScopeTagIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: List of Scope Tags for this Quality Update entity.
-            assignments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
-              description: The list of group assignments of the profile.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-          description: Windows Quality Update Profile
     microsoft.graph.windowsUpdateCatalogItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -64947,6 +65453,8 @@ components:
           type: string
           description: ELAM provides protection for the computers in your network when they start up
           nullable: true
+        firmwareProtection:
+          $ref: '#/components/schemas/microsoft.graph.firmwareProtectionType'
         healthAttestationSupportedStatus:
           type: string
           description: This attribute indicates if DHA is supported for the device
@@ -64964,6 +65472,10 @@ components:
           type: string
           description: The Timestamp of the last update.
           nullable: true
+        memoryAccessProtection:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
+        memoryIntegrityProtection:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         operatingSystemKernelDebugging:
           type: string
           description: 'When operatingSystemKernelDebugging is enabled, the device is used in development and testing'
@@ -65000,6 +65512,10 @@ components:
           type: string
           description: Fingerprint of the Custom Secure Boot Configuration Policy
           nullable: true
+        securedCorePC:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
+        systemManagementMode:
+          $ref: '#/components/schemas/microsoft.graph.systemManagementModeLevel'
         testSigning:
           type: string
           description: 'When test signing is allowed, the device does not enforce signature validation during boot'
@@ -65008,6 +65524,8 @@ components:
           type: string
           description: The security version number of the Boot Application
           nullable: true
+        virtualizationBasedSecurity:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
           description: VSM is a container that protects high value assets from a compromised kernel
@@ -66075,7 +66593,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -66315,6 +66833,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: List all resource-specific permission grants of a user.
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -66781,6 +67300,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -66834,6 +67356,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -67310,6 +67835,9 @@ components:
         - unknownFutureValue
       type: string
       description: Supported platform types.
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: deviceManagementConfigurationPlatforms
         modelAsString: false
@@ -67354,6 +67882,9 @@ components:
         - unknownFutureValue
       type: string
       description: Describes which technology this setting can be deployed with
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: deviceManagementConfigurationTechnologies
         modelAsString: false
@@ -67485,6 +68016,9 @@ components:
         - replace
         - execute
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.deviceManagementConfigurationSettingApplicability:
       title: deviceManagementConfigurationSettingApplicability
       type: object
@@ -67541,6 +68075,9 @@ components:
         - unknownFutureValue
       type: string
       description: Supported setting types
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: deviceManagementConfigurationSettingUsage
         modelAsString: false
@@ -67607,6 +68144,9 @@ components:
         - unknownFutureValue
       type: string
       description: Supported setting types
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: deviceManagementConfigurationSettingVisibility
         modelAsString: false
@@ -67810,6 +68350,9 @@ components:
         - email
       type: string
       description: Supported values for the notification type to use.
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: deviceManagementDerivedCredentialNotificationType
         modelAsString: false
@@ -68253,6 +68796,9 @@ components:
         - networkError
       type: string
       description: Advanced BitLocker State
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: advancedBitLockerState
         modelAsString: false
@@ -68448,6 +68994,9 @@ components:
         - escrowNotEnabled
       type: string
       description: FileVault State
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: fileVaultState
         modelAsString: false
@@ -68825,6 +69374,9 @@ components:
         - unknownFutureValue
       type: string
       description: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: notificationTemplateBrandingOptions
         modelAsString: false
@@ -69602,6 +70154,22 @@ components:
           - value: desktop
             description: The windows desktop application
             name: desktop
+    microsoft.graph.expeditedWindowsQualityUpdateSettings:
+      title: expeditedWindowsQualityUpdateSettings
+      type: object
+      properties:
+        daysUntilForcedReboot:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of days after installation that forced reboot will happen.
+          format: int32
+        qualityUpdateRelease:
+          type: string
+          description: The release date to identify a quality update.
+      additionalProperties:
+        type: object
+      description: A complex type to store the expedited quality update settings such as release date and days until forced reboot.
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -71369,17 +71937,43 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsQualityUpdateProfileCollectionResponse:
+      title: Collection of windowsQualityUpdateProfile
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfile'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsQualityUpdateProfileAssignmentCollectionResponse:
+      title: Collection of windowsQualityUpdateProfileAssignment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.identity:
       title: identity
       type: object
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -73927,6 +74521,31 @@ components:
           - value: unknownFutureValue
             description: 'Marks the end of known enum values, and allows for additional values in the future.'
             name: unknownFutureValue
+    microsoft.graph.windowsAutopilotUserlessEnrollmentStatus:
+      title: windowsAutopilotUserlessEnrollmentStatus
+      enum:
+        - unknown
+        - allowed
+        - blocked
+        - unknownFutureValue
+      type: string
+      description: 'Userless enrollment block status, indicating whether the next device enrollment will be blocked.'
+      x-ms-enum:
+        name: windowsAutopilotUserlessEnrollmentStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown userless enrollment block status. Next userless enrollment may fail. This is the default value.
+            name: unknown
+          - value: allowed
+            description: Indicates next userless enrollment can proceed.
+            name: allowed
+          - value: blocked
+            description: Indicates next userless enrollment cannot proceed without resetting the windowsAutopilotUserlessEnrollmentStatus.
+            name: blocked
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windowsAutopilotSyncStatus:
       title: windowsAutopilotSyncStatus
       enum:
@@ -74545,7 +75164,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the cached report expires
+              description: Time that the cached report expires. This property is read-only.
               format: date-time
               readOnly: true
             filter:
@@ -74555,7 +75174,7 @@ components:
             lastRefreshDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the cached report was last refreshed
+              description: Time that the cached report was last refreshed. This property is read-only.
               format: date-time
               readOnly: true
             metadata:
@@ -74570,7 +75189,7 @@ components:
               description: Ordering of columns in the report
             reportName:
               type: string
-              description: Name of the report
+              description: Name of the report. This property is read-only.
               nullable: true
               readOnly: true
             select:
@@ -74593,7 +75212,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report expires
+              description: Time that the exported report expires. This property is read-only.
               format: date-time
               readOnly: true
             filter:
@@ -74610,7 +75229,7 @@ components:
             requestDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the exported report was requested
+              description: Time that the exported report was requested. This property is read-only.
               format: date-time
               readOnly: true
             select:
@@ -74627,7 +75246,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
             url:
               type: string
-              description: Temporary location of the exported report
+              description: Temporary location of the exported report. This property is read-only.
               nullable: true
               readOnly: true
           additionalProperties:
@@ -74841,33 +75460,6 @@ components:
           additionalProperties:
             type: object
           description: This entity contains the properties used to assign a windows feature update profile to a group.
-    microsoft.graph.expeditedWindowsQualityUpdateSettings:
-      title: expeditedWindowsQualityUpdateSettings
-      type: object
-      properties:
-        daysUntilForcedReboot:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of days after installation that forced reboot will happen.
-          format: int32
-        qualityUpdateRelease:
-          type: string
-          description: The release date to identify a quality update.
-      additionalProperties:
-        type: object
-      description: A complex type to store the expedited quality update settings such as release date and days until forced reboot.
-    microsoft.graph.windowsQualityUpdateProfileAssignment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: windowsQualityUpdateProfileAssignment
-          type: object
-          properties:
-            target:
-              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
-          additionalProperties:
-            type: object
-          description: This entity contains the properties used to assign a windows quality update profile to a group.
     microsoft.graph.intuneBrandingProfileAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -75097,6 +75689,89 @@ components:
           - value: communicationError
             description: 'The configuration manager agent was able to reach the configuration manager service in the past but is now no longer able to. '
             name: communicationError
+    microsoft.graph.firmwareProtectionType:
+      title: firmwareProtectionType
+      enum:
+        - notApplicable
+        - systemGuardSecureLaunch
+        - firmwareAttackSurfaceReduction
+        - disabled
+        - unknownFutureValue
+      type: string
+      description: A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+      x-ms-enum:
+        name: firmwareProtectionType
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device is not a Windows 11 device.
+            name: notApplicable
+          - value: systemGuardSecureLaunch
+            description: Indicates that System Guard Secure Launch is enabled for Firmware protection.
+            name: systemGuardSecureLaunch
+          - value: firmwareAttackSurfaceReduction
+            description: Indicates that Firmware Attack Surface Reduction is enabled for Firmware protection. This is only applicable to Surface devices.
+            name: firmwareAttackSurfaceReduction
+          - value: disabled
+            description: Indicates that the device has Firmware protection disabled.
+            name: disabled
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.azureAttestationSettingStatus:
+      title: azureAttestationSettingStatus
+      enum:
+        - notApplicable
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+      description: A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+      x-ms-enum:
+        name: azureAttestationSettingStatus
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device is not a Windows 11 device.
+            name: notApplicable
+          - value: enabled
+            description: Indicates that the device has the Azure attestation setting enabled.
+            name: enabled
+          - value: disabled
+            description: Indicates that the device has the Azure attestation setting disabled.
+            name: disabled
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.systemManagementModeLevel:
+      title: systemManagementModeLevel
+      enum:
+        - notApplicable
+        - level1
+        - level2
+        - level3
+        - unknownFutureValue
+      type: string
+      description: 'A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".'
+      x-ms-enum:
+        name: systemManagementModeLevel
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device does not have Firmware protection (System Management Mode) enabled.
+            name: notApplicable
+          - value: level1
+            description: Indicates that deny System Management Mode (SMM) read/write access to OS and Virtualization-based security (VBS) memory. The benefit is that by design System Management Mode (SMM) cannot modify security of or exfiltrate secrets from the OS (including Virtualization-based security).
+            name: level1
+          - value: level2
+            description: 'Indicates that in addition to the System Management Mode (SMM) Level 1 protections, this level prevents System Management Mode (SMM) from tampering with Input-Output Memory Management Unit (IOMMU) config. The benefit is that by design System Management Mode (SMM) cannot disable Virtualization-based security (VBS) and kernel Direct memory access (DMA) protections.'
+            name: level2
+          - value: level3
+            description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
+            name: level3
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -75387,6 +76062,7 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user has a SIP-enabled client registered for them. Read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -75579,11 +76255,14 @@ components:
       properties:
         isSipEnabled:
           type: boolean
+          description: Indicates whether the user is currently enabled for on-premises Skype for Business.
         sipDeploymentLocation:
           type: string
+          description: Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.
           nullable: true
         sipPrimaryAddress:
           type: string
+          description: Serves as a unique identifier for each user on the on-premises Skype for Business.
           nullable: true
       additionalProperties:
         type: object
@@ -75986,13 +76665,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
             tokenIssuancePolicies:
               type: array
@@ -76796,9 +77475,12 @@ components:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
+            uniqueName:
+              type: string
+              nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -78441,6 +79123,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -78507,8 +79191,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -79509,6 +80191,10 @@ components:
         - sourceImageInvalid
         - sourceImageNotGeneralized
         - unknownFutureValue
+        - vmAlreadyAzureAdjoined
+        - paidSourceImageNotSupport
+        - sourceImageNotSupportCustomizeVMName
+        - sourceImageSizeExceedsLimitation
       type: string
     microsoft.graph.cloudPcExternalPartnerStatus:
       title: cloudPcExternalPartnerStatus
@@ -79567,6 +80253,9 @@ components:
         - unknownFutureValue
         - rpaBox
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.cloudPcOnPremisesConnectionType:
       title: cloudPcOnPremisesConnectionType
       enum:
@@ -79896,6 +80585,9 @@ components:
             touchIdDisabled:
               type: boolean
               description: Indicates if touch id setup pane is disabled
+            waitForDeviceConfiguredConfirmation:
+              type: boolean
+              description: Indicates if the device will need to wait for configured confirmation
           additionalProperties:
             type: object
           description: The DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
@@ -82271,7 +82963,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -84626,6 +85318,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -84698,33 +85399,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
-              type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
-              nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
-          additionalProperties:
-            type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -84825,6 +85499,18 @@ components:
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -84844,10 +85530,22 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -86032,6 +86730,7 @@ components:
       enum:
         - citrix
         - unknownFutureValue
+        - vMware
       type: string
     microsoft.graph.cloudPcOnPremisesConnectionHealthCheck:
       title: cloudPcOnPremisesConnectionHealthCheck
@@ -86110,6 +86809,7 @@ components:
         - unknownFutureValue
         - noLicenseAvailableConnectivityFailureReport
         - remoteConnectionQualityReports
+        - inaccessibleCloudPcReports
       type: string
     microsoft.graph.deviceManagementConfigurationSettingValueTemplateReference:
       title: deviceManagementConfigurationSettingValueTemplateReference
@@ -86294,6 +86994,9 @@ components:
         - teamwork
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.applicationMode:
       title: applicationMode
       enum:
@@ -86453,11 +87156,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -87560,6 +88263,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -89059,6 +89764,9 @@ components:
         - checklistCompletion
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -89716,34 +90424,6 @@ components:
         upn:
           type: string
           description: User principal name of the participant.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        emailAddress:
-          type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
-          nullable: true
-        smsCapablePhoneNumber:
-          type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -92293,6 +92973,9 @@ components:
         - indirect
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -92686,6 +93369,9 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.inferenceData:
       title: inferenceData
       type: object
@@ -92825,6 +93511,9 @@ components:
         - personal
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -92882,6 +93571,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -92890,6 +93582,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -92917,6 +93612,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -92925,6 +93623,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -93078,6 +93779,9 @@ components:
         - manager
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.timeCardEntry:
       title: timeCardEntry
       type: object
@@ -95416,6 +96120,9 @@ components:
         - ReferenceAttributes
         - UnknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -95800,6 +96507,9 @@ components:
         - Update
         - Delete
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object
@@ -97139,6 +97849,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.malwareStateForWindowsDeviceCollectionResponse'
+    microsoft.graph.windowsQualityUpdateProfileCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileCollectionResponse'
+    microsoft.graph.windowsQualityUpdateProfileAssignmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsQualityUpdateProfileAssignmentCollectionResponse'
   parameters:
     top:
       name: $top

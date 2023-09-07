@@ -1,6 +1,8 @@
 ### Example 1: Create a one-on-one chat
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	chatType = "oneOnOne"
@@ -23,13 +25,15 @@ $params = @{
 }
 
 New-MgChat -BodyParameter $params
+
 ```
-This example shows how to use the New-MgChat Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a one-on-one chat
 
 ### Example 2: Create a group chat
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	chatType = "group"
@@ -60,13 +64,15 @@ $params = @{
 }
 
 New-MgChat -BodyParameter $params
+
 ```
-This example shows how to use the New-MgChat Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a group chat
 
 ### Example 3: Create a one-on-one chat using user principal name
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	chatType = "oneOnOne"
@@ -89,13 +95,15 @@ $params = @{
 }
 
 New-MgChat -BodyParameter $params
+
 ```
-This example shows how to use the New-MgChat Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a one-on-one chat using user principal name
 
 ### Example 4: Create a group chat with tenant guest user
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	chatType = "group"
@@ -126,13 +134,15 @@ $params = @{
 }
 
 New-MgChat -BodyParameter $params
+
 ```
-This example shows how to use the New-MgChat Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a group chat with tenant guest user
 
 ### Example 5: Create a one-on-one chat with a federated user (outside of own organization)
 
-```powershellImport-Module Microsoft.Graph.Teams
+```powershell
+
+Import-Module Microsoft.Graph.Teams
 
 $params = @{
 	chatType = "oneOnOne"
@@ -156,7 +166,7 @@ $params = @{
 }
 
 New-MgChat -BodyParameter $params
+
 ```
-This example shows how to use the New-MgChat Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will create a one-on-one chat with a federated user (outside of own organization)
 

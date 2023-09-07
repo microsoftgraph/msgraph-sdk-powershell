@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Get your own presence information
 
 ```powershell
 
@@ -8,9 +8,9 @@ Import-Module Microsoft.Graph.Beta.CloudCommunications
 Get-MgBetaUserPresence -UserId $userId
 
 ```
-This example shows how to use the Get-MgBetaUserPresence Cmdlet.
+This example will get your own presence information
 
-### Example 2: Code snippet
+### Example 2: Get the presence information of another user
 
 ```powershell
 
@@ -19,5 +19,5 @@ Import-Module Microsoft.Graph.Beta.CloudCommunications
 Get-MgBetaUserPresence -UserId $userId
 
 ```
-This example shows how to use the Get-MgBetaUserPresence Cmdlet.
+This example will get the presence information of another user
 

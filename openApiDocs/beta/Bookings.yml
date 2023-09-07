@@ -5321,8 +5321,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
       operationId: solution.virtualEvent.event_ListSession
       parameters:
         - name: virtualEvent-id
@@ -5382,6 +5382,8 @@ paths:
                 - capabilities desc
                 - chatInfo
                 - chatInfo desc
+                - chatRestrictions
+                - chatRestrictions desc
                 - creationDateTime
                 - creationDateTime desc
                 - endDateTime
@@ -5446,6 +5448,7 @@ paths:
                 - broadcastSettings
                 - capabilities
                 - chatInfo
+                - chatRestrictions
                 - creationDateTime
                 - endDateTime
                 - externalId
@@ -5464,12 +5467,12 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
         - name: $expand
           in: query
@@ -5482,12 +5485,12 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
       responses:
         2XX:
@@ -5533,11 +5536,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
       operationId: solution.virtualEvent.event_GetSession
       parameters:
         - name: virtualEvent-id
@@ -5583,6 +5583,7 @@ paths:
                 - broadcastSettings
                 - capabilities
                 - chatInfo
+                - chatRestrictions
                 - creationDateTime
                 - endDateTime
                 - externalId
@@ -5601,12 +5602,12 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
         - name: $expand
           in: query
@@ -5619,12 +5620,12 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
       responses:
         2XX:
@@ -7200,6 +7201,12 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -7214,6 +7221,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -7323,6 +7333,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -7557,6 +7570,101 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/recordings/microsoft.graph.delta()':
+    get:
+      tags:
+        - solutions.Functions
+      summary: Invoke function delta
+      operationId: solution.virtualEvent.event.session.recording_delta
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecording
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecording'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registration':
     get:
       tags:
@@ -8347,6 +8455,211 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      operationId: solution.virtualEvent.event.session_ListRegistration
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - cancelationDateTime
+                - cancelationDateTime desc
+                - email
+                - email desc
+                - firstName
+                - firstName desc
+                - lastName
+                - lastName desc
+                - registrationDateTime
+                - registrationDateTime desc
+                - registrationQuestionAnswers
+                - registrationQuestionAnswers desc
+                - status
+                - status desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cancelationDateTime
+                - email
+                - firstName
+                - lastName
+                - registrationDateTime
+                - registrationQuestionAnswers
+                - status
+                - userId
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations/{virtualEventRegistration-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      operationId: solution.virtualEvent.event.session_GetRegistration
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cancelationDateTime
+                - email
+                - firstName
+                - lastName
+                - registrationDateTime
+                - registrationQuestionAnswers
+                - status
+                - userId
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/registrations/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.event.session.registration_GetCount
+      parameters:
+        - name: virtualEvent-id
+          in: path
+          description: The unique identifier of virtualEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEvent
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/transcripts':
     get:
       tags:
@@ -8395,8 +8708,14 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
                 - metadataContent
                 - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -8411,7 +8730,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -8521,7 +8843,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -8850,16 +9175,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/virtualAppointment':
+  '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/{virtualEventSession-id}/transcripts/microsoft.graph.delta()':
     get:
       tags:
-        - solutions.virtualEventsRoot
-      summary: Get virtualAppointment (deprecated)
-      description: Read the properties and relationships of a virtualAppointment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
-      operationId: solution.virtualEvent.event.session_GetVirtualAppointment
+        - solutions.Functions
+      summary: Invoke function delta
+      operationId: solution.virtualEvent.event.session.transcript_delta
       parameters:
         - name: virtualEvent-id
           in: path
@@ -8877,6 +9198,11 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $select
           in: query
           description: Select properties to be returned
@@ -8888,15 +9214,16 @@ paths:
             items:
               enum:
                 - id
-                - appointmentClientJoinWebUrl
-                - appointmentClients
-                - externalAppointmentId
-                - externalAppointmentUrl
-                - settings
+                - content
+                - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - metadataContent
+                - transcriptContentUrl
               type: string
-        - name: $expand
+        - name: $orderby
           in: query
-          description: Expand related entities
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -8904,117 +9231,48 @@ paths:
             type: array
             items:
               enum:
-                - '*'
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - metadataContent
+                - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-05-31T00:00:00.0000000+00:00'
-        date: '2023-04-04T00:00:00.0000000+00:00'
-        version: 2023-04/VirtualAppointment
-        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
-      operationId: solution.virtualEvent.event.session_UpdateVirtualAppointment
-      parameters:
-        - name: virtualEvent-id
-          in: path
-          description: The unique identifier of virtualEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEvent
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
-        required: true
-      responses:
-        2XX:
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+                title: Collection of callTranscript
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-05-31T00:00:00.0000000+00:00'
-        date: '2023-04-04T00:00:00.0000000+00:00'
-        version: 2023-04/VirtualAppointment
-        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Delete virtualAppointment (deprecated)
-      description: Delete a virtualAppointment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
-      operationId: solution.virtualEvent.event.session_DeleteVirtualAppointment
-      parameters:
-        - name: virtualEvent-id
-          in: path
-          description: The unique identifier of virtualEvent
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEvent
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-05-31T00:00:00.0000000+00:00'
-        date: '2023-04-04T00:00:00.0000000+00:00'
-        version: 2023-04/VirtualAppointment
-        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
-      x-ms-docs-operation-type: operation
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/solutions/virtualEvents/events/{virtualEvent-id}/sessions/$count':
     get:
       tags:
@@ -9114,7 +9372,8 @@ paths:
                 - coOrganizers
                 - presenters
                 - sessions
-                - registration
+                - registrationConfiguration
+                - registrations
               type: string
         - name: $expand
           in: query
@@ -9129,7 +9388,8 @@ paths:
                 - '*'
                 - presenters
                 - sessions
-                - registration
+                - registrationConfiguration
+                - registrations
               type: string
       responses:
         2XX:
@@ -9202,7 +9462,8 @@ paths:
                 - coOrganizers
                 - presenters
                 - sessions
-                - registration
+                - registrationConfiguration
+                - registrations
               type: string
         - name: $expand
           in: query
@@ -9217,7 +9478,8 @@ paths:
                 - '*'
                 - presenters
                 - sessions
-                - registration
+                - registrationConfiguration
+                - registrations
               type: string
       responses:
         2XX:
@@ -9549,13 +9811,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registration':
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrationConfiguration':
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registration from solutions
-      description: Registration configuration of the webinar.
-      operationId: solution.virtualEvent.webinar_GetRegistration
+      summary: Get registrationConfiguration from solutions
+      operationId: solution.virtualEvent.webinar_GetRegistrationConfiguration
       parameters:
         - name: virtualEventWebinar-id
           in: path
@@ -9579,7 +9840,6 @@ paths:
                 - capacity
                 - registrationWebUrl
                 - questions
-                - registrants
               type: string
         - name: $expand
           in: query
@@ -9593,7 +9853,196 @@ paths:
               enum:
                 - '*'
                 - questions
-                - registrants
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      operationId: solution.virtualEvent.webinar_ListRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - cancelationDateTime
+                - cancelationDateTime desc
+                - email
+                - email desc
+                - firstName
+                - firstName desc
+                - lastName
+                - lastName desc
+                - registrationDateTime
+                - registrationDateTime desc
+                - registrationQuestionAnswers
+                - registrationQuestionAnswers desc
+                - status
+                - status desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cancelationDateTime
+                - email
+                - firstName
+                - lastName
+                - registrationDateTime
+                - registrationQuestionAnswers
+                - status
+                - userId
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Create new navigation property to registrations for solutions
+      operationId: solution.virtualEvent.webinar_CreateRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      operationId: solution.virtualEvent.webinar_GetRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cancelationDateTime
+                - email
+                - firstName
+                - lastName
+                - registrationDateTime
+                - registrationQuestionAnswers
+                - status
+                - userId
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
               type: string
       responses:
         2XX:
@@ -9605,13 +10054,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions':
-    get:
+    patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
-      operationId: solution.virtualEvent.webinar_ListSession
+      summary: Update the navigation property registrations in solutions
+      operationId: solution.virtualEvent.webinar_UpdateRegistration
       parameters:
         - name: virtualEventWebinar-id
           in: path
@@ -9621,6 +10068,88 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Delete navigation property registrations for solutions
+      operationId: solution.virtualEvent.webinar_DeleteRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.webinar.registration_ListSession
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -9670,6 +10199,8 @@ paths:
                 - capabilities desc
                 - chatInfo
                 - chatInfo desc
+                - chatRestrictions
+                - chatRestrictions desc
                 - creationDateTime
                 - creationDateTime desc
                 - endDateTime
@@ -9734,6 +10265,7 @@ paths:
                 - broadcastSettings
                 - capabilities
                 - chatInfo
+                - chatRestrictions
                 - creationDateTime
                 - endDateTime
                 - externalId
@@ -9752,12 +10284,12 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
         - name: $expand
           in: query
@@ -9770,12 +10302,710 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventSessionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      operationId: solution.virtualEvent.webinar.registration_GetSession
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - alternativeRecording
+                - anonymizeIdentityForRoles
+                - attendeeReport
+                - audioConferencing
+                - broadcastRecording
+                - broadcastSettings
+                - capabilities
+                - chatInfo
+                - chatRestrictions
+                - creationDateTime
+                - endDateTime
+                - externalId
+                - isBroadcast
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinUrl
+                - joinWebUrl
+                - lobbyBypassSettings
+                - participants
+                - recordAutomatically
+                - recording
+                - shareMeetingChatHistoryDefault
+                - startDateTime
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - attendanceReports
+                - meetingAttendanceReport
+                - registration
+                - recordings
+                - transcripts
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - meetingAttendanceReport
+                - registration
+                - recordings
+                - transcripts
+                - registrations
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}/alternativeRecording':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get alternativeRecording for the navigation property sessions from solutions
+      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+      operationId: solution.virtualEvent.webinar.registration_GetSessionsAlternativeRecording
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update alternativeRecording for the navigation property sessions in solutions
+      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+      operationId: solution.virtualEvent.webinar.registration_SetSessionsAlternativeRecording
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}/attendeeReport':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get attendeeReport for the navigation property sessions from solutions
+      description: The content stream of the attendee report of a Teams live event. Read-only.
+      operationId: solution.virtualEvent.webinar.registration_GetSessionsAttendeeReport
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update attendeeReport for the navigation property sessions in solutions
+      description: The content stream of the attendee report of a Teams live event. Read-only.
+      operationId: solution.virtualEvent.webinar.registration_SetSessionsAttendeeReport
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}/broadcastRecording':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get broadcastRecording for the navigation property sessions from solutions
+      operationId: solution.virtualEvent.webinar.registration_GetSessionsBroadcastRecording
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update broadcastRecording for the navigation property sessions in solutions
+      operationId: solution.virtualEvent.webinar.registration_SetSessionsBroadcastRecording
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/{virtualEventSession-id}/recording':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get recording for the navigation property sessions from solutions
+      description: The content stream of the recording of a Teams live event. Read-only.
+      operationId: solution.virtualEvent.webinar.registration_GetSessionsRecording
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Update recording for the navigation property sessions in solutions
+      description: The content stream of the recording of a Teams live event. Read-only.
+      operationId: solution.virtualEvent.webinar.registration_SetSessionsRecording
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/{virtualEventRegistration-id}/sessions/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.webinar.registration.session_GetCount
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/registrations/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.webinar.registration_GetCount
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
+      operationId: solution.virtualEvent.webinar_ListSession
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
+                - allowedPresenters
+                - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowParticipantsToChangeName
+                - allowParticipantsToChangeName desc
+                - allowRecording
+                - allowRecording desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
+                - allowTranscription
+                - allowTranscription desc
+                - alternativeRecording
+                - alternativeRecording desc
+                - anonymizeIdentityForRoles
+                - anonymizeIdentityForRoles desc
+                - attendeeReport
+                - attendeeReport desc
+                - audioConferencing
+                - audioConferencing desc
+                - broadcastRecording
+                - broadcastRecording desc
+                - broadcastSettings
+                - broadcastSettings desc
+                - capabilities
+                - capabilities desc
+                - chatInfo
+                - chatInfo desc
+                - chatRestrictions
+                - chatRestrictions desc
+                - creationDateTime
+                - creationDateTime desc
+                - endDateTime
+                - endDateTime desc
+                - externalId
+                - externalId desc
+                - isBroadcast
+                - isBroadcast desc
+                - isEntryExitAnnounced
+                - isEntryExitAnnounced desc
+                - joinInformation
+                - joinInformation desc
+                - joinMeetingIdSettings
+                - joinMeetingIdSettings desc
+                - joinUrl
+                - joinUrl desc
+                - joinWebUrl
+                - joinWebUrl desc
+                - lobbyBypassSettings
+                - lobbyBypassSettings desc
+                - participants
+                - participants desc
+                - recordAutomatically
+                - recordAutomatically desc
+                - recording
+                - recording desc
+                - shareMeetingChatHistoryDefault
+                - shareMeetingChatHistoryDefault desc
+                - startDateTime
+                - startDateTime desc
+                - subject
+                - subject desc
+                - videoTeleconferenceId
+                - videoTeleconferenceId desc
+                - watermarkProtection
+                - watermarkProtection desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
+                - allowedPresenters
+                - allowMeetingChat
+                - allowParticipantsToChangeName
+                - allowRecording
+                - allowTeamworkReactions
+                - allowTranscription
+                - alternativeRecording
+                - anonymizeIdentityForRoles
+                - attendeeReport
+                - audioConferencing
+                - broadcastRecording
+                - broadcastSettings
+                - capabilities
+                - chatInfo
+                - chatRestrictions
+                - creationDateTime
+                - endDateTime
+                - externalId
+                - isBroadcast
+                - isEntryExitAnnounced
+                - joinInformation
+                - joinMeetingIdSettings
+                - joinUrl
+                - joinWebUrl
+                - lobbyBypassSettings
+                - participants
+                - recordAutomatically
+                - recording
+                - shareMeetingChatHistoryDefault
+                - startDateTime
+                - subject
+                - videoTeleconferenceId
+                - watermarkProtection
+                - attendanceReports
+                - meetingAttendanceReport
+                - registration
+                - recordings
+                - transcripts
+                - registrations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attendanceReports
+                - meetingAttendanceReport
+                - registration
+                - recordings
+                - transcripts
+                - registrations
               type: string
       responses:
         2XX:
@@ -9821,11 +11051,8 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualEventSession
-      description: Read the properties and relationships of a virtualEventSession object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0
+      summary: Get sessions from solutions
+      description: Sessions of the virtual event.
       operationId: solution.virtualEvent.webinar_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -9871,6 +11098,7 @@ paths:
                 - broadcastSettings
                 - capabilities
                 - chatInfo
+                - chatRestrictions
                 - creationDateTime
                 - endDateTime
                 - externalId
@@ -9889,12 +11117,12 @@ paths:
                 - subject
                 - videoTeleconferenceId
                 - watermarkProtection
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
         - name: $expand
           in: query
@@ -9907,12 +11135,12 @@ paths:
             items:
               enum:
                 - '*'
-                - virtualAppointment
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
                 - recordings
                 - transcripts
+                - registrations
               type: string
       responses:
         2XX:
@@ -11488,6 +12716,12 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
               type: string
         - name: $select
           in: query
@@ -11502,6 +12736,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -11611,6 +12848,9 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
               type: string
         - name: $expand
           in: query
@@ -11845,6 +13085,101 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/recordings/microsoft.graph.delta()':
+    get:
+      tags:
+        - solutions.Functions
+      summary: Invoke function delta
+      operationId: solution.virtualEvent.webinar.session.recording_delta
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - content
+                - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - recordingContentUrl
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - recordingContentUrl
+                - recordingContentUrl desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of callRecording
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecording'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registration':
     get:
       tags:
@@ -12635,6 +13970,211 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      operationId: solution.virtualEvent.webinar.session_ListRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - cancelationDateTime
+                - cancelationDateTime desc
+                - email
+                - email desc
+                - firstName
+                - firstName desc
+                - lastName
+                - lastName desc
+                - registrationDateTime
+                - registrationDateTime desc
+                - registrationQuestionAnswers
+                - registrationQuestionAnswers desc
+                - status
+                - status desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cancelationDateTime
+                - email
+                - firstName
+                - lastName
+                - registrationDateTime
+                - registrationQuestionAnswers
+                - status
+                - userId
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.virtualEventRegistrationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations/{virtualEventRegistration-id}':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get registrations from solutions
+      operationId: solution.virtualEvent.webinar.session_GetRegistration
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - name: virtualEventRegistration-id
+          in: path
+          description: The unique identifier of virtualEventRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventRegistration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cancelationDateTime
+                - email
+                - firstName
+                - lastName
+                - registrationDateTime
+                - registrationQuestionAnswers
+                - status
+                - userId
+                - sessions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - sessions
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/registrations/$count':
+    get:
+      tags:
+        - solutions.virtualEventsRoot
+      summary: Get the number of the resource
+      operationId: solution.virtualEvent.webinar.session.registration_GetCount
+      parameters:
+        - name: virtualEventWebinar-id
+          in: path
+          description: The unique identifier of virtualEventWebinar
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventWebinar
+        - name: virtualEventSession-id
+          in: path
+          description: The unique identifier of virtualEventSession
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/transcripts':
     get:
       tags:
@@ -12683,8 +14223,14 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
                 - metadataContent
                 - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
         - name: $select
           in: query
@@ -12699,7 +14245,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -12809,7 +14358,10 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - meetingId
+                - meetingOrganizerId
                 - metadataContent
+                - transcriptContentUrl
               type: string
         - name: $expand
           in: query
@@ -13138,16 +14690,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/virtualAppointment':
+  '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/{virtualEventSession-id}/transcripts/microsoft.graph.delta()':
     get:
       tags:
-        - solutions.virtualEventsRoot
-      summary: Get virtualAppointment (deprecated)
-      description: Read the properties and relationships of a virtualAppointment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
-      operationId: solution.virtualEvent.webinar.session_GetVirtualAppointment
+        - solutions.Functions
+      summary: Invoke function delta
+      operationId: solution.virtualEvent.webinar.session.transcript_delta
       parameters:
         - name: virtualEventWebinar-id
           in: path
@@ -13165,6 +14713,11 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: virtualEventSession
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
         - name: $select
           in: query
           description: Select properties to be returned
@@ -13176,15 +14729,16 @@ paths:
             items:
               enum:
                 - id
-                - appointmentClientJoinWebUrl
-                - appointmentClients
-                - externalAppointmentId
-                - externalAppointmentUrl
-                - settings
+                - content
+                - createdDateTime
+                - meetingId
+                - meetingOrganizerId
+                - metadataContent
+                - transcriptContentUrl
               type: string
-        - name: $expand
+        - name: $orderby
           in: query
-          description: Expand related entities
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -13192,117 +14746,48 @@ paths:
             type: array
             items:
               enum:
-                - '*'
+                - id
+                - id desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
+                - meetingId
+                - meetingId desc
+                - meetingOrganizerId
+                - meetingOrganizerId desc
+                - metadataContent
+                - metadataContent desc
+                - transcriptContentUrl
+                - transcriptContentUrl desc
               type: string
       responses:
         2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-05-31T00:00:00.0000000+00:00'
-        date: '2023-04-04T00:00:00.0000000+00:00'
-        version: 2023-04/VirtualAppointment
-        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Update virtualAppointment (deprecated)
-      description: Update the properties of a virtualAppointment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
-      operationId: solution.virtualEvent.webinar.session_UpdateVirtualAppointment
-      parameters:
-        - name: virtualEventWebinar-id
-          in: path
-          description: The unique identifier of virtualEventWebinar
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventWebinar
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
-        required: true
-      responses:
-        2XX:
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
+                title: Collection of callTranscript
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-05-31T00:00:00.0000000+00:00'
-        date: '2023-04-04T00:00:00.0000000+00:00'
-        version: 2023-04/VirtualAppointment
-        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - solutions.virtualEventsRoot
-      summary: Delete virtualAppointment (deprecated)
-      description: Delete a virtualAppointment object.
-      externalDocs:
-        description: Find more info here
-        url: https://learn.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
-      operationId: solution.virtualEvent.webinar.session_DeleteVirtualAppointment
-      parameters:
-        - name: virtualEventWebinar-id
-          in: path
-          description: The unique identifier of virtualEventWebinar
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventWebinar
-        - name: virtualEventSession-id
-          in: path
-          description: The unique identifier of virtualEventSession
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: virtualEventSession
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-05-31T00:00:00.0000000+00:00'
-        date: '2023-04-04T00:00:00.0000000+00:00'
-        version: 2023-04/VirtualAppointment
-        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
-      x-ms-docs-operation-type: operation
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/solutions/virtualEvents/webinars/{virtualEventWebinar-id}/sessions/$count':
     get:
       tags:
@@ -14085,6 +15570,12 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         - title: virtualEventSession
           type: object
+          properties:
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -14170,6 +15661,18 @@ components:
               type: string
               description: 'Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
+              nullable: true
+            recordingContentUrl:
+              type: string
+              description: The URL which can be used to access the content of the recording. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -14259,6 +15762,47 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.virtualEventRegistration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistration
+          type: object
+          properties:
+            cancelationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            registrationQuestionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
+            userId:
+              type: string
+              nullable: true
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.callTranscript:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14276,38 +15820,23 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            meetingId:
+              type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
+              nullable: true
+            meetingOrganizerId:
+              type: string
+              description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+              nullable: true
             metadataContent:
               type: string
               description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.virtualAppointment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualAppointment
-          type: object
-          properties:
-            appointmentClientJoinWebUrl:
+            transcriptContentUrl:
               type: string
-              description: The join web URL of the virtual appointment for clients with waiting room and browser join. Optional.
+              description: The URL which can be used to access the content of the transcript. Read-only.
               nullable: true
-            appointmentClients:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualAppointmentUser'
-              description: 'The client information for the virtual appointment, including name, email, and SMS phone number. Optional.'
-            externalAppointmentId:
-              type: string
-              description: 'The identifier of the appointment from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            externalAppointmentUrl:
-              type: string
-              description: 'The URL of the appointment resource from the scheduling system, associated with the current virtual appointment. Optional.'
-              nullable: true
-            settings:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointmentSettings'
           additionalProperties:
             type: object
     microsoft.graph.virtualEventWebinar:
@@ -14323,38 +15852,34 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
               description: Identity information of co-organizers of the webinar.
-            registration:
-              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+            registrationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.virtualEventRegistration:
+    microsoft.graph.virtualEventRegistrationConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualEventRegistration
+        - title: virtualEventRegistrationConfiguration
           type: object
           properties:
             capacity:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Total capacity of the virtual event.
               format: int32
               nullable: true
             registrationWebUrl:
               type: string
-              description: Registration URL of the virtual event.
               nullable: true
             questions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestion'
-              description: Registration questions.
-              x-ms-navigationProperty: true
-            registrants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrant'
-              description: Information of attendees who have registered for the virtual event.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15023,6 +16548,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            chatRestrictions:
+              $ref: '#/components/schemas/microsoft.graph.chatRestrictions'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15089,8 +16616,6 @@ components:
               nullable: true
             watermarkProtection:
               $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            virtualAppointment:
-              $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
             attendanceReports:
               type: array
               items:
@@ -15146,11 +16671,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -15184,34 +16709,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointmentUser:
-      title: virtualAppointmentUser
+    microsoft.graph.virtualEventRegistrationQuestionAnswer:
+      title: virtualEventRegistrationQuestionAnswer
       type: object
       properties:
+        booleanValue:
+          type: boolean
+          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          nullable: true
         displayName:
           type: string
-          description: The display name of the user who participates in a virtual appointment. Optional.
+          description: Display name of the registration question.
           nullable: true
-        emailAddress:
+        multiChoiceValues:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+        questionId:
           type: string
-          description: The email address of the user who participates in a virtual appointment. Optional.
+          description: id of the virtualEventRegistrationQuestion.
           nullable: true
-        smsCapablePhoneNumber:
+        value:
           type: string
-          description: The phone number for sending SMS texts for the user who participates in a virtual appointment. Optional.
+          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.virtualAppointmentSettings:
-      title: virtualAppointmentSettings
-      type: object
-      properties:
-        allowClientToJoinUsingBrowser:
-          type: boolean
-          description: 'Indicates whether the client can use the browser to join a virtual appointment. If set to false, the client can only use Microsoft Teams to join. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.virtualEventAttendeeRegistrationStatus:
+      title: virtualEventAttendeeRegistrationStatus
+      enum:
+        - registered
+        - canceled
+        - waitlisted
+        - pendingApproval
+        - rejectedByOrganizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.meetingAudience:
       title: meetingAudience
       enum:
@@ -15240,49 +16775,6 @@ components:
             isRequired:
               type: boolean
               description: Indicates whether the question is required to answer. Default value is false.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.virtualEventRegistrant:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: virtualEventRegistrant
-          type: object
-          properties:
-            cancelationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time in UTC when the registrant cancels their registration for the virtual event. Only appears when applicable.
-              format: date-time
-              nullable: true
-            email:
-              type: string
-              description: Email address of the registrant.
-              nullable: true
-            firstName:
-              type: string
-              description: First name of the registrant.
-              nullable: true
-            lastName:
-              type: string
-              description: Last name of the registrant.
-              nullable: true
-            registrationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time in UTC when the registrant registers for the virtual event.
-              format: date-time
-              nullable: true
-            registrationQuestionAnswers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
-              description: The registrant's answer to the registration questions.
-            status:
-              $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
-            userId:
-              type: string
-              description: The registrant's AAD user ID. Only appears when the registrant is registered in AAD.
               nullable: true
           additionalProperties:
             type: object
@@ -15532,6 +17024,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventRegistrationCollectionResponse:
+      title: Collection of virtualEventRegistration
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.callTranscriptCollectionResponse:
       title: Collection of callTranscript
       type: object
@@ -15748,6 +17253,9 @@ components:
         - checklistCompletion
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
@@ -15883,6 +17391,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatRestrictions:
+      title: chatRestrictions
+      type: object
+      properties:
+        allowTextOnly:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.joinMeetingIdSettings:
       title: joinMeetingIdSettings
       type: object
@@ -15963,44 +17480,6 @@ components:
         - singleChoice
         - multiChoice
         - boolean
-        - unknownFutureValue
-      type: string
-    microsoft.graph.virtualEventRegistrationQuestionAnswer:
-      title: virtualEventRegistrationQuestionAnswer
-      type: object
-      properties:
-        booleanValue:
-          type: boolean
-          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
-          nullable: true
-        displayName:
-          type: string
-          description: Display name of the registration question.
-          nullable: true
-        multiChoiceValues:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
-        questionId:
-          type: string
-          description: id of the virtualEventRegistrationQuestion.
-          nullable: true
-        value:
-          type: string
-          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.virtualEventAttendeeRegistrationStatus:
-      title: virtualEventAttendeeRegistrationStatus
-      enum:
-        - registered
-        - canceled
-        - waitlisted
-        - pendingApproval
-        - rejectedByOrganizer
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.MainError:
@@ -16475,6 +17954,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBaseCollectionResponse'
+    microsoft.graph.virtualEventRegistrationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationCollectionResponse'
     microsoft.graph.callTranscriptCollectionResponse:
       description: Retrieved collection
       content:

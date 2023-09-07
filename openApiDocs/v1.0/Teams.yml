@@ -1613,11 +1613,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1971,11 +1971,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -4287,7 +4287,11 @@ paths:
     get:
       tags:
         - chats.resourceSpecificPermissionGrant
-      summary: Get permissionGrants from chats
+      summary: List permissionGrants of a chat
+      description: 'List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0
       operationId: chat_ListPermissionGrant
       parameters:
         - name: chat-id
@@ -4403,6 +4407,7 @@ paths:
       tags:
         - chats.resourceSpecificPermissionGrant
       summary: Get permissionGrants from chats
+      description: A collection of permissions granted to apps for the chat.
       operationId: chat_GetPermissionGrant
       parameters:
         - name: chat-id
@@ -4663,7 +4668,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -4982,7 +4987,7 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -7258,11 +7263,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -10092,6 +10097,7 @@ paths:
                 - renewedDateTime
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - allowExternalSenders
@@ -11395,7 +11401,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get permissionGrants from groups
+      summary: List permissionGrants of a team
+      description: 'List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app''s corresponding type of resource-specific access.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
       operationId: group.team_ListPermissionGrant
       parameters:
         - name: group-id
@@ -11511,6 +11521,7 @@ paths:
       tags:
         - groups.team
       summary: Get permissionGrants from groups
+      description: A collection of permissions granted to apps to access the team.
       operationId: group.team_GetPermissionGrant
       parameters:
         - name: group-id
@@ -12528,11 +12539,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -19911,11 +19922,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -23755,6 +23766,7 @@ paths:
                 - renewedDateTime
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - allowExternalSenders
@@ -25351,7 +25363,11 @@ paths:
     get:
       tags:
         - teams.resourceSpecificPermissionGrant
-      summary: Get permissionGrants from teams
+      summary: List permissionGrants of a team
+      description: 'List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app''s corresponding type of resource-specific access.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
       operationId: team_ListPermissionGrant
       parameters:
         - name: team-id
@@ -25467,6 +25483,7 @@ paths:
       tags:
         - teams.resourceSpecificPermissionGrant
       summary: Get permissionGrants from teams
+      description: A collection of permissions granted to apps to access the team.
       operationId: team_GetPermissionGrant
       parameters:
         - name: team-id
@@ -25727,7 +25744,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -26046,7 +26063,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -27072,11 +27089,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -35138,11 +35155,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -40501,11 +40518,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: user.chat_GetMember
       parameters:
         - name: user-id
@@ -40843,11 +40860,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -42550,7 +42567,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get permissionGrants from users
+      summary: List permissionGrants of a chat
+      description: 'List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0
       operationId: user.chat_ListPermissionGrant
       parameters:
         - name: user-id
@@ -42682,6 +42703,7 @@ paths:
       tags:
         - users.chat
       summary: Get permissionGrants from users
+      description: A collection of permissions granted to apps for the chat.
       operationId: user.chat_GetPermissionGrant
       parameters:
         - name: user-id
@@ -45360,11 +45382,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMessage
       parameters:
         - name: user-id
@@ -48562,6 +48584,7 @@ paths:
                 - renewedDateTime
                 - securityEnabled
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - theme
                 - visibility
                 - allowExternalSenders
@@ -50057,7 +50080,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get permissionGrants from users
+      summary: List permissionGrants of a team
+      description: 'List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app''s corresponding type of resource-specific access.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
       operationId: user.joinedTeam_ListPermissionGrant
       parameters:
         - name: user-id
@@ -50189,6 +50216,7 @@ paths:
       tags:
         - users.team
       summary: Get permissionGrants from users
+      description: A collection of permissions granted to apps to access the team.
       operationId: user.joinedTeam_GetPermissionGrant
       parameters:
         - name: user-id
@@ -51374,11 +51402,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMessage
       parameters:
         - name: user-id
@@ -59244,6 +59272,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
@@ -59704,6 +59733,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps to access the team.
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -60037,13 +60067,17 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
@@ -60112,7 +60146,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permission that has been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -60751,7 +60784,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.teamsAppDistributionMethod:
@@ -61263,7 +61296,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -61564,6 +61597,8 @@ components:
       title: publicationFacet
       type: object
       properties:
+        checkedOutBy:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
         level:
           type: string
           description: The state of publication for this document. Either published or checkout. Read-only.
@@ -62095,6 +62130,23 @@ components:
         value:
           type: string
           description: Value of the property causing the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -63690,6 +63742,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -63833,7 +63889,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -65737,7 +65793,7 @@ components:
           nullable: true
         password:
           type: string
-          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.'
+          description: 'The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user''s passwordPolicies property. By default, a strong password is required.'
           nullable: true
       additionalProperties:
         type: object
@@ -66962,6 +67018,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowParticipantsToChangeName:
               type: boolean
+              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -67017,6 +67074,8 @@ components:
               type: boolean
               description: Indicates whether to record the meeting automatically.
               nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -69874,6 +69933,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
     microsoft.graph.watermarkProtectionValues:
       title: watermarkProtectionValues
       type: object

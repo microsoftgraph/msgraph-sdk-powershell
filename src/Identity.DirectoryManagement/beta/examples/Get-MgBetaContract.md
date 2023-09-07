@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```powershell
 
-Get-MgBetaContract -ContractId $contractId
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaContract
+
 ```
 This example shows how to use the Get-MgBetaContract Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

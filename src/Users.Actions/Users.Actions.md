@@ -19,6 +19,28 @@ require:
 directive:
 # Remove invalid paths.
   - remove-path-by-operation: .*exceptionOccurrence.*|user\.joinedTeam.*|user\.onenote\..*.parent.*|user.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|user\.calendar\.event.*|user\.calendarGroup\.calendar.*|user\.calendar\.event.*|user\.event\.calendar\.event.*|user\.pendingAccessReviewInstance\.stage\.decision.*|user\.pendingAccessReviewInstance(\.decision|\.stage\.decision)\.instance.*
+# Alias for backward compatibility.
+  - where:
+      verb: Remove
+      subject: ^(UserDeviceFromManagement)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+  - where:
+      verb: Invoke
+      subject: ^(InvalidateUserRefreshToken)$
+    set:
+      alias: ${verb}-Mg${subject-prefix}${subject}
+# Rename All due to https://github.com/Azure/autorest.powershell/issues/1002.
+  - where:
+      verb: Remove
+      subject: ^(UserDeviceFromManagement)$
+    set:
+      subject: All$1
+  - where:
+      verb: Invoke
+      subject: ^(Invalidate)(UserRefreshToken)$
+    set:
+      subject: $1All$2
 # Remove cmdlets.
   - where:
       verb: Get

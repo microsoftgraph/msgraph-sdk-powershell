@@ -12687,6 +12687,7 @@ components:
               nullable: true
             tenantLicenseType:
               type: string
+              description: 'The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.'
               nullable: true
             totalUserCount:
               maximum: 2147483647
@@ -14306,6 +14307,9 @@ components:
         - sms
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.managedTenants.notificationTarget:
       title: notificationTarget
       type: object

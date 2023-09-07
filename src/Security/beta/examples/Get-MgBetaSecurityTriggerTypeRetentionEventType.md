@@ -1,9 +1,11 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
+```powershell
 
-Get-MgBetaSecurityTriggerTypeRetentionEventType -RetentionEventTypeId $retentionEventTypeId
+Import-Module Microsoft.Graph.Beta.Security
+
+Get-MgBetaSecurityTriggerTypeRetentionEventType
+
 ```
 This example shows how to use the Get-MgBetaSecurityTriggerTypeRetentionEventType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
