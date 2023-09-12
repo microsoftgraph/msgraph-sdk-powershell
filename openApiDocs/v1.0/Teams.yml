@@ -24928,7 +24928,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. \nYou should continue to GET until the status is not 'running'. \nThe recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state - they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. (If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation. After the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. You should continue to GET until the status is not 'running'. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -60664,6 +60664,9 @@ components:
         - channels
         - members
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamwork:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -62957,6 +62960,9 @@ components:
         - offerShiftRequest
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamsAppCollectionResponse:
       title: Collection of teamsApp
       type: object
@@ -63412,6 +63418,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -63420,6 +63429,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -63447,6 +63459,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -63455,6 +63470,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -67114,6 +67132,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -69987,6 +70007,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -71433,6 +71468,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -71486,6 +71524,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false

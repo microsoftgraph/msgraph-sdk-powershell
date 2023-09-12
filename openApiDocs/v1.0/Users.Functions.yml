@@ -9485,7 +9485,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -9671,7 +9671,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
@@ -9778,7 +9778,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -9956,7 +9956,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
@@ -10055,7 +10055,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -10780,7 +10780,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedLanguages
-      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by \ngetting the user's mailbox settings."
+      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
@@ -16479,6 +16479,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -17150,6 +17152,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -17158,6 +17163,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -17185,6 +17193,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -17193,6 +17204,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -19952,6 +19966,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -22015,6 +22044,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -22068,6 +22100,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
