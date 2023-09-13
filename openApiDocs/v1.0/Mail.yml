@@ -11,7 +11,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Get inferenceClassification from users
-      description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+      description: Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
       operationId: user_GetInferenceClassification
       parameters:
         - name: user-id
@@ -4586,11 +4586,11 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update message
-      description: Update the properties of a message object.
+      summary: Update eventMessage
+      description: Update the properties of an eventMessage object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -6134,6 +6134,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true

@@ -4298,6 +4298,8 @@ paths:
                 - activity desc
                 - availability
                 - availability desc
+                - statusMessage
+                - statusMessage desc
               type: string
         - name: $select
           in: query
@@ -4312,6 +4314,7 @@ paths:
                 - id
                 - activity
                 - availability
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -4388,6 +4391,7 @@ paths:
                 - id
                 - activity
                 - availability
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -4569,6 +4573,39 @@ paths:
                   type: string
                   format: duration
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setStatusMessage':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setStatusMessage
+      operationId: communication.presence_setStatusMessage
+      parameters:
+        - name: presence-id
+          in: path
+          description: The unique identifier of presence
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                statusMessage:
+                  $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
               additionalProperties:
                 type: object
         required: true
@@ -5811,6 +5848,7 @@ paths:
                 - id
                 - activity
                 - availability
+                - statusMessage
               type: string
         - name: $expand
           in: query
@@ -6449,6 +6487,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.onlineMeeting:
@@ -6644,6 +6684,21 @@ components:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+      additionalProperties:
+        type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -7231,6 +7286,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -7573,7 +7641,7 @@ components:
           nullable: true
         macAddress:
           type: string
-          description: The media access control (MAC) address of the media endpoint's network device.
+          description: The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
           nullable: true
         networkTransportProtocol:
           $ref: '#/components/schemas/microsoft.graph.callRecords.networkTransportProtocol'
@@ -7734,7 +7802,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.'
           format: date-time
           nullable: true
         isAudioForwardErrorCorrectionUsed:
@@ -7798,7 +7866,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.'
           format: date-time
           nullable: true
         streamDirection:
@@ -7873,12 +7941,18 @@ components:
         - watermarkProtection
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.onlineMeetingVideoDisabledReason:
       title: onlineMeetingVideoDisabledReason
       enum:
         - watermarkProtection
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     ReferenceNumeric:
       enum:
         - '-INF'
@@ -7948,6 +8022,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true

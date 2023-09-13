@@ -15,17 +15,17 @@ if (!(Test-Path $SourcePath)) {
     Write-Error "SourcePath is not valid or does not exist. Please ensure that $SourcePath exists then try again."
 }
 
-$psd1s = Get-ChildItem -Path $SourcePath -Filter "Microsoft.Graph.*.psd1" -Recurse | where { $_.BaseName -ne "Microsoft.Graph.Authentication" }
-$allModules = (Invoke-Expression (($psd1s.FullName | ForEach-Object{ Get-Content $_}) | Out-String ))
+$psd1s = Get-ChildItem -Path $SourcePath -Filter "Microsoft.Graph.*.psd1" -Recurse | Where-Object { $_.BaseName -ne "Microsoft.Graph.Authentication" }
+$allModules = Import-PowerShellDataFile $psd1s.FullName
 $unique = $allModules.FunctionsToExport | Select-Object -unique
 $duplicates = Compare-object -ReferenceObject $unique -DifferenceObject $allModules.FunctionsToExport
 
 if ($duplicates.Count -gt 0) {
     Write-Host "The following functions are duplicated in the psd1 files:"
-    $duplicates.InputObject | %{
+    $duplicates.InputObject | ForEach-Object {
         $duplicateCommand = $_
         Write-Host "$duplicateCommand is duplicated in:"
-        Write-Host ($allModules | where { $_.FunctionsToExport -contains $duplicateCommand }).RootModule
+        Write-Host ($allModules | Where-Object { $_.FunctionsToExport -contains $duplicateCommand }).RootModule
         Write-Host "********************************"
     }
     Write-Error "Please ensure that the functions are unique and try again."

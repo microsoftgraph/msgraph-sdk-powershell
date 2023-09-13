@@ -639,6 +639,69 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/alerts_v2/{alert-id}/comments':
+    post:
+      tags:
+        - security.alert
+      summary: Sets a new value for the collection of alertComment.
+      operationId: security.alerts_v2_SetComment
+      parameters:
+        - name: alert-id
+          in: path
+          description: The unique identifier of alert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/alerts_v2/{alert-id}/comments/$count':
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alerts_v2.Comment_GetCount
+      parameters:
+        - name: alert-id
+          in: path
+          description: The unique identifier of alert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/alerts_v2/$count:
     get:
       tags:
@@ -5526,6 +5589,7 @@ paths:
                 - webUrl
                 - deleted
                 - displayName
+                - isPersonalSite
                 - root
                 - settings
                 - sharepointIds
@@ -6556,6 +6620,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/microsoft.graph.security.updateIndex':
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action updateIndex
+      description: Trigger an indexOperation
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_updateIndex
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/legalHolds':
     get:
       tags:
@@ -7187,6 +7291,7 @@ paths:
                 - webUrl
                 - deleted
                 - displayName
+                - isPersonalSite
                 - root
                 - settings
                 - sharepointIds
@@ -8348,6 +8453,42 @@ paths:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/microsoft.graph.security.updateIndex':
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action updateIndex
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_updateIndex
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -14233,6 +14374,85 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/incidents/{incident-id}/alerts/{alert-id}/comments':
+    post:
+      tags:
+        - security.incident
+      summary: Sets a new value for the collection of alertComment.
+      operationId: security.incident.alert_SetComment
+      parameters:
+        - name: incident-id
+          in: path
+          description: The unique identifier of incident
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incident
+        - name: alert-id
+          in: path
+          description: The unique identifier of alert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.security.alertComment'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/incidents/{incident-id}/alerts/{alert-id}/comments/$count':
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident.alert.Comment_GetCount
+      parameters:
+        - name: incident-id
+          in: path
+          description: The unique identifier of incident
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incident
+        - name: alert-id
+          in: path
+          description: The unique identifier of alert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: alert
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/incidents/{incident-id}/alerts/$count':
     get:
       tags:
@@ -19478,6 +19698,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -19557,6 +19778,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -19753,6 +19975,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -19832,6 +20055,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -20335,6 +20559,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -20414,6 +20639,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -20610,6 +20836,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -20689,6 +20916,7 @@ paths:
                 - devices
                 - onlineMeetings
                 - presence
+                - virtualEvents
                 - authentication
                 - chats
                 - joinedTeams
@@ -24605,7 +24833,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get sslCertificates from security
+      summary: List hostSslCertificates
+      description: Get a list of hostSslCertificate objects from the host navigation property.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-hostsslcertificate-list-host?view=graph-rest-1.0
       operationId: security.threatIntelligence.host_ListSslCertificate
       parameters:
         - name: host-id
@@ -24685,6 +24917,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get sslCertificates from security
+      description: The hostSslCertificates that are associated with this host.
       operationId: security.threatIntelligence.host_GetSslCertificate
       parameters:
         - name: host-id
@@ -25186,7 +25419,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostSslCertificates from security
+      summary: Get hostSslCertificate
+      description: Get the properties and relationships of a hostSslCertificate object.
       operationId: security.threatIntelligence_ListHostSslCertificate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25279,7 +25513,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostSslCertificates from security
+      summary: Get hostSslCertificate
+      description: Get the properties and relationships of a hostSslCertificate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-hostsslcertificate-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetHostSslCertificate
       parameters:
         - name: hostSslCertificate-id
@@ -25393,6 +25631,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get host from security
+      description: The host for this hostSslCertificate.
       operationId: security.threatIntelligence.hostSslCertificate_GetHost
       parameters:
         - name: hostSslCertificate-id
@@ -25468,6 +25707,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get sslCertificate from security
+      description: The sslCertificate for this hostSslCertificate.
       operationId: security.threatIntelligence.hostSslCertificate_GetSslCertificate
       parameters:
         - name: hostSslCertificate-id
@@ -26882,7 +27122,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get sslCertificates from security
+      summary: List sslCertificates
+      description: Get a list of sslCertificate objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sslcertificate-list?view=graph-rest-1.0
       operationId: security.threatIntelligence_ListSslCertificate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -26991,7 +27235,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get sslCertificates from security
+      summary: Get sslCertificate
+      description: Get the properties and relationships of an sslCertificate object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetSslCertificate
       parameters:
         - name: sslCertificate-id
@@ -27109,6 +27357,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get relatedHosts from security
+      description: The hosts related with this sslCertificate.
       operationId: security.threatIntelligence.sslCertificate_ListRelatedHost
       parameters:
         - name: sslCertificate-id
@@ -27205,6 +27454,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get relatedHosts from security
+      description: The hosts related with this sslCertificate.
       operationId: security.threatIntelligence.sslCertificate_GetRelatedHost
       parameters:
         - name: sslCertificate-id
@@ -33213,6 +33463,25 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.security.alertComment:
+      title: alertComment
+      type: object
+      properties:
+        comment:
+          type: string
+          description: The comment text.
+          nullable: true
+        createdByDisplayName:
+          type: string
+          description: The person or app name that submitted the comment.
+          nullable: true
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time when the comment was submitted.
+          format: date-time
+      additionalProperties:
+        type: object
     microsoft.graph.attackSimulationRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33935,6 +34204,9 @@ components:
               type: string
               description: The full title for the site. Read-only.
               nullable: true
+            isPersonalSite:
+              type: boolean
+              nullable: true
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             settings:
@@ -34063,7 +34335,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -35949,13 +36221,13 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -35970,13 +36242,13 @@ components:
               description: 'The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
-              description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             cloudRealtimeCommunicationInfo:
               $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -35984,7 +36256,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -36008,7 +36280,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -36083,21 +36355,21 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
+              description: 'The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -36123,7 +36395,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -36158,10 +36430,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -36175,7 +36447,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example, en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             provisionedPlans:
               type: array
@@ -36186,11 +36458,11 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
               nullable: true
             securityIdentifier:
@@ -36201,7 +36473,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -36209,7 +36481,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
               format: date-time
               nullable: true
             state:
@@ -36226,11 +36498,11 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
@@ -36328,7 +36600,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that were created by the user. Read-only. Nullable.
+              description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
             directReports:
               type: array
@@ -36587,6 +36859,8 @@ components:
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            virtualEvents:
+              $ref: '#/components/schemas/microsoft.graph.userVirtualEventsRoot'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
             chats:
@@ -36840,6 +37114,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostSslCertificate'
+              description: 'Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hostTrackers:
               type: array
@@ -36868,6 +37143,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.sslCertificate'
+              description: 'Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             subdomains:
               type: array
@@ -37050,6 +37326,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostSslCertificate'
+              description: The hostSslCertificates that are associated with this host.
               x-ms-navigationProperty: true
             subdomains:
               type: array
@@ -37181,17 +37458,20 @@ components:
             firstSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             ports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostSslCertificatePort'
+              description: The ports related with this hostSslCertificate.
             host:
               $ref: '#/components/schemas/microsoft.graph.security.host'
             sslCertificate:
@@ -37263,19 +37543,23 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when a certificate expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             fingerprint:
               type: string
+              description: A hash of the certificate calculated on the data and signature.
               nullable: true
             firstSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The first date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             issueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when a certificate was issued. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             issuer:
@@ -37283,13 +37567,16 @@ components:
             lastSeenDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The most recent date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             serialNumber:
               type: string
+              description: The serial number associated with an SSL certificate.
               nullable: true
             sha1:
               type: string
+              description: 'A SHA-1 hash of the certificate. Note: This is not the signature.'
               nullable: true
             subject:
               $ref: '#/components/schemas/microsoft.graph.security.sslCertificateEntity'
@@ -37297,6 +37584,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.host'
+              description: The hosts related with this sslCertificate.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -38599,25 +38887,6 @@ components:
         - informationalExpectedActivity
         - unknownFutureValue
       type: string
-    microsoft.graph.security.alertComment:
-      title: alertComment
-      type: object
-      properties:
-        comment:
-          type: string
-          description: The comment text.
-          nullable: true
-        createdByDisplayName:
-          type: string
-          description: The person or app name that submitted the comment.
-          nullable: true
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time when the comment was submitted.
-          format: date-time
-      additionalProperties:
-        type: object
     microsoft.graph.security.detectionSource:
       title: detectionSource
       enum:
@@ -41153,11 +41422,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -41782,7 +42051,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             errorUrl:
               type: string
@@ -43797,7 +44066,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -43831,7 +44100,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             domainName:
               type: string
@@ -44160,6 +44429,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+          additionalProperties:
+            type: object
+    microsoft.graph.userVirtualEventsRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userVirtualEventsRoot
+          type: object
+          properties:
+            webinars:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -45023,17 +45305,20 @@ components:
         firstSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         lastSeenDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         port:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The port number.
           format: int32
           nullable: true
       additionalProperties:
@@ -45122,26 +45407,34 @@ components:
           items:
             type: string
             nullable: true
+          description: Alternate names for this entity that are part of the certificate.
         commonName:
           type: string
+          description: A common name for this entity.
           nullable: true
         email:
           type: string
+          description: An email for this entity.
           nullable: true
         givenName:
           type: string
+          description: 'If the entity is a person, this is the person''s given name (first name).'
           nullable: true
         organizationName:
           type: string
+          description: 'If the entity is an organization, this is the name of the organization.'
           nullable: true
         organizationUnitName:
           type: string
+          description: 'If the entity is an organization, this communicates if a unit in the organization is named on the entity.'
           nullable: true
         serialNumber:
           type: string
+          description: A serial number assigned to the entity; usually only available if the entity is the issuer.
           nullable: true
         surname:
           type: string
+          description: 'If the entity is a person, this is the person''s surname (last name).'
           nullable: true
       additionalProperties:
         type: object
@@ -49801,7 +50094,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Name of the access review series. Supports $select and $orderBy. Required on create.
+              description: Name of the access review series. Supports $select and $orderby. Required on create.
               nullable: true
             fallbackReviewers:
               type: array
@@ -53089,6 +53382,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventWebinar:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.virtualEvent'
+        - title: virtualEventWebinar
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            coOrganizers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              description: Identity information of co-organizers of the webinar.
+            registrationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.signInPreferences:
       title: signInPreferences
       type: object
@@ -54336,6 +54651,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
@@ -58554,6 +58870,124 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.virtualEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEvent
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.communicationsIdentitySet'
+            description:
+              type: string
+              description: Description of the virtual event.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the virtual event
+              nullable: true
+            endDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventStatus'
+            presenters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
+              description: Presenters' information of the virtual event.
+              x-ms-navigationProperty: true
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions of the virtual event.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.meetingAudience:
+      title: meetingAudience
+      enum:
+        - everyone
+        - organization
+        - unknownFutureValue
+      type: string
+    microsoft.graph.communicationsUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: communicationsUserIdentity
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: The user's tenant ID.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistrationConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistrationConfiguration
+          type: object
+          properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            registrationWebUrl:
+              type: string
+              nullable: true
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestion'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistration
+          type: object
+          properties:
+            cancelationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            registrationQuestionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
+            userId:
+              type: string
+              nullable: true
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.userDefaultAuthenticationMethodType:
       title: userDefaultAuthenticationMethodType
       enum:
@@ -59838,7 +60272,7 @@ components:
               format: int32
             visibility:
               type: string
-              description: 'The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.'
+              description: 'The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.'
             charts:
               type: array
               items:
@@ -59869,6 +60303,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+              description: Collection of document tasks on this worksheet. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -61681,13 +62116,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.meetingAudience:
-      title: meetingAudience
-      enum:
-        - everyone
-        - organization
-        - unknownFutureValue
-      type: string
     microsoft.graph.meetingRegistrantBase:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -61705,6 +62133,129 @@ components:
       enum:
         - text
         - radioButton
+        - unknownFutureValue
+      type: string
+    microsoft.graph.communicationsIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: communicationsIdentitySet
+          type: object
+          properties:
+            applicationInstance:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            assertedIdentity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            azureCommunicationServicesUser:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            encrypted:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            endpointType:
+              $ref: '#/components/schemas/microsoft.graph.endpointType'
+            guest:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            onPremises:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            phone:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventStatus:
+      title: virtualEventStatus
+      enum:
+        - draft
+        - published
+        - canceled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.virtualEventPresenter:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventPresenter
+          type: object
+          properties:
+            email:
+              type: string
+              description: Email address of the presenter.
+              nullable: true
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+            presenterDetails:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        - title: virtualEventSession
+          type: object
+          properties:
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistrationQuestion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistrationQuestion
+          type: object
+          properties:
+            answerChoices:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Answer choices when answerInputType is singleChoice or multiChoice.
+            answerInputType:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswerInputType'
+            displayName:
+              type: string
+              description: Display name of the registration question.
+              nullable: true
+            isRequired:
+              type: boolean
+              description: Indicates whether the question is required to answer. Default value is false.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistrationQuestionAnswer:
+      title: virtualEventRegistrationQuestionAnswer
+      type: object
+      properties:
+        booleanValue:
+          type: boolean
+          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          nullable: true
+        displayName:
+          type: string
+          description: Display name of the registration question.
+          nullable: true
+        multiChoiceValues:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+        questionId:
+          type: string
+          description: id of the virtualEventRegistrationQuestion.
+          nullable: true
+        value:
+          type: string
+          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualEventAttendeeRegistrationStatus:
+      title: virtualEventAttendeeRegistrationStatus
+      enum:
+        - registered
+        - canceled
+        - waitlisted
+        - pendingApproval
+        - rejectedByOrganizer
         - unknownFutureValue
       type: string
     microsoft.graph.teamworkUserIdentityType:
@@ -62034,11 +62585,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+              description: A collection of user identities the task is assigned to.
             completedBy:
               $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the task was completed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             createdBy:
@@ -62046,29 +62599,34 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the task was created. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer value from 0 to 100 that represents the percentage of the completion of the task. 100 means that the task is completed. Nullable.
               format: int32
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. Nullable.
               format: int32
               nullable: true
             startAndDueDateTime:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
             title:
               type: string
+              description: The title of the task.
               nullable: true
             changes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              description: A collection of task change histories.
               x-ms-navigationProperty: true
             comment:
               $ref: '#/components/schemas/microsoft.graph.workbookComment'
@@ -63746,6 +64304,53 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.endpointType:
+      title: endpointType
+      enum:
+        - default
+        - voicemail
+        - skypeForBusiness
+        - skypeForBusinessVoipPhone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.virtualEventPresenterDetails:
+      title: virtualEventPresenterDetails
+      type: object
+      properties:
+        bio:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        company:
+          type: string
+          description: The presenter's company name.
+          nullable: true
+        jobTitle:
+          type: string
+          description: The presenter's job title.
+          nullable: true
+        linkedInProfileWebUrl:
+          type: string
+          description: The presenter's LinkedIn profile URL.
+          nullable: true
+        personalSiteWebUrl:
+          type: string
+          description: The presenter's personal website URL.
+          nullable: true
+        twitterProfileWebUrl:
+          type: string
+          description: The presenter's Twitter profile URL.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualEventRegistrationQuestionAnswerInputType:
+      title: virtualEventRegistrationQuestionAnswerInputType
+      enum:
+        - text
+        - multilineText
+        - singleChoice
+        - multiChoice
+        - boolean
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -63786,12 +64391,15 @@ components:
       properties:
         displayName:
           type: string
+          description: Display name of the user.
           nullable: true
         email:
           type: string
+          description: Email address of the user.
           nullable: true
         id:
           type: string
+          description: The unique identifier of the user.
           nullable: true
       additionalProperties:
         type: object
@@ -63802,11 +64410,13 @@ components:
         dueDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The due date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -63823,41 +64433,50 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
             commentId:
               type: string
+              description: The identifier of the associated comment.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.'
               format: int32
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
               format: int32
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             title:
               type: string
+              description: The title of the task. Only present when the type property is setTitle. Nullable.
               nullable: true
             type:
               type: string
+              description: 'The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.'
             undoChangeId:
               type: string
+              description: The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
               nullable: true
           additionalProperties:
             type: object
