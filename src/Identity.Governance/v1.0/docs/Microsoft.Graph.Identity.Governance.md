@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: a3e76b9c-b0cc-42ee-8748-bbf8c006f8d8
+Module Guid: f529dcf7-3715-4622-91ba-726ed37b144f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1733,12 +1733,8 @@ Create a new accessPackageResourceRequest object to request the addition of a re
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 To add an Azure AD group as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
 The value of the originSystem property within the resource should be AadGroup and the value of the originId is the identifier of the group.
-To add an Azure AD application as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
-The value of the originSystem property within the resource should be AadApplication and the value of the originId is the identifier of the servicePrincipal.
-To add a SharePoint Online site an as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
-The value of the originSystem property within the resource should be SharePointOnline and the value of the originId is the URI of the site.
-To remove a resource from a catalog, set the requestType to be adminRemove, and the resource to contain the id of the resource object to be removed.
-The resource object can be retrieved using list resources.
+If using delegated permissions, the user requesting to add a group should be an owner of the group or in a directory role which allows them to modify groups.
+If using application permissions, the application requesting to add the group should also be assigned the Group.ReadWrite.All permission.
 
 ### [New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
 Create new navigation property to customWorkflowExtensions for identityGovernance

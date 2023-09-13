@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Read the properties and relationships of a resourceConnection object.
+Read the properties and relationships of an operationalInsightsConnection object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdentity
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a resourceConnection object.
+Read the properties and relationships of an operationalInsightsConnection object.
 
 ## EXAMPLES
 

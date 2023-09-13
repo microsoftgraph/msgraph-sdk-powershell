@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 01fabe27-2137-4d01-9080-4e6bc8e24d66
+Module Guid: 67a98b2f-3c89-46e4-96f4-0407f54afbad
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -340,15 +340,9 @@ Invoke action getConnectionQualityReports
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
 
-### [Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport](Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport.md)
-Invoke action getFrontlineReport
-
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport](Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport.md)
 Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status.
 An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
-
-### [Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport.md)
-Invoke action getRawRemoteConnectionReports
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
 Get the remote connection history records of a Cloud PC during a given period.
@@ -676,9 +670,6 @@ Invoke action createInstance
 ### [New-MgBetaDeviceManagementTemplateMigratableToInstance](New-MgBetaDeviceManagementTemplateMigratableToInstance.md)
 Invoke action createInstance
 
-### [New-MgBetaDeviceManagementVirtualEndpointCloudPcSnapshot](New-MgBetaDeviceManagementVirtualEndpointCloudPcSnapshot.md)
-Invoke action createSnapshot
-
 ### [Remove-MgBetaDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgBetaDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement.md)
 Remove device from Device Firmware Configuration Interface management
 
@@ -730,9 +721,6 @@ Upgrade or downgrade an existing Cloud PC to another configuration with a new vi
 
 ### [Resize-MgBetaDeviceManagementManagedDeviceCloudPc](Resize-MgBetaDeviceManagementManagedDeviceCloudPc.md)
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-
-### [Resize-MgBetaDeviceManagementVirtualEndpointCloudPc](Resize-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
-Invoke action resize
 
 ### [Restart-MgBetaDeviceManagementComanagedDeviceNow](Restart-MgBetaDeviceManagementComanagedDeviceNow.md)
 Reboot device

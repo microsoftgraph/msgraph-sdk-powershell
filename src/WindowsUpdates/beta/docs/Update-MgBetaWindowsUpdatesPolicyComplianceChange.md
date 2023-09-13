@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaWindowsUpdatesPolicyComplianceChange
 
 ## SYNOPSIS
-Update the properties of a complianceChange object.
+Update the properties of a contentApproval object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesI
 ```
 
 ## DESCRIPTION
-Update the properties of a complianceChange object.
+Update the properties of a contentApproval object.
 
 ## EXAMPLES
 

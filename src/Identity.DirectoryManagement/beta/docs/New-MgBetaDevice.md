@@ -121,7 +121,7 @@ Accept wildcard characters: False
 The timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
-Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
+Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
 
 ```yaml
 Type: System.DateTime
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 ### -DisplayName
 The display name for the device.
 Required.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
 
 ```yaml
 Type: System.String
@@ -926,7 +926,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IdentityProvider <String>]`: For internal use only.
     - `[Key <Byte[]>]`: For internal use only.
     - `[Type <Int32?>]`: For internal use only.
-  - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
+  - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
   - `[Commands <IMicrosoftGraphCommand[]>]`: Set of commands sent to this device.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppServiceName <String>]`: 
@@ -947,7 +947,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceMetadata <String>]`: For internal use only. Set to null.
   - `[DeviceOwnership <String>]`: Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
   - `[DeviceVersion <Int32?>]`: For internal use only.
-  - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+  - `[DisplayName <String>]`: The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
   - `[DomainName <String>]`: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
   - `[EnrollmentProfileName <String>]`: Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
   - `[EnrollmentType <String>]`: Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 468aecb8-768b-4915-9e3e-e20bf18231f2
+Module Guid: c08bf41c-a30e-4411-a374-bfde49a0dc0c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Mail Cmdlets
 ### [Get-MgUserInferenceClassification](Get-MgUserInferenceClassification.md)
-Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ### [Get-MgUserInferenceClassificationOverride](Get-MgUserInferenceClassificationOverride.md)
 A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
@@ -255,7 +255,7 @@ If an override exists for a sender and the sender changes his/her display name, 
 If an override exists for a sender and the sender changes his/her SMTP address, deleting the existing override and creating a new one with\nthe new SMTP address is the only way to 'update' the override for this sender.
 
 ### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
-Update the properties of mailfolder object.
+Update the writable properties of a mailSearchFolder object.
 
 ### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)
 Update the navigation property childFolders in users
@@ -279,7 +279,7 @@ Update the navigation property extensions in users
 Change writable properties on a messageRule object and save the changes.
 
 ### [Update-MgUserMessage](Update-MgUserMessage.md)
-Update the properties of an eventMessage object.
+Update the properties of a message object.
 
 ### [Update-MgUserMessageExtension](Update-MgUserMessageExtension.md)
 Update the navigation property extensions in users

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: 4eb0a4e3-b173-492b-8513-b97f4880cb59
+Module Guid: 1aff5426-6170-4d8f-8b90-2cdc6b91b5c9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -205,8 +205,7 @@ Registrants of the online meeting.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionTranscript](Get-MgBetaVirtualEventSessionTranscript.md)
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API does not support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
 
@@ -335,8 +334,7 @@ Registrants of the online meeting.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionTranscript](Get-MgBetaVirtualEventWebinarSessionTranscript.md)
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API does not support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
 
@@ -533,7 +531,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventSessionRegistration](Remove-MgBetaVirtualEventSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -572,7 +570,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistration](Remove-MgBetaVirtualEventWebinarSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.

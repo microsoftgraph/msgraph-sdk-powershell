@@ -23602,7 +23602,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get childHostPairs from security
-      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
+      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.'
       operationId: security.threatIntelligence.host_GetChildHostPair
       parameters:
         - name: host-id
@@ -37282,7 +37282,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
-              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
+              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.'
               x-ms-navigationProperty: true
             components:
               type: array

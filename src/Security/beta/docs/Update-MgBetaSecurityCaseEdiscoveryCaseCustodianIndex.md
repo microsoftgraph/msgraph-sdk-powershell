@@ -12,42 +12,16 @@ Trigger an indexOperation
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
-```
-Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId <String>
- [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
+### Update (Default)
 ```
 Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId <String>
  -EdiscoveryCustodianId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId <String>
- -BodyParameter <IPathsIs84XhSecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityUpdateindexPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity>
- -BodyParameter <IPathsIs84XhSecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityUpdateindexPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentity>
- [-AdditionalProperties <Hashtable>] [-Ids <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,43 +39,12 @@ Update-MgBetaSecurityCaseEdiscoveryCaseCustodianIndex -EdiscoveryCaseId $ediscov
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IPathsIs84XhSecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityUpdateindexPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Update1, UpdateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -EdiscoveryCaseId
 The unique identifier of ediscoveryCase
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, Update1, UpdateExpanded
+Parameter Sets: Update
 Aliases:
 
 Required: True
@@ -126,28 +69,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Ids
-.
-
-```yaml
-Type: System.String[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentity1, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -208,8 +136,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.IPathsIs84XhSecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityUpdateindexPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.Beta.PowerShell.Models.ISecurityIdentity
 
 ## OUTPUTS
@@ -224,10 +150,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-`BODYPARAMETER <IPathsIs84XhSecurityCasesEdiscoverycasesEdiscoverycaseIdCustodiansMicrosoftGraphSecurityUpdateindexPostRequestbodyContentApplicationJsonSchema>`: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Ids <String[]>]`: 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert

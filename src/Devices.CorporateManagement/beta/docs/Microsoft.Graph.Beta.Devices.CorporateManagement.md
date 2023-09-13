@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: 3ee15eea-817f-41c8-a243-5e2f6edbc56b
+Module Guid: 2c0565e1-e124-4737-837e-b8342d00ffe7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US

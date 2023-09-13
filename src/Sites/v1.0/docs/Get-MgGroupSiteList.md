@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteList
 
 ## SYNOPSIS
-Get a list of rich long-running operations associated with a list.
+Returns the metadata for a [list][].
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Get a list of rich long-running operations associated with a list.
+Returns the metadata for a [list][].
 
 ## EXAMPLES
 

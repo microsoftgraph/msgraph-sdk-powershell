@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Compliance
-Module Guid: 938ae877-64eb-46e5-8d93-eefe3bd98786
+Module Guid: 06c5abcf-19aa-4120-a7f6-06e4c9272fcb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,28 +16,6 @@ Get compliance
 
 ### [Get-MgPrivacySubjectRightsRequest](Get-MgPrivacySubjectRightsRequest.md)
 Read the properties and relationships of a subjectRightsRequest object.
-
-### [Get-MgPrivacySubjectRightsRequestApprover](Get-MgPrivacySubjectRightsRequestApprover.md)
-Get approvers from privacy
-
-### [Get-MgPrivacySubjectRightsRequestApproverCount](Get-MgPrivacySubjectRightsRequestApproverCount.md)
-Get the number of the resource
-
-### [Get-MgPrivacySubjectRightsRequestApproverMailboxSetting](Get-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
-### [Get-MgPrivacySubjectRightsRequestCollaborator](Get-MgPrivacySubjectRightsRequestCollaborator.md)
-Get collaborators from privacy
-
-### [Get-MgPrivacySubjectRightsRequestCollaboratorCount](Get-MgPrivacySubjectRightsRequestCollaboratorCount.md)
-Get the number of the resource
-
-### [Get-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting](Get-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgPrivacySubjectRightsRequestCount](Get-MgPrivacySubjectRightsRequestCount.md)
 Get the number of the resource
@@ -68,12 +46,6 @@ Update compliance
 
 ### [Update-MgPrivacySubjectRightsRequest](Update-MgPrivacySubjectRightsRequest.md)
 Update the properties of a subjectRightsRequest object.
-
-### [Update-MgPrivacySubjectRightsRequestApproverMailboxSetting](Update-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting](Update-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting.md)
-Update property mailboxSettings value.
 
 ### [Update-MgPrivacySubjectRightsRequestNote](Update-MgPrivacySubjectRightsRequestNote.md)
 Update the navigation property notes in privacy

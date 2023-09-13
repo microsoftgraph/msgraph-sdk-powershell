@@ -392,7 +392,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Name of the access review series.
-Supports $select and $orderby.
+Supports $select and $orderBy.
 Required on create.
 
 ```yaml
@@ -658,7 +658,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CreatedDateTime <DateTime?>]`: Timestamp when the access review series was created. Supports $select. Read-only.
   - `[DescriptionForAdmins <String>]`: Description provided by review creators to provide more context of the review to admins. Supports $select.
   - `[DescriptionForReviewers <String>]`: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
-  - `[DisplayName <String>]`: Name of the access review series. Supports $select and $orderby. Required on create.
+  - `[DisplayName <String>]`: Name of the access review series. Supports $select and $orderBy. Required on create.
   - `[FallbackReviewers <IMicrosoftGraphAccessReviewReviewerScope[]>]`: This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.
     - `[Query <String>]`: The query specifying who will be the reviewer.
     - `[QueryRoot <String>]`: In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.

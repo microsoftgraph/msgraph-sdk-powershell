@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Calendar
-Module Guid: 61e07969-811b-4eb6-9c5b-43726a9f96fe
+Module Guid: f8e4a6f1-3f29-43fc-93ef-6dfca8855c58
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -264,19 +264,8 @@ Use this API to create a new event in a calendar.
 The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
 
 ### [New-MgUserEvent](New-MgUserEvent.md)
-Create an event in the user's default calendar or specified calendar.
-By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event.
-See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal.
-You can specify the time zone for each of the start and end times of the event as part of their values, because the \nstart and end properties are of dateTimeTimeZone type.
-First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.
-When an event is sent, the server sends invitations to all the attendees.
-Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment \nlike a projector.
-Users can then invite the resource as an attendee to a meeting.
-On behalf of the resource, the server accepts or rejects \nthe meeting request based on the free/busy schedule of the resource.
-\nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar.
-If the meeting is rescheduled, \nthe server automatically updates the event in the resource's calendar.
-Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room.
-If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:
+Create one or more multi-value extended properties in a new or existing instance of a resource.
+The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties.
 
 ### [New-MgUserEventAttachment](New-MgUserEventAttachment.md)
 Use this API to add an attachment to an existing event.

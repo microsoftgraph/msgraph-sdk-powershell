@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: af8b7b3e-fdfb-4e57-bc8f-c05c61800033
+Module Guid: 55f40a35-6a5a-46b0-a0c4-99dd20a05fc1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -71,7 +71,7 @@ Retrieve the properties of a schema for an externalConnection.
 Get industryData from external
 
 ### [Get-MgBetaExternalIndustryDataConnector](Get-MgBetaExternalIndustryDataConnector.md)
-Read the properties and relationships of an industryDataConnector object.
+Read the properties and relationships of an azureDataLakeConnector object.
 
 ### [Get-MgBetaExternalIndustryDataConnectorCount](Get-MgBetaExternalIndustryDataConnectorCount.md)
 Get the number of the resource
@@ -180,7 +180,7 @@ Create new navigation property to activities for external
 Create new navigation property to operations for external
 
 ### [New-MgBetaExternalIndustryDataConnector](New-MgBetaExternalIndustryDataConnector.md)
-Create a new azureDataLakeConnector object.
+Create a new industryDataConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
 Create a new inboundFlow object.
@@ -235,7 +235,7 @@ Delete navigation property quota for external
 Delete navigation property schema for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an azureDataLakeConnector object.
+Delete an industryDataConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
 Delete an inboundFileFlow object.
@@ -295,7 +295,7 @@ Update the navigation property quota in external
 Update the properties of a schema for an externalConnection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
-Update the properties of an azureDataLakeConnector object.
+Update the properties of an industryDataConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
 Update the properties of an inboundFlow object.

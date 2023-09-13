@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostSslCertificateHost
 
 ## SYNOPSIS
-The host for this hostSslCertificate.
+Get host from security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaSecurityThreatIntelligenceHostSslCertificateHost -InputObject <ISecuri
 ```
 
 ## DESCRIPTION
-The host for this hostSslCertificate.
+Get host from security
 
 ## EXAMPLES
 

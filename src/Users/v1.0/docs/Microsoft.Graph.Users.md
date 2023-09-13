@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: e8799a01-4c0f-4686-9589-0bbb2a1e799a
+Module Guid: 736d006a-5d1e-49e4-8511-236d9bebb0fa
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,7 +18,7 @@ Read properties and relationships of the user object.
 Get the number of the resource
 
 ### [Get-MgUserCreatedObject](Get-MgUserCreatedObject.md)
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 
@@ -413,7 +413,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
 Update the writable property, color, of the specified outlookCategory object.
-You cannot modify the displayName property\nonce you have created the category.
+You cannot modify the displayName property \nonce you have created the category.
 
 ### [Update-MgUserPhoto](Update-MgUserPhoto.md)
 Update the navigation property photo in users

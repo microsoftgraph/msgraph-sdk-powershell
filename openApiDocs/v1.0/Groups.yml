@@ -754,11 +754,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Update group
-      description: Update the properties of a group object.
+      summary: Add members
+      description: Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -5032,10 +5032,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: The group's conversations.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -5488,11 +5488,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -30305,11 +30305,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
+      summary: Delete conversation thread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -30389,11 +30389,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
