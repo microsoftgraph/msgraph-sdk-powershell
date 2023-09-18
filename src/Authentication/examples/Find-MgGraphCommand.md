@@ -21,7 +21,7 @@ Update-MgUser Users  PATCH  /users/{user-id}                     {DeviceManageme
 ```
 This example finds all commands that call the provided Microsoft Graph URI.
 
-### Example 1: Find Command By Command
+### Example 2: Find Command By Command
 ```powershell
 PS C:\> Find-MgGraphCommand -Command Send-MgUserMessage -ApiVersion beta
 
