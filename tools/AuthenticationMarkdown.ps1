@@ -1,0 +1,2 @@
+Import-Module -Name "../src/Authentication/Authentication/artifacts/Microsoft.Graph.Authentication.psm1"
+New-MarkdownHelp -Module "Microsoft.Graph.Authentication" -Outputfolder "C:\Projects\msgraph-sdk-powershell\src\Authentication\docs"
