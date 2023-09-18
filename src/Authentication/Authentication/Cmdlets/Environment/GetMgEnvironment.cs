@@ -11,7 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     /// <summary>
     /// Gets or lists available Microsoft Graph environments to the settings file..
     /// </summary>
-    [Cmdlet(VerbsCommon.Get, "MgEnvironment", HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-get-mgenvironment")]
+    [Cmdlet(VerbsCommon.Get, "MgEnvironment", HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgenvironment?view=graph-powershell-1.0")]
     [OutputType(typeof(GraphEnvironment))]
     public class GetMgEnvironment : PSCmdlet
     {
