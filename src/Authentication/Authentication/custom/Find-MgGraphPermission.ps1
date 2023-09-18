@@ -19,7 +19,7 @@ Set-StrictMode -Version 2
     Update-typedata @typeParameters -force
 }
 function Find-MgGraphPermission {
-    [cmdletbinding(positionalbinding=$false, HelpUri = 'https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission?view=graph-powershell-1.0')]
+    [cmdletbinding(positionalbinding=$false, HelpUri = 'https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphpermission')]
     [OutputType('Microsoft.Graph.Custom.Permission')]
     param (
         [parameter(ParameterSetName='Search', position=0, ValueFromPipeline=$true, Mandatory=$true)]

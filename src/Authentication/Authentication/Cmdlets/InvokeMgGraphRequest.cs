@@ -25,7 +25,7 @@ using DriveNotFoundException = System.Management.Automation.DriveNotFoundExcepti
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest?view=graph-powershell-1.0")]
+    [Cmdlet(VerbsLifecycle.Invoke, "MgGraphRequest", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest")]
     [Alias("Invoke-GraphRequest", "Invoke-MgRestMethod")]
     public class InvokeMgGraphRequest : PSCmdlet
     {
