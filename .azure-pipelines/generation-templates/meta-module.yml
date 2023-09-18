@@ -22,6 +22,8 @@ steps:
       script: |
         $(System.DefaultWorkingDirectory)/tools/GenerateMetaModule.ps1
 
+  - template: ../common-templates/guardian-analyzer.yml
+
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/codesign.yml
         parameters:

@@ -115,7 +115,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -164,7 +164,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -221,7 +221,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -1110,7 +1110,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -1167,7 +1167,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -2384,7 +2384,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -2433,7 +2433,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -2490,7 +2490,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -3379,7 +3379,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -3436,7 +3436,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -4720,7 +4720,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -4785,7 +4785,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -4858,7 +4858,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -5987,7 +5987,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -6060,7 +6060,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -7629,7 +7629,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -7694,7 +7694,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -7767,7 +7767,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -8896,7 +8896,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -8969,7 +8969,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -10621,7 +10621,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -10678,7 +10678,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -10743,7 +10743,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -11752,7 +11752,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -11817,7 +11817,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -13210,7 +13210,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -13267,7 +13267,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -13332,7 +13332,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -14341,7 +14341,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -14406,7 +14406,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -15874,7 +15874,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -15923,7 +15923,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -15980,7 +15980,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -16869,7 +16869,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -16926,7 +16926,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -19458,6 +19458,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.createSnapshot':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action createSnapshot
+      operationId: user.cloudPC_createSnapshot
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: The unique identifier of cloudPC
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.endGracePeriod':
     post:
       tags:
@@ -19674,6 +19703,48 @@ paths:
                   $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
                 osVersion:
                   $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.resize':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action resize
+      operationId: user.cloudPC_resize
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: The unique identifier of cloudPC
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -23391,7 +23462,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -23440,7 +23511,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -23497,7 +23568,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -24386,7 +24457,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -24443,7 +24514,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -26415,7 +26486,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -26545,7 +26616,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
+      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
@@ -26685,7 +26756,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties. \n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
+      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
@@ -27146,7 +27217,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action send
-      description: 'Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.  This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
+      description: 'Send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
@@ -27358,7 +27429,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -27472,7 +27543,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
+      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
@@ -27596,7 +27667,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties. \n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
+      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
@@ -28001,7 +28072,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action send
-      description: 'Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.  This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
+      description: 'Send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
@@ -29118,6 +29189,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-10-30T00:00:00.0000000+00:00'
+        date: '2023-07-24T00:00:00.0000000+00:00'
+        version: 2023-05/resizeCloudPc
+        description: 'The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead'
       x-ms-docs-operation-type: action
   '/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.restoreCloudPc':
     post:
@@ -29166,8 +29243,8 @@ paths:
           $ref: '#/components/responses/error'
       deprecated: true
       x-ms-deprecation:
-        removalDate: '2023-09-30T00:00:00.0000000+00:00'
-        date: '2023-07-17T00:00:00.0000000+00:00'
+        removalDate: '2023-10-30T00:00:00.0000000+00:00'
+        date: '2023-08-22T00:00:00.0000000+00:00'
         version: 2023-07/restoreCloudPc
         description: 'The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead'
       x-ms-docs-operation-type: action
@@ -30039,7 +30116,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -30137,7 +30214,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can: \n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
+      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the body or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
@@ -30245,7 +30322,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties. \n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
+      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft message later. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
@@ -30594,7 +30671,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action send
-      description: 'Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.  This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
+      description: 'Send an existing draft message. The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the Sent Items folder. Alternatively, send a new message in a single operation.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-send?view=graph-rest-1.0
@@ -30876,7 +30953,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMailTips
-      description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
+      description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
@@ -31165,7 +31242,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendMail
-      description: "Send the message specified in the request body using either JSON or MIME format. When using JSON format you can include an attachment and use a mention to call out another user in the new message. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here."
+      description: 'Send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include an attachment and use a mention to call out another user in the new message. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
@@ -32739,7 +32816,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -32867,7 +32944,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -33011,7 +33088,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a POST operation on the attachments navigation property of the Outlook item; see how to do this for a message or for an event. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. Request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
@@ -37689,11 +37766,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -39950,6 +40027,9 @@ components:
         - recipientScope
         - recipientSuggestions
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.exchangeIdFormat:
       title: exchangeIdFormat
       enum:
@@ -39982,13 +40062,13 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -40003,13 +40083,13 @@ components:
               description: 'The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
-              description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             cloudRealtimeCommunicationInfo:
               $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -40017,7 +40097,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -40041,7 +40121,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -40116,21 +40196,21 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
+              description: 'The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -40156,7 +40236,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -40191,10 +40271,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -40208,7 +40288,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example, en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             provisionedPlans:
               type: array
@@ -40219,11 +40299,11 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
               nullable: true
             securityIdentifier:
@@ -40234,7 +40314,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -40242,7 +40322,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
               format: date-time
               nullable: true
             state:
@@ -40259,11 +40339,11 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
@@ -40361,7 +40441,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that were created by the user. Read-only. Nullable.
+              description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
             directReports:
               type: array
@@ -40620,6 +40700,8 @@ components:
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
+            virtualEvents:
+              $ref: '#/components/schemas/microsoft.graph.userVirtualEventsRoot'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
             chats:
@@ -41089,7 +41171,7 @@ components:
               format: int32
             visibility:
               type: string
-              description: 'The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.'
+              description: 'The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.'
             charts:
               type: array
               items:
@@ -41120,6 +41202,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookDocumentTask'
+              description: Collection of document tasks on this worksheet. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -42165,6 +42248,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
@@ -42768,7 +42852,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             errorUrl:
               type: string
@@ -43619,7 +43703,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -44141,6 +44225,9 @@ components:
             displayName:
               type: string
               description: The full title for the site. Read-only.
+              nullable: true
+            isPersonalSite:
+              type: boolean
               nullable: true
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
@@ -45409,7 +45496,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -45443,7 +45530,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             domainName:
               type: string
@@ -45617,6 +45704,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
             statusMessage:
               $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
+          additionalProperties:
+            type: object
+    microsoft.graph.userVirtualEventsRoot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userVirtualEventsRoot
+          type: object
+          properties:
+            webinars:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -46053,6 +46153,9 @@ components:
         - externalPartner
         - externalNonPartner
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.genericError:
       title: genericError
       type: object
@@ -46103,11 +46206,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
+              description: A collection of user identities the task is assigned to.
             completedBy:
               $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the task was completed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             createdBy:
@@ -46115,29 +46220,34 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the task was created. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer value from 0 to 100 that represents the percentage of the completion of the task. 100 means that the task is completed. Nullable.
               format: int32
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. Nullable.
               format: int32
               nullable: true
             startAndDueDateTime:
               $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskSchedule'
             title:
               type: string
+              description: The title of the task.
               nullable: true
             changes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookDocumentTaskChange'
+              description: A collection of task change histories.
               x-ms-navigationProperty: true
             comment:
               $ref: '#/components/schemas/microsoft.graph.workbookComment'
@@ -48592,7 +48702,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: Name of the access review series. Supports $select and $orderBy. Required on create.
+              description: Name of the access review series. Supports $select and $orderby. Required on create.
               nullable: true
             fallbackReviewers:
               type: array
@@ -49033,6 +49143,8 @@ components:
           type: string
           description: ELAM provides protection for the computers in your network when they start up
           nullable: true
+        firmwareProtection:
+          $ref: '#/components/schemas/microsoft.graph.firmwareProtectionType'
         healthAttestationSupportedStatus:
           type: string
           description: This attribute indicates if DHA is supported for the device
@@ -49050,6 +49162,10 @@ components:
           type: string
           description: The Timestamp of the last update.
           nullable: true
+        memoryAccessProtection:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
+        memoryIntegrityProtection:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         operatingSystemKernelDebugging:
           type: string
           description: 'When operatingSystemKernelDebugging is enabled, the device is used in development and testing'
@@ -49086,6 +49202,10 @@ components:
           type: string
           description: Fingerprint of the Custom Secure Boot Configuration Policy
           nullable: true
+        securedCorePC:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
+        systemManagementMode:
+          $ref: '#/components/schemas/microsoft.graph.systemManagementModeLevel'
         testSigning:
           type: string
           description: 'When test signing is allowed, the device does not enforce signature validation during boot'
@@ -49094,6 +49214,8 @@ components:
           type: string
           description: The security version number of the Boot Application
           nullable: true
+        virtualizationBasedSecurity:
+          $ref: '#/components/schemas/microsoft.graph.azureAttestationSettingStatus'
         virtualSecureMode:
           type: string
           description: VSM is a container that protects high value assets from a compromised kernel
@@ -51610,6 +51732,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.virtualEventWebinar:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.virtualEvent'
+        - title: virtualEventWebinar
+          type: object
+          properties:
+            audience:
+              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            coOrganizers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+              description: Identity information of co-organizers of the webinar.
+            registrationConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.signInPreferences:
       title: signInPreferences
       type: object
@@ -52651,12 +52795,15 @@ components:
       properties:
         displayName:
           type: string
+          description: Display name of the user.
           nullable: true
         email:
           type: string
+          description: Email address of the user.
           nullable: true
         id:
           type: string
+          description: The unique identifier of the user.
           nullable: true
       additionalProperties:
         type: object
@@ -52667,11 +52814,13 @@ components:
         dueDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The due date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date and time for the task. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -52688,41 +52837,50 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookEmailIdentity'
             commentId:
               type: string
+              description: The identifier of the associated comment.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             dueDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             percentComplete:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.'
               format: int32
               nullable: true
             priority:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.
               format: int32
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             title:
               type: string
+              description: The title of the task. Only present when the type property is setTitle. Nullable.
               nullable: true
             type:
               type: string
+              description: 'The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.'
             undoChangeId:
               type: string
+              description: The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.
               nullable: true
           additionalProperties:
             type: object
@@ -53327,6 +53485,9 @@ components:
         - teamwork
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.labelPolicy:
       title: labelPolicy
       type: object
@@ -54136,6 +54297,89 @@ components:
           - value: communicationError
             description: 'The configuration manager agent was able to reach the configuration manager service in the past but is now no longer able to. '
             name: communicationError
+    microsoft.graph.firmwareProtectionType:
+      title: firmwareProtectionType
+      enum:
+        - notApplicable
+        - systemGuardSecureLaunch
+        - firmwareAttackSurfaceReduction
+        - disabled
+        - unknownFutureValue
+      type: string
+      description: A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can't get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "systemGuardSecureLaunch" or "firmwareAttackSurfaceReduction" or "disabled". Windows 10 devices will have value "notApplicable".
+      x-ms-enum:
+        name: firmwareProtectionType
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device is not a Windows 11 device.
+            name: notApplicable
+          - value: systemGuardSecureLaunch
+            description: Indicates that System Guard Secure Launch is enabled for Firmware protection.
+            name: systemGuardSecureLaunch
+          - value: firmwareAttackSurfaceReduction
+            description: Indicates that Firmware Attack Surface Reduction is enabled for Firmware protection. This is only applicable to Surface devices.
+            name: firmwareAttackSurfaceReduction
+          - value: disabled
+            description: Indicates that the device has Firmware protection disabled.
+            name: disabled
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.azureAttestationSettingStatus:
+      title: azureAttestationSettingStatus
+      enum:
+        - notApplicable
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
+      description: A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
+      x-ms-enum:
+        name: azureAttestationSettingStatus
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device is not a Windows 11 device.
+            name: notApplicable
+          - value: enabled
+            description: Indicates that the device has the Azure attestation setting enabled.
+            name: enabled
+          - value: disabled
+            description: Indicates that the device has the Azure attestation setting disabled.
+            name: disabled
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.systemManagementModeLevel:
+      title: systemManagementModeLevel
+      enum:
+        - notApplicable
+        - level1
+        - level2
+        - level3
+        - unknownFutureValue
+      type: string
+      description: 'A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values "notApplicable", "level1", "level2" or "level3". Windows 10 devices will have value "notApplicable".'
+      x-ms-enum:
+        name: systemManagementModeLevel
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: Indicates that the device does not have Firmware protection (System Management Mode) enabled.
+            name: notApplicable
+          - value: level1
+            description: Indicates that deny System Management Mode (SMM) read/write access to OS and Virtualization-based security (VBS) memory. The benefit is that by design System Management Mode (SMM) cannot modify security of or exfiltrate secrets from the OS (including Virtualization-based security).
+            name: level1
+          - value: level2
+            description: 'Indicates that in addition to the System Management Mode (SMM) Level 1 protections, this level prevents System Management Mode (SMM) from tampering with Input-Output Memory Management Unit (IOMMU) config. The benefit is that by design System Management Mode (SMM) cannot disable Virtualization-based security (VBS) and kernel Direct memory access (DMA) protections.'
+            name: level2
+          - value: level3
+            description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
+            name: level3
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceGuardLocalSystemAuthorityCredentialGuardState:
       title: deviceGuardLocalSystemAuthorityCredentialGuardState
       enum:
@@ -54769,6 +55013,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -54822,6 +55069,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -55216,6 +55466,9 @@ components:
         - checklistCompletion
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -55767,6 +56020,117 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: payloadResponse
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEvent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEvent
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.communicationsIdentitySet'
+            description:
+              type: string
+              description: Description of the virtual event.
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the virtual event
+              nullable: true
+            endDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventStatus'
+            presenters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventPresenter'
+              description: Presenters' information of the virtual event.
+              x-ms-navigationProperty: true
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions of the virtual event.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.communicationsUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: communicationsUserIdentity
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: The user's tenant ID.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistrationConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistrationConfiguration
+          type: object
+          properties:
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            registrationWebUrl:
+              type: string
+              nullable: true
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestion'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistration
+          type: object
+          properties:
+            cancelationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            registrationQuestionAnswers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
+            userId:
+              type: string
+              nullable: true
+            sessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.userDefaultAuthenticationMethodType:
@@ -57489,6 +57853,9 @@ components:
         - indirect
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -58286,6 +58653,9 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.inferenceData:
       title: inferenceData
       type: object
@@ -58332,6 +58702,129 @@ components:
         - other
         - unknownFutureValue
       type: string
+    microsoft.graph.communicationsIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: communicationsIdentitySet
+          type: object
+          properties:
+            applicationInstance:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            assertedIdentity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            azureCommunicationServicesUser:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            encrypted:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            endpointType:
+              $ref: '#/components/schemas/microsoft.graph.endpointType'
+            guest:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            onPremises:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            phone:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventStatus:
+      title: virtualEventStatus
+      enum:
+        - draft
+        - published
+        - canceled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.virtualEventPresenter:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventPresenter
+          type: object
+          properties:
+            email:
+              type: string
+              description: Email address of the presenter.
+              nullable: true
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
+            presenterDetails:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventPresenterDetails'
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        - title: virtualEventSession
+          type: object
+          properties:
+            registrations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistrationQuestion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: virtualEventRegistrationQuestion
+          type: object
+          properties:
+            answerChoices:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Answer choices when answerInputType is singleChoice or multiChoice.
+            answerInputType:
+              $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswerInputType'
+            displayName:
+              type: string
+              description: Display name of the registration question.
+              nullable: true
+            isRequired:
+              type: boolean
+              description: Indicates whether the question is required to answer. Default value is false.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.virtualEventRegistrationQuestionAnswer:
+      title: virtualEventRegistrationQuestionAnswer
+      type: object
+      properties:
+        booleanValue:
+          type: boolean
+          description: Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+          nullable: true
+        displayName:
+          type: string
+          description: Display name of the registration question.
+          nullable: true
+        multiChoiceValues:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+        questionId:
+          type: string
+          description: id of the virtualEventRegistrationQuestion.
+          nullable: true
+        value:
+          type: string
+          description: 'Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualEventAttendeeRegistrationStatus:
+      title: virtualEventAttendeeRegistrationStatus
+      enum:
+        - registered
+        - canceled
+        - waitlisted
+        - pendingApproval
+        - rejectedByOrganizer
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -58348,6 +58841,9 @@ components:
         - personal
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -58405,6 +58901,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -58413,6 +58912,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -58440,6 +58942,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -58448,6 +58953,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -58601,6 +59109,9 @@ components:
         - manager
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.timeCardEntry:
       title: timeCardEntry
       type: object
@@ -60349,6 +60860,53 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.endpointType:
+      title: endpointType
+      enum:
+        - default
+        - voicemail
+        - skypeForBusiness
+        - skypeForBusinessVoipPhone
+        - unknownFutureValue
+      type: string
+    microsoft.graph.virtualEventPresenterDetails:
+      title: virtualEventPresenterDetails
+      type: object
+      properties:
+        bio:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        company:
+          type: string
+          description: The presenter's company name.
+          nullable: true
+        jobTitle:
+          type: string
+          description: The presenter's job title.
+          nullable: true
+        linkedInProfileWebUrl:
+          type: string
+          description: The presenter's LinkedIn profile URL.
+          nullable: true
+        personalSiteWebUrl:
+          type: string
+          description: The presenter's personal website URL.
+          nullable: true
+        twitterProfileWebUrl:
+          type: string
+          description: The presenter's Twitter profile URL.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.virtualEventRegistrationQuestionAnswerInputType:
+      title: virtualEventRegistrationQuestionAnswerInputType
+      enum:
+        - text
+        - multilineText
+        - singleChoice
+        - multiChoice
+        - boolean
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -60730,6 +61288,9 @@ components:
         - ReferenceAttributes
         - UnknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -60827,6 +61388,9 @@ components:
         - Update
         - Delete
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object

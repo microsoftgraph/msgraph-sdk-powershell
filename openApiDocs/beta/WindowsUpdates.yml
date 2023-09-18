@@ -4179,11 +4179,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get operationalInsightsConnection
-      description: Read the properties and relationships of an operationalInsightsConnection object.
+      summary: Get resourceConnection
+      description: Read the properties and relationships of a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0
       operationId: admin.window.update_GetResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -4263,11 +4263,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -6648,11 +6648,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update contentApproval
-      description: Update the properties of a contentApproval object.
+      summary: Update complianceChange
+      description: Update the properties of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -7668,11 +7668,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -7787,6 +7787,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
@@ -7821,7 +7822,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).
+          description: The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
           format: int32
           nullable: true
       additionalProperties:

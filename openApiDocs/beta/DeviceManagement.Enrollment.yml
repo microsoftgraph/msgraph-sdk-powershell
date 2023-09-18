@@ -2004,6 +2004,7 @@ paths:
                 - supportPhoneNumber
                 - termsAndConditionsDisabled
                 - touchIdDisabled
+                - waitForDeviceConfiguredConfirmation
                 - appearanceScreenDisabled
                 - awaitDeviceConfiguredConfirmation
                 - carrierActivationUrl
@@ -2110,6 +2111,7 @@ paths:
                 - supportPhoneNumber
                 - termsAndConditionsDisabled
                 - touchIdDisabled
+                - waitForDeviceConfiguredConfirmation
                 - accessibilityScreenDisabled
                 - adminAccountFullName
                 - adminAccountPassword
@@ -4270,6 +4272,8 @@ paths:
                 - skuNumber desc
                 - systemFamily
                 - systemFamily desc
+                - userlessEnrollmentStatus
+                - userlessEnrollmentStatus desc
                 - userPrincipalName
                 - userPrincipalName desc
               type: string
@@ -4308,6 +4312,7 @@ paths:
                 - serialNumber
                 - skuNumber
                 - systemFamily
+                - userlessEnrollmentStatus
                 - userPrincipalName
                 - deploymentProfile
                 - intendedDeploymentProfile
@@ -4425,6 +4430,7 @@ paths:
                 - serialNumber
                 - skuNumber
                 - systemFamily
+                - userlessEnrollmentStatus
                 - userPrincipalName
                 - deploymentProfile
                 - intendedDeploymentProfile
@@ -5048,6 +5054,8 @@ paths:
                 - skuNumber desc
                 - systemFamily
                 - systemFamily desc
+                - userlessEnrollmentStatus
+                - userlessEnrollmentStatus desc
                 - userPrincipalName
                 - userPrincipalName desc
               type: string
@@ -5086,6 +5094,7 @@ paths:
                 - serialNumber
                 - skuNumber
                 - systemFamily
+                - userlessEnrollmentStatus
                 - userPrincipalName
                 - deploymentProfile
                 - intendedDeploymentProfile
@@ -5186,6 +5195,7 @@ paths:
                 - serialNumber
                 - skuNumber
                 - systemFamily
+                - userlessEnrollmentStatus
                 - userPrincipalName
                 - deploymentProfile
                 - intendedDeploymentProfile
@@ -5541,6 +5551,8 @@ paths:
                 - endOfSupportDate desc
                 - featureUpdateVersion
                 - featureUpdateVersion desc
+                - installLatestWindows10OnWindows11IneligibleDevice
+                - installLatestWindows10OnWindows11IneligibleDevice desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - roleScopeTagIds
@@ -5565,6 +5577,7 @@ paths:
                 - displayName
                 - endOfSupportDate
                 - featureUpdateVersion
+                - installLatestWindows10OnWindows11IneligibleDevice
                 - lastModifiedDateTime
                 - roleScopeTagIds
                 - rolloutSettings
@@ -5647,6 +5660,7 @@ paths:
                 - displayName
                 - endOfSupportDate
                 - featureUpdateVersion
+                - installLatestWindows10OnWindows11IneligibleDevice
                 - lastModifiedDateTime
                 - roleScopeTagIds
                 - rolloutSettings
@@ -7370,7 +7384,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_ListDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7440,7 +7454,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7521,7 +7535,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_ListPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -7591,7 +7605,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.cloudPC.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9598,7 +9612,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_ListDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9668,7 +9682,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get directoryScopes from roleManagement
-      description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9749,7 +9763,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_ListPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -9819,7 +9833,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get principals from roleManagement
-      description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+      description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
       operationId: roleManagement.deviceManagement.roleAssignment_GetPrincipal
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
@@ -11619,6 +11633,8 @@ components:
               type: string
               description: System Family
               nullable: true
+            userlessEnrollmentStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsAutopilotUserlessEnrollmentStatus'
             userPrincipalName:
               type: string
               description: User Principal Name.
@@ -11699,6 +11715,9 @@ components:
             featureUpdateVersion:
               type: string
               description: 'The feature update version that will be deployed to the devices targeted by this profile. The version could be any supported version for example 1709, 1803 or 1809 and so on.'
+            installLatestWindows10OnWindows11IneligibleDevice:
+              type: boolean
+              description: 'If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11815,6 +11834,7 @@ components:
               nullable: true
             isPrivileged:
               type: boolean
+              description: Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
               nullable: true
             name:
               type: string
@@ -11889,7 +11909,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: Ids of the directory objects that represent the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
             displayName:
               type: string
               description: Name of the role assignment. Required.
@@ -11913,13 +11933,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+              description: Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
               x-ms-navigationProperty: true
             principals:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
+              description: Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
               x-ms-navigationProperty: true
             roleDefinition:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
@@ -11981,6 +12001,7 @@ components:
               nullable: true
             isPrivileged:
               type: boolean
+              description: Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
               nullable: true
             resourceScopes:
               type: array
@@ -12410,6 +12431,9 @@ components:
             touchIdDisabled:
               type: boolean
               description: Indicates if touch id setup pane is disabled
+            waitForDeviceConfiguredConfirmation:
+              type: boolean
+              description: Indicates if the device will need to wait for configured confirmation
           additionalProperties:
             type: object
           description: The DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
@@ -12808,6 +12832,31 @@ components:
           - value: unknownFutureValue
             description: 'Marks the end of known enum values, and allows for additional values in the future.'
             name: unknownFutureValue
+    microsoft.graph.windowsAutopilotUserlessEnrollmentStatus:
+      title: windowsAutopilotUserlessEnrollmentStatus
+      enum:
+        - unknown
+        - allowed
+        - blocked
+        - unknownFutureValue
+      type: string
+      description: 'Userless enrollment block status, indicating whether the next device enrollment will be blocked.'
+      x-ms-enum:
+        name: windowsAutopilotUserlessEnrollmentStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown userless enrollment block status. Next userless enrollment may fail. This is the default value.
+            name: unknown
+          - value: allowed
+            description: Indicates next userless enrollment can proceed.
+            name: allowed
+          - value: blocked
+            description: Indicates next userless enrollment cannot proceed without resetting the windowsAutopilotUserlessEnrollmentStatus.
+            name: blocked
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windowsAutopilotSyncStatus:
       title: windowsAutopilotSyncStatus
       enum:
@@ -12967,6 +13016,9 @@ components:
         - group
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object
@@ -13702,6 +13754,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
@@ -13929,11 +13982,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

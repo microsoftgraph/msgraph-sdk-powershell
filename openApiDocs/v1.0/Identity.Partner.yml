@@ -1609,7 +1609,7 @@ components:
           properties:
             displayName:
               type: string
-              description: The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+              description: The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
               nullable: true
             tenantId:
               type: string
@@ -1781,7 +1781,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.delegatedAdminAccessDetails:
@@ -1991,6 +1991,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true

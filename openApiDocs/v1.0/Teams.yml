@@ -1613,11 +1613,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1971,11 +1971,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -4287,7 +4287,11 @@ paths:
     get:
       tags:
         - chats.resourceSpecificPermissionGrant
-      summary: Get permissionGrants from chats
+      summary: List permissionGrants of a chat
+      description: 'List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0
       operationId: chat_ListPermissionGrant
       parameters:
         - name: chat-id
@@ -4403,6 +4407,7 @@ paths:
       tags:
         - chats.resourceSpecificPermissionGrant
       summary: Get permissionGrants from chats
+      description: A collection of permissions granted to apps for the chat.
       operationId: chat_GetPermissionGrant
       parameters:
         - name: chat-id
@@ -6868,11 +6873,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: group.team.channel_CreateMember
       parameters:
         - name: group-id
@@ -6983,11 +6988,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -11396,7 +11401,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get permissionGrants from groups
+      summary: List permissionGrants of a team
+      description: 'List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app''s corresponding type of resource-specific access.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
       operationId: group.team_ListPermissionGrant
       parameters:
         - name: group-id
@@ -11512,6 +11521,7 @@ paths:
       tags:
         - groups.team
       summary: Get permissionGrants from groups
+      description: A collection of permissions granted to apps to access the team.
       operationId: group.team_GetPermissionGrant
       parameters:
         - name: group-id
@@ -12187,11 +12197,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMember
       parameters:
         - name: group-id
@@ -12286,11 +12296,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -19458,11 +19468,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -19573,11 +19583,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -24918,7 +24928,7 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. \nYou should continue to GET until the status is not 'running'. \nThe recommended delay between GETs is 5 seconds."
+      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state - they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. (If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation. After the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. You should continue to GET until the status is not 'running'. The recommended delay between GETs is 5 seconds."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
@@ -25353,7 +25363,11 @@ paths:
     get:
       tags:
         - teams.resourceSpecificPermissionGrant
-      summary: Get permissionGrants from teams
+      summary: List permissionGrants of a team
+      description: 'List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app''s corresponding type of resource-specific access.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
       operationId: team_ListPermissionGrant
       parameters:
         - name: team-id
@@ -25469,6 +25483,7 @@ paths:
       tags:
         - teams.resourceSpecificPermissionGrant
       summary: Get permissionGrants from teams
+      description: A collection of permissions granted to apps to access the team.
       operationId: team_GetPermissionGrant
       parameters:
         - name: team-id
@@ -26676,11 +26691,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMember
       parameters:
         - name: team-id
@@ -26775,11 +26790,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -34686,11 +34701,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMember
       parameters:
         - name: deletedTeam-id
@@ -34801,11 +34816,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -40503,11 +40518,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: user.chat_GetMember
       parameters:
         - name: user-id
@@ -40845,11 +40860,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -42552,7 +42567,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get permissionGrants from users
+      summary: List permissionGrants of a chat
+      description: 'List all resource-specific permission grants on the chat. This list specifies the Azure AD apps that have access to the chat, along with the corresponding kind of resource-specific access that each app has.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/chat-list-permissiongrants?view=graph-rest-1.0
       operationId: user.chat_ListPermissionGrant
       parameters:
         - name: user-id
@@ -42684,6 +42703,7 @@ paths:
       tags:
         - users.chat
       summary: Get permissionGrants from users
+      description: A collection of permissions granted to apps for the chat.
       operationId: user.chat_GetPermissionGrant
       parameters:
         - name: user-id
@@ -44924,11 +44944,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMember
       parameters:
         - name: user-id
@@ -45055,11 +45075,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMember
       parameters:
         - name: user-id
@@ -50060,7 +50080,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get permissionGrants from users
+      summary: List permissionGrants of a team
+      description: 'List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app''s corresponding type of resource-specific access.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0
       operationId: user.joinedTeam_ListPermissionGrant
       parameters:
         - name: user-id
@@ -50192,6 +50216,7 @@ paths:
       tags:
         - users.team
       summary: Get permissionGrants from users
+      description: A collection of permissions granted to apps to access the team.
       operationId: user.joinedTeam_GetPermissionGrant
       parameters:
         - name: user-id
@@ -50987,11 +51012,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMember
       parameters:
         - name: user-id
@@ -51102,11 +51127,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update conversationMember
-      description: Update the role of a conversationMember in a team or channel.
+      summary: Update member in channel
+      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMember
       parameters:
         - name: user-id
@@ -59247,6 +59272,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
@@ -59707,6 +59733,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps to access the team.
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -60119,7 +60146,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permission that has been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -60638,6 +60664,9 @@ components:
         - channels
         - members
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamwork:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -60758,7 +60787,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.teamsAppDistributionMethod:
@@ -61270,7 +61299,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -62931,6 +62960,9 @@ components:
         - offerShiftRequest
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.teamsAppCollectionResponse:
       title: Collection of teamsApp
       type: object
@@ -63386,6 +63418,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -63394,6 +63429,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -63421,6 +63459,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -63429,6 +63470,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -67088,6 +67132,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -69961,6 +70007,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -71407,6 +71468,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -71460,6 +71524,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false

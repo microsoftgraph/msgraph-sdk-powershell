@@ -20693,7 +20693,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permission that has been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -21463,6 +21462,8 @@ components:
               type: string
               description: References application or service contact information from a Service or Asset Management database. Nullable.
               nullable: true
+            servicePrincipalLockConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.servicePrincipalLockConfiguration'
             signInAudience:
               type: string
               description: 'Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).'
@@ -22120,7 +22121,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.signInActivity:
@@ -24093,6 +24094,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -24223,6 +24226,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
@@ -24334,6 +24338,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps to access the team.
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -25123,6 +25128,31 @@ components:
         resourceAppId:
           type: string
           description: The unique identifier for the resource that the application requires access to. This should be equal to the appId declared on the target resource application.
+      additionalProperties:
+        type: object
+    microsoft.graph.servicePrincipalLockConfiguration:
+      title: servicePrincipalLockConfiguration
+      type: object
+      properties:
+        allProperties:
+          type: boolean
+          description: 'Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.'
+          nullable: true
+        credentialsWithUsageSign:
+          type: boolean
+          description: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
+          nullable: true
+        credentialsWithUsageVerify:
+          type: boolean
+          description: Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
+          nullable: true
+        isEnabled:
+          type: boolean
+          description: 'Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.'
+        tokenEncryptionKeyId:
+          type: boolean
+          description: Locks the tokenEncryptionKeyId property for modification on the service principal.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.spaApplication:
@@ -26641,7 +26671,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -28787,6 +28817,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -29981,6 +30026,9 @@ components:
         - rsaSha1
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.resourceAccess:
       title: resourceAccess
       type: object
@@ -32208,6 +32256,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -32261,6 +32312,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -35484,6 +35538,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -35492,6 +35549,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -35519,6 +35579,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -35527,6 +35590,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -37573,6 +37639,9 @@ components:
         - ReferenceAttributes
         - UnknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -37959,6 +38028,9 @@ components:
         - Update
         - Delete
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object

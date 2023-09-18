@@ -3392,10 +3392,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -5182,7 +5182,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: communication.onlineMeeting_ListRecording
       parameters:
         - name: onlineMeeting-id
@@ -5295,7 +5295,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -6289,7 +6289,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -6408,7 +6408,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -9306,7 +9306,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -9435,7 +9435,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with an onlineMeeting. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of text associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -10510,7 +10510,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
+      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -10645,7 +10645,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -13059,11 +13059,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -13525,7 +13525,7 @@ components:
           nullable: true
         macAddress:
           type: string
-          description: The media access control (MAC) address of the media endpoint's network device.
+          description: The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
           nullable: true
         networkTransportProtocol:
           $ref: '#/components/schemas/microsoft.graph.callRecords.networkTransportProtocol'
@@ -13686,7 +13686,7 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.'
           format: date-time
           nullable: true
         isAudioForwardErrorCorrectionUsed:
@@ -13750,7 +13750,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.'
           format: date-time
           nullable: true
         streamDirection:
@@ -13831,12 +13831,18 @@ components:
         - watermarkProtection
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.onlineMeetingVideoDisabledReason:
       title: onlineMeetingVideoDisabledReason
       enum:
         - watermarkProtection
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     ReferenceNumeric:
       enum:
         - '-INF'
@@ -13904,6 +13910,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true

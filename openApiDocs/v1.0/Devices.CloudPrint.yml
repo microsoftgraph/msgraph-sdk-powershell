@@ -7530,7 +7530,7 @@ components:
       properties:
         id:
           type: string
-          description: The unique idenfier for an entity. Read-only.
+          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.printerLocation:
@@ -8105,7 +8105,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permission that has been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -10160,6 +10159,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps to access the team.
               x-ms-navigationProperty: true
             photo:
               $ref: '#/components/schemas/microsoft.graph.profilePhoto'
@@ -11678,6 +11678,8 @@ components:
               type: string
               description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
               nullable: true
+            statusMessage:
+              $ref: '#/components/schemas/microsoft.graph.presenceStatusMessage'
           additionalProperties:
             type: object
     microsoft.graph.authentication:
@@ -11808,6 +11810,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: A collection of permissions granted to apps for the chat.
               x-ms-navigationProperty: true
             pinnedMessages:
               type: array
@@ -13190,7 +13193,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
             webUrl:
               type: string
-              description: URL that displays the resource in the browser. Read-only.
+              description: 'URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.'
               nullable: true
             createdByUser:
               $ref: '#/components/schemas/microsoft.graph.user'
@@ -15973,6 +15976,21 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.presenceStatusMessage:
+      title: presenceStatusMessage
+      type: object
+      properties:
+        expiryDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        message:
+          $ref: '#/components/schemas/microsoft.graph.itemBody'
+        publishedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -18973,6 +18991,9 @@ components:
         - critical
       type: string
       description: Computer endpoint protection state
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -19026,6 +19047,9 @@ components:
         - windowsSModeSignaturesInUseOnNonWin10SInstall
       type: string
       description: Product Status of Windows Defender
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -21376,6 +21400,9 @@ components:
         - actionUndefined
         - unknownFutureValue
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -21384,6 +21411,9 @@ components:
         - blockAccess
         - blockAccessExternal
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -21411,6 +21441,9 @@ components:
         - override
         - reportFalsePositive
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -21419,6 +21452,9 @@ components:
         - allowOverrideWithoutJustification
         - allowOverrideWithJustification
       type: string
+      x-ms-enum-flags:
+        isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
