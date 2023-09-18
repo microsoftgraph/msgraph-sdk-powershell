@@ -16,7 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     /// <summary>
     /// Adds Microsoft Graph environment to the settings file.
     /// </summary>
-    [Cmdlet(VerbsCommon.Add, "MgEnvironment", SupportsShouldProcess = true, HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment?view=graph-powershell-1.0")]
+    [Cmdlet(VerbsCommon.Add, "MgEnvironment", SupportsShouldProcess = true, HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/add-mgenvironment")]
     [OutputType(typeof(GraphEnvironment))]
     public class AddMgEnvironment : PSCmdlet
     {
