@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 Set-StrictMode -Version 2
 Function Find-MgGraphCommand {
-    [CmdletBinding(DefaultParameterSetName = 'FindByCommandOrUri', PositionalBinding = $false)]
+    [CmdletBinding(DefaultParameterSetName = 'FindByCommandOrUri', PositionalBinding = $false, HelpUri = 'https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand?view=graph-powershell-1.0')]
     [OutputType([Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand])]
     param (
         [Parameter(ParameterSetName = "FindByUri", Mandatory = $true, Position = 0, ValueFromPipeline = $true)]
