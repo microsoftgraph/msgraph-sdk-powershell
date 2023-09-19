@@ -8,8 +8,7 @@ schema: 2.0.0
 # Find-MgGraphCommand
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
-
+This is used to confirm existence of a commandlet installed in within the latest PowerShell Microsoft.Graph module.
 ## SYNTAX
 
 ### FindByCommandOrUri (Default)
@@ -28,8 +27,7 @@ Find-MgGraphCommand [-ApiVersion <String>] -Command <String[]> [<CommonParameter
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
-
+This is used to confirm existence of a commandlet installed in within the latest PowerShell Microsoft.Graph module.
 ## EXAMPLES
 ### Example 1: Find Command By Uri
 ```powershell
