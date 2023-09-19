@@ -6,24 +6,24 @@ Function Find-MgGraphCommand {
     [CmdletBinding(DefaultParameterSetName = 'FindByCommandOrUri', PositionalBinding = $false, HelpUri = 'https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/find-mggraphcommand')]
     [OutputType([Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand])]
     param (
-        [Parameter(ParameterSetName = "FindByUri", Mandatory = $true, Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = "FindByUri", Mandatory = $true, Position = 0, ValueFromPipeline = $true, HelpMessage = 'The URI to find.')]
         [string[]]$Uri,
 
-        [Parameter(ParameterSetName = "FindByUri")]
+        [Parameter(ParameterSetName = "FindByUri", HelpMessage = 'The HTTP method to specify. i.e. GET, POST, PUT, PATCH, DELETE')]
         [ValidateSet("GET", "POST", "PUT", "PATCH", "DELETE")]
         [string]$Method,
 
         [Parameter(ParameterSetName = "FindByCommandOrUri")]
         [Parameter(ParameterSetName = "FindByUri")]
-        [Parameter(ParameterSetName = "FindByCommand")]
+        [Parameter(ParameterSetName = "FindByCommand", HelpMessage = 'The API version to specify. i.e. v1.0, beta')]
         [ValidateSet("v1.0", "beta")]
         [string]$ApiVersion,
 
-        [Parameter(ParameterSetName = "FindByCommand", Mandatory = $true)]
+        [Parameter(ParameterSetName = "FindByCommand", Mandatory = $true, HelpMessage = 'The command to find.')]
         [ValidateNotNullorEmpty()]
         [string[]]$Command,
 
-        [Parameter(ParameterSetName = 'FindByCommandOrUri', Mandatory = $true, Position = 0, ValueFromPipeline = $true)]
+        [Parameter(ParameterSetName = 'FindByCommandOrUri', Mandatory = $true, Position = 0, ValueFromPipeline = $true, HelpMessage = 'The command or URI to find.')]
         [object[]]$InputObject
     )
 

@@ -93,6 +93,9 @@ Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDi
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
 
+#Copy markdown xml help
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.dll-Help.xml" -Recurse -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName-Help.xml" -Recurse -Destination $outDir
 # Copy custom commands.
 Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 
