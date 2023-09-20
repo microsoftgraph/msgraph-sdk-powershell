@@ -4249,7 +4249,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get dataSource from security
-      description: User source or SharePoint site data source as non-custodial data source.
+      description: User source or SharePoint site data source as noncustodial data source.
       operationId: security.case.ediscoveryCase.noncustodialDataSource_GetDataSource
       parameters:
         - name: ediscoveryCase-id
@@ -4384,7 +4384,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Get lastIndexOperation from security
-      description: Operation entity that represents the latest indexing for the non-custodial data source.
+      description: Operation entity that represents the latest indexing for the noncustodial data source.
       operationId: security.case.ediscoveryCase.noncustodialDataSource_GetLastIndexOperation
       parameters:
         - name: ediscoveryCase-id
@@ -4449,7 +4449,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
@@ -4515,7 +4515,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the Location parameter from the response headers. The location provides a URL that returns an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
@@ -11115,7 +11115,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get notes from security
-      description: List of notes associcated with the request.
+      description: List of notes associated with the request.
       operationId: security.subjectRightsRequest_GetNote
       parameters:
         - name: subjectRightsRequest-id
@@ -17821,7 +17821,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name of the dataSource. This will be the name of the SharePoint site.
+              description: The display name of the dataSource and is the name of the SharePoint site.
               nullable: true
             holdStatus:
               $ref: '#/components/schemas/microsoft.graph.security.dataSourceHoldStatus'
@@ -18356,7 +18356,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of regulations that this request will fulfill.
+              description: List of regulations that this request fulfills.
             sitelocations:
               $ref: '#/components/schemas/microsoft.graph.subjectRightsRequestSiteLocation'
             stages:
@@ -18382,7 +18382,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authoredNote'
-              description: List of notes associcated with the request.
+              description: List of notes associated with the request.
               x-ms-navigationProperty: true
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -18609,7 +18609,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             provisionedPlans:
               type: array
@@ -21000,7 +21000,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -21727,7 +21727,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The result sub-code.
+          description: The result subcode.
           format: int32
       additionalProperties:
         type: object
@@ -22264,7 +22264,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType is not federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this will be the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -22272,7 +22272,7 @@ components:
           nullable: true
         signInType:
           type: string
-          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Additional validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
+          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
           nullable: true
       additionalProperties:
         type: object
@@ -25600,7 +25600,7 @@ components:
       properties:
         allowMultipleValues:
           type: boolean
-          description: Specifies whether the column will allow more than one value.
+          description: Specifies whether the column allows more than one value.
           nullable: true
         showFullyQualifiedName:
           type: boolean
@@ -26457,11 +26457,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
               type: boolean
-              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+              description: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
               nullable: true
             isRemovable:
               type: boolean
-              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
+              description: 'True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You can''t remove ''My organization'' as a share recipient to a calendar.'
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -26595,7 +26595,7 @@ components:
           nullable: true
         joinUrl:
           type: string
-          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+          description: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
           nullable: true
         phones:
           type: array
@@ -26604,7 +26604,7 @@ components:
           description: All of the phone numbers associated with this conference.
         quickDial:
           type: string
-          description: The pre-formatted quickdial for this call.
+          description: The preformatted quick dial for this call.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -28548,7 +28548,7 @@ components:
           properties:
             phoneNumber:
               type: string
-              description: 'The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.'
+              description: 'The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don''t match the required format.'
               nullable: true
             phoneType:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
@@ -31438,7 +31438,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
             unassignedOrderHint:
               type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task isn''t assigned to anyone, or if the orderHintsByAssignee dictionary doesn''t provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
               nullable: true
           additionalProperties:
             type: object
@@ -32658,7 +32658,7 @@ components:
               description: Indicates whether the last column contains special formatting.
             legacyId:
               type: string
-              description: Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+              description: Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
               nullable: true
             name:
               type: string
@@ -32681,7 +32681,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -34036,7 +34036,7 @@ components:
               nullable: true
             contentType:
               type: string
-              description: 'Write only. Content type. sicj as image/png, image/jpg.'
+              description: 'Write only. Content type. such as image/png, image/jpg.'
               nullable: true
           additionalProperties:
             type: object
