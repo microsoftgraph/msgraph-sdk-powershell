@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ### -Description
 Inherited property.
 A description of the policy.
-This property isn't a key.
+This property is not a key.
 Optional.
 Read-only.
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ### -DisplayName
 Inherited property.
 The human-readable name of the policy.
-This property isn't a key.
+This property is not a key.
 Optional.
 Read-only.
 
@@ -203,15 +203,15 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphAuthenticationFlowsPolicy>`: authenticationFlowsPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Description <String>]`: Inherited property. A description of the policy. This property isn't a key. Optional. Read-only.
-  - `[DisplayName <String>]`: Inherited property. The human-readable name of the policy. This property isn't a key. Optional. Read-only.
+  - `[Description <String>]`: Inherited property. A description of the policy. This property is not a key. Optional. Read-only.
+  - `[DisplayName <String>]`: Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.
   - `[SelfServiceSignUp <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>]`: selfServiceSignUpAuthenticationFlowConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
+    - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
 
 `SELFSERVICESIGNUP <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>`: selfServiceSignUpAuthenticationFlowConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
+  - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
 
 ## RELATED LINKS
 

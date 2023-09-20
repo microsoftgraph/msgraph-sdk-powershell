@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration
 
 ## SYNOPSIS
-Update the properties of a certificateBasedApplicationConfiguration object.
-To update the trustedCertificateAuthorities within a certificateBasedApplicationConfiguration object, use the Update certificateAuthorityAsEntity operation.
+Update the navigation property certificateBasedApplicationConfigurations in directory
 
 ## SYNTAX
 
@@ -48,8 +47,7 @@ Update-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurati
 ```
 
 ## DESCRIPTION
-Update the properties of a certificateBasedApplicationConfiguration object.
-To update the trustedCertificateAuthorities within a certificateBasedApplicationConfiguration object, use the Update certificateAuthorityAsEntity operation.
+Update the navigation property certificateBasedApplicationConfigurations in directory
 
 ## EXAMPLES
 
@@ -132,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The description of the trusted certificate authorities.
+.
 
 ```yaml
 Type: System.String
@@ -147,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the trusted certificate authorities.
+.
 
 ```yaml
 Type: System.String
@@ -194,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrustedCertificateAuthorities
-Collection of trusted certificate authorities.
+.
 To construct, see NOTES section for TRUSTEDCERTIFICATEAUTHORITIES properties and create a hash table.
 
 ```yaml
@@ -264,16 +262,16 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphCertificateBasedApplicationConfiguration>`: certificateBasedApplicationConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TrustedCertificateAuthorities <IMicrosoftGraphCertificateAuthorityAsEntity[]>]`: Collection of trusted certificate authorities.
+  - `[TrustedCertificateAuthorities <IMicrosoftGraphCertificateAuthorityAsEntity[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Certificate <Byte[]>]`: The trusted certificate.
-    - `[IsRootAuthority <Boolean?>]`: Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
-    - `[Issuer <String>]`: The issuer of the trusted certificate.
-    - `[IssuerSubjectKeyIdentifier <String>]`: The subject key identifier of the trusted certificate.
+    - `[Certificate <Byte[]>]`: 
+    - `[IsRootAuthority <Boolean?>]`: 
+    - `[Issuer <String>]`: 
+    - `[IssuerSubjectKeyIdentifier <String>]`: 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Description <String>]`: The description of the trusted certificate authorities.
-  - `[DisplayName <String>]`: The display name of the trusted certificate authorities.
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
 
 `INPUTOBJECT <IIdentityDirectoryManagementIdentity>`: Identity Parameter
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
@@ -319,12 +317,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[UsageRightId <String>]`: The unique identifier of usageRight
   - `[UserId <String>]`: The unique identifier of user
 
-`TRUSTEDCERTIFICATEAUTHORITIES <IMicrosoftGraphCertificateAuthorityAsEntity[]>`: Collection of trusted certificate authorities.
+`TRUSTEDCERTIFICATEAUTHORITIES <IMicrosoftGraphCertificateAuthorityAsEntity[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Certificate <Byte[]>]`: The trusted certificate.
-  - `[IsRootAuthority <Boolean?>]`: Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
-  - `[Issuer <String>]`: The issuer of the trusted certificate.
-  - `[IssuerSubjectKeyIdentifier <String>]`: The subject key identifier of the trusted certificate.
+  - `[Certificate <Byte[]>]`: 
+  - `[IsRootAuthority <Boolean?>]`: 
+  - `[Issuer <String>]`: 
+  - `[IssuerSubjectKeyIdentifier <String>]`: 
 
 ## RELATED LINKS
 

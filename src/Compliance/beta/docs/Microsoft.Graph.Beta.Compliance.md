@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Compliance
-Module Guid: 7381f9fb-d578-48af-a0e1-0ae1e22cdefe
+Module Guid: b13eed0b-17f1-43f8-831e-87e28354e5a8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -123,7 +123,7 @@ Read the properties and relationships of a noncustodialDataSource object.
 Get the number of the resource
 
 ### [Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSourceDataSource](Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSourceDataSource.md)
-User source or SharePoint site data source as noncustodial data source.
+User source or SharePoint site data source as non-custodial data source.
 
 ### [Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSourceLastIndexOperation](Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSourceLastIndexOperation.md)
 Get lastIndexOperation from compliance

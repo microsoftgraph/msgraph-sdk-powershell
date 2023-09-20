@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Deletes a androidWorkProfileCompliancePolicy.
+Deletes a windowsPhone81CompliancePolicy.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceCompliancePolicy -InputObject <IDeviceManagementI
 ```
 
 ## DESCRIPTION
-Deletes a androidWorkProfileCompliancePolicy.
+Deletes a windowsPhone81CompliancePolicy.
 
 ## EXAMPLES
 

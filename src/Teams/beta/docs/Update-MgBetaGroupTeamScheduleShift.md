@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Replace an existing shift.
 If the specified shift doesn't exist, this method returns 404 Not found.
-The duration of a shift can't be less than 1 minute or longer than 24 hours.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgBetaGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalPr
 ## DESCRIPTION
 Replace an existing shift.
 If the specified shift doesn't exist, this method returns 404 Not found.
-The duration of a shift can't be less than 1 minute or longer than 24 hours.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ## EXAMPLES
 

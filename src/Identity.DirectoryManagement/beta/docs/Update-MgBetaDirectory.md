@@ -383,7 +383,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
-  - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+  - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for this administrative unit. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IsMemberManagementRestricted <Boolean?>]`: true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
@@ -412,7 +412,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
-    - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+    - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for this administrative unit. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[IsMemberManagementRestricted <Boolean?>]`: true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
@@ -435,17 +435,17 @@ To create the parameters described below, construct a hash table containing the 
   - `[CertificateAuthorities <IMicrosoftGraphCertificateAuthorityPath>]`: certificateAuthorityPath
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CertificateBasedApplicationConfigurations <IMicrosoftGraphCertificateBasedApplicationConfiguration[]>]`: Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
-      - `[TrustedCertificateAuthorities <IMicrosoftGraphCertificateAuthorityAsEntity[]>]`: Collection of trusted certificate authorities.
+    - `[CertificateBasedApplicationConfigurations <IMicrosoftGraphCertificateBasedApplicationConfiguration[]>]`: 
+      - `[TrustedCertificateAuthorities <IMicrosoftGraphCertificateAuthorityAsEntity[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[Certificate <Byte[]>]`: The trusted certificate.
-        - `[IsRootAuthority <Boolean?>]`: Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
-        - `[Issuer <String>]`: The issuer of the trusted certificate.
-        - `[IssuerSubjectKeyIdentifier <String>]`: The subject key identifier of the trusted certificate.
+        - `[Certificate <Byte[]>]`: 
+        - `[IsRootAuthority <Boolean?>]`: 
+        - `[Issuer <String>]`: 
+        - `[IssuerSubjectKeyIdentifier <String>]`: 
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Description <String>]`: The description of the trusted certificate authorities.
-      - `[DisplayName <String>]`: The display name of the trusted certificate authorities.
+      - `[Description <String>]`: 
+      - `[DisplayName <String>]`: 
   - `[CustomSecurityAttributeDefinitions <IMicrosoftGraphCustomSecurityAttributeDefinition[]>]`: Schema of a custom security attributes (key-value pairs).
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
@@ -475,8 +475,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with.
+      - `[Value <String>]`: Contains the corresponding value for the specified key.
     - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
     - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -506,13 +506,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[ApplicationId <String>]`: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
       - `[CurrentExportData <IMicrosoftGraphOnPremisesCurrentExportData>]`: onPremisesCurrentExportData
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[ClientMachineName <String>]`: The name of the onPremises client machine that ran the last export.
+        - `[ClientMachineName <String>]`: The name of the onPremises client machine which ran the last export.
         - `[PendingObjectsAddition <Int32?>]`: The count of pending adds from on-premises directory.
         - `[PendingObjectsDeletion <Int32?>]`: The count of pending deletes from on-premises directory.
         - `[PendingObjectsUpdate <Int32?>]`: The count of pending updates from on-premises directory.
-        - `[ServiceAccount <String>]`: The name of the dirsync service account that is configured to connect to the directory.
+        - `[ServiceAccount <String>]`: The name of the dirsync service account which is configured to connect to the directory.
         - `[SuccessfulLinksProvisioningCount <Int64?>]`: The count of updated links during the current directory sync export run.
-        - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects that were successfully provisioned during the current directory sync export run.
+        - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects which were successfully provisioned during the current directory sync export run.
         - `[TotalConnectorSpaceObjects <Int32?>]`: The total number of objects in the AAD Connector Space.
       - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: Interval of time that the customer requested the sync client waits between sync cycles.
       - `[SynchronizationClientVersion <String>]`: Indicates the version of the on-premises directory synchronization application.
@@ -571,7 +571,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
     - `[Priority <String>]`: recommendationPriority
     - `[RecommendationType <String>]`: recommendationType
-    - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview or generallyAvailable.
     - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
     - `[Status <String>]`: recommendationStatus
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -601,17 +600,17 @@ To create the parameters described below, construct a hash table containing the 
 `CERTIFICATEAUTHORITIES <IMicrosoftGraphCertificateAuthorityPath>`: certificateAuthorityPath
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CertificateBasedApplicationConfigurations <IMicrosoftGraphCertificateBasedApplicationConfiguration[]>]`: Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
-    - `[TrustedCertificateAuthorities <IMicrosoftGraphCertificateAuthorityAsEntity[]>]`: Collection of trusted certificate authorities.
+  - `[CertificateBasedApplicationConfigurations <IMicrosoftGraphCertificateBasedApplicationConfiguration[]>]`: 
+    - `[TrustedCertificateAuthorities <IMicrosoftGraphCertificateAuthorityAsEntity[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Certificate <Byte[]>]`: The trusted certificate.
-      - `[IsRootAuthority <Boolean?>]`: Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
-      - `[Issuer <String>]`: The issuer of the trusted certificate.
-      - `[IssuerSubjectKeyIdentifier <String>]`: The subject key identifier of the trusted certificate.
+      - `[Certificate <Byte[]>]`: 
+      - `[IsRootAuthority <Boolean?>]`: 
+      - `[Issuer <String>]`: 
+      - `[IssuerSubjectKeyIdentifier <String>]`: 
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Description <String>]`: The description of the trusted certificate authorities.
-    - `[DisplayName <String>]`: The display name of the trusted certificate authorities.
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
 
 `CUSTOMSECURITYATTRIBUTEDEFINITIONS <IMicrosoftGraphCustomSecurityAttributeDefinition[]>`: Schema of a custom security attributes (key-value pairs).
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -650,8 +649,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
+    - `[Key <String>]`: Contains the name of the field that a value is associated with.
+    - `[Value <String>]`: Contains the corresponding value for the specified key.
   - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
   - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -683,13 +682,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[ApplicationId <String>]`: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
     - `[CurrentExportData <IMicrosoftGraphOnPremisesCurrentExportData>]`: onPremisesCurrentExportData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ClientMachineName <String>]`: The name of the onPremises client machine that ran the last export.
+      - `[ClientMachineName <String>]`: The name of the onPremises client machine which ran the last export.
       - `[PendingObjectsAddition <Int32?>]`: The count of pending adds from on-premises directory.
       - `[PendingObjectsDeletion <Int32?>]`: The count of pending deletes from on-premises directory.
       - `[PendingObjectsUpdate <Int32?>]`: The count of pending updates from on-premises directory.
-      - `[ServiceAccount <String>]`: The name of the dirsync service account that is configured to connect to the directory.
+      - `[ServiceAccount <String>]`: The name of the dirsync service account which is configured to connect to the directory.
       - `[SuccessfulLinksProvisioningCount <Int64?>]`: The count of updated links during the current directory sync export run.
-      - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects that were successfully provisioned during the current directory sync export run.
+      - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects which were successfully provisioned during the current directory sync export run.
       - `[TotalConnectorSpaceObjects <Int32?>]`: The total number of objects in the AAD Connector Space.
     - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: Interval of time that the customer requested the sync client waits between sync cycles.
     - `[SynchronizationClientVersion <String>]`: Indicates the version of the on-premises directory synchronization application.
@@ -745,8 +744,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Contains the name of the field that a value is associated with.
+      - `[Value <String>]`: Contains the corresponding value for the specified key.
     - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
     - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -767,7 +766,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
   - `[Priority <String>]`: recommendationPriority
   - `[RecommendationType <String>]`: recommendationType
-  - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview or generallyAvailable.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
   - `[Status <String>]`: recommendationStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

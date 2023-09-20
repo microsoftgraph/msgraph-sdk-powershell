@@ -13212,11 +13212,11 @@ paths:
     patch:
       tags:
         - education.educationUser
-      summary: Update relatedContacts
-      description: Update the relatedContact collection of an educationUser object.
+      summary: Update educationUser properties
+      description: Update the properties of an educationuser object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/relatedcontact-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/educationuser-update?view=graph-rest-1.0
       operationId: education_UpdateUser
       parameters:
         - name: educationUser-id

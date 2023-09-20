@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -Details
-Extra details about service event.
+Additional details about service event.
 This property doesn't support filters.
 To construct, see NOTES section for DETAILS properties and create a hash table.
 
@@ -461,7 +461,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphServiceUpdateMessage>`: serviceUpdateMessage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Extra details about service event. This property doesn't support filters.
+  - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Additional details about service event. This property doesn't support filters.
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
   - `[EndDateTime <DateTime?>]`: The end time of the service event.
@@ -494,7 +494,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsFavorited <Boolean?>]`: Indicates whether the user marked the message as favorite.
     - `[IsRead <Boolean?>]`: Indicates whether the user read the message.
 
-`DETAILS <IMicrosoftGraphKeyValuePair[]>`: Extra details about service event. This property doesn't support filters.
+`DETAILS <IMicrosoftGraphKeyValuePair[]>`: Additional details about service event. This property doesn't support filters.
   - `[Name <String>]`: Name for this key-value pair
   - `[Value <String>]`: Value for this key-value pair
 

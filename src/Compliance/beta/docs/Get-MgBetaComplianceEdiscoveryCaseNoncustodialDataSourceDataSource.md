@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSourceDataSource
 
 ## SYNOPSIS
-User source or SharePoint site data source as noncustodial data source.
+User source or SharePoint site data source as non-custodial data source.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSourceDataSource -InputObject 
 ```
 
 ## DESCRIPTION
-User source or SharePoint site data source as noncustodial data source.
+User source or SharePoint site data source as non-custodial data source.
 
 ## EXAMPLES
 

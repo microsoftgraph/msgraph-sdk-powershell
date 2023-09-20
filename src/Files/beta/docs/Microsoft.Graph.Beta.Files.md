@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 54c10a7f-e9b2-4900-803b-fff8dfaf2a3f
+Module Guid: 8c54f3a2-0a20-45d0-85b9-7638516d7767
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -220,8 +220,7 @@ Callers can differentiate if the permission is inherited or not by checking the 
 Get the number of the resource
 
 ### [Get-MgBetaDriveItemRetentionLabel](Get-MgBetaDriveItemRetentionLabel.md)
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from drives
 
 ### [Get-MgBetaDriveItemSubscription](Get-MgBetaDriveItemSubscription.md)
 The set of subscriptions on the item.
@@ -514,8 +513,7 @@ Callers can differentiate if the permission is inherited or not by checking the 
 Get the number of the resource
 
 ### [Get-MgBetaDriveRootRetentionLabel](Get-MgBetaDriveRootRetentionLabel.md)
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from drives
 
 ### [Get-MgBetaDriveRootSubscription](Get-MgBetaDriveRootSubscription.md)
 The set of subscriptions on the item.
@@ -731,8 +729,7 @@ Callers can differentiate if the permission is inherited or not by checking the 
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItemRetentionLabel](Get-MgBetaGroupDriveItemRetentionLabel.md)
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from groups
 
 ### [Get-MgBetaGroupDriveItemSubscription](Get-MgBetaGroupDriveItemSubscription.md)
 The set of subscriptions on the item.
@@ -1004,8 +1001,7 @@ Callers can differentiate if the permission is inherited or not by checking the 
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRootRetentionLabel](Get-MgBetaGroupDriveRootRetentionLabel.md)
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from groups
 
 ### [Get-MgBetaGroupDriveRootSubscription](Get-MgBetaGroupDriveRootSubscription.md)
 The set of subscriptions on the item.
@@ -1414,8 +1410,7 @@ Callers can differentiate if the permission is inherited or not by checking the 
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveItemRetentionLabel](Get-MgBetaUserDriveItemRetentionLabel.md)
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from users
 
 ### [Get-MgBetaUserDriveItemSubscription](Get-MgBetaUserDriveItemSubscription.md)
 The set of subscriptions on the item.
@@ -1687,8 +1682,7 @@ Callers can differentiate if the permission is inherited or not by checking the 
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveRootRetentionLabel](Get-MgBetaUserDriveRootRetentionLabel.md)
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from users
 
 ### [Get-MgBetaUserDriveRootSubscription](Get-MgBetaUserDriveRootSubscription.md)
 The set of subscriptions on the item.
@@ -2163,8 +2157,7 @@ Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaDriveItemRetentionLabel](Remove-MgBetaDriveItemRetentionLabel.md)
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for drives
 
 ### [Remove-MgBetaDriveItemSubscription](Remove-MgBetaDriveItemSubscription.md)
 Delete navigation property subscriptions for drives
@@ -2252,8 +2245,7 @@ Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaDriveRootRetentionLabel](Remove-MgBetaDriveRootRetentionLabel.md)
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for drives
 
 ### [Remove-MgBetaDriveRootSubscription](Remove-MgBetaDriveRootSubscription.md)
 Delete navigation property subscriptions for drives
@@ -2302,8 +2294,7 @@ Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaGroupDriveItemRetentionLabel](Remove-MgBetaGroupDriveItemRetentionLabel.md)
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for groups
 
 ### [Remove-MgBetaGroupDriveItemSubscription](Remove-MgBetaGroupDriveItemSubscription.md)
 Delete navigation property subscriptions for groups
@@ -2388,8 +2379,7 @@ Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaGroupDriveRootRetentionLabel](Remove-MgBetaGroupDriveRootRetentionLabel.md)
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for groups
 
 ### [Remove-MgBetaGroupDriveRootSubscription](Remove-MgBetaGroupDriveRootSubscription.md)
 Delete navigation property subscriptions for groups
@@ -2483,8 +2473,7 @@ Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaUserDriveItemRetentionLabel](Remove-MgBetaUserDriveItemRetentionLabel.md)
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for users
 
 ### [Remove-MgBetaUserDriveItemSubscription](Remove-MgBetaUserDriveItemSubscription.md)
 Delete navigation property subscriptions for users
@@ -2569,8 +2558,7 @@ Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
 
 ### [Remove-MgBetaUserDriveRootRetentionLabel](Remove-MgBetaUserDriveRootRetentionLabel.md)
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for users
 
 ### [Remove-MgBetaUserDriveRootSubscription](Remove-MgBetaUserDriveRootSubscription.md)
 Delete navigation property subscriptions for users
@@ -2833,12 +2821,7 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaDriveItemRetentionLabel](Update-MgBetaDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in drives
 
 ### [Update-MgBetaDriveItemSubscription](Update-MgBetaDriveItemSubscription.md)
 Update the navigation property subscriptions in drives
@@ -2947,12 +2930,7 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaDriveRootRetentionLabel](Update-MgBetaDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in drives
 
 ### [Update-MgBetaDriveRootSubscription](Update-MgBetaDriveRootSubscription.md)
 Update the navigation property subscriptions in drives
@@ -3015,12 +2993,7 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaGroupDriveItemRetentionLabel](Update-MgBetaGroupDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in groups
 
 ### [Update-MgBetaGroupDriveItemSubscription](Update-MgBetaGroupDriveItemSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3129,12 +3102,7 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaGroupDriveRootRetentionLabel](Update-MgBetaGroupDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in groups
 
 ### [Update-MgBetaGroupDriveRootSubscription](Update-MgBetaGroupDriveRootSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3260,12 +3228,7 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaUserDriveItemRetentionLabel](Update-MgBetaUserDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in users
 
 ### [Update-MgBetaUserDriveItemSubscription](Update-MgBetaUserDriveItemSubscription.md)
 Update the navigation property subscriptions in users
@@ -3374,12 +3337,7 @@ Update the properties of a sharing permission by patching the permission resourc
 Only the roles property can be modified this way.
 
 ### [Update-MgBetaUserDriveRootRetentionLabel](Update-MgBetaUserDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in users
 
 ### [Update-MgBetaUserDriveRootSubscription](Update-MgBetaUserDriveRootSubscription.md)
 Update the navigation property subscriptions in users

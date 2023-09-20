@@ -8,7 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaUnarchiveTeam
 
 ## SYNOPSIS
-Restore an archived team and restores users' ability to send messages and edit the team, abiding by tenant and team settings.
+Restore an archived team.
+This restores users' ability to send messages and edit the team, abiding by tenant and team settings.
 Teams are archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
@@ -26,7 +27,8 @@ Invoke-MgBetaUnarchiveTeam -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] 
 ```
 
 ## DESCRIPTION
-Restore an archived team and restores users' ability to send messages and edit the team, abiding by tenant and team settings.
+Restore an archived team.
+This restores users' ability to send messages and edit the team, abiding by tenant and team settings.
 Teams are archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.

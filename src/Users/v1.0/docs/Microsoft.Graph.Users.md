@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 94b4aec6-c0c7-455e-9fbb-9f2ece1905c5
+Module Guid: 736d006a-5d1e-49e4-8511-236d9bebb0fa
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,13 +12,13 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Users Cmdlets
 ### [Get-MgUser](Get-MgUser.md)
-Retrieve the properties and relationships of user object.
+Read properties and relationships of the user object.
 
 ### [Get-MgUserCount](Get-MgUserCount.md)
 Get the number of the resource
 
 ### [Get-MgUserCreatedObject](Get-MgUserCreatedObject.md)
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 
@@ -301,9 +301,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [New-MgUser](New-MgUser.md)
-Create a new user.\nThe request body contains the user to create.
-At a minimum, you must specify the required properties for the user.
-You can optionally specify any other writable properties.
+Create a new user object.
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
 Create new navigation property to extensions for users
@@ -401,6 +399,8 @@ The content streams that are uploaded.
 
 ### [Update-MgUser](Update-MgUser.md)
 Update the properties of a user object.
+Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
+Compare member and guest default permissions to see properties they can manage.
 
 ### [Update-MgUserExtension](Update-MgUserExtension.md)
 Update the navigation property extensions in users
@@ -413,7 +413,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
 Update the writable property, color, of the specified outlookCategory object.
-You cannot modify the displayName property\nonce you have created the category.
+You cannot modify the displayName property \nonce you have created the category.
 
 ### [Update-MgUserPhoto](Update-MgUserPhoto.md)
 Update the navigation property photo in users

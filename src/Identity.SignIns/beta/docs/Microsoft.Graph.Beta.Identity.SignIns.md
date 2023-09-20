@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: afe9a430-7929-4fb3-ad0c-78dc08657b04
+Module Guid: a523190d-ee40-4b05-8384-90f6b55e551d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -80,7 +80,7 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityB2CUserFlowLanguageDefaultPage](Get-MgBetaIdentityB2CUserFlowLanguageDefaultPage.md)
 Collection of pages with the default content to display in a user flow for a specified language.
-This collection doesn't allow any kind of modification.
+This collection does not allow any kind of modification.
 
 ### [Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent](Get-MgBetaIdentityB2CUserFlowLanguageDefaultPageContent.md)
 Get media content for the navigation property defaultPages from identity
@@ -90,7 +90,7 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityB2CUserFlowLanguageOverridePage](Get-MgBetaIdentityB2CUserFlowLanguageOverridePage.md)
 Collection of pages with the overrides messages to display in a user flow for a specified language.
-This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
+This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 
 ### [Get-MgBetaIdentityB2CUserFlowLanguageOverridePageContent](Get-MgBetaIdentityB2CUserFlowLanguageOverridePageContent.md)
 Get media content for the navigation property overridesPages from identity
@@ -114,7 +114,7 @@ The user attribute that you want to add to your user flow.
 Retrieve the properties and relationships of a b2xIdentityUserFlow object.
 
 ### [Get-MgBetaIdentityB2XUserFlowApiConnectorConfiguration](Get-MgBetaIdentityB2XUserFlowApiConnectorConfiguration.md)
-Configuration for enabling an API connector for use as part of the self-service sign-up user flow.
+Configuration for enabling an API connector for use as part of the self-service sign up user flow.
 You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 
 ### [Get-MgBetaIdentityB2XUserFlowCount](Get-MgBetaIdentityB2XUserFlowCount.md)
@@ -131,15 +131,15 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguage](Get-MgBetaIdentityB2XUserFlowLanguage.md)
 The languages supported for customization within the user flow.
-Language customization is enabled by default in self-service sign-up user flow.
-You can't create custom languages in self-service sign-up user flows.
+Language customization is enabled by default in self-service sign up user flow.
+You cannot create custom languages in self-service sign up user flows.
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguageCount](Get-MgBetaIdentityB2XUserFlowLanguageCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguageDefaultPage](Get-MgBetaIdentityB2XUserFlowLanguageDefaultPage.md)
 Collection of pages with the default content to display in a user flow for a specified language.
-This collection doesn't allow any kind of modification.
+This collection does not allow any kind of modification.
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguageDefaultPageContent](Get-MgBetaIdentityB2XUserFlowLanguageDefaultPageContent.md)
 Get media content for the navigation property defaultPages from identity
@@ -149,7 +149,7 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguageOverridePage](Get-MgBetaIdentityB2XUserFlowLanguageOverridePage.md)
 Collection of pages with the overrides messages to display in a user flow for a specified language.
-This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
+This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 
 ### [Get-MgBetaIdentityB2XUserFlowLanguageOverridePageContent](Get-MgBetaIdentityB2XUserFlowLanguageOverridePageContent.md)
 Get media content for the navigation property overridesPages from identity
@@ -215,7 +215,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -236,7 +236,8 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of a customAuthenticationExtension object.
+Read the properties and relationships of an authenticationEventListener object.
+The @odata.type property in the response object indicates the type of the authenticationEventListener object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -1233,7 +1234,7 @@ Delete a b2xIdentityUserFlow object.
 
 ### [Remove-MgBetaIdentityB2XUserFlowIdentityProvider](Remove-MgBetaIdentityB2XUserFlowIdentityProvider.md)
 Delete an identity provider from a b2xIdentityUserFlow object.
-For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
+For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
 
 ### [Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef](Remove-MgBetaIdentityB2XUserFlowIdentityProviderByRef.md)
 Delete ref of navigation property userFlowIdentityProviders for identity
@@ -1284,7 +1285,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete a countryNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1579,9 +1580,6 @@ Update the ref of navigation property postFederationSignup in identity
 ### [Set-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder](Set-MgBetaIdentityB2XUserFlowUserAttributeAssignmentOrder.md)
 Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
 
-### [Set-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Set-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Update the navigation property identitySynchronization in policies
-
 ### [Set-MgBetaTrustFrameworkPolicyContent](Set-MgBetaTrustFrameworkPolicyContent.md)
 Update media content for the navigation property policies in trustFramework
 
@@ -1696,7 +1694,7 @@ Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they are the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -1805,6 +1803,9 @@ Update the default configuration of a cross-tenant access policy.
 
 ### [Update-MgBetaPolicyCrossTenantAccessPolicyPartner](Update-MgBetaPolicyCrossTenantAccessPolicyPartner.md)
 Update the properties of a partner-specific configuration.
+
+### [Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
+Update the user synchronization policy of a partner-specific configuration.
 
 ### [Update-MgBetaPolicyDefaultAppManagementPolicy](Update-MgBetaPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

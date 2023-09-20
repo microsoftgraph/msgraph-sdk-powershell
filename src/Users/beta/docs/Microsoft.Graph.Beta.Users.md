@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 2b4ee59a-61c2-4a84-9589-1cc1b3ed8bf7
+Module Guid: 747afed2-05a4-4b25-838b-43f1364cd5a0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -28,7 +28,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaUserCreatedObject](Get-MgBetaUserCreatedObject.md)
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 

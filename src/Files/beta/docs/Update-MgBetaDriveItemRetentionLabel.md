@@ -8,12 +8,7 @@ schema: 2.0.0
 # Update-MgBetaDriveItemRetentionLabel
 
 ## SYNOPSIS
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in drives
 
 ## SYNTAX
 
@@ -46,12 +41,7 @@ Update-MgBetaDriveItemRetentionLabel -InputObject <IFilesIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Update the navigation property retentionLabel in drives
 
 ## EXAMPLES
 
@@ -165,9 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsLabelAppliedExplicitly
-Specifies whether the label is applied explicitly on the item.
-True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent.
-Read-only.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -198,10 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -LabelAppliedDateTime
-The date and time when the label was applied on the item.
-The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-Read-only.
+.
 
 ```yaml
 Type: System.DateTime
@@ -216,8 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The retention label on the document.
-Read-write.
+.
 
 ```yaml
 Type: System.String
@@ -303,7 +287,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphItemRetentionLabel>`: itemRetentionLabel
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsLabelAppliedExplicitly <Boolean?>]`: Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.
+  - `[IsLabelAppliedExplicitly <Boolean?>]`: 
   - `[LabelAppliedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -312,16 +296,16 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[Name <String>]`: The retention label on the document. Read-write.
+  - `[LabelAppliedDateTime <DateTime?>]`: 
+  - `[Name <String>]`: 
   - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BehaviorDuringRetentionPeriod <String>]`: behaviorDuringRetentionPeriod
-    - `[IsContentUpdateAllowed <Boolean?>]`: Specifies whether updates to document content are allowed. Read-only.
-    - `[IsDeleteAllowed <Boolean?>]`: Specifies whether the document deletion is allowed. Read-only.
-    - `[IsLabelUpdateAllowed <Boolean?>]`: Specifies whether you're allowed to change the retention label on the document. Read-only.
-    - `[IsMetadataUpdateAllowed <Boolean?>]`: Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
-    - `[IsRecordLocked <Boolean?>]`: Specifies whether the item is locked. Read-write.
+    - `[IsContentUpdateAllowed <Boolean?>]`: 
+    - `[IsDeleteAllowed <Boolean?>]`: 
+    - `[IsLabelUpdateAllowed <Boolean?>]`: 
+    - `[IsMetadataUpdateAllowed <Boolean?>]`: 
+    - `[IsRecordLocked <Boolean?>]`: 
 
 `INPUTOBJECT <IFilesIdentity>`: Identity Parameter
   - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
@@ -361,11 +345,11 @@ To create the parameters described below, construct a hash table containing the 
 `RETENTIONSETTINGS <IMicrosoftGraphRetentionLabelSettings>`: retentionLabelSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[BehaviorDuringRetentionPeriod <String>]`: behaviorDuringRetentionPeriod
-  - `[IsContentUpdateAllowed <Boolean?>]`: Specifies whether updates to document content are allowed. Read-only.
-  - `[IsDeleteAllowed <Boolean?>]`: Specifies whether the document deletion is allowed. Read-only.
-  - `[IsLabelUpdateAllowed <Boolean?>]`: Specifies whether you're allowed to change the retention label on the document. Read-only.
-  - `[IsMetadataUpdateAllowed <Boolean?>]`: Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.
-  - `[IsRecordLocked <Boolean?>]`: Specifies whether the item is locked. Read-write.
+  - `[IsContentUpdateAllowed <Boolean?>]`: 
+  - `[IsDeleteAllowed <Boolean?>]`: 
+  - `[IsLabelUpdateAllowed <Boolean?>]`: 
+  - `[IsMetadataUpdateAllowed <Boolean?>]`: 
+  - `[IsRecordLocked <Boolean?>]`: 
 
 ## RELATED LINKS
 

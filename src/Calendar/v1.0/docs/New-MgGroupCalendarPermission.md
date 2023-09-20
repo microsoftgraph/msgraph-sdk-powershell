@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsInsideOrganization
-True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
+True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -185,9 +185,9 @@ Accept wildcard characters: False
 ```
 
 ### -IsRemovable
-True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise.
+True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise.
 The 'My organization' user determines the permissions other people within your organization have to the given calendar.
-You can't remove 'My organization' as a share recipient to a calendar.
+You cannot remove 'My organization' as a sharee to a calendar.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,8 +277,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
-  - `[IsInsideOrganization <Boolean?>]`: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
-  - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
+  - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+  - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
   - `[Role <String>]`: calendarRoleType
 
 `EMAILADDRESS <IMicrosoftGraphEmailAddress>`: emailAddress

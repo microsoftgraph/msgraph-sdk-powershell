@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration
 
 ## SYNOPSIS
-Delete the properties and relationships of a certificateBasedApplicationConfiguration object.
+Delete navigation property certificateBasedApplicationConfigurations for directory
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurati
 ```
 
 ## DESCRIPTION
-Delete the properties and relationships of a certificateBasedApplicationConfiguration object.
+Delete navigation property certificateBasedApplicationConfigurations for directory
 
 ## EXAMPLES
 

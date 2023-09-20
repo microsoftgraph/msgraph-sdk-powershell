@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaDriveItemRetentionLabel
 
 ## SYNOPSIS
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for drives
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaDriveItemRetentionLabel -InputObject <IFilesIdentity> [-IfMatch <St
 ```
 
 ## DESCRIPTION
-Remove a retention label from a driveItem.
-For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+Delete navigation property retentionLabel for drives
 
 ## EXAMPLES
 

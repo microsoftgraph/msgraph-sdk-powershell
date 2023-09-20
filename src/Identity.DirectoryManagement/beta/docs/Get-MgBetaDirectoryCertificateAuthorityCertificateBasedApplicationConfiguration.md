@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration
 
 ## SYNOPSIS
-Read the properties and relationships of a certificateBasedApplicationConfiguration object.
+Get certificateBasedApplicationConfigurations from directory
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a certificateBasedApplicationConfiguration object.
+Get certificateBasedApplicationConfigurations from directory
 
 ## EXAMPLES
 

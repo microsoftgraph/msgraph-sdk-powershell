@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveRootRetentionLabel
 
 ## SYNOPSIS
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from groups
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgBetaGroupDriveRootRetentionLabel -InputObject <IFilesIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from groups
 
 ## EXAMPLES
 

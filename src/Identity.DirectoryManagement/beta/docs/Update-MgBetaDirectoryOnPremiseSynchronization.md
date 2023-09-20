@@ -239,13 +239,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[ApplicationId <String>]`: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
     - `[CurrentExportData <IMicrosoftGraphOnPremisesCurrentExportData>]`: onPremisesCurrentExportData
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ClientMachineName <String>]`: The name of the onPremises client machine that ran the last export.
+      - `[ClientMachineName <String>]`: The name of the onPremises client machine which ran the last export.
       - `[PendingObjectsAddition <Int32?>]`: The count of pending adds from on-premises directory.
       - `[PendingObjectsDeletion <Int32?>]`: The count of pending deletes from on-premises directory.
       - `[PendingObjectsUpdate <Int32?>]`: The count of pending updates from on-premises directory.
-      - `[ServiceAccount <String>]`: The name of the dirsync service account that is configured to connect to the directory.
+      - `[ServiceAccount <String>]`: The name of the dirsync service account which is configured to connect to the directory.
       - `[SuccessfulLinksProvisioningCount <Int64?>]`: The count of updated links during the current directory sync export run.
-      - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects that were successfully provisioned during the current directory sync export run.
+      - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects which were successfully provisioned during the current directory sync export run.
       - `[TotalConnectorSpaceObjects <Int32?>]`: The total number of objects in the AAD Connector Space.
     - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: Interval of time that the customer requested the sync client waits between sync cycles.
     - `[SynchronizationClientVersion <String>]`: Indicates the version of the on-premises directory synchronization application.
@@ -286,13 +286,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[ApplicationId <String>]`: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
   - `[CurrentExportData <IMicrosoftGraphOnPremisesCurrentExportData>]`: onPremisesCurrentExportData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ClientMachineName <String>]`: The name of the onPremises client machine that ran the last export.
+    - `[ClientMachineName <String>]`: The name of the onPremises client machine which ran the last export.
     - `[PendingObjectsAddition <Int32?>]`: The count of pending adds from on-premises directory.
     - `[PendingObjectsDeletion <Int32?>]`: The count of pending deletes from on-premises directory.
     - `[PendingObjectsUpdate <Int32?>]`: The count of pending updates from on-premises directory.
-    - `[ServiceAccount <String>]`: The name of the dirsync service account that is configured to connect to the directory.
+    - `[ServiceAccount <String>]`: The name of the dirsync service account which is configured to connect to the directory.
     - `[SuccessfulLinksProvisioningCount <Int64?>]`: The count of updated links during the current directory sync export run.
-    - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects that were successfully provisioned during the current directory sync export run.
+    - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects which were successfully provisioned during the current directory sync export run.
     - `[TotalConnectorSpaceObjects <Int32?>]`: The total number of objects in the AAD Connector Space.
   - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: Interval of time that the customer requested the sync client waits between sync cycles.
   - `[SynchronizationClientVersion <String>]`: Indicates the version of the on-premises directory synchronization application.

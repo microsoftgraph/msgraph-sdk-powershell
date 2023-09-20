@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHost
 
 ## SYNOPSIS
-The hosts related with this sslCertificate.
+Get relatedHosts from security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHost -InputObject <ISec
 ```
 
 ## DESCRIPTION
-The hosts related with this sslCertificate.
+Get relatedHosts from security
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Collection of pages with the overrides messages to display in a user flow for a specified language.
-This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
+This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgBetaIdentityB2CUserFlowLanguageOverridePage -InputObject <IIdentitySignIns
 
 ## DESCRIPTION
 Collection of pages with the overrides messages to display in a user flow for a specified language.
-This collection only allows to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
+This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
 
 ## EXAMPLES
 

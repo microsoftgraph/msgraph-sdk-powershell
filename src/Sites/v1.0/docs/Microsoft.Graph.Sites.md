@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: f445437b-8058-4e56-b88d-05a9b5496809
+Module Guid: 98461316-0653-4c41-b102-d49bf6f36ae5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -225,7 +225,7 @@ You can get or update settings for sending automatic replies to incoming message
 Returned only on $select.
 
 ### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
-Get a list of rich long-running operations associated with a list.
+Returns the metadata for a [list][].
 
 ### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
 The collection of field definitions for this list.
@@ -1025,7 +1025,7 @@ You can get or update settings for sending automatic replies to incoming message
 Returned only on $select.
 
 ### [Get-MgSiteList](Get-MgSiteList.md)
-Get a list of rich long-running operations associated with a list.
+Returns the metadata for a [list][].
 
 ### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
 The collection of field definitions for this list.

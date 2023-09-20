@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: c5eed12b-f771-4bca-8e75-5626beb84bcc
+Module Guid: 461fc21b-bc26-4ed2-8714-03b54d11e7ed
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US

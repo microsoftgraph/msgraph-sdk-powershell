@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateInputFile
-Input File for Certificate (The trusted certificate.)
+Input File for Certificate (.)
 
 ```yaml
 Type: System.String
@@ -172,8 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsRootAuthority
-Indicates if the certificate is a root authority.
-In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -188,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -Issuer
-The issuer of the trusted certificate.
+.
 
 ```yaml
 Type: System.String
@@ -203,7 +202,7 @@ Accept wildcard characters: False
 ```
 
 ### -IssuerSubjectKeyIdentifier
-The subject key identifier of the trusted certificate.
+.
 
 ```yaml
 Type: System.String
@@ -273,10 +272,10 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphCertificateAuthorityAsEntity>`: certificateAuthorityAsEntity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Certificate <Byte[]>]`: The trusted certificate.
-  - `[IsRootAuthority <Boolean?>]`: Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
-  - `[Issuer <String>]`: The issuer of the trusted certificate.
-  - `[IssuerSubjectKeyIdentifier <String>]`: The subject key identifier of the trusted certificate.
+  - `[Certificate <Byte[]>]`: 
+  - `[IsRootAuthority <Boolean?>]`: 
+  - `[Issuer <String>]`: 
+  - `[IssuerSubjectKeyIdentifier <String>]`: 
 
 `INPUTOBJECT <IIdentityDirectoryManagementIdentity>`: Identity Parameter
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
