@@ -1,8 +1,8 @@
 [CmdletBinding()]
 Param(
-  [string] $DocsLocation = (Join-Path $PSScriptRoot "../src/Authentication/docs/"),
-  [string] $SynopsisLocation = (Join-Path $PSScriptRoot "../src/Authentication/synopsis/"),
-  [string] $DescriptionLocation = (Join-Path $PSScriptRoot "../src/Authentication/descriptions/")
+  [string] $DocsLocation = (Join-Path $PSScriptRoot "../docs/"),
+  [string] $SynopsisLocation = (Join-Path $PSScriptRoot "../synopsis/"),
+  [string] $DescriptionLocation = (Join-Path $PSScriptRoot "../descriptions/")
   
 )
 $ImportMapping = @{

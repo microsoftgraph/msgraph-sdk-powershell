@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param(
-  [string] $DocsLocation = (Join-Path $PSScriptRoot "../src/Authentication/docs/"),
-  [string] $ExamplesLocation = (Join-Path $PSScriptRoot "../src/Authentication/examples/")
+  [string] $DocsLocation = (Join-Path $PSScriptRoot "../docs/"),
+  [string] $ExamplesLocation = (Join-Path $PSScriptRoot "../examples/")
 )
 function Start-Import {
     foreach ($File in Get-ChildItem $DocsLocation) {

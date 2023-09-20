@@ -1,9 +1,8 @@
-[CmdletBinding()]
 Param(
-  [string] $DocsLocation = (Join-Path $PSScriptRoot "../src/Authentication/docs/"),
-  [string] $ExamplesLocation = (Join-Path $PSScriptRoot "../src/Authentication/examples/"),
-  [string] $SynopisLocation = (Join-Path $PSScriptRoot "../src/Authentication/synopsis/"),
-  [string] $DescriptionLocation = (Join-Path $PSScriptRoot "../src/Authentication/descriptions/")
+  [string] $DocsLocation = (Join-Path $PSScriptRoot "../docs/"),
+  [string] $ExamplesLocation = (Join-Path $PSScriptRoot "../examples/"),
+  [string] $SynopisLocation = (Join-Path $PSScriptRoot "../synopsis/"),
+  [string] $DescriptionLocation = (Join-Path $PSScriptRoot "../descriptions/")
 )
 function Start-Generator {
     foreach ($File in Get-ChildItem $DocsLocation) {

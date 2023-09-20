@@ -1,4 +1,4 @@
-$OutputFolder = (Join-Path $PSScriptRoot "../src/Authentication/docs/")
+$OutputFolder = (Join-Path $PSScriptRoot "../docs/")
 $parameters = @{
     Module                = "Microsoft.Graph.Authentication"
     OutputFolder          = $OutputFolder
@@ -16,7 +16,6 @@ $updateparameters = @{
     ExcludeDontShow       = $true
     Encoding              = [System.Text.Encoding]::UTF8
 }
-Import-Module -Name "../src/Authentication/Authentication/artifacts/Microsoft.Graph.Authentication.psm1"
 $ct = (Get-ChildItem $DocsLocation | Measure-Object ).Count
 if ($ct -gt 0) {
     Update-MarkdownHelpModule @updateparameters
