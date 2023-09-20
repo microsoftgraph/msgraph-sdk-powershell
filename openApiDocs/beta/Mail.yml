@@ -5554,7 +5554,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -5660,11 +5660,11 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update eventMessage
-      description: Update the properties of an eventMessage object.
+      summary: Update message
+      description: Update the properties of a message object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
