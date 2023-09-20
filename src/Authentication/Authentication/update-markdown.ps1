@@ -1,4 +1,9 @@
 $OutputFolder = (Join-Path $PSScriptRoot "../docs/")
+# Install PlatyPS
+if (!(Get-Module -Name PlatyPS -ListAvailable)) {
+    Install-Module PlatyPS -Force
+}
+Import-Module PlatyPS -Force -Scope Global
 $parameters = @{
     Module                = "Microsoft.Graph.Authentication"
     OutputFolder          = $OutputFolder
