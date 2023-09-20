@@ -2642,11 +2642,11 @@ paths:
     delete:
       tags:
         - deviceManagement.roleDefinition
-      summary: Delete deviceAndAppManagementRoleDefinition
-      description: Deletes a deviceAndAppManagementRoleDefinition.
+      summary: Delete roleDefinition
+      description: Deletes a roleDefinition.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: roleDefinition-id
@@ -5302,7 +5302,6 @@ components:
           type: string
         message:
           type: string
-          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
