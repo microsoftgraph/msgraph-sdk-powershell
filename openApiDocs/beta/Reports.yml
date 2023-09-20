@@ -12625,12 +12625,12 @@ components:
               description: 'Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).'
             userDisplayName:
               type: string
-              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.'
+              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.'
             userPreferredMethodForSecondaryAuthentication:
               $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethod'
             userPrincipalName:
               type: string
-              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.'
+              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.'
             userType:
               $ref: '#/components/schemas/microsoft.graph.signInUserType'
           additionalProperties:
@@ -14871,11 +14871,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -15172,6 +15172,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true

@@ -12315,12 +12315,12 @@ components:
           properties:
             activity:
               type: string
-              description: A string which uniquely represents the operation that occurred. Required. Read-only.
+              description: A string that uniquely represents the operation that occurred. Required. Read-only.
               nullable: true
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The time when the activity ocurred. Required. Read-only.
+              description: The time when the activity occurred. Required. Read-only.
               format: date-time
               nullable: true
             activityId:
@@ -12329,7 +12329,7 @@ components:
               nullable: true
             category:
               type: string
-              description: A category which represents a logical grouping of activities. Required. Read-only.
+              description: A category that represents a logical grouping of activities. Required. Read-only.
               nullable: true
             httpVerb:
               type: string
@@ -12361,11 +12361,11 @@ components:
               nullable: true
             tenantIds:
               type: string
-              description: The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+              description: 'The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.'
               nullable: true
             tenantNames:
               type: string
-              description: The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.
+              description: 'The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -15305,6 +15305,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
