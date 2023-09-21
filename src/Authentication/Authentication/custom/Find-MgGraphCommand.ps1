@@ -187,7 +187,7 @@ Function Find-MgGraphCommand {
                 [Parameter(Mandatory = $true, Position = 0)]
                 [System.Uri]$Uri
             )
-            #Check if Uri contains /me and replace it with /{id}
+            #Check if Uri contains /me and replace it with /users/{user-id}
             if ($Uri.AbsoluteUri.Contains("/me/")) {
                 $Uri = $Uri.AbsoluteUri.Replace("/me/", "/users/{user-id}/")
             }
