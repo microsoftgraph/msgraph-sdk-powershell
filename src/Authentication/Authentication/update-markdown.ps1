@@ -21,7 +21,6 @@ $updateparameters = @{
     ExcludeDontShow       = $true
     Encoding              = [System.Text.Encoding]::UTF8
 }
-Import-Module "../../../../../PlayGround/Migrations/Microsoft.Graph.Authentication.2.6.1/Microsoft.Graph.Authentication.psm1"
 $ct = (Get-ChildItem $DocsLocation | Measure-Object ).Count
 if ($ct -gt 0) {
     Update-MarkdownHelpModule @updateparameters
