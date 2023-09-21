@@ -1,0 +1,1 @@
+Retrieves permissions that are applicable to a certain domain. For example application, directory.
