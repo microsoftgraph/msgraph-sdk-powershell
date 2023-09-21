@@ -189,7 +189,7 @@ Function Find-MgGraphCommand {
             )
             #Check if Uri contains /me and replace it with /{id}
             if ($Uri.AbsoluteUri.Contains("/me/")) {
-                $Uri = $Uri.AbsoluteUri.Replace("/me/", "/{id}/")
+                $Uri = $Uri.AbsoluteUri.Replace("/me/", "/users/{user-id}/")
             }
             $Result = @()
             $TokenizedUri = GraphUri_TokenizeIds $Uri
