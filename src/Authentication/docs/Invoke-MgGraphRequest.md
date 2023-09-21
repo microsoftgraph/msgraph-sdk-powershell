@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/invoke-mggraphrequest
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgGraphRequest
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Invoke-MgGraphRequest issues REST API requests to the Graph API. It works for any Graph API if you know the REST URI, method, and optional body parameter. This command is especially useful for accessing APIs for which there isn't an equivalent cmdlet yet.
 
 ## SYNTAX
 
@@ -17,21 +17,35 @@ Invoke-MgGraphRequest [[-Method] <GraphRequestMethod>] [-Uri] <Uri> [[-Body] <Ob
  [[-Headers] <IDictionary>] [[-OutputFilePath] <String>] [-InferOutputFileName] [[-InputFilePath] <String>]
  [-PassThru] [-SkipHeaderValidation] [[-ContentType] <String>] [[-SessionVariable] <String>]
  [[-ResponseHeadersVariable] <String>] [[-StatusCodeVariable] <String>] [-SkipHttpErrorCheck]
- [[-GraphRequestSession] <GraphRequestSession>] [[-UserAgent] <String>] [[-OutputType] <OutputType>] [-Break]
+ [[-GraphRequestSession] <GraphRequestSession>] [[-UserAgent] <String>] [[-OutputType] <OutputType>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+This command issues REST API requests.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Using Invoke-MgGraphRequest
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Invoke-MgGraphRequest -Method GET https://graph.microsoft.com/v1.0/me
+Name                           Value
+----                           -----
+userPrincipalName              admin@Contoso.com
+preferredLanguage              en-US
+mobilePhone                    425-555-0101
+displayName                    MOD Administrator
+givenName                      MOD
+mail                           admin@contoso.com
+@odata.context                 https://graph.microsoft.com/v1.0/$metadata#users/$entity
+id                             694bab60-392a-4f64-9430-c1dea2951f50
+jobTitle
+officeLocation
+businessPhones                 {425-555-0100}
+surname                        Administrator
 ```
 
-{{ Add example description here }}
+Issues REST API requests.
 
 ## PARAMETERS
 
@@ -48,21 +62,6 @@ Required: False
 Position: 3
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Break
-Wait for .NET debugger to attach
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

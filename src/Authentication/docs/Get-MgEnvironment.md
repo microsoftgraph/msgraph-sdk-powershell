@@ -1,4 +1,4 @@
----
+﻿---
 external help file: Microsoft.Graph.Authentication.dll-Help.xml
 Module Name: Microsoft.Graph.Authentication
 online version: https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/get-mgenvironment
@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEnvironment
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+When you use Connect-MgGraph, you can choose to target other environments. By default, Connect-MgGraph targets the global public cloud.
 
 ## SYNTAX
 
@@ -17,16 +17,22 @@ Get-MgEnvironment [[-Name] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+When you use Connect-MgGraph, you can choose to target other environments. By default, Connect-MgGraph targets the global public cloud.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get-MgEnvironment
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-MgEnvironment
+Name     AzureADEndpoint                   GraphEndpoint                           Type
+----     ---------------                   -------------                           ----
+China    https://login.chinacloudapi.cn    https://microsoftgraph.chinacloudapi.cn Built-in
+Global   https://login.microsoftonline.com https://graph.microsoft.com             Built-in
+USGov    https://login.microsoftonline.us  https://graph.microsoft.us              Built-in
+USGovDoD https://login.microsoftonline.us  https://dod-graph.microsoft.us          Built-in
 ```
 
-{{ Add example description here }}
+This command gets list of all environments.
 
 ## PARAMETERS
 
