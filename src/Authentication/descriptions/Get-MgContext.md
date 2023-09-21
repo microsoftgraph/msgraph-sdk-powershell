@@ -1,0 +1,1 @@
+Retrieves session details.
