@@ -212,13 +212,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand with the following properties:
-###     1. Command: Name of command.
-###     2. Module: Module in which a command is defined.
-###     3. Method: The HTTP method a command makes.
-###     4. Uri: The Microsoft Graph API URI a command calls.
-###     5. OutputType: The return type of a command.
-###     6. Permissions: Permissions needed to use a command. This field can be empty if the permissions are not yet available in Graph Explorer.
-###     7. Variants: The parameter sets of a command.
+### 1. Command: Name of command.
+### 2. Module: Module in which a command is defined.
+### 3. Method: The HTTP method a command makes.
+### 4. Uri: The Microsoft Graph API URI a command calls.
+### 5. OutputType: The return type of a command.
+### 6. Permissions: Permissions needed to use a command. This field can be empty if the permissions are not yet available in Graph Explorer.
+### 7. Variants: The parameter sets of a command.
 ## NOTES
 
 ## RELATED LINKS
