@@ -98,6 +98,7 @@ Function Find-MgGraphCommand {
 
             $Result = @()
             Write-Debug "Received URI: $Uri."
+            
             $Uri = GraphUri_RemoveNamespaceFromActionFunction $Uri
             $GraphUri = GraphUri_ConvertStringToUri $Uri
 
@@ -105,12 +106,25 @@ Function Find-MgGraphCommand {
             if ([System.String]::IsNullOrWhiteSpace($ApiVersion) -and ($GraphUri.OriginalString -match "(v1.0|beta)\/")) {
                 $ApiVersion = $Matches[1]
             }
+            
+            
 
             if (!$GraphUri.IsAbsoluteUri) {
                 $GraphUri = GraphUri_ConvertRelativeUriToAbsoluteUri -Uri $GraphUri -ApiVersion $ApiVersion
             }
+            
+            $ContainsMeSegment = $False
+            $Segment = $GraphUri.Segments
+            foreach ($s in $Segment) {
+                if ($s.StartsWith("me")) {
+                    $ContainsMeSegment = $True
+                    break
+                }
+            }
+            if ($ContainsMeSegment) {
+                $GraphUri = $GraphUri.AbsoluteUri.Replace("/me/", "/users/{id}/")
+            }
             Write-Debug "Resolved URI: $GraphUri."
-
             return $GraphUri
         }
 
@@ -119,7 +133,6 @@ Function Find-MgGraphCommand {
                 [Parameter(Mandatory = $true, Position = 0)]
                 [System.Uri]$Uri
             )
-
             $Result = @()
             $TokenizedUri = GraphUri_TokenizeIds $Uri
             Write-Debug "Tokenized URI: $TokenizedUri."

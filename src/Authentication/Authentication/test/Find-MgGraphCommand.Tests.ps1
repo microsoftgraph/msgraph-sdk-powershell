@@ -138,6 +138,30 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Command | Should -Be @("Get-MgReportSharePointActivityUserCount", "Get-MgBetaReportSharePointActivityUserCount")
             } | Should -Not -Throw    
         }
+        It 'Should find commands for uri woth /me segments' {
+            {
+                $MgCommand = Find-MgGraphCommand -Uri "/me/events/"
+                $MgCommand | Should -HaveCount 4
+                $MgCommand.Command | Select-Object -Unique | should -HaveCount 4
+                $MgCommand.Method | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 5
+                $MgCommand.URI | Select-Object -Unique | Should -Be "/users/{user-id}/events"
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUserEvent", "Get-MgUserEvent", "New-MgBetaUserEvent", "Get-MgBetaUserEvent")
+            } | Should -Not -Throw
+        }
+        It 'Should find commands for uri woth /me segments' {
+            {
+                $MgCommand = Find-MgGraphCommand -Uri "https://graph.microsoft.com/v1.0/me/events/"
+                $MgCommand | Should -HaveCount 4
+                $MgCommand.Command | Select-Object -Unique | should -HaveCount 4
+                $MgCommand.Method | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 5
+                $MgCommand.URI | Select-Object -Unique | Should -Be "/users/{user-id}/events"
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUserEvent", "Get-MgUserEvent", "New-MgBetaUserEvent", "Get-MgBetaUserEvent")
+            } | Should -Not -Throw
+        }
     }
 
     Context "FindByCommand" {
