@@ -166,6 +166,11 @@ Function Find-MgGraphCommand {
 
             $Result = @()
             Write-Debug "Received URI: $Uri."
+
+            #Check if Uri contains /me and replace it with /users/{user-id}
+            if ($Uri.Contains("/me/")) {
+                $Uri = $Uri.Replace("/me/", "/users/{user-id}/")
+            }
             $Uri = GraphUri_RemoveNamespaceFromActionFunction $Uri
             $GraphUri = GraphUri_ConvertStringToUri $Uri
 
@@ -173,6 +178,8 @@ Function Find-MgGraphCommand {
             if ([System.String]::IsNullOrWhiteSpace($ApiVersion) -and ($GraphUri.OriginalString -match "(v1.0|beta)\/")) {
                 $ApiVersion = $Matches[1]
             }
+            
+            
 
             if (!$GraphUri.IsAbsoluteUri) {
                 $GraphUri = GraphUri_ConvertRelativeUriToAbsoluteUri -Uri $GraphUri -ApiVersion $ApiVersion
@@ -187,10 +194,6 @@ Function Find-MgGraphCommand {
                 [Parameter(Mandatory = $true, Position = 0)]
                 [System.Uri]$Uri
             )
-            #Check if Uri contains /me and replace it with /users/{user-id}
-            if ($Uri.AbsoluteUri.Contains("/me/")) {
-                $Uri = $Uri.AbsoluteUri.Replace("/me/", "/users/{user-id}/")
-            }
             $Result = @()
             $TokenizedUri = GraphUri_TokenizeIds $Uri
             Write-Debug "Tokenized URI: $TokenizedUri."
