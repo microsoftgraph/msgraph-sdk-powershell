@@ -180,9 +180,16 @@ Function Find-MgGraphCommand {
             if (!$GraphUri.IsAbsoluteUri) {
                 $GraphUri = GraphUri_ConvertRelativeUriToAbsoluteUri -Uri $GraphUri -ApiVersion $ApiVersion
             }
-           
-            $Segment = $GraphUri.Segments[2]
-            if ($Segment.StartsWith("me")) {
+            
+            $ContainsMeSegment = $False
+            $Segment = $GraphUri.Segments
+            foreach ($s in $Segment) {
+                if ($s.StartsWith("me")) {
+                    $ContainsMeSegment = $True
+                    break
+                }
+            }
+            if ( $ContainsMeSegment) {
                 $GraphUri = $GraphUri.AbsoluteUri.Replace("/me/", "/users/{id}/")
             }
             Write-Debug "Resolved URI: $GraphUri."
