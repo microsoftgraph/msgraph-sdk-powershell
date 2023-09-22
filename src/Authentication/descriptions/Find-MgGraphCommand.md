@@ -1,0 +1,1 @@
+Find-MgGraphCommand aims to make it easier for you to discover which API path a command calls, by providing a URI or a command name.

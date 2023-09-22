@@ -26,7 +26,7 @@ using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-connect-mggraph")]
+    [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/connect-mggraph")]
     [Alias("Connect-Graph")]
     public class ConnectMgGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {

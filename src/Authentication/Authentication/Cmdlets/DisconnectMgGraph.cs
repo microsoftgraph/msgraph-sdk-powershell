@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsCommunications.Disconnect, "MgGraph", HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-disconnect-mggraph")]
+    [Cmdlet(VerbsCommunications.Disconnect, "MgGraph", HelpUri = "https://learn.microsoft.com/en-us/powershell/module/microsoft.graph.authentication/disconnect-graph")]
     [Alias("Disconnect-Graph")]
     [OutputType(typeof(IAuthContext))]
     public class DisconnectMgGraph : PSCmdlet
