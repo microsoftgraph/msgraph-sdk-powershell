@@ -189,7 +189,7 @@ Function Find-MgGraphCommand {
                     break
                 }
             }
-            if ( $ContainsMeSegment) {
+            if ($ContainsMeSegment) {
                 $GraphUri = $GraphUri.AbsoluteUri.Replace("/me/", "/users/{id}/")
             }
             Write-Debug "Resolved URI: $GraphUri."
