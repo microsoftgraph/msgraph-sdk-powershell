@@ -558,11 +558,11 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailSearchFolder
-      description: Update the writable properties of a mailSearchFolder object.
+      summary: Update mailFolder
+      description: Update the properties of mailFolder object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -5333,7 +5333,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -5554,7 +5554,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -5660,11 +5660,11 @@ paths:
     patch:
       tags:
         - users.message
-      summary: Update message
-      description: Update the properties of a message object.
+      summary: Update eventMessage
+      description: Update the properties of an eventMessage object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0
       operationId: user_UpdateMessage
       parameters:
         - name: user-id
@@ -5745,7 +5745,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
