@@ -160,7 +160,8 @@ Accept wildcard characters: False
 ```
 
 ### -AssignmentResourceUrl
-Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
+Pointer to the assignment from which this resource was copied.
+If this is null, the student uploaded the resource.
 
 ```yaml
 Type: System.String
@@ -339,7 +340,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>`: educationSubmissionResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
+  - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet

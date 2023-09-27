@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the writable property, color, of the specified outlookCategory object.
-You cannot modify the displayName property\nonce you have created the category.
+You cannot modify the displayName property \nonce you have created the category.
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Update-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Update the writable property, color, of the specified outlookCategory object.
-You cannot modify the displayName property\nonce you have created the category.
+You cannot modify the displayName property \nonce you have created the category.
 
 ## EXAMPLES
 

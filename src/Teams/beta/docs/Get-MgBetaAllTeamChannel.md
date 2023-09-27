@@ -38,17 +38,17 @@ List of channels either hosted in or shared with the team (incoming channels).
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+{{ Add code here }}
 ```
 
-Get-MgBetaAllTeamChannel -TeamId $teamId
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+{{ Add code here }}
 ```
 
-Get-MgBetaAllTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'"
+
 
 ## PARAMETERS
 

@@ -271,7 +271,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AlertId <String>]`: The unique identifier of alert
   - `[ArticleId <String>]`: The unique identifier of article
   - `[ArticleIndicatorId <String>]`: The unique identifier of articleIndicator
-  - `[AuthoredNoteId <String>]`: The unique identifier of authoredNote
   - `[CaseOperationId <String>]`: The unique identifier of caseOperation
   - `[DataSourceId <String>]`: The unique identifier of dataSource
   - `[EdiscoveryCaseId <String>]`: The unique identifier of ediscoveryCase
@@ -298,9 +297,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SimulationAutomationRunId <String>]`: The unique identifier of simulationAutomationRun
   - `[SimulationId <String>]`: The unique identifier of simulation
   - `[SiteSourceId <String>]`: The unique identifier of siteSource
-  - `[SubjectRightsRequestId <String>]`: The unique identifier of subjectRightsRequest
   - `[UnifiedGroupSourceId <String>]`: The unique identifier of unifiedGroupSource
-  - `[UserId <String>]`: The unique identifier of user
   - `[UserSourceId <String>]`: The unique identifier of userSource
   - `[VulnerabilityComponentId <String>]`: The unique identifier of vulnerabilityComponent
   - `[VulnerabilityId <String>]`: The unique identifier of vulnerability

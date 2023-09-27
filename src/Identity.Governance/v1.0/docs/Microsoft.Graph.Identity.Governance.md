@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: e0d1560c-8033-4f85-94a4-4626bb3b6da8
+Module Guid: f529dcf7-3715-4622-91ba-726ed37b144f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -749,7 +749,7 @@ Get the number of the resource
 
 ### [Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
-A definition that doesn't recur will have exactly one instance.
+A definition that does not recur will have exactly one instance.
 
 ### [Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceCount](Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceCount.md)
 Get the number of the resource
@@ -828,7 +828,7 @@ The user who created the workflow.
 The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowLastModifiedBy](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowLastModifiedBy.md)
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the AAD identity that last modified the workflow.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowRun.md)
 Read the properties and relationships of a run object.
@@ -852,7 +852,7 @@ The unique identifier of the Azure AD identity that last modified the workflow o
 Get the number of the resource
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedBy](Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedBy.md)
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the AAD identity that last modified the workflow.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowLastModifiedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -1022,7 +1022,7 @@ You can get or update settings for sending automatic replies to incoming message
 Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedBy](Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedBy.md)
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the AAD identity that last modified the workflow.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -1053,7 +1053,8 @@ Returned only on $select.
 The related workflow task
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreement](Get-MgIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve the properties and relationships of an agreement object.
+Retrieve all files related to an agreement.
+This includes the default file and all localized files.
 
 ### [Get-MgIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -1732,12 +1733,8 @@ Create a new accessPackageResourceRequest object to request the addition of a re
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
 To add an Azure AD group as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
 The value of the originSystem property within the resource should be AadGroup and the value of the originId is the identifier of the group.
-To add an Azure AD application as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
-The value of the originSystem property within the resource should be AadApplication and the value of the originId is the identifier of the servicePrincipal.
-To add a SharePoint Online site an as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource.
-The value of the originSystem property within the resource should be SharePointOnline and the value of the originId is the URI of the site.
-To remove a resource from a catalog, set the requestType to be adminRemove, and the resource to contain the id of the resource object to be removed.
-The resource object can be retrieved using list resources.
+If using delegated permissions, the user requesting to add a group should be an owner of the group or in a directory role which allows them to modify groups.
+If using application permissions, the application requesting to add the group should also be assigned the Group.ReadWrite.All permission.
 
 ### [New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension](New-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension.md)
 Create new navigation property to customWorkflowExtensions for identityGovernance

@@ -260,7 +260,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Code <Int32?>]`: The result code.
     - `[Message <String>]`: The message.
-    - `[Subcode <Int32?>]`: The result subcode.
+    - `[Subcode <Int32?>]`: The result sub-code.
   - `[Status <String>]`: operationStatus
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
@@ -281,7 +281,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Code <Int32?>]`: The result code.
   - `[Message <String>]`: The message.
-  - `[Subcode <Int32?>]`: The result subcode.
+  - `[Subcode <Int32?>]`: The result sub-code.
 
 ## RELATED LINKS
 

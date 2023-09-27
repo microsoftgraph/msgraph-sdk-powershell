@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
-A definition that doesn't recur will have exactly one instance.
+A definition that does not recur will have exactly one instance.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance -InputObject <IIde
 
 ## DESCRIPTION
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
-A definition that doesn't recur will have exactly one instance.
+A definition that does not recur will have exactly one instance.
 
 ## EXAMPLES
 

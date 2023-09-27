@@ -24117,7 +24117,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedBy
 
 ## SYNOPSIS
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the AAD identity that last modified the workflow.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowVersionLastModifiedBy -InputObject <IId
 ```
 
 ## DESCRIPTION
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the AAD identity that last modified the workflow.
 
 ## EXAMPLES
 

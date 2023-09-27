@@ -135,8 +135,8 @@ Accept wildcard characters: False
 ```
 
 ### -SubmissionAnimationDisabled
-Indicates whether turn-in celebration animation is shown.
-A value of true indicates that the animation isn't shown.
+Indicates whether turn-in celebration animation will be shown.
+A value of true indicates that the animation will not be shown.
 Default value is false.
 
 ```yaml
@@ -207,7 +207,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphEducationAssignmentSettings>`: educationAssignmentSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[SubmissionAnimationDisabled <Boolean?>]`: Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
+  - `[SubmissionAnimationDisabled <Boolean?>]`: Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment

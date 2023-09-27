@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: 0ad4fc21-f4fd-4003-b643-f15c01738406
+Module Guid: 7bb2de0a-45b6-461e-8e72-baace566b4f3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -24,12 +24,6 @@ In this API, each meeting room and room list is represented by an emailAddress i
 
 ### [Get-MgBetaAllUserChatMessage](Get-MgBetaAllUserChatMessage.md)
 Invoke function getAllMessages
-
-### [Get-MgBetaAllUserOnlineMeetingRecording](Get-MgBetaAllUserOnlineMeetingRecording.md)
-Invoke function getAllRecordings
-
-### [Get-MgBetaAllUserOnlineMeetingTranscript](Get-MgBetaAllUserOnlineMeetingTranscript.md)
-Invoke function getAllTranscripts
 
 ### [Get-MgBetaUserCalendarEventDelta](Get-MgBetaUserCalendarEventDelta.md)
 Get a set of event resources that have been added, deleted, or updated in one or more calendars.
@@ -204,8 +198,14 @@ This allows you to maintain and synchronize a local store of a user's messages w
 ### [Get-MgBetaUserOnenoteRecentNotebook](Get-MgBetaUserOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
 
+### [Get-MgBetaUserOnlineMeetingRecording](Get-MgBetaUserOnlineMeetingRecording.md)
+Invoke function getAllRecordings
+
 ### [Get-MgBetaUserOnlineMeetingRecordingDelta](Get-MgBetaUserOnlineMeetingRecordingDelta.md)
 Invoke function delta
+
+### [Get-MgBetaUserOnlineMeetingTranscript](Get-MgBetaUserOnlineMeetingTranscript.md)
+Invoke function getAllTranscripts
 
 ### [Get-MgBetaUserOnlineMeetingTranscriptDelta](Get-MgBetaUserOnlineMeetingTranscriptDelta.md)
 Invoke function delta

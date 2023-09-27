@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUser
 
 ## SYNOPSIS
-Retrieve the properties and relationships of user object.
+Read properties and relationships of the user object.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of user object.
+Read properties and relationships of the user object.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: 561cd2c7-2fee-443e-ba7b-faf98618974d
+Module Guid: b93649a2-2557-44fd-a7b2-d697b33ff0be
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -143,8 +143,7 @@ Registrants of the online meeting.
 Get the number of the resource
 
 ### [Get-MgBetaCommunicationOnlineMeetingTranscript](Get-MgBetaCommunicationOnlineMeetingTranscript.md)
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API does not support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
 
@@ -232,8 +231,7 @@ Registrants of the online meeting.
 Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeetingTranscript](Get-MgBetaUserOnlineMeetingTranscript.md)
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API does not support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
 
@@ -249,8 +247,7 @@ The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgBetaUserPresence](Get-MgBetaUserPresence.md)
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Get a user's presence information.
 
 ### [Invoke-MgBetaAnswerCommunicationCall](Invoke-MgBetaAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -443,7 +440,7 @@ Delete navigation property attendanceRecords for communications
 Delete navigation property recordings for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -470,7 +467,7 @@ Delete navigation property attendanceRecords for users
 Delete navigation property recordings for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 658e4a69-89b4-44d9-8742-53256e15f392
+Module Guid: 461fc21b-bc26-4ed2-8714-03b54d11e7ed
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -299,7 +299,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -522,7 +522,7 @@ Read-only.
 
 ### [Get-MgBetaGroupSiteOnenoteOperation](Get-MgBetaGroupSiteOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
-The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.
+This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.
   You can poll the Operation-Location endpoint until the status property returns completed or failed.
 If the status is completed, the resourceLocation property contains the resource endpoint URI.
 If the status is failed, the error and @api.diagnostics properties provide error information.
@@ -1142,7 +1142,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.

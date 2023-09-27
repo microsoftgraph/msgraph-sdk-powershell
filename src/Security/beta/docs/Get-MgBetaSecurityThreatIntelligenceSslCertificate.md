@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceSslCertificate
 
 ## SYNOPSIS
-Get the properties and relationships of an sslCertificate object.
+Get sslCertificates from security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityThreatIntelligenceSslCertificate -InputObject <ISecurityIdenti
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of an sslCertificate object.
+Get sslCertificates from security
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 030137cb-13a9-4d2f-a08f-0456324d380b
+Module Guid: 3e3a124f-531b-4725-8441-936278337b81
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -332,9 +332,6 @@ Microsoft 365 Defender correlates alerts with the same attack techniques or the 
 The list of related alerts.
 Supports $expand.
 
-### [Get-MgBetaSecurityIncidentAlertCommentCount](Get-MgBetaSecurityIncidentAlertCommentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSecurityIncidentAlertCount](Get-MgBetaSecurityIncidentAlertCount.md)
 Get the number of the resource
 
@@ -523,7 +520,7 @@ The host resource is the abstract base type that returns an implementation.
 A host can be of one of the following types:
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPair](Get-MgBetaSecurityThreatIntelligenceHostChildHostPair.md)
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPairCount](Get-MgBetaSecurityThreatIntelligenceHostChildHostPairCount.md)
 Get the number of the resource
@@ -585,13 +582,13 @@ Get the number of the resource
 Get the properties and relationships of a hostReputation object.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificate](Get-MgBetaSecurityThreatIntelligenceHostSslCertificate.md)
-Get the properties and relationships of a hostSslCertificate object.
+Get hostSslCertificates from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificateCount](Get-MgBetaSecurityThreatIntelligenceHostSslCertificateCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificateHost](Get-MgBetaSecurityThreatIntelligenceHostSslCertificateHost.md)
-The host for this hostSslCertificate.
+Get host from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSubdomain](Get-MgBetaSecurityThreatIntelligenceHostSubdomain.md)
 The subdomains that are associated with this host.
@@ -647,13 +644,13 @@ The artifact related to this indicator.
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificate](Get-MgBetaSecurityThreatIntelligenceSslCertificate.md)
-Get the properties and relationships of an sslCertificate object.
+Get sslCertificates from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateCount](Get-MgBetaSecurityThreatIntelligenceSslCertificateCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHost](Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHost.md)
-The hosts related with this sslCertificate.
+Get relatedHosts from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHostCount](Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHostCount.md)
 Get the number of the resource
@@ -795,9 +792,6 @@ For details, see Manage custodians in an eDiscovery (Premium) case.
 
 ### [Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
-
-### [Invoke-MgBetaCommentSecurityAlert](Invoke-MgBetaCommentSecurityAlert.md)
-Get the number of the resource
 
 ### [Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
 Run an estimate of the number of emails and documents in the eDiscovery search.
@@ -1351,17 +1345,11 @@ Delete navigation property parent for users
 ### [Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
 
-### [Set-MgBetaSecurityAlert](Set-MgBetaSecurityAlert.md)
-Sets a new value for the collection of alertComment.
-
 ### [Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent](Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
 Update content for the navigation property files in security
 
 ### [Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent](Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent.md)
 Update extractedTextContent for the navigation property files in security
-
-### [Set-MgBetaSecurityIncidentAlertComment](Set-MgBetaSecurityIncidentAlertComment.md)
-Sets a new value for the collection of alertComment.
 
 ### [Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Invoke function run

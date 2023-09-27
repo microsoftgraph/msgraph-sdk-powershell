@@ -115,7 +115,7 @@ Accept wildcard characters: False
 
 ### -Description
 The description of the device registration policy.
-It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks.
+It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks.
 Read-only.
 
 ```yaml
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 The name of the device registration policy.
-It's always set to Device Registration Policy.
+It is always set to Device Registration Policy.
 Read-only.
 
 ```yaml
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ### -UserDeviceQuota
 Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations.
 The default value is set to 50.
-If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
+If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
 
 ```yaml
 Type: System.Int32
@@ -291,13 +291,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[AllowedUsers <String[]>]`: The identifiers of users that are in the scope of the policy. Either this property or allowedGroups is required when the appliesTo property is set to selected.
     - `[AppliesTo <String>]`: policyScope
     - `[IsAdminConfigurable <Boolean?>]`: Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).
-  - `[Description <String>]`: The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
-  - `[DisplayName <String>]`: The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
+  - `[Description <String>]`: The description of the device registration policy. It is always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+  - `[DisplayName <String>]`: The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
   - `[LocalAdminPassword <IMicrosoftGraphLocalAdminPasswordSettings>]`: localAdminPasswordSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether this policy scope is configurable by the admin. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organzation.
   - `[MultiFactorAuthConfiguration <String>]`: multiFactorAuthConfiguration
-  - `[UserDeviceQuota <Int32?>]`: Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
+  - `[UserDeviceQuota <Int32?>]`: Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property is not specified during the policy update operation, it is automatically reset to 0 to indicate that users are not allowed to join any devices.
 
 `LOCALADMINPASSWORD <IMicrosoftGraphLocalAdminPasswordSettings>`: localAdminPasswordSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

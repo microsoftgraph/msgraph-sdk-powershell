@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: ac346557-6308-46a7-a7e7-914e3f4379cd
+Module Guid: 97259672-ea6e-4fc6-a9fe-100df7ab5277
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -794,24 +794,28 @@ Reply to a thread in a group conversation and add a new post to it.
 You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
 Reply to a thread in a group conversation and add a new post to it.
 You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgRetryGroupServiceProvisioning](Invoke-MgRetryGroupServiceProvisioning.md)
 Invoke action retryServiceProvisioning
@@ -853,7 +857,9 @@ Users in the accepted senders list can post to conversations of the group .
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.

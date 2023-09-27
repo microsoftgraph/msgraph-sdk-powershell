@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostSslCertificate
 
 ## SYNOPSIS
-Get the properties and relationships of a hostSslCertificate object.
+Get hostSslCertificates from security
 
 ## SYNTAX
 
@@ -63,7 +63,7 @@ Get-MgBetaSecurityThreatIntelligenceHostSslCertificate -HostId <String> [-Expand
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of a hostSslCertificate object.
+Get hostSslCertificates from security
 
 ## EXAMPLES
 

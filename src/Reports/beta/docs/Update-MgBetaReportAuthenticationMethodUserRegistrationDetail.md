@@ -330,7 +330,7 @@ Accept wildcard characters: False
 
 ### -UserDisplayName
 The user display name, such as Adele Vance.
-Supports $filter (eq, startsWith) and $orderby.
+Supports $filter (eq, startsWith) and $orderBy.
 
 ```yaml
 Type: System.String
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 
 ### -UserPrincipalName
 The user principal name, such as AdeleV@contoso.com.
-Supports $filter (eq, startsWith) and $orderby.
+Supports $filter (eq, startsWith) and $orderBy.
 
 ```yaml
 Type: System.String
@@ -473,9 +473,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastUpdatedDateTime <DateTime?>]`: The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[MethodsRegistered <String[]>]`: Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
   - `[SystemPreferredAuthenticationMethods <String[]>]`: Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
-  - `[UserDisplayName <String>]`: The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
+  - `[UserDisplayName <String>]`: The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
   - `[UserPreferredMethodForSecondaryAuthentication <String>]`: userDefaultAuthenticationMethod
-  - `[UserPrincipalName <String>]`: The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
+  - `[UserPrincipalName <String>]`: The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
   - `[UserType <String>]`: signInUserType
 
 `INPUTOBJECT <IReportsIdentity>`: Identity Parameter
