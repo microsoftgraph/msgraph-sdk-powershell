@@ -6233,7 +6233,7 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: 'App name displayed in the Azure portal.  Supports $filter (eq, startsWith).'
+              description: 'App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).'
               nullable: true
             appId:
               type: string
@@ -6528,12 +6528,12 @@ components:
               description: 'Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).'
             userDisplayName:
               type: string
-              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.'
+              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.'
             userPreferredMethodForSecondaryAuthentication:
               $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethod'
             userPrincipalName:
               type: string
-              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.'
+              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.'
             userType:
               $ref: '#/components/schemas/microsoft.graph.signInUserType'
           additionalProperties:
@@ -6938,11 +6938,11 @@ components:
       properties:
         city:
           type: string
-          description: Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
+          description: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
         countryOrRegion:
           type: string
-          description: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+          description: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
           nullable: true
         geoCoordinates:
           $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
@@ -7531,7 +7531,6 @@ components:
           type: string
         message:
           type: string
-          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
