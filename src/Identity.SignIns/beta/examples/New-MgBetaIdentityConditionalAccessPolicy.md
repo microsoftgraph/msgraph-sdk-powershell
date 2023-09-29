@@ -42,7 +42,7 @@ New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Block access to Exchange Online from non-trusted regions
+### Example 2: Block access to Exchange Online from nontrusted regions
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
@@ -191,7 +191,7 @@ New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Require MFA to Exchange Online from non-compliant devices
+### Example 4: Require MFA to Exchange Online from noncompliant devices
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
