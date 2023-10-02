@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgRequestContext
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Sets request context for microsoft graph invocations
 
 ## SYNTAX
 
@@ -18,16 +18,49 @@ Set-MgRequestContext [-RetryDelay <Int32>] [-MaxRetry <Int32>] [-RetriesTimeLimi
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Sets request context for microsoft graph invocations
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Set Http client timeout in seconds
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-MgRequestContext -ClientTimeout 5
+ClientTimeout     RetryDelay                      MaxRetry                 RetriesTimeLimit
+-------------     ----------                      --------                 ----------------
+00:00:05                   3                             2                         00:00:00
 ```
 
-{{ Add example description here }}
+Sets Http client timeout in seconds.
+
+### Example 2: Set the maximum time in seconds allowed for request retries
+```powershell
+PS C:\> Set-MgRequestContext -RetriesTimeLimit 2
+ClientTimeout     RetryDelay                      MaxRetry                 RetriesTimeLimit
+-------------     ----------                      --------                 ----------------
+00:00:05                   3                             2                         00:00:02
+```
+
+Sets the maximum time in seconds allowed for request retries.
+
+### Example 3: Set the maximum number of retries for a request
+```powershell
+PS C:\> Set-MgRequestContext -MaxRetry 2
+ClientTimeout     RetryDelay                      MaxRetry                 RetriesTimeLimit
+-------------     ----------                      --------                 ----------------
+00:00:05                   3                             2                         00:00:02
+```
+
+Sets the maximum number of retries for a request.
+
+### Example 4: Set the waiting time in seconds before retrying a request
+```powershell
+PS C:\> Set-MgRequestContext -RetryDelay 3
+ClientTimeout     RetryDelay                      MaxRetry                 RetriesTimeLimit
+-------------     ----------                      --------                 ----------------
+00:00:05                   3                             2                         00:00:02
+```
+
+Sets the waiting time in seconds before retrying a request.
 
 ## PARAMETERS
 
@@ -130,9 +163,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.Int32
+
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Core.Interfaces.IRequestContext
+
 ## NOTES
 
 ## RELATED LINKS

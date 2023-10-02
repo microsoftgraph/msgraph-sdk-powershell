@@ -1,6 +1,6 @@
 ﻿---
 Module Name: Microsoft.Graph.Authentication
-Module Guid: 853a8150-26d8-4706-8cf8-fd29bacbc20d
+Module Guid: 44b2c5ed-14fe-4061-ad71-e50df98a8ed9
 Download Help Link: https://learn.microsoft.com/powershell/module/Microsoft.Graph.Authentication
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Authentication Cmdlets
 
 ## Microsoft.Graph.Authentication Cmdlets
 ### [Add-MgEnvironment](Add-MgEnvironment.md)
-{{ Fill in the Synopsis }}
+ Adds Microsoft Graph environment to the settings file.
 
 ### [Connect-MgGraph](Connect-MgGraph.md)
 Microsoft Graph PowerShell supports two types of authentication: delegated and app-only access. There are a number of cmdlets that can be used to manage the different parameters required during authentication, for example, environment, application ID, and certificate.
@@ -33,23 +33,23 @@ Get-MgContext is used to retrieve the details about your current session, which 
 When you use Connect-MgGraph, you can choose to target other environments. By default, Connect-MgGraph targets the global public cloud.
 
 ### [Get-MgGraphOption](Get-MgGraphOption.md)
-{{ Fill in the Synopsis }}
+Confirm if web account manager (WAM) support has been enabled.
 
 ### [Get-MgRequestContext](Get-MgRequestContext.md)
-{{ Fill in the Synopsis }}
+Gets graph request context details
 
 ### [Invoke-MgGraphRequest](Invoke-MgGraphRequest.md)
 Invoke-MgGraphRequest issues REST API requests to the Graph API. It works for any Graph API if you know the REST URI, method, and optional body parameter. This command is especially useful for accessing APIs for which there isn't an equivalent cmdlet yet.
 
 ### [Remove-MgEnvironment](Remove-MgEnvironment.md)
-{{ Fill in the Synopsis }}
+Removes Microsoft Graph environment to the settings file
 
 ### [Set-MgEnvironment](Set-MgEnvironment.md)
-{{ Fill in the Synopsis }}
+Sets a Microsoft Graph environment to the settings file.
 
 ### [Set-MgGraphOption](Set-MgGraphOption.md)
-{{ Fill in the Synopsis }}
+Enables web account manager (WAM) support.
 
 ### [Set-MgRequestContext](Set-MgRequestContext.md)
-{{ Fill in the Synopsis }}
+Sets request context for microsoft graph invocations
 

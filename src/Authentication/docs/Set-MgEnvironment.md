@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgEnvironment
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Sets a Microsoft Graph environment to the settings file.
 
 ## SYNTAX
 
@@ -18,16 +18,16 @@ Set-MgEnvironment [-Name] <String> [[-AzureADEndpoint] <String>] [[-GraphEndpoin
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Sets the environment for the current session.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Set environment for the current session
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-MgEnvironment -GraphEndpoint "https://canary.graph.microsoft.com" -AzureADEndpoint "https://login.microsoftonline.com"
 ```
 
-{{ Add example description here }}
+Sets the environment for the current session.
 
 ## PARAMETERS
 
@@ -113,9 +113,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### System.String
+
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.Models.GraphEnvironment
+
 ## NOTES
 
 ## RELATED LINKS
