@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGraphOption
 
 ## SYNOPSIS
-Enables web account manager (WAM) support.
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Enables web account manager (WAM) support
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ## EXAMPLES
 

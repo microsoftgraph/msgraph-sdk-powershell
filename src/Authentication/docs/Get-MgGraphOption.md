@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGraphOption
 
 ## SYNOPSIS
-Confirm if web account manager (WAM) support has been enabled.
+Gets global configurations that apply to the SDK. For example, check if Web Account Manager (WAM) support has been enabled.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgGraphOption [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Confirm if web account manager (WAM) support has been enabled.
+Gets global configurations that apply to the SDK. For example, check if Web Account Manager (WAM) support has been enabled.
 
 ## EXAMPLES
 

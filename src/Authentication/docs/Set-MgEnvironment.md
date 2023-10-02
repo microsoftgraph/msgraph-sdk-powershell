@@ -18,7 +18,7 @@ Set-MgEnvironment [-Name] <String> [[-AzureADEndpoint] <String>] [[-GraphEndpoin
 ```
 
 ## DESCRIPTION
-Sets the environment for the current session.
+Sets a Microsoft Graph environment to the settings file.
 
 ## EXAMPLES
 

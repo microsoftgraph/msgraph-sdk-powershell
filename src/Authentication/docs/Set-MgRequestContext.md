@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgRequestContext
 
 ## SYNOPSIS
-Sets request context for microsoft graph invocations
+Sets request context for Microsoft Graph invocations
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Set-MgRequestContext [-RetryDelay <Int32>] [-MaxRetry <Int32>] [-RetriesTimeLimi
 ```
 
 ## DESCRIPTION
-Sets request context for microsoft graph invocations
+Sets request context for Microsoft Graph invocations
 
 ## EXAMPLES
 

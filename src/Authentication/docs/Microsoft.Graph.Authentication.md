@@ -1,6 +1,6 @@
 ﻿---
 Module Name: Microsoft.Graph.Authentication
-Module Guid: 44b2c5ed-14fe-4061-ad71-e50df98a8ed9
+Module Guid: 0fecf360-9875-4e02-998c-b6d7b6653b6b
 Download Help Link: https://learn.microsoft.com/powershell/module/Microsoft.Graph.Authentication
 Help Version: 1.0.0.0
 Locale: en-US
@@ -33,7 +33,7 @@ Get-MgContext is used to retrieve the details about your current session, which 
 When you use Connect-MgGraph, you can choose to target other environments. By default, Connect-MgGraph targets the global public cloud.
 
 ### [Get-MgGraphOption](Get-MgGraphOption.md)
-Confirm if web account manager (WAM) support has been enabled.
+Gets global configurations that apply to the SDK. For example, check if Web Account Manager (WAM) support has been enabled.
 
 ### [Get-MgRequestContext](Get-MgRequestContext.md)
 Gets graph request context details
@@ -48,8 +48,8 @@ Removes Microsoft Graph environment to the settings file
 Sets a Microsoft Graph environment to the settings file.
 
 ### [Set-MgGraphOption](Set-MgGraphOption.md)
-Enables web account manager (WAM) support.
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ### [Set-MgRequestContext](Set-MgRequestContext.md)
-Sets request context for microsoft graph invocations
+Sets request context for Microsoft Graph invocations
 
