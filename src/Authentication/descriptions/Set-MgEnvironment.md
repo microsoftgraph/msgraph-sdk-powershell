@@ -1,1 +1,1 @@
-Sets the environment for the current session.
+Sets a Microsoft Graph environment to the settings file.
