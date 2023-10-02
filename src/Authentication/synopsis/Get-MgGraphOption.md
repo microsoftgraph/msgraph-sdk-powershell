@@ -1,0 +1,1 @@
+Confirm if web account manager (WAM) support has been enabled.

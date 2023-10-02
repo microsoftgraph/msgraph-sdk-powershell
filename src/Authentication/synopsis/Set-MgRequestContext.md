@@ -1,0 +1,1 @@
+Sets request context for microsoft graph invocations

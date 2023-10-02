@@ -1,0 +1,1 @@
+Enables web account manager (WAM) support
