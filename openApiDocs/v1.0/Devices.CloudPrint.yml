@@ -86,7 +86,7 @@ paths:
       tags:
         - print.printConnector
       summary: List printConnectors
-      description: Retrieve a list of print connectors.
+      description: Retrieve a list of print connectors. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-connectors?view=graph-rest-1.0
@@ -188,7 +188,7 @@ paths:
       tags:
         - print.printConnector
       summary: Get printConnector
-      description: Retrieve the properties and relationships of a printConnector object.
+      description: Retrieve the properties and relationships of a printConnector object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
@@ -246,7 +246,7 @@ paths:
       tags:
         - print.printConnector
       summary: Update printConnector
-      description: Update the properties of a printConnector object.
+      description: Update the properties of a printConnector object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
@@ -281,7 +281,7 @@ paths:
       tags:
         - print.printConnector
       summary: Delete printConnector
-      description: Delete (unregister) a printConnector.
+      description: Delete (unregister) a printConnector. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
@@ -326,7 +326,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get printOperation
-      description: Retrieve the properties and relationships of a printOperation object.
+      description: Retrieve the properties and relationships of a printOperation object. This API is supported in the following national cloud deployments.
       operationId: print_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -413,7 +413,7 @@ paths:
       tags:
         - print.printOperation
       summary: Get printOperation
-      description: Retrieve the properties and relationships of a printOperation object.
+      description: Retrieve the properties and relationships of a printOperation object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
@@ -539,7 +539,7 @@ paths:
       tags:
         - print.printer
       summary: List printers
-      description: Retrieve the list of printers that are registered in the tenant.
+      description: Retrieve the list of printers that are registered in the tenant. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0
@@ -667,7 +667,7 @@ paths:
       tags:
         - print.printer
       summary: Get printer
-      description: Retrieve the properties and relationships of a printer object.
+      description: Retrieve the properties and relationships of a printer object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
@@ -739,7 +739,7 @@ paths:
       tags:
         - print.printer
       summary: Update printer
-      description: Update the properties of a printer object.
+      description: Update the properties of a printer object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
@@ -774,7 +774,7 @@ paths:
       tags:
         - print.printer
       summary: Delete printer
-      description: Delete (unregister) a printer.
+      description: Delete (unregister) a printer. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
@@ -805,7 +805,7 @@ paths:
       tags:
         - print.printer
       summary: List printConnectors for a printer
-      description: Retrieve a list of printConnectors associated with the printer.
+      description: Retrieve a list of printConnectors associated with the printer. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-connectors?view=graph-rest-1.0
@@ -1609,7 +1609,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
@@ -1696,7 +1696,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action abort
-      description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
+      description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
@@ -1742,7 +1742,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action cancel
-      description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
+      description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
@@ -1775,7 +1775,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action redirect
-      description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
@@ -1826,7 +1826,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action start
-      description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.'
+      description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
@@ -2339,7 +2339,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action restoreFactoryDefaults
-      description: Restore a printer's default settings to the values specified by the manufacturer.
+      description: Restore a printer's default settings to the values specified by the manufacturer. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-restorefactorydefaults?view=graph-rest-1.0
@@ -2364,7 +2364,7 @@ paths:
       tags:
         - print.printer
       summary: List printerShares for a printer
-      description: Retrieve a list of printer shares associated with the printer.
+      description: Retrieve a list of printer shares associated with the printer. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-shares?view=graph-rest-1.0
@@ -2574,7 +2574,7 @@ paths:
       tags:
         - print.printer
       summary: List taskTriggers
-      description: 'Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-list-tasktriggers?view=graph-rest-1.0
@@ -2648,7 +2648,7 @@ paths:
       tags:
         - print.printer
       summary: Create printTaskTrigger
-      description: 'Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. '
+      description: 'Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-post-tasktriggers?view=graph-rest-1.0
@@ -2684,7 +2684,7 @@ paths:
       tags:
         - print.printer
       summary: Get printTaskTrigger
-      description: 'Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
@@ -2786,7 +2786,7 @@ paths:
       tags:
         - print.printer
       summary: Delete printTaskTrigger
-      description: Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
+      description: Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
@@ -2825,7 +2825,7 @@ paths:
       tags:
         - print.printer
       summary: Get definition from print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
+      description: An abstract definition that is used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printer.taskTrigger_GetDefinition
       parameters:
         - name: printer-id
@@ -2923,7 +2923,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action create
-      description: 'Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer. For help creating the required Certificate Signing Request (CSR) for creating printer, see the CSR generation code sample.'
+      description: 'Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer. For help creating the required Certificate Signing Request (CSR) for creating printer, see the CSR generation code sample. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-1.0
@@ -2967,7 +2967,7 @@ paths:
       tags:
         - print.printService
       summary: List printServices
-      description: Retrieve a list of printService objects that represent the services available to your tenant.
+      description: Retrieve a list of printService objects that represent the services available to your tenant. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0
@@ -3053,7 +3053,7 @@ paths:
       tags:
         - print.printService
       summary: Get printService
-      description: Retrieve the properties and relationships of a print service.
+      description: Retrieve the properties and relationships of a print service. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0
@@ -3165,7 +3165,7 @@ paths:
       tags:
         - print.printService
       summary: List endpoints
-      description: Retrieve a list of endpoints exposed by a print service.
+      description: Retrieve a list of endpoints exposed by a print service. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printservice-list-endpoints?view=graph-rest-1.0
@@ -3272,7 +3272,7 @@ paths:
       tags:
         - print.printService
       summary: Get printServiceEndpoint
-      description: Retrieve the properties and relationships of a print service endpoint.
+      description: Retrieve the properties and relationships of a print service endpoint. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
@@ -3444,7 +3444,7 @@ paths:
       tags:
         - print.printerShare
       summary: List shares
-      description: Retrieve a list of printerShares.
+      description: Retrieve a list of printerShares. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-shares?view=graph-rest-1.0
@@ -3546,7 +3546,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create printerShare
-      description: Create a new printerShare for the specified printer.
+      description: Create a new printerShare for the specified printer. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-post-shares?view=graph-rest-1.0
@@ -3573,7 +3573,7 @@ paths:
       tags:
         - print.printerShare
       summary: Get printerShare
-      description: Retrieve the properties and relationships of a printer share.
+      description: Retrieve the properties and relationships of a printer share. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
@@ -3644,7 +3644,7 @@ paths:
       tags:
         - print.printerShare
       summary: Update printerShare
-      description: 'Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.'
+      description: 'Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
@@ -3679,7 +3679,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete printerShare
-      description: 'Delete a printer share (unshare the associated printer). This action cannot be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer will need to discover and reinstall it.'
+      description: 'Delete a printer share (unshare the associated printer). This action can''t be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer needs to discover and reinstall it. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
@@ -3710,7 +3710,7 @@ paths:
       tags:
         - print.printerShare
       summary: List allowedGroups
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
@@ -3954,7 +3954,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete allowedGroup from printerShare
-      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
+      description: Revoke the specified group's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
@@ -3995,6 +3995,115 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedGroups/{group-id}/serviceProvisioningErrors':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get serviceProvisioningErrors property value
+      operationId: print.share.allowedGroup_ListServiceProvisioningError
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - createdDateTime desc
+                - isResolved
+                - isResolved desc
+                - serviceInstance
+                - serviceInstance desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - isResolved
+                - serviceInstance
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/print/shares/{printerShare-id}/allowedGroups/{group-id}/serviceProvisioningErrors/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.allowedGroup.ServiceProvisioningError_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/shares/{printerShare-id}/allowedGroups/$count':
     get:
       tags:
@@ -4022,7 +4131,7 @@ paths:
       tags:
         - print.printerShare
       summary: List allowedGroups
-      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+      description: Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
@@ -4147,7 +4256,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create allowedGroup for printerShare
-      description: Grant the specified group access to submit print jobs to the associated printerShare.
+      description: Grant the specified group access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
@@ -4174,7 +4283,7 @@ paths:
       tags:
         - print.printerShare
       summary: List allowedUsers
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
@@ -4572,7 +4681,7 @@ paths:
       tags:
         - print.printerShare
       summary: Delete allowedUser from printerShare
-      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
+      description: Revoke the specified user's access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
@@ -4716,6 +4825,115 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
+  '/print/shares/{printerShare-id}/allowedUsers/{user-id}/serviceProvisioningErrors':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get serviceProvisioningErrors property value
+      operationId: print.share.allowedUser_ListServiceProvisioningError
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - createdDateTime desc
+                - isResolved
+                - isResolved desc
+                - serviceInstance
+                - serviceInstance desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - isResolved
+                - serviceInstance
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/print/shares/{printerShare-id}/allowedUsers/{user-id}/serviceProvisioningErrors/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.allowedUser.ServiceProvisioningError_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/shares/{printerShare-id}/allowedUsers/$count':
     get:
       tags:
@@ -4743,7 +4961,7 @@ paths:
       tags:
         - print.printerShare
       summary: List allowedUsers
-      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+      description: Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0
@@ -4944,7 +5162,7 @@ paths:
       tags:
         - print.printerShare
       summary: Create allowedUser for printerShare
-      description: Grant the specified user access to submit print jobs to the associated printerShare.
+      description: Grant the specified user access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
@@ -5601,7 +5819,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
@@ -5688,7 +5906,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action abort
-      description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
+      description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
@@ -5734,7 +5952,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action cancel
-      description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
+      description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
@@ -5767,7 +5985,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action redirect
-      description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
@@ -5818,7 +6036,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action start
-      description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.'
+      description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
@@ -6415,7 +6633,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: List taskDefinitions
-      description: 'Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0
@@ -6484,7 +6702,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create printTaskDefinition
-      description: 'Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0
@@ -6511,7 +6729,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get printTaskDefinition
-      description: 'Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0
@@ -6567,7 +6785,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update printTaskDefinition
-      description: 'Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0
@@ -6602,7 +6820,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Delete printTaskDefinition
-      description: 'Delete a taskDefinition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Delete a taskDefinition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0
@@ -6633,7 +6851,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: List tasks
-      description: 'Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
@@ -6744,7 +6962,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Get printTask
-      description: 'Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
@@ -6810,7 +7028,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Update printTask
-      description: 'Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      description: 'Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
@@ -7265,7 +7483,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format ''start-end'' (e.g. ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+          description: 'A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format ''start-end'' (for example ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
         uploadUrl:
           type: string
           description: The URL endpoint that accepts PUT requests for byte ranges of the file.
@@ -7643,7 +7861,7 @@ components:
               description: The name of the printer/printerShare.
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
+              description: Specifies whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
@@ -7865,7 +8083,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
+          description: Refers to the application name displayed in the Microsoft Entra admin center.
           nullable: true
         servicePrincipalId:
           type: string
@@ -7927,7 +8145,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8218,13 +8436,13 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -8239,11 +8457,11 @@ components:
               description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
-              description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -8251,7 +8469,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8271,7 +8489,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.'
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8346,10 +8564,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -8375,7 +8593,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8408,10 +8626,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -8425,7 +8643,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             provisionedPlans:
               type: array
@@ -8436,7 +8654,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -8452,7 +8670,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
               format: date-time
               nullable: true
             state:
@@ -8469,11 +8687,11 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
@@ -8551,7 +8769,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that were created by the user. Read-only. Nullable.
+              description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
             directReports:
               type: array
@@ -8594,7 +8812,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
               x-ms-navigationProperty: true
             scopedRoleMemberOf:
               type: array
@@ -9000,6 +9218,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceProvisioningErrorCollectionResponse:
+      title: Collection of microsoft.graph.serviceProvisioningError
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     StringCollectionResponse:
       title: Collection of string
       type: object
@@ -9301,7 +9532,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -9878,6 +10109,9 @@ components:
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.publicError'
+            isPersonalSite:
+              type: boolean
+              nullable: true
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             sharepointIds:
@@ -10013,7 +10247,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
-              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
+              description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
               x-ms-navigationProperty: true
             pages:
               type: array
@@ -10025,7 +10259,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
-              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection isn''t supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
               x-ms-navigationProperty: true
             sectionGroups:
               type: array
@@ -10265,7 +10499,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType is not federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this will be the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -10273,7 +10507,7 @@ components:
           nullable: true
         signInType:
           type: string
-          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Additional validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
+          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
           nullable: true
       additionalProperties:
         type: object
@@ -11662,6 +11896,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
               x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -11931,6 +12170,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
@@ -12847,11 +13087,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
               type: boolean
-              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+              description: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
               nullable: true
             isRemovable:
               type: boolean
-              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
+              description: 'True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You can''t remove ''My organization'' as a share recipient to a calendar.'
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -12984,7 +13224,7 @@ components:
           nullable: true
         joinUrl:
           type: string
-          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+          description: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
           nullable: true
         phones:
           type: array
@@ -12993,7 +13233,7 @@ components:
           description: All of the phone numbers associated with this conference.
         quickDial:
           type: string
-          description: The pre-formatted quickdial for this call.
+          description: The preformatted quick dial for this call.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -13715,7 +13955,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -14300,11 +14540,11 @@ components:
           properties:
             description:
               type: string
-              description: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+              description: The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
-              description: The name of the tag as it will appear to the user in Microsoft Teams.
+              description: The name of the tag as it appears to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
@@ -15976,6 +16216,35 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -15987,6 +16256,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -16053,7 +16323,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+              description: The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
               format: date-time
               nullable: true
             deviceTag:
@@ -16128,7 +16398,7 @@ components:
           properties:
             phoneNumber:
               type: string
-              description: 'The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.'
+              description: 'The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don''t match the required format.'
               nullable: true
             phoneType:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
@@ -17294,7 +17564,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -17385,7 +17655,7 @@ components:
           nullable: true
         hidden:
           type: boolean
-          description: 'If true, indicates that the list is not normally visible in the SharePoint user experience.'
+          description: 'If true, indicates that the list isn''t normally visible in the SharePoint user experience.'
           nullable: true
         template:
           type: string
@@ -17665,7 +17935,7 @@ components:
       properties:
         allowMultipleValues:
           type: boolean
-          description: Specifies whether the column will allow more than one value.
+          description: Specifies whether the column allows more than one value.
           nullable: true
         showFullyQualifiedName:
           type: boolean
@@ -19207,7 +19477,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
             unassignedOrderHint:
               type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task isn''t assigned to anyone, or if the orderHintsByAssignee dictionary doesn''t provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
               nullable: true
           additionalProperties:
             type: object
@@ -19313,7 +19583,7 @@ components:
           nullable: true
         mediaType:
           type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
           nullable: true
         previewImageUrl:
           type: string
@@ -19329,7 +19599,7 @@ components:
           nullable: true
         type:
           type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
           nullable: true
       additionalProperties:
         type: object
@@ -19346,7 +19616,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time.For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -19521,7 +19791,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -19555,7 +19825,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             enrollmentProfileName:
               type: string
@@ -19613,7 +19883,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
               nullable: true
             memberOf:
               type: array
@@ -20178,7 +20448,7 @@ components:
               description: Indicates whether the last column contains special formatting.
             legacyId:
               type: string
-              description: Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+              description: Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
               nullable: true
             name:
               type: string
@@ -20201,7 +20471,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -21291,7 +21561,7 @@ components:
           nullable: true
         id:
           type: string
-          description: The id of the user who shared the item.
+          description: The ID of the user who shared the item.
           nullable: true
       additionalProperties:
         type: object
@@ -21475,7 +21745,7 @@ components:
               nullable: true
             contentType:
               type: string
-              description: 'Write only. Content type. sicj as image/png, image/jpg.'
+              description: 'Write only. Content type. such as image/png, image/jpg.'
               nullable: true
           additionalProperties:
             type: object
@@ -21506,7 +21776,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The display name of the attachment. This doesn't need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -22075,7 +22345,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean value the represents the visibility of a chart title object.
+              description: A boolean value that represents the visibility of a chart title object.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitleFormat'
           additionalProperties:
@@ -22239,7 +22509,7 @@ components:
               nullable: true
             color:
               type: string
-              description: 'HTML color code representation of the text color. E.g. #FF0000 represents Red.'
+              description: 'HTML color code representation of the text color. for example #FF0000 represents Red.'
               nullable: true
             italic:
               type: boolean
@@ -22247,11 +22517,11 @@ components:
               nullable: true
             name:
               type: string
-              description: Font name (e.g. 'Calibri')
+              description: Font name (for example 'Calibri')
               nullable: true
             size:
               type: number
-              description: Size of the font (e.g. 11)
+              description: Size of the font (for example 11)
               format: double
               nullable: true
             underline:
@@ -22471,6 +22741,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.groupCollectionResponse'
+    microsoft.graph.serviceProvisioningErrorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceProvisioningErrorCollectionResponse'
     StringCollectionResponse:
       description: Retrieved collection
       content:

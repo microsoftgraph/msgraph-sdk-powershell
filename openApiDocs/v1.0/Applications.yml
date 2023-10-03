@@ -11,7 +11,7 @@ paths:
       tags:
         - applications.application
       summary: List applications
-      description: Get the list of applications in this organization.
+      description: Get the list of applications in this organization. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0
@@ -211,7 +211,7 @@ paths:
       tags:
         - applications.application
       summary: Create application
-      description: Create a new application object.
+      description: Create a new application object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0
@@ -238,7 +238,7 @@ paths:
       tags:
         - applications.application
       summary: Get application
-      description: Get the properties and relationships of an application object.
+      description: Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
@@ -345,7 +345,7 @@ paths:
       tags:
         - applications.application
       summary: Update application
-      description: Update the properties of an application object.
+      description: Update the properties of an application object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
@@ -380,7 +380,7 @@ paths:
       tags:
         - applications.application
       summary: Delete application
-      description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
@@ -495,7 +495,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Remove appliesTo
-      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
+      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
@@ -615,7 +615,7 @@ paths:
       tags:
         - applications.appManagementPolicy
       summary: Assign appliesTo
-      description: Assign an appManagementPolicy policy object to an application or service principal object. The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting. Only one policy object can be assigned to an application or service principal.
+      description: Assign an appManagementPolicy policy object to an application or service principal object. The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting. Only one policy object can be assigned to an application or service principal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-1.0
@@ -693,7 +693,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: List extensionProperties (directory extensions)
-      description: 'Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.'
+      description: 'Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
@@ -780,7 +780,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Create extensionProperty (directory extension)
-      description: 'Create a new directory extension definition, represented by an extensionProperty object.'
+      description: 'Create a new directory extension definition, represented by an extensionProperty object. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
@@ -816,7 +816,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperty (directory extension)
-      description: Read a directory extension definition represented by an extensionProperty object.
+      description: Read a directory extension definition represented by an extensionProperty object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
@@ -921,7 +921,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Delete extensionProperty (directory extension)
-      description: Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
+      description: Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD). This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
@@ -982,7 +982,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: List federatedIdentityCredentials
-      description: Get a list of the federatedIdentityCredential objects and their properties.
+      description: Get a list of the federatedIdentityCredential objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
@@ -1066,7 +1066,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Create federatedIdentityCredential
-      description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
+      description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
@@ -1102,7 +1102,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Get federatedIdentityCredential
-      description: Read the properties and relationships of a federatedIdentityCredential object.
+      description: Read the properties and relationships of a federatedIdentityCredential object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
@@ -1167,7 +1167,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Update federatedIdentityCredential
-      description: Update the properties of a federatedIdentityCredential object.
+      description: Update the properties of a federatedIdentityCredential object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
@@ -1210,7 +1210,7 @@ paths:
       tags:
         - applications.federatedIdentityCredential
       summary: Delete federatedIdentityCredential
-      description: Delete a federatedIdentityCredential object from an application.
+      description: Delete a federatedIdentityCredential object from an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
@@ -1496,7 +1496,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addKey
-      description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.'
+      description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
@@ -1541,7 +1541,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addPassword
-      description: Adds a strong password or secret to an application.
+      description: Adds a strong password or secret to an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
@@ -1582,7 +1582,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
@@ -1690,7 +1690,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -1746,7 +1746,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
+      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
@@ -1802,7 +1802,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
+      description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
@@ -1843,7 +1843,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removePassword
-      description: Remove a password from an application.
+      description: Remove a password from an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
@@ -1882,7 +1882,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -1911,7 +1911,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action setVerifiedPublisher
-      description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
+      description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
@@ -1948,7 +1948,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action unsetVerifiedPublisher
-      description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
+      description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
@@ -2056,7 +2056,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Remove application owner
-      description: 'Remove an owner from an application. As a recommended best practice, apps should have at least two owners.'
+      description: 'Remove an owner from an application. As a recommended best practice, apps should have at least two owners. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
@@ -2459,7 +2459,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Add owner
-      description: Add an owner to an application by posting to the owners collection.
+      description: Add an owner to an application by posting to the owners collection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0
@@ -3038,7 +3038,7 @@ paths:
       tags:
         - applications.synchronization
       summary: List synchronization jobs
-      description: List existing jobs for a given application instance (service principal).
+      description: List existing jobs for a given application instance (service principal). This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
@@ -3121,7 +3121,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create synchronizationJob
-      description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+      description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
@@ -3157,7 +3157,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get synchronizationJob
-      description: Retrieve the existing synchronization job and its properties.
+      description: Retrieve the existing synchronization job and its properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
@@ -3262,7 +3262,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete synchronizationJob
-      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
+      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
@@ -3301,7 +3301,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action pause
-      description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
+      description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
@@ -3334,7 +3334,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action provisionOnDemand
-      description: 'Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. '
+      description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
@@ -3385,7 +3385,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action restart
-      description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
+      description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
@@ -3430,7 +3430,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action start
-      description: 'Start an existing synchronization job. If the job is in a paused state, it will continue processing changes from the point where it was paused. If the job is in quarantine, the quarantine status will be cleared. Do not create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
+      description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
@@ -3463,7 +3463,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action validateCredentials
-      description: Validate that the credentials are valid in the tenant.
+      description: Validate that the credentials are valid in the tenant. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
@@ -3520,7 +3520,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get synchronizationSchema
-      description: Retrieve the schema for a given synchronization job or template.
+      description: Retrieve the schema for a given synchronization job or template. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
@@ -3955,7 +3955,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -4196,7 +4196,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
+      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -4317,7 +4317,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action acquireAccessToken
-      description: Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
+      description: Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
@@ -4413,7 +4413,7 @@ paths:
       tags:
         - applications.synchronization
       summary: List existing synchronization templates
-      description: List the synchronization templates associated with a given application or service principal.
+      description: List the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
@@ -4534,7 +4534,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
-      description: Pre-configured synchronization settings for a particular application.
+      description: Preconfigured synchronization settings for a particular application.
       operationId: application.synchronization_GetTemplate
       parameters:
         - name: application-id
@@ -4599,7 +4599,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update synchronizationTemplate
-      description: Update (override) the synchronization template associated with a given application.
+      description: Update (override) the synchronization template associated with a given application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
@@ -5105,7 +5105,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -5346,7 +5346,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
+      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -5422,7 +5422,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: List assigned tokenIssuancePolicies
-      description: List the tokenIssuancePolicy objects that are assigned to an application.
+      description: List the tokenIssuancePolicy objects that are assigned to an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
@@ -5509,7 +5509,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Remove tokenIssuancePolicy
-      description: Remove a tokenIssuancePolicy from an application.
+      description: Remove a tokenIssuancePolicy from an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
@@ -5577,7 +5577,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: List assigned tokenIssuancePolicies
-      description: List the tokenIssuancePolicy objects that are assigned to an application.
+      description: List the tokenIssuancePolicy objects that are assigned to an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
@@ -5632,7 +5632,7 @@ paths:
       tags:
         - applications.tokenIssuancePolicy
       summary: Assign tokenIssuancePolicy
-      description: Assign a tokenIssuancePolicy to an application.
+      description: Assign a tokenIssuancePolicy to an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
@@ -5659,7 +5659,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
+      description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
@@ -5746,7 +5746,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Remove tokenLifetimePolicy
-      description: Remove a tokenLifetimePolicy from an application.
+      description: Remove a tokenLifetimePolicy from an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
@@ -5814,7 +5814,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
+      description: List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
@@ -5869,7 +5869,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Assign tokenLifetimePolicy
-      description: Assign a tokenLifetimePolicy to an application. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
+      description: Assign a tokenLifetimePolicy to an application. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
@@ -5896,7 +5896,7 @@ paths:
       tags:
         - applications.application
       summary: Get application
-      description: Get the properties and relationships of an application object.
+      description: Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0
@@ -6003,7 +6003,7 @@ paths:
       tags:
         - applications.application
       summary: Update application
-      description: Update the properties of an application object.
+      description: Update the properties of an application object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
@@ -6038,7 +6038,7 @@ paths:
       tags:
         - applications.application
       summary: Delete application
-      description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.'
+      description: 'Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0
@@ -6277,7 +6277,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
+      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -6325,7 +6325,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -6378,7 +6378,7 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
@@ -6418,7 +6418,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: List applicationTemplates
-      description: Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
+      description: Retrieve a list of applicationTemplate objects from the Azure AD application gallery. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0
@@ -6504,7 +6504,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: Get applicationTemplate
-      description: Retrieve the properties of an applicationTemplate object.
+      description: Retrieve the properties of an applicationTemplate object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0
@@ -6565,7 +6565,7 @@ paths:
       tags:
         - applicationTemplates.Actions
       summary: Invoke action instantiate
-      description: 'Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.'
+      description: 'Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
@@ -6724,7 +6724,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Grant an appRoleAssignment to a group
-      description: 'Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.'
+      description: 'Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
@@ -6874,7 +6874,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Delete appRoleAssignment
-      description: Deletes an appRoleAssignment that a group has been granted.
+      description: Deletes an appRoleAssignment that a group has been granted. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
@@ -6945,7 +6945,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: List servicePrincipals
-      description: Retrieve a list of servicePrincipal objects.
+      description: Retrieve a list of servicePrincipal objects. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0
@@ -7155,7 +7155,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Create servicePrincipal
-      description: Create a new servicePrincipal object.
+      description: Create a new servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0
@@ -7182,7 +7182,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get servicePrincipal
-      description: Retrieve the properties and relationships of a servicePrincipal object.
+      description: Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
@@ -7334,7 +7334,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete servicePrincipal
-      description: Delete a servicePrincipal object.
+      description: Delete a servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
@@ -7513,7 +7513,7 @@ paths:
       tags:
         - servicePrincipals.appManagementPolicy
       summary: Remove appliesTo
-      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
+      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
@@ -7574,7 +7574,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: List appRoleAssignments granted for a service principal
-      description: 'Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.'
+      description: 'Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
@@ -7667,7 +7667,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Grant an appRoleAssignment for a service principal
-      description: 'Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:'
+      description: 'Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
@@ -7807,7 +7807,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete appRoleAssignedTo
-      description: 'Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.'
+      description: 'Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
@@ -7971,7 +7971,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Grant an appRoleAssignment to a service principal
-      description: 'Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:'
+      description: 'Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
@@ -8121,7 +8121,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete appRoleAssignment
-      description: Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
+      description: Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
@@ -8192,7 +8192,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: List assigned claimsMappingPolicy
-      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
@@ -8279,7 +8279,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Remove claimsMappingPolicy
-      description: Remove a claimsMappingPolicy from a servicePrincipal.
+      description: Remove a claimsMappingPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
@@ -8347,7 +8347,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: List assigned claimsMappingPolicy
-      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
@@ -8402,7 +8402,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Assign claimsMappingPolicy
-      description: Assign a claimsMappingPolicy to a servicePrincipal.
+      description: Assign a claimsMappingPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
@@ -8727,7 +8727,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: List delegatedPermissionClassifications collection of servicePrincipal
-      description: Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+      description: Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
@@ -8805,7 +8805,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Create delegatedPermissionClassification
-      description: Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+      description: Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
@@ -8939,7 +8939,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Delete delegatedPermissionClassification
-      description: Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
+      description: Deletes a delegatedPermissionClassification which had previously been set for a delegated permission. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
@@ -9544,7 +9544,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: List assigned homeRealmDiscoveryPolicy
-      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -9631,7 +9631,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Remove homeRealmDiscoveryPolicy
-      description: Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+      description: Remove a homeRealmDiscoveryPolicy from a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -9699,7 +9699,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: List assigned homeRealmDiscoveryPolicy
-      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -9754,7 +9754,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Assign homeRealmDiscoveryPolicy
-      description: Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+      description: Assign a homeRealmDiscoveryPolicy to a servicePrincipal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -10496,7 +10496,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addKey
-      description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.'
+      description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
@@ -10541,7 +10541,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addPassword
-      description: Add a strong password or secret to a servicePrincipal object.
+      description: Add a strong password or secret to a servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
@@ -10582,7 +10582,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addTokenSigningCertificate
-      description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object.  All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. When set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created."
+      description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with usage set to Sign.\n    + A public key object with usage set to Verify.\n+ The passwordCredentials object.  All the objects have the same value of customKeyIdentifier. The passwordCredential is used to open the PFX file (private key). It and the associated private key object have the same value of keyId. When set during creation through the displayName property, the subject of the certificate cannot be updated. The startDateTime is set to the same time the certificate is created using the action. The endDateTime can be up to three years after the certificate is created. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
@@ -10629,7 +10629,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
@@ -10737,7 +10737,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -10793,7 +10793,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles.'
+      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. Note: Only users and role-enabled groups can be members of directory roles. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
@@ -10849,7 +10849,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
+      description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
@@ -10890,7 +10890,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removePassword
-      description: Remove a password from a servicePrincipal object.
+      description: Remove a password from a servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
@@ -10929,7 +10929,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -10958,7 +10958,7 @@ paths:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
       summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.'
+      description: 'Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
@@ -12097,7 +12097,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Remove service principal owner
-      description: 'Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.'
+      description: 'Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
@@ -12500,7 +12500,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: 'servicePrincipal: Add owner'
-      description: 'Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.'
+      description: 'Use this API to add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
@@ -13079,7 +13079,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: List synchronization jobs
-      description: List existing jobs for a given application instance (service principal).
+      description: List existing jobs for a given application instance (service principal). This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0
@@ -13162,7 +13162,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create synchronizationJob
-      description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+      description: Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0
@@ -13198,7 +13198,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get synchronizationJob
-      description: Retrieve the existing synchronization job and its properties.
+      description: Retrieve the existing synchronization job and its properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
@@ -13303,7 +13303,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete synchronizationJob
-      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
+      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
@@ -13342,7 +13342,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action pause
-      description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.'
+      description: 'Temporarily stop a running synchronization job. All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-pause?view=graph-rest-1.0
@@ -13375,7 +13375,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action provisionOnDemand
-      description: 'Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. '
+      description: Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0
@@ -13426,7 +13426,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action restart
-      description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.'
+      description: 'Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0
@@ -13471,7 +13471,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action start
-      description: 'Start an existing synchronization job. If the job is in a paused state, it will continue processing changes from the point where it was paused. If the job is in quarantine, the quarantine status will be cleared. Do not create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. '
+      description: 'Start an existing synchronization job. If the job is in a paused state, it continues processing changes from the point where it was paused. If the job is in quarantine, the quarantine status is cleared. Don''t create scripts to call the start job continuously while it''s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine.  This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-1.0
@@ -13504,7 +13504,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action validateCredentials
-      description: Validate that the credentials are valid in the tenant.
+      description: Validate that the credentials are valid in the tenant. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0
@@ -13561,7 +13561,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get synchronizationSchema
-      description: Retrieve the schema for a given synchronization job or template.
+      description: Retrieve the schema for a given synchronization job or template. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-get?view=graph-rest-1.0
@@ -13996,7 +13996,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -14237,7 +14237,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
+      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -14358,7 +14358,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action acquireAccessToken
-      description: Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
+      description: Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0
@@ -14454,7 +14454,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: List existing synchronization templates
-      description: List the synchronization templates associated with a given application or service principal.
+      description: List the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0
@@ -14575,7 +14575,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
-      description: Pre-configured synchronization settings for a particular application.
+      description: Preconfigured synchronization settings for a particular application.
       operationId: servicePrincipal.synchronization_GetTemplate
       parameters:
         - name: servicePrincipal-id
@@ -14640,7 +14640,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update synchronizationTemplate
-      description: Update (override) the synchronization template associated with a given application.
+      description: Update (override) the synchronization template associated with a given application. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
@@ -15146,7 +15146,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action discover
-      description: 'Discover the latest schema definition for provisioning to an application. '
+      description: Discover the latest schema definition for provisioning to an application.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0
@@ -15387,7 +15387,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action parseExpression
-      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.'
+      description: 'Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0
@@ -16518,7 +16518,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get servicePrincipal
-      description: Retrieve the properties and relationships of a servicePrincipal object.
+      description: Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0
@@ -16670,7 +16670,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete servicePrincipal
-      description: Delete a servicePrincipal object.
+      description: Delete a servicePrincipal object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0
@@ -16911,7 +16911,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
+      description: 'Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
@@ -16959,7 +16959,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:'
+      description: 'Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -17012,7 +17012,7 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
@@ -17155,7 +17155,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Grant an appRoleAssignment to a user
-      description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:'
+      description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
@@ -17305,7 +17305,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Delete appRoleAssignment
-      description: Delete an appRoleAssignment that has been granted to a user.
+      description: Delete an appRoleAssignment that has been granted to a user. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
@@ -17404,7 +17404,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.'
+              description: 'The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.'
               format: date-time
               nullable: true
             defaultRedirectUri:
@@ -17420,7 +17420,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             groupMembershipClaims:
               type: string
@@ -17841,7 +17841,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             homepage:
               type: string
@@ -18038,13 +18038,13 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -18059,11 +18059,11 @@ components:
               description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
-              description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The city where the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -18071,7 +18071,7 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18091,7 +18091,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.'
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18166,10 +18166,10 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned or the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -18195,7 +18195,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -18228,10 +18228,10 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -18245,7 +18245,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             provisionedPlans:
               type: array
@@ -18256,7 +18256,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             securityIdentifier:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
@@ -18272,7 +18272,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.'
               format: date-time
               nullable: true
             state:
@@ -18289,11 +18289,11 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
@@ -18371,7 +18371,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that were created by the user. Read-only. Nullable.
+              description: Directory objects that the user created. Read-only. Nullable.
               x-ms-navigationProperty: true
             directReports:
               type: array
@@ -18414,7 +18414,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
               x-ms-navigationProperty: true
             scopedRoleMemberOf:
               type: array
@@ -18600,7 +18600,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-              description: Pre-configured synchronization settings for a particular application.
+              description: Preconfigured synchronization settings for a particular application.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -18727,7 +18727,7 @@ components:
               description: Whether this object is read-only.
             version:
               type: string
-              description: Read only value that indicates version discovered. null if discovery has not yet occurred.
+              description: Read only value that indicates version discovered. null if discovery hasn't yet occurred.
               nullable: true
           additionalProperties:
             type: object
@@ -18961,11 +18961,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
             permissionId:
               type: string
-              description: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+              description: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
               nullable: true
             permissionName:
               type: string
-              description: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+              description: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
               nullable: true
           additionalProperties:
             type: object
@@ -18981,7 +18981,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             visibility:
               type: string
@@ -19071,7 +19071,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -19471,7 +19471,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.preAuthorizedApplication'
-          description: 'Lists the client applications that are pre-authorized with the specified delegated permissions to access this application''s APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.'
+          description: 'Lists the client applications that are preauthorized with the specified delegated permissions to access this application''s APIs. Users aren''t required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.'
         requestedAccessTokenVersion:
           maximum: 2147483647
           minimum: -2147483648
@@ -19512,7 +19512,7 @@ components:
           nullable: true
         value:
           type: string
-          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..'
+          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren''t allowed. May not begin with ..'
           nullable: true
       additionalProperties:
         type: object
@@ -19528,7 +19528,7 @@ components:
         certificationExpirationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The timestamp when the current certification for the application will expire.
+          description: The timestamp when the current certification for the application expires.
           format: date-time
           nullable: true
         isCertifiedByMicrosoft:
@@ -19715,7 +19715,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.implicitGrantSettings'
         logoutUrl:
           type: string
-          description: 'Specifies the URL that will be used by Microsoft''s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.'
+          description: 'Specifies the URL that is used by Microsoft''s authorization service to log out a user using front-channel, back-channel or SAML logout protocols.'
           nullable: true
         redirectUris:
           type: array
@@ -19783,7 +19783,7 @@ components:
           format: uuid
         isEnabled:
           type: boolean
-          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.'
+          description: 'When you create or update a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.'
         origin:
           type: string
           nullable: true
@@ -19801,7 +19801,7 @@ components:
           nullable: true
         value:
           type: string
-          description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..'
+          description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren''t allowed. May not begin with ..'
           nullable: true
       additionalProperties:
         type: object
@@ -19950,7 +19950,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType is not federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this will be the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -19958,7 +19958,7 @@ components:
           nullable: true
         signInType:
           type: string
-          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Additional validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
+          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
           nullable: true
       additionalProperties:
         type: object
@@ -21032,6 +21032,9 @@ components:
               nullable: true
             error:
               $ref: '#/components/schemas/microsoft.graph.publicError'
+            isPersonalSite:
+              type: boolean
+              nullable: true
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
             sharepointIds:
@@ -21622,7 +21625,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
-              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
+              description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
               x-ms-navigationProperty: true
             pages:
               type: array
@@ -21634,7 +21637,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
-              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection isn''t supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
               x-ms-navigationProperty: true
             sectionGroups:
               type: array
@@ -21834,6 +21837,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
+              x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -22167,13 +22175,13 @@ components:
         expiration:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'Date and time when this job expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of one month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -22326,7 +22334,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
-          description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+          description: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         groupFilter:
           $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
@@ -22337,7 +22345,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
-          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.'
+          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn''t be changed.'
         name:
           type: string
           description: Human-readable name of the synchronization rule. Not nullable.
@@ -22527,7 +22535,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
-          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn''t Function, this property is null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:
@@ -23334,7 +23342,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -23394,11 +23402,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
               type: boolean
-              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+              description: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
               nullable: true
             isRemovable:
               type: boolean
-              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
+              description: 'True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You can''t remove ''My organization'' as a share recipient to a calendar.'
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -23544,7 +23552,7 @@ components:
           nullable: true
         joinUrl:
           type: string
-          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+          description: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
           nullable: true
         phones:
           type: array
@@ -23553,7 +23561,7 @@ components:
           description: All of the phone numbers associated with this conference.
         quickDial:
           type: string
-          description: The pre-formatted quickdial for this call.
+          description: The preformatted quick dial for this call.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -24380,7 +24388,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -26004,6 +26012,35 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -26015,6 +26052,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -26081,7 +26119,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+              description: The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
               format: date-time
               nullable: true
             deviceTag:
@@ -26156,7 +26194,7 @@ components:
           properties:
             phoneNumber:
               type: string
-              description: 'The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.'
+              description: 'The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don''t match the required format.'
               nullable: true
             phoneType:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
@@ -26728,11 +26766,11 @@ components:
           properties:
             description:
               type: string
-              description: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+              description: The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
-              description: The name of the tag as it will appear to the user in Microsoft Teams.
+              description: The name of the tag as it appears to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
@@ -27387,6 +27425,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true
@@ -27448,7 +27487,7 @@ components:
               description: The name of the printer/printerShare.
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
+              description: Specifies whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
@@ -28557,7 +28596,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -28648,7 +28687,7 @@ components:
           nullable: true
         hidden:
           type: boolean
-          description: 'If true, indicates that the list is not normally visible in the SharePoint user experience.'
+          description: 'If true, indicates that the list isn''t normally visible in the SharePoint user experience.'
           nullable: true
         template:
           type: string
@@ -28887,7 +28926,7 @@ components:
       properties:
         allowMultipleValues:
           type: boolean
-          description: Specifies whether the column will allow more than one value.
+          description: Specifies whether the column allows more than one value.
           nullable: true
         showFullyQualifiedName:
           type: boolean
@@ -29707,7 +29746,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
             unassignedOrderHint:
               type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task isn''t assigned to anyone, or if the orderHintsByAssignee dictionary doesn''t provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
               nullable: true
           additionalProperties:
             type: object
@@ -29813,7 +29852,7 @@ components:
           nullable: true
         mediaType:
           type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
           nullable: true
         previewImageUrl:
           type: string
@@ -29829,7 +29868,7 @@ components:
           nullable: true
         type:
           type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
           nullable: true
       additionalProperties:
         type: object
@@ -29846,7 +29885,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time.For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -30143,7 +30182,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -30177,7 +30216,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.'
               nullable: true
             enrollmentProfileName:
               type: string
@@ -30235,7 +30274,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
               nullable: true
             memberOf:
               type: array
@@ -31055,12 +31094,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter isn''t satisfied any longer, such object will get deprovisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         inputFilterGroups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter, then it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get deprovisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
       additionalProperties:
         type: object
     microsoft.graph.objectDefinitionMetadata:
@@ -31744,7 +31783,7 @@ components:
               description: Indicates whether the last column contains special formatting.
             legacyId:
               type: string
-              description: Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+              description: Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
               nullable: true
             name:
               type: string
@@ -31767,7 +31806,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -32644,7 +32683,7 @@ components:
           nullable: true
         id:
           type: string
-          description: The id of the user who shared the item.
+          description: The ID of the user who shared the item.
           nullable: true
       additionalProperties:
         type: object
@@ -32881,7 +32920,7 @@ components:
               nullable: true
             contentType:
               type: string
-              description: 'Write only. Content type. sicj as image/png, image/jpg.'
+              description: 'Write only. Content type. such as image/png, image/jpg.'
               nullable: true
           additionalProperties:
             type: object
@@ -33023,7 +33062,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The display name of the attachment. This doesn't need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -34679,7 +34718,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
+          description: Refers to the application name displayed in the Microsoft Entra admin center.
           nullable: true
         servicePrincipalId:
           type: string
@@ -34853,7 +34892,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean value the represents the visibility of a chart title object.
+              description: A boolean value that represents the visibility of a chart title object.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitleFormat'
           additionalProperties:
@@ -35038,7 +35077,7 @@ components:
               nullable: true
             color:
               type: string
-              description: 'HTML color code representation of the text color. E.g. #FF0000 represents Red.'
+              description: 'HTML color code representation of the text color. for example #FF0000 represents Red.'
               nullable: true
             italic:
               type: boolean
@@ -35046,11 +35085,11 @@ components:
               nullable: true
             name:
               type: string
-              description: Font name (e.g. 'Calibri')
+              description: Font name (for example 'Calibri')
               nullable: true
             size:
               type: number
-              description: Size of the font (e.g. 11)
+              description: Size of the font (for example 11)
               format: double
               nullable: true
             underline:

@@ -77,7 +77,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
@@ -186,7 +186,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingBusiness
-      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.'
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
@@ -213,7 +213,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingBusiness
-      description: Get the properties and relationships of a bookingBusiness object.
+      description: Get the properties and relationships of a bookingBusiness object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
@@ -289,7 +289,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingbusiness
-      description: Update the properties of a bookingBusiness object.
+      description: Update the properties of a bookingBusiness object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
@@ -324,7 +324,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete bookingBusiness
-      description: Delete a bookingBusiness object.
+      description: Delete a bookingBusiness object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
@@ -355,7 +355,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List appointments
-      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
+      description: Get a list of bookingAppointment objects for the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
@@ -496,7 +496,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingAppointment
-      description: Create a new bookingAppointment for the specified bookingBusiness.
+      description: Create a new bookingAppointment for the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
@@ -532,7 +532,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingAppointment
-      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC.
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The startDateTime and endDateTime properties are always returned in UTC. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
@@ -616,7 +616,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingAppointment
-      description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
+      description: Update the properties of a bookingAppointment object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
@@ -659,7 +659,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete bookingAppointment
-      description: Delete a bookingAppointment in the specified bookingBusiness.
+      description: Delete a bookingAppointment in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
@@ -698,7 +698,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
-      description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+      description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
@@ -1126,7 +1126,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action cancel
-      description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+      description: Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
@@ -1194,7 +1194,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List customers
-      description: Get a list of bookingCustomer objects of a business.
+      description: Get a list of bookingCustomer objects of a business. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
@@ -1263,7 +1263,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingCustomer
-      description: Create a new bookingCustomer object.
+      description: Create a new bookingCustomer object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
@@ -1299,7 +1299,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingCustomer
-      description: Get the properties and relationships of a bookingCustomer object.
+      description: Get the properties and relationships of a bookingCustomer object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
@@ -1359,7 +1359,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingCustomer
-      description: Update the properties of a bookingCustomer object.
+      description: Update the properties of a bookingCustomer object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
@@ -1402,7 +1402,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete bookingCustomer
-      description: Delete the specified bookingCustomer object.
+      description: Delete the specified bookingCustomer object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
@@ -1463,7 +1463,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List customQuestions
-      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
+      description: Get the bookingCustomQuestion resources associated with a bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
@@ -1541,7 +1541,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingCustomQuestion
-      description: Create a new bookingCustomQuestion object.
+      description: Create a new bookingCustomQuestion object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
@@ -1577,7 +1577,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingCustomQuestion
-      description: Read the properties and relationships of a bookingCustomQuestion object.
+      description: Read the properties and relationships of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
@@ -1640,7 +1640,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingCustomQuestion
-      description: Update the properties of a bookingCustomQuestion object.
+      description: Update the properties of a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
@@ -1683,7 +1683,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete bookingCustomQuestion
-      description: Delete a bookingCustomQuestion object.
+      description: Delete a bookingCustomQuestion object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
@@ -1744,7 +1744,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action getStaffAvailability
-      description: Get the availability information of staff members of a Microsoft Bookings calendar.
+      description: Get the availability information of staff members of a Microsoft Bookings calendar. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
@@ -1804,7 +1804,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action publish
-      description: 'Make the scheduling page of a business available to external customers. Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.'
+      description: 'Make the scheduling page of a business available to external customers. Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
@@ -1829,7 +1829,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action unpublish
-      description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null.'
+      description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and the publicUrl property to null. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
@@ -1854,7 +1854,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List services
-      description: Get a list of bookingService objects in the specified bookingBusiness.
+      description: Get a list of bookingService objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
@@ -1986,7 +1986,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingService
-      description: Create a new bookingService for the specified bookingBusiness.
+      description: Create a new bookingService for the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
@@ -2022,7 +2022,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingService
-      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
@@ -2103,7 +2103,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingservice
-      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
+      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters, such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -2146,7 +2146,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete bookingService
-      description: Delete a bookingService object in the specified bookingBusiness.
+      description: Delete a bookingService object in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
@@ -2207,7 +2207,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: List staffMembers
-      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
+      description: Get a list of bookingStaffMember objects in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
@@ -2276,7 +2276,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create bookingStaffMember
-      description: Create a new bookingStaffMember in the specified bookingBusiness.
+      description: Create a new bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
@@ -2312,7 +2312,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Get bookingStaffMember
-      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
@@ -2372,7 +2372,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Update bookingstaffmember
-      description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
+      description: Update the properties of a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
@@ -2415,7 +2415,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Delete bookingStaffMember
-      description: Delete a bookingStaffMember in the specified bookingBusiness.
+      description: Delete a bookingStaffMember in the specified bookingBusiness. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
@@ -2490,7 +2490,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: List bookingCurrencies
-      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
@@ -2577,7 +2577,7 @@ paths:
       tags:
         - solutions.bookingCurrency
       summary: Get bookingCurrency
-      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
@@ -2824,7 +2824,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerInformationBase'
-              description: A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+              description: A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             customerTimeZone:
               type: string
               description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
@@ -2859,7 +2859,7 @@ components:
               format: int32
             optOutOfCustomerEmail:
               type: boolean
-              description: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+              description: If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2893,7 +2893,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.location'
             serviceName:
               type: string
-              description: 'The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.'
+              description: 'The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it''s computed from the service associated with the appointment by the serviceId property.'
             serviceNotes:
               type: string
               description: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
@@ -3269,7 +3269,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
         serviceId:
           type: string
-          description: 'Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.'
+          description: 'Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.'
           nullable: true
         startDateTime:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -3286,7 +3286,7 @@ components:
           description: The ID of the custom question.
         questionId:
           type: string
-          description: Indicates whether it is mandatory to answer the custom question.
+          description: Indicates whether it's mandatory to answer the custom question.
       additionalProperties:
         type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -3500,6 +3500,7 @@ components:
           type: string
         message:
           type: string
+          x-ms-primary-error-message: true
         target:
           type: string
           nullable: true

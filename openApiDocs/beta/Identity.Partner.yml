@@ -520,8 +520,6 @@ paths:
                 - accessDetails desc
                 - activatedDateTime
                 - activatedDateTime desc
-                - autoExtendDuration
-                - autoExtendDuration desc
                 - createdDateTime
                 - createdDateTime desc
                 - customer
@@ -550,7 +548,6 @@ paths:
                 - id
                 - accessDetails
                 - activatedDateTime
-                - autoExtendDuration
                 - createdDateTime
                 - customer
                 - displayName
@@ -644,7 +641,6 @@ paths:
                 - id
                 - accessDetails
                 - activatedDateTime
-                - autoExtendDuration
                 - createdDateTime
                 - customer
                 - displayName
@@ -1654,11 +1650,6 @@ components:
               description: The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
               format: date-time
               nullable: true
-            autoExtendDuration:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              format: duration
-              nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -1669,11 +1660,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.delegatedAdminRelationshipCustomerParticipant'
             displayName:
               type: string
-              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+              description: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+              description: The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
               format: duration
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
