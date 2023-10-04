@@ -87,12 +87,36 @@ New-Item -Path $outDeps -ItemType Directory | out-null
 New-Item -Path $outCore -ItemType Directory | out-null
 New-Item -Path $outDesktop -ItemType Directory | out-null
 
+#Process markdown xml help
+Write-Host -ForegroundColor Green 'Generate doc files ...'
+$GenerateDocFilesS1 = (Join-Path $PSScriptRoot "generate-doc-files.ps1")
+& $GenerateDocFilesS1
+
+Write-Host -ForegroundColor Green 'Importing examples ...'
+$ImportExamplesAndDescriptionsPS1 = (Join-Path $PSScriptRoot "import-examples.ps1")
+& $ImportExamplesAndDescriptionsPS1
+
+Write-Host -ForegroundColor Green 'Importing synopsis and descriptions ...'
+$ImportSynopsisAndDescriptionsPS1 = (Join-Path $PSScriptRoot "import-synopsis-and-descriptions.ps1")
+& $ImportSynopsisAndDescriptionsPS1
+
+Write-Host -ForegroundColor Green 'Updating markdown files ...'
+$UpdateMarkDownPS1 = (Join-Path $PSScriptRoot "update-markdown.ps1")
+& $UpdateMarkDownPS1
+
+Write-Host -ForegroundColor Green 'Creating new xml based help file ...'
+$DocsPath = (Join-Path $PSScriptRoot "../docs/")
+New-ExternalHelp -Path $DocsPath -OutputPath $PSScriptRoot -Force
+
 # Copy manifest.
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
 
+#Copy markdown xml help
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.dll-Help.xml" -Recurse -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName-Help.xml" -Recurse -Destination $outDir
 # Copy custom commands.
 Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 

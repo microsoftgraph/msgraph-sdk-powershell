@@ -24,6 +24,7 @@ paths:
             items:
               enum:
                 - industryData
+                - authorizationSystems
                 - connections
               type: string
         - name: $expand
@@ -38,6 +39,7 @@ paths:
               enum:
                 - '*'
                 - industryData
+                - authorizationSystems
                 - connections
               type: string
       responses:
@@ -72,12 +74,335 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /external/authorizationSystems:
+    get:
+      tags:
+        - external.authorizationSystem
+      summary: Get authorizationSystems from external
+      operationId: external_ListAuthorizationSystem
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - authorizationSystemId
+                - authorizationSystemId desc
+                - authorizationSystemName
+                - authorizationSystemName desc
+                - authorizationSystemType
+                - authorizationSystemType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - authorizationSystemId
+                - authorizationSystemName
+                - authorizationSystemType
+                - dataCollectionInfo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - dataCollectionInfo
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.authorizationSystemCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.authorizationSystem
+      summary: Create new navigation property to authorizationSystems for external
+      operationId: external_CreateAuthorizationSystem
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/authorizationSystems/{authorizationSystem-id}':
+    get:
+      tags:
+        - external.authorizationSystem
+      summary: Get authorizationSystems from external
+      operationId: external_GetAuthorizationSystem
+      parameters:
+        - name: authorizationSystem-id
+          in: path
+          description: The unique identifier of authorizationSystem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationSystem
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - authorizationSystemId
+                - authorizationSystemName
+                - authorizationSystemType
+                - dataCollectionInfo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - dataCollectionInfo
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.authorizationSystem
+      summary: Update the navigation property authorizationSystems in external
+      operationId: external_UpdateAuthorizationSystem
+      parameters:
+        - name: authorizationSystem-id
+          in: path
+          description: The unique identifier of authorizationSystem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationSystem
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.authorizationSystem
+      summary: Delete navigation property authorizationSystems for external
+      operationId: external_DeleteAuthorizationSystem
+      parameters:
+        - name: authorizationSystem-id
+          in: path
+          description: The unique identifier of authorizationSystem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationSystem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/authorizationSystems/{authorizationSystem-id}/dataCollectionInfo':
+    get:
+      tags:
+        - external.authorizationSystem
+      summary: Get dataCollectionInfo from external
+      operationId: external.authorizationSystem_GetDataCollectionInfo
+      parameters:
+        - name: authorizationSystem-id
+          in: path
+          description: The unique identifier of authorizationSystem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationSystem
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - entitlements
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataCollectionInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.authorizationSystem
+      summary: Update the navigation property dataCollectionInfo in external
+      operationId: external.authorizationSystem_UpdateDataCollectionInfo
+      parameters:
+        - name: authorizationSystem-id
+          in: path
+          description: The unique identifier of authorizationSystem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationSystem
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.dataCollectionInfo'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.dataCollectionInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.authorizationSystem
+      summary: Delete navigation property dataCollectionInfo for external
+      operationId: external.authorizationSystem_DeleteDataCollectionInfo
+      parameters:
+        - name: authorizationSystem-id
+          in: path
+          description: The unique identifier of authorizationSystem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authorizationSystem
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /external/authorizationSystems/$count:
+    get:
+      tags:
+        - external.authorizationSystem
+      summary: Get the number of the resource
+      operationId: external.authorizationSystem_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /external/connections:
     get:
       tags:
         - external.externalConnection
       summary: List connections
-      description: Retrieve a list of externalConnections.
+      description: Retrieve a list of externalConnections. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
@@ -178,7 +503,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create connection
-      description: Create a new externalConnection.
+      description: Create a new externalConnection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
@@ -205,7 +530,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connection
-      description: Retrieve the properties and relationships of an externalConnection.
+      description: Retrieve the properties and relationships of an externalConnection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
@@ -277,7 +602,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update connection
-      description: Update the properties of an externalConnection.
+      description: Update the properties of an externalConnection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
@@ -312,7 +637,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalConnection
-      description: Delete an externalConnection.
+      description: Delete an externalConnection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
@@ -416,7 +741,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalGroup
-      description: Create a new externalGroup object.
+      description: Create a new externalGroup object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
@@ -551,7 +876,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalGroup
-      description: Delete an externalGroup object.
+      description: Delete an externalGroup object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -667,7 +992,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalGroupMember
-      description: Create a new externalGroupMember object.
+      description: Create a new externalGroupMember object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
@@ -824,7 +1149,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalGroupMember
-      description: Delete an externalGroupMember object.
+      description: Delete an externalGroupMember object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
@@ -923,7 +1248,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is supported in the following national cloud deployments.
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -1032,7 +1357,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It is not intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
+      description: Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
@@ -1136,7 +1461,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalItem
-      description: Delete an externalitem.
+      description: Delete an externalitem. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
@@ -1893,7 +2218,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connectionQuota
-      description: Retrieve the properties and relationships of a connectionQuota object.
+      description: Retrieve the properties and relationships of a connectionQuota object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
@@ -2004,7 +2329,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get schema
-      description: Retrieve the properties of a schema for an externalConnection.
+      description: Retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
@@ -2058,7 +2383,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
+      description: Update the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
@@ -2086,32 +2411,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - external.externalConnection
-      summary: Delete navigation property schema for external
-      operationId: external.connection_DeleteSchema
-      parameters:
-        - name: externalConnection-id
-          in: path
-          description: The unique identifier of externalConnection
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: externalConnection
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2190,11 +2489,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the dataConnector navigation property. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2257,7 +2556,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create industryDataConnector
-      description: Create a new industryDataConnector object.
+      description: Create a new industryDataConnector object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
@@ -2284,7 +2583,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get azureDataLakeConnector
-      description: Read the properties and relationships of an azureDataLakeConnector object.
+      description: Read the properties and relationships of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
@@ -2339,7 +2638,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object.
+      description: Update the properties of an azureDataLakeConnector object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
@@ -2374,7 +2673,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete industryDataConnector
-      description: Delete an industryDataConnector object.
+      description: Delete an industryDataConnector object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
@@ -2405,7 +2704,7 @@ paths:
       tags:
         - external.Actions
       summary: Invoke action validate
-      description: Perform validations applicable for the specific instance of the data connector.
+      description: Perform validations applicable for the specific instance of the data connector. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
@@ -2496,11 +2795,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFileFlows
-      description: Get a list of the inboundFileFlow objects and their properties.
+      summary: List inboundFlows
+      description: Get a list of the inboundFlow objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2577,7 +2876,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create inboundFlow
-      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:'
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow: This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
@@ -2603,11 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFileFlow
-      description: Read the properties and relationships of an inboundFileFlow object.
+      summary: Get inboundFlow
+      description: Read the properties and relationships of an inboundFlow object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2665,7 +2964,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update inboundFlow
-      description: Update the properties of an inboundFlow object.
+      description: Update the properties of an inboundFlow object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
@@ -2700,7 +2999,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete inboundFileFlow
-      description: Delete an inboundFileFlow object.
+      description: Delete an inboundFileFlow object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
@@ -2852,7 +3151,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List fileValidateOperations
-      description: Get a list of long-running file validation operations and their statuses.
+      description: Get a list of long-running file validation operations and their statuses. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
@@ -2951,7 +3250,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get fileValidateOperations
-      description: Read the properties and relationships of a fileValidateOperation object.
+      description: Read the properties and relationships of a fileValidateOperation object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-1.0
@@ -3080,7 +3379,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List referenceDefinitions
-      description: Get a list of the referenceDefinition objects and their properties.
+      description: Get a list of the referenceDefinition objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
@@ -3185,7 +3484,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get referenceDefinition
-      description: Read the properties and relationships of a referenceDefinition object.
+      description: Read the properties and relationships of a referenceDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-referencedefinition-get?view=graph-rest-1.0
@@ -3316,7 +3615,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List roleGroups
-      description: Get a list of the roleGroup objects and their properties.
+      description: Get a list of the roleGroup objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
@@ -3406,7 +3705,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get roleGroup
-      description: Read the properties and relationships of a roleGroup object.
+      description: Read the properties and relationships of a roleGroup object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
@@ -3532,7 +3831,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List industryDataRuns
-      description: Get a list of the industryDataRun objects and their properties.
+      description: Get a list of the industryDataRun objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
@@ -3611,7 +3910,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get industryDataRun
-      description: Read the properties and relationships of an industryDataRun object.
+      description: Read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0
@@ -3949,7 +4248,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List sourceSystemDefinitions
-      description: Get a list of the sourceSystemDefinition objects and their properties.
+      description: Get a list of the sourceSystemDefinition objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
@@ -4019,7 +4318,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create sourceSystemDefinition
-      description: Create a new sourceSystemDefinition object.
+      description: Create a new sourceSystemDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
@@ -4046,7 +4345,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get sourceSystemDefinition
-      description: Read the properties and relationships of a sourceSystemDefinition object.
+      description: Read the properties and relationships of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
@@ -4101,7 +4400,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update sourceSystemDefinition
-      description: Update the properties of a sourceSystemDefinition object.
+      description: Update the properties of a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
@@ -4136,7 +4435,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete sourceSystemDefinition
-      description: Delete a sourceSystemDefinition object.
+      description: Delete a sourceSystemDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
@@ -4181,7 +4480,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: List yearTimePeriodDefinitions
-      description: Get a list of the yearTimePeriodDefinition objects and their properties.
+      description: Get a list of the yearTimePeriodDefinition objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
@@ -4254,7 +4553,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create yearTimePeriodDefinition
-      description: Create a new yearTimePeriodDefinition object.
+      description: Create a new yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
@@ -4281,7 +4580,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Get yearTimePeriodDefinition
-      description: Read the properties and relationships of a yearTimePeriodDefinition object.
+      description: Read the properties and relationships of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0
@@ -4337,7 +4636,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Update yearTimePeriodDefinition
-      description: Update the properties of a yearTimePeriodDefinition object.
+      description: Update the properties of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0
@@ -4372,7 +4671,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Delete yearTimePeriodDefinition
-      description: Delete a yearTimePeriodDefinition object.
+      description: Delete a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0
@@ -4486,7 +4785,7 @@ paths:
       tags:
         - search.acronym
       summary: List acronyms
-      description: Get a list of the acronym objects and their properties.
+      description: Get a list of the acronym objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
@@ -4568,7 +4867,7 @@ paths:
       tags:
         - search.acronym
       summary: Create acronym
-      description: Create a new acronym object.
+      description: Create a new acronym object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
@@ -4595,7 +4894,7 @@ paths:
       tags:
         - search.acronym
       summary: Get acronym
-      description: Read the properties and relationships of an acronym object.
+      description: Read the properties and relationships of an acronym object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0
@@ -4654,7 +4953,7 @@ paths:
       tags:
         - search.acronym
       summary: Update acronym
-      description: Update the properties of an acronym object.
+      description: Update the properties of an acronym object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0
@@ -4689,7 +4988,7 @@ paths:
       tags:
         - search.acronym
       summary: Delete acronym
-      description: Deletes an acronym object.
+      description: Deletes an acronym object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0
@@ -4734,7 +5033,7 @@ paths:
       tags:
         - search.bookmark
       summary: List bookmarks
-      description: Get a list of bookmark objects and their properties.
+      description: Get a list of bookmark objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
@@ -4843,7 +5142,7 @@ paths:
       tags:
         - search.bookmark
       summary: Create bookmark
-      description: Create a new bookmark object.
+      description: Create a new bookmark object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
@@ -4870,7 +5169,7 @@ paths:
       tags:
         - search.bookmark
       summary: Get bookmark
-      description: Read the properties and relationships of a bookmark object.
+      description: Read the properties and relationships of a bookmark object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0
@@ -4938,7 +5237,7 @@ paths:
       tags:
         - search.bookmark
       summary: Update bookmark
-      description: Update the properties of a bookmark object.
+      description: Update the properties of a bookmark object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0
@@ -4973,7 +5272,7 @@ paths:
       tags:
         - search.bookmark
       summary: Delete bookmark
-      description: Delete a bookmark object.
+      description: Delete a bookmark object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0
@@ -5018,7 +5317,7 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
-      description: Run a specified search query. Search results are provided in the response.
+      description: Run a specified search query. Search results are provided in the response. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
@@ -5065,7 +5364,7 @@ paths:
       tags:
         - search.qna
       summary: List qnas
-      description: Get a list of the qna objects and their properties.
+      description: Get a list of the qna objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
@@ -5168,7 +5467,7 @@ paths:
       tags:
         - search.qna
       summary: Create qna
-      description: Create a new qna object.
+      description: Create a new qna object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
@@ -5195,7 +5494,7 @@ paths:
       tags:
         - search.qna
       summary: Get qna
-      description: Read the properties and relationships of a qna object.
+      description: Read the properties and relationships of a qna object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0
@@ -5261,7 +5560,7 @@ paths:
       tags:
         - search.qna
       summary: Update qna
-      description: Update the properties of a qna object.
+      description: Update the properties of a qna object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0
@@ -5296,7 +5595,7 @@ paths:
       tags:
         - search.qna
       summary: Delete qna
-      description: Delete a qna object.
+      description: Delete a qna object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0
@@ -5344,6 +5643,11 @@ components:
       properties:
         industryData:
           $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRoot'
+        authorizationSystems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+          x-ms-navigationProperty: true
         connections:
           type: array
           items:
@@ -5351,6 +5655,32 @@ components:
           x-ms-navigationProperty: true
       additionalProperties:
         type: object
+    microsoft.graph.authorizationSystem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: authorizationSystem
+          type: object
+          properties:
+            authorizationSystemId:
+              type: string
+            authorizationSystemName:
+              type: string
+            authorizationSystemType:
+              type: string
+            dataCollectionInfo:
+              $ref: '#/components/schemas/microsoft.graph.dataCollectionInfo'
+          additionalProperties:
+            type: object
+    microsoft.graph.dataCollectionInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: dataCollectionInfo
+          type: object
+          properties:
+            entitlements:
+              $ref: '#/components/schemas/microsoft.graph.entitlementsDataCollectionInfo'
+          additionalProperties:
+            type: object
     microsoft.graph.externalConnectors.externalConnection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6101,6 +6431,11 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.entitlementsDataCollectionInfo:
+      title: entitlementsDataCollectionInfo
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.activitySettings:
       title: activitySettings
       type: object
@@ -6184,7 +6519,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.'
+          description: 'The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -6256,7 +6591,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
+          description: 'A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
         isExactMatchRequired:
           type: boolean
           description: Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
@@ -6275,13 +6610,13 @@ components:
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
+          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -6474,7 +6809,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: 'Search answer URL link. When users click this search answer in search results, they will go to this URL.'
+              description: 'Search answer URL link. When users click this search answer in search results, they''ll go to this URL.'
               nullable: true
           additionalProperties:
             type: object
@@ -6605,7 +6940,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+          description: The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
           format: int32
           nullable: true
       additionalProperties:
@@ -6761,6 +7096,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    microsoft.graph.authorizationSystemCollectionResponse:
+      title: Collection of authorizationSystem
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.authorizationSystem'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       title: Collection of externalConnection
       type: object
@@ -6800,9 +7151,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    ODataCountResponse:
-      type: integer
-      format: int32
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       title: Collection of externalItem
       type: object
@@ -7118,9 +7466,9 @@ components:
         - fileName
         - fileExtension
         - unknownFutureValue
-        - iconUrl
         - containerName
         - containerUrl
+        - iconUrl
       type: string
     microsoft.graph.externalConnectors.rankingHint:
       title: rankingHint
@@ -7510,6 +7858,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.authorizationSystemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.authorizationSystemCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
       description: Retrieved collection
       content:
@@ -7528,12 +7888,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityCollectionResponse'
-    ODataCountResponse:
-      description: The count of the resource
-      content:
-        text/plain:
-          schema:
-            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.externalConnectors.externalItemCollectionResponse:
       description: Retrieved collection
       content:

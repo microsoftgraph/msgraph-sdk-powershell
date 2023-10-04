@@ -176,7 +176,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List cases
-      description: Retrieve a list of case objects.
+      description: Retrieve a list of case objects. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-1.0
@@ -286,7 +286,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create case
-      description: Create a new case object.
+      description: Create a new case object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0
@@ -319,7 +319,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get case
-      description: Retrieve the properties and relationships of a case object.
+      description: Retrieve the properties and relationships of a case object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-get?view=graph-rest-1.0
@@ -402,7 +402,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update case
-      description: Update the properties of a case object.
+      description: Update the properties of a case object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-update?view=graph-rest-1.0
@@ -443,7 +443,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete case
-      description: Delete a case object.
+      description: Delete a case object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-delete?view=graph-rest-1.0
@@ -480,7 +480,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List custodians
-      description: Get a list of the custodian objects and their properties.
+      description: Get a list of the custodian objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-1.0
@@ -590,7 +590,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create custodian
-      description: 'Create a new custodian object. After the custodian object is created, you will need to create the custodian''s userSource to reference their mailbox and OneDrive for Business site.'
+      description: 'Create a new custodian object. After the custodian object is created, you will need to create the custodian''s userSource to reference their mailbox and OneDrive for Business site. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-1.0
@@ -632,7 +632,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get custodian
-      description: Read the properties and relationships of a custodian object.
+      description: Read the properties and relationships of a custodian object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-get?view=graph-rest-1.0
@@ -715,7 +715,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update custodian
-      description: Update the properties of a custodian object.
+      description: Update the properties of a custodian object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-update?view=graph-rest-1.0
@@ -875,7 +875,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action activate
-      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.'
+      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-activate?view=graph-rest-1.0
@@ -949,7 +949,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action release
-      description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
+      description: 'Release a custodian from a case. For details, see Release a custodian from a case. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-release?view=graph-rest-1.0
@@ -1058,7 +1058,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List custodian siteSources
-      description: Get a list of siteSource objects and their properties.
+      description: Get a list of siteSource objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-list-sitesources?view=graph-rest-1.0
@@ -1155,7 +1155,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create custodian siteSource
-      description: Create a new custodian siteSource object.
+      description: Create a new custodian siteSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-post-sitesources?view=graph-rest-1.0
@@ -1205,7 +1205,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get siteSource
-      description: Read the properties and relationships of a siteSource object.
+      description: Read the properties and relationships of a siteSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sitesource-get?view=graph-rest-1.0
@@ -1338,7 +1338,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete siteSource
-      description: Delete a siteSource object.
+      description: Delete a siteSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sitesource-delete?view=graph-rest-1.0
@@ -1459,6 +1459,7 @@ paths:
                 - operations
                 - pages
                 - permissions
+                - recycleBin
                 - sites
                 - termStore
                 - onenote
@@ -1488,6 +1489,7 @@ paths:
                 - operations
                 - pages
                 - permissions
+                - recycleBin
                 - sites
                 - termStore
                 - onenote
@@ -1549,7 +1551,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List unifiedGroupSources
-      description: Get a list of the unifiedGroupSource objects and their properties.
+      description: Get a list of the unifiedGroupSource objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-list-unifiedgroupsources?view=graph-rest-1.0
@@ -1649,7 +1651,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create unifiedGroupSource
-      description: Create a new unifiedGroupSource object.
+      description: Create a new unifiedGroupSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-post-unifiedgroupsources?view=graph-rest-1.0
@@ -1699,7 +1701,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSource
-      description: Read the properties and relationships of a unifiedGroupSource object.
+      description: Read the properties and relationships of a unifiedGroupSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-unifiedgroupsource-get?view=graph-rest-1.0
@@ -1833,7 +1835,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete unifiedGroupSource
-      description: Delete a unifiedGroupSource object.
+      description: Delete a unifiedGroupSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-unifiedgroupsource-delete?view=graph-rest-1.0
@@ -2062,6 +2064,144 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources/{unifiedGroupSource-id}/group/serviceProvisioningErrors':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get serviceProvisioningErrors property value
+      description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+      operationId: compliance.ediscovery.case.custodian.unifiedGroupSource.group_ListServiceProvisioningError
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: The unique identifier of custodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+        - name: unifiedGroupSource-id
+          in: path
+          description: The unique identifier of unifiedGroupSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedGroupSource
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - createdDateTime desc
+                - isResolved
+                - isResolved desc
+                - serviceInstance
+                - serviceInstance desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - isResolved
+                - serviceInstance
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources/{unifiedGroupSource-id}/group/serviceProvisioningErrors/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.custodian.unifiedGroupSource.group.ServiceProvisioningError_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: The unique identifier of custodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+        - name: unifiedGroupSource-id
+          in: path
+          description: The unique identifier of unifiedGroupSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedGroupSource
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources/$count':
     get:
       tags:
@@ -2103,7 +2243,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List custodian userSources
-      description: Get a list of the userSource objects and their properties.
+      description: Get a list of the userSource objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-list-usersources?view=graph-rest-1.0
@@ -2207,7 +2347,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create custodian userSource
-      description: Create a new custodian userSource object.
+      description: Create a new custodian userSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-custodian-post-usersources?view=graph-rest-1.0
@@ -2257,7 +2397,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get userSource
-      description: Read the properties and relationships of a userSource object.
+      description: Read the properties and relationships of a userSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-usersource-get?view=graph-rest-1.0
@@ -2391,7 +2531,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete userSource
-      description: Delete a userSource object.
+      description: Delete a userSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-usersource-delete?view=graph-rest-1.0
@@ -2592,7 +2732,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHold
-      description: Read the properties and relationships of a legalHold object.
+      description: Read the properties and relationships of a legalHold object. This API is supported in the following national cloud deployments.
       operationId: compliance.ediscovery.case_ListLegalHold
       parameters:
         - name: case-id
@@ -2738,7 +2878,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get legalHold
-      description: Read the properties and relationships of a legalHold object.
+      description: Read the properties and relationships of a legalHold object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-get?view=graph-rest-1.0
@@ -2820,7 +2960,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update legalHold
-      description: Update the properties of a legalHold object.
+      description: Update the properties of a legalHold object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-update?view=graph-rest-1.0
@@ -2869,7 +3009,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete legalHold
-      description: Delete a legalHold object.
+      description: Delete a legalHold object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-delete?view=graph-rest-1.0
@@ -2914,7 +3054,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List legalHold siteSources
-      description: Get the list of siteSource objecs associated with a legal hold.
+      description: Get the list of siteSource objecs associated with a legal hold. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-1.0
@@ -3011,7 +3151,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create legalHold siteSource
-      description: Adds a siteSource to a legalHold object.
+      description: Adds a siteSource to a legalHold object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-1.0
@@ -3308,6 +3448,7 @@ paths:
                 - operations
                 - pages
                 - permissions
+                - recycleBin
                 - sites
                 - termStore
                 - onenote
@@ -3337,6 +3478,7 @@ paths:
                 - operations
                 - pages
                 - permissions
+                - recycleBin
                 - sites
                 - termStore
                 - onenote
@@ -3895,6 +4037,144 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources/{unifiedGroupSource-id}/group/serviceProvisioningErrors':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get serviceProvisioningErrors property value
+      description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
+      operationId: compliance.ediscovery.case.legalHold.unifiedGroupSource.group_ListServiceProvisioningError
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: legalHold-id
+          in: path
+          description: The unique identifier of legalHold
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: legalHold
+        - name: unifiedGroupSource-id
+          in: path
+          description: The unique identifier of unifiedGroupSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedGroupSource
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - createdDateTime desc
+                - isResolved
+                - isResolved desc
+                - serviceInstance
+                - serviceInstance desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - isResolved
+                - serviceInstance
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources/{unifiedGroupSource-id}/group/serviceProvisioningErrors/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.legalHold.unifiedGroupSource.group.ServiceProvisioningError_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: legalHold-id
+          in: path
+          description: The unique identifier of legalHold
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: legalHold
+        - name: unifiedGroupSource-id
+          in: path
+          description: The unique identifier of unifiedGroupSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedGroupSource
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources/$count':
     get:
       tags:
@@ -3936,7 +4216,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List legalHold userSources
-      description: Get the list of userSource objects associated with a legal hold.
+      description: Get the list of userSource objects associated with a legal hold. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-usersources?view=graph-rest-1.0
@@ -4040,7 +4320,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create legalHold userSource
-      description: Adds a userSource to a legalHold object.
+      description: Adds a userSource to a legalHold object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-usersources?view=graph-rest-1.0
@@ -4334,7 +4614,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action close
-      description: 'Close an eDiscovery case. For details, see Close a case.'
+      description: 'Close an eDiscovery case. For details, see Close a case. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-close?view=graph-rest-1.0
@@ -4365,7 +4645,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action reopen
-      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
+      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-reopen?view=graph-rest-1.0
@@ -4396,7 +4676,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List noncustodialDataSources
-      description: Get a list of the noncustodialDataSource objects and their properties.
+      description: Get a list of the noncustodialDataSource objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-list?view=graph-rest-1.0
@@ -4496,7 +4776,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create noncustodialDataSource
-      description: Create a new noncustodialDataSource object.
+      description: Create a new noncustodialDataSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-post?view=graph-rest-1.0
@@ -4538,7 +4818,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get noncustodialDataSource
-      description: Read the properties and relationships of a noncustodialDataSource object.
+      description: Read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-get?view=graph-rest-1.0
@@ -4959,7 +5239,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action release
-      description: Releases the non-custodial data source from the case.
+      description: Releases the non-custodial data source from the case. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-release?view=graph-rest-1.0
@@ -5684,7 +5964,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSet
-      description: Retrieve the properties and relationships of a reviewSet object.
+      description: Retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
       operationId: compliance.ediscovery.case_ListReviewSet
       parameters:
         - name: case-id
@@ -5767,7 +6047,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create reviewSet
-      description: 'Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.'
+      description: 'Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0
@@ -5809,7 +6089,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSet
-      description: Retrieve the properties and relationships of a reviewSet object.
+      description: Retrieve the properties and relationships of a reviewSet object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewset-get?view=graph-rest-1.0
@@ -5966,7 +6246,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action addToReviewSet
-      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that will return a caseExportOperation.'
+      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers. The location provides a URL that will return a caseExportOperation. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewset-addtoreviewset?view=graph-rest-1.0
@@ -6019,7 +6299,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action export
-      description: 'Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery.'
+      description: 'Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewset-export?view=graph-rest-1.0
@@ -6084,7 +6364,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List reviewSetQueries
-      description: Retrieve a list of eDiscovery reviewSetQuery objects.
+      description: Retrieve a list of eDiscovery reviewSetQuery objects. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-list?view=graph-rest-1.0
@@ -6185,7 +6465,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create reviewSetQuery
-      description: Create a new reviewSetQuery object.
+      description: Create a new reviewSetQuery object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-post?view=graph-rest-1.0
@@ -6235,7 +6515,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get reviewSetQuery
-      description: Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
+      description: Retrieve the properties and relationships of an eDiscovery reviewSetQuery object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-get?view=graph-rest-1.0
@@ -6315,7 +6595,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update reviewSetQuery
-      description: Update the properties of an eDiscovery reviewSetQuery.
+      description: Update the properties of an eDiscovery reviewSetQuery. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-update?view=graph-rest-1.0
@@ -6372,7 +6652,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete reviewSetQuery
-      description: Delete a reviewSetQuery object.
+      description: Delete a reviewSetQuery object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-delete?view=graph-rest-1.0
@@ -6425,7 +6705,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action applyTags
-      description: Apply tags to documents that match the specified reviewSetQuery.
+      description: Apply tags to documents that match the specified reviewSetQuery. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-applytags?view=graph-rest-1.0
@@ -6554,7 +6834,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get caseSettings
-      description: Read the properties and relationships of an eDiscovery caseSettings object.
+      description: Read the properties and relationships of an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0
@@ -6615,7 +6895,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update caseSettings
-      description: Update the properties of a an eDiscovery caseSettings object.
+      description: Update the properties of a an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0
@@ -6689,7 +6969,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action resetToDefault
-      description: Reset a caseSettings object to the default values.
+      description: Reset a caseSettings object to the default values. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-casesettings-resettodefault?view=graph-rest-1.0
@@ -6720,7 +7000,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List sourceCollections
-      description: Get the list of sourceCollections from a case object.
+      description: Get the list of sourceCollections from a case object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-list-sourcecollections?view=graph-rest-1.0
@@ -6829,7 +7109,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create sourceCollection
-      description: Create a new sourceCollection object.
+      description: Create a new sourceCollection object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-post-sourcecollections?view=graph-rest-1.0
@@ -6952,7 +7232,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update sourceCollection
-      description: Update the properties of a sourceCollection object.
+      description: Update the properties of a sourceCollection object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-update?view=graph-rest-1.0
@@ -7001,7 +7281,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete sourceCollection
-      description: Delete a sourceCollection object.
+      description: Delete a sourceCollection object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-delete?view=graph-rest-1.0
@@ -7046,7 +7326,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List additionalSources
-      description: Get a list of additional dataSource objects associated with a source collection.
+      description: Get a list of additional dataSource objects associated with a source collection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-additionalsources?view=graph-rest-1.0
@@ -7400,7 +7680,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List addToReviewSetOperation
-      description: 'Get the last addToReviewSetOperation object associated with a source collection. '
+      description: Get the last addToReviewSetOperation object associated with a source collection.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0
@@ -7478,7 +7758,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List custodianSources
-      description: Get the list of dataSource objects associated with a source collection.
+      description: Get the list of dataSource objects associated with a source collection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-1.0
@@ -7686,7 +7966,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List estimateStatisticsOperation
-      description: 'Get the last estimateStatisticsOperation object associated with a source collection. '
+      description: Get the last estimateStatisticsOperation object associated with a source collection.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-lastestimatestatisticsoperation?view=graph-rest-1.0
@@ -7768,7 +8048,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action estimateStatistics
-      description: 'Run an estimate of the number of emails and documents in the source collection. To learn more about source collections (also known as searches in eDiscovery), see Collect data for a case in Advanced eDiscovery.'
+      description: 'Run an estimate of the number of emails and documents in the source collection. To learn more about source collections (also known as searches in eDiscovery), see Collect data for a case in Advanced eDiscovery. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-estimatestatistics?view=graph-rest-1.0
@@ -7807,7 +8087,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action purgeData
-      description: "Permanently delete Microsoft Teams messages contained in a sourceCollection. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- Advanced eDiscovery workflow for content in Microsoft Teams "
+      description: "Permanently delete Microsoft Teams messages contained in a sourceCollection. You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- Advanced eDiscovery workflow for content in Microsoft Teams  This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-purgedata?view=graph-rest-1.0
@@ -7846,7 +8126,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List noncustodialSources
-      description: Get a list of noncustodialDataSource associated with a sourceCollection.
+      description: Get a list of noncustodialDataSource associated with a sourceCollection. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-noncustodialsources?view=graph-rest-1.0
@@ -8102,7 +8382,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List tags
-      description: Retrieve a list of tag objects from an eDiscovery case.
+      description: Retrieve a list of tag objects from an eDiscovery case. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0
@@ -8196,7 +8476,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create tag
-      description: Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
+      description: Create a new tag for the specified case.  The tags are used in review sets while reviewing content. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0
@@ -8238,7 +8518,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get tag
-      description: Read the properties and relationships of a tag object.
+      description: Read the properties and relationships of a tag object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-tag-get?view=graph-rest-1.0
@@ -8313,7 +8593,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update tag
-      description: Update the properties of a tag object.
+      description: Update the properties of a tag object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-tag-update?view=graph-rest-1.0
@@ -8362,7 +8642,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete tag
-      description: Delete a tag object.
+      description: Delete a tag object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-tag-delete?view=graph-rest-1.0
@@ -8407,7 +8687,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: List childTags
-      description: Get a list of child tag objects associated with a tag.
+      description: Get a list of child tag objects associated with a tag. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0
@@ -8840,7 +9120,7 @@ paths:
       tags:
         - privacy.subjectRightsRequest
       summary: List subjectRightsRequests
-      description: Get a list of subjectRightsRequest objects and their properties.
+      description: Get a list of subjectRightsRequest objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list?view=graph-rest-1.0
@@ -8897,14 +9177,14 @@ paths:
                 - lastModifiedBy desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
-                - mailboxlocations
-                - mailboxlocations desc
+                - mailboxLocations
+                - mailboxLocations desc
                 - pauseAfterEstimate
                 - pauseAfterEstimate desc
                 - regulations
                 - regulations desc
-                - sitelocations
-                - sitelocations desc
+                - siteLocations
+                - siteLocations desc
                 - stages
                 - stages desc
                 - status
@@ -8940,10 +9220,10 @@ paths:
                 - internalDueDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
-                - mailboxlocations
+                - mailboxLocations
                 - pauseAfterEstimate
                 - regulations
-                - sitelocations
+                - siteLocations
                 - stages
                 - status
                 - type
@@ -8987,7 +9267,7 @@ paths:
       tags:
         - privacy.subjectRightsRequest
       summary: Create subjectRightsRequest
-      description: Create a new subjectRightsRequest object.
+      description: Create a new subjectRightsRequest object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post?view=graph-rest-1.0
@@ -9020,7 +9300,7 @@ paths:
       tags:
         - privacy.subjectRightsRequest
       summary: Get subjectRightsRequest
-      description: Read the properties and relationships of a subjectRightsRequest object.
+      description: Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0
@@ -9062,10 +9342,10 @@ paths:
                 - internalDueDateTime
                 - lastModifiedBy
                 - lastModifiedDateTime
-                - mailboxlocations
+                - mailboxLocations
                 - pauseAfterEstimate
                 - regulations
-                - sitelocations
+                - siteLocations
                 - stages
                 - status
                 - type
@@ -9110,7 +9390,7 @@ paths:
       tags:
         - privacy.subjectRightsRequest
       summary: Update subjectRightsRequest
-      description: Update the properties of a subjectRightsRequest object.
+      description: Update the properties of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0
@@ -10042,6 +10322,128 @@ paths:
         date: '2022-03-22T00:00:00.0000000+00:00'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+  '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/serviceProvisioningErrors':
+    get:
+      tags:
+        - privacy.subjectRightsRequest
+      summary: Get serviceProvisioningErrors property value
+      description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
+      operationId: privacy.subjectRightsRequest.approver_ListServiceProvisioningError
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - createdDateTime desc
+                - isResolved
+                - isResolved desc
+                - serviceInstance
+                - serviceInstance desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - isResolved
+                - serviceInstance
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-03-20T00:00:00.0000000+00:00'
+        date: '2022-03-22T00:00:00.0000000+00:00'
+        version: 2022-02/PrivacyDeprecate
+        description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/{user-id}/serviceProvisioningErrors/$count':
+    get:
+      tags:
+        - privacy.subjectRightsRequest
+      summary: Get the number of the resource
+      operationId: privacy.subjectRightsRequest.approver.ServiceProvisioningError_GetCount
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-03-20T00:00:00.0000000+00:00'
+        date: '2022-03-22T00:00:00.0000000+00:00'
+        version: 2022-02/PrivacyDeprecate
+        description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/approvers/$count':
     get:
       tags:
@@ -10933,6 +11335,128 @@ paths:
         date: '2022-03-22T00:00:00.0000000+00:00'
         version: 2022-02/PrivacyDeprecate
         description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+  '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/serviceProvisioningErrors':
+    get:
+      tags:
+        - privacy.subjectRightsRequest
+      summary: Get serviceProvisioningErrors property value
+      description: 'Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
+      operationId: privacy.subjectRightsRequest.collaborator_ListServiceProvisioningError
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - createdDateTime desc
+                - isResolved
+                - isResolved desc
+                - serviceInstance
+                - serviceInstance desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - createdDateTime
+                - isResolved
+                - serviceInstance
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.serviceProvisioningErrorCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-03-20T00:00:00.0000000+00:00'
+        date: '2022-03-22T00:00:00.0000000+00:00'
+        version: 2022-02/PrivacyDeprecate
+        description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/{user-id}/serviceProvisioningErrors/$count':
+    get:
+      tags:
+        - privacy.subjectRightsRequest
+      summary: Get the number of the resource
+      operationId: privacy.subjectRightsRequest.collaborator.ServiceProvisioningError_GetCount
+      parameters:
+        - name: subjectRightsRequest-id
+          in: path
+          description: The unique identifier of subjectRightsRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: subjectRightsRequest
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2025-03-20T00:00:00.0000000+00:00'
+        date: '2022-03-22T00:00:00.0000000+00:00'
+        version: 2022-02/PrivacyDeprecate
+        description: 'The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security.'
   '/privacy/subjectRightsRequests/{subjectRightsRequest-id}/collaborators/$count':
     get:
       tags:
@@ -10966,7 +11490,7 @@ paths:
       tags:
         - privacy.subjectRightsRequest
       summary: List notes
-      description: 'Get the list of authored notes associated with a subject rights request. '
+      description: Get the list of authored notes associated with a subject rights request.  This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0
@@ -11050,7 +11574,7 @@ paths:
       tags:
         - privacy.subjectRightsRequest
       summary: Create authoredNote
-      description: Create a new authoredNote object.
+      description: Create a new authoredNote object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0
@@ -11640,6 +12164,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The permissions associated with the site. Nullable.
               x-ms-navigationProperty: true
+            recycleBin:
+              $ref: '#/components/schemas/microsoft.graph.recycleBin'
             sites:
               type: array
               items:
@@ -12522,7 +13048,7 @@ components:
               description: Collection of history change events.
             includeAllVersions:
               type: boolean
-              description: 'Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.'
+              description: 'Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.'
               nullable: true
             includeAuthoredContent:
               type: boolean
@@ -12544,19 +13070,19 @@ components:
               description: 'The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
-            mailboxlocations:
+            mailboxLocations:
               $ref: '#/components/schemas/microsoft.graph.subjectRightsRequestMailboxLocation'
             pauseAfterEstimate:
               type: boolean
-              description: 'Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.'
+              description: 'Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.'
               nullable: true
             regulations:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of regulations that this request will fulfill.
-            sitelocations:
+              description: List of regulations that this request fulfills.
+            siteLocations:
               $ref: '#/components/schemas/microsoft.graph.subjectRightsRequestSiteLocation'
             stages:
               type: array
@@ -13022,7 +13548,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
               x-ms-navigationProperty: true
             scopedRoleMemberOf:
               type: array
@@ -13873,7 +14399,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -14023,7 +14549,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -14054,11 +14580,24 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The type of permission, for example, read. See below for the full list of roles. Read-only.'
+              description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
               description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.recycleBin:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: recycleBin
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recycleBinItem'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.termStore.store:
@@ -14105,7 +14644,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
-              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
+              description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
               x-ms-navigationProperty: true
             pages:
               type: array
@@ -14117,7 +14656,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
-              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection isn''t supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
               x-ms-navigationProperty: true
             sectionGroups:
               type: array
@@ -14238,7 +14777,7 @@ components:
           nullable: true
         serviceInstance:
           type: string
-          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
+          description: 'Qualified service instance (for example, ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -14331,7 +14870,7 @@ components:
           properties:
             capability:
               type: string
-              description: 'Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.'
+              description: 'Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.'
             providerId:
               type: string
               description: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -14342,7 +14881,7 @@ components:
               nullable: true
             providerResourceId:
               type: string
-              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
+              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
             uri:
               type: string
@@ -16500,7 +17039,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
+              description: 'DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
             errors:
@@ -16512,7 +17051,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn''t exist, or manager is specified as reviewer but a user''s manager doesn''t exist. Supports $select.'
             reviewers:
               type: array
               items:
@@ -17320,7 +17859,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Sets how long (in seconds) this notification content will stay in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user''s Windows Action Center.'
+              description: 'Sets how long (in seconds) this notification content stays in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user''s Windows Action Center.'
               format: int32
               nullable: true
             expirationDateTime:
@@ -17331,7 +17870,7 @@ components:
               nullable: true
             groupName:
               type: string
-              description: The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
+              description: The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.
               nullable: true
             payload:
               $ref: '#/components/schemas/microsoft.graph.payloadTypes'
@@ -17977,11 +18516,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
@@ -18608,11 +19147,11 @@ components:
           properties:
             description:
               type: string
-              description: Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+              description: Tag description as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
-              description: Tag name as it will appear to the user in Microsoft Teams.
+              description: Tag name as it appears to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
@@ -18864,6 +19403,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningErrorCollectionResponse:
+      title: Collection of microsoft.graph.serviceProvisioningError
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -19452,7 +20004,7 @@ components:
       properties:
         allowMultipleValues:
           type: boolean
-          description: Specifies whether the column will allow more than one value
+          description: Specifies whether the column allows more than one value
           nullable: true
         showFullyQualifiedName:
           type: boolean
@@ -19805,7 +20357,7 @@ components:
           nullable: true
         hidden:
           type: boolean
-          description: 'If true, indicates that the list is not normally visible in the SharePoint user experience.'
+          description: 'If true, indicates that the list isn''t normally visible in the SharePoint user experience.'
           nullable: true
         template:
           type: string
@@ -19866,7 +20418,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -20060,6 +20612,26 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.recycleBinItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: recycleBinItem
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            deletedFromLocation:
+              type: string
+              nullable: true
+            size:
+              type: integer
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.group:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21131,7 +21703,7 @@ components:
           nullable: true
         value:
           type: string
-          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..'
+          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren''t allowed. May not begin with ..'
           nullable: true
       additionalProperties:
         type: object
@@ -22067,7 +22639,7 @@ components:
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
               nullable: true
             displayName:
               type: string
@@ -22077,7 +22649,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn''t exist, or manager is specified as reviewer but a user''s manager doesn''t exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
@@ -22099,7 +22671,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewStageSettings'
-              description: 'Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.'
+              description: 'Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages are created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.'
             status:
               type: string
               description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -22108,7 +22680,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that don''t recur will only have one instance; otherwise, there''s an instance for each recurrence.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -24324,11 +24896,11 @@ components:
           properties:
             ageGroup:
               type: string
-              description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and can''t be changed.'
               nullable: true
             countryCode:
               type: string
-              description: Contains the two-character country code associated with the users account.
+              description: Contains the two-character country code associated with the users' account.
             preferredLanguageTag:
               $ref: '#/components/schemas/microsoft.graph.localeInfo'
             userPrincipalName:
@@ -25374,7 +25946,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+          description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -25398,6 +25970,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25547,7 +26120,7 @@ components:
           properties:
             phoneNumber:
               type: string
-              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.'
+              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don''t match the required format.'
               nullable: true
             phoneType:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
@@ -28055,7 +28628,7 @@ components:
           nullable: true
         fieldId:
           type: string
-          description: 'Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.'
+          description: 'Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.'
           nullable: true
         type:
           type: string
@@ -28189,7 +28762,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationMetadataEntry'
-              description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+              description: 'Additional extension properties. Unless mentioned explicitly, metadata values shouldn''t be changed.'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -30635,15 +31208,18 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Total capacity of the virtual event.
               format: int32
               nullable: true
             registrationWebUrl:
               type: string
+              description: Registration URL of the virtual event.
               nullable: true
             questions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestion'
+              description: Registration questions.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -30656,35 +31232,43 @@ components:
             cancelationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             email:
               type: string
+              description: Email address of the registrant.
               nullable: true
             firstName:
               type: string
+              description: First name of the registrant.
               nullable: true
             lastName:
               type: string
+              description: Last name of the registrant.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+              description: The registrant's answer to the registration questions.
             status:
               $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
             userId:
               type: string
+              description: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
               nullable: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -32105,7 +32689,7 @@ components:
           description: A list of supported bottom margins(in microns) for the printer.
         collation:
           type: boolean
-          description: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          description: True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
           nullable: true
         colorModes:
           type: array
@@ -32117,7 +32701,7 @@ components:
           items:
             type: string
             nullable: true
-          description: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+          description: A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
         copiesPerJob:
           $ref: '#/components/schemas/microsoft.graph.integerRange'
         dpis:
@@ -32176,7 +32760,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media (i.e., paper) colors supported by the printer.'
+          description: 'The media (that is, paper) colors supported by the printer.'
         mediaSizes:
           type: array
           items:
@@ -32630,7 +33214,6 @@ components:
           items:
             type: string
             nullable: true
-          description: Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -33450,7 +34033,7 @@ components:
           nullable: true
         mediaType:
           type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
           nullable: true
         previewImageUrl:
           type: string
@@ -33466,7 +34049,7 @@ components:
           nullable: true
         type:
           type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          description: 'The item''s media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.'
           nullable: true
       additionalProperties:
         type: object
@@ -33687,6 +34270,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of this virtual event session.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -33883,7 +34467,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The display name of the attachment. This doesn't need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -35333,7 +35917,7 @@ components:
       properties:
         collate:
           type: boolean
-          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          description: Whether the printer should collate pages when printing multiple copies of a multi-page document.
           nullable: true
         colorMode:
           $ref: '#/components/schemas/microsoft.graph.printColorMode'
@@ -35682,7 +36266,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
-          description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+          description: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         groupFilter:
           $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
@@ -35693,7 +36277,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
-          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.'
+          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn''t be changed.'
         name:
           type: string
           description: Human-readable name of the synchronization rule. Not nullable.
@@ -35747,7 +36331,7 @@ components:
               description: Whether this object is read-only.
             version:
               type: string
-              description: Read only value that indicates version discovered. null if discovery has not yet occurred.
+              description: Read only value that indicates version discovered. null if discovery hasn't yet occurred.
               nullable: true
           additionalProperties:
             type: object
@@ -35803,7 +36387,7 @@ components:
           nullable: true
         id:
           type: string
-          description: The id of the user who shared the item.
+          description: The ID of the user who shared the item.
           nullable: true
       additionalProperties:
         type: object
@@ -36145,7 +36729,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean value the represents the visibility of a chart title object.
+              description: A boolean value that represents the visibility of a chart title object.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitleFormat'
           additionalProperties:
@@ -36337,7 +36921,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
+          description: Refers to the application name displayed in the Microsoft Entra admin center.
           nullable: true
         servicePrincipalId:
           type: string
@@ -36598,7 +37182,7 @@ components:
               nullable: true
             color:
               type: string
-              description: 'HTML color code representation of the text color. E.g. #FF0000 represents Red.'
+              description: 'HTML color code representation of the text color. for example #FF0000 represents Red.'
               nullable: true
             italic:
               type: boolean
@@ -36606,11 +37190,11 @@ components:
               nullable: true
             name:
               type: string
-              description: Font name (e.g. 'Calibri')
+              description: Font name (for example 'Calibri')
               nullable: true
             size:
               type: number
-              description: Size of the font (e.g. 11)
+              description: Size of the font (for example 11)
               format: double
               nullable: true
             underline:
@@ -36741,12 +37325,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter isn''t satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         inputFilterGroups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter, it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
       additionalProperties:
         type: object
     microsoft.graph.attributeDefinition:
@@ -37105,6 +37689,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
+    microsoft.graph.serviceProvisioningErrorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.serviceProvisioningErrorCollectionResponse'
     microsoft.graph.ediscovery.userSourceCollectionResponse:
       description: Retrieved collection
       content:

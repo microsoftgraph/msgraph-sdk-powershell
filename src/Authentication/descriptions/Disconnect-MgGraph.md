@@ -1,0 +1,1 @@
+Use Disconnect-MgGraph to sign out.
