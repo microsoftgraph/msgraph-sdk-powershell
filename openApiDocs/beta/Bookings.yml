@@ -2149,7 +2149,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Update bookingservice
-      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
+      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -7203,6 +7203,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -7222,6 +7224,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -7334,6 +7337,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -7612,6 +7616,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -7633,6 +7638,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -8710,6 +8717,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -8731,6 +8740,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -8844,6 +8854,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -9217,6 +9228,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -9239,6 +9251,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -12718,6 +12732,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -12737,6 +12753,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -12849,6 +12866,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -13127,6 +13145,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -13148,6 +13167,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -14225,6 +14246,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -14246,6 +14269,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -14359,6 +14383,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -14732,6 +14757,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -14754,6 +14780,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -15445,7 +15473,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
             unassignedOrderHint:
               type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task isn''t assigned to anyone, or if the orderHintsByAssignee dictionary doesn''t provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
               nullable: true
           additionalProperties:
             type: object
@@ -15666,6 +15694,8 @@ components:
               type: string
               description: The unique identifier of the onlineMeeting related to this recording. Read-only.
               nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             meetingOrganizerId:
               type: string
               description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -15824,6 +15854,8 @@ components:
               type: string
               description: The unique identifier of the online meeting related to this transcript. Read-only.
               nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             meetingOrganizerId:
               type: string
               description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
@@ -15851,7 +15883,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
-              description: Identity information of co-organizers of the webinar.
+              description: Identity information of coorganizers of the webinar.
             registrationConfiguration:
               $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
             registrations:
@@ -16671,11 +16703,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
