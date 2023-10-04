@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Pin a chat message in the specified chat.
 This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaChatPinnedMessage -InputObject <ITeamsIdentity> [-AdditionalProperties
 ## DESCRIPTION
 Pin a chat message in the specified chat.
 This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

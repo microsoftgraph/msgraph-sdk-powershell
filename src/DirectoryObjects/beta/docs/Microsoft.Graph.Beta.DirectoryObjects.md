@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DirectoryObjects
-Module Guid: 0a307486-1357-4d03-8d89-d0ca68274378
+Module Guid: 3ffd56e0-d2ff-41a6-b461-461cd5cef8f4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US

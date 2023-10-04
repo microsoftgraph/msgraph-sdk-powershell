@@ -8,11 +8,7 @@ schema: 2.0.0
 # Update-MgBetaTenantRelationshipMultiTenantOrganization
 
 ## SYNOPSIS
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is supported in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ## SYNTAX
 
@@ -31,11 +27,7 @@ Update-MgBetaTenantRelationshipMultiTenantOrganization -BodyParameter <IMicrosof
 ```
 
 ## DESCRIPTION
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is supported in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ## EXAMPLES
 
@@ -87,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-Date when multitenant organization was created.
+Date when multi-tenant organization was created.
 Read-only.
 
 ```yaml
@@ -103,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the multitenant organization.
+Description of the multi-tenant organization.
 
 ```yaml
 Type: System.String
@@ -118,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of the multitenant organization.
+Display name of the multi-tenant organization.
 
 ```yaml
 Type: System.String
@@ -180,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tenants
-Defines tenants added to a multitenant organization.
+Defines tenants added to a multi-tenant organization.
 To construct, see NOTES section for TENANTS properties and create a hash table.
 
 ```yaml
@@ -249,9 +241,9 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphMultiTenantOrganization>`: multiTenantOrganization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: Date when multitenant organization was created. Read-only.
-  - `[Description <String>]`: Description of the multitenant organization.
-  - `[DisplayName <String>]`: Display name of the multitenant organization.
+  - `[CreatedDateTime <DateTime?>]`: Date when multi-tenant organization was created. Read-only.
+  - `[Description <String>]`: Description of the multi-tenant organization.
+  - `[DisplayName <String>]`: Display name of the multi-tenant organization.
   - `[JoinRequest <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>]`: multiTenantOrganizationJoinRequestRecord
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -264,7 +256,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Details <String>]`: Details that explain the processing status if any. Read-only.
       - `[Status <String>]`: multiTenantOrganizationMemberProcessingStatus
   - `[State <String>]`: multiTenantOrganizationState
-  - `[Tenants <IMicrosoftGraphMultiTenantOrganizationMember[]>]`: Defines tenants added to a multitenant organization.
+  - `[Tenants <IMicrosoftGraphMultiTenantOrganizationMember[]>]`: Defines tenants added to a multi-tenant organization.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedByTenantId <String>]`: Tenant ID of the tenant that added the tenant to the multi-tenant organization. Read-only.
@@ -293,7 +285,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Details <String>]`: Details that explain the processing status if any. Read-only.
     - `[Status <String>]`: multiTenantOrganizationMemberProcessingStatus
 
-`TENANTS <IMicrosoftGraphMultiTenantOrganizationMember[]>`: Defines tenants added to a multitenant organization.
+`TENANTS <IMicrosoftGraphMultiTenantOrganizationMember[]>`: Defines tenants added to a multi-tenant organization.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddedByTenantId <String>]`: Tenant ID of the tenant that added the tenant to the multi-tenant organization. Read-only.

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new custodian userSource object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgBetaComplianceEdiscoveryCaseCustodianUserSource -InputObject <IComplianceI
 
 ## DESCRIPTION
 Create a new custodian userSource object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -154,7 +152,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the dataSource, and is the name of the SharePoint site.
+The display name of the dataSource.
+This will be the name of the SharePoint site.
 
 ```yaml
 Type: System.String
@@ -325,7 +324,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
-  - `[DisplayName <String>]`: The display name of the dataSource, and is the name of the SharePoint site.
+  - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
   - `[HoldStatus <String>]`: dataSourceHoldStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Email <String>]`: Email address of the user's mailbox.

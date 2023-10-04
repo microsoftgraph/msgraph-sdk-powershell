@@ -16,8 +16,8 @@ Create new navigation property to recordings for solutions
 ```
 New-MgBetaVirtualEventWebinarSessionRecording -VirtualEventSessionId <String> -VirtualEventWebinarId <String>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-MeetingId <String>] [-MeetingOrganizer <IMicrosoftGraphIdentitySet>] [-MeetingOrganizerId <String>]
- [-RecordingContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MeetingId <String>] [-MeetingOrganizerId <String>] [-RecordingContentUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -36,8 +36,8 @@ New-MgBetaVirtualEventWebinarSessionRecording -InputObject <IBookingsIdentity>
 ```
 New-MgBetaVirtualEventWebinarSessionRecording -InputObject <IBookingsIdentity>
  [-AdditionalProperties <Hashtable>] [-ContentInputFile <String>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-MeetingId <String>] [-MeetingOrganizer <IMicrosoftGraphIdentitySet>] [-MeetingOrganizerId <String>]
- [-RecordingContentUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MeetingId <String>] [-MeetingOrganizerId <String>] [-RecordingContentUrl <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -174,22 +174,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MeetingOrganizer
-identitySet
-To construct, see NOTES section for MEETINGORGANIZER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -MeetingOrganizerId
 The unique identifier of the organizer of the onlineMeeting related to this recording.
 Read-only.
@@ -311,14 +295,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Content <Byte[]>]`: The content of the recording. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
-  - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
-    - `[Device <IMicrosoftGraphIdentity>]`: identity
-    - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
   - `[RecordingContentUrl <String>]`: The URL which can be used to access the content of the recording. Read-only.
 
@@ -344,15 +320,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
   - `[VirtualEventSessionId <String>]`: The unique identifier of virtualEventSession
   - `[VirtualEventWebinarId <String>]`: The unique identifier of virtualEventWebinar
-
-`MEETINGORGANIZER <IMicrosoftGraphIdentitySet>`: identitySet
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Application <IMicrosoftGraphIdentity>]`: identity
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
-  - `[Device <IMicrosoftGraphIdentity>]`: identity
-  - `[User <IMicrosoftGraphIdentity>]`: identity
 
 ## RELATED LINKS
 

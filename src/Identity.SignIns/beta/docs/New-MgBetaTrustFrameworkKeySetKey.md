@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset.
 The caller doesn't have to provide a secret.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgBetaTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity> [-Addi
 ## DESCRIPTION
 Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset.
 The caller doesn't have to provide a secret.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

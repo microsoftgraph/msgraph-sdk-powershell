@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-ExpandProperty
 
 ## DESCRIPTION
 Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

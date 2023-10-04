@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get properties of the multi-tenant organization.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +19,6 @@ Get-MgBetaTenantRelationshipMultiTenantOrganization [-ExpandProperty <String[]>]
 
 ## DESCRIPTION
 Get properties of the multi-tenant organization.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

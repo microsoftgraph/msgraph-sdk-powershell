@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of onenoteSection objects from the specified section group.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String> [
 
 ## DESCRIPTION
 Retrieve a list of onenoteSection objects from the specified section group.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

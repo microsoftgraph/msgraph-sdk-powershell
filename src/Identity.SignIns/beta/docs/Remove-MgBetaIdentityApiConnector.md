@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an identityApiConnector object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-IfMa
 
 ## DESCRIPTION
 Deletes an identityApiConnector object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

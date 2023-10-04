@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of the specified Outlook task folder.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ Get-MgBetaUserOutlookTaskFolder -InputObject <IUsersIdentity> [-Property <String
 
 ## DESCRIPTION
 Get the properties and relationships of the specified Outlook task folder.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

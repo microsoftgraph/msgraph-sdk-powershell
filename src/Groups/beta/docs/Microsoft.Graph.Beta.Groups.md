@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: 8afc0a16-7c16-4185-90c5-8bbaeb509b01
+Module Guid: 2da9f0b3-7eb6-4f49-9577-c1c5d13b7b4d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -924,12 +924,13 @@ Note: To create a team, first create a group then add a team to it, see create t
 ### [New-MgBetaGroupAcceptedSenderByRef](New-MgBetaGroupAcceptedSenderByRef.md)
 Add a new user or group to the acceptedSender list.
 Specify the user or group in @odata.id in the request body.
-Users in the accepted senders list can post to conversations of the group.
-Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
+Users in the accepted senders list can post to conversations of the group .
+Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -1036,8 +1037,8 @@ Create new navigation property to permissionGrants for groups
 ### [New-MgBetaGroupRejectedSenderByRef](New-MgBetaGroupRejectedSenderByRef.md)
 Add a new user or group to the rejectedSender list.
 Specify the user or group in @odata.id in the request body.
-Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL).
-Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
+Users in the rejected senders list cannot post to conversations of the group (identified in the POST request URL).
+Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
 ### [New-MgBetaGroupSetting](New-MgBetaGroupSetting.md)
 Create a new setting based on the templates available in directorySettingTemplates.

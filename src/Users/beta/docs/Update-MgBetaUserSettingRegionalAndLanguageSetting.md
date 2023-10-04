@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update some or all of the properties of a regionalAndLanguageSettings object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Update-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
 
 ## DESCRIPTION
 Update some or all of the properties of a regionalAndLanguageSettings object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Send a new chatMessage in the specified chat.
 This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -61,7 +60,6 @@ New-MgBetaUserChatMessage -InputObject <ITeamsIdentity> [-ChatId <String>] [-Add
 ## DESCRIPTION
 Send a new chatMessage in the specified chat.
 This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

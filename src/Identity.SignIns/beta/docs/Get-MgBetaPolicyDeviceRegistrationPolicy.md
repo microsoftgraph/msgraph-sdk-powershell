@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of a deviceRegistrationPolicy object.
 Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -22,7 +21,6 @@ Get-MgBetaPolicyDeviceRegistrationPolicy [-ExpandProperty <String[]>] [-Property
 ## DESCRIPTION
 Read the properties and relationships of a deviceRegistrationPolicy object.
 Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

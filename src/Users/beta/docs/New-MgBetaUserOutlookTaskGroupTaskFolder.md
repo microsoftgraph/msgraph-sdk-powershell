@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an Outlook task folder under a specified outlookTaskGroup.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgBetaUserOutlookTaskGroupTaskFolder -InputObject <IUsersIdentity> [-Additio
 
 ## DESCRIPTION
 Create an Outlook task folder under a specified outlookTaskGroup.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

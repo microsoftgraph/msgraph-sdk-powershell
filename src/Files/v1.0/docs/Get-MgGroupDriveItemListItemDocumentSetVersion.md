@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Get-MgGroupDriveItemListItemDocumentSetVersion -InputObject <IFilesIdentity> [-E
 
 ## DESCRIPTION
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

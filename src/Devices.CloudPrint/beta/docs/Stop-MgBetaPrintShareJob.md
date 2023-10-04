@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Cancel a print job.
 Print jobs can be canceled only on behalf of a user, using delegated permissions.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Stop-MgBetaPrintShareJob -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [
 ## DESCRIPTION
 Cancel a print job.
 Print jobs can be canceled only on behalf of a user, using delegated permissions.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new featureRolloutPolicy object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ New-MgPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPo
 
 ## DESCRIPTION
 Create a new featureRolloutPolicy object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

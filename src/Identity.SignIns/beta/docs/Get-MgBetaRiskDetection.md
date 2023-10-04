@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a riskDetection object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaRiskDetection -InputObject <IIdentitySignInsIdentity> [-ExpandProperty
 
 ## DESCRIPTION
 Retrieve the properties of a riskDetection object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

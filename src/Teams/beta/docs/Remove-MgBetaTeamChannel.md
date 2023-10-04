@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the channel.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaTeamChannel -InputObject <ITeamsIdentity> [-IfMatch <String>] [-Pas
 
 ## DESCRIPTION
 Delete the channel.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

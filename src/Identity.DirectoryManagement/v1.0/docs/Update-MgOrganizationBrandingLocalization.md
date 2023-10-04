@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an organizationalBrandingLocalization object for a specific localization.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -65,7 +64,6 @@ Update-MgOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManage
 
 ## DESCRIPTION
 Update the properties of an organizationalBrandingLocalization object for a specific localization.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

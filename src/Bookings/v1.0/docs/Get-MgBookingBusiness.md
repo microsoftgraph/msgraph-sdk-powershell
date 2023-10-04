@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a bookingBusiness object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBookingBusiness -InputObject <IBookingsIdentity> [-ExpandProperty <String[
 
 ## DESCRIPTION
 Get the properties and relationships of a bookingBusiness object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

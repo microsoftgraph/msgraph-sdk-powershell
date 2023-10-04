@@ -154,7 +154,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the dataSource, and is the name of the SharePoint site.
+The display name of the dataSource.
+This will be the name of the SharePoint site.
 
 ```yaml
 Type: System.String
@@ -295,7 +296,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
-  - `[DisplayName <String>]`: The display name of the dataSource, and is the name of the SharePoint site.
+  - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
   - `[HoldStatus <String>]`: dataSourceHoldStatus
 
 `CREATEDBY <IMicrosoftGraphIdentitySet>`: identitySet

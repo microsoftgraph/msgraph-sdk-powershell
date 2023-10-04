@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new checklistItem object as a subtask in a bigger todoTask.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-Addition
 
 ## DESCRIPTION
 Create a new checklistItem object as a subtask in a bigger todoTask.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

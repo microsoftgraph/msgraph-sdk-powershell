@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove a tenant from a multi-tenant organization.
 A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIden
 ## DESCRIPTION
 Remove a tenant from a multi-tenant organization.
 A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

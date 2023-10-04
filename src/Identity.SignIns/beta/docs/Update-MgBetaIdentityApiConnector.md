@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an identityApiConnector object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgBetaIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-Addi
 
 ## DESCRIPTION
 Update the properties of an identityApiConnector object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

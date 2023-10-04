@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the role of a conversationMember in a team.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgBetaTeamMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Ha
 
 ## DESCRIPTION
 Update the role of a conversationMember in a team.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

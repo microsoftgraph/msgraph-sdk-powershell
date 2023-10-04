@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get details about a print task.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaPrintTaskDefinitionTask -InputObject <IDevicesCloudPrintIdentity> [-Ex
 ## DESCRIPTION
 Get details about a print task.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

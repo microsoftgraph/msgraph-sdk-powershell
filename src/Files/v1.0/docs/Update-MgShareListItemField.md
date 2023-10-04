@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgShareListItemField
 
 ## SYNOPSIS
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -62,8 +61,7 @@ Update-MgShareListItemField -InputObject <IFilesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 

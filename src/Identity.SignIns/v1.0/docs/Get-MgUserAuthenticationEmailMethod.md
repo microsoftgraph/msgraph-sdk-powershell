@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a user's single email authentication method object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity> [-Ex
 
 ## DESCRIPTION
 Retrieve a user's single email authentication method object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

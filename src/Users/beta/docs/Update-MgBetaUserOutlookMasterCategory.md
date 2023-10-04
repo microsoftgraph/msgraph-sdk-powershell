@@ -9,8 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the writable property, color, of the specified outlookCategory object.
-You can't modify the displayName property\nonce you have created the category.
-This API is supported in the following national cloud deployments.
+You cannot modify the displayName property\nonce you have created the category.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Update-MgBetaUserOutlookMasterCategory -InputObject <IUsersIdentity> [-Additiona
 
 ## DESCRIPTION
 Update the writable property, color, of the specified outlookCategory object.
-You can't modify the displayName property\nonce you have created the category.
-This API is supported in the following national cloud deployments.
+You cannot modify the displayName property\nonce you have created the category.
 
 ## EXAMPLES
 

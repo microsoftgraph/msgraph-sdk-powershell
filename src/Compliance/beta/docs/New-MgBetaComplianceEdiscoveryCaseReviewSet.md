@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new reviewSet object.
 The request body contains the display name of the review set, which is the only writable property.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
 ## DESCRIPTION
 Create a new reviewSet object.
 The request body contains the display name of the review set, which is the only writable property.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

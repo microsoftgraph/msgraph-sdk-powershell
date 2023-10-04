@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Apply tags to documents that match the specified reviewSetQuery.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ Add-MgBetaComplianceEdiscoveryCaseReviewSetQueryTag -InputObject <IComplianceIde
 
 ## DESCRIPTION
 Apply tags to documents that match the specified reviewSetQuery.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

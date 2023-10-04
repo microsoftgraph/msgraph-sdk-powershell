@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgDriveItem
 
 ## SYNOPSIS
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgDriveItem -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ## EXAMPLES
 

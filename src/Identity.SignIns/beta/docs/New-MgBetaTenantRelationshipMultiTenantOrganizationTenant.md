@@ -12,7 +12,6 @@ Add a tenant to a multi-tenant organization.
 The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization.
 The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request.
 Note that a tenant can be part of only one multi-tenant organization.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Add a tenant to a multi-tenant organization.
 The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization.
 The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request.
 Note that a tenant can be part of only one multi-tenant organization.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -39,9 +39,10 @@ A collection of permissions granted to apps for the chat.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+Get-MgBetaChatPermissionGrant -ChatId $chatId
 ```
 
-Get-MgBetaChatPermissionGrant -ChatId $chatId
+
 
 ## PARAMETERS
 

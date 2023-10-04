@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new attributeSet object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ New-MgDirectoryAttributeSet -BodyParameter <IMicrosoftGraphAttributeSet> [-Confi
 
 ## DESCRIPTION
 Create a new attributeSet object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

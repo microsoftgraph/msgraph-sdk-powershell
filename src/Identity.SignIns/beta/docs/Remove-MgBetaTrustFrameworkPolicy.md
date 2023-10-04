@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an existing trustFrameworkPolicy.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaTrustFrameworkPolicy -InputObject <IIdentitySignInsIdentity> [-IfMa
 
 ## DESCRIPTION
 Delete an existing trustFrameworkPolicy.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

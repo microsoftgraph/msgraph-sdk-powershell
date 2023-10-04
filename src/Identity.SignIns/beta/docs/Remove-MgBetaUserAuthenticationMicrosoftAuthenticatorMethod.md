@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a microsoftAuthenticatorAuthenticationMethod object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdent
 
 ## DESCRIPTION
 Deletes a microsoftAuthenticatorAuthenticationMethod object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

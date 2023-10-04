@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the specified Teams async operation that ran or is running on a specific resource.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaChatOperation -InputObject <ITeamsIdentity> [-ExpandProperty <String[]
 
 ## DESCRIPTION
 Get the specified Teams async operation that ran or is running on a specific resource.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

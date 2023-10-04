@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagementMobileAppConfiguration
 
 ## SYNOPSIS
-Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+Read properties and relationships of the iosMobileAppConfiguration object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceAppManagementMobileAppConfiguration -InputObject <IDevicesCorporateM
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+Read properties and relationships of the iosMobileAppConfiguration object.
 
 ## EXAMPLES
 

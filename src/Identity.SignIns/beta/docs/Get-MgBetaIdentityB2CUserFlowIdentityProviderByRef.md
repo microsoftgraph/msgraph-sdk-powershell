@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the identity providers in a b2cIdentityUserFlow object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgBetaIdentityB2CUserFlowIdentityProviderByRef -B2CIdentityUserFlowId <Strin
 
 ## DESCRIPTION
 Get the identity providers in a b2cIdentityUserFlow object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

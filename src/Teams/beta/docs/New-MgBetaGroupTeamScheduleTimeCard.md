@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a timeCard instance in a schedule.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgBetaGroupTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Create a timeCard instance in a schedule.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

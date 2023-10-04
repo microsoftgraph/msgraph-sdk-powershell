@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Uninstall an app installed within a chat.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgUserChatInstalledApp -InputObject <ITeamsIdentity> [-IfMatch <String>] 
 
 ## DESCRIPTION
 Uninstall an app installed within a chat.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

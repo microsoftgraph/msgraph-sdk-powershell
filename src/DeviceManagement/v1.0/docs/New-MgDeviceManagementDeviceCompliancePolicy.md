@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementDeviceCompliancePolicy
 
 ## SYNOPSIS
-Create a new iosCompliancePolicy object.
+Create a new androidCompliancePolicy object.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ New-MgDeviceManagementDeviceCompliancePolicy -BodyParameter <IMicrosoftGraphDevi
 ```
 
 ## DESCRIPTION
-Create a new iosCompliancePolicy object.
+Create a new androidCompliancePolicy object.
 
 ## EXAMPLES
 

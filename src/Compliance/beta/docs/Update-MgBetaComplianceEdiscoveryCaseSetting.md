@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a an eDiscovery caseSettings object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgBetaComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity>
 
 ## DESCRIPTION
 Update the properties of a an eDiscovery caseSettings object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -298,7 +296,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DynamicallyAdjustTopicCount <Boolean?>]`: To learn more, see Adjust maximum number of themes dynamically.
     - `[IgnoreNumbers <Boolean?>]`: To learn more, see Include numbers in themes.
-    - `[IsEnabled <Boolean?>]`: Indicates whether themes are enabled for the case.
+    - `[IsEnabled <Boolean?>]`: Indicates whether themes is enabled for the case.
     - `[TopicCount <Int32?>]`: To learn more, see Maximum number of themes.
 
 `INPUTOBJECT <IComplianceIdentity>`: Identity Parameter
@@ -337,7 +335,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DynamicallyAdjustTopicCount <Boolean?>]`: To learn more, see Adjust maximum number of themes dynamically.
   - `[IgnoreNumbers <Boolean?>]`: To learn more, see Include numbers in themes.
-  - `[IsEnabled <Boolean?>]`: Indicates whether themes are enabled for the case.
+  - `[IsEnabled <Boolean?>]`: Indicates whether themes is enabled for the case.
   - `[TopicCount <Int32?>]`: To learn more, see Maximum number of themes.
 
 ## RELATED LINKS

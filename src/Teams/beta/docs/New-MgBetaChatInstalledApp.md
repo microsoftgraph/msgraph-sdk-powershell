@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Install a teamsApp to the specified chat.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgBetaChatInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties 
 
 ## DESCRIPTION
 Install a teamsApp to the specified chat.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Make the scheduling page of a business available to external customers.
 Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Publish-MgBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm
 ## DESCRIPTION
 Make the scheduling page of a business available to external customers.
 Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

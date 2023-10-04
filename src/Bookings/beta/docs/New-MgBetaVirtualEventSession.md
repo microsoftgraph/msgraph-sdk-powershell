@@ -997,7 +997,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Content <Byte[]>]`: The content of the recording. Read-only.
     - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
-    - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
     - `[RecordingContentUrl <String>]`: The URL which can be used to access the content of the recording. Read-only.
   - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -1030,7 +1029,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Content <Byte[]>]`: The content of the transcript. Read-only.
     - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
-    - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
     - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
     - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
@@ -1162,14 +1160,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Content <Byte[]>]`: The content of the recording. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
-  - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
-    - `[Device <IMicrosoftGraphIdentity>]`: identity
-    - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
   - `[RecordingContentUrl <String>]`: The URL which can be used to access the content of the recording. Read-only.
 
@@ -1311,7 +1301,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[Content <Byte[]>]`: The content of the recording. Read-only.
       - `[CreatedDateTime <DateTime?>]`: Date and time at which the recording was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[MeetingId <String>]`: The unique identifier of the onlineMeeting related to this recording. Read-only.
-      - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
       - `[RecordingContentUrl <String>]`: The URL which can be used to access the content of the recording. Read-only.
     - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -1344,7 +1333,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[Content <Byte[]>]`: The content of the transcript. Read-only.
       - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
-      - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
       - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
       - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.
@@ -1363,14 +1351,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Content <Byte[]>]`: The content of the transcript. Read-only.
   - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
-  - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
-    - `[Device <IMicrosoftGraphIdentity>]`: identity
-    - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[MeetingOrganizerId <String>]`: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
   - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
   - `[TranscriptContentUrl <String>]`: The URL which can be used to access the content of the transcript. Read-only.

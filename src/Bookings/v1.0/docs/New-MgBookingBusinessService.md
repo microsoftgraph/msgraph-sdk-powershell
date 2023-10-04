@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new bookingService for the specified bookingBusiness.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ New-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInform
 
 ## DESCRIPTION
 Create a new bookingService for the specified bookingBusiness.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -520,7 +518,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
     - `[IsRequired <Boolean?>]`: The ID of the custom question.
-    - `[QuestionId <String>]`: Indicates whether it's mandatory to answer the custom question.
+    - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
   - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
   - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -572,7 +570,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `CUSTOMQUESTIONS <IMicrosoftGraphBookingQuestionAssignment[]>`: Contains the set of custom questions associated with a particular service.
   - `[IsRequired <Boolean?>]`: The ID of the custom question.
-  - `[QuestionId <String>]`: Indicates whether it's mandatory to answer the custom question.
+  - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
 
 `DEFAULTLOCATION <IMicrosoftGraphLocation>`: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

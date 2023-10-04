@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Compliance
-Module Guid: 0d226d4b-3c99-493d-8dae-a508bfd41d8d
+Module Guid: 06c5abcf-19aa-4120-a7f6-06e4c9272fcb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,47 +16,12 @@ Get compliance
 
 ### [Get-MgPrivacySubjectRightsRequest](Get-MgPrivacySubjectRightsRequest.md)
 Read the properties and relationships of a subjectRightsRequest object.
-This API is supported in the following national cloud deployments.
-
-### [Get-MgPrivacySubjectRightsRequestApprover](Get-MgPrivacySubjectRightsRequestApprover.md)
-Get approvers from privacy
-
-### [Get-MgPrivacySubjectRightsRequestApproverCount](Get-MgPrivacySubjectRightsRequestApproverCount.md)
-Get the number of the resource
-
-### [Get-MgPrivacySubjectRightsRequestApproverMailboxSetting](Get-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
-### [Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningError](Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningErrorCount](Get-MgPrivacySubjectRightsRequestApproverServiceProvisioningErrorCount.md)
-Get the number of the resource
-
-### [Get-MgPrivacySubjectRightsRequestCollaborator](Get-MgPrivacySubjectRightsRequestCollaborator.md)
-Get collaborators from privacy
-
-### [Get-MgPrivacySubjectRightsRequestCollaboratorCount](Get-MgPrivacySubjectRightsRequestCollaboratorCount.md)
-Get the number of the resource
-
-### [Get-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting](Get-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
-### [Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningError](Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningErrorCount](Get-MgPrivacySubjectRightsRequestCollaboratorServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgPrivacySubjectRightsRequestCount](Get-MgPrivacySubjectRightsRequestCount.md)
 Get the number of the resource
 
 ### [Get-MgPrivacySubjectRightsRequestNote](Get-MgPrivacySubjectRightsRequestNote.md)
-List of notes associated with the request.
+List of notes associcated with the request.
 
 ### [Get-MgPrivacySubjectRightsRequestNoteCount](Get-MgPrivacySubjectRightsRequestNoteCount.md)
 Get the number of the resource
@@ -66,11 +31,9 @@ Information about the Microsoft Teams team that was created for the request.
 
 ### [New-MgPrivacySubjectRightsRequest](New-MgPrivacySubjectRightsRequest.md)
 Create a new subjectRightsRequest object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgPrivacySubjectRightsRequestNote](New-MgPrivacySubjectRightsRequestNote.md)
 Create a new authoredNote object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgPrivacySubjectRightsRequest](Remove-MgPrivacySubjectRightsRequest.md)
 Delete navigation property subjectRightsRequests for privacy
@@ -83,13 +46,6 @@ Update compliance
 
 ### [Update-MgPrivacySubjectRightsRequest](Update-MgPrivacySubjectRightsRequest.md)
 Update the properties of a subjectRightsRequest object.
-This API is supported in the following national cloud deployments.
-
-### [Update-MgPrivacySubjectRightsRequestApproverMailboxSetting](Update-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
-Update property mailboxSettings value.
-
-### [Update-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting](Update-MgPrivacySubjectRightsRequestCollaboratorMailboxSetting.md)
-Update property mailboxSettings value.
 
 ### [Update-MgPrivacySubjectRightsRequestNote](Update-MgPrivacySubjectRightsRequestNote.md)
 Update the navigation property notes in privacy

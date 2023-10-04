@@ -11,7 +11,6 @@ schema: 2.0.0
 Retrieve the properties and relationships of a serviceHealthIssue object.
 This operation retrieves a specified service health issue for tenant.
 The operation returns an error if the issue does not exist for the tenant.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ Get-MgBetaServiceAnnouncementIssue -InputObject <IDevicesServiceAnnouncementIden
 Retrieve the properties and relationships of a serviceHealthIssue object.
 This operation retrieves a specified service health issue for tenant.
 The operation returns an error if the issue does not exist for the tenant.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

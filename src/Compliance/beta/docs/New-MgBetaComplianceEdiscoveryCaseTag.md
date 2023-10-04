@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new tag for the specified case.
 The tags are used in review sets while reviewing content.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ New-MgBetaComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-Addit
 ## DESCRIPTION
 Create a new tag for the specified case.
 The tags are used in review sets while reviewing content.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

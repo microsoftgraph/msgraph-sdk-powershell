@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 18e266ef-9d5f-454c-96c4-655377baf71e
+Module Guid: 97259672-ea6e-4fc6-a9fe-100df7ab5277
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -146,7 +146,7 @@ This allows you to maintain and synchronize a local store of events in the speci
 Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
 ### [Get-MgGroupConversation](Get-MgGroupConversation.md)
-The group's conversations.
+Retrieve the properties and relationships of conversation object.
 
 ### [Get-MgGroupConversationCount](Get-MgGroupConversationCount.md)
 Get the number of the resource
@@ -790,9 +790,8 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -805,9 +804,8 @@ You can create an open extension in a resource instance and store custom data to
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -855,8 +853,8 @@ To get properties that are not returned by default, do a GET operation and speci
 
 ### [New-MgGroupAcceptedSenderByRef](New-MgGroupAcceptedSenderByRef.md)
 Specify the user or group in @odata.id in the request body.
-Users in the accepted senders list can post to conversations of the group.
-Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
+Users in the accepted senders list can post to conversations of the group .
+Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -943,8 +941,8 @@ Create new navigation property to permissionGrants for groups
 
 ### [New-MgGroupRejectedSenderByRef](New-MgGroupRejectedSenderByRef.md)
 Specify the user or group in @odata.id in the request body.
-Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL).
-Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
+Users in the rejected senders list cannot post to conversations of the group (identified in the POST request URL).
+Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
 
 ### [New-MgGroupSetting](New-MgGroupSetting.md)
 Create a new setting based on the templates available in groupSettingTemplates.
@@ -1240,7 +1238,8 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the members navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

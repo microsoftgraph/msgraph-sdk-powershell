@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
 
 ## DESCRIPTION
 Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

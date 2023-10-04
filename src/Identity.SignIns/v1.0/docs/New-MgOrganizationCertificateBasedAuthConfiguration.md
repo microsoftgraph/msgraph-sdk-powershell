@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new certificateBasedAuthConfiguration object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgOrganizationCertificateBasedAuthConfiguration -InputObject <IIdentitySignI
 
 ## DESCRIPTION
 Create a new certificateBasedAuthConfiguration object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

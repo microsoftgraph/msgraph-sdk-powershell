@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an authenticationCombinationConfiguration object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +36,6 @@ Get-MgBetaIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfig
 
 ## DESCRIPTION
 Read the properties and relationships of an authenticationCombinationConfiguration object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

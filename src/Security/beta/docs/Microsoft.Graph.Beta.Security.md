@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 36323515-d699-401a-aec9-21fbec8226b7
+Module Guid: 3e3a124f-531b-4725-8441-936278337b81
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,7 +19,7 @@ The location provides a URL that will return an eDiscoveryHoldOperation object.
 ### [Add-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of applying hold on eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
-The location provides a URL that returns an eDiscoveryHoldOperation object.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgBetaSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
 Apply tags to files in an eDiscovery review set.
@@ -332,9 +332,6 @@ Microsoft 365 Defender correlates alerts with the same attack techniques or the 
 The list of related alerts.
 Supports $expand.
 
-### [Get-MgBetaSecurityIncidentAlertCommentCount](Get-MgBetaSecurityIncidentAlertCommentCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSecurityIncidentAlertCount](Get-MgBetaSecurityIncidentAlertCount.md)
 Get the number of the resource
 
@@ -523,7 +520,7 @@ The host resource is the abstract base type that returns an implementation.
 A host can be of one of the following types:
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPair](Get-MgBetaSecurityThreatIntelligenceHostChildHostPair.md)
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostChildHostPairCount](Get-MgBetaSecurityThreatIntelligenceHostChildHostPairCount.md)
 Get the number of the resource
@@ -581,29 +578,17 @@ Reverse passive DNS retrieval about this host.
 ### [Get-MgBetaSecurityThreatIntelligenceHostPassiveDnsReverseCount](Get-MgBetaSecurityThreatIntelligenceHostPassiveDnsReverseCount.md)
 Get the number of the resource
 
-### [Get-MgBetaSecurityThreatIntelligenceHostPort](Get-MgBetaSecurityThreatIntelligenceHostPort.md)
-Get hostPorts from security
-
-### [Get-MgBetaSecurityThreatIntelligenceHostPortCount](Get-MgBetaSecurityThreatIntelligenceHostPortCount.md)
-Get the number of the resource
-
-### [Get-MgBetaSecurityThreatIntelligenceHostPortHost](Get-MgBetaSecurityThreatIntelligenceHostPortHost.md)
-Get host from security
-
-### [Get-MgBetaSecurityThreatIntelligenceHostPortMostRecentSslCertificate](Get-MgBetaSecurityThreatIntelligenceHostPortMostRecentSslCertificate.md)
-Get mostRecentSslCertificate from security
-
 ### [Get-MgBetaSecurityThreatIntelligenceHostReputation](Get-MgBetaSecurityThreatIntelligenceHostReputation.md)
 Get the properties and relationships of a hostReputation object.
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificate](Get-MgBetaSecurityThreatIntelligenceHostSslCertificate.md)
-Get the properties and relationships of a hostSslCertificate object.
+Get hostSslCertificates from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificateCount](Get-MgBetaSecurityThreatIntelligenceHostSslCertificateCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSslCertificateHost](Get-MgBetaSecurityThreatIntelligenceHostSslCertificateHost.md)
-The host for this hostSslCertificate.
+Get host from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostSubdomain](Get-MgBetaSecurityThreatIntelligenceHostSubdomain.md)
 The subdomains that are associated with this host.
@@ -659,13 +644,13 @@ The artifact related to this indicator.
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificate](Get-MgBetaSecurityThreatIntelligenceSslCertificate.md)
-Get the properties and relationships of an sslCertificate object.
+Get sslCertificates from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateCount](Get-MgBetaSecurityThreatIntelligenceSslCertificateCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHost](Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHost.md)
-The hosts related with this sslCertificate.
+Get relatedHosts from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHostCount](Get-MgBetaSecurityThreatIntelligenceSslCertificateRelatedHostCount.md)
 Get the number of the resource
@@ -807,9 +792,6 @@ For details, see Manage custodians in an eDiscovery (Premium) case.
 
 ### [Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgBetaAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
-
-### [Invoke-MgBetaCommentSecurityAlert](Invoke-MgBetaCommentSecurityAlert.md)
-Get the number of the resource
 
 ### [Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgBetaEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
 Run an estimate of the number of emails and documents in the eDiscovery search.
@@ -995,9 +977,6 @@ Create new navigation property to hostCookies for security
 ### [New-MgBetaSecurityThreatIntelligenceHostPair](New-MgBetaSecurityThreatIntelligenceHostPair.md)
 Create new navigation property to hostPairs for security
 
-### [New-MgBetaSecurityThreatIntelligenceHostPort](New-MgBetaSecurityThreatIntelligenceHostPort.md)
-Create new navigation property to hostPorts for security
-
 ### [New-MgBetaSecurityThreatIntelligenceHostSslCertificate](New-MgBetaSecurityThreatIntelligenceHostSslCertificate.md)
 Create new navigation property to hostSslCertificates for security
 
@@ -1145,7 +1124,7 @@ Delete navigation property noncustodialDataSources for security
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Remove-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of removing hold from eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
-The location provides a URL that returns an eDiscoveryHoldOperation object.
+The location provides a URL that will return an eDiscoveryHoldOperation object.
 
 ### [Remove-MgBetaSecurityCaseEdiscoveryCaseOperation](Remove-MgBetaSecurityCaseEdiscoveryCaseOperation.md)
 Delete navigation property operations for security
@@ -1273,9 +1252,6 @@ Delete navigation property hostCookies for security
 ### [Remove-MgBetaSecurityThreatIntelligenceHostPair](Remove-MgBetaSecurityThreatIntelligenceHostPair.md)
 Delete navigation property hostPairs for security
 
-### [Remove-MgBetaSecurityThreatIntelligenceHostPort](Remove-MgBetaSecurityThreatIntelligenceHostPort.md)
-Delete navigation property hostPorts for security
-
 ### [Remove-MgBetaSecurityThreatIntelligenceHostReputation](Remove-MgBetaSecurityThreatIntelligenceHostReputation.md)
 Delete navigation property reputation for security
 
@@ -1369,17 +1345,11 @@ Delete navigation property parent for users
 ### [Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
 
-### [Set-MgBetaSecurityAlert](Set-MgBetaSecurityAlert.md)
-Sets a new value for the collection of alertComment.
-
 ### [Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent](Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileContent.md)
 Update content for the navigation property files in security
 
 ### [Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent](Set-MgBetaSecurityCaseEdiscoveryCaseReviewSetFileExtractedTextContent.md)
 Update extractedTextContent for the navigation property files in security
-
-### [Set-MgBetaSecurityIncidentAlertComment](Set-MgBetaSecurityIncidentAlertComment.md)
-Sets a new value for the collection of alertComment.
 
 ### [Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery](Start-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Invoke function run
@@ -1616,9 +1586,6 @@ Update the navigation property hostCookies in security
 
 ### [Update-MgBetaSecurityThreatIntelligenceHostPair](Update-MgBetaSecurityThreatIntelligenceHostPair.md)
 Update the navigation property hostPairs in security
-
-### [Update-MgBetaSecurityThreatIntelligenceHostPort](Update-MgBetaSecurityThreatIntelligenceHostPort.md)
-Update the navigation property hostPorts in security
 
 ### [Update-MgBetaSecurityThreatIntelligenceHostReputation](Update-MgBetaSecurityThreatIntelligenceHostReputation.md)
 Update the navigation property reputation in security

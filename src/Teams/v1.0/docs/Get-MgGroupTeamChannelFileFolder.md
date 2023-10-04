@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the metadata for the location where the files of a channel are stored.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgGroupTeamChannelFileFolder -InputObject <ITeamsIdentity> [-ExpandProperty 
 
 ## DESCRIPTION
 Get the metadata for the location where the files of a channel are stored.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

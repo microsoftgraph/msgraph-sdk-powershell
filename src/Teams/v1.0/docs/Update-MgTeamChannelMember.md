@@ -8,8 +8,8 @@ schema: 2.0.0
 # Update-MgTeamChannelMember
 
 ## SYNOPSIS
-Update the role of a conversationMember in a team or channel.
-This API is supported in the following national cloud deployments.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## SYNTAX
 
@@ -40,8 +40,8 @@ Update-MgTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Update the role of a conversationMember in a team or channel.
-This API is supported in the following national cloud deployments.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a membershipType value of private or shared.
 
 ## EXAMPLES
 

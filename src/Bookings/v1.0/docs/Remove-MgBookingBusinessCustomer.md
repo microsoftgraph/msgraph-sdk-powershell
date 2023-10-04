@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the specified bookingCustomer object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-IfMatch <Str
 
 ## DESCRIPTION
 Delete the specified bookingCustomer object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

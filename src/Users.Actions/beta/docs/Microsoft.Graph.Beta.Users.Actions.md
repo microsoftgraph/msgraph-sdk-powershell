@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: d611c7f6-b6ac-4d3b-8975-2ae9d6d45bd9
+Module Guid: b9c38194-9b65-41f3-b811-9cb4b6dd0e60
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -338,8 +338,8 @@ Restore multiple Cloud PC devices with a single request that includes the IDs of
 
 ### [Invoke-MgBetaBulkUserCloudPcResize](Invoke-MgBetaBulkUserCloudPcResize.md)
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
-If any devices can't be resized, those devices indicate 'resize failed'.
-The remaining devices are provisioned for the resize process.
+If any devices cannot be resized, those devices will indicate 'resize failed'.
+The remaining devices will be provisioned for the resize process.
 
 ### [Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus](Invoke-MgBetaBulkUserManagedDeviceSetCloudPcReviewStatus.md)
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
@@ -601,8 +601,8 @@ Reprovision a Cloud PC with an Intune managed device ID.
 Retire a device
 
 ### [Invoke-MgBetaRetryUserCloudPcPartnerAgentInstallation](Invoke-MgBetaRetryUserCloudPcPartnerAgentInstallation.md)
-Retry installation for the partner agents that failed to install on the Cloud PC.
-Service side checks which agent installation failed firstly and retry.
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ### [Invoke-MgBetaRetryUserServiceProvisioning](Invoke-MgBetaRetryUserServiceProvisioning.md)
 Retry the user service provisioning.
@@ -706,9 +706,6 @@ Invoke action moveDevicesToOU
 ### [Move-MgBetaUserMessage](Move-MgBetaUserMessage.md)
 Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
-
-### [New-MgBetaUserCloudPcSnapshot](New-MgBetaUserCloudPcSnapshot.md)
-Invoke action createSnapshot
 
 ### [New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration](New-MgBetaUserDeviceEnrollmentConfigurationEnrollmentNotificationConfiguration.md)
 Invoke action createEnrollmentNotificationConfiguration
@@ -955,9 +952,6 @@ Reset passcode
 ### [Reset-MgBetaUserPendingAccessReviewInstanceDecision](Reset-MgBetaUserPendingAccessReviewInstanceDecision.md)
 Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
 
-### [Resize-MgBetaUserCloudPc](Resize-MgBetaUserCloudPc.md)
-Invoke action resize
-
 ### [Resize-MgBetaUserManagedDeviceCloudPc](Resize-MgBetaUserManagedDeviceCloudPc.md)
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
 
@@ -1134,7 +1128,7 @@ Trigger action on ConfigurationManager client
 ### [Stop-MgBetaUserCloudPc](Stop-MgBetaUserCloudPc.md)
 Power off a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
-After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately.
+After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately.
 Only IT admin users can perform this action.
 
 ### [Stop-MgBetaUserCloudPcGracePeriod](Stop-MgBetaUserCloudPcGracePeriod.md)

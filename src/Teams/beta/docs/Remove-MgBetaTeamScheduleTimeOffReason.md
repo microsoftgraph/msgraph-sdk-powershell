@@ -12,7 +12,6 @@ Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeOffReason.
 This method does not remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeOffReason.
 This method does not remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

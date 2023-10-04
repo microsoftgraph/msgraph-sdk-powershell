@@ -15,7 +15,6 @@ Updating works only for chats where conversation members are Microsoft Teams use
 If one of the members is using Skype, the operation fails.
 This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -72,7 +71,6 @@ Updating works only for chats where conversation members are Microsoft Teams use
 If one of the members is using Skype, the operation fails.
 This method does not support federation.
 Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

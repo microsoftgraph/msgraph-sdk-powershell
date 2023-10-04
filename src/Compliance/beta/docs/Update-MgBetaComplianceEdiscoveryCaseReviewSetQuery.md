@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an eDiscovery reviewSetQuery.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgBetaComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIde
 
 ## DESCRIPTION
 Update the properties of an eDiscovery reviewSetQuery.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

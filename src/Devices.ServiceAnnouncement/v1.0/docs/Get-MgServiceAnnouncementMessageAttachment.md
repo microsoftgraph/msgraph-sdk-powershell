@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a serviceAnnouncementAttachment object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgServiceAnnouncementMessageAttachment -InputObject <IDevicesServiceAnnounce
 
 ## DESCRIPTION
 Read the properties and relationships of a serviceAnnouncementAttachment object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

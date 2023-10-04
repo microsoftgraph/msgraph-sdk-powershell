@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: d719d15a-0fa6-4e33-bf29-59635ba2fd84
+Module Guid: 4cdeba43-af97-414c-99da-6e4f63bda73e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -377,7 +377,6 @@ Get virtualEndpoint from deviceManagement
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointAuditEvent](Get-MgBetaDeviceManagementVirtualEndpointAuditEvent.md)
 Read the properties and relationships of a cloudPcAuditEvent object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointAuditEventCount](Get-MgBetaDeviceManagementVirtualEndpointAuditEventCount.md)
 Get the number of the resource
@@ -390,25 +389,21 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointCloudPc](Get-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Read the properties and relationships of a specific cloudPC object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcCount](Get-MgBetaDeviceManagementVirtualEndpointCloudPcCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Get-MgBetaDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
 Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointDeviceImage](Get-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 Read the properties and relationships of a specific cloudPcDeviceImage object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointDeviceImageCount](Get-MgBetaDeviceManagementVirtualEndpointDeviceImageCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Read the properties and relationships of a cloudPcExternalPartnerSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSettingCount](Get-MgBetaDeviceManagementVirtualEndpointExternalPartnerSettingCount.md)
 Get the number of the resource
@@ -421,14 +416,12 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointGalleryImage](Get-MgBetaDeviceManagementVirtualEndpointGalleryImage.md)
 Read the properties and relationships of a specific cloudPcGalleryImage object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointGalleryImageCount](Get-MgBetaDeviceManagementVirtualEndpointGalleryImageCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection](Get-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection.md)
 Read the properties and relationships of the cloudPcOnPremisesConnection object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionCount](Get-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionCount.md)
 Get the number of the resource
@@ -436,11 +429,9 @@ Get the number of the resource
 ### [Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
 A tenant has only one cloudPcOrganizationSettings object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Read the properties and relationships of a cloudPcProvisioningPolicy object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 A defined collection of provisioning policy assignments.
@@ -463,13 +454,6 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
-### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningError](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningError.md)
-Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-Supports $filter (eq, not, for isResolved and serviceInstance).
-
-### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningErrorCount](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignmentCount](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignmentCount.md)
 Get the number of the resource
 
@@ -484,7 +468,6 @@ Read the properties and relationships of a cloudPcExportJob object.
 You can download a report by first creating a new cloudPcExportJob resource to initiate downloading.
 Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource.
 When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount](Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount.md)
 Get the number of the resource
@@ -497,14 +480,12 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan](Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlan.md)
 Read the properties and relationships of a cloudPcSharedUseServicePlan object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlanCount](Get-MgBetaDeviceManagementVirtualEndpointSharedUseServicePlanCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointSnapshot](Get-MgBetaDeviceManagementVirtualEndpointSnapshot.md)
 Read the properties and relationships of a cloudPcSnapshot object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointSnapshotCount](Get-MgBetaDeviceManagementVirtualEndpointSnapshotCount.md)
 Get the number of the resource
@@ -517,7 +498,6 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointUserSetting](Get-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Read the properties and relationships of a cloudPcUserSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Get-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned.
@@ -659,11 +639,9 @@ Create new navigation property to bulkActions for deviceManagement
 ### [New-MgBetaDeviceManagementVirtualEndpointDeviceImage](New-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 Create a new cloudPcDeviceImage object.
 Upload a custom OS image that you can later provision on Cloud PCs.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](New-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Create a new cloudPcExternalPartnerSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](New-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
 Create new navigation property to frontLineServicePlans for deviceManagement
@@ -673,11 +651,9 @@ Create new navigation property to galleryImages for deviceManagement
 
 ### [New-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection](New-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection.md)
 Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Create a new cloudPcProvisioningPolicy object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](New-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Create new navigation property to assignments for deviceManagement
@@ -686,7 +662,6 @@ Create new navigation property to assignments for deviceManagement
 Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
 Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource.
 When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointServicePlan](New-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
@@ -702,7 +677,6 @@ Create new navigation property to supportedRegions for deviceManagement
 
 ### [New-MgBetaDeviceManagementVirtualEndpointUserSetting](New-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Create a new cloudPcUserSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](New-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Create new navigation property to assignments for deviceManagement
@@ -856,7 +830,6 @@ Delete navigation property crossCloudGovernmentOrganizationMapping for deviceMan
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage](Remove-MgBetaDeviceManagementVirtualEndpointDeviceImage.md)
 Delete a cloudPcDeviceImage object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Remove-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Delete navigation property externalPartnerSettings for deviceManagement
@@ -871,7 +844,6 @@ Delete navigation property galleryImages for deviceManagement
 Delete a specific cloudPcOnPremisesConnection object.
 When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources.
 You cannot delete an Azure network connection when it's in use, as indicated by the inUse property.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Remove-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Delete navigation property organizationSettings for deviceManagement
@@ -879,7 +851,6 @@ Delete navigation property organizationSettings for deviceManagement
 ### [Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Delete a cloudPcProvisioningPolicy object.
 You can’t delete a policy that’s in use.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Delete navigation property assignments for deviceManagement
@@ -904,7 +875,6 @@ Delete navigation property supportedRegions for deviceManagement
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointUserSetting](Remove-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Delete a cloudPcUserSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Remove-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Delete navigation property assignments for deviceManagement
@@ -1064,7 +1034,6 @@ Update the navigation property deviceImages in deviceManagement
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting](Update-MgBetaDeviceManagementVirtualEndpointExternalPartnerSetting.md)
 Update the properties of a cloudPcExternalPartnerSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](Update-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
 Update the navigation property frontLineServicePlans in deviceManagement
@@ -1074,15 +1043,12 @@ Update the navigation property galleryImages in deviceManagement
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection](Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection.md)
 Update the properties of a cloudPcOnPremisesConnection object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting](Update-MgBetaDeviceManagementVirtualEndpointOrganizationSetting.md)
 Update the properties of the cloudPcOrganizationSettings object in a tenant.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Update the properties of a cloudPcProvisioningPolicy object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Update-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Update the navigation property assignments in deviceManagement
@@ -1110,7 +1076,6 @@ Update the navigation property supportedRegions in deviceManagement
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointUserSetting](Update-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Update the properties of a cloudPcUserSetting object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Update-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Update the navigation property assignments in deviceManagement

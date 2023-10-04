@@ -346,7 +346,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DetectedFiles <IMicrosoftGraphSecuritySubmissionDetectedFile[]>]`: Specifies the files detected by Microsoft in the submitted emails.
       - `[FileHash <String>]`: The file hash.
       - `[FileName <String>]`: The file name.
-    - `[DetectedUrls <String[]>]`: Specifies the URLs detected by Microsoft in the submitted email.
+    - `[DetectedUrls <String[]>]`: Specifes the URLs detected by Microsoft in the submitted email.
     - `[UserMailboxSetting <String>]`: userMailboxSetting
   - `[Source <String>]`: submissionSource
   - `[Status <String>]`: longRunningOperationStatus
@@ -367,7 +367,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DetectedFiles <IMicrosoftGraphSecuritySubmissionDetectedFile[]>]`: Specifies the files detected by Microsoft in the submitted emails.
     - `[FileHash <String>]`: The file hash.
     - `[FileName <String>]`: The file name.
-  - `[DetectedUrls <String[]>]`: Specifies the URLs detected by Microsoft in the submitted email.
+  - `[DetectedUrls <String[]>]`: Specifes the URLs detected by Microsoft in the submitted email.
   - `[UserMailboxSetting <String>]`: userMailboxSetting
 
 ## RELATED LINKS

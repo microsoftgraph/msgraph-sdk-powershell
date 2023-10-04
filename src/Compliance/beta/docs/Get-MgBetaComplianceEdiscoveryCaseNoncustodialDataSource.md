@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a noncustodialDataSource object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComplian
 
 ## DESCRIPTION
 Read the properties and relationships of a noncustodialDataSource object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

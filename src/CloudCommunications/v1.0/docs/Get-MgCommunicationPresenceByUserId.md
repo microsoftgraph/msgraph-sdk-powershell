@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the presence information for multiple users.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Get-MgCommunicationPresenceByUserId
 
 ## DESCRIPTION
 Get the presence information for multiple users.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

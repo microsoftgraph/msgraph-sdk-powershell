@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a partner-specific configuration.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -62,7 +61,6 @@ Update-MgBetaPolicyCrossTenantAccessPolicyPartner -InputObject <IIdentitySignIns
 
 ## DESCRIPTION
 Update the properties of a partner-specific configuration.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostSslCertificate
 
 ## SYNOPSIS
-Get the properties and relationships of a hostSslCertificate object.
+Get hostSslCertificates from security
 
 ## SYNTAX
 
@@ -63,7 +63,7 @@ Get-MgBetaSecurityThreatIntelligenceHostSslCertificate -HostId <String> [-Expand
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of a hostSslCertificate object.
+Get hostSslCertificates from security
 
 ## EXAMPLES
 
@@ -338,7 +338,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSecurityProfileId <String>]`: The unique identifier of hostSecurityProfile
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker

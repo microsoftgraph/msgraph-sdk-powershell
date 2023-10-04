@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an acronym object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Update-MgBetaSearchAcronym -InputObject <ISearchIdentity> [-AdditionalProperties
 
 ## DESCRIPTION
 Update the properties of an acronym object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -232,7 +230,7 @@ Accept wildcard characters: False
 
 ### -WebUrl
 Search answer URL link.
-When users click this search answer in search results, they'll go to this URL.
+When users click this search answer in search results, they will go to this URL.
 
 ```yaml
 Type: System.String
@@ -312,14 +310,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
-  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they'll go to this URL.
+  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[StandsFor <String>]`: What the acronym stands for.
   - `[State <String>]`: answerState
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[AcronymId <String>]`: The unique identifier of acronym
-  - `[AuthorizationSystemId <String>]`: The unique identifier of authorizationSystem
   - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity

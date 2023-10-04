@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a conversationMember from a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-IfMatch <S
 ## DESCRIPTION
 Delete a conversationMember from a channel.
 This operation is allowed only for channels with a membershipType value of private or shared.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

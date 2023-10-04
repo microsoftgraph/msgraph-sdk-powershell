@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Mark a chat as read for a user.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Invoke-MgBetaMarkChatReadForUser -InputObject <ITeamsIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Mark a chat as read for a user.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

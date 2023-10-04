@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Initiate an export from a reviewSet.
 For details, see Export documents from a review set in Advanced eDiscovery.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Export-MgBetaComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity
 ## DESCRIPTION
 Initiate an export from a reviewSet.
 For details, see Export documents from a review set in Advanced eDiscovery.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

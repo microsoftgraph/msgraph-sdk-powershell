@@ -11,8 +11,7 @@ schema: 2.0.0
 Retrieve a submitted resource.
 Only teachers, students, and applications with application permissions can perform this operation.
 Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
-Teachers can leave notes in some resources.
-This API is supported in the following national cloud deployments.
+Note that teachers can leave notes in some resources.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Get-MgEducationMeAssignmentSubmissionSubmittedResource -InputObject <IEducationI
 Retrieve a submitted resource.
 Only teachers, students, and applications with application permissions can perform this operation.
 Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
-Teachers can leave notes in some resources.
-This API is supported in the following national cloud deployments.
+Note that teachers can leave notes in some resources.
 
 ## EXAMPLES
 

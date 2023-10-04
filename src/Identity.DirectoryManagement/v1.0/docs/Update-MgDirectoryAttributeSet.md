@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an attributeSet object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentit
 
 ## DESCRIPTION
 Update the properties of an attributeSet object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

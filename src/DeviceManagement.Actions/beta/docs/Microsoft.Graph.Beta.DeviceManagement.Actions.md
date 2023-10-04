@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 0be60051-9205-45bc-8800-81b2cb56a95d
+Module Guid: 67a98b2f-3c89-46e4-96f4-0407f54afbad
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -340,15 +340,9 @@ Invoke action getConnectionQualityReports
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
 
-### [Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport](Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport.md)
-Invoke action getFrontlineReport
-
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport](Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport.md)
 Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status.
 An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
-
-### [Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport.md)
-Invoke action getRawRemoteConnectionReports
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
 Get the remote connection history records of a Cloud PC during a given period.
@@ -401,8 +395,8 @@ Set the review status of multiple Cloud PC devices with a single request that in
 
 ### [Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize](Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize.md)
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
-If any devices can't be resized, those devices indicate 'resize failed'.
-The remaining devices are provisioned for the resize process.
+If any devices cannot be resized, those devices will indicate 'resize failed'.
+The remaining devices will be provisioned for the resize process.
 
 ### [Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
@@ -546,8 +540,8 @@ Retire a device
 Retire a device
 
 ### [Invoke-MgBetaRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation](Invoke-MgBetaRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation.md)
-Retry installation for the partner agents that failed to install on the Cloud PC.
-Service side checks which agent installation failed firstly and retry.
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ### [Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage](Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage.md)
 Reupload a cloudPcDeviceImage object that failed to upload.
@@ -676,9 +670,6 @@ Invoke action createInstance
 ### [New-MgBetaDeviceManagementTemplateMigratableToInstance](New-MgBetaDeviceManagementTemplateMigratableToInstance.md)
 Invoke action createInstance
 
-### [New-MgBetaDeviceManagementVirtualEndpointCloudPcSnapshot](New-MgBetaDeviceManagementVirtualEndpointCloudPcSnapshot.md)
-Invoke action createSnapshot
-
 ### [Remove-MgBetaDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgBetaDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement.md)
 Remove device from Device Firmware Configuration Interface management
 
@@ -730,9 +721,6 @@ Upgrade or downgrade an existing Cloud PC to another configuration with a new vi
 
 ### [Resize-MgBetaDeviceManagementManagedDeviceCloudPc](Resize-MgBetaDeviceManagementManagedDeviceCloudPc.md)
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-
-### [Resize-MgBetaDeviceManagementVirtualEndpointCloudPc](Resize-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
-Invoke action resize
 
 ### [Restart-MgBetaDeviceManagementComanagedDeviceNow](Restart-MgBetaDeviceManagementComanagedDeviceNow.md)
 Reboot device
@@ -923,7 +911,7 @@ This will trigger a new health check for this cloudPcOnPremisesConnection object
 ### [Stop-MgBetaDeviceManagementVirtualEndpointCloudPc](Stop-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Power off a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
-After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately.
+After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately.
 Only IT admin users can perform this action.
 
 ### [Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod.md)

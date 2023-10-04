@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a shiftPreferences object by ID.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaUserSettingShiftPreference -InputObject <IUsersIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a shiftPreferences object by ID.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

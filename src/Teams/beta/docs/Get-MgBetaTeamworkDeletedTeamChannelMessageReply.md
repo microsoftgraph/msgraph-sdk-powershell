@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a single message or a message reply in a channel or a chat.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaTeamworkDeletedTeamChannelMessageReply -InputObject <ITeamsIdentity> [
 
 ## DESCRIPTION
 Retrieve a single message or a message reply in a channel or a chat.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a sectionGroup object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Get-MgUserOnenoteSectionGroup -SectionGroupId <String> -UserId <String> [-Expand
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a sectionGroup object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

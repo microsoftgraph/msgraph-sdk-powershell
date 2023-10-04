@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Removes (unpins) a tab from the specified channel within a team.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgTeamworkDeletedTeamChannelTab -InputObject <ITeamsIdentity> [-IfMatch <
 
 ## DESCRIPTION
 Removes (unpins) a tab from the specified channel within a team.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a OneNote page.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgUserOnenotePage -InputObject <INotesIdentity> [-IfMatch <String>] [-Pas
 
 ## DESCRIPTION
 Delete a OneNote page.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

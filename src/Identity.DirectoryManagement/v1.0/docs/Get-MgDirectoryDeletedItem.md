@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentity> [
 
 ## DESCRIPTION
 Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

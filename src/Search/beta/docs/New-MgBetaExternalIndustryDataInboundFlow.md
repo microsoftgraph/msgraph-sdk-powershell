@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow: This API is supported in the following national cloud deployments.
+The following prerequisite resources are required when you create an inboundFlow:
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgBetaExternalIndustryDataInboundFlow -BodyParameter <IMicrosoftGraphIndustr
 
 ## DESCRIPTION
 Create a new inboundFlow object.
-The following prerequisite resources are required when you create an inboundFlow: This API is supported in the following national cloud deployments.
+The following prerequisite resources are required when you create an inboundFlow:
 
 ## EXAMPLES
 

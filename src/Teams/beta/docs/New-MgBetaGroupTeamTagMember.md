@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new teamworkTagMember object in a team.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaGroupTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalPropertie
 
 ## DESCRIPTION
 Create a new teamworkTagMember object in a team.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

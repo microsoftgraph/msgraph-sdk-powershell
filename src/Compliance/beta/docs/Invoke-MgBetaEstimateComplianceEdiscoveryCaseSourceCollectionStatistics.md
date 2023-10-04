@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Run an estimate of the number of emails and documents in the source collection.
 To learn more about source collections (also known as searches in eDiscovery), see Collect data for a case in Advanced eDiscovery.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgBetaEstimateComplianceEdiscoveryCaseSourceCollectionStatistics -InputOb
 ## DESCRIPTION
 Run an estimate of the number of emails and documents in the source collection.
 To learn more about source collections (also known as searches in eDiscovery), see Collect data for a case in Advanced eDiscovery.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

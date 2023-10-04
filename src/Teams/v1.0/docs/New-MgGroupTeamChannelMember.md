@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a conversationMember to a channel.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgGroupTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalPropertie
 
 ## DESCRIPTION
 Add a conversationMember to a channel.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

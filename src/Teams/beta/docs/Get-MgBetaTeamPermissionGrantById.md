@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to: This API is supported in the following national cloud deployments.
+Some common uses for this function are to:
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Get-MgBetaTeamPermissionGrantById -InputObject <ITeamsIdentity> [-AdditionalProp
 
 ## DESCRIPTION
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to: This API is supported in the following national cloud deployments.
+Some common uses for this function are to:
 
 ## EXAMPLES
 

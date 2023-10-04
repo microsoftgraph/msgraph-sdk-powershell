@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a qna object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Update-MgBetaSearchQna -InputObject <ISearchIdentity> [-AdditionalProperties <Ha
 
 ## DESCRIPTION
 Update the properties of a qna object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -87,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityEndDateTime
-Timestamp of when the qna stops to appear as a search result.
+Timestamp of when the qna will stop to appear as a search result.
 Set as null for always available.
 
 ```yaml
@@ -103,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityStartDateTime
-Timestamp of when the qna starts to appear as a search result.
+Timestamp of when the qna will start to appear as a search result.
 Set as null for always available.
 
 ```yaml
@@ -212,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsSuggested
-True if a user or Microsoft suggested this qna to the admin.
+True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft.
 Read-only.
 
 ```yaml
@@ -342,7 +340,7 @@ Accept wildcard characters: False
 ### -TargetedVariations
 Variations of a qna for different countries or devices.
 Use when you need to show different content to users based on their device, country/region, or both.
-The date and group settings apply to all variations.
+The date and group settings will apply to all variations.
 To construct, see NOTES section for TARGETEDVARIATIONS properties and create a hash table.
 
 ```yaml
@@ -359,7 +357,7 @@ Accept wildcard characters: False
 
 ### -WebUrl
 Search answer URL link.
-When users click this search answer in search results, they'll go to this URL.
+When users click this search answer in search results, they will go to this URL.
 
 ```yaml
 Type: System.String
@@ -439,12 +437,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
-  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they'll go to this URL.
+  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AvailabilityEndDateTime <DateTime?>]`: Timestamp of when the qna stops to appear as a search result. Set as null for always available.
-  - `[AvailabilityStartDateTime <DateTime?>]`: Timestamp of when the qna starts to appear as a search result. Set as null for always available.
+  - `[AvailabilityEndDateTime <DateTime?>]`: Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+  - `[AvailabilityStartDateTime <DateTime?>]`: Timestamp of when the qna will start to appear as a search result. Set as null for always available.
   - `[GroupIds <String[]>]`: List of security groups able to view this qna.
-  - `[IsSuggested <Boolean?>]`: True if a user or Microsoft suggested this qna to the admin. Read-only.
+  - `[IsSuggested <Boolean?>]`: True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
   - `[Keywords <IMicrosoftGraphSearchAnswerKeyword>]`: answerKeyword
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Keywords <String[]>]`: A collection of keywords used to trigger the search answer.
@@ -453,7 +451,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LanguageTags <String[]>]`: A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
   - `[Platforms <DevicePlatformType[]>]`: List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
   - `[State <String>]`: answerState
-  - `[TargetedVariations <IMicrosoftGraphSearchAnswerVariant[]>]`: Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+  - `[TargetedVariations <IMicrosoftGraphSearchAnswerVariant[]>]`: Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
     - `[Description <String>]`: Answer variation description shown on search results page.
     - `[DisplayName <String>]`: Answer variation name displayed in search results.
     - `[LanguageTag <String>]`: 
@@ -462,7 +460,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[AcronymId <String>]`: The unique identifier of acronym
-  - `[AuthorizationSystemId <String>]`: The unique identifier of authorizationSystem
   - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
@@ -496,7 +493,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
   - `[User <IMicrosoftGraphSearchIdentity>]`: identity
 
-`TARGETEDVARIATIONS <IMicrosoftGraphSearchAnswerVariant[]>`: Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+`TARGETEDVARIATIONS <IMicrosoftGraphSearchAnswerVariant[]>`: Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
   - `[Description <String>]`: Answer variation description shown on search results page.
   - `[DisplayName <String>]`: Answer variation name displayed in search results.
   - `[LanguageTag <String>]`: 

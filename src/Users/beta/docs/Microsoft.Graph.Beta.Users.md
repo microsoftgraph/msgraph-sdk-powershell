@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 4659a88d-494b-438c-ad08-d3ab8e3e4acd
+Module Guid: 747afed2-05a4-4b25-838b-43f1364cd5a0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,7 +17,6 @@ This operation returns by default only a subset of the more commonly used proper
 These default properties are noted in the Properties section.
 To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
 Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserAppRoleAssignedResource](Get-MgBetaUserAppRoleAssignedResource.md)
 Get appRoleAssignedResources from users
@@ -29,7 +28,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaUserCreatedObject](Get-MgBetaUserCreatedObject.md)
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 
@@ -123,12 +122,10 @@ Returned only on $select.
 ### [Get-MgBetaUserManager](Get-MgBetaUserManager.md)
 Returns the user or organizational contact assigned as the user's manager.
 Optionally, you can expand the manager's chain up to the root node.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserManagerByRef](Get-MgBetaUserManagerByRef.md)
 Returns the user or organizational contact assigned as the user's manager.
 Optionally, you can expand the manager's chain up to the root node.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserMemberOf](Get-MgBetaUserMemberOf.md)
 The groups, directory roles and administrative units that the user is a member of.
@@ -171,7 +168,6 @@ Get the number of the resource
 
 ### [Get-MgBetaUserOutlookMasterCategory](Get-MgBetaUserOutlookMasterCategory.md)
 Get the properties and relationships of the specified outlookCategory object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserOutlookMasterCategoryCount](Get-MgBetaUserOutlookMasterCategoryCount.md)
 Get the number of the resource
@@ -180,7 +176,6 @@ Get the number of the resource
 Get the properties and relationships of an Outlook task in the user's mailbox.
 By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.
 You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserOutlookTaskAttachment](Get-MgBetaUserOutlookTaskAttachment.md)
 The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.
@@ -195,7 +190,6 @@ Get the number of the resource
 
 ### [Get-MgBetaUserOutlookTaskFolder](Get-MgBetaUserOutlookTaskFolder.md)
 Get the properties and relationships of the specified Outlook task folder.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserOutlookTaskFolderCount](Get-MgBetaUserOutlookTaskFolderCount.md)
 Get the number of the resource
@@ -218,7 +212,6 @@ Get the number of the resource
 
 ### [Get-MgBetaUserOutlookTaskGroup](Get-MgBetaUserOutlookTaskGroup.md)
 Get the properties and relationships of the specified Outlook task group.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserOutlookTaskGroupCount](Get-MgBetaUserOutlookTaskGroupCount.md)
 Get the number of the resource
@@ -309,7 +302,7 @@ Get the number of the resource
 Devices that are registered for the user.
 Read-only.
 Nullable.
-Supports $expand and returns up to 100 objects.
+Supports $expand.
 
 ### [Get-MgBetaUserRegisteredDeviceAsDevice](Get-MgBetaUserRegisteredDeviceAsDevice.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
@@ -331,19 +324,15 @@ Get settings from users
 
 ### [Get-MgBetaUserSettingContactMergeSuggestion](Get-MgBetaUserSettingContactMergeSuggestion.md)
 Read the properties and relationships of a contactMergeSuggestions object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserSettingItemInsight](Get-MgBetaUserSettingItemInsight.md)
 Get the user-customizable privacy settings for itemInsights and meeting hours insights.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserSettingRegionalAndLanguageSetting](Get-MgBetaUserSettingRegionalAndLanguageSetting.md)
 Retrieve the properties of a user's regionalAndLanguageSettings.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserSettingShiftPreference](Get-MgBetaUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserSponsor](Get-MgBetaUserSponsor.md)
 The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated.
@@ -355,7 +344,6 @@ Get the number of the resource
 
 ### [Get-MgBetaUserTodoList](Get-MgBetaUserTodoList.md)
 Read the properties and relationships of a todoTaskList object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserTodoListCount](Get-MgBetaUserTodoListCount.md)
 Get the number of the resource
@@ -369,11 +357,9 @@ Get the number of the resource
 
 ### [Get-MgBetaUserTodoTask](Get-MgBetaUserTodoTask.md)
 Read the properties and relationships of a todoTask object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserTodoTaskAttachment](Get-MgBetaUserTodoTaskAttachment.md)
 Read the properties and relationships of a taskFileAttachment object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserTodoTaskAttachmentContent](Get-MgBetaUserTodoTaskAttachmentContent.md)
 Get media content for the navigation property attachments from users
@@ -392,7 +378,6 @@ Get the number of the resource
 
 ### [Get-MgBetaUserTodoTaskChecklistItem](Get-MgBetaUserTodoTaskChecklistItem.md)
 Read the properties and relationships of a checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserTodoTaskChecklistItemCount](Get-MgBetaUserTodoTaskChecklistItemCount.md)
 Get the number of the resource
@@ -409,7 +394,6 @@ Get the number of the resource
 
 ### [Get-MgBetaUserTodoTaskLinkedResource](Get-MgBetaUserTodoTaskLinkedResource.md)
 Read the properties and relationships of a linkedResource object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgBetaUserTodoTaskLinkedResourceCount](Get-MgBetaUserTodoTaskLinkedResourceCount.md)
 Get the number of the resource
@@ -453,7 +437,6 @@ You can optionally specify any other writable properties.
 This operation returns by default only a subset of the properties for each user.
 These default properties are noted in the Properties section.
 To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserExtension](New-MgBetaUserExtension.md)
 Create new navigation property to extensions for users
@@ -472,72 +455,58 @@ Create new navigation property to notifications for users
 
 ### [New-MgBetaUserOutlookMasterCategory](New-MgBetaUserOutlookMasterCategory.md)
 Create an outlookCategory object in the user's master list of categories.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTask](New-MgBetaUserOutlookTask.md)
 Create an Outlook task in the default task group (My Tasks) and default task folder (Tasks) in the user's mailbox.
 The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone.
 By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC.
 \nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskAttachment](New-MgBetaUserOutlookTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskFolder](New-MgBetaUserOutlookTaskFolder.md)
 Create a task folder in the default task group (My Tasks) of the user's mailbox.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskFolderTask](New-MgBetaUserOutlookTaskFolderTask.md)
 Create an Outlook task in the specified task folder.
 The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskFolderTaskAttachment](New-MgBetaUserOutlookTaskFolderTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskGroup](New-MgBetaUserOutlookTaskGroup.md)
 Create an Outlook task group in the user's mailbox.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskGroupTaskFolder](New-MgBetaUserOutlookTaskGroupTaskFolder.md)
 Create an Outlook task folder under a specified outlookTaskGroup.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskGroupTaskFolderTask](New-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
 Create an Outlook task in the specified task folder.
 The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment](New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment.md)
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserTodoList](New-MgBetaUserTodoList.md)
 Create a new lists object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserTodoListExtension](New-MgBetaUserTodoListExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgBetaUserTodoListTask](New-MgBetaUserTodoListTask.md)
 Create a new task object in a specified todoTaskList.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserTodoListTaskAttachment](New-MgBetaUserTodoListTaskAttachment.md)
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserTodoListTaskChecklistItem](New-MgBetaUserTodoListTaskChecklistItem.md)
 Create a new checklistItem object as a subtask in a bigger todoTask.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgBetaUserTodoListTaskExtension](New-MgBetaUserTodoListTaskExtension.md)
 Create new navigation property to extensions for users
@@ -546,14 +515,12 @@ Create new navigation property to extensions for users
 Create a linkedResource object to associate a specified task with an item in a partner application.
 For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association.
 You can also create a linkedResource object while creating a todoTask.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUser](Remove-MgBetaUser.md)
 Delete user.
  When deleted, user resources are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 To learn more, see deletedItems.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserExtension](Remove-MgBetaUserExtension.md)
 Delete navigation property extensions for users
@@ -575,29 +542,24 @@ Delete navigation property licenseDetails for users
 
 ### [Remove-MgBetaUserManager](Remove-MgBetaUserManager.md)
 Remove a user's manager.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserManagerByRef](Remove-MgBetaUserManagerByRef.md)
 Remove a user's manager.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserNotification](Remove-MgBetaUserNotification.md)
 Delete navigation property notifications for users
 
 ### [Remove-MgBetaUserOutlookMasterCategory](Remove-MgBetaUserOutlookMasterCategory.md)
 Delete the specified outlookCategory object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserOutlookTask](Remove-MgBetaUserOutlookTask.md)
 Delete the specified Outlook task in the user's mailbox.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserOutlookTaskAttachment](Remove-MgBetaUserOutlookTaskAttachment.md)
 Delete navigation property attachments for users
 
 ### [Remove-MgBetaUserOutlookTaskFolder](Remove-MgBetaUserOutlookTaskFolder.md)
 Delete the specified Outlook task folder.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserOutlookTaskFolderTask](Remove-MgBetaUserOutlookTaskFolderTask.md)
 Delete navigation property tasks for users
@@ -640,36 +602,30 @@ Remove a user's sponsor.
 
 ### [Remove-MgBetaUserTodoList](Remove-MgBetaUserTodoList.md)
 Deletes a todoTaskList object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserTodoListExtension](Remove-MgBetaUserTodoListExtension.md)
 Delete navigation property extensions for users
 
 ### [Remove-MgBetaUserTodoListTask](Remove-MgBetaUserTodoListTask.md)
 Deletes a todoTask object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserTodoListTaskAttachment](Remove-MgBetaUserTodoListTaskAttachment.md)
 Delete a taskFileAttachment object from a todoTask resource.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserTodoListTaskAttachmentSession](Remove-MgBetaUserTodoListTaskAttachmentSession.md)
 Delete navigation property attachmentSessions for users
 
 ### [Remove-MgBetaUserTodoListTaskChecklistItem](Remove-MgBetaUserTodoListTaskChecklistItem.md)
 Delete a checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgBetaUserTodoListTaskExtension](Remove-MgBetaUserTodoListTaskExtension.md)
 Delete navigation property extensions for users
 
 ### [Remove-MgBetaUserTodoListTaskLinkedResource](Remove-MgBetaUserTodoListTaskLinkedResource.md)
 Deletes a linkedResource object.
-This API is supported in the following national cloud deployments.
 
 ### [Set-MgBetaUserManagerByRef](Set-MgBetaUserManagerByRef.md)
 Assign a user's manager.
-This API is supported in the following national cloud deployments.
 
 ### [Set-MgBetaUserPhotoContent](Set-MgBetaUserPhotoContent.md)
 Update media content for the navigation property photo in users
@@ -684,7 +640,6 @@ The content streams that are uploaded.
 Update the properties of a user object.
 Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
 Compare member and guest default permissions to see properties they can manage.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserExtension](Update-MgBetaUserExtension.md)
 Update the navigation property extensions in users
@@ -712,8 +667,7 @@ Update the navigation property notifications in users
 
 ### [Update-MgBetaUserOutlookMasterCategory](Update-MgBetaUserOutlookMasterCategory.md)
 Update the writable property, color, of the specified outlookCategory object.
-You can't modify the displayName property\nonce you have created the category.
-This API is supported in the following national cloud deployments.
+You cannot modify the displayName property\nonce you have created the category.
 
 ### [Update-MgBetaUserOutlookTask](Update-MgBetaUserOutlookTask.md)
 Change writable properties of an Outlook task.
@@ -721,12 +675,10 @@ The completedDateTime property can be set by the complete action, or explicitly 
 If you use PATCH to set completedDateTime, make sure you set status to completed as well.
 By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC.
 You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserOutlookTaskFolder](Update-MgBetaUserOutlookTaskFolder.md)
 Update the writable properties of an Outlook task folder.
 You cannot change the name property value of the default task folder, 'Tasks'.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserOutlookTaskFolderTask](Update-MgBetaUserOutlookTaskFolderTask.md)
 Update the navigation property tasks in users
@@ -748,41 +700,34 @@ Update the navigation property settings in users
 
 ### [Update-MgBetaUserSettingContactMergeSuggestion](Update-MgBetaUserSettingContactMergeSuggestion.md)
 Update the properties of a contactMergeSuggestions object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserSettingItemInsight](Update-MgBetaUserSettingItemInsight.md)
 Update the privacy settings for itemInsights and meeting hours insights of a user.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserSettingRegionalAndLanguageSetting](Update-MgBetaUserSettingRegionalAndLanguageSetting.md)
 Update some or all of the properties of a regionalAndLanguageSettings object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserSettingShiftPreference](Update-MgBetaUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.
 
 ### [Update-MgBetaUserTodoList](Update-MgBetaUserTodoList.md)
 Update the properties of a todoTaskList object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserTodoListExtension](Update-MgBetaUserTodoListExtension.md)
 Update the navigation property extensions in users
 
 ### [Update-MgBetaUserTodoListTask](Update-MgBetaUserTodoListTask.md)
 Update the properties of a todoTask object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserTodoListTaskAttachmentSession](Update-MgBetaUserTodoListTaskAttachmentSession.md)
 Update the navigation property attachmentSessions in users
 
 ### [Update-MgBetaUserTodoListTaskChecklistItem](Update-MgBetaUserTodoListTaskChecklistItem.md)
 Update the properties of a checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgBetaUserTodoListTaskExtension](Update-MgBetaUserTodoListTaskExtension.md)
 Update the navigation property extensions in users
 
 ### [Update-MgBetaUserTodoListTaskLinkedResource](Update-MgBetaUserTodoListTaskLinkedResource.md)
 Update the properties of a linkedResource object.
-This API is supported in the following national cloud deployments.
 

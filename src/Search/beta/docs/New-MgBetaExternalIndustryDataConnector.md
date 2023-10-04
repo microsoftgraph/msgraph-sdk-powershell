@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new industryDataConnector object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ New-MgBetaExternalIndustryDataConnector -BodyParameter <IMicrosoftGraphIndustryD
 
 ## DESCRIPTION
 Create a new industryDataConnector object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

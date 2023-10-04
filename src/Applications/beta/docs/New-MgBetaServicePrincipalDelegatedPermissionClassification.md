@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ### -PermissionId
 The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
 Required on create.
-Doesn't support $filter.
+Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ### -PermissionName
 The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
-Doesn't support $filter.
+Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -241,8 +241,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Classification <String>]`: permissionClassificationType
-  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
-  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Doesn't support $filter.
+  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppId <String>]`: Alternate key of application

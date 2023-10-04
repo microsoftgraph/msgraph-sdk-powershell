@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserCreatedObject
 
 ## SYNOPSIS
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 
@@ -34,7 +34,7 @@ Get-MgBetaUserCreatedObject -InputObject <IUsersIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 

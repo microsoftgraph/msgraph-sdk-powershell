@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Use this API to remove a member (user, group, or device) from an administrative unit.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgDirectoryAdministrativeUnitMemberByRef -InputObject <IIdentityDirectory
 
 ## DESCRIPTION
 Use this API to remove a member (user, group, or device) from an administrative unit.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add multiple members in a single request to a team.
 The response provides details about which memberships could and couldn't be created.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Add-MgBetaTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalProperties
 ## DESCRIPTION
 Add multiple members in a single request to a team.
 The response provides details about which memberships could and couldn't be created.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

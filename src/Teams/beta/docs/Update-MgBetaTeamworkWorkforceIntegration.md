@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a workforceintegration object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Update-MgBetaTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-Additi
 
 ## DESCRIPTION
 Update the properties of a workforceintegration object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -86,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApiVersion
-API version for the callback URL.
+API version for the call back URL.
 Start with 1.
 
 ```yaml
@@ -367,7 +365,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ApiVersion <Int32?>]`: API version for the callback URL. Start with 1.
+  - `[ApiVersion <Int32?>]`: API version for the call back URL. Start with 1.
   - `[DisplayName <String>]`: Name of the workforce integration.
   - `[EligibilityFilteringEnabledEntities <String>]`: eligibilityFilteringEnabledEntities
   - `[Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]`: workforceIntegrationEncryption

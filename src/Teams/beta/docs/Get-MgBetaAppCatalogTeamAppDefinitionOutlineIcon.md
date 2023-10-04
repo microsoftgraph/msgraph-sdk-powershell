@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a Teams app icon associated with a specific definition of an app.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaAppCatalogTeamAppDefinitionOutlineIcon -InputObject <ITeamsIdentity> [
 
 ## DESCRIPTION
 Retrieve a Teams app icon associated with a specific definition of an app.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

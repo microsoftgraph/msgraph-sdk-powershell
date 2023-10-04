@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of section groups from the specified notebook.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgSiteOnenoteNotebookSectionGroup -NotebookId <String> -SiteId <String> [-Ex
 
 ## DESCRIPTION
 Retrieve a list of section groups from the specified notebook.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

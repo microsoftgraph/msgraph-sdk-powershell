@@ -11,7 +11,6 @@ schema: 2.0.0
 Dismiss the risk of one or more riskyUser objects.
 This action sets the targeted user's risk level to none.
 The maximum count of users to dismiss in one call is 60.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ Invoke-MgBetaDismissRiskyUser
 Dismiss the risk of one or more riskyUser objects.
 This action sets the targeted user's risk level to none.
 The maximum count of users to dismiss in one call is 60.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

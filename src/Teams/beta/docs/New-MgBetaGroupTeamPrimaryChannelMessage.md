@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgBetaGroupTeamPrimaryChannelMessage
 
 ## SYNOPSIS
-Send a new chatMessage in the specified channel.
-This API is supported in the following national cloud deployments.
+Send a new chatMessage in the specified channel or a chat.
 
 ## SYNTAX
 
@@ -58,8 +57,7 @@ New-MgBetaGroupTeamPrimaryChannelMessage -InputObject <ITeamsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Send a new chatMessage in the specified channel.
-This API is supported in the following national cloud deployments.
+Send a new chatMessage in the specified channel or a chat.
 
 ## EXAMPLES
 

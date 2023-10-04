@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove the email address of a channel.
 You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaTeamChannelEmail -InputObject <ITeamsIdentity> [-PassThru] [-Confir
 ## DESCRIPTION
 Remove the email address of a channel.
 You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

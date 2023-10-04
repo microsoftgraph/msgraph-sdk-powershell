@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign a user's manager.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ Set-MgBetaUserManagerByRef -InputObject <IUsersIdentity> -OdataId <String> [-Add
 
 ## DESCRIPTION
 Assign a user's manager.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

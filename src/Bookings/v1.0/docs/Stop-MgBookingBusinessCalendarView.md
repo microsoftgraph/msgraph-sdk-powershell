@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Stop-MgBookingBusinessCalendarView -InputObject <IBookingsIdentity> [-Additional
 
 ## DESCRIPTION
 Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

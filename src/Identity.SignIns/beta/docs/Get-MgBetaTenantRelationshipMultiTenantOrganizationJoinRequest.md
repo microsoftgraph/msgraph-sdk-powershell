@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the status of a tenant joining a multi-tenant organization.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +19,6 @@ Get-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest [-ExpandProperty 
 
 ## DESCRIPTION
 Get the status of a tenant joining a multi-tenant organization.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
