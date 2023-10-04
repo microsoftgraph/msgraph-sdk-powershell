@@ -50,7 +50,7 @@ function Invoke-BumpMinorOrPreReleaseVersion {
     }
     else {
         $version = [System.Version]("$($versionSegments[0])")
-        $newVersion = "$($version.Major).$($version.Minor + 1).$($version.Build)"
+        $newVersion = "$($version.Major).$($version.Minor + 1).0"
     }
     return $newVersion, $newPrereleaseVersion
 }
