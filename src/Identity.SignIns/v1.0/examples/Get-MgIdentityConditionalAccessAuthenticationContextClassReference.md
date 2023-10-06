@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
+Get-MgIdentityConditionalAccessAuthenticationContextClassReference
 ```
 This example shows how to use the Get-MgIdentityConditionalAccessAuthenticationContextClassReference Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
