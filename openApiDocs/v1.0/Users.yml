@@ -11,10 +11,10 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: Retrieve a list of user objects.
+      description: List properties and relationships of the user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -408,11 +408,11 @@ paths:
     post:
       tags:
         - users.user
-      summary: Create User
-      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties."
+      summary: Create user
+      description: Create a new user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -435,11 +435,11 @@ paths:
     get:
       tags:
         - users.user
-      summary: Get a user
-      description: Retrieve the properties and relationships of user object.
+      summary: Get user
+      description: Read properties and relationships of the user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-get?view=graph-rest-1.0
       operationId: user_GetUser
       parameters:
         - name: user-id
@@ -660,10 +660,10 @@ paths:
       tags:
         - users.user
       summary: Update user
-      description: Update the properties of a user object.
+      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -694,11 +694,11 @@ paths:
     delete:
       tags:
         - users.user
-      summary: Delete user
-      description: Deletes a user.
+      summary: Delete a user
+      description: 'Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
       operationId: user_DeleteUser
       parameters:
         - name: user-id
@@ -726,7 +726,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List createdObjects
-      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object.'
+      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
@@ -1816,7 +1816,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: List licenseDetails
-      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
+      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
@@ -2169,7 +2169,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
+      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
@@ -2222,7 +2222,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Remove manager
-      description: Remove a user's manager.
+      description: Remove a user's manager. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
@@ -2253,7 +2253,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
+      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
@@ -2281,7 +2281,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Assign manager
-      description: Assign a user's manager.
+      description: Assign a user's manager. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
@@ -2307,7 +2307,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Remove manager
-      description: Remove a user's manager.
+      description: Remove a user's manager. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
@@ -3053,7 +3053,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.'
+      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
@@ -3260,7 +3260,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List Outlook categories
-      description: Get all the categories that have been defined for the user.
+      description: Get all the categories that have been defined for the user. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
@@ -3322,7 +3322,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create Outlook category
-      description: Create an outlookCategory object in the user's master list of categories.
+      description: Create an outlookCategory object in the user's master list of categories. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
@@ -3358,7 +3358,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get Outlook category
-      description: Get the properties and relationships of the specified outlookCategory object.
+      description: Get the properties and relationships of the specified outlookCategory object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
@@ -3408,7 +3408,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update Outlook category
-      description: "Update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName property\nonce you have created the category."
+      description: "Update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property\nonce you have created the category. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
@@ -3451,7 +3451,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete outlookCategory
-      description: Delete the specified outlookCategory object.
+      description: Delete the specified outlookCategory object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
@@ -4941,7 +4941,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download."
+      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
@@ -5295,7 +5295,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
-      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
@@ -5378,7 +5378,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
-      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
       operationId: user_GetRegisteredDevice
       parameters:
         - name: user-id
@@ -6010,7 +6010,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings
-      description: "Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings."
+      description: "Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/usersettings-get?view=graph-rest-1.0
@@ -6066,7 +6066,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update userSettings
-      description: "Update the properties of the userSettings object. \nUsers in the same organization can have different settings based on their preference or on the organization policies. \nTo get the user current settings, see current user settings. "
+      description: "Update the properties of the userSettings object. \nUsers in the same organization can have different settings based on their preference or on the organization policies. \nTo get the user current settings, see current user settings.  This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/usersettings-update?view=graph-rest-1.0
@@ -6128,7 +6128,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get shiftPreferences
-      description: Retrieve the properties and relationships of a shiftPreferences object by ID.
+      description: Retrieve the properties and relationships of a shiftPreferences object by ID. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
@@ -6184,7 +6184,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update shiftPreferences
-      description: Update the properties and relationships of a shiftPreferences object.
+      description: Update the properties and relationships of a shiftPreferences object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
@@ -6355,7 +6355,7 @@ paths:
       tags:
         - users.todo
       summary: List lists
-      description: Get a list of the todoTaskList objects and their properties.
+      description: Get a list of the todoTaskList objects and their properties. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
@@ -6440,7 +6440,7 @@ paths:
       tags:
         - users.todo
       summary: Create todoTaskList
-      description: Create a new lists object.
+      description: Create a new lists object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
@@ -6476,7 +6476,7 @@ paths:
       tags:
         - users.todo
       summary: Get todoTaskList
-      description: Read the properties and relationships of a todoTaskList object.
+      description: Read the properties and relationships of a todoTaskList object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
@@ -6544,7 +6544,7 @@ paths:
       tags:
         - users.todo
       summary: Update todoTaskList
-      description: Update the properties of a todoTaskList object.
+      description: Update the properties of a todoTaskList object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
@@ -6587,7 +6587,7 @@ paths:
       tags:
         - users.todo
       summary: Delete todoTaskList
-      description: Deletes a todoTaskList object.
+      description: Deletes a todoTaskList object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
@@ -6925,7 +6925,7 @@ paths:
       tags:
         - users.todo
       summary: List tasks
-      description: Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
+      description: Get the todoTask resources from the tasks navigation property of a specified todoTaskList. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
@@ -7057,7 +7057,7 @@ paths:
       tags:
         - users.todo
       summary: Create todoTask
-      description: Create a new task object in a specified todoTaskList.
+      description: Create a new task object in a specified todoTaskList. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
@@ -7101,7 +7101,7 @@ paths:
       tags:
         - users.todo
       summary: Get todoTask
-      description: Read the properties and relationships of a todoTask object.
+      description: Read the properties and relationships of a todoTask object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0
@@ -7194,7 +7194,7 @@ paths:
       tags:
         - users.todo
       summary: Update todoTask
-      description: Update the properties of a todoTask object.
+      description: Update the properties of a todoTask object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0
@@ -7245,7 +7245,7 @@ paths:
       tags:
         - users.todo
       summary: Delete todoTask
-      description: Deletes a todoTask object.
+      description: Deletes a todoTask object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0
@@ -7292,7 +7292,7 @@ paths:
       tags:
         - users.todo
       summary: List taskFileAttachments
-      description: Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
+      description: Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
@@ -7376,7 +7376,7 @@ paths:
       tags:
         - users.todo
       summary: Create taskFileAttachment
-      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.'
+      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
@@ -7428,7 +7428,7 @@ paths:
       tags:
         - users.todo
       summary: Get taskFileAttachment
-      description: Read the properties and relationships of a taskFileAttachment object.
+      description: Read the properties and relationships of a taskFileAttachment object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
@@ -7496,7 +7496,7 @@ paths:
       tags:
         - users.todo
       summary: Delete taskFileAttachment
-      description: Delete a taskFileAttachment object from a todoTask resource.
+      description: Delete a taskFileAttachment object from a todoTask resource. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
@@ -8085,7 +8085,7 @@ paths:
       tags:
         - users.todo
       summary: List checklistItems
-      description: Get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
+      description: Get the checklistItem resources associated to a todoTask from the checklistItems navigation property. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
@@ -8182,7 +8182,7 @@ paths:
       tags:
         - users.todo
       summary: Create checklistItem
-      description: Create a new checklistItem object.
+      description: Create a new checklistItem object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
@@ -8234,7 +8234,7 @@ paths:
       tags:
         - users.todo
       summary: Get checklistItem
-      description: Read the properties and relationships of a checklistItem object.
+      description: Read the properties and relationships of a checklistItem object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
@@ -8314,7 +8314,7 @@ paths:
       tags:
         - users.todo
       summary: Update checklistItem
-      description: Update the properties of a checklistItem object.
+      description: Update the properties of a checklistItem object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
@@ -8373,7 +8373,7 @@ paths:
       tags:
         - users.todo
       summary: Delete checklistItem
-      description: Delete a checklistItem object.
+      description: Delete a checklistItem object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
@@ -8813,7 +8813,7 @@ paths:
       tags:
         - users.todo
       summary: List linkedResources
-      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.'
+      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
@@ -8910,7 +8910,7 @@ paths:
       tags:
         - users.todo
       summary: Create linkedResource
-      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a task.'
+      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a task. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
@@ -8962,7 +8962,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResource
-      description: Read the properties and relationships of a linkedResource object.
+      description: Read the properties and relationships of a linkedResource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
@@ -9042,7 +9042,7 @@ paths:
       tags:
         - users.todo
       summary: Update linkedResource
-      description: Update the properties of a linkedResource object.
+      description: Update the properties of a linkedResource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
@@ -9101,7 +9101,7 @@ paths:
       tags:
         - users.todo
       summary: Delete linkedResource
-      description: Deletes a linkedResource object.
+      description: Deletes a linkedResource object. This API is supported in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
@@ -10372,7 +10372,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
               x-ms-navigationProperty: true
             scopedRoleMemberOf:
               type: array
@@ -11974,7 +11974,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The display name of the attachment. This doesn't need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -13750,7 +13750,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
-              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
+              description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
               x-ms-navigationProperty: true
             pages:
               type: array
@@ -13762,7 +13762,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
-              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection isn''t supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
               x-ms-navigationProperty: true
             sectionGroups:
               type: array
@@ -13940,6 +13940,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
               description: The attendance reports of an online meeting. Read-only.
+              x-ms-navigationProperty: true
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -14309,7 +14314,7 @@ components:
           nullable: true
         value:
           type: string
-          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..'
+          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren''t allowed. May not begin with ..'
           nullable: true
       additionalProperties:
         type: object
@@ -14635,7 +14640,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
-              description: Pre-configured synchronization settings for a particular application.
+              description: Preconfigured synchronization settings for a particular application.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15054,7 +15059,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.preAuthorizedApplication'
-          description: 'Lists the client applications that are pre-authorized with the specified delegated permissions to access this application''s APIs. Users are not required to consent to any pre-authorized application (for the permissions specified). However, any additional permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.'
+          description: 'Lists the client applications that are preauthorized with the specified delegated permissions to access this application''s APIs. Users aren''t required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent.'
         requestedAccessTokenVersion:
           maximum: 2147483647
           minimum: -2147483648
@@ -15076,7 +15081,7 @@ components:
         certificationExpirationDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The timestamp when the current certification for the application will expire.
+          description: The timestamp when the current certification for the application expires.
           format: date-time
           nullable: true
         isCertifiedByMicrosoft:
@@ -15703,7 +15708,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -18311,6 +18316,35 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            meetingId:
+              type: string
+              nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            metadataContent:
+              type: string
+              format: base64url
+              nullable: true
+            transcriptContentUrl:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.presenceStatusMessage:
       title: presenceStatusMessage
       type: object
@@ -18322,6 +18356,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -18388,7 +18423,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+              description: The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
               format: date-time
               nullable: true
             deviceTag:
@@ -19035,11 +19070,11 @@ components:
           properties:
             description:
               type: string
-              description: The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+              description: The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
-              description: The name of the tag as it will appear to the user in Microsoft Teams.
+              description: The name of the tag as it appears to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
@@ -19710,7 +19745,7 @@ components:
               description: The name of the printer/printerShare.
             isAcceptingJobs:
               type: boolean
-              description: Whether the printer/printerShare is currently accepting new print jobs.
+              description: Specifies whether the printer/printerShare is currently accepting new print jobs.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
@@ -20704,7 +20739,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -20795,7 +20830,7 @@ components:
           nullable: true
         hidden:
           type: boolean
-          description: 'If true, indicates that the list is not normally visible in the SharePoint user experience.'
+          description: 'If true, indicates that the list isn''t normally visible in the SharePoint user experience.'
           nullable: true
         template:
           type: string
@@ -22001,7 +22036,7 @@ components:
           nullable: true
         mediaType:
           type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
           nullable: true
         previewImageUrl:
           type: string
@@ -22017,7 +22052,7 @@ components:
           nullable: true
         type:
           type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
           nullable: true
       additionalProperties:
         type: object
@@ -22034,7 +22069,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time.For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -22958,13 +22993,13 @@ components:
         expiration:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'Date and time when this job expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         interval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.'
+          description: 'The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of one month.'
           format: duration
         state:
           $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
@@ -24619,7 +24654,7 @@ components:
           nullable: true
         id:
           type: string
-          description: The id of the user who shared the item.
+          description: The ID of the user who shared the item.
           nullable: true
       additionalProperties:
         type: object
@@ -25097,7 +25132,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
-          description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+          description: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         groupFilter:
           $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
@@ -25108,7 +25143,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
-          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.'
+          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn''t be changed.'
         name:
           type: string
           description: Human-readable name of the synchronization rule. Not nullable.
@@ -25162,7 +25197,7 @@ components:
               description: Whether this object is read-only.
             version:
               type: string
-              description: Read only value that indicates version discovered. null if discovery has not yet occurred.
+              description: Read only value that indicates version discovered. null if discovery hasn't yet occurred.
               nullable: true
           additionalProperties:
             type: object
@@ -26838,7 +26873,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
+          description: Refers to the application name displayed in the Microsoft Entra admin center.
           nullable: true
         servicePrincipalId:
           type: string
@@ -27012,7 +27047,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean value the represents the visibility of a chart title object.
+              description: A boolean value that represents the visibility of a chart title object.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitleFormat'
           additionalProperties:
@@ -27146,12 +27181,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter isn''t satisfied any longer, such object will get deprovisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         inputFilterGroups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter, then it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get deprovisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
       additionalProperties:
         type: object
     microsoft.graph.attributeDefinition:
@@ -27316,7 +27351,7 @@ components:
               nullable: true
             color:
               type: string
-              description: 'HTML color code representation of the text color. E.g. #FF0000 represents Red.'
+              description: 'HTML color code representation of the text color. for example #FF0000 represents Red.'
               nullable: true
             italic:
               type: boolean
@@ -27324,11 +27359,11 @@ components:
               nullable: true
             name:
               type: string
-              description: Font name (e.g. 'Calibri')
+              description: Font name (for example 'Calibri')
               nullable: true
             size:
               type: number
-              description: Size of the font (e.g. 11)
+              description: Size of the font (for example 11)
               format: double
               nullable: true
             underline:
