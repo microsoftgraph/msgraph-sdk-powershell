@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRequestContext
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Gets graph request context details
 
 ## SYNTAX
 
@@ -17,16 +17,19 @@ Get-MgRequestContext [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Gets graph request context details
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Get request context
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Get-MgRequestContext
+ClientTimeout     RetryDelay                      MaxRetry                 RetriesTimeLimit
+-------------     ----------                      --------                 ----------------
+00:00:05                   3                             2                         00:00:02
 ```
 
-{{ Add example description here }}
+Gets graph request context details
 
 ## PARAMETERS
 

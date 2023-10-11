@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an outlookCategory object in the user's master list of categories.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProper
 
 ## DESCRIPTION
 Create an outlookCategory object in the user's master list of categories.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,7 +11,7 @@ paths:
       tags:
         - users.user
       summary: List users
-      description: 'Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. This API is supported in the following national cloud deployments.'
+      description: 'Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
@@ -472,7 +472,7 @@ paths:
       tags:
         - users.user
       summary: Create user
-      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. This API is supported in the following national cloud deployments."
+      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
@@ -499,7 +499,7 @@ paths:
       tags:
         - users.user
       summary: Get user
-      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is supported in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
@@ -772,7 +772,7 @@ paths:
       tags:
         - users.user
       summary: Update user
-      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is supported in the following national cloud deployments.
+      description: Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
@@ -807,7 +807,7 @@ paths:
       tags:
         - users.user
       summary: Delete a user
-      description: 'Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is supported in the following national cloud deployments.'
+      description: 'Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
@@ -838,7 +838,7 @@ paths:
       tags:
         - users.servicePrincipal
       summary: List appRoleAssignedResources
-      description: Get the service principals to which the user has an app role assignment either directly or through group membership. This API is supported in the following national cloud deployments.
+      description: Get the service principals to which the user has an app role assignment either directly or through group membership. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0
@@ -1012,6 +1012,7 @@ paths:
                 - oauth2PermissionGrants
                 - ownedObjects
                 - owners
+                - remoteDesktopSecurityConfiguration
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - transitiveMemberOf
@@ -1042,6 +1043,7 @@ paths:
                 - oauth2PermissionGrants
                 - ownedObjects
                 - owners
+                - remoteDesktopSecurityConfiguration
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - transitiveMemberOf
@@ -1143,6 +1145,7 @@ paths:
                 - oauth2PermissionGrants
                 - ownedObjects
                 - owners
+                - remoteDesktopSecurityConfiguration
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - transitiveMemberOf
@@ -1173,6 +1176,7 @@ paths:
                 - oauth2PermissionGrants
                 - ownedObjects
                 - owners
+                - remoteDesktopSecurityConfiguration
                 - tokenIssuancePolicies
                 - tokenLifetimePolicies
                 - transitiveMemberOf
@@ -1215,7 +1219,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List createdObjects
-      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object. This API is supported in the following national cloud deployments.'
+      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
@@ -3461,7 +3465,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: List licenseDetails
-      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups. This API is supported in the following national cloud deployments.
+      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
@@ -3814,7 +3818,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node. This API is supported in the following national cloud deployments.'
+      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
@@ -3867,7 +3871,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Remove manager
-      description: Remove a user's manager. This API is supported in the following national cloud deployments.
+      description: Remove a user's manager. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
@@ -3898,7 +3902,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node. This API is supported in the following national cloud deployments.'
+      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
@@ -3926,7 +3930,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Assign a manager
-      description: Assign a user's manager. This API is supported in the following national cloud deployments.
+      description: Assign a user's manager. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
@@ -3952,7 +3956,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Remove manager
-      description: Remove a user's manager. This API is supported in the following national cloud deployments.
+      description: Remove a user's manager. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
@@ -5011,7 +5015,7 @@ paths:
       tags:
         - users.oAuth2PermissionGrant
       summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user. This API is supported in the following national cloud deployments.'
+      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
@@ -5230,7 +5234,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List Outlook categories
-      description: Get all the categories that have been defined for the user. This API is supported in the following national cloud deployments.
+      description: Get all the categories that have been defined for the user. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
@@ -5292,7 +5296,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create Outlook category
-      description: Create an outlookCategory object in the user's master list of categories. This API is supported in the following national cloud deployments.
+      description: Create an outlookCategory object in the user's master list of categories. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
@@ -5328,7 +5332,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get Outlook category
-      description: Get the properties and relationships of the specified outlookCategory object. This API is supported in the following national cloud deployments.
+      description: Get the properties and relationships of the specified outlookCategory object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
@@ -5378,7 +5382,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update Outlook category
-      description: "Update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property\nonce you have created the category. This API is supported in the following national cloud deployments."
+      description: "Update the writable property, color, of the specified outlookCategory object. You can't modify the displayName property\nonce you have created the category. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
@@ -5421,7 +5425,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete outlookCategory
-      description: Delete the specified outlookCategory object. This API is supported in the following national cloud deployments.
+      description: Delete the specified outlookCategory object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
@@ -5481,7 +5485,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List taskFolders (deprecated)
-      description: Get all the Outlook task folders in the user's mailbox. This API is supported in the following national cloud deployments.
+      description: Get all the Outlook task folders in the user's mailbox. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
@@ -5558,7 +5562,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTaskFolder (deprecated)
-      description: Create a task folder in the default task group (My Tasks) of the user's mailbox. This API is supported in the following national cloud deployments.
+      description: Create a task folder in the default task group (My Tasks) of the user's mailbox. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0
@@ -5600,7 +5604,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlookTaskFolder (deprecated)
-      description: Get the properties and relationships of the specified Outlook task folder. This API is supported in the following national cloud deployments.
+      description: Get the properties and relationships of the specified Outlook task folder. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0
@@ -5661,7 +5665,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update outlooktaskfolder (deprecated)
-      description: 'Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, ''Tasks''. This API is supported in the following national cloud deployments.'
+      description: 'Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, ''Tasks''. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0
@@ -5710,7 +5714,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete outlookTaskFolder (deprecated)
-      description: Delete the specified Outlook task folder. This API is supported in the following national cloud deployments.
+      description: Delete the specified Outlook task folder. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0
@@ -5755,7 +5759,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a Prefer: outlook.timezone request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders. This API is supported in the following national cloud deployments."
+      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a Prefer: outlook.timezone request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
@@ -5885,7 +5889,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. This API is supported in the following national cloud deployments."
+      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
@@ -6118,7 +6122,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List attachments (deprecated)
-      description: Get a list of attachment objects attached to an Outlook task. This API is supported in the following national cloud deployments.
+      description: Get a list of attachment objects attached to an Outlook task. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
@@ -6223,7 +6227,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create attachment (deprecated)
-      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type). This API is supported in the following national cloud deployments.
+      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type). This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
@@ -6527,7 +6531,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List taskGroups (deprecated)
-      description: 'Get all the Outlook task groups in the user''s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox. This API is supported in the following national cloud deployments.'
+      description: 'Get all the Outlook task groups in the user''s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
@@ -6602,7 +6606,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTaskGroup (deprecated)
-      description: Create an Outlook task group in the user's mailbox. This API is supported in the following national cloud deployments.
+      description: Create an Outlook task group in the user's mailbox. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
@@ -6644,7 +6648,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlookTaskGroup (deprecated)
-      description: Get the properties and relationships of the specified Outlook task group. This API is supported in the following national cloud deployments.
+      description: Get the properties and relationships of the specified Outlook task group. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
@@ -6789,7 +6793,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List taskFolders (deprecated)
-      description: Get Outlook task folders in a specific outlookTaskGroup. This API is supported in the following national cloud deployments.
+      description: Get Outlook task folders in a specific outlookTaskGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
@@ -6874,7 +6878,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTaskFolder (deprecated)
-      description: Create an Outlook task folder under a specified outlookTaskGroup. This API is supported in the following national cloud deployments.
+      description: Create an Outlook task folder under a specified outlookTaskGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0
@@ -7092,7 +7096,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a Prefer: outlook.timezone request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders. This API is supported in the following national cloud deployments."
+      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a Prefer: outlook.timezone request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
@@ -7230,7 +7234,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. This API is supported in the following national cloud deployments."
+      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
@@ -7495,7 +7499,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List attachments (deprecated)
-      description: Get a list of attachment objects attached to an Outlook task. This API is supported in the following national cloud deployments.
+      description: Get a list of attachment objects attached to an Outlook task. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
@@ -7608,7 +7612,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create attachment (deprecated)
-      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type). This API is supported in the following national cloud deployments.
+      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type). This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
@@ -7987,7 +7991,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.\nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. This API is supported in the following national cloud deployments."
+      description: "Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.\nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
@@ -8109,7 +8113,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the default task group (My Tasks) and default task folder (Tasks) in the user's mailbox. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. \nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC. This API is supported in the following national cloud deployments."
+      description: "Create an Outlook task in the default task group (My Tasks) and default task folder (Tasks) in the user's mailbox. The POST method always ignores the time portion of startDateTime and dueDateTime in the request body, and assumes the time \nto be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. \nYou can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-post-tasks?view=graph-rest-1.0
@@ -8151,7 +8155,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlookTask (deprecated)
-      description: 'Get the properties and relationships of an Outlook task in the user''s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC. This API is supported in the following national cloud deployments.'
+      description: 'Get the properties and relationships of an Outlook task in the user''s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-get?view=graph-rest-1.0
@@ -8227,7 +8231,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update outlooktask (deprecated)
-      description: 'Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC. This API is supported in the following national cloud deployments.'
+      description: 'Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-update?view=graph-rest-1.0
@@ -8276,7 +8280,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete outlookTask (deprecated)
-      description: Delete the specified Outlook task in the user's mailbox. This API is supported in the following national cloud deployments.
+      description: Delete the specified Outlook task in the user's mailbox. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-delete?view=graph-rest-1.0
@@ -8321,7 +8325,7 @@ paths:
       tags:
         - users.outlookUser
       summary: List attachments (deprecated)
-      description: Get a list of attachment objects attached to an Outlook task. This API is supported in the following national cloud deployments.
+      description: Get a list of attachment objects attached to an Outlook task. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
@@ -8418,7 +8422,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create attachment (deprecated)
-      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type). This API is supported in the following national cloud deployments.
+      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type). This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
@@ -10910,7 +10914,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get contactMergeSuggestions
-      description: Read the properties and relationships of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
@@ -10963,7 +10967,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update contactMergeSuggestions
-      description: Update the properties of a contactMergeSuggestions object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a contactMergeSuggestions object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
@@ -11025,7 +11029,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get userInsightsSettings
-      description: Get the user-customizable privacy settings for itemInsights and meeting hours insights. This API is supported in the following national cloud deployments.
+      description: Get the user-customizable privacy settings for itemInsights and meeting hours insights. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
@@ -11078,7 +11082,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update userInsightsSettings
-      description: Update the privacy settings for itemInsights and meeting hours insights of a user. This API is supported in the following national cloud deployments.
+      description: Update the privacy settings for itemInsights and meeting hours insights of a user. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
@@ -11140,7 +11144,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get regionalAndLanguageSettings
-      description: Retrieve the properties of a user's regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
+      description: Retrieve the properties of a user's regionalAndLanguageSettings. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
@@ -11199,7 +11203,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update regionalAndLanguageSettings
-      description: Update some or all of the properties of a regionalAndLanguageSettings object. This API is supported in the following national cloud deployments.
+      description: Update some or all of the properties of a regionalAndLanguageSettings object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
@@ -11261,7 +11265,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get shiftPreferences
-      description: Retrieve the properties and relationships of a shiftPreferences object by ID. This API is supported in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a shiftPreferences object by ID. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
@@ -11380,7 +11384,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List sponsors
-      description: Get a user's sponsors. Sponsors are users and groups that are responsible for this guest user's privileges in the tenant and for keeping the guest user's information and access up to date. This API is supported in the following national cloud deployments.
+      description: Get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0
@@ -11681,7 +11685,7 @@ paths:
       tags:
         - users.todo
       summary: List lists
-      description: Get a list of the todoTaskList objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of the todoTaskList objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
@@ -11766,7 +11770,7 @@ paths:
       tags:
         - users.todo
       summary: Create todoTaskList
-      description: Create a new lists object. This API is supported in the following national cloud deployments.
+      description: Create a new lists object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
@@ -11802,7 +11806,7 @@ paths:
       tags:
         - users.todo
       summary: Get todoTaskList
-      description: Read the properties and relationships of a todoTaskList object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a todoTaskList object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
@@ -11870,7 +11874,7 @@ paths:
       tags:
         - users.todo
       summary: Update todoTaskList
-      description: Update the properties of a todoTaskList object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a todoTaskList object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
@@ -11913,7 +11917,7 @@ paths:
       tags:
         - users.todo
       summary: Delete todoTaskList
-      description: Deletes a todoTaskList object. This API is supported in the following national cloud deployments.
+      description: Deletes a todoTaskList object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
@@ -12251,7 +12255,7 @@ paths:
       tags:
         - users.todo
       summary: List tasks
-      description: Get the todoTask resources from the tasks navigation property of a specified todoTaskList. This API is supported in the following national cloud deployments.
+      description: Get the todoTask resources from the tasks navigation property of a specified todoTaskList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
@@ -12383,7 +12387,7 @@ paths:
       tags:
         - users.todo
       summary: Create todoTask
-      description: Create a new task object in a specified todoTaskList. This API is supported in the following national cloud deployments.
+      description: Create a new task object in a specified todoTaskList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
@@ -12427,7 +12431,7 @@ paths:
       tags:
         - users.todo
       summary: Get todoTask
-      description: Read the properties and relationships of a todoTask object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a todoTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0
@@ -12520,7 +12524,7 @@ paths:
       tags:
         - users.todo
       summary: Update todoTask
-      description: Update the properties of a todoTask object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a todoTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0
@@ -12571,7 +12575,7 @@ paths:
       tags:
         - users.todo
       summary: Delete todoTask
-      description: Deletes a todoTask object. This API is supported in the following national cloud deployments.
+      description: Deletes a todoTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0
@@ -12618,7 +12622,7 @@ paths:
       tags:
         - users.todo
       summary: List taskFileAttachments
-      description: Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes. This API is supported in the following national cloud deployments.
+      description: Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
@@ -12702,7 +12706,7 @@ paths:
       tags:
         - users.todo
       summary: Create taskFileAttachment
-      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments. This API is supported in the following national cloud deployments.'
+      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
@@ -12754,7 +12758,7 @@ paths:
       tags:
         - users.todo
       summary: Get taskFileAttachment
-      description: Read the properties and relationships of a taskFileAttachment object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a taskFileAttachment object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
@@ -12822,7 +12826,7 @@ paths:
       tags:
         - users.todo
       summary: Delete taskFileAttachment
-      description: Delete a taskFileAttachment object from a todoTask resource. This API is supported in the following national cloud deployments.
+      description: Delete a taskFileAttachment object from a todoTask resource. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
@@ -13411,7 +13415,7 @@ paths:
       tags:
         - users.todo
       summary: List checklistItems
-      description: Get the checklistItem resources associated to the checklistItems navigation property of a todoTask. This API is supported in the following national cloud deployments.
+      description: Get the checklistItem resources associated to the checklistItems navigation property of a todoTask. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
@@ -13508,7 +13512,7 @@ paths:
       tags:
         - users.todo
       summary: Create checklistItem
-      description: Create a new checklistItem object as a subtask in a bigger todoTask. This API is supported in the following national cloud deployments.
+      description: Create a new checklistItem object as a subtask in a bigger todoTask. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
@@ -13560,7 +13564,7 @@ paths:
       tags:
         - users.todo
       summary: Get checklistItem
-      description: Read the properties and relationships of a checklistItem object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a checklistItem object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
@@ -13640,7 +13644,7 @@ paths:
       tags:
         - users.todo
       summary: Update checklistItem
-      description: Update the properties of a checklistItem object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a checklistItem object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
@@ -13699,7 +13703,7 @@ paths:
       tags:
         - users.todo
       summary: Delete checklistItem
-      description: Delete a checklistItem object. This API is supported in the following national cloud deployments.
+      description: Delete a checklistItem object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
@@ -14139,7 +14143,7 @@ paths:
       tags:
         - users.todo
       summary: List linkedResources
-      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application. This API is supported in the following national cloud deployments.'
+      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
@@ -14236,7 +14240,7 @@ paths:
       tags:
         - users.todo
       summary: Create linkedResource
-      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a todoTask. This API is supported in the following national cloud deployments.'
+      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a todoTask. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
@@ -14288,7 +14292,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResource
-      description: Read the properties and relationships of a linkedResource object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a linkedResource object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
@@ -14368,7 +14372,7 @@ paths:
       tags:
         - users.todo
       summary: Update linkedResource
-      description: Update the properties of a linkedResource object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a linkedResource object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
@@ -14427,7 +14431,7 @@ paths:
       tags:
         - users.todo
       summary: Delete linkedResource
-      description: Deletes a linkedResource object. This API is supported in the following national cloud deployments.
+      description: Deletes a linkedResource object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
@@ -16415,6 +16419,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
+            remoteDesktopSecurityConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.remoteDesktopSecurityConfiguration'
             tokenIssuancePolicies:
               type: array
               items:
@@ -17178,10 +17184,10 @@ components:
           properties:
             clientId:
               type: string
-              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -17195,10 +17201,10 @@ components:
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
+              description: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
+              description: 'A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -17571,11 +17577,11 @@ components:
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Read-only.
+              description: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             model:
               type: string
-              description: Model of the device. Read-only.
+              description: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             name:
               type: string
@@ -18319,7 +18325,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -20880,7 +20886,6 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             anonymizeIdentityForRoles:
@@ -20890,7 +20895,6 @@ components:
               description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -20927,7 +20931,9 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              nullable: true
+            isEndToEndEncryptionEnabled:
+              type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -20954,7 +20960,6 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             shareMeetingChatHistoryDefault:
@@ -21424,7 +21429,7 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.'
+          description: Unique role identifier inside the appRoles collection. You must specify a new GUID identifier when you create a new app role.
           format: uuid
         isEnabled:
           type: boolean
@@ -21698,6 +21703,21 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.remoteDesktopSecurityConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: remoteDesktopSecurityConfiguration
+          type: object
+          properties:
+            isRemoteDesktopProtocolEnabled:
+              type: boolean
+            targetDeviceGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.tokenIssuancePolicy:
@@ -23494,6 +23514,9 @@ components:
       title: cloudPcPartnerAgentInstallResult
       type: object
       properties:
+        errorMessage:
+          type: string
+          nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
@@ -23728,11 +23751,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -24429,11 +24452,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of field definitions for this list.
               x-ms-navigationProperty: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+              description: The collection of content types present in this list.
               x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
@@ -24447,7 +24472,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
-              description: The collection of long running operations for the list.
+              description: The collection of long-running operations on the list.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -24799,6 +24824,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recycleBinItem'
+              description: List of the recycleBinItems deleted by a user.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -27175,7 +27201,7 @@ components:
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
               nullable: true
             orderHint:
               type: string
@@ -29568,6 +29594,17 @@ components:
         - high
         - unknownFutureValue
       type: string
+    microsoft.graph.targetDeviceGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: targetDeviceGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSecretKeyStringValuePair:
       title: synchronizationSecretKeyStringValuePair
       type: object
@@ -29949,7 +29986,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.resourceAccess:
       title: resourceAccess
       type: object
@@ -30363,7 +30399,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.applicationMode:
       title: applicationMode
       enum:
@@ -32125,13 +32160,16 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             deletedFromLocation:
               type: string
+              description: Relative URL of the list or folder that originally contained the item.
               nullable: true
             size:
               type: integer
+              description: Size of the item in bytes.
               format: int64
               nullable: true
           additionalProperties:
@@ -33317,7 +33355,6 @@ components:
       description: Computer endpoint protection state
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -33373,7 +33410,6 @@ components:
       description: Product Status of Windows Defender
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -33756,7 +33792,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -35055,11 +35090,13 @@ components:
               nullable: true
             schedulingGroupId:
               type: string
+              description: ID of the scheduling group the shift is part of. Required.
               nullable: true
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             userId:
               type: string
+              description: ID of the user assigned to the shift. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -35200,6 +35237,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -36852,7 +36890,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -37549,7 +37586,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.inferenceData:
       title: inferenceData
       type: object
@@ -37808,7 +37844,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -37868,7 +37903,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -37879,7 +37913,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -37909,7 +37942,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -37920,7 +37952,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -38076,7 +38107,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.timeCardEntry:
       title: timeCardEntry
       type: object
@@ -40211,7 +40241,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -40763,7 +40792,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object

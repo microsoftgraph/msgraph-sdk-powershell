@@ -1,0 +1,1 @@
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgEnvironment
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+ Adds Microsoft Graph environment to the settings file.
 
 ## SYNTAX
 
@@ -18,16 +18,19 @@ Add-MgEnvironment [-Name] <String> [-AzureADEndpoint] <String> [-GraphEndpoint] 
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+ Adds Microsoft Graph environment to the settings file.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Add user defined environment
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Add-MgEnvironment -Name "Canary" -GraphEndpoint "https://canary.graph.microsoft.com" -AzureADEndpoint "https://login.microsoftonline.com"
+Name     AzureADEndpoint                      GraphEndpoint                 Type
+----     ---------------                      -------------                 ----
+Canary    https://login.microsoftonline.com   https://microsoftgraph.com User-defined
 ```
 
-{{ Add example description here }}
+Adds user defined environment.
 
 ## PARAMETERS
 
