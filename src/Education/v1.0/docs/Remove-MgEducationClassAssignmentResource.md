@@ -11,7 +11,6 @@ schema: 2.0.0
 Delete a specific educationAssignmentResource attached to an assignment.
 In general, only teachers in the class can remove a resource.
 However, teachers cannot remove resources marked as 'distributeToStudents', after the assignment has been published to students.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ Remove-MgEducationClassAssignmentResource -InputObject <IEducationIdentity> [-If
 Delete a specific educationAssignmentResource attached to an assignment.
 In general, only teachers in the class can remove a resource.
 However, teachers cannot remove resources marked as 'distributeToStudents', after the assignment has been published to students.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

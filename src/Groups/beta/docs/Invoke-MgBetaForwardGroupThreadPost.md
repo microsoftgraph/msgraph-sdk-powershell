@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Invoke-MgBetaForwardGroupThreadPost -InputObject <IGroupsIdentity> [-AdditionalP
 ## DESCRIPTION
 Forward a post to a recipient.
 You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an identity resource for a new member in an externalGroup.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-AdditionalP
 
 ## DESCRIPTION
 Create an identity resource for a new member in an externalGroup.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

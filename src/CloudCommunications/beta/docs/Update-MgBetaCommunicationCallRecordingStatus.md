@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the application's recording status associated with a call.
 This requires the use of the Teams policy-based recording solution.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ Update-MgBetaCommunicationCallRecordingStatus -InputObject <ICloudCommunications
 ## DESCRIPTION
 Update the application's recording status associated with a call.
 This requires the use of the Teams policy-based recording solution.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

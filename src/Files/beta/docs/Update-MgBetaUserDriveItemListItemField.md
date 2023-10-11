@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgBetaUserDriveItemListItemField
 
 ## SYNOPSIS
-Update the properties on a listItem][].
-This API is available in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -38,8 +37,7 @@ Update-MgBetaUserDriveItemListItemField -InputObject <IFilesIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Update the properties on a listItem][].
-This API is available in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 

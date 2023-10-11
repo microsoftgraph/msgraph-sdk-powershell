@@ -9,8 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Temporarily stop a running synchronization job.
-All the progress, including job state, is persisted, and the job continues from where it left off when a start call is made.
-This API is available in the following national cloud deployments.
+All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 
 ## SYNTAX
 
@@ -28,8 +27,7 @@ Suspend-MgBetaApplicationSynchronizationJob -InputObject <IApplicationsIdentity>
 
 ## DESCRIPTION
 Temporarily stop a running synchronization job.
-All the progress, including job state, is persisted, and the job continues from where it left off when a start call is made.
-This API is available in the following national cloud deployments.
+All the progress, including job state, is persisted, and the job will continue from where it left off when a start call is made.
 
 ## EXAMPLES
 
@@ -188,7 +186,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
-  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application

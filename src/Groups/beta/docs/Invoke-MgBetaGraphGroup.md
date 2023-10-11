@@ -8,9 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaGraphGroup
 
 ## SYNOPSIS
-Calling this method disables the current user to receive email notifications for this group about new posts, events, and files in that group.
+Calling this method will disable the current user to receive email notifications for this group about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,9 +24,8 @@ Invoke-MgBetaGraphGroup -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-
 ```
 
 ## DESCRIPTION
-Calling this method disables the current user to receive email notifications for this group about new posts, events, and files in that group.
+Calling this method will disable the current user to receive email notifications for this group about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

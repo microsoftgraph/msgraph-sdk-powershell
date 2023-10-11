@@ -177,7 +177,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Display name for this organizational contact.
-Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
+Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
 
 ```yaml
 Type: System.String
@@ -534,7 +534,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DirectReports <IMicrosoftGraphDirectoryObject[]>]`: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[DisplayName <String>]`: Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
+  - `[DisplayName <String>]`: Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
   - `[GivenName <String>]`: First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
   - `[JobTitle <String>]`: Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
   - `[Mail <String>]`: The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
@@ -555,7 +555,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
     - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
     - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
-    - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
+    - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
   - `[Surname <String>]`: Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)
   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[TransitiveReports <IMicrosoftGraphDirectoryObject[]>]`: The transitive reports for a contact. Read-only.
@@ -586,7 +586,7 @@ To create the parameters described below, construct a hash table containing the 
 `SERVICEPROVISIONINGERRORS <IMicrosoftGraphServiceProvisioningError[]>`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object . Supports $filter (eq, not, for isResolved and serviceInstance).
   - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
   - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
-  - `[ServiceInstance <String>]`: Qualified service instance (for example, 'SharePoint/Dublin') that published the service error information.
+  - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
 
 `TRANSITIVEMEMBEROF <IMicrosoftGraphDirectoryObject[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

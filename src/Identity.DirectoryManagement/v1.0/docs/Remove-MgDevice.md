@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a registered device.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +25,6 @@ Remove-MgDevice -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <S
 
 ## DESCRIPTION
 Delete a registered device.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

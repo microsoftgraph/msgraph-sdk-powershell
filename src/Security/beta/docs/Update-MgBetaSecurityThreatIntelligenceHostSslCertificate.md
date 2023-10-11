@@ -93,9 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -FirstSeenDateTime
-The first date and time that this hostSslCertificate was observed.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -173,9 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastSeenDateTime
-The most recent date and time that this hostSslCertificate was observed.
-The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -190,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -Ports
-The ports related with this hostSslCertificate.
+.
 To construct, see NOTES section for PORTS properties and create a hash table.
 
 ```yaml
@@ -277,16 +273,16 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphSecurityHostSslCertificate>`: hostSslCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[FirstSeenDateTime <DateTime?>]`: 
   - `[Host <IMicrosoftGraphSecurityHost>]`: host
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+    - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ChildHost <IMicrosoftGraphSecurityHost>]`: host
       - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
       - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[LinkKind <String>]`: The reason that two hosts are identified as hostPair.
+      - `[LinkKind <String>]`: The reason the two hosts are identified as hostPairs.
       - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
     - `[Components <IMicrosoftGraphSecurityHostComponent[]>]`: The hostComponents that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -295,7 +291,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Host <IMicrosoftGraphSecurityHost>]`: host
       - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this web component was observed by Microsoft Defender Threat Intelligence. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Name <String>]`: A name running on the artifact, for example, Microsoft IIS.
-      - `[Version <String>]`: The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
+      - `[Version <String>]`: The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
     - `[Cookies <IMicrosoftGraphSecurityHostCookie[]>]`: The hostCookies that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Domain <String>]`: The URI for which the cookie is valid.
@@ -318,58 +314,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
       - `[RecordType <String>]`: The DNS record type for this passiveDnsRecord entry.
     - `[PassiveDnsReverse <IMicrosoftGraphSecurityPassiveDnsRecord[]>]`: Reverse passive DNS retrieval about this host.
-    - `[Ports <IMicrosoftGraphSecurityHostPort[]>]`: 
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Banners <IMicrosoftGraphSecurityHostPortBanner[]>]`: 
-        - `[Banner <String>]`: 
-        - `[FirstSeenDateTime <DateTime?>]`: 
-        - `[LastSeenDateTime <DateTime?>]`: 
-        - `[ScanProtocol <String>]`: 
-        - `[TimesObserved <Int32?>]`: 
-      - `[FirstSeenDateTime <DateTime?>]`: 
-      - `[Host <IMicrosoftGraphSecurityHost>]`: host
-      - `[LastScanDateTime <DateTime?>]`: 
-      - `[LastSeenDateTime <DateTime?>]`: 
-      - `[MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
-        - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[ExpirationDateTime <DateTime?>]`: The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Fingerprint <String>]`: A hash of the certificate calculated on the data and signature.
-        - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[IssueDateTime <DateTime?>]`: The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Issuer <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
-          - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[City <String>]`: The city.
-            - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-            - `[PostOfficeBox <String>]`: The post office box number.
-            - `[PostalCode <String>]`: The postal code.
-            - `[State <String>]`: The state.
-            - `[Street <String>]`: The street.
-            - `[Type <String>]`: physicalAddressType
-          - `[AlternateNames <String[]>]`: Alternate names for this entity that are part of the certificate.
-          - `[CommonName <String>]`: A common name for this entity.
-          - `[Email <String>]`: An email for this entity.
-          - `[GivenName <String>]`: If the entity is a person, this is the person's given name (first name).
-          - `[OrganizationName <String>]`: If the entity is an organization, this is the name of the organization.
-          - `[OrganizationUnitName <String>]`: If the entity is an organization, this communicates if a unit in the organization is named on the entity.
-          - `[SerialNumber <String>]`: A serial number assigned to the entity; usually only available if the entity is the issuer.
-          - `[Surname <String>]`: If the entity is a person, this is the person's surname (last name).
-        - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[RelatedHosts <IMicrosoftGraphSecurityHost[]>]`: The hosts related with this sslCertificate.
-        - `[SerialNumber <String>]`: The serial number associated with an SSL certificate.
-        - `[Sha1 <String>]`: A SHA-1 hash of the certificate. Note: This is not the signature.
-        - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
-      - `[Port <Int32?>]`: 
-      - `[Protocol <String>]`: hostPortProtocol
-      - `[Services <IMicrosoftGraphSecurityHostPortComponent[]>]`: 
-        - `[Component <IMicrosoftGraphSecurityHostComponent>]`: hostComponent
-        - `[FirstSeenDateTime <DateTime?>]`: 
-        - `[IsRecent <Boolean?>]`: 
-        - `[LastSeenDateTime <DateTime?>]`: 
-      - `[Status <String>]`: hostPortStatus
-      - `[TimesObserved <Int32?>]`: 
     - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -380,7 +324,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
         - `[Severity <String>]`: hostReputationRuleSeverity
       - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
-    - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
+    - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: 
     - `[Subdomains <IMicrosoftGraphSecuritySubdomain[]>]`: The subdomains that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
@@ -397,6 +341,14 @@ To create the parameters described below, construct a hash table containing the 
       - `[Abuse <IMicrosoftGraphSecurityWhoisContact>]`: whoisContact
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[City <String>]`: The city.
+          - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
+          - `[PostOfficeBox <String>]`: The post office box number.
+          - `[PostalCode <String>]`: The postal code.
+          - `[State <String>]`: The state.
+          - `[Street <String>]`: The street.
+          - `[Type <String>]`: physicalAddressType
         - `[Email <String>]`: The email of this WHOIS contact.
         - `[Fax <String>]`: The fax of this WHOIS contact. No format is guaranteed.
         - `[Name <String>]`: The name of this WHOIS contact.
@@ -443,22 +395,44 @@ To create the parameters described below, construct a hash table containing the 
         - `[WhoisServer <String>]`: The WHOIS server that provides the details.
         - `[Zone <IMicrosoftGraphSecurityWhoisContact>]`: whoisContact
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
-    - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Port <Int32?>]`: The port number.
+  - `[LastSeenDateTime <DateTime?>]`: 
+  - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: 
+    - `[FirstSeenDateTime <DateTime?>]`: 
+    - `[LastSeenDateTime <DateTime?>]`: 
+    - `[Port <Int32?>]`: 
   - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: 
+    - `[Fingerprint <String>]`: 
+    - `[FirstSeenDateTime <DateTime?>]`: 
+    - `[IssueDateTime <DateTime?>]`: 
+    - `[Issuer <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
+      - `[AlternateNames <String[]>]`: 
+      - `[CommonName <String>]`: 
+      - `[Email <String>]`: 
+      - `[GivenName <String>]`: 
+      - `[OrganizationName <String>]`: 
+      - `[OrganizationUnitName <String>]`: 
+      - `[SerialNumber <String>]`: 
+      - `[Surname <String>]`: 
+    - `[LastSeenDateTime <DateTime?>]`: 
+    - `[RelatedHosts <IMicrosoftGraphSecurityHost[]>]`: 
+    - `[SerialNumber <String>]`: 
+    - `[Sha1 <String>]`: 
+    - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
 
 `HOST1 <IMicrosoftGraphSecurityHost>`: host
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+  - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ChildHost <IMicrosoftGraphSecurityHost>]`: host
     - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
     - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[LinkKind <String>]`: The reason that two hosts are identified as hostPair.
+    - `[LinkKind <String>]`: The reason the two hosts are identified as hostPairs.
     - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
   - `[Components <IMicrosoftGraphSecurityHostComponent[]>]`: The hostComponents that are associated with this host.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -467,7 +441,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Host <IMicrosoftGraphSecurityHost>]`: host
     - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this web component was observed by Microsoft Defender Threat Intelligence. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Name <String>]`: A name running on the artifact, for example, Microsoft IIS.
-    - `[Version <String>]`: The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
+    - `[Version <String>]`: The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
   - `[Cookies <IMicrosoftGraphSecurityHostCookie[]>]`: The hostCookies that are associated with this host.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Domain <String>]`: The URI for which the cookie is valid.
@@ -490,25 +464,32 @@ To create the parameters described below, construct a hash table containing the 
     - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
     - `[RecordType <String>]`: The DNS record type for this passiveDnsRecord entry.
   - `[PassiveDnsReverse <IMicrosoftGraphSecurityPassiveDnsRecord[]>]`: Reverse passive DNS retrieval about this host.
-  - `[Ports <IMicrosoftGraphSecurityHostPort[]>]`: 
+  - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Banners <IMicrosoftGraphSecurityHostPortBanner[]>]`: 
-      - `[Banner <String>]`: 
-      - `[FirstSeenDateTime <DateTime?>]`: 
-      - `[LastSeenDateTime <DateTime?>]`: 
-      - `[ScanProtocol <String>]`: 
-      - `[TimesObserved <Int32?>]`: 
+    - `[Classification <String>]`: hostReputationClassification
+    - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
+      - `[Description <String>]`: The description of the rule that gives more context.
+      - `[Name <String>]`: The name of the rule.
+      - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
+      - `[Severity <String>]`: hostReputationRuleSeverity
+    - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
+  - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[FirstSeenDateTime <DateTime?>]`: 
     - `[Host <IMicrosoftGraphSecurityHost>]`: host
-    - `[LastScanDateTime <DateTime?>]`: 
     - `[LastSeenDateTime <DateTime?>]`: 
-    - `[MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
+    - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: 
+      - `[FirstSeenDateTime <DateTime?>]`: 
+      - `[LastSeenDateTime <DateTime?>]`: 
+      - `[Port <Int32?>]`: 
+    - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[ExpirationDateTime <DateTime?>]`: The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Fingerprint <String>]`: A hash of the certificate calculated on the data and signature.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[IssueDateTime <DateTime?>]`: The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[ExpirationDateTime <DateTime?>]`: 
+      - `[Fingerprint <String>]`: 
+      - `[FirstSeenDateTime <DateTime?>]`: 
+      - `[IssueDateTime <DateTime?>]`: 
       - `[Issuer <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
@@ -520,48 +501,19 @@ To create the parameters described below, construct a hash table containing the 
           - `[State <String>]`: The state.
           - `[Street <String>]`: The street.
           - `[Type <String>]`: physicalAddressType
-        - `[AlternateNames <String[]>]`: Alternate names for this entity that are part of the certificate.
-        - `[CommonName <String>]`: A common name for this entity.
-        - `[Email <String>]`: An email for this entity.
-        - `[GivenName <String>]`: If the entity is a person, this is the person's given name (first name).
-        - `[OrganizationName <String>]`: If the entity is an organization, this is the name of the organization.
-        - `[OrganizationUnitName <String>]`: If the entity is an organization, this communicates if a unit in the organization is named on the entity.
-        - `[SerialNumber <String>]`: A serial number assigned to the entity; usually only available if the entity is the issuer.
-        - `[Surname <String>]`: If the entity is a person, this is the person's surname (last name).
-      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[RelatedHosts <IMicrosoftGraphSecurityHost[]>]`: The hosts related with this sslCertificate.
-      - `[SerialNumber <String>]`: The serial number associated with an SSL certificate.
-      - `[Sha1 <String>]`: A SHA-1 hash of the certificate. Note: This is not the signature.
-      - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
-    - `[Port <Int32?>]`: 
-    - `[Protocol <String>]`: hostPortProtocol
-    - `[Services <IMicrosoftGraphSecurityHostPortComponent[]>]`: 
-      - `[Component <IMicrosoftGraphSecurityHostComponent>]`: hostComponent
-      - `[FirstSeenDateTime <DateTime?>]`: 
-      - `[IsRecent <Boolean?>]`: 
+        - `[AlternateNames <String[]>]`: 
+        - `[CommonName <String>]`: 
+        - `[Email <String>]`: 
+        - `[GivenName <String>]`: 
+        - `[OrganizationName <String>]`: 
+        - `[OrganizationUnitName <String>]`: 
+        - `[SerialNumber <String>]`: 
+        - `[Surname <String>]`: 
       - `[LastSeenDateTime <DateTime?>]`: 
-    - `[Status <String>]`: hostPortStatus
-    - `[TimesObserved <Int32?>]`: 
-  - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Classification <String>]`: hostReputationClassification
-    - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
-      - `[Description <String>]`: The description of the rule that gives more context.
-      - `[Name <String>]`: The name of the rule.
-      - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
-      - `[Severity <String>]`: hostReputationRuleSeverity
-    - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
-  - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Host <IMicrosoftGraphSecurityHost>]`: host
-    - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Port <Int32?>]`: The port number.
-    - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
+      - `[RelatedHosts <IMicrosoftGraphSecurityHost[]>]`: 
+      - `[SerialNumber <String>]`: 
+      - `[Sha1 <String>]`: 
+      - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
   - `[Subdomains <IMicrosoftGraphSecuritySubdomain[]>]`: The subdomains that are associated with this host.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
@@ -661,7 +613,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSecurityProfileId <String>]`: The unique identifier of hostSecurityProfile
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
@@ -703,18 +654,18 @@ To create the parameters described below, construct a hash table containing the 
   - `[WhoisHistoryRecordId <String>]`: The unique identifier of whoisHistoryRecord
   - `[WhoisRecordId <String>]`: The unique identifier of whoisRecord
 
-`PORTS <IMicrosoftGraphSecurityHostSslCertificatePort[]>`: The ports related with this hostSslCertificate.
-  - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Port <Int32?>]`: The port number.
+`PORTS <IMicrosoftGraphSecurityHostSslCertificatePort[]>`: .
+  - `[FirstSeenDateTime <DateTime?>]`: 
+  - `[LastSeenDateTime <DateTime?>]`: 
+  - `[Port <Int32?>]`: 
 
 `SSLCERTIFICATE <IMicrosoftGraphSecuritySslCertificate>`: sslCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ExpirationDateTime <DateTime?>]`: The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Fingerprint <String>]`: A hash of the certificate calculated on the data and signature.
-  - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[IssueDateTime <DateTime?>]`: The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[ExpirationDateTime <DateTime?>]`: 
+  - `[Fingerprint <String>]`: 
+  - `[FirstSeenDateTime <DateTime?>]`: 
+  - `[IssueDateTime <DateTime?>]`: 
   - `[Issuer <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
@@ -726,23 +677,23 @@ To create the parameters described below, construct a hash table containing the 
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
       - `[Type <String>]`: physicalAddressType
-    - `[AlternateNames <String[]>]`: Alternate names for this entity that are part of the certificate.
-    - `[CommonName <String>]`: A common name for this entity.
-    - `[Email <String>]`: An email for this entity.
-    - `[GivenName <String>]`: If the entity is a person, this is the person's given name (first name).
-    - `[OrganizationName <String>]`: If the entity is an organization, this is the name of the organization.
-    - `[OrganizationUnitName <String>]`: If the entity is an organization, this communicates if a unit in the organization is named on the entity.
-    - `[SerialNumber <String>]`: A serial number assigned to the entity; usually only available if the entity is the issuer.
-    - `[Surname <String>]`: If the entity is a person, this is the person's surname (last name).
-  - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[RelatedHosts <IMicrosoftGraphSecurityHost[]>]`: The hosts related with this sslCertificate.
+    - `[AlternateNames <String[]>]`: 
+    - `[CommonName <String>]`: 
+    - `[Email <String>]`: 
+    - `[GivenName <String>]`: 
+    - `[OrganizationName <String>]`: 
+    - `[OrganizationUnitName <String>]`: 
+    - `[SerialNumber <String>]`: 
+    - `[Surname <String>]`: 
+  - `[LastSeenDateTime <DateTime?>]`: 
+  - `[RelatedHosts <IMicrosoftGraphSecurityHost[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+    - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ChildHost <IMicrosoftGraphSecurityHost>]`: host
       - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
       - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[LinkKind <String>]`: The reason that two hosts are identified as hostPair.
+      - `[LinkKind <String>]`: The reason the two hosts are identified as hostPairs.
       - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
     - `[Components <IMicrosoftGraphSecurityHostComponent[]>]`: The hostComponents that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -751,7 +702,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Host <IMicrosoftGraphSecurityHost>]`: host
       - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this web component was observed by Microsoft Defender Threat Intelligence. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Name <String>]`: A name running on the artifact, for example, Microsoft IIS.
-      - `[Version <String>]`: The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
+      - `[Version <String>]`: The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
     - `[Cookies <IMicrosoftGraphSecurityHostCookie[]>]`: The hostCookies that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Domain <String>]`: The URI for which the cookie is valid.
@@ -774,28 +725,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
       - `[RecordType <String>]`: The DNS record type for this passiveDnsRecord entry.
     - `[PassiveDnsReverse <IMicrosoftGraphSecurityPassiveDnsRecord[]>]`: Reverse passive DNS retrieval about this host.
-    - `[Ports <IMicrosoftGraphSecurityHostPort[]>]`: 
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Banners <IMicrosoftGraphSecurityHostPortBanner[]>]`: 
-        - `[Banner <String>]`: 
-        - `[FirstSeenDateTime <DateTime?>]`: 
-        - `[LastSeenDateTime <DateTime?>]`: 
-        - `[ScanProtocol <String>]`: 
-        - `[TimesObserved <Int32?>]`: 
-      - `[FirstSeenDateTime <DateTime?>]`: 
-      - `[Host <IMicrosoftGraphSecurityHost>]`: host
-      - `[LastScanDateTime <DateTime?>]`: 
-      - `[LastSeenDateTime <DateTime?>]`: 
-      - `[MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
-      - `[Port <Int32?>]`: 
-      - `[Protocol <String>]`: hostPortProtocol
-      - `[Services <IMicrosoftGraphSecurityHostPortComponent[]>]`: 
-        - `[Component <IMicrosoftGraphSecurityHostComponent>]`: hostComponent
-        - `[FirstSeenDateTime <DateTime?>]`: 
-        - `[IsRecent <Boolean?>]`: 
-        - `[LastSeenDateTime <DateTime?>]`: 
-      - `[Status <String>]`: hostPortStatus
-      - `[TimesObserved <Int32?>]`: 
     - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -806,15 +735,15 @@ To create the parameters described below, construct a hash table containing the 
         - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
         - `[Severity <String>]`: hostReputationRuleSeverity
       - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
-    - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
+    - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[FirstSeenDateTime <DateTime?>]`: 
       - `[Host <IMicrosoftGraphSecurityHost>]`: host
-      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
-        - `[FirstSeenDateTime <DateTime?>]`: The first date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[LastSeenDateTime <DateTime?>]`: The most recent date and time that this port was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Port <Int32?>]`: The port number.
+      - `[LastSeenDateTime <DateTime?>]`: 
+      - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: 
+        - `[FirstSeenDateTime <DateTime?>]`: 
+        - `[LastSeenDateTime <DateTime?>]`: 
+        - `[Port <Int32?>]`: 
       - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
     - `[Subdomains <IMicrosoftGraphSecuritySubdomain[]>]`: The subdomains that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -878,8 +807,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[WhoisServer <String>]`: The WHOIS server that provides the details.
         - `[Zone <IMicrosoftGraphSecurityWhoisContact>]`: whoisContact
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[SerialNumber <String>]`: The serial number associated with an SSL certificate.
-  - `[Sha1 <String>]`: A SHA-1 hash of the certificate. Note: This is not the signature.
+  - `[SerialNumber <String>]`: 
+  - `[Sha1 <String>]`: 
   - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
 
 ## RELATED LINKS

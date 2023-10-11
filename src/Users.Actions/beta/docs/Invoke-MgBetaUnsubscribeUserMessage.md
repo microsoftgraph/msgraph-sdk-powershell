@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaUnsubscribeUserMessage
 
 ## SYNOPSIS
-Submits an email request on behalf of the signed-in user to unsubscribe from an email distribution list.
+Submits a email request on behalf of the signed-in user to unsubscribe from an email distribution list.
 Uses the information in the List-Unsubscribe header.
 Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out.
 They can do so by specifying the List-Unsubscribe header in each message following RFC-2369.
@@ -17,7 +17,6 @@ Setting that header would also set the unsubscribeEnabled property of the messag
 If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
 A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,7 @@ Invoke-MgBetaUnsubscribeUserMessage -InputObject <IUsersActionsIdentity> [-PassT
 ```
 
 ## DESCRIPTION
-Submits an email request on behalf of the signed-in user to unsubscribe from an email distribution list.
+Submits a email request on behalf of the signed-in user to unsubscribe from an email distribution list.
 Uses the information in the List-Unsubscribe header.
 Message senders can use mailing lists in a user-friendly way by including an option for recipients to opt out.
 They can do so by specifying the List-Unsubscribe header in each message following RFC-2369.
@@ -43,7 +42,6 @@ Setting that header would also set the unsubscribeEnabled property of the messag
 If the unsubscribeEnabled property of a message is true, you can use the unsubscribe action to unsubscribe the user from similar future messages as managed by the message sender.
 A successful unsubscribe action moves the message to the Deleted Items folder.
 The actual exclusion of the user from future mail distribution is managed by the sender.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -182,6 +180,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: The unique identifier of device
   - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
   - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
   - `[DriveId <String>]`: The unique identifier of drive
@@ -203,6 +202,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

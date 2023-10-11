@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Read the properties and relationships of an industryDataConnector object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an azureDataLakeConnector object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an industryDataConnector object.
-This API is available in the following national cloud deployments.
+Read the properties and relationships of an azureDataLakeConnector object.
 
 ## EXAMPLES
 
@@ -258,7 +256,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[AcronymId <String>]`: The unique identifier of acronym
-  - `[AuthorizationSystemId <String>]`: The unique identifier of authorizationSystem
   - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity

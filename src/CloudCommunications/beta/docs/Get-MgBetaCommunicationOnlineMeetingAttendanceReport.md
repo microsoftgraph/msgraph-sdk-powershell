@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the meetingAttendanceReport for an onlineMeeting.
 Each time an online meeting ends, an attendance report will be generated for that session.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ Get-MgBetaCommunicationOnlineMeetingAttendanceReport -OnlineMeetingId <String> [
 ## DESCRIPTION
 Get the meetingAttendanceReport for an onlineMeeting.
 Each time an online meeting ends, an attendance report will be generated for that session.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the educationClass resources owned by an educationSchool.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgEducationSchoolClass -EducationSchoolId <String> [-ExpandProperty <String[
 
 ## DESCRIPTION
 Get the educationClass resources owned by an educationSchool.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

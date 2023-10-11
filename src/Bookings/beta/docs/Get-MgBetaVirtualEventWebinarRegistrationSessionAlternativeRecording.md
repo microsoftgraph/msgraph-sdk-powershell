@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarRegistrationSessionAlternativeRecording
 
 ## SYNOPSIS
-Get alternativeRecording for the navigation property sessions from solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Get-MgBetaVirtualEventWebinarRegistrationSessionAlternativeRecording -InputObjec
 ```
 
 ## DESCRIPTION
-Get alternativeRecording for the navigation property sessions from solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ## EXAMPLES
 

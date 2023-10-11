@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Copy a message to a folder within the user's mailbox.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Copy-MgUserMailFolderChildFolderMessage -InputObject <IUsersActionsIdentity>
 
 ## DESCRIPTION
 Copy a message to a folder within the user's mailbox.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

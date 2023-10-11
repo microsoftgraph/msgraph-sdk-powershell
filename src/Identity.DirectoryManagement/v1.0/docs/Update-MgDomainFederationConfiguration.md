@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an internalDomainFederation object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -51,7 +50,6 @@ Update-MgDomainFederationConfiguration -InputObject <IIdentityDirectoryManagemen
 
 ## DESCRIPTION
 Update the properties of an internalDomainFederation object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

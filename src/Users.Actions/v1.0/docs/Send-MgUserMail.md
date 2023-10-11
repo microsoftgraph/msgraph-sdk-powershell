@@ -9,11 +9,11 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send the message specified in the request body using either JSON or MIME format.
-When using JSON format, you can include a file attachment in the same sendMail action call.
-When using MIME format: This method saves the message in the Sent Items folder.
+When using JSON format you can include a file attachment in the same sendMail action call.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft message to send later.
 To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,11 +45,11 @@ Send-MgUserMail -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Has
 
 ## DESCRIPTION
 Send the message specified in the request body using either JSON or MIME format.
-When using JSON format, you can include a file attachment in the same sendMail action call.
-When using MIME format: This method saves the message in the Sent Items folder.
+When using JSON format you can include a file attachment in the same sendMail action call.
+When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
+This method saves the message in the Sent Items folder.
 Alternatively, create a draft message to send later.
 To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

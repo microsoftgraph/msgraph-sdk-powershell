@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupConversation
 
 ## SYNOPSIS
-Retrieve the properties and relationships of conversation object.
-This API is available in the following national cloud deployments.
+Get a conversation object.
 
 ## SYNTAX
 
@@ -32,8 +31,7 @@ Get-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-Property <String[]>
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of conversation object.
-This API is available in the following national cloud deployments.
+Get a conversation object.
 
 ## EXAMPLES
 

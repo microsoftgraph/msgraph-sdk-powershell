@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Put a participant on hold and play music in the background.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Start-MgBetaCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicat
 
 ## DESCRIPTION
 Put a participant on hold and play music in the background.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

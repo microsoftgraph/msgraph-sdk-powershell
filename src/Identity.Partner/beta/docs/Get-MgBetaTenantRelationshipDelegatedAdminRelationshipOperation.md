@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties of a delegatedAdminRelationshipOperation object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,7 +34,6 @@ Get-MgBetaTenantRelationshipDelegatedAdminRelationshipOperation -InputObject <II
 
 ## DESCRIPTION
 Read the properties of a delegatedAdminRelationshipOperation object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

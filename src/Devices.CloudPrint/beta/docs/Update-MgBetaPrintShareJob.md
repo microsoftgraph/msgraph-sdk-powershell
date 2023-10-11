@@ -421,7 +421,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CompletedDateTime <DateTime?>]`: 
   - `[Configuration <IMicrosoftGraphPrintJobConfiguration>]`: printJobConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Collate <Boolean?>]`: Whether the printer should collate pages when printing multiple copies of a multi-page document.
+    - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
     - `[ColorMode <String>]`: printColorMode
     - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
     - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
@@ -451,8 +451,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Scaling <String>]`: printScaling
   - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
@@ -507,7 +507,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
-        - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
+        - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
         - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
         - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
       - `[DisplayName <String>]`: The name of the printTaskDefinition.
@@ -525,7 +525,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `CONFIGURATION <IMicrosoftGraphPrintJobConfiguration>`: printJobConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Collate <Boolean?>]`: Whether the printer should collate pages when printing multiple copies of a multi-page document.
+  - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
   - `[ColorMode <String>]`: printColorMode
   - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
   - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
@@ -556,8 +556,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `CREATEDBY <IMicrosoftGraphUserIdentity>`: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-  - `[Id <String>]`: Unique identifier for the identity.
+  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+  - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
 
@@ -633,7 +633,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AppId <String>]`: Refers to the unique identifier representing Application Id in the Azure Active Directory.
-      - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
+      - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
       - `[ServicePrincipalId <String>]`: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
       - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
     - `[DisplayName <String>]`: The name of the printTaskDefinition.

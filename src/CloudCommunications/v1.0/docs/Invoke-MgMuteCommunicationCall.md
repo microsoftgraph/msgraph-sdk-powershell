@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Allows the application to mute itself.
 This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
-For more details about how to handle mute operations, see muteParticipantOperation This API is supported in the following national cloud deployments.
+For more details about how to handle mute operations, see muteParticipantOperation
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Invoke-MgMuteCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-Add
 ## DESCRIPTION
 Allows the application to mute itself.
 This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
-For more details about how to handle mute operations, see muteParticipantOperation This API is supported in the following national cloud deployments.
+For more details about how to handle mute operations, see muteParticipantOperation
 
 ## EXAMPLES
 
@@ -199,7 +199,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
-  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport

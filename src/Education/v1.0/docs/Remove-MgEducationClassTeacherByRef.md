@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationClassTeacherByRef
 
 ## SYNOPSIS
-Remove a teacher from an educationClass.
-This API is supported in the following national cloud deployments.
+Remove teacher from an educationClass.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgEducationClassTeacherByRef -InputObject <IEducationIdentity> [-Id <Stri
 ```
 
 ## DESCRIPTION
-Remove a teacher from an educationClass.
-This API is supported in the following national cloud deployments.
+Remove teacher from an educationClass.
 
 ## EXAMPLES
 

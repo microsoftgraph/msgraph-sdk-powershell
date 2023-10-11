@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add the large gallery view to a call.
 For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Add-MgBetaCommunicationCallLargeGalleryView -InputObject <ICloudCommunicationsId
 ## DESCRIPTION
 Add the large gallery view to a call.
 For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

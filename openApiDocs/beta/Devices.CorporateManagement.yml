@@ -32715,10 +32715,6 @@ components:
               description: The list of apps expected to be installed by the .pkg.
             minimumSupportedOperatingSystem:
               $ref: '#/components/schemas/microsoft.graph.macOSMinimumOperatingSystem'
-            postInstallScript:
-              $ref: '#/components/schemas/microsoft.graph.macOSAppScript'
-            preInstallScript:
-              $ref: '#/components/schemas/microsoft.graph.macOSAppScript'
             primaryBundleId:
               type: string
               description: The primary CFBundleIdentifier of the .pkg.
@@ -35849,6 +35845,7 @@ components:
       description: Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.
       x-ms-enum-flags:
         isFlags: true
+        style: simple
       x-ms-enum:
         name: androidTargetedPlatforms
         modelAsString: false
@@ -35915,9 +35912,6 @@ components:
         v16_0:
           type: boolean
           description: 'When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.'
-        v17_0:
-          type: boolean
-          description: 'When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.'
         v8_0:
           type: boolean
           description: 'When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.'
@@ -36086,9 +36080,6 @@ components:
         v13_0:
           type: boolean
           description: 'When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.'
-        v14_0:
-          type: boolean
-          description: 'When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.'
       additionalProperties:
         type: object
       description: The minimum operating system required for a macOS app.
@@ -36111,16 +36102,6 @@ components:
       additionalProperties:
         type: object
       description: Contains properties of a macOS .app in the package
-    microsoft.graph.macOSAppScript:
-      title: macOSAppScript
-      type: object
-      properties:
-        scriptContent:
-          type: string
-          description: The base64 encoded shell script (.sh) that assists managing macOS apps.
-      additionalProperties:
-        type: object
-      description: Shell script used to assist installation of a macOS app. These scripts are used to perform additional tasks to help the app successfully be configured.
     microsoft.graph.managedApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mobileApp'
@@ -36201,6 +36182,7 @@ components:
       description: Contains properties for Windows architecture.
       x-ms-enum-flags:
         isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsArchitecture
         modelAsString: false
@@ -36375,6 +36357,7 @@ components:
       description: Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
       x-ms-enum-flags:
         isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceType
         modelAsString: false
@@ -41529,6 +41512,7 @@ components:
       description: Contains properties for detection operator.
       x-ms-enum-flags:
         isFlags: true
+        style: simple
       x-ms-enum:
         name: win32LobAppDetectionOperator
         modelAsString: false
@@ -42237,7 +42221,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -46724,11 +46708,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

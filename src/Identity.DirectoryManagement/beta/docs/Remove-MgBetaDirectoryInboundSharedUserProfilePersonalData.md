@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a request to remove the personal data for an inboundSharedUserProfile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaDirectoryInboundSharedUserProfilePersonalData -InputObject <IIdenti
 
 ## DESCRIPTION
 Create a request to remove the personal data for an inboundSharedUserProfile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

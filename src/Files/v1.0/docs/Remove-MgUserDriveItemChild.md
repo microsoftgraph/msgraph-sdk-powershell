@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgUserDriveItemChild
 
 ## SYNOPSIS
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgUserDriveItemChild -InputObject <IFilesIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ## EXAMPLES
 

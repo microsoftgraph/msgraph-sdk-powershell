@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Promote a verified subdomain to the root domain.
 A verified domain has its isVerified property set to true.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Invoke-MgPromoteDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Con
 ## DESCRIPTION
 Promote a verified subdomain to the root domain.
 A verified domain has its isVerified property set to true.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create an authenticationContextClassReference object, if the ID has not been used.
 If ID has been used, this call updates the authenticationContextClassReference object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ Update-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObje
 ## DESCRIPTION
 Create an authenticationContextClassReference object, if the ID has not been used.
 If ID has been used, this call updates the authenticationContextClassReference object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -177,8 +175,8 @@ Accept wildcard characters: False
 
 ### -IsAvailable
 Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps.
-When it's set to false, it shouldn't be shown in authentication context selection UX, or used to protect app resources.
-It's shown and available for Conditional Access policy authoring.
+When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources.
+It will be shown and available for Conditional Access policy authoring.
 The default value is false.
 Supports $filter (eq).
 
@@ -252,7 +250,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.
   - `[DisplayName <String>]`: The display name is the friendly name of the authenticationContextClassReference object. This value should be used to identify the authentication context class reference when building user-facing admin experiences. For example, a selection UX.
-  - `[IsAvailable <Boolean?>]`: Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it's set to false, it shouldn't be shown in authentication context selection UX, or used to protect app resources. It's shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
+  - `[IsAvailable <Boolean?>]`: Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in authentication context selection UX, or used to protect app resources. It will be shown and available for Conditional Access policy authoring. The default value is false.  Supports $filter (eq).
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy

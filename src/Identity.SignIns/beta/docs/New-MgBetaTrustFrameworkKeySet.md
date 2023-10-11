@@ -11,7 +11,6 @@ schema: 2.0.0
 Create a new trustFrameworkKeySet.
 The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
 The modified ID will be available in the response and in the location header.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ New-MgBetaTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeyS
 Create a new trustFrameworkKeySet.
 The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service.
 The modified ID will be available in the response and in the location header.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -199,40 +197,40 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Keys <IMicrosoftGraphTrustFrameworkKey[]>]`: A collection of the keys.
-    - `[D <String>]`: RSA Key - private exponent. Field can't be read back.
-    - `[Dp <String>]`: RSA Key - first exponent. Field can't be read back.
-    - `[Dq <String>]`: RSA Key - second exponent. Field can't be read back.
+    - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
+    - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.
+    - `[Dq <String>]`: RSA Key - second exponent. Field cannot be read back.
     - `[E <String>]`: RSA Key - public exponent
     - `[Exp <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-    - `[K <String>]`: Symmetric Key for oct key type. Field can't be read back.
+    - `[K <String>]`: Symmetric Key for oct key type. Field cannot be read back.
     - `[Kid <String>]`: The unique identifier for the key.
     - `[Kty <String>]`: The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
     - `[N <String>]`: RSA Key - modulus
     - `[Nbf <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-    - `[P <String>]`: RSA Key - first prime. Field can't be read back.
-    - `[Q <String>]`: RSA Key - second prime. Field can't be read back.
-    - `[Qi <String>]`: RSA Key - Coefficient. Field can't be read back.
+    - `[P <String>]`: RSA Key - first prime. Field cannot be read back.
+    - `[Q <String>]`: RSA Key - second prime. Field cannot be read back.
+    - `[Qi <String>]`: RSA Key - Coefficient. Field cannot be read back.
     - `[Use <String>]`: The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
     - `[X5C <String[]>]`: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
-    - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
+    - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 
 `KEYS <IMicrosoftGraphTrustFrameworkKey[]>`: A collection of the keys.
-  - `[D <String>]`: RSA Key - private exponent. Field can't be read back.
-  - `[Dp <String>]`: RSA Key - first exponent. Field can't be read back.
-  - `[Dq <String>]`: RSA Key - second exponent. Field can't be read back.
+  - `[D <String>]`: RSA Key - private exponent. Field cannot be read back.
+  - `[Dp <String>]`: RSA Key - first exponent. Field cannot be read back.
+  - `[Dq <String>]`: RSA Key - second exponent. Field cannot be read back.
   - `[E <String>]`: RSA Key - public exponent
   - `[Exp <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-  - `[K <String>]`: Symmetric Key for oct key type. Field can't be read back.
+  - `[K <String>]`: Symmetric Key for oct key type. Field cannot be read back.
   - `[Kid <String>]`: The unique identifier for the key.
   - `[Kty <String>]`: The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
   - `[N <String>]`: RSA Key - modulus
   - `[Nbf <Int64?>]`: This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-  - `[P <String>]`: RSA Key - first prime. Field can't be read back.
-  - `[Q <String>]`: RSA Key - second prime. Field can't be read back.
-  - `[Qi <String>]`: RSA Key - Coefficient. Field can't be read back.
+  - `[P <String>]`: RSA Key - first prime. Field cannot be read back.
+  - `[Q <String>]`: RSA Key - second prime. Field cannot be read back.
+  - `[Qi <String>]`: RSA Key - Coefficient. Field cannot be read back.
   - `[Use <String>]`: The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
   - `[X5C <String[]>]`: The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
-  - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
+  - `[X5T <String>]`: The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.
 
 ## RELATED LINKS
 

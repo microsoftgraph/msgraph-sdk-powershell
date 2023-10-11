@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Unfollow a driveItem.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Invoke-MgUnfollowUserDriveItem -InputObject <IUsersActionsIdentity> [-PassThru] 
 
 ## DESCRIPTION
 Unfollow a driveItem.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

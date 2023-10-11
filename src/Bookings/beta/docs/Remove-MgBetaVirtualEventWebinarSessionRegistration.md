@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaVirtualEventWebinarSessionRegistration
 
 ## SYNOPSIS
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-This API is available in the following national cloud deployments.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaVirtualEventWebinarSessionRegistration -InputObject <IBookingsIdent
 ```
 
 ## DESCRIPTION
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-This API is available in the following national cloud deployments.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ## EXAMPLES
 

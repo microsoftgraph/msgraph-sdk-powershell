@@ -11,7 +11,6 @@ schema: 2.0.0
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
 Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Invoke-MgBetaLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatI
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
 Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -137,6 +135,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: The unique identifier of device
   - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
   - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
   - `[DriveId <String>]`: The unique identifier of drive
@@ -158,6 +157,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupSiteListContentType
 
 ## SYNOPSIS
-The collection of content types present in this list.
+Get contentTypes from groups
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaGroupSiteListContentType -InputObject <ISitesIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-The collection of content types present in this list.
+Get contentTypes from groups
 
 ## EXAMPLES
 
@@ -329,7 +329,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
-  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

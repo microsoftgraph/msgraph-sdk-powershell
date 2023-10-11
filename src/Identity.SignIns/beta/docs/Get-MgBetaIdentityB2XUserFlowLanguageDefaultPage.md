@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Collection of pages with the default content to display in a user flow for a specified language.
-This collection doesn't allow any kind of modification.
+This collection does not allow any kind of modification.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgBetaIdentityB2XUserFlowLanguageDefaultPage -InputObject <IIdentitySignInsI
 
 ## DESCRIPTION
 Collection of pages with the default content to display in a user flow for a specified language.
-This collection doesn't allow any kind of modification.
+This collection does not allow any kind of modification.
 
 ## EXAMPLES
 

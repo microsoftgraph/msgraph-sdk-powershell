@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Move-MgUserMessage -InputObject <IUsersActionsIdentity> [-AdditionalProperties <
 ## DESCRIPTION
 Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

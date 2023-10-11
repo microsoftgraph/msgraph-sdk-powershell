@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: b88e4faa-fa08-4dc5-8294-2c2d03d6886b
+Module Guid: 1aff5426-6170-4d8f-8b90-2cdc6b91b5c9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,12 +13,10 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.Beta.Bookings Cmdlets
 ### [Get-MgBetaBookingBusiness](Get-MgBetaBookingBusiness.md)
 Get the properties and relationships of a bookingBusiness object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessAppointment](Get-MgBetaBookingBusinessAppointment.md)
 Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness.
 The start and end properties are always returned in UTC.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessAppointmentCount](Get-MgBetaBookingBusinessAppointmentCount.md)
 Get the number of the resource
@@ -36,32 +34,27 @@ Get the number of the resource
 
 ### [Get-MgBetaBookingBusinessCustomer](Get-MgBetaBookingBusinessCustomer.md)
 Get the properties and relationships of a bookingCustomer object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessCustomerCount](Get-MgBetaBookingBusinessCustomerCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBookingBusinessCustomQuestion](Get-MgBetaBookingBusinessCustomQuestion.md)
 Read the properties and relationships of a bookingCustomQuestion object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessCustomQuestionCount](Get-MgBetaBookingBusinessCustomQuestionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBookingBusinessService](Get-MgBetaBookingBusinessService.md)
 Get the properties and relationships of a bookingService object in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessServiceCount](Get-MgBetaBookingBusinessServiceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBookingBusinessStaffAvailability](Get-MgBetaBookingBusinessStaffAvailability.md)
 Get the availability information of staff members of a Microsoft Bookings calendar.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessStaffMember](Get-MgBetaBookingBusinessStaffMember.md)
 Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingBusinessStaffMemberCount](Get-MgBetaBookingBusinessStaffMemberCount.md)
 Get the number of the resource
@@ -69,64 +62,52 @@ Get the number of the resource
 ### [Get-MgBetaBookingCurrency](Get-MgBetaBookingCurrency.md)
 Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business.
 Use the id property, which is the currency code, to specify the currency.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBookingCurrencyCount](Get-MgBetaBookingCurrencyCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBusinessScenario](Get-MgBetaBusinessScenario.md)
 Read the properties and relationships of a businessScenario object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioCount](Get-MgBetaBusinessScenarioCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBusinessScenarioPlanner](Get-MgBetaBusinessScenarioPlanner.md)
 Read the properties and relationships of a businessScenarioPlanner object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerPlan](Get-MgBetaBusinessScenarioPlannerPlan.md)
 Get information about the plannerPlan mapped to a given target.
 If a plannerPlan doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerPlanConfiguration](Get-MgBetaBusinessScenarioPlannerPlanConfiguration.md)
 Read the properties and relationships of a plannerPlanConfiguration object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization](Get-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization.md)
 Read the properties and relationships of a plannerPlanConfigurationLocalization object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerPlanConfigurationLocalizationCount](Get-MgBetaBusinessScenarioPlannerPlanConfigurationLocalizationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBusinessScenarioPlannerTask](Get-MgBetaBusinessScenarioPlannerTask.md)
 Read the properties and relationships of a businessScenarioTask object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat](Get-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat.md)
 Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskBucketTaskBoardFormat](Get-MgBetaBusinessScenarioPlannerTaskBucketTaskBoardFormat.md)
 Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskConfiguration](Get-MgBetaBusinessScenarioPlannerTaskConfiguration.md)
 Read the properties and relationships of a plannerTaskConfiguration object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskCount](Get-MgBetaBusinessScenarioPlannerTaskCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskDetail](Get-MgBetaBusinessScenarioPlannerTaskDetail.md)
 Retrieve the properties and relationships of a plannerTaskDetails object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaBusinessScenarioPlannerTaskProgressTaskBoardFormat](Get-MgBetaBusinessScenarioPlannerTaskProgressTaskBoardFormat.md)
 Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSolutionVirtualEventSessionRecordingDelta](Get-MgBetaSolutionVirtualEventSessionRecordingDelta.md)
 Invoke function delta
@@ -156,12 +137,12 @@ Get the number of the resource
 Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventSessionAlternativeRecording](Get-MgBetaVirtualEventSessionAlternativeRecording.md)
-Get alternativeRecording for the navigation property sessions from solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventSessionAttendanceReport](Get-MgBetaVirtualEventSessionAttendanceReport.md)
 Get the meetingAttendanceReport for an onlineMeeting.
 Each time an online meeting ends, an attendance report will be generated for that session.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventSessionAttendanceReportAttendanceRecord](Get-MgBetaVirtualEventSessionAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -174,7 +155,8 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionAttendeeReport](Get-MgBetaVirtualEventSessionAttendeeReport.md)
-Get attendeeReport for the navigation property sessions from solutions
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventSessionBroadcastRecording](Get-MgBetaVirtualEventSessionBroadcastRecording.md)
 Get broadcastRecording for the navigation property sessions from solutions
@@ -185,7 +167,6 @@ Get the number of the resource
 ### [Get-MgBetaVirtualEventSessionMeetingAttendanceReport](Get-MgBetaVirtualEventSessionMeetingAttendanceReport.md)
 Get the meetingAttendanceReport for an onlineMeeting.
 Each time an online meeting ends, an attendance report will be generated for that session.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventSessionMeetingAttendanceReportAttendanceRecord](Get-MgBetaVirtualEventSessionMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -195,7 +176,8 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionRecording](Get-MgBetaVirtualEventSessionRecording.md)
-Get recording for the navigation property sessions from solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventSessionRecordingContent](Get-MgBetaVirtualEventSessionRecordingContent.md)
 The content of the recording.
@@ -206,14 +188,12 @@ Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionRegistration](Get-MgBetaVirtualEventSessionRegistration.md)
 Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventSessionRegistrationCount](Get-MgBetaVirtualEventSessionRegistrationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionRegistrationCustomQuestion](Get-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventSessionRegistrationCustomQuestionCount](Get-MgBetaVirtualEventSessionRegistrationCustomQuestionCount.md)
 Get the number of the resource
@@ -225,11 +205,9 @@ Registrants of the online meeting.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventSessionTranscript](Get-MgBetaVirtualEventSessionTranscript.md)
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API doesn't support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventSessionTranscriptContent](Get-MgBetaVirtualEventSessionTranscriptContent.md)
 The content of the transcript.
@@ -244,7 +222,6 @@ Read-only.
 
 ### [Get-MgBetaVirtualEventWebinar](Get-MgBetaVirtualEventWebinar.md)
 Read the properties and relationships of a virtualEventWebinar object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventWebinarCount](Get-MgBetaVirtualEventWebinarCount.md)
 Get the number of the resource
@@ -256,23 +233,24 @@ Presenters' information of the virtual event.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarRegistration](Get-MgBetaVirtualEventWebinarRegistration.md)
-Get the properties and relationships of a virtualEventRegistration object.
-This API is available in the following national cloud deployments.
+Get registrations from solutions
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationConfiguration](Get-MgBetaVirtualEventWebinarRegistrationConfiguration.md)
-Registration configuration of the webinar.
+Get registrationConfiguration from solutions
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationCount](Get-MgBetaVirtualEventWebinarRegistrationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationSession](Get-MgBetaVirtualEventWebinarRegistrationSession.md)
-Sessions of the webinar.
+Get sessions from solutions
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationSessionAlternativeRecording](Get-MgBetaVirtualEventWebinarRegistrationSessionAlternativeRecording.md)
-Get alternativeRecording for the navigation property sessions from solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationSessionAttendeeReport](Get-MgBetaVirtualEventWebinarRegistrationSessionAttendeeReport.md)
-Get attendeeReport for the navigation property sessions from solutions
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationSessionBroadcastRecording](Get-MgBetaVirtualEventWebinarRegistrationSessionBroadcastRecording.md)
 Get broadcastRecording for the navigation property sessions from solutions
@@ -281,18 +259,19 @@ Get broadcastRecording for the navigation property sessions from solutions
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarRegistrationSessionRecording](Get-MgBetaVirtualEventWebinarRegistrationSessionRecording.md)
-Get recording for the navigation property sessions from solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSession](Get-MgBetaVirtualEventWebinarSession.md)
 Sessions of the virtual event.
 
 ### [Get-MgBetaVirtualEventWebinarSessionAlternativeRecording](Get-MgBetaVirtualEventWebinarSessionAlternativeRecording.md)
-Get alternativeRecording for the navigation property sessions from solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionAttendanceReport](Get-MgBetaVirtualEventWebinarSessionAttendanceReport.md)
 Get the meetingAttendanceReport for an onlineMeeting.
 Each time an online meeting ends, an attendance report will be generated for that session.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventWebinarSessionAttendanceReportAttendanceRecord](Get-MgBetaVirtualEventWebinarSessionAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -305,7 +284,8 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionAttendeeReport](Get-MgBetaVirtualEventWebinarSessionAttendeeReport.md)
-Get attendeeReport for the navigation property sessions from solutions
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionBroadcastRecording](Get-MgBetaVirtualEventWebinarSessionBroadcastRecording.md)
 Get broadcastRecording for the navigation property sessions from solutions
@@ -316,7 +296,6 @@ Get the number of the resource
 ### [Get-MgBetaVirtualEventWebinarSessionMeetingAttendanceReport](Get-MgBetaVirtualEventWebinarSessionMeetingAttendanceReport.md)
 Get the meetingAttendanceReport for an onlineMeeting.
 Each time an online meeting ends, an attendance report will be generated for that session.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventWebinarSessionMeetingAttendanceReportAttendanceRecord](Get-MgBetaVirtualEventWebinarSessionMeetingAttendanceReportAttendanceRecord.md)
 List of attendance records of an attendance report.
@@ -326,7 +305,8 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionRecording](Get-MgBetaVirtualEventWebinarSessionRecording.md)
-Get recording for the navigation property sessions from solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRecordingContent](Get-MgBetaVirtualEventWebinarSessionRecordingContent.md)
 The content of the recording.
@@ -337,14 +317,12 @@ Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistration](Get-MgBetaVirtualEventWebinarSessionRegistration.md)
 Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistrationCount](Get-MgBetaVirtualEventWebinarSessionRegistrationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestionCount](Get-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestionCount.md)
 Get the number of the resource
@@ -356,11 +334,9 @@ Registrants of the online meeting.
 Get the number of the resource
 
 ### [Get-MgBetaVirtualEventWebinarSessionTranscript](Get-MgBetaVirtualEventWebinarSessionTranscript.md)
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API doesn't support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaVirtualEventWebinarSessionTranscriptContent](Get-MgBetaVirtualEventWebinarSessionTranscriptContent.md)
 The content of the transcript.
@@ -377,45 +353,36 @@ Read-only.
 Create a new Microsoft Bookings business in a tenant.
 This is the first step in setting up a Bookings business where you must specify the business display name.
 You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBookingBusinessAppointment](New-MgBetaBookingBusinessAppointment.md)
 Create a new bookingAppointment for the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBookingBusinessCalendarView](New-MgBetaBookingBusinessCalendarView.md)
 Create new navigation property to calendarView for bookingBusinesses
 
 ### [New-MgBetaBookingBusinessCustomer](New-MgBetaBookingBusinessCustomer.md)
 Create a new bookingCustomer object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBookingBusinessCustomQuestion](New-MgBetaBookingBusinessCustomQuestion.md)
 Create a new bookingCustomQuestion object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBookingBusinessService](New-MgBetaBookingBusinessService.md)
 Create a new bookingService for the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBookingBusinessStaffMember](New-MgBetaBookingBusinessStaffMember.md)
 Create a new staff member in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBookingCurrency](New-MgBetaBookingCurrency.md)
 Add new entity to bookingCurrencies
 
 ### [New-MgBetaBusinessScenario](New-MgBetaBusinessScenario.md)
 Create a new businessScenario object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization](New-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization.md)
 Create a new plannerPlanConfigurationLocalization object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaBusinessScenarioPlannerTask](New-MgBetaBusinessScenarioPlannerTask.md)
 Create a new businessScenarioTask object.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaVirtualEvent](New-MgBetaVirtualEvent.md)
 Create new navigation property to events for solutions
@@ -440,7 +407,6 @@ Create new navigation property to recordings for solutions
 
 ### [New-MgBetaVirtualEventSessionRegistrationCustomQuestion](New-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaVirtualEventSessionRegistrationRegistrant](New-MgBetaVirtualEventSessionRegistrationRegistrant.md)
 Create new navigation property to registrants for solutions
@@ -474,7 +440,6 @@ Create new navigation property to recordings for solutions
 
 ### [New-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](New-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaVirtualEventWebinarSessionRegistrationRegistrant](New-MgBetaVirtualEventWebinarSessionRegistrationRegistrant.md)
 Create new navigation property to registrants for solutions
@@ -485,34 +450,27 @@ Create new navigation property to transcripts for solutions
 ### [Publish-MgBetaBookingBusiness](Publish-MgBetaBookingBusiness.md)
 Make the scheduling page of this business available to external customers.
 Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingBusiness](Remove-MgBetaBookingBusiness.md)
 Delete a bookingBusiness object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingBusinessAppointment](Remove-MgBetaBookingBusinessAppointment.md)
 Delete a bookingAppointment in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingBusinessCalendarView](Remove-MgBetaBookingBusinessCalendarView.md)
 Delete navigation property calendarView for bookingBusinesses
 
 ### [Remove-MgBetaBookingBusinessCustomer](Remove-MgBetaBookingBusinessCustomer.md)
 Delete the specified bookingCustomer object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingBusinessCustomQuestion](Remove-MgBetaBookingBusinessCustomQuestion.md)
 Delete the specified bookingCustomQuestion object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingBusinessService](Remove-MgBetaBookingBusinessService.md)
 Delete a bookingService object in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingBusinessStaffMember](Remove-MgBetaBookingBusinessStaffMember.md)
 Delete a staff member in the specified bookingbusiness.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBookingCurrency](Remove-MgBetaBookingCurrency.md)
 Delete entity from bookingCurrencies
@@ -520,7 +478,6 @@ Delete entity from bookingCurrencies
 ### [Remove-MgBetaBusinessScenario](Remove-MgBetaBusinessScenario.md)
 Delete a businessScenario object.
 The deletion of a scenario causes all data associated with the scenario to be deleted.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBusinessScenarioPlanner](Remove-MgBetaBusinessScenarioPlanner.md)
 Delete navigation property planner for solutions
@@ -530,11 +487,9 @@ Delete navigation property planConfiguration for solutions
 
 ### [Remove-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization](Remove-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization.md)
 Delete a plannerPlanConfigurationLocalization object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBusinessScenarioPlannerTask](Remove-MgBetaBusinessScenarioPlannerTask.md)
 Delete a businessScenarioTask object.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat](Remove-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat.md)
 Delete navigation property assignedToTaskBoardFormat for solutions
@@ -576,12 +531,10 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventSessionRegistration](Remove-MgBetaVirtualEventSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-This API is available in the following national cloud deployments.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationRegistrant](Remove-MgBetaVirtualEventSessionRegistrationRegistrant.md)
 Delete navigation property registrants for solutions
@@ -617,12 +570,10 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistration](Remove-MgBetaVirtualEventWebinarSessionRegistration.md)
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-This API is available in the following national cloud deployments.
+Disable and delete the externalMeetingRegistration of an onlineMeeting.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationRegistrant](Remove-MgBetaVirtualEventWebinarSessionRegistrationRegistrant.md)
 Delete navigation property registrants for solutions
@@ -631,16 +582,19 @@ Delete navigation property registrants for solutions
 Delete navigation property transcripts for solutions
 
 ### [Set-MgBetaVirtualEventSessionAlternativeRecording](Set-MgBetaVirtualEventSessionAlternativeRecording.md)
-Update alternativeRecording for the navigation property sessions in solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventSessionAttendeeReport](Set-MgBetaVirtualEventSessionAttendeeReport.md)
-Update attendeeReport for the navigation property sessions in solutions
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventSessionBroadcastRecording](Set-MgBetaVirtualEventSessionBroadcastRecording.md)
 Update broadcastRecording for the navigation property sessions in solutions
 
 ### [Set-MgBetaVirtualEventSessionRecording](Set-MgBetaVirtualEventSessionRecording.md)
-Update recording for the navigation property sessions in solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventSessionRecordingContent](Set-MgBetaVirtualEventSessionRecordingContent.md)
 The content of the recording.
@@ -655,28 +609,34 @@ The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarRegistrationSessionAlternativeRecording](Set-MgBetaVirtualEventWebinarRegistrationSessionAlternativeRecording.md)
-Update alternativeRecording for the navigation property sessions in solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarRegistrationSessionAttendeeReport](Set-MgBetaVirtualEventWebinarRegistrationSessionAttendeeReport.md)
-Update attendeeReport for the navigation property sessions in solutions
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarRegistrationSessionBroadcastRecording](Set-MgBetaVirtualEventWebinarRegistrationSessionBroadcastRecording.md)
 Update broadcastRecording for the navigation property sessions in solutions
 
 ### [Set-MgBetaVirtualEventWebinarRegistrationSessionRecording](Set-MgBetaVirtualEventWebinarRegistrationSessionRecording.md)
-Update recording for the navigation property sessions in solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionAlternativeRecording](Set-MgBetaVirtualEventWebinarSessionAlternativeRecording.md)
-Update alternativeRecording for the navigation property sessions in solutions
+The content stream of the alternative recording of a Microsoft Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionAttendeeReport](Set-MgBetaVirtualEventWebinarSessionAttendeeReport.md)
-Update attendeeReport for the navigation property sessions in solutions
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionBroadcastRecording](Set-MgBetaVirtualEventWebinarSessionBroadcastRecording.md)
 Update broadcastRecording for the navigation property sessions in solutions
 
 ### [Set-MgBetaVirtualEventWebinarSessionRecording](Set-MgBetaVirtualEventWebinarSessionRecording.md)
-Update recording for the navigation property sessions in solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ### [Set-MgBetaVirtualEventWebinarSessionRecordingContent](Set-MgBetaVirtualEventWebinarSessionRecordingContent.md)
 The content of the recording.
@@ -692,66 +652,53 @@ Read-only.
 
 ### [Stop-MgBetaBookingBusinessAppointment](Stop-MgBetaBookingBusinessAppointment.md)
 Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
-This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaBookingBusinessCalendarView](Stop-MgBetaBookingBusinessCalendarView.md)
 Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
-This API is available in the following national cloud deployments.
 
 ### [Unpublish-MgBetaBookingBusiness](Unpublish-MgBetaBookingBusiness.md)
 Make the scheduling page of this business not available to external customers.
 Set the isPublished property to false, and publicUrl property to null.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBookingBusiness](Update-MgBetaBookingBusiness.md)
 Update the properties of a bookingBusiness object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBookingBusinessAppointment](Update-MgBetaBookingBusinessAppointment.md)
 Update the properties of a bookingAppointment object in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBookingBusinessCalendarView](Update-MgBetaBookingBusinessCalendarView.md)
 Update the navigation property calendarView in bookingBusinesses
 
 ### [Update-MgBetaBookingBusinessCustomer](Update-MgBetaBookingBusinessCustomer.md)
 Update the properties of a bookingCustomer object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBookingBusinessCustomQuestion](Update-MgBetaBookingBusinessCustomQuestion.md)
 Update the properties of a bookingCustomQuestion object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBookingBusinessService](Update-MgBetaBookingBusinessService.md)
 Update the properties of a bookingService object in the specified bookingBusiness.
-The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
-This API is available in the following national cloud deployments.
+The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 
 ### [Update-MgBetaBookingBusinessStaffMember](Update-MgBetaBookingBusinessStaffMember.md)
 Update the properties of a bookingStaffMember in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBookingCurrency](Update-MgBetaBookingCurrency.md)
 Update entity in bookingCurrencies
 
 ### [Update-MgBetaBusinessScenario](Update-MgBetaBusinessScenario.md)
 Update the properties of a businessScenario object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBusinessScenarioPlanner](Update-MgBetaBusinessScenarioPlanner.md)
 Update the navigation property planner in solutions
 
 ### [Update-MgBetaBusinessScenarioPlannerPlanConfiguration](Update-MgBetaBusinessScenarioPlannerPlanConfiguration.md)
 Update the properties of a plannerPlanConfiguration object for a businessScenario.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization](Update-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization.md)
 Update the properties of a plannerPlanConfigurationLocalization object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBusinessScenarioPlannerTask](Update-MgBetaBusinessScenarioPlannerTask.md)
 Update the properties of a businessScenarioTask object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat](Update-MgBetaBusinessScenarioPlannerTaskAssignedToTaskBoardFormat.md)
 Update the navigation property assignedToTaskBoardFormat in solutions
@@ -761,7 +708,6 @@ Update the navigation property bucketTaskBoardFormat in solutions
 
 ### [Update-MgBetaBusinessScenarioPlannerTaskConfiguration](Update-MgBetaBusinessScenarioPlannerTaskConfiguration.md)
 Update the properties of a plannerTaskConfiguration object.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaBusinessScenarioPlannerTaskDetail](Update-MgBetaBusinessScenarioPlannerTaskDetail.md)
 Update the navigation property details in solutions
@@ -795,11 +741,9 @@ Update the navigation property recordings in solutions
 
 ### [Update-MgBetaVirtualEventSessionRegistration](Update-MgBetaVirtualEventSessionRegistration.md)
 Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaVirtualEventSessionRegistrationCustomQuestion](Update-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
 Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaVirtualEventSessionRegistrationRegistrant](Update-MgBetaVirtualEventSessionRegistrationRegistrant.md)
 Update the navigation property registrants in solutions
@@ -836,11 +780,9 @@ Update the navigation property recordings in solutions
 
 ### [Update-MgBetaVirtualEventWebinarSessionRegistration](Update-MgBetaVirtualEventWebinarSessionRegistration.md)
 Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Update-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)
 Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaVirtualEventWebinarSessionRegistrationRegistrant](Update-MgBetaVirtualEventWebinarSessionRegistrationRegistrant.md)
 Update the navigation property registrants in solutions

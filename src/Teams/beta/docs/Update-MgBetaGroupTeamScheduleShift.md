@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Replace an existing shift.
 If the specified shift doesn't exist, this method returns 404 Not found.
-The duration of a shift can't be less than 1 minute or longer than 24 hours.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgBetaGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalPr
 ## DESCRIPTION
 Replace an existing shift.
 If the specified shift doesn't exist, this method returns 404 Not found.
-The duration of a shift can't be less than 1 minute or longer than 24 hours.
+The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 
 ## EXAMPLES
 
@@ -207,8 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -SchedulingGroupId
-ID of the scheduling group the shift is part of.
-Required.
+.
 
 ```yaml
 Type: System.String
@@ -254,8 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-ID of the user assigned to the shift.
-Required.
+.
 
 ```yaml
 Type: System.String
@@ -328,8 +326,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -349,16 +347,16 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The shift label of the shiftItem.
     - `[Notes <String>]`: The shift notes for the shiftItem.
   - `[IsStagedForDeletion <Boolean?>]`: 
-  - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
+  - `[SchedulingGroupId <String>]`: 
   - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
-  - `[UserId <String>]`: ID of the user assigned to the shift. Required.
+  - `[UserId <String>]`: 
 
 `CREATEDBY <IMicrosoftGraphIdentitySet>`: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -421,8 +419,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

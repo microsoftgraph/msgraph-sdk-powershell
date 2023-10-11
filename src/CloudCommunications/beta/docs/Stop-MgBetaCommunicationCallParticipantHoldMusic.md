@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reincorporate a participant previously put on hold to the call.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Stop-MgBetaCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicati
 
 ## DESCRIPTION
 Reincorporate a participant previously put on hold to the call.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

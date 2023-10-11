@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a member from a standard tag in a team.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgTeamTagMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassT
 
 ## DESCRIPTION
 Delete a member from a standard tag in a team.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

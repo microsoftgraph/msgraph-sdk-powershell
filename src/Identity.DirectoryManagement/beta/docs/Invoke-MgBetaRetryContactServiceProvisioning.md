@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaRetryContactServiceProvisioning
 
 ## SYNOPSIS
-Retry the orgContact service provisioning.
-This API is available in the following national cloud deployments.
+Invoke action retryServiceProvisioning
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgBetaRetryContactServiceProvisioning -InputObject <IIdentityDirectoryMan
 ```
 
 ## DESCRIPTION
-Retry the orgContact service provisioning.
-This API is available in the following national cloud deployments.
+Invoke action retryServiceProvisioning
 
 ## EXAMPLES
 

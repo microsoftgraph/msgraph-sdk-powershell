@@ -359,7 +359,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
       - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
         - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-        - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
+        - `[Url <String>]`: The URL to the documentation or Azure portal page.
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -467,7 +467,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
     - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
       - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-      - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
+      - `[Url <String>]`: The URL to the documentation or Azure portal page.
     - `[LastActionByUserId <String>]`: 
     - `[LastActionDateTime <DateTime?>]`: 
     - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -517,7 +517,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
   - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
     - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-    - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
+    - `[Url <String>]`: The URL to the documentation or Azure portal page.
   - `[LastActionByUserId <String>]`: 
   - `[LastActionDateTime <DateTime?>]`: 
   - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 
@@ -595,7 +595,7 @@ To create the parameters described below, construct a hash table containing the 
 `PORTALLINK <IMicrosoftGraphActionUrl>`: actionUrl
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-  - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
+  - `[Url <String>]`: The URL to the documentation or Azure portal page.
 
 `VERSIONS <IMicrosoftGraphManagedTenantsManagementTemplateStepVersion[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -620,7 +620,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: The display name for the management template. Required. Read-only.
       - `[InformationLinks <IMicrosoftGraphActionUrl[]>]`: 
         - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-        - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
+        - `[Url <String>]`: The URL to the documentation or Azure portal page.
       - `[LastActionByUserId <String>]`: 
       - `[LastActionDateTime <DateTime?>]`: 
       - `[ManagementTemplateCollections <IMicrosoftGraphManagedTenantsManagementTemplateCollection[]>]`: 

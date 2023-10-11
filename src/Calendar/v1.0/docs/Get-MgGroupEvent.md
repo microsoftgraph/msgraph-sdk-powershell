@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an event object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Get-MgGroupEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<Commo
 
 ## DESCRIPTION
 Get an event object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

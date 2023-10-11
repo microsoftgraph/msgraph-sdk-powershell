@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserInferenceClassification
 
 ## SYNOPSIS
-Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgUserInferenceClassification -InputObject <IMailIdentity> [-Property <Strin
 ```
 
 ## DESCRIPTION
-Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ## EXAMPLES
 

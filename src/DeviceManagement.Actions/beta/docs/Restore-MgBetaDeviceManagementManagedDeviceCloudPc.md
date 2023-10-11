@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a Cloud PC device to a previous state with an Intune managed device ID.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Restore-MgBetaDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManageme
 
 ## DESCRIPTION
 Restore a Cloud PC device to a previous state with an Intune managed device ID.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

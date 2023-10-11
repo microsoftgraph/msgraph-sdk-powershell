@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ New-MgBetaDeviceManagementVirtualEndpointOnPremiseConnection
 
 ## DESCRIPTION
 Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -211,8 +209,8 @@ Accept wildcard characters: False
 
 ### -InUse
 When true, the Azure network connection is in use.
-When false, the connection isn't in use.
-You can't delete a connection that’s in use.
+When false, the connection is not in use.
+You cannot delete a connection that’s in use.
 Returned only on $select.
 For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails.
 Read-only.
@@ -435,7 +433,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[EndDateTime <DateTime?>]`: The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[HealthChecks <IMicrosoftGraphCloudPcOnPremisesConnectionHealthCheck[]>]`: All checks that are done on the connection.
-      - `[AdditionalDetails <String>]`: More details about the health check or the recommended action.
+      - `[AdditionalDetails <String>]`: Additional details about the health check or the recommended action.
       - `[CorrelationId <String>]`: The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
       - `[DisplayName <String>]`: The display name for this health check item.
       - `[EndDateTime <DateTime?>]`: The end time of the health check item. Read-only.
@@ -444,7 +442,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[StartDateTime <DateTime?>]`: The start time of the health check item. Read-only.
       - `[Status <String>]`: cloudPcOnPremisesConnectionStatus
     - `[StartDateTime <DateTime?>]`: The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[InUse <Boolean?>]`: When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+  - `[InUse <Boolean?>]`: When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
   - `[ManagedBy <String>]`: cloudPcManagementService
   - `[OrganizationalUnit <String>]`: The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
   - `[ResourceGroupId <String>]`: The ID of the target resource group. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}.
@@ -459,7 +457,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[EndDateTime <DateTime?>]`: The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[HealthChecks <IMicrosoftGraphCloudPcOnPremisesConnectionHealthCheck[]>]`: All checks that are done on the connection.
-    - `[AdditionalDetails <String>]`: More details about the health check or the recommended action.
+    - `[AdditionalDetails <String>]`: Additional details about the health check or the recommended action.
     - `[CorrelationId <String>]`: The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
     - `[DisplayName <String>]`: The display name for this health check item.
     - `[EndDateTime <DateTime?>]`: The end time of the health check item. Read-only.

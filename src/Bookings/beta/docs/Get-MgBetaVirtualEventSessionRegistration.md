@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Get-MgBetaVirtualEventSessionRegistration -VirtualEventId <String> -VirtualEvent
 
 ## DESCRIPTION
 Get the externalMeetingRegistration details associated with an onlineMeeting.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the simple directory user that corresponds to this educationUser.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,7 +18,6 @@ Get-MgEducationMeUser [-ExpandProperty <String[]>] [-Property <String[]>] [<Comm
 
 ## DESCRIPTION
 Retrieve the simple directory user that corresponds to this educationUser.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a printer's task trigger to prevent related print events from triggering tasks on the specified printer.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [
 
 ## DESCRIPTION
 Delete a printer's task trigger to prevent related print events from triggering tasks on the specified printer.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

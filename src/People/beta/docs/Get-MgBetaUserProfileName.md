@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a personName object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaUserProfileName -InputObject <IPeopleIdentity> [-ExpandProperty <Strin
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a personName object in a user's profile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

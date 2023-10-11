@@ -11,7 +11,6 @@ schema: 2.0.0
 Submit a data policy operation request from a company administrator or an application to export an organizational user's data.
 This data includes the user's data stored in OneDrive and their activity reports.
 For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Export-MgUserPersonalData -InputObject <IUsersActionsIdentity> [-AdditionalPrope
 Submit a data policy operation request from a company administrator or an application to export an organizational user's data.
 This data includes the user's data stored in OneDrive and their activity reports.
 For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaCommunicationOnlineMeetingRecording
 
 ## SYNOPSIS
-Get recording for the navigation property onlineMeetings from communications
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -50,7 +51,8 @@ Get-MgBetaCommunicationOnlineMeetingRecording -OnlineMeetingId <String> [-Expand
 ```
 
 ## DESCRIPTION
-Get recording for the navigation property onlineMeetings from communications
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

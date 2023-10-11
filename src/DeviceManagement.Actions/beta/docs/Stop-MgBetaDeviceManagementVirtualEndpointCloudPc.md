@@ -10,9 +10,8 @@ schema: 2.0.0
 ## SYNOPSIS
 Power off a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
-After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately.
+After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately.
 Only IT admin users can perform this action.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,9 +42,8 @@ Stop-MgBetaDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagemen
 ## DESCRIPTION
 Power off a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
-After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately.
+After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately.
 Only IT admin users can perform this action.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Dismiss an impactedResources object and update its status to dismissed.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Invoke-MgBetaDismissDirectoryRecommendationImpactedResource
 
 ## DESCRIPTION
 Dismiss an impactedResources object and update its status to dismissed.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Remove-MgBetaWindowsUpdatesPolicyAudienceExclusionMemberById -InputObject <IWind
 ## DESCRIPTION
 Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

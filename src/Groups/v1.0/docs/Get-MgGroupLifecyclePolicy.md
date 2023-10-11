@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a groupLifecyclePolicies object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +45,6 @@ Get-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-ExpandProperty <Stri
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a groupLifecyclePolicies object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

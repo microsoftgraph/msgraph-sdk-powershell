@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a single phoneAuthenticationMethod object.
 This method is available only for standard Azure AD and B2B users, but not B2C users.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> 
 ## DESCRIPTION
 Retrieve a single phoneAuthenticationMethod object.
 This method is available only for standard Azure AD and B2B users, but not B2C users.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Unpublish-MgSiteListContentType
 
 ## SYNOPSIS
-Unpublish a contentType][] from a content type hub site.
-This API is supported in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Unpublish-MgSiteListContentType -InputObject <ISitesIdentity> [-PassThru] [-Conf
 ```
 
 ## DESCRIPTION
-Unpublish a contentType][] from a content type hub site.
-This API is supported in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an ipNamedLocation object.
-This API is supported in the following national cloud deployments.
+Retrieve the properties and relationships of a namedLocation object.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdent
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an ipNamedLocation object.
-This API is supported in the following national cloud deployments.
+Retrieve the properties and relationships of a namedLocation object.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a password from a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Remove-MgServicePrincipalPassword -InputObject <IApplicationsIdentity> [-Additio
 
 ## DESCRIPTION
 Remove a password from a servicePrincipal object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

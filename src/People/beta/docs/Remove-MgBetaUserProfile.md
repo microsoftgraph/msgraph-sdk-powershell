@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a profile object from a user's account.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserProfile -InputObject <IPeopleIdentity> [-IfMatch <String>] [-Pa
 
 ## DESCRIPTION
 Deletes a profile object from a user's account.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

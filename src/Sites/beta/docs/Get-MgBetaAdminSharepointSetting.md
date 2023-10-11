@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the tenant-level settings for SharePoint and OneDrive.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,7 +18,6 @@ Get-MgBetaAdminSharepointSetting [-ExpandProperty <String[]>] [-Property <String
 
 ## DESCRIPTION
 Get the tenant-level settings for SharePoint and OneDrive.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

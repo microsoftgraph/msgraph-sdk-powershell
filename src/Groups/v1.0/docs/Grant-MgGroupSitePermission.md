@@ -8,8 +8,7 @@ schema: 2.0.0
 # Grant-MgGroupSitePermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Grant-MgGroupSitePermission -InputObject <IGroupsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

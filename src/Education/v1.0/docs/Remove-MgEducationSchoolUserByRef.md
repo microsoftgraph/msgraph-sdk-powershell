@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a user from a school.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgEducationSchoolUserByRef -InputObject <IEducationIdentity> [-Id <String
 
 ## DESCRIPTION
 Delete a user from a school.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

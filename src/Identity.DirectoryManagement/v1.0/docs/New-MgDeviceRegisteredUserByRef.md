@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a registered user for the device.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgDeviceRegisteredUserByRef -InputObject <IIdentityDirectoryManagementIdenti
 
 ## DESCRIPTION
 Add a registered user for the device.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

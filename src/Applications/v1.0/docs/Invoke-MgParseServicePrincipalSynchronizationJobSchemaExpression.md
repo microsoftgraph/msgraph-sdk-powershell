@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Parse a given string expression into an attributeMappingSource object.
 For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ Invoke-MgParseServicePrincipalSynchronizationJobSchemaExpression -InputObject <I
 ## DESCRIPTION
 Parse a given string expression into an attributeMappingSource object.
 For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

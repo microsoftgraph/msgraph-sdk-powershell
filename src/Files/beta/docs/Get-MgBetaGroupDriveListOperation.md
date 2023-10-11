@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveListOperation
 
 ## SYNOPSIS
-The collection of long-running operations on the list.
+The collection of long running operations for the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaGroupDriveListOperation -InputObject <IFilesIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-The collection of long-running operations on the list.
+The collection of long running operations for the list.
 
 ## EXAMPLES
 

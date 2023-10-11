@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove members from an updatableAssetGroup.
 You can also use the method removeMembersById to remove members.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Remove-MgBetaWindowsUpdatesUpdatableAssetMember -InputObject <IWindowsUpdatesIde
 ## DESCRIPTION
 Remove members from an updatableAssetGroup.
 You can also use the method removeMembersById to remove members.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

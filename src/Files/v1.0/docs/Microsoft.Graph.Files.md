@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: 7782a49e-31a7-4f72-affc-1e9bf0c543ce
+Module Guid: fb4b3db7-e0ef-49bb-9e71-30c17fc1eedd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,51 +12,42 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Files Cmdlets
 ### [Add-MgDriveListContentTypeCopy](Add-MgDriveListContentTypeCopy.md)
-Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is supported in the following [national cloud deployments.
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgDriveListContentTypeCopyFromContentTypeHub](Add-MgDriveListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-This API is supported in the following national cloud deployments.
 
 ### [Add-MgShareListContentTypeCopy](Add-MgShareListContentTypeCopy.md)
-Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is supported in the following [national cloud deployments.
+Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
 
 ### [Add-MgShareListContentTypeCopyFromContentTypeHub](Add-MgShareListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
-This API is supported in the following national cloud deployments.
 
 ### [Copy-MgDriveItem](Copy-MgDriveItem.md)
-Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
-This API is supported in the following [national cloud deployments.
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ### [Copy-MgDriveListContentTypeToDefaultContentLocation](Copy-MgDriveListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is supported in the following [national cloud deployments.
 
 ### [Copy-MgDriveRoot](Copy-MgDriveRoot.md)
-Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
-This API is supported in the following [national cloud deployments.
+Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
 
 ### [Copy-MgShareListContentTypeToDefaultContentLocation](Copy-MgShareListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a content type][contentType].
+Copy a file to a default content location in a [content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is supported in the following [national cloud deployments.
 
 ### [Get-MgDrive](Get-MgDrive.md)
 Get entity from drives by key
 
 ### [Get-MgDriveBundle](Get-MgDriveBundle.md)
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgDriveBundleContent](Get-MgDriveBundleContent.md)
 The content stream, if the item represents a file.
@@ -82,12 +73,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveCreatedByUserServiceProvisioningError](Get-MgDriveCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveCreatedByUserServiceProvisioningErrorCount](Get-MgDriveCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveFollowing](Get-MgDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
@@ -99,8 +84,7 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Get-MgDriveItem](Get-MgDriveItem.md)
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgDriveItemActivityByInterval](Get-MgDriveItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -121,8 +105,7 @@ Get the number of the resource
 Get lastSevenDays from drives
 
 ### [Get-MgDriveItemAnalyticTime](Get-MgDriveItemAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgDriveItemChild](Get-MgDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -151,12 +134,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveItemCreatedByUserServiceProvisioningError](Get-MgDriveItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveItemDelta](Get-MgDriveItemDelta.md)
 Invoke function delta
 
@@ -169,12 +146,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgDriveItemItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveItemLastModifiedByUser](Get-MgDriveItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -183,12 +154,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgDriveItemLastModifiedByUserServiceProvisioningError](Get-MgDriveItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgDriveItemListItem](Get-MgDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -210,15 +175,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgDriveItemListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveItemListItemDocumentSetVersion](Get-MgDriveItemListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveItemListItemDocumentSetVersionCount](Get-MgDriveItemListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -237,7 +195,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgDriveItemListItemVersion](Get-MgDriveItemListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveItemListItemVersionCount](Get-MgDriveItemListItemVersionCount.md)
 Get the number of the resource
@@ -249,7 +206,6 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveItemPermissionCount](Get-MgDriveItemPermissionCount.md)
 Get the number of the resource
@@ -272,7 +228,6 @@ Get the number of the resource
 
 ### [Get-MgDriveItemVersion](Get-MgDriveItemVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveItemVersionContent](Get-MgDriveItemVersionContent.md)
 The content stream for this version of the item.
@@ -288,12 +243,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgDriveLastModifiedByUserServiceProvisioningError](Get-MgDriveLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgDriveList](Get-MgDriveList.md)
 For drives in SharePoint, the underlying document library list.
@@ -313,8 +262,7 @@ The source column for the content type column.
 The collection of content types present in this list.
 
 ### [Get-MgDriveListContentTypeColumn](Get-MgDriveListContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgDriveListContentTypeColumnCount](Get-MgDriveListContentTypeColumnCount.md)
 Get the number of the resource
@@ -349,19 +297,12 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveListCreatedByUserServiceProvisioningError](Get-MgDriveListCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgDriveListCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveListDrive](Get-MgDriveListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgDriveListItem](Get-MgDriveListItem.md)
-Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ### [Get-MgDriveListItemActivityByInterval](Get-MgDriveListItemActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -381,15 +322,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveListItemCreatedByUserServiceProvisioningError](Get-MgDriveListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveListItemDocumentSetVersion](Get-MgDriveListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveListItemDocumentSetVersionCount](Get-MgDriveListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -408,7 +342,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgDriveListItemVersion](Get-MgDriveListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveListItemVersionCount](Get-MgDriveListItemVersionCount.md)
 Get the number of the resource
@@ -431,7 +364,6 @@ Get the number of the resource
 ### [Get-MgDriveRoot](Get-MgDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.\nitem-id is the ID of a driveItem.
 It may also be the unique ID of a SharePoint list item.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveRootActivityByInterval](Get-MgDriveRootActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -452,8 +384,7 @@ Get the number of the resource
 Get lastSevenDays from drives
 
 ### [Get-MgDriveRootAnalyticTime](Get-MgDriveRootAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgDriveRootChild](Get-MgDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -479,12 +410,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveRootCreatedByUserServiceProvisioningError](Get-MgDriveRootCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgDriveRootCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveRootDelta](Get-MgDriveRootDelta.md)
 Invoke function delta
 
@@ -497,12 +422,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgDriveRootItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveRootLastModifiedByUser](Get-MgDriveRootLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -511,12 +430,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgDriveRootLastModifiedByUserServiceProvisioningError](Get-MgDriveRootLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgDriveRootListItem](Get-MgDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -538,15 +451,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgDriveRootListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgDriveRootListItemDocumentSetVersion](Get-MgDriveRootListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveRootListItemDocumentSetVersionCount](Get-MgDriveRootListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -565,7 +471,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgDriveRootListItemVersion](Get-MgDriveRootListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveRootListItemVersionCount](Get-MgDriveRootListItemVersionCount.md)
 Get the number of the resource
@@ -577,7 +482,6 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveRootPermissionCount](Get-MgDriveRootPermissionCount.md)
 Get the number of the resource
@@ -600,7 +504,6 @@ Get the number of the resource
 
 ### [Get-MgDriveRootVersion](Get-MgDriveRootVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveRootVersionContent](Get-MgDriveRootVersionContent.md)
 The content stream for this version of the item.
@@ -614,7 +517,6 @@ Special folders provide simple aliases to access well-known folders in OneDrive 
 If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
 Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist.
 If a user deletes one, it is recreated when written to again.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgDriveSpecialContent](Get-MgDriveSpecialContent.md)
 The content stream, if the item represents a file.
@@ -631,8 +533,7 @@ The group's drives.
 Read-only.
 
 ### [Get-MgGroupDriveBundle](Get-MgGroupDriveBundle.md)
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgGroupDriveBundleContent](Get-MgGroupDriveBundleContent.md)
 The content stream, if the item represents a file.
@@ -661,12 +562,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveCreatedByUserServiceProvisioningError](Get-MgGroupDriveCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveFollowing](Get-MgGroupDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
@@ -678,8 +573,7 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Get-MgGroupDriveItem](Get-MgGroupDriveItem.md)
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgGroupDriveItemAnalytic](Get-MgGroupDriveItemAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -697,8 +591,7 @@ Get the number of the resource
 Get lastSevenDays from groups
 
 ### [Get-MgGroupDriveItemAnalyticTime](Get-MgGroupDriveItemAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgGroupDriveItemChild](Get-MgGroupDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -727,12 +620,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveItemItemLastModifiedByUser](Get-MgGroupDriveItemItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -742,12 +629,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveItemLastModifiedByUser](Get-MgGroupDriveItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -756,12 +637,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgGroupDriveItemListItem](Get-MgGroupDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -780,15 +655,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveItemListItemDocumentSetVersion](Get-MgGroupDriveItemListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveItemListItemDocumentSetVersionCount](Get-MgGroupDriveItemListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -807,7 +675,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgGroupDriveItemListItemVersion](Get-MgGroupDriveItemListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveItemListItemVersionCount](Get-MgGroupDriveItemListItemVersionCount.md)
 Get the number of the resource
@@ -819,7 +686,6 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveItemPermissionCount](Get-MgGroupDriveItemPermissionCount.md)
 Get the number of the resource
@@ -842,7 +708,6 @@ Get the number of the resource
 
 ### [Get-MgGroupDriveItemVersion](Get-MgGroupDriveItemVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveItemVersionContent](Get-MgGroupDriveItemVersionContent.md)
 The content stream for this version of the item.
@@ -858,12 +723,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgGroupDriveLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgGroupDriveList](Get-MgGroupDriveList.md)
 For drives in SharePoint, the underlying document library list.
@@ -883,8 +742,7 @@ The source column for the content type column.
 The collection of content types present in this list.
 
 ### [Get-MgGroupDriveListContentTypeColumn](Get-MgGroupDriveListContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgGroupDriveListContentTypeColumnCount](Get-MgGroupDriveListContentTypeColumnCount.md)
 Get the number of the resource
@@ -916,19 +774,12 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveListCreatedByUserServiceProvisioningError](Get-MgGroupDriveListCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveListCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveListDrive](Get-MgGroupDriveListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgGroupDriveListItem](Get-MgGroupDriveListItem.md)
-Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ### [Get-MgGroupDriveListItemAnalytic](Get-MgGroupDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -942,15 +793,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveListItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveListItemDocumentSetVersion](Get-MgGroupDriveListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveListItemDocumentSetVersionCount](Get-MgGroupDriveListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -969,7 +813,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgGroupDriveListItemVersion](Get-MgGroupDriveListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveListItemVersionCount](Get-MgGroupDriveListItemVersionCount.md)
 Get the number of the resource
@@ -992,7 +835,6 @@ Get the number of the resource
 ### [Get-MgGroupDriveRoot](Get-MgGroupDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.\nitem-id is the ID of a driveItem.
 It may also be the unique ID of a SharePoint list item.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveRootAnalytic](Get-MgGroupDriveRootAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -1010,8 +852,7 @@ Get the number of the resource
 Get lastSevenDays from groups
 
 ### [Get-MgGroupDriveRootAnalyticTime](Get-MgGroupDriveRootAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgGroupDriveRootChild](Get-MgGroupDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -1037,12 +878,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveRootCreatedByUserServiceProvisioningError](Get-MgGroupDriveRootCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveRootItemLastModifiedByUser](Get-MgGroupDriveRootItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1052,12 +887,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveRootLastModifiedByUser](Get-MgGroupDriveRootLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1066,12 +895,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningError](Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgGroupDriveRootListItem](Get-MgGroupDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -1090,15 +913,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgGroupDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgGroupDriveRootListItemDocumentSetVersion](Get-MgGroupDriveRootListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveRootListItemDocumentSetVersionCount](Get-MgGroupDriveRootListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1117,7 +933,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgGroupDriveRootListItemVersion](Get-MgGroupDriveRootListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveRootListItemVersionCount](Get-MgGroupDriveRootListItemVersionCount.md)
 Get the number of the resource
@@ -1129,7 +944,6 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveRootPermissionCount](Get-MgGroupDriveRootPermissionCount.md)
 Get the number of the resource
@@ -1152,7 +966,6 @@ Get the number of the resource
 
 ### [Get-MgGroupDriveRootVersion](Get-MgGroupDriveRootVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveRootVersionContent](Get-MgGroupDriveRootVersionContent.md)
 The content stream for this version of the item.
@@ -1166,7 +979,6 @@ Special folders provide simple aliases to access well-known folders in OneDrive 
 If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
 Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist.
 If a user deletes one, it is recreated when written to again.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgGroupDriveSpecialContent](Get-MgGroupDriveSpecialContent.md)
 The content stream, if the item represents a file.
@@ -1195,16 +1007,9 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgShareCreatedByUserServiceProvisioningError](Get-MgShareCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgShareCreatedByUserServiceProvisioningErrorCount](Get-MgShareCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgShareDriveItem](Get-MgShareDriveItem.md)
 Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgShareDriveItemContent](Get-MgShareDriveItemContent.md)
 The content stream, if the item represents a file.
@@ -1228,12 +1033,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgShareItemLastModifiedByUserServiceProvisioningError](Get-MgShareItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgShareItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgShareItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgShareLastModifiedByUser](Get-MgShareLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1242,12 +1041,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgShareLastModifiedByUserServiceProvisioningError](Get-MgShareLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgShareLastModifiedByUserServiceProvisioningErrorCount](Get-MgShareLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgShareList](Get-MgShareList.md)
 Used to access the underlying list
@@ -1265,8 +1058,7 @@ The source column for the content type column.
 The collection of content types present in this list.
 
 ### [Get-MgShareListContentTypeColumn](Get-MgShareListContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgShareListContentTypeColumnCount](Get-MgShareListContentTypeColumnCount.md)
 Get the number of the resource
@@ -1301,12 +1093,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgShareListCreatedByUserServiceProvisioningError](Get-MgShareListCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgShareListCreatedByUserServiceProvisioningErrorCount](Get-MgShareListCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgShareListDrive](Get-MgShareListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
@@ -1329,15 +1115,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgShareListItemCreatedByUserServiceProvisioningError](Get-MgShareListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgShareListItemCreatedByUserServiceProvisioningErrorCount](Get-MgShareListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgShareListItemDocumentSetVersion](Get-MgShareListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgShareListItemDocumentSetVersionCount](Get-MgShareListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1356,7 +1135,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgShareListItemVersion](Get-MgShareListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgShareListItemVersionCount](Get-MgShareListItemVersionCount.md)
 Get the number of the resource
@@ -1389,7 +1167,6 @@ The content stream, if the item represents a file.
 ### [Get-MgShareSharedDriveItemSharedDriveItem](Get-MgShareSharedDriveItemSharedDriveItem.md)
 Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgShareSite](Get-MgShareSite.md)
 Used to access the underlying site
@@ -1397,15 +1174,13 @@ Used to access the underlying site
 ### [Get-MgUserDefaultDrive](Get-MgUserDefaultDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDrive](Get-MgUserDrive.md)
 A collection of drives available for this user.
 Read-only.
 
 ### [Get-MgUserDriveBundle](Get-MgUserDriveBundle.md)
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgUserDriveBundleContent](Get-MgUserDriveBundleContent.md)
 The content stream, if the item represents a file.
@@ -1434,12 +1209,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveCreatedByUserServiceProvisioningError](Get-MgUserDriveCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveFollowing](Get-MgUserDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
@@ -1451,8 +1220,7 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Get-MgUserDriveItem](Get-MgUserDriveItem.md)
-Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### [Get-MgUserDriveItemAnalytic](Get-MgUserDriveItemAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -1470,8 +1238,7 @@ Get the number of the resource
 Get lastSevenDays from users
 
 ### [Get-MgUserDriveItemAnalyticTime](Get-MgUserDriveItemAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgUserDriveItemChild](Get-MgUserDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -1500,12 +1267,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveItemCreatedByUserServiceProvisioningError](Get-MgUserDriveItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveItemItemLastModifiedByUser](Get-MgUserDriveItemItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1515,12 +1276,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveItemLastModifiedByUser](Get-MgUserDriveItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1529,12 +1284,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError](Get-MgUserDriveItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgUserDriveItemListItem](Get-MgUserDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -1553,15 +1302,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveItemListItemDocumentSetVersion](Get-MgUserDriveItemListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveItemListItemDocumentSetVersionCount](Get-MgUserDriveItemListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1580,7 +1322,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgUserDriveItemListItemVersion](Get-MgUserDriveItemListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveItemListItemVersionCount](Get-MgUserDriveItemListItemVersionCount.md)
 Get the number of the resource
@@ -1592,7 +1333,6 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveItemPermissionCount](Get-MgUserDriveItemPermissionCount.md)
 Get the number of the resource
@@ -1615,7 +1355,6 @@ Get the number of the resource
 
 ### [Get-MgUserDriveItemVersion](Get-MgUserDriveItemVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveItemVersionContent](Get-MgUserDriveItemVersionContent.md)
 The content stream for this version of the item.
@@ -1631,12 +1370,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgUserDriveLastModifiedByUserServiceProvisioningError](Get-MgUserDriveLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgUserDriveList](Get-MgUserDriveList.md)
 For drives in SharePoint, the underlying document library list.
@@ -1656,8 +1389,7 @@ The source column for the content type column.
 The collection of content types present in this list.
 
 ### [Get-MgUserDriveListContentTypeColumn](Get-MgUserDriveListContentTypeColumn.md)
-Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
 
 ### [Get-MgUserDriveListContentTypeColumnCount](Get-MgUserDriveListContentTypeColumnCount.md)
 Get the number of the resource
@@ -1689,19 +1421,12 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveListCreatedByUserServiceProvisioningError](Get-MgUserDriveListCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveListCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveListDrive](Get-MgUserDriveListDrive.md)
 Only present on document libraries.
 Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgUserDriveListItem](Get-MgUserDriveListItem.md)
-Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ### [Get-MgUserDriveListItemAnalytic](Get-MgUserDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -1715,15 +1440,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveListItemCreatedByUserServiceProvisioningError](Get-MgUserDriveListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveListItemDocumentSetVersion](Get-MgUserDriveListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveListItemDocumentSetVersionCount](Get-MgUserDriveListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1742,7 +1460,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgUserDriveListItemVersion](Get-MgUserDriveListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveListItemVersionCount](Get-MgUserDriveListItemVersionCount.md)
 Get the number of the resource
@@ -1765,7 +1482,6 @@ Get the number of the resource
 ### [Get-MgUserDriveRoot](Get-MgUserDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.\nitem-id is the ID of a driveItem.
 It may also be the unique ID of a SharePoint list item.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveRootAnalytic](Get-MgUserDriveRootAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -1783,8 +1499,7 @@ Get the number of the resource
 Get lastSevenDays from users
 
 ### [Get-MgUserDriveRootAnalyticTime](Get-MgUserDriveRootAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
 
 ### [Get-MgUserDriveRootChild](Get-MgUserDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -1810,12 +1525,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveRootCreatedByUserServiceProvisioningError](Get-MgUserDriveRootCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveRootItemLastModifiedByUser](Get-MgUserDriveRootItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1825,12 +1534,6 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveRootLastModifiedByUser](Get-MgUserDriveRootLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1839,12 +1542,6 @@ Read-only.
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
-
-### [Get-MgUserDriveRootLastModifiedByUserServiceProvisioningError](Get-MgUserDriveRootLastModifiedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
 
 ### [Get-MgUserDriveRootListItem](Get-MgUserDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -1863,15 +1560,8 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
-### [Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningError.md)
-Get serviceProvisioningErrors property value
-
-### [Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgUserDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
-Get the number of the resource
-
 ### [Get-MgUserDriveRootListItemDocumentSetVersion](Get-MgUserDriveRootListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveRootListItemDocumentSetVersionCount](Get-MgUserDriveRootListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1890,7 +1580,6 @@ The values of the columns set on this list item.
 
 ### [Get-MgUserDriveRootListItemVersion](Get-MgUserDriveRootListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveRootListItemVersionCount](Get-MgUserDriveRootListItemVersionCount.md)
 Get the number of the resource
@@ -1902,7 +1591,6 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveRootPermissionCount](Get-MgUserDriveRootPermissionCount.md)
 Get the number of the resource
@@ -1925,7 +1613,6 @@ Get the number of the resource
 
 ### [Get-MgUserDriveRootVersion](Get-MgUserDriveRootVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveRootVersionContent](Get-MgUserDriveRootVersionContent.md)
 The content stream for this version of the item.
@@ -1939,7 +1626,6 @@ Special folders provide simple aliases to access well-known folders in OneDrive 
 If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
 Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist.
 If a user deletes one, it is recreated when written to again.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserDriveSpecialContent](Get-MgUserDriveSpecialContent.md)
 The content stream, if the item represents a file.
@@ -1948,32 +1634,25 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Grant-MgDriveItemPermission](Grant-MgDriveItemPermission.md)
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ### [Grant-MgDriveRootPermission](Grant-MgDriveRootPermission.md)
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ### [Grant-MgSharePermission](Grant-MgSharePermission.md)
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ### [Invoke-MgCheckinDriveItem](Invoke-MgCheckinDriveItem.md)
 Check in a checked out driveItem resource, which makes the version of the document available to others.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgCheckinDriveRoot](Invoke-MgCheckinDriveRoot.md)
 Check in a checked out driveItem resource, which makes the version of the document available to others.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgCheckoutDriveItem](Invoke-MgCheckoutDriveItem.md)
 Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgCheckoutDriveRoot](Invoke-MgCheckoutDriveRoot.md)
 Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgExtractDriveItemSensitivityLabel](Invoke-MgExtractDriveItemSensitivityLabel.md)
 Invoke action extractSensitivityLabels
@@ -1983,22 +1662,18 @@ Invoke action extractSensitivityLabels
 
 ### [Invoke-MgFollowDriveItem](Invoke-MgFollowDriveItem.md)
 Follow a driveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgFollowDriveRoot](Invoke-MgFollowDriveRoot.md)
 Follow a driveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgGraphDrive](Invoke-MgGraphDrive.md)
 Invoke function sharedWithMe
 
 ### [Invoke-MgInviteDriveItem](Invoke-MgInviteDriveItem.md)
-Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][].
-This API is supported in the following [national cloud deployments.
+Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 
 ### [Invoke-MgInviteDriveRoot](Invoke-MgInviteDriveRoot.md)
-Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][].
-This API is supported in the following [national cloud deployments.
+Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
 
 ### [Invoke-MgPreviewDriveItem](Invoke-MgPreviewDriveItem.md)
 Invoke action preview
@@ -2008,38 +1683,30 @@ Invoke action preview
 
 ### [Invoke-MgReauthorizeDriveItemSubscription](Invoke-MgReauthorizeDriveItemSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgReauthorizeDriveListSubscription](Invoke-MgReauthorizeDriveListSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgReauthorizeDriveRootSubscription](Invoke-MgReauthorizeDriveRootSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgReauthorizeShareListSubscription](Invoke-MgReauthorizeShareListSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgRecentDrive](Invoke-MgRecentDrive.md)
 Invoke function recent
 
 ### [Invoke-MgUnfollowDriveItem](Invoke-MgUnfollowDriveItem.md)
 Unfollow a driveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgUnfollowDriveRoot](Invoke-MgUnfollowDriveRoot.md)
 Unfollow a driveItem.
-This API is supported in the following national cloud deployments.
 
 ### [Join-MgDriveListContentTypeWithHubSite](Join-MgDriveListContentTypeWithHubSite.md)
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is supported in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ### [Join-MgShareListContentTypeWithHubSite](Join-MgShareListContentTypeWithHubSite.md)
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is supported in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ### [New-MgDrive](New-MgDrive.md)
 Add new entity to drives
@@ -2060,11 +1727,9 @@ Create new navigation property to children for drives
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgDriveItemListItemDocumentSetVersion](New-MgDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgDriveItemListItemVersion](New-MgDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
@@ -2085,26 +1750,22 @@ Invoke action createUploadSession
 Create new navigation property to versions for drives
 
 ### [New-MgDriveListColumn](New-MgDriveListColumn.md)
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgDriveListContentType](New-MgDriveListContentType.md)
 Create new navigation property to contentTypes for drives
 
 ### [New-MgDriveListContentTypeColumn](New-MgDriveListContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgDriveListContentTypeColumnLink](New-MgDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for drives
 
 ### [New-MgDriveListItem](New-MgDriveListItem.md)
-Create a new listItem][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Create a new [listItem][] in a [list][].
 
 ### [New-MgDriveListItemDocumentSetVersion](New-MgDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgDriveListItemVersion](New-MgDriveListItemVersion.md)
 Create new navigation property to versions for drives
@@ -2125,11 +1786,9 @@ Create new navigation property to children for drives
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgDriveRootListItemDocumentSetVersion](New-MgDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgDriveRootListItemVersion](New-MgDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
@@ -2166,7 +1825,6 @@ Create new navigation property to children for groups
 
 ### [New-MgGroupDriveItemListItemDocumentSetVersion](New-MgGroupDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgGroupDriveItemListItemVersion](New-MgGroupDriveItemListItemVersion.md)
 Create new navigation property to versions for groups
@@ -2184,26 +1842,22 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgGroupDriveListColumn](New-MgGroupDriveListColumn.md)
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupDriveListContentType](New-MgGroupDriveListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgGroupDriveListContentTypeColumn](New-MgGroupDriveListContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgGroupDriveListContentTypeColumnLink](New-MgGroupDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupDriveListItem](New-MgGroupDriveListItem.md)
-Create a new listItem][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Create a new [listItem][] in a [list][].
 
 ### [New-MgGroupDriveListItemDocumentSetVersion](New-MgGroupDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgGroupDriveListItemVersion](New-MgGroupDriveListItemVersion.md)
 Create new navigation property to versions for groups
@@ -2222,7 +1876,6 @@ Create new navigation property to children for groups
 
 ### [New-MgGroupDriveRootListItemDocumentSetVersion](New-MgGroupDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgGroupDriveRootListItemVersion](New-MgGroupDriveRootListItemVersion.md)
 Create new navigation property to versions for groups
@@ -2240,26 +1893,22 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgShareListColumn](New-MgShareListColumn.md)
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgShareListContentType](New-MgShareListContentType.md)
 Create new navigation property to contentTypes for shares
 
 ### [New-MgShareListContentTypeColumn](New-MgShareListContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgShareListContentTypeColumnLink](New-MgShareListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for shares
 
 ### [New-MgShareListItem](New-MgShareListItem.md)
-Create a new listItem][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Create a new [listItem][] in a [list][].
 
 ### [New-MgShareListItemDocumentSetVersion](New-MgShareListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgShareListItemVersion](New-MgShareListItemVersion.md)
 Create new navigation property to versions for shares
@@ -2290,7 +1939,6 @@ Create new navigation property to children for users
 
 ### [New-MgUserDriveItemListItemDocumentSetVersion](New-MgUserDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserDriveItemListItemVersion](New-MgUserDriveItemListItemVersion.md)
 Create new navigation property to versions for users
@@ -2308,26 +1956,22 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [New-MgUserDriveListColumn](New-MgUserDriveListColumn.md)
-Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgUserDriveListContentType](New-MgUserDriveListContentType.md)
 Create new navigation property to contentTypes for users
 
 ### [New-MgUserDriveListContentTypeColumn](New-MgUserDriveListContentTypeColumn.md)
-Add a column to a content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
 
 ### [New-MgUserDriveListContentTypeColumnLink](New-MgUserDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for users
 
 ### [New-MgUserDriveListItem](New-MgUserDriveListItem.md)
-Create a new listItem][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Create a new [listItem][] in a [list][].
 
 ### [New-MgUserDriveListItemDocumentSetVersion](New-MgUserDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserDriveListItemVersion](New-MgUserDriveListItemVersion.md)
 Create new navigation property to versions for users
@@ -2346,7 +1990,6 @@ Create new navigation property to children for users
 
 ### [New-MgUserDriveRootListItemDocumentSetVersion](New-MgUserDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserDriveRootListItemVersion](New-MgUserDriveRootListItemVersion.md)
 Create new navigation property to versions for users
@@ -2364,19 +2007,16 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [Publish-MgDriveListContentType](Publish-MgDriveListContentType.md)
-Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ### [Publish-MgShareListContentType](Publish-MgShareListContentType.md)
-Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ### [Remove-MgDrive](Remove-MgDrive.md)
 Delete entity from drives
 
 ### [Remove-MgDriveItem](Remove-MgDriveItem.md)
-Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is supported in the following national cloud deployments.
+Delete a DriveItem by using its ID or path.\nNote that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
 
 ### [Remove-MgDriveItemAnalytic](Remove-MgDriveItemAnalytic.md)
 Delete navigation property analytics for drives
@@ -2385,15 +2025,13 @@ Delete navigation property analytics for drives
 Delete navigation property itemActivityStats for drives
 
 ### [Remove-MgDriveItemChild](Remove-MgDriveItemChild.md)
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ### [Remove-MgDriveItemListItem](Remove-MgDriveItemListItem.md)
 Delete navigation property listItem for drives
 
 ### [Remove-MgDriveItemListItemDocumentSetVersion](Remove-MgDriveItemListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgDriveItemListItemDocumentSetVersionField](Remove-MgDriveItemListItemDocumentSetVersionField.md)
 Delete navigation property fields for drives
@@ -2413,7 +2051,6 @@ Invoke action permanentDelete
 ### [Remove-MgDriveItemPermission](Remove-MgDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgDriveItemSubscription](Remove-MgDriveItemSubscription.md)
 Delete navigation property subscriptions for drives
@@ -2434,19 +2071,16 @@ Delete navigation property columns for drives
 Delete navigation property contentTypes for drives
 
 ### [Remove-MgDriveListContentTypeColumn](Remove-MgDriveListContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is supported in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgDriveListContentTypeColumnLink](Remove-MgDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for drives
 
 ### [Remove-MgDriveListItem](Remove-MgDriveListItem.md)
-Removes an item from a list][].
-This API is supported in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ### [Remove-MgDriveListItemDocumentSetVersion](Remove-MgDriveListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgDriveListItemDocumentSetVersionField](Remove-MgDriveListItemDocumentSetVersionField.md)
 Delete navigation property fields for drives
@@ -2476,15 +2110,13 @@ Delete navigation property analytics for drives
 Delete navigation property itemActivityStats for drives
 
 ### [Remove-MgDriveRootChild](Remove-MgDriveRootChild.md)
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ### [Remove-MgDriveRootListItem](Remove-MgDriveRootListItem.md)
 Delete navigation property listItem for drives
 
 ### [Remove-MgDriveRootListItemDocumentSetVersion](Remove-MgDriveRootListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgDriveRootListItemDocumentSetVersionField](Remove-MgDriveRootListItemDocumentSetVersionField.md)
 Delete navigation property fields for drives
@@ -2504,7 +2136,6 @@ Invoke action permanentDelete
 ### [Remove-MgDriveRootPermission](Remove-MgDriveRootPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgDriveRootSubscription](Remove-MgDriveRootSubscription.md)
 Delete navigation property subscriptions for drives
@@ -2519,8 +2150,7 @@ Delete navigation property versions for drives
 Delete navigation property drives for groups
 
 ### [Remove-MgGroupDriveItem](Remove-MgGroupDriveItem.md)
-Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is supported in the following national cloud deployments.
+Delete a DriveItem by using its ID or path.\nNote that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
 
 ### [Remove-MgGroupDriveItemAnalytic](Remove-MgGroupDriveItemAnalytic.md)
 Delete navigation property analytics for groups
@@ -2529,15 +2159,13 @@ Delete navigation property analytics for groups
 Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgGroupDriveItemChild](Remove-MgGroupDriveItemChild.md)
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ### [Remove-MgGroupDriveItemListItem](Remove-MgGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
 
 ### [Remove-MgGroupDriveItemListItemDocumentSetVersion](Remove-MgGroupDriveItemListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgGroupDriveItemListItemDocumentSetVersionField](Remove-MgGroupDriveItemListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2554,7 +2182,6 @@ Delete navigation property fields for groups
 ### [Remove-MgGroupDriveItemPermission](Remove-MgGroupDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgGroupDriveItemSubscription](Remove-MgGroupDriveItemSubscription.md)
 Delete navigation property subscriptions for groups
@@ -2575,19 +2202,16 @@ Delete navigation property columns for groups
 Delete navigation property contentTypes for groups
 
 ### [Remove-MgGroupDriveListContentTypeColumn](Remove-MgGroupDriveListContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is supported in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgGroupDriveListContentTypeColumnLink](Remove-MgGroupDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
 ### [Remove-MgGroupDriveListItem](Remove-MgGroupDriveListItem.md)
-Removes an item from a list][].
-This API is supported in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ### [Remove-MgGroupDriveListItemDocumentSetVersion](Remove-MgGroupDriveListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgGroupDriveListItemDocumentSetVersionField](Remove-MgGroupDriveListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2617,15 +2241,13 @@ Delete navigation property analytics for groups
 Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgGroupDriveRootChild](Remove-MgGroupDriveRootChild.md)
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ### [Remove-MgGroupDriveRootListItem](Remove-MgGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
 
 ### [Remove-MgGroupDriveRootListItemDocumentSetVersion](Remove-MgGroupDriveRootListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgGroupDriveRootListItemDocumentSetVersionField](Remove-MgGroupDriveRootListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2642,7 +2264,6 @@ Delete navigation property fields for groups
 ### [Remove-MgGroupDriveRootPermission](Remove-MgGroupDriveRootPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgGroupDriveRootSubscription](Remove-MgGroupDriveRootSubscription.md)
 Delete navigation property subscriptions for groups
@@ -2663,8 +2284,7 @@ Delete navigation property columns for shares
 Delete navigation property contentTypes for shares
 
 ### [Remove-MgShareListContentTypeColumn](Remove-MgShareListContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is supported in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgShareListContentTypeColumnLink](Remove-MgShareListContentTypeColumnLink.md)
 Delete navigation property columnLinks for shares
@@ -2674,7 +2294,6 @@ Delete navigation property listItem for shares
 
 ### [Remove-MgShareListItemDocumentSetVersion](Remove-MgShareListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgShareListItemDocumentSetVersionField](Remove-MgShareListItemDocumentSetVersionField.md)
 Delete navigation property fields for shares
@@ -2704,8 +2323,7 @@ Delete entity from shares
 Delete navigation property drives for users
 
 ### [Remove-MgUserDriveItem](Remove-MgUserDriveItem.md)
-Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
-This API is supported in the following national cloud deployments.
+Delete a DriveItem by using its ID or path.\nNote that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
 
 ### [Remove-MgUserDriveItemAnalytic](Remove-MgUserDriveItemAnalytic.md)
 Delete navigation property analytics for users
@@ -2714,15 +2332,13 @@ Delete navigation property analytics for users
 Delete navigation property itemActivityStats for users
 
 ### [Remove-MgUserDriveItemChild](Remove-MgUserDriveItemChild.md)
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ### [Remove-MgUserDriveItemListItem](Remove-MgUserDriveItemListItem.md)
 Delete navigation property listItem for users
 
 ### [Remove-MgUserDriveItemListItemDocumentSetVersion](Remove-MgUserDriveItemListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserDriveItemListItemDocumentSetVersionField](Remove-MgUserDriveItemListItemDocumentSetVersionField.md)
 Delete navigation property fields for users
@@ -2739,7 +2355,6 @@ Delete navigation property fields for users
 ### [Remove-MgUserDriveItemPermission](Remove-MgUserDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserDriveItemSubscription](Remove-MgUserDriveItemSubscription.md)
 Delete navigation property subscriptions for users
@@ -2760,19 +2375,16 @@ Delete navigation property columns for users
 Delete navigation property contentTypes for users
 
 ### [Remove-MgUserDriveListContentTypeColumn](Remove-MgUserDriveListContentTypeColumn.md)
-Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is supported in the following [national cloud deployments.
+Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
 
 ### [Remove-MgUserDriveListContentTypeColumnLink](Remove-MgUserDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for users
 
 ### [Remove-MgUserDriveListItem](Remove-MgUserDriveListItem.md)
-Removes an item from a list][].
-This API is supported in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ### [Remove-MgUserDriveListItemDocumentSetVersion](Remove-MgUserDriveListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserDriveListItemDocumentSetVersionField](Remove-MgUserDriveListItemDocumentSetVersionField.md)
 Delete navigation property fields for users
@@ -2802,15 +2414,13 @@ Delete navigation property analytics for users
 Delete navigation property itemActivityStats for users
 
 ### [Remove-MgUserDriveRootChild](Remove-MgUserDriveRootChild.md)
-Remove an item from a bundle][].
-This API is supported in the following [national cloud deployments.
+Remove an item from a [bundle][].
 
 ### [Remove-MgUserDriveRootListItem](Remove-MgUserDriveRootListItem.md)
 Delete navigation property listItem for users
 
 ### [Remove-MgUserDriveRootListItemDocumentSetVersion](Remove-MgUserDriveRootListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserDriveRootListItemDocumentSetVersionField](Remove-MgUserDriveRootListItemDocumentSetVersionField.md)
 Delete navigation property fields for users
@@ -2827,7 +2437,6 @@ Delete navigation property fields for users
 ### [Remove-MgUserDriveRootPermission](Remove-MgUserDriveRootPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserDriveRootSubscription](Remove-MgUserDriveRootSubscription.md)
 Delete navigation property subscriptions for users
@@ -2841,58 +2450,46 @@ Delete navigation property versions for users
 ### [Restore-MgDriveItem](Restore-MgDriveItem.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 NOTE: This functionality is currently only available for OneDrive Personal.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveItemListItemDocumentSetVersion](Restore-MgDriveItemListItemDocumentSetVersion.md)
 Restore a document set version.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveItemListItemVersion](Restore-MgDriveItemListItemVersion.md)
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveItemVersion](Restore-MgDriveItemVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveListItemDocumentSetVersion](Restore-MgDriveListItemDocumentSetVersion.md)
 Restore a document set version.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveListItemVersion](Restore-MgDriveListItemVersion.md)
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveRoot](Restore-MgDriveRoot.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 NOTE: This functionality is currently only available for OneDrive Personal.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveRootListItemDocumentSetVersion](Restore-MgDriveRootListItemDocumentSetVersion.md)
 Restore a document set version.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveRootListItemVersion](Restore-MgDriveRootListItemVersion.md)
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgDriveRootVersion](Restore-MgDriveRootVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgShareListItemDocumentSetVersion](Restore-MgShareListItemDocumentSetVersion.md)
 Restore a document set version.
-This API is supported in the following national cloud deployments.
 
 ### [Restore-MgShareListItemVersion](Restore-MgShareListItemVersion.md)
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is supported in the following national cloud deployments.
 
 ### [Search-MgDrive](Search-MgDrive.md)
 Invoke function search
@@ -3042,12 +2639,10 @@ Invoke action validatePermission
 Invoke function isPublished
 
 ### [Unpublish-MgDriveListContentType](Unpublish-MgDriveListContentType.md)
-Unpublish a contentType][] from a content type hub site.
-This API is supported in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgShareListContentType](Unpublish-MgShareListContentType.md)
-Unpublish a contentType][] from a content type hub site.
-This API is supported in the following [national cloud deployments.
+Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgDrive](Update-MgDrive.md)
 Update entity in drives
@@ -3059,7 +2654,6 @@ Update property mailboxSettings value.
 To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgDriveItemAnalytic](Update-MgDriveItemAnalytic.md)
 Update the navigation property analytics in drives
@@ -3086,8 +2680,7 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgDriveItemListItemField](Update-MgDriveItemListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3101,7 +2694,6 @@ Update the navigation property fields in drives
 ### [Update-MgDriveItemPermission](Update-MgDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgDriveItemSubscription](Update-MgDriveItemSubscription.md)
 Update the navigation property subscriptions in drives
@@ -3125,8 +2717,7 @@ Update the navigation property columns in drives
 Update the navigation property contentTypes in drives
 
 ### [Update-MgDriveListContentTypeColumn](Update-MgDriveListContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgDriveListContentTypeColumnLink](Update-MgDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in drives
@@ -3147,8 +2738,7 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgDriveListItemField](Update-MgDriveListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgDriveListItemLastModifiedByUserMailboxSetting](Update-MgDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3196,8 +2786,7 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgDriveRootListItemField](Update-MgDriveRootListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3211,7 +2800,6 @@ Update the navigation property fields in drives
 ### [Update-MgDriveRootPermission](Update-MgDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgDriveRootSubscription](Update-MgDriveRootSubscription.md)
 Update the navigation property subscriptions in drives
@@ -3232,7 +2820,6 @@ Update property mailboxSettings value.
 To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgGroupDriveItemAnalytic](Update-MgGroupDriveItemAnalytic.md)
 Update the navigation property analytics in groups
@@ -3259,8 +2846,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgGroupDriveItemListItemField](Update-MgGroupDriveItemListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgGroupDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgGroupDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3274,7 +2860,6 @@ Update the navigation property fields in groups
 ### [Update-MgGroupDriveItemPermission](Update-MgGroupDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgGroupDriveItemSubscription](Update-MgGroupDriveItemSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3298,8 +2883,7 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgGroupDriveListContentTypeColumn](Update-MgGroupDriveListContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgGroupDriveListContentTypeColumnLink](Update-MgGroupDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -3320,8 +2904,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgGroupDriveListItemField](Update-MgGroupDriveListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgGroupDriveListItemLastModifiedByUserMailboxSetting](Update-MgGroupDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3369,8 +2952,7 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgGroupDriveRootListItemField](Update-MgGroupDriveRootListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgGroupDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgGroupDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3384,7 +2966,6 @@ Update the navigation property fields in groups
 ### [Update-MgGroupDriveRootPermission](Update-MgGroupDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgGroupDriveRootSubscription](Update-MgGroupDriveRootSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3411,8 +2992,7 @@ Update the navigation property columns in shares
 Update the navigation property contentTypes in shares
 
 ### [Update-MgShareListContentTypeColumn](Update-MgShareListContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgShareListContentTypeColumnLink](Update-MgShareListContentTypeColumnLink.md)
 Update the navigation property columnLinks in shares
@@ -3433,8 +3013,7 @@ Update the navigation property documentSetVersions in shares
 Update the navigation property fields in shares
 
 ### [Update-MgShareListItemField](Update-MgShareListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgShareListItemLastModifiedByUserMailboxSetting](Update-MgShareListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3470,7 +3049,6 @@ Update property mailboxSettings value.
 To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserDriveItemAnalytic](Update-MgUserDriveItemAnalytic.md)
 Update the navigation property analytics in users
@@ -3497,8 +3075,7 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgUserDriveItemListItemField](Update-MgUserDriveItemListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgUserDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgUserDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3512,7 +3089,6 @@ Update the navigation property fields in users
 ### [Update-MgUserDriveItemPermission](Update-MgUserDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserDriveItemSubscription](Update-MgUserDriveItemSubscription.md)
 Update the navigation property subscriptions in users
@@ -3536,8 +3112,7 @@ Update the navigation property columns in users
 Update the navigation property contentTypes in users
 
 ### [Update-MgUserDriveListContentTypeColumn](Update-MgUserDriveListContentTypeColumn.md)
-Update a site][], a [list][], or a [content type][contentType] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgUserDriveListContentTypeColumnLink](Update-MgUserDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in users
@@ -3558,8 +3133,7 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgUserDriveListItemField](Update-MgUserDriveListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgUserDriveListItemLastModifiedByUserMailboxSetting](Update-MgUserDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3607,8 +3181,7 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgUserDriveRootListItemField](Update-MgUserDriveRootListItemField.md)
-Update the properties on a listItem][].
-This API is supported in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ### [Update-MgUserDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgUserDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3622,7 +3195,6 @@ Update the navigation property fields in users
 ### [Update-MgUserDriveRootPermission](Update-MgUserDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserDriveRootSubscription](Update-MgUserDriveRootSubscription.md)
 Update the navigation property subscriptions in users

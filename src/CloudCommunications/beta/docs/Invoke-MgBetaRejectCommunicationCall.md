@@ -15,7 +15,6 @@ The bot is expected to answer or reject the call before the call times out.
 The current timeout value is 15 seconds.
 This API does not end existing calls that have already been answered.
 Use delete call to end a call.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -54,7 +53,6 @@ The bot is expected to answer or reject the call before the call times out.
 The current timeout value is 15 seconds.
 This API does not end existing calls that have already been answered.
 Use delete call to end a call.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

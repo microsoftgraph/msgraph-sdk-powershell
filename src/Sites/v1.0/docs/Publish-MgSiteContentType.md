@@ -8,8 +8,7 @@ schema: 2.0.0
 # Publish-MgSiteContentType
 
 ## SYNOPSIS
-Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ Publish-MgSiteContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [
 ```
 
 ## DESCRIPTION
-Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ## EXAMPLES
 

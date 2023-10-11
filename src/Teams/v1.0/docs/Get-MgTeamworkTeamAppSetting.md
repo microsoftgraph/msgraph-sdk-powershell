@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkTeamAppSetting
 
 ## SYNOPSIS
-Get the tenant-wide teamsAppSettings for all Teams apps in the tenant.
-This API is available in the following national cloud deployments.
+Get teamsAppSettings from teamwork
 
 ## SYNTAX
 
@@ -18,8 +17,7 @@ Get-MgTeamworkTeamAppSetting [-ExpandProperty <String[]>] [-Property <String[]>]
 ```
 
 ## DESCRIPTION
-Get the tenant-wide teamsAppSettings for all Teams apps in the tenant.
-This API is available in the following national cloud deployments.
+Get teamsAppSettings from teamwork
 
 ## EXAMPLES
 

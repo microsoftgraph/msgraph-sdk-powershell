@@ -185,7 +185,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AlertImpactDetails <IMicrosoftGraphKeyValuePair[]>]`: The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
-    - `[Value <Int32?>]`: The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that six Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
+    - `[Value <Int32?>]`: The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
   - `[AlertRuleId <String>]`: The corresponding ID of the alert rule.
   - `[AlertRuleTemplate <String>]`: alertRuleTemplate
   - `[DetectedDateTime <DateTime?>]`: The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -207,6 +207,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[NotificationReceivers <IMicrosoftGraphDeviceManagementNotificationReceiver[]>]`: Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
       - `[ContactInformation <String>]`: The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
       - `[Locale <String>]`: Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
+    - `[Receivers <String[]>]`: The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
   - `[Severity <String>]`: ruleSeverityType
   - `[Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>]`: ruleThreshold
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -225,7 +226,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AlertImpactDetails <IMicrosoftGraphKeyValuePair[]>]`: The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.
         - `[Name <String>]`: Name for this key-value pair
         - `[Value <String>]`: Value for this key-value pair
-      - `[Value <Int32?>]`: The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that six Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
+      - `[Value <Int32?>]`: The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
     - `[AlertRuleId <String>]`: The corresponding ID of the alert rule.
     - `[AlertRuleTemplate <String>]`: alertRuleTemplate
     - `[DetectedDateTime <DateTime?>]`: The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -246,6 +247,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[NotificationReceivers <IMicrosoftGraphDeviceManagementNotificationReceiver[]>]`: Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
         - `[ContactInformation <String>]`: The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
         - `[Locale <String>]`: Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
+      - `[Receivers <String[]>]`: The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
     - `[Severity <String>]`: ruleSeverityType
     - `[Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>]`: ruleThreshold
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

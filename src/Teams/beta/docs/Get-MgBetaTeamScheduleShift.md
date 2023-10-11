@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a shift object by ID.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +31,6 @@ Get-MgBetaTeamScheduleShift -InputObject <ITeamsIdentity> [-Property <String[]>]
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a shift object by ID.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

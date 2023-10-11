@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Module Guid: ef107521-1047-435d-95ec-0e1a210ec554
+Module Guid: 3b9317a2-8f55-48c5-b403-980cc7e82cee
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -14,7 +14,6 @@ Microsoft Graph PowerShell Cmdlets
 ### [Get-MgBetaServiceAnnouncementHealthOverview](Get-MgBetaServiceAnnouncementHealthOverview.md)
 Retrieve the properties and relationships of a serviceHealth object.
 This operation provides the health information of a specified service for a tenant.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaServiceAnnouncementHealthOverviewCount](Get-MgBetaServiceAnnouncementHealthOverviewCount.md)
 Get the number of the resource
@@ -29,7 +28,6 @@ Get the number of the resource
 Retrieve the properties and relationships of a serviceHealthIssue object.
 This operation retrieves a specified service health issue for tenant.
 The operation returns an error if the issue does not exist for the tenant.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaServiceAnnouncementIssueCount](Get-MgBetaServiceAnnouncementIssueCount.md)
 Get the number of the resource
@@ -38,11 +36,9 @@ Get the number of the resource
 Retrieve the properties and relationships of a serviceUpdateMessage object.
 This operation retrieves a specified service update message for the tenant.
 The operation returns an error if the message does not exist for the tenant.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaServiceAnnouncementMessageAttachment](Get-MgBetaServiceAnnouncementMessageAttachment.md)
 Read the properties and relationships of a serviceAnnouncementAttachment object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaServiceAnnouncementMessageAttachmentArchive](Get-MgBetaServiceAnnouncementMessageAttachmentArchive.md)
 The zip file of all attachments for a message.
@@ -58,19 +54,15 @@ Get the number of the resource
 
 ### [Invoke-MgBetaArchiveServiceAnnouncementMessage](Invoke-MgBetaArchiveServiceAnnouncementMessage.md)
 Archive a list of serviceUpdateMessages for the signed in user.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaFavoriteServiceAnnouncementMessage](Invoke-MgBetaFavoriteServiceAnnouncementMessage.md)
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaMarkServiceAnnouncementMessageRead](Invoke-MgBetaMarkServiceAnnouncementMessageRead.md)
 Mark a list of serviceUpdateMessages as read for the signed in user.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaMarkServiceAnnouncementMessageUnread](Invoke-MgBetaMarkServiceAnnouncementMessageUnread.md)
 Mark a list of serviceUpdateMessages as unread for the signed in user.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgBetaReportServiceAnnouncementHealthOverviewIssueIncident.md)
 Invoke function incidentReport
@@ -80,11 +72,9 @@ Invoke function incidentReport
 
 ### [Invoke-MgBetaUnarchiveServiceAnnouncementMessage](Invoke-MgBetaUnarchiveServiceAnnouncementMessage.md)
 Unarchive a list of serviceUpdateMessages for the signed in user.
-This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaUnfavoriteServiceAnnouncementMessage](Invoke-MgBetaUnfavoriteServiceAnnouncementMessage.md)
 Remove the favorite status of serviceUpdateMessages for the signed in user.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaServiceAnnouncementHealthOverview](New-MgBetaServiceAnnouncementHealthOverview.md)
 Create new navigation property to healthOverviews for admin

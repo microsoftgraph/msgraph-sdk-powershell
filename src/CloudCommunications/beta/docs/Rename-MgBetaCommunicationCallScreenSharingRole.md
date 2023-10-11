@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Allow applications to share screen content with the participants of a group call.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Rename-MgBetaCommunicationCallScreenSharingRole -InputObject <ICloudCommunicatio
 
 ## DESCRIPTION
 Allow applications to share screen content with the participants of a group call.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

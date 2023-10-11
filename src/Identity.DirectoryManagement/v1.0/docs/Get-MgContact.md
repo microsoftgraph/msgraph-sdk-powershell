@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of an organizational contact.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Get-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandProper
 
 ## DESCRIPTION
 Get the properties and relationships of an organizational contact.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

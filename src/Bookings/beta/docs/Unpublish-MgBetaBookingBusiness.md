@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Make the scheduling page of this business not available to external customers.
 Set the isPublished property to false, and publicUrl property to null.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Unpublish-MgBetaBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-C
 ## DESCRIPTION
 Make the scheduling page of this business not available to external customers.
 Set the isPublished property to false, and publicUrl property to null.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

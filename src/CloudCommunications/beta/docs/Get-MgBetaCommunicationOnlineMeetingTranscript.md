@@ -8,11 +8,9 @@ schema: 2.0.0
 # Get-MgBetaCommunicationOnlineMeetingTranscript
 
 ## SYNOPSIS
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API doesn't support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,11 +40,9 @@ Get-MgBetaCommunicationOnlineMeetingTranscript -OnlineMeetingId <String> [-Expan
 ```
 
 ## DESCRIPTION
-Retrieve a callTranscript object associated with a scheduled onlineMeeting.
-This API doesn't support getting call transcripts from channel meetings.
+Retrieve a callTranscript object associated with an onlineMeeting.
 Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
 Retrieving the content of the transcript returns the stream of text associated with the transcript.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

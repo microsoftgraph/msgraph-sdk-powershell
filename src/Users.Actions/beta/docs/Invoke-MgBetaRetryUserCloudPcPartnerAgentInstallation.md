@@ -8,9 +8,8 @@ schema: 2.0.0
 # Invoke-MgBetaRetryUserCloudPcPartnerAgentInstallation
 
 ## SYNOPSIS
-Retry installation for the partner agents that failed to install on the Cloud PC.
-Service side checks which agent installation failed firstly and retry.
-This API is available in the following national cloud deployments.
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ## SYNTAX
 
@@ -27,9 +26,8 @@ Invoke-MgBetaRetryUserCloudPcPartnerAgentInstallation -InputObject <IUsersAction
 ```
 
 ## DESCRIPTION
-Retry installation for the partner agents that failed to install on the Cloud PC.
-Service side checks which agent installation failed firstly and retry.
-This API is available in the following national cloud deployments.
+Retry installation for the partner agents which failed to install on the Cloud PC.
+Service side will check which agent installation failed firstly and retry.
 
 ## EXAMPLES
 
@@ -173,6 +171,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: The unique identifier of device
   - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
   - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
   - `[DriveId <String>]`: The unique identifier of drive
@@ -194,6 +193,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

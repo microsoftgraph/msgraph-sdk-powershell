@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove an owner from an application.
 As a recommended best practice, apps should have at least two owners.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgApplicationOwnerByRef -InputObject <IApplicationsIdentity> [-Id <String
 ## DESCRIPTION
 Remove an owner from an application.
 As a recommended best practice, apps should have at least two owners.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

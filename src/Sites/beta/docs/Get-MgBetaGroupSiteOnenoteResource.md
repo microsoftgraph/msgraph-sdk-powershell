@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The image and other file resources in OneNote pages.
-Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -36,7 +36,7 @@ Get-MgBetaGroupSiteOnenoteResource -InputObject <ISitesIdentity> [-ExpandPropert
 
 ## DESCRIPTION
 The image and other file resources in OneNote pages.
-Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -320,7 +320,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
-  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

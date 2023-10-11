@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +19,6 @@ Get-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy [-ExpandProperty <Strin
 
 ## DESCRIPTION
 Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

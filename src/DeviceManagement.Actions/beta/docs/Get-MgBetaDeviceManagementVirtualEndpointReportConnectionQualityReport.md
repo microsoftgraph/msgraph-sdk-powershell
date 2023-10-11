@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport
 
 ## SYNOPSIS
-Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage.
-Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
-This API is available in the following national cloud deployments.
+Invoke action getConnectionQualityReports
 
 ## SYNTAX
 
@@ -30,9 +28,7 @@ Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport
 ```
 
 ## DESCRIPTION
-Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage.
-Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
-This API is available in the following national cloud deployments.
+Invoke action getConnectionQualityReports
 
 ## EXAMPLES
 

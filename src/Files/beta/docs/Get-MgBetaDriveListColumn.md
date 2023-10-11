@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDriveListColumn
 
 ## SYNOPSIS
-The collection of field definitions for this list.
+Get columns from drives
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaDriveListColumn -InputObject <IFilesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-The collection of field definitions for this list.
+Get columns from drives
 
 ## EXAMPLES
 

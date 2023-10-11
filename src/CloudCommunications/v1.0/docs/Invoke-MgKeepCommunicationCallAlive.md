@@ -15,7 +15,6 @@ We recommend that you send a request in shorter time intervals (every 15 minutes
 Make sure that these requests are successful to prevent the call from timing out and ending.
 Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ We recommend that you send a request in shorter time intervals (every 15 minutes
 Make sure that these requests are successful to prevent the call from timing out and ending.
 Attempting to send a request to a call that has already ended will result in a 404 Not-Found error.
 The resources related to the call should be cleaned up on the application side.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -153,7 +151,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
-  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport

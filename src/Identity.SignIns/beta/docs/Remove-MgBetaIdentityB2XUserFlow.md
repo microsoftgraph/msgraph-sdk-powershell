@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a b2xIdentityUserFlow object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaIdentityB2XUserFlow -InputObject <IIdentitySignInsIdentity> [-IfMat
 
 ## DESCRIPTION
 Delete a b2xIdentityUserFlow object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

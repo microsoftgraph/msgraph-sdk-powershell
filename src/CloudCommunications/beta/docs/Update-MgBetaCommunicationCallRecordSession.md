@@ -273,7 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartDateTime
-UTC time when the first user joined the session.
+UTC fime when the first user joined the session.
 The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
@@ -398,7 +398,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DnsSuffix <String>]`: DNS suffix associated with the network adapter of the media endpoint.
         - `[IPAddress <String>]`: IP address of the media endpoint.
         - `[LinkSpeed <Int64?>]`: Link speed in bits per second reported by the network adapter used by the media endpoint.
-        - `[MacAddress <String>]`: The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
+        - `[MacAddress <String>]`: The media access control (MAC) address of the media endpoint's network device.
         - `[NetworkTransportProtocol <String>]`: networkTransportProtocol
         - `[Port <Int32?>]`: Network port number used by media endpoint.
         - `[ReceivedQualityEventRatio <Single?>]`: Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
@@ -437,7 +437,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[AverageVideoFrameLossPercentage <Single?>]`: Average percentage of video frames lost as displayed to the user.
         - `[AverageVideoFrameRate <Single?>]`: Average frames per second received for a video stream, computed over the duration of the session.
         - `[AverageVideoPacketLossRate <Single?>]`: Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
-        - `[EndDateTime <DateTime?>]`: UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
+        - `[EndDateTime <DateTime?>]`: UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[IsAudioForwardErrorCorrectionUsed <Boolean?>]`: Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
         - `[LowFrameRateRatio <Single?>]`: Fraction of the call where frame rate is less than 7.5 frames per second.
         - `[LowVideoProcessingCapabilityRatio <Single?>]`: Fraction of the call that the client is running less than 70% expected video processing capability.
@@ -449,13 +449,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[PacketUtilization <Int64?>]`: Packet count for the stream.
         - `[PostForwardErrorCorrectionPacketLossRate <Single?>]`: Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
         - `[RmsFreezeDuration <TimeSpan?>]`: Root mean square of the received freeze duration related to the video stream.
-        - `[StartDateTime <DateTime?>]`: UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
+        - `[StartDateTime <DateTime?>]`: UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         - `[StreamDirection <String>]`: mediaStreamDirection
         - `[StreamId <String>]`: Unique identifier for the stream.
         - `[VideoCodec <String>]`: videoCodec
         - `[WasMediaBypassed <Boolean?>]`: True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.
     - `[StartDateTime <DateTime?>]`: UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[StartDateTime <DateTime?>]`: UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[StartDateTime <DateTime?>]`: UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 `CALLEE <IMicrosoftGraphCallRecordsEndpoint>`: endpoint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -543,7 +543,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DnsSuffix <String>]`: DNS suffix associated with the network adapter of the media endpoint.
       - `[IPAddress <String>]`: IP address of the media endpoint.
       - `[LinkSpeed <Int64?>]`: Link speed in bits per second reported by the network adapter used by the media endpoint.
-      - `[MacAddress <String>]`: The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
+      - `[MacAddress <String>]`: The media access control (MAC) address of the media endpoint's network device.
       - `[NetworkTransportProtocol <String>]`: networkTransportProtocol
       - `[Port <Int32?>]`: Network port number used by media endpoint.
       - `[ReceivedQualityEventRatio <Single?>]`: Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
@@ -582,7 +582,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AverageVideoFrameLossPercentage <Single?>]`: Average percentage of video frames lost as displayed to the user.
       - `[AverageVideoFrameRate <Single?>]`: Average frames per second received for a video stream, computed over the duration of the session.
       - `[AverageVideoPacketLossRate <Single?>]`: Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
-      - `[EndDateTime <DateTime?>]`: UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
+      - `[EndDateTime <DateTime?>]`: UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[IsAudioForwardErrorCorrectionUsed <Boolean?>]`: Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
       - `[LowFrameRateRatio <Single?>]`: Fraction of the call where frame rate is less than 7.5 frames per second.
       - `[LowVideoProcessingCapabilityRatio <Single?>]`: Fraction of the call that the client is running less than 70% expected video processing capability.
@@ -594,7 +594,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[PacketUtilization <Int64?>]`: Packet count for the stream.
       - `[PostForwardErrorCorrectionPacketLossRate <Single?>]`: Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
       - `[RmsFreezeDuration <TimeSpan?>]`: Root mean square of the received freeze duration related to the video stream.
-      - `[StartDateTime <DateTime?>]`: UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
+      - `[StartDateTime <DateTime?>]`: UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
       - `[StreamDirection <String>]`: mediaStreamDirection
       - `[StreamId <String>]`: Unique identifier for the stream.
       - `[VideoCodec <String>]`: videoCodec

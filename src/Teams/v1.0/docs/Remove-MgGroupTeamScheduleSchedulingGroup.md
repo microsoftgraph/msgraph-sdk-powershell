@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Mark a schedulingGroup as inactive by setting its isActive property.\nThis method does not remove the schedulingGroup from the schedule.
 Existing shift instances assigned to the scheduling group remain part of the group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-IfMatc
 ## DESCRIPTION
 Mark a schedulingGroup as inactive by setting its isActive property.\nThis method does not remove the schedulingGroup from the schedule.
 Existing shift instances assigned to the scheduling group remain part of the group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

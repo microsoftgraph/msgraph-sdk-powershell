@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an Outlook task group in the user's mailbox.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Create an Outlook task group in the user's mailbox.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

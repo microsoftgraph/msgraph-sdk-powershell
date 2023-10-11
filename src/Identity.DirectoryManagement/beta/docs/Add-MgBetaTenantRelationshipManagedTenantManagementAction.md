@@ -10,8 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Applies a management action against a specific managed tenant.
 By performing this operation the appropriate configurations will be made and policies created.
-As example when applying the require multifactor authentication for admins management action creates an Azure Active Directory conditional access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
-This API is available in the following national cloud deployments.
+As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
 
 ## SYNTAX
 
@@ -48,8 +47,7 @@ Add-MgBetaTenantRelationshipManagedTenantManagementAction -InputObject <IIdentit
 ## DESCRIPTION
 Applies a management action against a specific managed tenant.
 By performing this operation the appropriate configurations will be made and policies created.
-As example when applying the require multifactor authentication for admins management action creates an Azure Active Directory conditional access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
-This API is available in the following national cloud deployments.
+As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
 
 ## EXAMPLES
 

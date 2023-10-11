@@ -8,8 +8,7 @@ schema: 2.0.0
 # Publish-MgShareListContentType
 
 ## SYNOPSIS
-Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Publish-MgShareListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+Publishes a [contentType][] present in the content type hub site.
 
 ## EXAMPLES
 

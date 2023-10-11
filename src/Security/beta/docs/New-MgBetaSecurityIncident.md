@@ -464,7 +464,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DetailedRoles <String[]>]`: Detailed description of the entity role/s in an alert. Values are free-form.
     - `[RemediationStatus <String>]`: evidenceRemediationStatus
     - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-    - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
+    - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
     - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
     - `[Verdict <String>]`: evidenceVerdict
   - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.
@@ -512,7 +512,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DetailedRoles <String[]>]`: Detailed description of the entity role/s in an alert. Values are free-form.
       - `[RemediationStatus <String>]`: evidenceRemediationStatus
       - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-      - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
+      - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
       - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
       - `[Verdict <String>]`: evidenceVerdict
     - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.

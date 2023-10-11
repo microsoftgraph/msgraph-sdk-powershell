@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the default channel, General, of a team.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaGroupTeamPrimaryChannel -InputObject <ITeamsIdentity> [-ExpandProperty
 
 ## DESCRIPTION
 Get the default channel, General, of a team.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

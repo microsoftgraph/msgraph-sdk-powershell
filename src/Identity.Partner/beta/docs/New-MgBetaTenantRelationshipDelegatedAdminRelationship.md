@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new delegatedAdminRelationship object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -18,7 +17,7 @@ This API is available in the following national cloud deployments.
 New-MgBetaTenantRelationshipDelegatedAdminRelationship
  [-AccessAssignments <IMicrosoftGraphDelegatedAdminAccessAssignment[]>]
  [-AccessDetails <IMicrosoftGraphDelegatedAdminAccessDetails>] [-ActivatedDateTime <DateTime>]
- [-AdditionalProperties <Hashtable>] [-AutoExtendDuration <TimeSpan>] [-CreatedDateTime <DateTime>]
+ [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-Customer <IMicrosoftGraphDelegatedAdminRelationshipCustomerParticipant>] [-DisplayName <String>]
  [-Duration <TimeSpan>] [-EndDateTime <DateTime>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-Operations <IMicrosoftGraphDelegatedAdminRelationshipOperation[]>]
@@ -34,7 +33,6 @@ New-MgBetaTenantRelationshipDelegatedAdminRelationship
 
 ## DESCRIPTION
 Create a new delegatedAdminRelationship object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -117,24 +115,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AutoExtendDuration
-The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format.
-Supported values are: P0D, PT0S, P180D.
-Default value is PT0S.
-PT0S indicates that the relationship expires when the endDateTime is reached and it is not automatically extended.
-
-```yaml
-Type: System.TimeSpan
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -BodyParameter
 delegatedAdminRelationship
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -186,7 +166,7 @@ Accept wildcard characters: False
 ### -DisplayName
 The display name of the relationship used for ease of identification.
 Must be unique across all delegated admin relationships of the partner.
-This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
 
 ```yaml
 Type: System.String
@@ -203,7 +183,7 @@ Accept wildcard characters: False
 ### -Duration
 The duration of the relationship in ISO 8601 format.
 Must be a value between P1D and P2Y inclusive.
-This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
 
 ```yaml
 Type: System.TimeSpan
@@ -401,14 +381,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[Status <String>]`: delegatedAdminAccessAssignmentStatus
   - `[AccessDetails <IMicrosoftGraphDelegatedAdminAccessDetails>]`: delegatedAdminAccessDetails
   - `[ActivatedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
-  - `[AutoExtendDuration <TimeSpan?>]`: The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. Default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it is not automatically extended.
   - `[CreatedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
   - `[Customer <IMicrosoftGraphDelegatedAdminRelationshipCustomerParticipant>]`: delegatedAdminRelationshipCustomerParticipant
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the customer tenant as set by Azure AD. Read-only
     - `[TenantId <String>]`: The Azure AD-assigned tenant ID of the customer tenant.
-  - `[DisplayName <String>]`: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
-  - `[Duration <TimeSpan?>]`: The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
+  - `[DisplayName <String>]`: The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+  - `[Duration <TimeSpan?>]`: The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
   - `[EndDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
   - `[Operations <IMicrosoftGraphDelegatedAdminRelationshipOperation[]>]`: The long running operations associated with the delegated admin relationship.

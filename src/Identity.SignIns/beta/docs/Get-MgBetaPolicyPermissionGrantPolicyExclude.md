@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
-Condition sets that are excluded in this permission grant policy.
+Condition sets which are excluded in this permission grant policy.
 Automatically expanded on GET.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdent
 ```
 
 ## DESCRIPTION
-Condition sets that are excluded in this permission grant policy.
+Condition sets which are excluded in this permission grant policy.
 Automatically expanded on GET.
 
 ## EXAMPLES

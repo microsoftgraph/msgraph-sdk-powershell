@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a device object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgDeviceByDeviceId -InputObject <IIdentityDirectoryManagementIdentity> [-Exp
 
 ## DESCRIPTION
 Get the properties and relationships of a device object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

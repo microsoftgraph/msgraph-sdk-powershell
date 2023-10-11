@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventSessionRecording
 
 ## SYNOPSIS
-Get recording for the navigation property sessions from solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -44,7 +45,8 @@ Get-MgBetaVirtualEventSessionRecording -InputObject <IBookingsIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Get recording for the navigation property sessions from solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

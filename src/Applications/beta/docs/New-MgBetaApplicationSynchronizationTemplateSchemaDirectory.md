@@ -237,7 +237,7 @@ Accept wildcard characters: False
 
 ### -Version
 Read only value that indicates version discovered.
-null if discovery hasn't yet occurred.
+null if discovery has not yet occurred.
 
 ```yaml
 Type: System.String
@@ -336,7 +336,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
     - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
   - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
-  - `[Version <String>]`: Read only value that indicates version discovered. null if discovery hasn't yet occurred.
+  - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppId <String>]`: Alternate key of application
@@ -365,7 +365,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
-  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application

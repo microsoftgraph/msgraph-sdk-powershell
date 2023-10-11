@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: 615437cc-93d3-4870-b57a-2fa0616199e5
+Module Guid: 27ce43e1-15ea-47c7-8a7c-46b1782ca5f7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -42,7 +42,7 @@ Get the number of the resource
 Get roleManagement
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfiguration](New-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Create a new enrollmentConfigurationAssignment object.
@@ -72,7 +72,7 @@ Deletes a windowsAutopilotDeviceIdentity.
 Update the properties of a onPremisesConditionalAccessSettings object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfiguration](Update-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Update the properties of a deviceEnrollmentLimitConfiguration object.
+Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Update the properties of a enrollmentConfigurationAssignment object.

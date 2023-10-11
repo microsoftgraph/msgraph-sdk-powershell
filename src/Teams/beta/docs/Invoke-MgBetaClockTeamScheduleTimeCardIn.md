@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Clock in to start a timeCard.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Invoke-MgBetaClockTeamScheduleTimeCardIn -InputObject <ITeamsIdentity> [-Additio
 
 ## DESCRIPTION
 Clock in to start a timeCard.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

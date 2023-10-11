@@ -11,7 +11,6 @@ schema: 2.0.0
 Retrieve a single chat (without its messages).
 This method supports federation.
 To access a chat, at least one chat member must belong to the tenant the request initiated from.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +37,6 @@ Get-MgBetaUserChat -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-
 Retrieve a single chat (without its messages).
 This method supports federation.
 To access a chat, at least one chat member must belong to the tenant the request initiated from.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

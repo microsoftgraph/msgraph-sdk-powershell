@@ -9,9 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
-If any devices can't be resized, those devices indicate 'resize failed'.
-The remaining devices are provisioned for the resize process.
-This API is available in the following national cloud deployments.
+If any devices cannot be resized, those devices will indicate 'resize failed'.
+The remaining devices will be provisioned for the resize process.
 
 ## SYNTAX
 
@@ -43,9 +42,8 @@ Invoke-MgBetaBulkUserCloudPcResize -InputObject <IUsersActionsIdentity> [-Additi
 
 ## DESCRIPTION
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
-If any devices can't be resized, those devices indicate 'resize failed'.
-The remaining devices are provisioned for the resize process.
-This API is available in the following national cloud deployments.
+If any devices cannot be resized, those devices will indicate 'resize failed'.
+The remaining devices will be provisioned for the resize process.
 
 ## EXAMPLES
 
@@ -227,6 +225,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: The unique identifier of device
   - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
   - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
   - `[DriveId <String>]`: The unique identifier of drive
@@ -248,6 +247,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

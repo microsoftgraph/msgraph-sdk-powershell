@@ -8,8 +8,7 @@ schema: 2.0.0
 # Join-MgBetaGroupSiteContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a content type][contentType] with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a [content type][contentType] with a list of hub sites.
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Join-MgBetaGroupSiteContentTypeWithHubSite -InputObject <IGroupsIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Associate a content type][contentType] with a list of hub sites.
-This API is available in the following [national cloud deployments.
+Associate a [content type][contentType] with a list of hub sites.
 
 ## EXAMPLES
 

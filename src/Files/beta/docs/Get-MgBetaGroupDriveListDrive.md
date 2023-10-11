@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveListDrive
 
 ## SYNOPSIS
-Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Get-MgBetaGroupDriveListDrive -InputObject <IFilesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ## EXAMPLES
 

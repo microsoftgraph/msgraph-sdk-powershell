@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
-A definition that doesn't recur will have exactly one instance.
+A definition that does not recur will have exactly one instance.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinitionInstance -InputObject <
 
 ## DESCRIPTION
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
-A definition that doesn't recur will have exactly one instance.
+A definition that does not recur will have exactly one instance.
 
 ## EXAMPLES
 
@@ -317,7 +317,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
-  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

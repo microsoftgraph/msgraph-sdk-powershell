@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new delegatedAdminRelationshipRequest object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgBetaTenantRelationshipDelegatedAdminRelationshipRequest -InputObject <IIde
 
 ## DESCRIPTION
 Create a new delegatedAdminRelationshipRequest object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

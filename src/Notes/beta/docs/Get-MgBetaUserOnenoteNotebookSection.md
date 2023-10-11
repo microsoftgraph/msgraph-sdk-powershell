@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of section objects from the specified notebook.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgBetaUserOnenoteNotebookSection -NotebookId <String> -UserId <String> [-Exp
 
 ## DESCRIPTION
 Retrieve a list of section objects from the specified notebook.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a featureRolloutPolicy object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgPolicyFeatureRolloutPolicy -InputObject <IIdentitySignInsIdentity> [-If
 
 ## DESCRIPTION
 Delete a featureRolloutPolicy object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

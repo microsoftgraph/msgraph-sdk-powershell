@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new staff member in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-Addition
 
 ## DESCRIPTION
 Create a new staff member in the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

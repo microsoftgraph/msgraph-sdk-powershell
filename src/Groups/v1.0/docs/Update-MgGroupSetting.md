@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -67,7 +66,6 @@ Update-MgGroupSetting -InputObject <IGroupsIdentity> [-AdditionalProperties <Has
 
 ## DESCRIPTION
 Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Set the review status of a specific Cloud PC device.
 Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
 After the review is completed, use this API again to set the Cloud PC back to a normal state.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Set-MgBetaDeviceManagementComanagedDeviceCloudPcReviewStatus -InputObject <IDevi
 Set the review status of a specific Cloud PC device.
 Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
 After the review is completed, use this API again to set the Cloud PC back to a normal state.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

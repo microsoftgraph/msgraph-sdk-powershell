@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Get a team that has been shared with a specified channel.
 This operation is allowed only for channels with a membershipType value of shared.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +47,6 @@ Get-MgBetaGroupTeamPrimaryChannelSharedWithTeam -InputObject <ITeamsIdentity> [-
 ## DESCRIPTION
 Get a team that has been shared with a specified channel.
 This operation is allowed only for channels with a membershipType value of shared.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

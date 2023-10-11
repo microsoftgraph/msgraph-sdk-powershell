@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupConversation
 
 ## SYNOPSIS
-Delete conversation.
-This API is available in the following national cloud deployments.
+Delete a conversation object.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete conversation.
-This API is available in the following national cloud deployments.
+Delete a conversation object.
 
 ## EXAMPLES
 

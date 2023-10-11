@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Restore a specific Cloud PC.
 Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ Restore-MgBetaDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManage
 ## DESCRIPTION
 Restore a specific Cloud PC.
 Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:  This API is available in the following national cloud deployments.
+Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Test-MgBetaSiteInformationProtectionPolicyLabelRemoval -InputObject <ISitesIdent
 
 ## DESCRIPTION
 Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:  This API is available in the following national cloud deployments.
+Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
 
 ## EXAMPLES
 
@@ -222,8 +222,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[State <String>]`: contentState
   - `[DowngradeJustification <IMicrosoftGraphDowngradeJustification>]`: downgradeJustification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or isn't justified.
-    - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message appears in administrative logs.
+    - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or is not justified.
+    - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
 
 `CONTENTINFO <IMicrosoftGraphContentInfo>`: contentInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -236,8 +236,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `DOWNGRADEJUSTIFICATION <IMicrosoftGraphDowngradeJustification>`: downgradeJustification
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or isn't justified.
-  - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message appears in administrative logs.
+  - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or is not justified.
+  - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
 
 `INPUTOBJECT <ISitesIdentity>`: Identity Parameter
   - `[BaseItemId <String>]`: The unique identifier of baseItem
@@ -269,7 +269,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
-  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

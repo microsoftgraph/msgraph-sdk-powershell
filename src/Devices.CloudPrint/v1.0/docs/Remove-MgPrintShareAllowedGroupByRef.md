@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Revoke the specified group's access to submit print jobs to the associated printerShare.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> [
 
 ## DESCRIPTION
 Revoke the specified group's access to submit print jobs to the associated printerShare.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

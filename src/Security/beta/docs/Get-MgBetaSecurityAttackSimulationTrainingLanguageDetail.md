@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityAttackSimulationTrainingLanguageDetail
 
 ## SYNOPSIS
-Language specific details on a training.
+Get languageDetails from security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityAttackSimulationTrainingLanguageDetail -InputObject <ISecurity
 ```
 
 ## DESCRIPTION
-Language specific details on a training.
+Get languageDetails from security
 
 ## EXAMPLES
 
@@ -305,7 +305,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSecurityProfileId <String>]`: The unique identifier of hostSecurityProfile
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker

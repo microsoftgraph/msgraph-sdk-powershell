@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles: This API is supported in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity>
 
 ## DESCRIPTION
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles: This API is supported in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:
 
 ## EXAMPLES
 

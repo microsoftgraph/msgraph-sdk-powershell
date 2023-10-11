@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of the specified team.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ Get-MgBetaTeam -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-Prop
 
 ## DESCRIPTION
 Retrieve the properties and relationships of the specified team.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

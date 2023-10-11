@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a term object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -81,7 +80,6 @@ Update-MgGroupSiteTermStoreGroupSetTerm -InputObject <ISitesIdentity> [-Addition
 
 ## DESCRIPTION
 Update the properties of a term object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

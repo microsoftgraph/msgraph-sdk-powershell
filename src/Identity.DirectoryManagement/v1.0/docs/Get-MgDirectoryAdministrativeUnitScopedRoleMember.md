@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirecto
 
 ## DESCRIPTION
 Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

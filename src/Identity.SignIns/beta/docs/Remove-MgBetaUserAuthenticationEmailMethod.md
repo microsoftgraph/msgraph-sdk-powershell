@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a user's email Authentication Method object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentit
 
 ## DESCRIPTION
 Deletes a user's email Authentication Method object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

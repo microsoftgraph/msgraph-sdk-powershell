@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the list of groups that are included in a mobile app management policy.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgBetaPolicyMobileAppManagementPolicyIncludedGroup -MobilityManagementPolicy
 
 ## DESCRIPTION
 Get the list of groups that are included in a mobile app management policy.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgSiteListItem
 
 ## SYNOPSIS
-Removes an item from a list][].
-This API is supported in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgSiteListItem -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
-Removes an item from a list][].
-This API is supported in the following [national cloud deployments.
+Removes an item from a [list][].
 
 ## EXAMPLES
 

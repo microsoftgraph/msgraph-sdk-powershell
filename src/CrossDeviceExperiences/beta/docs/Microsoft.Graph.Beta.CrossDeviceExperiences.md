@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-Module Guid: 4919c262-0e1d-46aa-ba60-a951429790b6
+Module Guid: d301711f-d018-4d53-bc9e-373da56cb7cd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -186,18 +186,15 @@ Create new navigation property to extensions for users
 
 ### [New-MgBetaUserDeviceRegisteredOwnerByRef](New-MgBetaUserDeviceRegisteredOwnerByRef.md)
 Add a user as a registered owner of the device.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserDeviceRegisteredUserByRef](New-MgBetaUserDeviceRegisteredUserByRef.md)
 Add a registered user for the device.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserDeviceUsageRights](New-MgBetaUserDeviceUsageRights.md)
 Create new navigation property to usageRights for users
 
 ### [Remove-MgBetaUserActivity](Remove-MgBetaUserActivity.md)
 Delete an existing user activity for your app.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserActivityHistoryItem](Remove-MgBetaUserActivityHistoryItem.md)
 Delete navigation property historyItems for users
@@ -213,11 +210,9 @@ Delete navigation property extensions for users
 
 ### [Remove-MgBetaUserDeviceRegisteredOwnerByRef](Remove-MgBetaUserDeviceRegisteredOwnerByRef.md)
 Remove a user as a registered owner of the device.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDeviceRegisteredUserByRef](Remove-MgBetaUserDeviceRegisteredUserByRef.md)
 Remove a user as a registered user of the device.
-This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDeviceUsageRights](Remove-MgBetaUserDeviceUsageRights.md)
 Delete navigation property usageRights for users
@@ -227,7 +222,6 @@ Update the navigation property activities in users
 
 ### [Update-MgBetaUserActivityHistoryItem](Update-MgBetaUserActivityHistoryItem.md)
 Delete an existing history item for an existing user activity.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDevice](Update-MgBetaUserDevice.md)
 Update the navigation property devices in users

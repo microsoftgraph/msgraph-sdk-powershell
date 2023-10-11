@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
 This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword
 ## DESCRIPTION
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
 This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Revoke-MgBetaGroupDriveItemPermissionGrant
 
 ## SYNOPSIS
-Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
-This API is available in the following [national cloud deployments.
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Revoke-MgBetaGroupDriveItemPermissionGrant -InputObject <IGroupsIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
-This API is available in the following [national cloud deployments.
+Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
 
 ## EXAMPLES
 

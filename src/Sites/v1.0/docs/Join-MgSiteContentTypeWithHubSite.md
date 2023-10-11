@@ -8,8 +8,7 @@ schema: 2.0.0
 # Join-MgSiteContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is supported in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Join-MgSiteContentTypeWithHubSite -InputObject <ISitesIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Associate a published content type][contentType] present in a content type hub with a list of hub sites.
-This API is supported in the following [national cloud deployments.
+Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
 
 ## EXAMPLES
 

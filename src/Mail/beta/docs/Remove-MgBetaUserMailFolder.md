@@ -11,7 +11,6 @@ schema: 2.0.0
 Delete the specified mailFolder.
 The folder can be a mailSearchFolder.
 You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +30,6 @@ Remove-MgBetaUserMailFolder -InputObject <IMailIdentity> [-IfMatch <String>] [-P
 Delete the specified mailFolder.
 The folder can be a mailSearchFolder.
 You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

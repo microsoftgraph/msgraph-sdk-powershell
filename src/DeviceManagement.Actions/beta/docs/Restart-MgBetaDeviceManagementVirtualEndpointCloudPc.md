@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reboot a specific Cloud PC.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Restart-MgBetaDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManage
 
 ## DESCRIPTION
 Reboot a specific Cloud PC.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

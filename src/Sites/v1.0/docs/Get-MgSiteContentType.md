@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgSiteContentType
 
 ## SYNOPSIS
-Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgSiteContentType -InputObject <ISitesIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
-This API is supported in the following [national cloud deployments.
+Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
 
 ## EXAMPLES
 

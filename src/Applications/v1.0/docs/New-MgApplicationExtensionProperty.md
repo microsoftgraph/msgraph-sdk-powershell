@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new directory extension definition, represented by an extensionProperty object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Additi
 
 ## DESCRIPTION
 Create a new directory extension definition, represented by an extensionProperty object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

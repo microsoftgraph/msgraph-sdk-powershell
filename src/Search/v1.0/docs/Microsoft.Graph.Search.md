@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 918ed349-be62-400a-962c-8dc2489dd4b6
+Module Guid: 8a576fad-6063-46b5-9fcc-5e941dbd5abc
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,14 +19,12 @@ Get external
 
 ### [Get-MgExternalConnection](Get-MgExternalConnection.md)
 Read the properties and relationships of an externalConnection object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgExternalConnectionCount](Get-MgExternalConnectionCount.md)
 Get the number of the resource
 
 ### [Get-MgExternalConnectionGroup](Get-MgExternalConnectionGroup.md)
 Get an externalGroup object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgExternalConnectionGroupCount](Get-MgExternalConnectionGroupCount.md)
 Get the number of the resource
@@ -40,7 +38,6 @@ Get the number of the resource
 
 ### [Get-MgExternalConnectionItem](Get-MgExternalConnectionItem.md)
 Read the properties and relationships of an externalItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgExternalConnectionItemActivity](Get-MgExternalConnectionItemActivity.md)
 Returns a list of activities performed on the item.
@@ -57,14 +54,12 @@ Get the number of the resource
 
 ### [Get-MgExternalConnectionOperation](Get-MgExternalConnectionOperation.md)
 Read the properties and relationships of a connectionOperation object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgExternalConnectionOperationCount](Get-MgExternalConnectionOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
 Read the properties and relationships of a schema object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
@@ -72,19 +67,15 @@ Get search
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
 Runs the query specified in the request body.
 Search results are provided in the response.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
 Create a new externalConnection object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgExternalConnectionGroup](New-MgExternalConnectionGroup.md)
 Create a new externalGroup object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgExternalConnectionGroupMember](New-MgExternalConnectionGroupMember.md)
 Create an identity resource for a new member in an externalGroup.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external
@@ -97,25 +88,24 @@ Create new navigation property to operations for external
 
 ### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
 Deletes an externalConnection object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgExternalConnectionGroup](Remove-MgExternalConnectionGroup.md)
 Delete an externalGroup object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgExternalConnectionGroupMember](Remove-MgExternalConnectionGroupMember.md)
 Delete an identity resource to remove the corresponding member from an externalGroup.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgExternalConnectionItem](Remove-MgExternalConnectionItem.md)
 Delete an externalItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgExternalConnectionItemActivity](Remove-MgExternalConnectionItemActivity.md)
 Delete navigation property activities for external
 
 ### [Remove-MgExternalConnectionOperation](Remove-MgExternalConnectionOperation.md)
 Delete navigation property operations for external
+
+### [Remove-MgExternalConnectionSchema](Remove-MgExternalConnectionSchema.md)
+Delete navigation property schema for external
 
 ### [Set-MgExternalConnectionItem](Set-MgExternalConnectionItem.md)
 Update the navigation property items in external
@@ -125,11 +115,9 @@ Update external
 
 ### [Update-MgExternalConnection](Update-MgExternalConnection.md)
 Update the properties of an externalConnection object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgExternalConnectionGroup](Update-MgExternalConnectionGroup.md)
 Update the properties of an externalGroup object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgExternalConnectionGroupMember](Update-MgExternalConnectionGroupMember.md)
 Update the navigation property members in external

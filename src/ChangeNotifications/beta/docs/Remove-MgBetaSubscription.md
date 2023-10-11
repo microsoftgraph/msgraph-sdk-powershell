@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a subscription.
 For the list of resources that support subscribing to change notifications, see the table in the Permissions section.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +28,6 @@ Remove-MgBetaSubscription -InputObject <IChangeNotificationsIdentity> [-IfMatch 
 ## DESCRIPTION
 Delete a subscription.
 For the list of resources that support subscribing to change notifications, see the table in the Permissions section.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgBetaCommunicationOnlineMeetingAttendeeReport
 
 ## SYNOPSIS
-Update attendeeReport for the navigation property onlineMeetings in communications
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgBetaCommunicationOnlineMeetingAttendeeReport -InputObject <ICloudCommunica
 ```
 
 ## DESCRIPTION
-Update attendeeReport for the navigation property onlineMeetings in communications
+The content stream of the attendee report of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

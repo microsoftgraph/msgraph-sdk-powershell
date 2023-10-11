@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDriveItemRetentionLabel
 
 ## SYNOPSIS
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from drives
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgBetaDriveItemRetentionLabel -InputObject <IFilesIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Information about retention label and settings enforced on the driveItem.
-Read-write.
+Get retentionLabel from drives
 
 ## EXAMPLES
 

@@ -11,7 +11,6 @@ schema: 2.0.0
 Upload a certificate to a trustFrameworkKeyset.
 The input is a base-64 encoded value of the certificate contents.
 This method returns trustFrameworkKey.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ Invoke-MgBetaUploadTrustFrameworkKeySetCertificate -InputObject <IIdentitySignIn
 Upload a certificate to a trustFrameworkKeyset.
 The input is a base-64 encoded value of the certificate contents.
 This method returns trustFrameworkKey.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

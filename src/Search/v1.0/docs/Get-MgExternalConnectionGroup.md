@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an externalGroup object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgExternalConnectionGroup -InputObject <ISearchIdentity> [-ExpandProperty <S
 
 ## DESCRIPTION
 Get an externalGroup object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a windowsHelloForBusinessAuthenticationMethod object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +27,6 @@ Remove-MgBetaUserAuthenticationWindowsHelloForBusinessMethod -InputObject <IIden
 
 ## DESCRIPTION
 Deletes a windowsHelloForBusinessAuthenticationMethod object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

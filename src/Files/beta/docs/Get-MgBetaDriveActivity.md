@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 List the recent activities that took place on an item or under a hierarchy.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgBetaDriveActivity -DriveId <String> [-ExpandProperty <String[]>] [-Filter 
 
 ## DESCRIPTION
 List the recent activities that took place on an item or under a hierarchy.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

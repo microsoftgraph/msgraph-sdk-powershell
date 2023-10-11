@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a user's presence information.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaUserPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Get a user's presence information.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

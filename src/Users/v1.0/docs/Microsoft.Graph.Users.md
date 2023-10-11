@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 5787c66b-fbee-4503-9800-a1d864cc9a89
+Module Guid: 736d006a-5d1e-49e4-8511-236d9bebb0fa
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,7 +18,7 @@ Read properties and relationships of the user object.
 Get the number of the resource
 
 ### [Get-MgUserCreatedObject](Get-MgUserCreatedObject.md)
-Directory objects that the user created.
+Directory objects that were created by the user.
 Read-only.
 Nullable.
 
@@ -76,12 +76,10 @@ Returned only on $select.
 ### [Get-MgUserManager](Get-MgUserManager.md)
 Returns the user or organizational contact assigned as the user's manager.
 Optionally, you can expand the manager's chain up to the root node.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
 Returns the user or organizational contact assigned as the user's manager.
 Optionally, you can expand the manager's chain up to the root node.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
 The groups and directory roles that the user is a member of.
@@ -118,7 +116,6 @@ Get the number of the resource
 
 ### [Get-MgUserOutlookMasterCategory](Get-MgUserOutlookMasterCategory.md)
 Get the properties and relationships of the specified outlookCategory object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserOutlookMasterCategoryCount](Get-MgUserOutlookMasterCategoryCount.md)
 Get the number of the resource
@@ -182,7 +179,6 @@ Get the specified profilePhoto or its metadata (profilePhoto properties).
 The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
 Photos can be any dimension if they are stored in Azure Active Directory.
 You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserPhotoContent](Get-MgUserPhotoContent.md)
 Get media content for the navigation property photo from users
@@ -194,7 +190,7 @@ Get the number of the resource
 Devices that are registered for the user.
 Read-only.
 Nullable.
-Supports $expand and returns up to 100 objects.
+Supports $expand.
 
 ### [Get-MgUserRegisteredDeviceAsAppRoleAssignment](Get-MgUserRegisteredDeviceAsAppRoleAssignment.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
@@ -219,15 +215,12 @@ Get the number of the resource
 
 ### [Get-MgUserSetting](Get-MgUserSetting.md)
 Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserTodoList](Get-MgUserTodoList.md)
 Read the properties and relationships of a todoTaskList object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserTodoListCount](Get-MgUserTodoListCount.md)
 Get the number of the resource
@@ -241,11 +234,9 @@ Get the number of the resource
 
 ### [Get-MgUserTodoTask](Get-MgUserTodoTask.md)
 Read the properties and relationships of a todoTask object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserTodoTaskAttachment](Get-MgUserTodoTaskAttachment.md)
 Read the properties and relationships of a taskFileAttachment object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserTodoTaskAttachmentContent](Get-MgUserTodoTaskAttachmentContent.md)
 Get media content for the navigation property attachments from users
@@ -264,7 +255,6 @@ Get the number of the resource
 
 ### [Get-MgUserTodoTaskChecklistItem](Get-MgUserTodoTaskChecklistItem.md)
 Read the properties and relationships of a checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserTodoTaskChecklistItemCount](Get-MgUserTodoTaskChecklistItemCount.md)
 Get the number of the resource
@@ -281,7 +271,6 @@ Get the number of the resource
 
 ### [Get-MgUserTodoTaskLinkedResource](Get-MgUserTodoTaskLinkedResource.md)
 Read the properties and relationships of a linkedResource object.
-This API is supported in the following national cloud deployments.
 
 ### [Get-MgUserTodoTaskLinkedResourceCount](Get-MgUserTodoTaskLinkedResourceCount.md)
 Get the number of the resource
@@ -319,28 +308,23 @@ Create new navigation property to extensions for users
 
 ### [New-MgUserOutlookMasterCategory](New-MgUserOutlookMasterCategory.md)
 Create an outlookCategory object in the user's master list of categories.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserTodoList](New-MgUserTodoList.md)
 Create a new lists object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserTodoListExtension](New-MgUserTodoListExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTask](New-MgUserTodoListTask.md)
 Create a new task object in a specified todoTaskList.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserTodoListTaskAttachment](New-MgUserTodoListTaskAttachment.md)
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
 Create a new checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [New-MgUserTodoListTaskExtension](New-MgUserTodoListTaskExtension.md)
 Create new navigation property to extensions for users
@@ -349,14 +333,9 @@ Create new navigation property to extensions for users
 Create a linkedResource object to associate a specified task with an item in a partner application.
 For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association.
 You can also create a linkedResource object while creating a task.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUser](Remove-MgUser.md)
-Delete user.
- When deleted, user resources are moved to a temporary container and can be restored within 30 days.
-After that time, they are permanently deleted.
-To learn more, see deletedItems.
-This API is supported in the following national cloud deployments.
+Deletes a user.
 
 ### [Remove-MgUserExtension](Remove-MgUserExtension.md)
 Delete navigation property extensions for users
@@ -366,15 +345,12 @@ Delete navigation property licenseDetails for users
 
 ### [Remove-MgUserManager](Remove-MgUserManager.md)
 Remove a user's manager.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserManagerByRef](Remove-MgUserManagerByRef.md)
 Remove a user's manager.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserOutlookMasterCategory](Remove-MgUserOutlookMasterCategory.md)
 Delete the specified outlookCategory object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserPhoto](Remove-MgUserPhoto.md)
 Delete navigation property photo for users
@@ -387,36 +363,30 @@ Delete navigation property shiftPreferences for users
 
 ### [Remove-MgUserTodoList](Remove-MgUserTodoList.md)
 Deletes a todoTaskList object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserTodoListExtension](Remove-MgUserTodoListExtension.md)
 Delete navigation property extensions for users
 
 ### [Remove-MgUserTodoListTask](Remove-MgUserTodoListTask.md)
 Deletes a todoTask object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserTodoListTaskAttachment](Remove-MgUserTodoListTaskAttachment.md)
 Delete a taskFileAttachment object from a todoTask resource.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserTodoListTaskAttachmentSession](Remove-MgUserTodoListTaskAttachmentSession.md)
 Delete navigation property attachmentSessions for users
 
 ### [Remove-MgUserTodoListTaskChecklistItem](Remove-MgUserTodoListTaskChecklistItem.md)
 Delete a checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Remove-MgUserTodoListTaskExtension](Remove-MgUserTodoListTaskExtension.md)
 Delete navigation property extensions for users
 
 ### [Remove-MgUserTodoListTaskLinkedResource](Remove-MgUserTodoListTaskLinkedResource.md)
 Deletes a linkedResource object.
-This API is supported in the following national cloud deployments.
 
 ### [Set-MgUserManagerByRef](Set-MgUserManagerByRef.md)
 Assign a user's manager.
-This API is supported in the following national cloud deployments.
 
 ### [Set-MgUserPhotoContent](Set-MgUserPhotoContent.md)
 Update media content for the navigation property photo in users
@@ -431,7 +401,6 @@ The content streams that are uploaded.
 Update the properties of a user object.
 Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles.
 Compare member and guest default permissions to see properties they can manage.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserExtension](Update-MgUserExtension.md)
 Update the navigation property extensions in users
@@ -444,8 +413,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
 Update the writable property, color, of the specified outlookCategory object.
-You can't modify the displayName property\nonce you have created the category.
-This API is supported in the following national cloud deployments.
+You cannot modify the displayName property \nonce you have created the category.
 
 ### [Update-MgUserPhoto](Update-MgUserPhoto.md)
 Update the navigation property photo in users
@@ -454,34 +422,28 @@ Update the navigation property photo in users
 Update the properties of the userSettings object.
 \nUsers in the same organization can have different settings based on their preference or on the organization policies.
 \nTo get the user current settings, see current user settings.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserTodoList](Update-MgUserTodoList.md)
 Update the properties of a todoTaskList object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserTodoListExtension](Update-MgUserTodoListExtension.md)
 Update the navigation property extensions in users
 
 ### [Update-MgUserTodoListTask](Update-MgUserTodoListTask.md)
 Update the properties of a todoTask object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserTodoListTaskAttachmentSession](Update-MgUserTodoListTaskAttachmentSession.md)
 Update the navigation property attachmentSessions in users
 
 ### [Update-MgUserTodoListTaskChecklistItem](Update-MgUserTodoListTaskChecklistItem.md)
 Update the properties of a checklistItem object.
-This API is supported in the following national cloud deployments.
 
 ### [Update-MgUserTodoListTaskExtension](Update-MgUserTodoListTaskExtension.md)
 Update the navigation property extensions in users
 
 ### [Update-MgUserTodoListTaskLinkedResource](Update-MgUserTodoListTaskLinkedResource.md)
 Update the properties of a linkedResource object.
-This API is supported in the following national cloud deployments.
 

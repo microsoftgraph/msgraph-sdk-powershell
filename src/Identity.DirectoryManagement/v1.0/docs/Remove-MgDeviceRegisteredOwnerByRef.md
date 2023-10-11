@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a user as a registered owner of the device.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementId
 
 ## DESCRIPTION
 Remove a user as a registered owner of the device.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

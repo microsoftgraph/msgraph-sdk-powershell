@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DirectoryObjects
-Module Guid: 85e02e14-7c0f-41c2-b1ed-b91c615595ba
+Module Guid: 3ffd56e0-d2ff-41a6-b461-461cd5cef8f4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,18 +17,16 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaDirectoryObjectMemberObject](Confirm-MgBetaDirectoryObjectMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Get-MgBetaDirectoryObject](Get-MgBetaDirectoryObject.md)
 Retrieve the properties and relationships of a directoryObject object.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryObjectById](Get-MgBetaDirectoryObjectById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ### [Get-MgBetaDirectoryObjectCount](Get-MgBetaDirectoryObjectCount.md)
 Get the number of the resource
@@ -42,7 +40,6 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryObjectMemberObject](Get-MgBetaDirectoryObjectMemberObject.md)
 Invoke action getMemberObjects
@@ -50,14 +47,12 @@ Invoke action getMemberObjects
 ### [Get-MgBetaDirectoryObjectUserOwnedObject](Get-MgBetaDirectoryObjectUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
-This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryObject](New-MgBetaDirectoryObject.md)
 Add new entity to directoryObjects
 
 ### [Remove-MgBetaDirectoryObject](Remove-MgBetaDirectoryObject.md)
 Delete a directory object, for example, a group, user, application, or service principal.
-This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaDirectoryObjectProperty](Test-MgBetaDirectoryObjectProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -69,7 +64,6 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDirectoryObject](Update-MgBetaDirectoryObject.md)
 Update entity in directoryObjects

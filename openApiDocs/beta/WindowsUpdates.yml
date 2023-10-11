@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAsset
-      description: Read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
+      summary: Get azureADDevice
+      description: Read the properties of an azureADDevice object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6692,7 +6692,7 @@ paths:
       tags:
         - admin.adminWindows
       summary: Delete complianceChange
-      description: Delete a complianceChange object. This API is available in the following national cloud deployments.
+      description: Delete a complianceChange object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0

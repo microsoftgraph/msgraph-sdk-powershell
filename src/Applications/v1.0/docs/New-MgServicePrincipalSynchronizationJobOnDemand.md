@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Select a user and provision the account on-demand.
 The rate limit for this API is 5 requests per 10 seconds.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +44,6 @@ New-MgServicePrincipalSynchronizationJobOnDemand -InputObject <IApplicationsIden
 ## DESCRIPTION
 Select a user and provision the account on-demand.
 The rate limit for this API is 5 requests per 10 seconds.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Set the state of a user's presence session as an application.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +42,6 @@ Set-MgUserPresence -InputObject <IUsersActionsIdentity> [-Activity <String>]
 
 ## DESCRIPTION
 Set the state of a user's presence session as an application.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

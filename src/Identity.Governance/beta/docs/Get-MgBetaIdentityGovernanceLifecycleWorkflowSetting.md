@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a lifecycleManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +19,6 @@ Get-MgBetaIdentityGovernanceLifecycleWorkflowSetting [-ExpandProperty <String[]>
 
 ## DESCRIPTION
 Read the properties and relationships of a lifecycleManagementSettings object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

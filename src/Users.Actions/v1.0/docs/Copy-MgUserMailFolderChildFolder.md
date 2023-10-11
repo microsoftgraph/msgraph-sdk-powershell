@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Copy a mailfolder and its contents to another mailfolder.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Copy-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity> [-Addition
 
 ## DESCRIPTION
 Copy a mailfolder and its contents to another mailfolder.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

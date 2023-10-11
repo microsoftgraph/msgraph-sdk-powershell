@@ -8,9 +8,8 @@ schema: 2.0.0
 # Get-MgBetaEducationClassMember
 
 ## SYNOPSIS
-Retrieve the teachers and students for a class.
+Retrieves the teachers and students for a class.
 Note that if the delegated token is used, members can only be seen by other members of the class.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,9 +20,8 @@ Get-MgBetaEducationClassMember -EducationClassId <String> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Retrieve the teachers and students for a class.
+Retrieves the teachers and students for a class.
 Note that if the delegated token is used, members can only be seen by other members of the class.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

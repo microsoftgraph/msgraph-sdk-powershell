@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a contact folder by using the contact folder ID.
-There are two scenarios where an app can get another user's contact folder: This API is available in the following national cloud deployments.
+There are two scenarios where an app can get another user's contact folder:
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaUserContactFolder -InputObject <IPersonalContactsIdentity> [-ExpandPro
 
 ## DESCRIPTION
 Get a contact folder by using the contact folder ID.
-There are two scenarios where an app can get another user's contact folder: This API is available in the following national cloud deployments.
+There are two scenarios where an app can get another user's contact folder:
 
 ## EXAMPLES
 

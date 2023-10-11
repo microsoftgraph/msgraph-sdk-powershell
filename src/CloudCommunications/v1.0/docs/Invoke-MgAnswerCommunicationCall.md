@@ -13,7 +13,6 @@ The incoming call request can be an invite from a participant in a group call or
 If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters.
 The bot is expected to answer, reject, or redirect the call before the call times out.
 The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +52,6 @@ The incoming call request can be an invite from a participant in a group call or
 If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters.
 The bot is expected to answer, reject, or redirect the call before the call times out.
 The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -341,7 +339,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
-  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport

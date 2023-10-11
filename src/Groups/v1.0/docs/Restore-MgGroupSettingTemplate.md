@@ -13,7 +13,6 @@ If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
 After 30 days, the item is permanently deleted.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +32,6 @@ If an item was accidentally deleted, you can fully restore the item.
 This is not applicable to security groups, which are deleted permanently.
 A recently deleted item will remain available for up to 30 days.
 After 30 days, the item is permanently deleted.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

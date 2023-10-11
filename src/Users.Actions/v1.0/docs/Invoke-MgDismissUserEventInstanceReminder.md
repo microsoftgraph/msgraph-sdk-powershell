@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Dismiss a reminder that has been triggered for an event in a user calendar.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Invoke-MgDismissUserEventInstanceReminder -InputObject <IUsersActionsIdentity> [
 
 ## DESCRIPTION
 Dismiss a reminder that has been triggered for an event in a user calendar.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

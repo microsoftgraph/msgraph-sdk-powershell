@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new bookingAppointment for the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -61,7 +60,6 @@ New-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-Addition
 
 ## DESCRIPTION
 Create a new bookingAppointment for the specified bookingBusiness.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

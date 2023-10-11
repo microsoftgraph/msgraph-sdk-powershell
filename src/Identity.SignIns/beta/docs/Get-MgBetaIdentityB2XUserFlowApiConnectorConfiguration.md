@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityB2XUserFlowApiConnectorConfiguration
 
 ## SYNOPSIS
-Configuration for enabling an API connector for use as part of the self-service sign-up user flow.
+Configuration for enabling an API connector for use as part of the self-service sign up user flow.
 You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Get-MgBetaIdentityB2XUserFlowApiConnectorConfiguration -InputObject <IIdentitySi
 ```
 
 ## DESCRIPTION
-Configuration for enabling an API connector for use as part of the self-service sign-up user flow.
+Configuration for enabling an API connector for use as part of the self-service sign up user flow.
 You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
 
 ## EXAMPLES

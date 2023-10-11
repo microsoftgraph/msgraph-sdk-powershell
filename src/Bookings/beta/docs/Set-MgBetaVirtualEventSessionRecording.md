@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgBetaVirtualEventSessionRecording
 
 ## SYNOPSIS
-Update recording for the navigation property sessions in solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgBetaVirtualEventSessionRecording -InputObject <IBookingsIdentity> -InFile 
 ```
 
 ## DESCRIPTION
-Update recording for the navigation property sessions in solutions
+The content stream of the recording of a Teams live event.
+Read-only.
 
 ## EXAMPLES
 

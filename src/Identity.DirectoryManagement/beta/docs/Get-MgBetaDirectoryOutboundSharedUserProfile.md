@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the details of an outboundSharedUserProfile.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaDirectoryOutboundSharedUserProfile -InputObject <IIdentityDirectoryMan
 
 ## DESCRIPTION
 Get the details of an outboundSharedUserProfile.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

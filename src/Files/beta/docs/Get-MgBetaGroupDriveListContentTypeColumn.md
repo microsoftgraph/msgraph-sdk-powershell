@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveListContentTypeColumn
 
 ## SYNOPSIS
-Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaGroupDriveListContentTypeColumn -InputObject <IFilesIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
-This API is available in the following [national cloud deployments.
+Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
 
 ## EXAMPLES
 

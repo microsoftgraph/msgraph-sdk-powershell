@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the bot associated with a specific definition of the  TeamsApp.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-ExpandP
 
 ## DESCRIPTION
 Get the bot associated with a specific definition of the  TeamsApp.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

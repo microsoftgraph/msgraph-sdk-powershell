@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserDriveListColumn
 
 ## SYNOPSIS
-The collection of field definitions for this list.
+Get columns from users
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaUserDriveListColumn -InputObject <IFilesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-The collection of field definitions for this list.
+Get columns from users
 
 ## EXAMPLES
 

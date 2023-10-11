@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a user's email address associated with an email Authentication Method object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ Update-MgBetaUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentit
 
 ## DESCRIPTION
 Update a user's email address associated with an email Authentication Method object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

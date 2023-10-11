@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create an alertRule object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ New-MgBetaDeviceManagementMonitoringAlertRule -BodyParameter <IMicrosoftGraphDev
 
 ## DESCRIPTION
 Create an alertRule object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -286,6 +284,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[NotificationReceivers <IMicrosoftGraphDeviceManagementNotificationReceiver[]>]`: Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
       - `[ContactInformation <String>]`: The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
       - `[Locale <String>]`: Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
+    - `[Receivers <String[]>]`: The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
   - `[Severity <String>]`: ruleSeverityType
   - `[Threshold <IMicrosoftGraphDeviceManagementRuleThreshold>]`: ruleThreshold
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -298,6 +297,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotificationReceivers <IMicrosoftGraphDeviceManagementNotificationReceiver[]>]`: Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
     - `[ContactInformation <String>]`: The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.
     - `[Locale <String>]`: Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.
+  - `[Receivers <String[]>]`: The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
 
 `THRESHOLD <IMicrosoftGraphDeviceManagementRuleThreshold>`: ruleThreshold
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgBetaShareListDrive
 
 ## SYNOPSIS
-Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Get-MgBetaShareListDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
+Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ## EXAMPLES
 

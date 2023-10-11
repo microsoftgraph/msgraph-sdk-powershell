@@ -11,7 +11,6 @@ schema: 2.0.0
 Set a user's emailAuthenticationMethod object.
 Email authentication is a self-service password reset method.
 A user may only have one email authentication method.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ New-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
 Set a user's emailAuthenticationMethod object.
 Email authentication is a self-service password reset method.
 A user may only have one email authentication method.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

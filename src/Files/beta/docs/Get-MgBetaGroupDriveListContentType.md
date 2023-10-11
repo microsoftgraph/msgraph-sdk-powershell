@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveListContentType
 
 ## SYNOPSIS
-The collection of content types present in this list.
+Get contentTypes from groups
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaGroupDriveListContentType -InputObject <IFilesIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-The collection of content types present in this list.
+Get contentTypes from groups
 
 ## EXAMPLES
 

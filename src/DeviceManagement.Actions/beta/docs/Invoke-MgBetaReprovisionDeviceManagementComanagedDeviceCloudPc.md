@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reprovision a Cloud PC with an Intune managed device ID.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Invoke-MgBetaReprovisionDeviceManagementComanagedDeviceCloudPc -InputObject <IDe
 
 ## DESCRIPTION
 Reprovision a Cloud PC with an Intune managed device ID.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

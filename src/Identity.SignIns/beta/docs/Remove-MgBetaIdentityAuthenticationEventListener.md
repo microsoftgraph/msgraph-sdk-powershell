@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an authenticationEventListener object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsI
 
 ## DESCRIPTION
 Deletes an authenticationEventListener object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

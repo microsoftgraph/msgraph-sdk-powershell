@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Start a break in a specific timeCard.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +41,6 @@ Start-MgBetaTeamScheduleTimeCardBreak -InputObject <ITeamsIdentity> [-Additional
 
 ## DESCRIPTION
 Start a break in a specific timeCard.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

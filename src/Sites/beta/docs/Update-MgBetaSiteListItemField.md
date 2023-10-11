@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgBetaSiteListItemField
 
 ## SYNOPSIS
-Update the properties on a listItem][].
-This API is available in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ## SYNTAX
 
@@ -38,8 +37,7 @@ Update-MgBetaSiteListItemField -InputObject <ISitesIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Update the properties on a listItem][].
-This API is available in the following [national cloud deployments.
+Update the properties on a [listItem][].
 
 ## EXAMPLES
 
@@ -247,7 +245,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
-  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

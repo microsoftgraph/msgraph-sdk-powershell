@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a focused Inbox override specified by its ID.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserInferenceClassificationOverride -InputObject <IMailIdentity> [-
 
 ## DESCRIPTION
 Delete a focused Inbox override specified by its ID.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

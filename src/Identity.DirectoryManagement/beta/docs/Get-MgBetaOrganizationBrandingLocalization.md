@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of an organizationalBrandingLocalization object.
 To retrieve a localization branding object, specify the value of id in the URL.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +35,6 @@ Get-MgBetaOrganizationBrandingLocalization -InputObject <IIdentityDirectoryManag
 ## DESCRIPTION
 Read the properties and relationships of an organizationalBrandingLocalization object.
 To retrieve a localization branding object, specify the value of id in the URL.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

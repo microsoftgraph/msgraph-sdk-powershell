@@ -11,7 +11,6 @@ schema: 2.0.0
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +46,6 @@ Get-MgUserChatPermissionGrantMemberObject -InputObject <IUsersActionsIdentity>
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

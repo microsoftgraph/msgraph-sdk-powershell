@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomizedReportRecipientEmailAddress
-Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk.
+Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk.
 The default value is null.
 Optional for creation.
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsCustomizedMessageEnabled
-Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not.
+Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not.
 The default value is false.
 Optional for creation.
 
@@ -214,7 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsNeverReportEnabledForUsers
-Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it.
+Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it.
 The default value is true.
 Optional for creation.
 
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsReportToCustomizedEmailAddressEnabled
-Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.
+Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.
 The default value is false.
 Optional for creation.
 
@@ -282,7 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsReportToMicrosoftEnabled
-If enabled, the email is sent to Microsoft for analysis.
+If enabled, the email will be sent to Microsoft for analysis.
 The default value is false.
 Required for creation.
 
@@ -370,17 +370,17 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CustomizedNotificationSenderEmailAddress <String>]`: Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.
-  - `[CustomizedReportRecipientEmailAddress <String>]`: Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+  - `[CustomizedReportRecipientEmailAddress <String>]`: Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
   - `[IsAlwaysReportEnabledForUsers <Boolean?>]`: Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is true.  Optional for creation.
   - `[IsAskMeEnabledForUsers <Boolean?>]`: Indicates whether end users can confirm using a popup before reporting messages as spam, phish or not junk. The default value is true.  Optional for creation.
-  - `[IsCustomizedMessageEnabled <Boolean?>]`: Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
+  - `[IsCustomizedMessageEnabled <Boolean?>]`: Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.
   - `[IsCustomizedMessageEnabledForPhishing <Boolean?>]`: If enabled, customized message only shows when email is reported as phishing. The default value is false. Optional for creation.
   - `[IsCustomizedNotificationSenderEnabled <Boolean?>]`: Indicates whether to use the sender email address set using customizedNotificationSenderEmailAddress for sending email notifications to end users. The default value is false. Optional for creation.
-  - `[IsNeverReportEnabledForUsers <Boolean?>]`: Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+  - `[IsNeverReportEnabledForUsers <Boolean?>]`: Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
   - `[IsOrganizationBrandingEnabled <Boolean?>]`: Indicates whether the branding logo should be used in the email notifications sent to end users. The default value is false. Optional for creation.
   - `[IsReportFromQuarantineEnabled <Boolean?>]`: Indicates whether end users can submit from the quarantine page. The default value is true. Optional for creation.
-  - `[IsReportToCustomizedEmailAddressEnabled <Boolean?>]`: Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
-  - `[IsReportToMicrosoftEnabled <Boolean?>]`: If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
+  - `[IsReportToCustomizedEmailAddressEnabled <Boolean?>]`: Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+  - `[IsReportToMicrosoftEnabled <Boolean?>]`: If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.
   - `[IsReviewEmailNotificationEnabled <Boolean?>]`: Indicates whether an email notification is sent to the end user who reported the email when it has been reviewed by the admin. The default value is false. Optional for creation.
 
 ## RELATED LINKS

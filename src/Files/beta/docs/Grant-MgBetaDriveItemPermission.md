@@ -8,8 +8,7 @@ schema: 2.0.0
 # Grant-MgBetaDriveItemPermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a permission][].
-This API is available in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Grant-MgBetaDriveItemPermission -InputObject <IFilesIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a permission][].
-This API is available in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

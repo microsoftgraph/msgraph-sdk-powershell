@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Use this API to assign an app role to a user.
-To grant an app role assignment to a user, you need three identifiers: This API is available in the following national cloud deployments.
+To grant an app role assignment to a user, you need three identifiers:
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgBetaUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-Additiona
 
 ## DESCRIPTION
 Use this API to assign an app role to a user.
-To grant an app role assignment to a user, you need three identifiers: This API is available in the following national cloud deployments.
+To grant an app role assignment to a user, you need three identifiers:
 
 ## EXAMPLES
 
@@ -355,7 +355,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
-  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application

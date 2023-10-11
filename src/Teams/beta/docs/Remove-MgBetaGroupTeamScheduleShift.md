@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a shift from the schedule.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaGroupTeamScheduleShift -InputObject <ITeamsIdentity> [-IfMatch <Str
 
 ## DESCRIPTION
 Delete a shift from the schedule.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

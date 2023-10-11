@@ -8,8 +8,7 @@ schema: 2.0.0
 # Grant-MgGroupDriveItemPermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Grant-MgGroupDriveItemPermission -InputObject <IGroupsIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a permission][].
-This API is supported in the following [national cloud deployments.
+Grant users access to a link represented by a [permission][].
 
 ## EXAMPLES
 

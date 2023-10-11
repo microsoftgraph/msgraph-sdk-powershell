@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Add a user or service principal to a Microsoft 365 or security group's owners.
 The owners are a set of users or service principals who are allowed to modify the group object.
-This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +40,6 @@ New-MgGroupOwnerByRef -InputObject <IGroupsIdentity> -OdataId <String> [-Additio
 ## DESCRIPTION
 Add a user or service principal to a Microsoft 365 or security group's owners.
 The owners are a set of users or service principals who are allowed to modify the group object.
-This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

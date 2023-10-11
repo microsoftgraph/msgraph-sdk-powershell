@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of a calendar object.
 The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group.
-There are two scenarios where an app can get another user's calendar: This API is available in the following national cloud deployments.
+There are two scenarios where an app can get another user's calendar:
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgBetaUserDefaultCalendar -InputObject <ICalendarIdentity> [-Property <Strin
 ## DESCRIPTION
 Get the properties and relationships of a calendar object.
 The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group.
-There are two scenarios where an app can get another user's calendar: This API is available in the following national cloud deployments.
+There are two scenarios where an app can get another user's calendar:
 
 ## EXAMPLES
 

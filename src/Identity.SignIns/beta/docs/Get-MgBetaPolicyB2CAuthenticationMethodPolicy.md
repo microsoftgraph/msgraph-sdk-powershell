@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties of a b2cAuthenticationMethodsPolicy object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +19,6 @@ Get-MgBetaPolicyB2CAuthenticationMethodPolicy [-ExpandProperty <String[]>] [-Pro
 
 ## DESCRIPTION
 Read the properties of a b2cAuthenticationMethodsPolicy object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Delete an operationalInsightsConnection object.
-This API is available in the following national cloud deployments.
+Delete a resourceConnection object.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgBetaWindowsUpdatesResourceConnection -InputObject <IWindowsUpdatesIdent
 ```
 
 ## DESCRIPTION
-Delete an operationalInsightsConnection object.
-This API is available in the following national cloud deployments.
+Delete a resourceConnection object.
 
 ## EXAMPLES
 

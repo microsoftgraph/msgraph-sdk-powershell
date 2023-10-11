@@ -11,7 +11,6 @@ schema: 2.0.0
 Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
 The input is a base-64 encoded value of the PKCS 12 certificate contents.
 This method returns an apiConnector.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +48,6 @@ Invoke-MgBetaUploadIdentityB2XUserFlowApiConnectorConfigurationPostAttributeColl
 Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
 The input is a base-64 encoded value of the PKCS 12 certificate contents.
 This method returns an apiConnector.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

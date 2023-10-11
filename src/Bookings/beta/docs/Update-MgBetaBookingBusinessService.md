@@ -9,8 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a bookingService object in the specified bookingBusiness.
-The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
-This API is available in the following national cloud deployments.
+The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 
 ## SYNTAX
 
@@ -54,8 +53,7 @@ Update-MgBetaBookingBusinessService -InputObject <IBookingsIdentity> [-Additiona
 
 ## DESCRIPTION
 Update the properties of a bookingService object in the specified bookingBusiness.
-The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
-This API is available in the following national cloud deployments.
+The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
 
 ## EXAMPLES
 
@@ -322,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsHiddenFromCustomers
-True means this service isn't available to customers for booking.
+True means this service is not available to customers for booking.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -535,8 +533,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
-    - `[IsRequired <Boolean?>]`: Indicates whether it's mandatory to answer the custom question.
-    - `[QuestionId <String>]`: If it's mandatory to answer the custom question.
+    - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
+    - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
   - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
   - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -570,7 +568,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Recipients <String>]`: bookingReminderRecipients
   - `[Description <String>]`: A text description for the service.
   - `[IsAnonymousJoinEnabled <Boolean?>]`: True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
-  - `[IsHiddenFromCustomers <Boolean?>]`: True means this service isn't available to customers for booking.
+  - `[IsHiddenFromCustomers <Boolean?>]`: True means this service is not available to customers for booking.
   - `[IsLocationOnline <Boolean?>]`: True indicates that the appointments for the service will be held online. Default value is false.
   - `[LanguageTag <String>]`: The language of the self service booking page.
   - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.
@@ -588,8 +586,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[StaffMemberIds <String[]>]`: Represents those staff members who provide this service.
 
 `CUSTOMQUESTIONS <IMicrosoftGraphBookingQuestionAssignment[]>`: Contains the set of custom questions associated with a particular service.
-  - `[IsRequired <Boolean?>]`: Indicates whether it's mandatory to answer the custom question.
-  - `[QuestionId <String>]`: If it's mandatory to answer the custom question.
+  - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
+  - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
 
 `DEFAULTLOCATION <IMicrosoftGraphLocation>`: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Change the account type of the user on a specific Cloud PC.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +43,6 @@ Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType
 
 ## DESCRIPTION
 Change the account type of the user on a specific Cloud PC.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

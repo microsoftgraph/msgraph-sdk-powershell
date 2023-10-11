@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectory
 
 ## DESCRIPTION
 Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

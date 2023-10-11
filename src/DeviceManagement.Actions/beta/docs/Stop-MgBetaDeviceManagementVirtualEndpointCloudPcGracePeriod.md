@@ -10,9 +10,8 @@ schema: 2.0.0
 ## SYNOPSIS
 End the grace period for a specific Cloud PC.
 The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before deprovisioning occurs.
+It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
 Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,9 +30,8 @@ Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod -InputObject <IDevi
 ## DESCRIPTION
 End the grace period for a specific Cloud PC.
 The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before deprovisioning occurs.
+It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
 Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

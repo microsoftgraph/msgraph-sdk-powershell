@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgSiteListItem
 
 ## SYNOPSIS
-Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgSiteListItem -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+Returns the metadata for an [item][] in a [list][].
 
 ## EXAMPLES
 

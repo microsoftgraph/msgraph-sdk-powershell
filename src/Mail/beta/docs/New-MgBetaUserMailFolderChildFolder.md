@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new mailSearchFolder in the specified user's mailbox.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,7 +54,6 @@ New-MgBetaUserMailFolderChildFolder -InputObject <IMailIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Create a new mailSearchFolder in the specified user's mailbox.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a plannerTask object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgPlannerTask -InputObject <IPlannerIdentity> [-IfMatch <String>] [-PassT
 
 ## DESCRIPTION
 Delete a plannerTask object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

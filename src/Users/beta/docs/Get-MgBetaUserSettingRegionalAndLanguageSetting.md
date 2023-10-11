@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a user's regionalAndLanguageSettings.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Get-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity> [-
 
 ## DESCRIPTION
 Retrieve the properties of a user's regionalAndLanguageSettings.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

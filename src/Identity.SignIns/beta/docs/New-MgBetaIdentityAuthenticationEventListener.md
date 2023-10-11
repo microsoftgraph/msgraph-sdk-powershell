@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new authenticationEventListener object.
 You can create one of the following subtypes that are derived from authenticationEventListener.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +29,6 @@ New-MgBetaIdentityAuthenticationEventListener -BodyParameter <IMicrosoftGraphAut
 ## DESCRIPTION
 Create a new authenticationEventListener object.
 You can create one of the following subtypes that are derived from authenticationEventListener.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

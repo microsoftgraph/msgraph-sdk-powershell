@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgBetaDirectoryRoleById
 
 ## DESCRIPTION
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to: This API is available in the following national cloud deployments.
+Some common uses for this function are to:
 
 ## EXAMPLES
 

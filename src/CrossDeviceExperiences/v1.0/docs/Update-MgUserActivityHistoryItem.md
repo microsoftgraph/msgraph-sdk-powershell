@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Delete an existing history item for an existing user activity.
-This API is supported in the following national cloud deployments.
+Create a new or replace an existing history item for an existing user activity.
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
 ```
 
 ## DESCRIPTION
-Delete an existing history item for an existing user activity.
-This API is supported in the following national cloud deployments.
+Create a new or replace an existing history item for an existing user activity.
 
 ## EXAMPLES
 

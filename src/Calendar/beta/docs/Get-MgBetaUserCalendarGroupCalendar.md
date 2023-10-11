@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of calendars belonging to a calendar group.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgBetaUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String> [
 
 ## DESCRIPTION
 Retrieve a list of calendars belonging to a calendar group.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

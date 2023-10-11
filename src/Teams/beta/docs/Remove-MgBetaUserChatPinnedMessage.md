@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Unpin a message from a chat.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +26,6 @@ Remove-MgBetaUserChatPinnedMessage -InputObject <ITeamsIdentity> [-IfMatch <Stri
 
 ## DESCRIPTION
 Unpin a message from a chat.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

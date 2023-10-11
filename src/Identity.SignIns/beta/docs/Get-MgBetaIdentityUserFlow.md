@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and associations for an userFlow object.
-This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +33,6 @@ Get-MgBetaIdentityUserFlow -InputObject <IIdentitySignInsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Retrieve the properties and associations for an userFlow object.
-This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
