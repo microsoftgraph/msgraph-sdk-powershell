@@ -91,6 +91,6 @@ directive:
       subject: All$1
   - where:
       verb: Update
-      subject: ^UserPhoto$
+      subject: ^GroupPhoto$
     remove: true
 ```
