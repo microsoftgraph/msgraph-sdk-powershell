@@ -89,4 +89,8 @@ directive:
       subject: ^(GroupSite)$
     set:
       subject: All$1
+  - where:
+      verb: Update
+      subject: ^UserPhoto$
+    remove: true
 ```
