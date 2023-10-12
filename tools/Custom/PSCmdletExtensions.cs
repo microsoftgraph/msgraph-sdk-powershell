@@ -28,7 +28,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             try
             {
                 var unescapedString = Uri.UnescapeDataString(value);
-                return unescapedString.Replace('+', ' ');
+                return value.Contains("displayName") ? unescapedString: unescapedString.Replace('+', ' ');
             }
             catch (UriFormatException ex)
             {
