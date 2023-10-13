@@ -1,4 +1,4 @@
-### Example 1: Retrieve a role management policy assignment
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
@@ -7,7 +7,7 @@ Get-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssig
 This example shows how to use the Get-MgBetaPolicyRoleManagementPolicyAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Retrieve a role management policy assignment and expand the policy and its associated rules
+### Example 2: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
