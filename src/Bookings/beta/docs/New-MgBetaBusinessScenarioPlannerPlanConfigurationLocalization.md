@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new plannerPlanConfigurationLocalization object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ New-MgBetaBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBo
 
 ## DESCRIPTION
 Create a new plannerPlanConfigurationLocalization object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

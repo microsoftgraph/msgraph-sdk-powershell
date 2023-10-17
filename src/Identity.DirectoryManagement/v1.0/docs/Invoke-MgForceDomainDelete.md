@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Deletes a domain using an asynchronous long-running operation.
 Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service.
-The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a HTTP 404 status code.
+The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code.
 To verify deletion of a domain, you can perform a get domain operation.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,8 +46,9 @@ Invoke-MgForceDomainDelete -InputObject <IIdentityDirectoryManagementIdentity>
 ## DESCRIPTION
 Deletes a domain using an asynchronous long-running operation.
 Prior to calling forceDelete, you must update or remove any references to Exchange as the provisioning service.
-The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a HTTP 404 status code.
+The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return an HTTP 404 status code.
 To verify deletion of a domain, you can perform a get domain operation.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -231,6 +233,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
+  - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
   - `[ScopedRoleMembershipId <String>]`: The unique identifier of scopedRoleMembership
   - `[SubscribedSkuId <String>]`: The unique identifier of subscribedSku

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Invoke-MgBetaBulkReprovisionDeviceManagementManagedDeviceCloudPc
 
 ## DESCRIPTION
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

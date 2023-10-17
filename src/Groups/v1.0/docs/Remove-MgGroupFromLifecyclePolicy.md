@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Removes a group from a lifecycle policy.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Remove-MgGroupFromLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Removes a group from a lifecycle policy.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

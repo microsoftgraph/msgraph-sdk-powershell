@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a timeOff instance from a schedule.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgGroupTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-IfMatch <Strin
 
 ## DESCRIPTION
 Delete a timeOff instance from a schedule.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

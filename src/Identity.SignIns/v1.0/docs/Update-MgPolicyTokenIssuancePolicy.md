@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a tokenIssuancePolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Update-MgPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-Add
 
 ## DESCRIPTION
 Update the properties of a tokenIssuancePolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties of a delegatedAdminRelationship object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgTenantRelationshipDelegatedAdminRelationship -InputObject <IIdentityPartne
 
 ## DESCRIPTION
 Read the properties of a delegatedAdminRelationship object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

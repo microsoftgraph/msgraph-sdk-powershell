@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgGroupDriveRootListItemField
 
 ## SYNOPSIS
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ Update-MgGroupDriveRootListItemField -InputObject <IFilesIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

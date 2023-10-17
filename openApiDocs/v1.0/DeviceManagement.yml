@@ -179,7 +179,7 @@ paths:
       tags:
         - admin.edge
       summary: List browserSiteLists
-      description: Get a list of the browserSiteList objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of the browserSiteList objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/internetexplorermode-list-sitelists?view=graph-rest-1.0
@@ -268,7 +268,7 @@ paths:
       tags:
         - admin.edge
       summary: Create browserSiteList
-      description: Create a new browserSiteList object to support Internet Explorer mode. This API is supported in the following national cloud deployments.
+      description: Create a new browserSiteList object to support Internet Explorer mode. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/internetexplorermode-post-sitelists?view=graph-rest-1.0
@@ -295,7 +295,7 @@ paths:
       tags:
         - admin.edge
       summary: Get browserSiteList
-      description: Get a browserSiteList that contains browserSite and browserSharedCookie resources. This API is supported in the following national cloud deployments.
+      description: Get a browserSiteList that contains browserSite and browserSharedCookie resources. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0
@@ -359,7 +359,7 @@ paths:
       tags:
         - admin.edge
       summary: Update browserSiteList
-      description: Update the properties of a browserSiteList object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a browserSiteList object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0
@@ -394,7 +394,7 @@ paths:
       tags:
         - admin.edge
       summary: Delete browserSiteList
-      description: Delete a browserSiteList object. This API is supported in the following national cloud deployments.
+      description: Delete a browserSiteList object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0
@@ -425,7 +425,7 @@ paths:
       tags:
         - admin.edge
       summary: List browserSharedCookies
-      description: Get a list of the browserSharedCookie objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of the browserSharedCookie objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-list-sharedcookies?view=graph-rest-1.0
@@ -530,7 +530,7 @@ paths:
       tags:
         - admin.edge
       summary: Create browserSharedCookie
-      description: Create a new browserSharedCookie object in a browserSiteList. This API is supported in the following national cloud deployments.
+      description: Create a new browserSharedCookie object in a browserSiteList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-post-sharedcookies?view=graph-rest-1.0
@@ -566,7 +566,7 @@ paths:
       tags:
         - admin.edge
       summary: Get browserSharedCookie
-      description: 'Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is supported in the following national cloud deployments.'
+      description: 'Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersharedcookie-get?view=graph-rest-1.0
@@ -638,7 +638,7 @@ paths:
       tags:
         - admin.edge
       summary: Update browserSharedCookie
-      description: Update the properties of a browserSharedCookie object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a browserSharedCookie object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersharedcookie-update?view=graph-rest-1.0
@@ -681,7 +681,7 @@ paths:
       tags:
         - admin.edge
       summary: Delete browserSharedCookie
-      description: Delete a browserSharedCookie from a browserSiteList. This API is supported in the following national cloud deployments.
+      description: Delete a browserSharedCookie from a browserSiteList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sharedcookies?view=graph-rest-1.0
@@ -742,7 +742,7 @@ paths:
       tags:
         - admin.edge
       summary: List browserSites
-      description: Get a list of the browserSite objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of the browserSite objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-list-sites?view=graph-rest-1.0
@@ -847,7 +847,7 @@ paths:
       tags:
         - admin.edge
       summary: Create browserSite
-      description: Create a new browserSite object in a browserSiteList. This API is supported in the following national cloud deployments.
+      description: Create a new browserSite object in a browserSiteList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-post-sites?view=graph-rest-1.0
@@ -883,7 +883,7 @@ paths:
       tags:
         - admin.edge
       summary: Get browserSite
-      description: Get a browserSite that resides on a browserSiteList. This API is supported in the following national cloud deployments.
+      description: Get a browserSite that resides on a browserSiteList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-1.0
@@ -955,7 +955,7 @@ paths:
       tags:
         - admin.edge
       summary: Update browserSite
-      description: Update the properties of a browserSite object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a browserSite object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-1.0
@@ -998,7 +998,7 @@ paths:
       tags:
         - admin.edge
       summary: Delete browserSite
-      description: Delete a browserSite from a browserSiteList. This API is supported in the following national cloud deployments.
+      description: Delete a browserSite from a browserSiteList. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-1.0
@@ -1076,7 +1076,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -1241,7 +1241,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-notification-devicemanagement-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
@@ -2123,11 +2123,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: List iosCompliancePolicies
-      description: List properties and relationships of the iosCompliancePolicy objects.
+      summary: List windows81CompliancePolicies
+      description: List properties and relationships of the windows81CompliancePolicy objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceCompliancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2240,11 +2240,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Get windows81CompliancePolicy
-      description: Read properties and relationships of the windows81CompliancePolicy object.
+      summary: Get macOSCompliancePolicy
+      description: Read properties and relationships of the macOSCompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscompliancepolicy-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2311,11 +2311,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Update windows10MobileCompliancePolicy
-      description: Update the properties of a windows10MobileCompliancePolicy object.
+      summary: Update windows10CompliancePolicy
+      description: Update the properties of a windows10CompliancePolicy object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2346,11 +2346,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceCompliancePolicy
-      summary: Delete windowsPhone81CompliancePolicy
-      description: Deletes a windowsPhone81CompliancePolicy.
+      summary: Delete iosCompliancePolicy
+      description: Deletes a iosCompliancePolicy.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81compliancepolicy-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceCompliancePolicy
       parameters:
         - name: deviceCompliancePolicy-id
@@ -5160,11 +5160,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: List androidWorkProfileGeneralDeviceConfigurations
-      description: List properties and relationships of the androidWorkProfileGeneralDeviceConfiguration objects.
+      summary: List windows10CustomConfigurations
+      description: List properties and relationships of the windows10CustomConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilegeneraldeviceconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10customconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5275,11 +5275,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Get iosDeviceFeaturesConfiguration
-      description: Read properties and relationships of the iosDeviceFeaturesConfiguration object.
+      summary: Get androidGeneralDeviceConfiguration
+      description: Read properties and relationships of the androidGeneralDeviceConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-iosdevicefeaturesconfiguration-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidgeneraldeviceconfiguration-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5344,11 +5344,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Update androidWorkProfileCustomConfiguration
-      description: Update the properties of a androidWorkProfileCustomConfiguration object.
+      summary: Update sharedPCConfiguration
+      description: Update the properties of a sharedPCConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecustomconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-sharedpcconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -5379,11 +5379,11 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceConfiguration
-      summary: Delete macOSGeneralDeviceConfiguration
-      description: Deletes a macOSGeneralDeviceConfiguration.
+      summary: Delete editionUpgradeConfiguration
+      description: Deletes a editionUpgradeConfiguration.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-macosgeneraldeviceconfiguration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-deviceconfig-editionupgradeconfiguration-delete?view=graph-rest-1.0
       operationId: deviceManagement_DeleteDeviceConfiguration
       parameters:
         - name: deviceConfiguration-id
@@ -23681,7 +23681,6 @@ components:
       description: Computer endpoint protection state
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -23737,7 +23736,6 @@ components:
       description: Product Status of Windows Defender
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -24215,7 +24213,6 @@ components:
       description: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: notificationTemplateBrandingOptions
         modelAsString: false
@@ -25950,7 +25947,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -27543,7 +27540,6 @@ components:
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -27569,7 +27565,6 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -27619,6 +27614,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
+              description: The transcripts of an online meeting. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -29554,7 +29550,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
@@ -29591,7 +29587,7 @@ components:
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
               nullable: true
             orderHint:
               type: string
@@ -30196,24 +30192,29 @@ components:
           properties:
             content:
               type: string
+              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
               type: string
+              description: The unique identifier of the online meeting related to this transcript. Read-only.
               nullable: true
             meetingOrganizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             metadataContent:
               type: string
+              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
             transcriptContentUrl:
               type: string
+              description: The URL that can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -30228,7 +30229,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
+          description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -36172,7 +36173,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -36183,7 +36183,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -36213,7 +36212,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -36224,7 +36222,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'

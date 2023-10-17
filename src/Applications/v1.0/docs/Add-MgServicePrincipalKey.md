@@ -13,6 +13,7 @@ This method along with removeKey can be used by a servicePrincipal to automate r
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
 Update servicePrincipal can be used to perform an update instead.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,6 +51,7 @@ This method along with removeKey can be used by a servicePrincipal to automate r
 As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
 ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action.
 Update servicePrincipal can be used to perform an update instead.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

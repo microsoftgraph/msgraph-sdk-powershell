@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSiteContentTypeColumn
 
 ## SYNOPSIS
-Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgSiteContentTypeColumn -InputObject <ISitesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

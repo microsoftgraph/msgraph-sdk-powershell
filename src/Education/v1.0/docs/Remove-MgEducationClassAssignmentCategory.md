@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an existing category.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-If
 ## DESCRIPTION
 Delete an existing category.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

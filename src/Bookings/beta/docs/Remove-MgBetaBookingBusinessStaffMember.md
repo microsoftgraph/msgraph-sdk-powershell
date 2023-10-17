@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a staff member in the specified bookingbusiness.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-IfMat
 
 ## DESCRIPTION
 Delete a staff member in the specified bookingbusiness.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

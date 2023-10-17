@@ -8,7 +8,8 @@ schema: 2.0.0
 # Grant-MgUserDriveItemPermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Grant-MgUserDriveItemPermission -InputObject <IUsersActionsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an existing user activity for your app.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-IfMat
 
 ## DESCRIPTION
 Delete an existing user activity for your app.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

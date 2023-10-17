@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Perform validations applicable for the specific instance of the data connector.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Test-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-PassTh
 
 ## DESCRIPTION
 Perform validations applicable for the specific instance of the data connector.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -144,6 +146,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[AcronymId <String>]`: The unique identifier of acronym
+  - `[AuthorizationSystemId <String>]`: The unique identifier of authorizationSystem
   - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity

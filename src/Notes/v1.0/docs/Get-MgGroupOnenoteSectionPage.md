@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of page objects from the specified section.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgGroupOnenoteSectionPage -GroupId <String> -OnenoteSectionId <String> [-Exp
 
 ## DESCRIPTION
 Retrieve a list of page objects from the specified section.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

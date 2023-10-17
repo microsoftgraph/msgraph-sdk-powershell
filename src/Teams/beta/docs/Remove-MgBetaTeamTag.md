@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a tag object permanently.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaTeamTag -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThr
 
 ## DESCRIPTION
 Delete a tag object permanently.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

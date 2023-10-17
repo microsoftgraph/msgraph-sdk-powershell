@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a delegatedAdminRelationshipRequest object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,6 +35,7 @@ Get-MgBetaTenantRelationshipDelegatedAdminRelationshipRequest -InputObject <IIde
 
 ## DESCRIPTION
 Read the properties and relationships of a delegatedAdminRelationshipRequest object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 In Azure AD entitlement management, retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage
 ## DESCRIPTION
 In Azure AD entitlement management, retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

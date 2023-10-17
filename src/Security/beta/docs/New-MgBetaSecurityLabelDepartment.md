@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new departmentTemplate object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ New-MgBetaSecurityLabelDepartment -BodyParameter <Hashtable> [-Confirm] [-WhatIf
 
 ## DESCRIPTION
 Create a new departmentTemplate object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Confirm a specific timeCard.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Confirm-MgBetaTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-Confirm] [-Wh
 
 ## DESCRIPTION
 Confirm a specific timeCard.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

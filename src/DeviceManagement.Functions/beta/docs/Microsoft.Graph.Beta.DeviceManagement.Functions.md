@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Functions
-Module Guid: dab35e3c-2bfe-42f9-afe2-70c743d063cc
+Module Guid: 18dc6943-6866-477a-9b95-41ba95ecbd53
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -127,6 +127,9 @@ Invoke function getAuditActivityTypes
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcConnectivityHistory](Get-MgBetaDeviceManagementVirtualEndpointCloudPcConnectivityHistory.md)
 Invoke function getCloudPcConnectivityHistory
+
+### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcFrontlineCloudPcAccessState](Get-MgBetaDeviceManagementVirtualEndpointCloudPcFrontlineCloudPcAccessState.md)
+Invoke function getFrontlineCloudPcAccessState
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointCloudPcLaunchInfo](Get-MgBetaDeviceManagementVirtualEndpointCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo

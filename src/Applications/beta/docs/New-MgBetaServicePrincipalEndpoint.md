@@ -94,8 +94,7 @@ Accept wildcard characters: False
 
 ### -Capability
 Describes the capability that is associated with this resource.
-(e.g.
-Messages, Conversations, etc.) Not nullable.
+(for example, Messages, Conversations, etc.) Not nullable.
 Read-only.
 
 ```yaml
@@ -192,8 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProviderResourceId
-For Microsoft 365 groups, this is set to a well-known name for the resource (e.g.
-Yammer.FeedURL etc.).
+For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.).
 Not nullable.
 Read-only.
 
@@ -298,10 +296,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.
+  - `[Capability <String>]`: Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.
   - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
   - `[ProviderName <String>]`: Name of the publishing underlying service. Read-only.
-  - `[ProviderResourceId <String>]`: For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.
+  - `[ProviderResourceId <String>]`: For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.
   - `[Uri <String>]`: URL of the published resource. Not nullable. Read-only.
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
@@ -331,6 +329,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application

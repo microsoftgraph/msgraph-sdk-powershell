@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of chatMessageHostedContent object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,6 +49,7 @@ Get-MgBetaUserChatMessageReplyHostedContent -InputObject <ITeamsIdentity> -OutFi
 
 ## DESCRIPTION
 Retrieve the properties and relationships of chatMessageHostedContent object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

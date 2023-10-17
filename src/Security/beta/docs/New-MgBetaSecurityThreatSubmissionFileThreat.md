@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ### -TenantId
 Indicates the tenant id of the submitter.
 Not required when created using a POST operation.
-It is extracted from the token of the post API call.
+It's extracted from the token of the post API call.
 
 ```yaml
 Type: System.String
@@ -347,11 +347,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[DetectedFiles <IMicrosoftGraphSecuritySubmissionDetectedFile[]>]`: Specifies the files detected by Microsoft in the submitted emails.
       - `[FileHash <String>]`: The file hash.
       - `[FileName <String>]`: The file name.
-    - `[DetectedUrls <String[]>]`: Specifes the URLs detected by Microsoft in the submitted email.
+    - `[DetectedUrls <String[]>]`: Specifies the URLs detected by Microsoft in the submitted email.
     - `[UserMailboxSetting <String>]`: userMailboxSetting
   - `[Source <String>]`: submissionSource
   - `[Status <String>]`: longRunningOperationStatus
-  - `[TenantId <String>]`: Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+  - `[TenantId <String>]`: Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[FileName <String>]`: It specifies the file name to be submitted.
 
@@ -368,7 +368,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DetectedFiles <IMicrosoftGraphSecuritySubmissionDetectedFile[]>]`: Specifies the files detected by Microsoft in the submitted emails.
     - `[FileHash <String>]`: The file hash.
     - `[FileName <String>]`: The file name.
-  - `[DetectedUrls <String[]>]`: Specifes the URLs detected by Microsoft in the submitted email.
+  - `[DetectedUrls <String[]>]`: Specifies the URLs detected by Microsoft in the submitted email.
   - `[UserMailboxSetting <String>]`: userMailboxSetting
 
 ## RELATED LINKS

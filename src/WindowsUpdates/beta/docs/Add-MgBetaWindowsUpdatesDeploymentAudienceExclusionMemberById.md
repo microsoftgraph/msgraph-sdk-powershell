@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Add members of the same type to an updatableAssetGroup.
 You can also use the method addMembers to add members.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,6 +46,7 @@ Add-MgBetaWindowsUpdatesDeploymentAudienceExclusionMemberById -InputObject <IWin
 ## DESCRIPTION
 Add members of the same type to an updatableAssetGroup.
 You can also use the method addMembers to add members.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

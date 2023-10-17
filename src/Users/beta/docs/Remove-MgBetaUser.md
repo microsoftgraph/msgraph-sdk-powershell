@@ -12,6 +12,7 @@ Delete user.
  When deleted, user resources are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 To learn more, see deletedItems.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,6 +32,7 @@ Delete user.
  When deleted, user resources are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
 To learn more, see deletedItems.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

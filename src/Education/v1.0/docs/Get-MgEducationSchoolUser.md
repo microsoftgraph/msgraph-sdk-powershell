@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the educationUser resources associated with an educationSchool.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgEducationSchoolUser -EducationSchoolId <String> [-ExpandProperty <String[]
 
 ## DESCRIPTION
 Get the educationUser resources associated with an educationSchool.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

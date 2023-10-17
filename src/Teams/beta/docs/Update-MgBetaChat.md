@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a chat object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -54,6 +55,7 @@ Update-MgBetaChat -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtabl
 
 ## DESCRIPTION
 Update the properties of a chat object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

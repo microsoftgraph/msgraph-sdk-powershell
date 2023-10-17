@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Use this API to create a new Message in a mailfolder.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -70,6 +71,7 @@ New-MgBetaUserMailFolderMessage -InputObject <IMailIdentity> [-AdditionalPropert
 
 ## DESCRIPTION
 Use this API to create a new Message in a mailfolder.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

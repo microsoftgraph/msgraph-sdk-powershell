@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.
 This is applicable for a RBAC application that supports multiple principals and scopes.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Remove-MgBetaRoleManagementDeviceManagementRoleAssignment -InputObject <IDeviceM
 ## DESCRIPTION
 Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.
 This is applicable for a RBAC application that supports multiple principals and scopes.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an identity provider from a b2cIdentityUserFlow object.
 For more information about identity providers available for user flows, see the identityProviders API reference.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Remove-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySig
 ## DESCRIPTION
 Delete an identity provider from a b2cIdentityUserFlow object.
 For more information about identity providers available for user flows, see the identityProviders API reference.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a new conversation member to a team.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ New-MgBetaTeamMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hasht
 
 ## DESCRIPTION
 Add a new conversation member to a team.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

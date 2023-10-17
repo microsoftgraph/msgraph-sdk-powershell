@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Translate identifiers of Outlook-related resources between formats.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,6 +42,7 @@ Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-Addition
 
 ## DESCRIPTION
 Translate identifiers of Outlook-related resources between formats.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

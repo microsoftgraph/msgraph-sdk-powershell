@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaPolicyCrossTenantAccessPolicyPartner -InputObject <IIdentitySignInsIde
 
 ## DESCRIPTION
 Read the properties and relationships of a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

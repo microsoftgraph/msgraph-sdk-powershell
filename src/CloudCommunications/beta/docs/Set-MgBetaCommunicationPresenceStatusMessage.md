@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Set a presence status message for a user.
 An optional expiration date and time can be supplied.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,6 +44,7 @@ Set-MgBetaCommunicationPresenceStatusMessage -InputObject <ICloudCommunicationsI
 ## DESCRIPTION
 Set a presence status message for a user.
 An optional expiration date and time can be supplied.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -220,7 +222,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
-    - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+    - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -252,7 +254,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+  - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
 
 ## RELATED LINKS
 

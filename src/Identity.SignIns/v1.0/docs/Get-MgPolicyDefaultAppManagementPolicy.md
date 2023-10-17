@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties of a tenantAppManagementPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,6 +20,7 @@ Get-MgPolicyDefaultAppManagementPolicy [-ExpandProperty <String[]>] [-Property <
 
 ## DESCRIPTION
 Read the properties of a tenantAppManagementPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

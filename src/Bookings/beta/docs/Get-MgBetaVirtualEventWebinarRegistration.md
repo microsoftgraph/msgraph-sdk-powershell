@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarRegistration
 
 ## SYNOPSIS
-Get registrations from solutions
+Get the properties and relationships of a virtualEventRegistration object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaVirtualEventWebinarRegistration -InputObject <IBookingsIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Get registrations from solutions
+Get the properties and relationships of a virtualEventRegistration object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

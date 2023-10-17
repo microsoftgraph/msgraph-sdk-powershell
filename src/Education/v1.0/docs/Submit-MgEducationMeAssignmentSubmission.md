@@ -14,6 +14,7 @@ This method changes the status of the submission from working to submitted.
 During the submit process, all the resources are copied to the submittedResources bucket.
 The teacher will be looking at the submitted resources list for grading.
 A teacher can also submit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,6 +37,7 @@ This method changes the status of the submission from working to submitted.
 During the submit process, all the resources are copied to the submittedResources bucket.
 The teacher will be looking at the submitted resources list for grading.
 A teacher can also submit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign the tenant tag to the specified managed tenants.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Set-MgBetaTenantRelationshipManagedTenantTag -InputObject <IIdentityDirectoryMan
 
 ## DESCRIPTION
 Assign the tenant tag to the specified managed tenants.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

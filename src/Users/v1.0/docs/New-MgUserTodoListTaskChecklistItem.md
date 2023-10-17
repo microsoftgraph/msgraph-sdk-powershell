@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new checklistItem object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ New-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Create a new checklistItem object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

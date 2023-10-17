@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaPolicyCrossTenantAccessPolicyTemplateMultiTenantOrganizationIdentitySynchronization
 
 ## SYNOPSIS
-Get the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+Get the cross-tenant access policy template with user synchronization settings for a multitenant organization.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -18,7 +19,8 @@ Get-MgBetaPolicyCrossTenantAccessPolicyTemplateMultiTenantOrganizationIdentitySy
 ```
 
 ## DESCRIPTION
-Get the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+Get the cross-tenant access policy template with user synchronization settings for a multitenant organization.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

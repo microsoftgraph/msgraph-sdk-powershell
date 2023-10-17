@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserDriveListItem
 
 ## SYNOPSIS
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgUserDriveListItem -InputObject <IFilesIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

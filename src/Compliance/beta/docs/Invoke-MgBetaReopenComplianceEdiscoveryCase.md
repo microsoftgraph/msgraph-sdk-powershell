@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Invoke-MgBetaReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [
 ## DESCRIPTION
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

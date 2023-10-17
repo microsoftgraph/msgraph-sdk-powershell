@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a calendar group object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,6 +32,7 @@ Get-MgBetaUserCalendarGroup -InputObject <ICalendarIdentity> [-Property <String[
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a calendar group object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

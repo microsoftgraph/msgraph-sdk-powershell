@@ -11,6 +11,7 @@ schema: 2.0.0
 Transfer an active peer-to-peer call or group call.
 A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
 This is opposed to transfering the call directly.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ Move-MgBetaCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-Addit
 Transfer an active peer-to-peer call or group call.
 A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
 This is opposed to transfering the call directly.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -363,7 +365,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[NonAnonymizedIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ParticipantId <String>]`: The participant ID of the participant. Read-only.
     - `[PlatformId <String>]`: The client platform ID of the participant. Read-only.
-    - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+    - `[Region <String>]`: The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -401,7 +403,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NonAnonymizedIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[ParticipantId <String>]`: The participant ID of the participant. Read-only.
   - `[PlatformId <String>]`: The client platform ID of the participant. Read-only.
-  - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+  - `[Region <String>]`: The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
 
 `TRANSFERTARGET <IMicrosoftGraphInvitationParticipantInfo>`: invitationParticipantInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

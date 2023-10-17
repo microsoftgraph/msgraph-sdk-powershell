@@ -13,6 +13,7 @@ The completedDateTime property can be set by the complete action, or explicitly 
 If you use PATCH to set completedDateTime, make sure you set status to completed as well.
 By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC.
 You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -64,6 +65,7 @@ The completedDateTime property can be set by the complete action, or explicitly 
 If you use PATCH to set completedDateTime, make sure you set status to completed as well.
 By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC.
 You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

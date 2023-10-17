@@ -16,6 +16,7 @@ It and the associated private key object have the same value of keyId.
 When set during creation through the displayName property, the subject of the certificate cannot be updated.
 The startDateTime is set to the same time the certificate is created using the action.
 The endDateTime can be up to three years after the certificate is created.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,6 +56,7 @@ It and the associated private key object have the same value of keyId.
 When set during creation through the displayName property, the subject of the certificate cannot be updated.
 The startDateTime is set to the same time the certificate is created using the action.
 The endDateTime can be up to three years after the certificate is created.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

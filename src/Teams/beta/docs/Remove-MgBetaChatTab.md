@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove (unpin) a tab from the specified chat.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaChatTab -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThr
 
 ## DESCRIPTION
 Remove (unpin) a tab from the specified chat.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

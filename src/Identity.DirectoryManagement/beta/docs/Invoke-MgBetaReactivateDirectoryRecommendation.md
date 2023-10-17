@@ -11,6 +11,7 @@ schema: 2.0.0
 Reactivate a completed, dismissed, or postponed recommendation object.
 This action updates the status of the recommendation to active.
 This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ Invoke-MgBetaReactivateDirectoryRecommendation -InputObject <IIdentityDirectoryM
 Reactivate a completed, dismissed, or postponed recommendation object.
 This action updates the status of the recommendation to active.
 This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

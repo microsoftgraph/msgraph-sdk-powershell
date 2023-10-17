@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: 2c0565e1-e124-4737-837e-b8342d00ffe7
+Module Guid: 72de465c-7d34-45b5-968c-a1ced0967e2b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -215,17 +215,74 @@ Get the number of the resource
 ### [Get-MgBetaDeviceAppManagementMobileApp](Get-MgBetaDeviceAppManagementMobileApp.md)
 The mobile apps.
 
+### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidForWorkApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidManagedStoreApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppApp](Get-MgBetaDeviceAppManagementMobileAppAsIoVppApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSLobApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
+
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppAsMobileLobApp.md)
-Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
+### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAssignment.md)
 The list of group assignments for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAssignmentCount](Get-MgBetaDeviceAppManagementMobileAppAssignmentCount.md)
 Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobApp](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppX](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppX.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsi](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsi.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsMobileMSI
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppX](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppX.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUniversalAppX
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
+
+### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetApp](Get-MgBetaDeviceAppManagementMobileAppAsWinGetApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCategory](Get-MgBetaDeviceAppManagementMobileAppCategory.md)
 The mobile app categories.
@@ -266,10 +323,67 @@ App configuration user status summary.
 ### [Get-MgBetaDeviceAppManagementMobileAppCount](Get-MgBetaDeviceAppManagementMobileAppCount.md)
 Get the number of the resource
 
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidForWorkApp](Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidForWorkApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidLobApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidManagedStoreApp](Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidManagedStoreApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidStoreApp](Get-MgBetaDeviceAppManagementMobileAppCountAsAndroidStoreApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsiOSLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsiOSLobApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsIoStoreApp](Get-MgBetaDeviceAppManagementMobileAppCountAsIoStoreApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsIoVppApp](Get-MgBetaDeviceAppManagementMobileAppCountAsIoVppApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsMacOSDmgApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMacOSDmgApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsMacOSLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMacOSLobApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsMacOSPkgApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMacOSPkgApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsManagedAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsManagedAndroidLobApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsManagediOSLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsManagediOSLobApp.md)
+Get the number of the resource
+
 ### [Get-MgBetaDeviceAppManagementMobileAppCountAsManagedMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsManagedMobileLobApp.md)
 Get the number of the resource
 
-### [Get-MgBetaDeviceAppManagementMobileAppCountAsMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMobileLobApp.md)
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsMicrosoftStoreForBusinessApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMicrosoftStoreForBusinessApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWin32LobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsWin32LobApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsAppX](Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsAppX.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsMobileMsi](Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsMobileMsi.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWindowStoreApp](Get-MgBetaDeviceAppManagementMobileAppCountAsWindowStoreApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsUniversalAppX](Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsUniversalAppX.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsWebApp](Get-MgBetaDeviceAppManagementMobileAppCountAsWindowsWebApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsWinGetApp](Get-MgBetaDeviceAppManagementMobileAppCountAsWinGetApp.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppRelationship](Get-MgBetaDeviceAppManagementMobileAppRelationship.md)

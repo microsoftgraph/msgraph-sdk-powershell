@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgBetaDriveListColumn
 
 ## SYNOPSIS
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -58,7 +59,8 @@ New-MgBetaDriveListColumn -InputObject <IFilesIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 
@@ -777,7 +779,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -989,7 +991,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1060,7 +1062,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `TERM <IMicrosoftGraphTermColumn>`: termColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+  - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
   - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.

@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a delegatedAdminRelationship object.
 A relationship can only be deleted if it's in the 'created' status.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgTenantRelationshipDelegatedAdminRelationship -InputObject <IIdentityPar
 ## DESCRIPTION
 Delete a delegatedAdminRelationship object.
 A relationship can only be deleted if it's in the 'created' status.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

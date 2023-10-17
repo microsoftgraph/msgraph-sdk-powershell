@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ Remove-MgGroupSiteTermStoreGroupSetTerm -InputObject <ISitesIdentity> [-IfMatch 
 
 ## DESCRIPTION
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

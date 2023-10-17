@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgGroupSiteContentType
 
 ## SYNOPSIS
-Remove a [content type][contentType] from a [list][] or a [site][].
+Remove a content type][contentType] from a [list][] or a [site][].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgGroupSiteContentType -InputObject <ISitesIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Remove a [content type][contentType] from a [list][] or a [site][].
+Remove a content type][contentType] from a [list][] or a [site][].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

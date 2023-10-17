@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new urlThreatSubmission object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ New-MgBetaSecurityThreatSubmissionUrlThreat -BodyParameter <IMicrosoftGraphSecur
 
 ## DESCRIPTION
 Create a new urlThreatSubmission object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -237,7 +239,7 @@ Accept wildcard characters: False
 ### -TenantId
 Indicates the tenant id of the submitter.
 Not required when created using a POST operation.
-It is extracted from the token of the post API call.
+It's extracted from the token of the post API call.
 
 ```yaml
 Type: System.String
@@ -346,11 +348,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[DetectedFiles <IMicrosoftGraphSecuritySubmissionDetectedFile[]>]`: Specifies the files detected by Microsoft in the submitted emails.
       - `[FileHash <String>]`: The file hash.
       - `[FileName <String>]`: The file name.
-    - `[DetectedUrls <String[]>]`: Specifes the URLs detected by Microsoft in the submitted email.
+    - `[DetectedUrls <String[]>]`: Specifies the URLs detected by Microsoft in the submitted email.
     - `[UserMailboxSetting <String>]`: userMailboxSetting
   - `[Source <String>]`: submissionSource
   - `[Status <String>]`: longRunningOperationStatus
-  - `[TenantId <String>]`: Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.
+  - `[TenantId <String>]`: Indicates the tenant id of the submitter. Not required when created using a POST operation. It's extracted from the token of the post API call.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[WebUrl <String>]`: Denotes the webUrl that needs to be submitted.
 
@@ -367,7 +369,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DetectedFiles <IMicrosoftGraphSecuritySubmissionDetectedFile[]>]`: Specifies the files detected by Microsoft in the submitted emails.
     - `[FileHash <String>]`: The file hash.
     - `[FileName <String>]`: The file name.
-  - `[DetectedUrls <String[]>]`: Specifes the URLs detected by Microsoft in the submitted email.
+  - `[DetectedUrls <String[]>]`: Specifies the URLs detected by Microsoft in the submitted email.
   - `[UserMailboxSetting <String>]`: userMailboxSetting
 
 ## RELATED LINKS

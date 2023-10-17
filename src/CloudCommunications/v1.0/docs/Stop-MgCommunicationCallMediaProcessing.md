@@ -13,6 +13,7 @@ Media operations refer to the IVR operations playPrompt and recordResponse, whic
 The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued.
 For example, this method can be used to clean up the IVR operation queue for a new media operation.
 However, it will not cancel a subscribeToTone operation because it operates independent of any operation queue.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,6 +49,7 @@ Media operations refer to the IVR operations playPrompt and recordResponse, whic
 The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued.
 For example, this method can be used to clean up the IVR operation queue for a new media operation.
 However, it will not cancel a subscribeToTone operation because it operates independent of any operation queue.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -203,6 +205,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgTeamworkTeamAppSetting
 
 ## SYNOPSIS
-Update the navigation property teamsAppSettings in teamwork
+Update the tenant-wide teamsAppSettings for all Teams apps in the tenant.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Update-MgTeamworkTeamAppSetting -BodyParameter <IMicrosoftGraphTeamsAppSettings>
 ```
 
 ## DESCRIPTION
-Update the navigation property teamsAppSettings in teamwork
+Update the tenant-wide teamsAppSettings for all Teams apps in the tenant.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -61,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUserRequestsForAppAccess
-.
+Indicates whether users are allowed to request access to the unavailable Teams apps.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,7 +163,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphTeamsAppSettings>`: teamsAppSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AllowUserRequestsForAppAccess <Boolean?>]`: 
+  - `[AllowUserRequestsForAppAccess <Boolean?>]`: Indicates whether users are allowed to request access to the unavailable Teams apps.
 
 ## RELATED LINKS
 

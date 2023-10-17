@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new homeRealmDiscoveryPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ New-MgPolicyHomeRealmDiscoveryPolicy -BodyParameter <Hashtable> [-Confirm] [-Wha
 
 ## DESCRIPTION
 Create a new homeRealmDiscoveryPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

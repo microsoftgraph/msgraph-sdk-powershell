@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a group from the list of groups included in a mobile app management policy.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Remove-MgBetaPolicyMobileDeviceManagementPolicyIncludedGroupByRef -InputObject <
 
 ## DESCRIPTION
 Delete a group from the list of groups included in a mobile app management policy.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

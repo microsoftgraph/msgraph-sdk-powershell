@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of plannertask objects assigned to a User.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgBetaUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter
 
 ## DESCRIPTION
 Retrieve a list of plannertask objects assigned to a User.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

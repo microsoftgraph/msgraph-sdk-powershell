@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reprovision a specific Cloud PC.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc -InputObject <IDe
 
 ## DESCRIPTION
 Reprovision a specific Cloud PC.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

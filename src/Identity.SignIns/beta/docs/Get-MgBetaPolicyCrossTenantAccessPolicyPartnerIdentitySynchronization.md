@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the user synchronization policy of a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Get-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -InputObje
 
 ## DESCRIPTION
 Get the user synchronization policy of a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

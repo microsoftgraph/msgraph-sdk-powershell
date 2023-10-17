@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a single permissionGrantPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaPolicyPermissionGrantPolicy -InputObject <IIdentitySignInsIdentity> [-
 
 ## DESCRIPTION
 Retrieve a single permissionGrantPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

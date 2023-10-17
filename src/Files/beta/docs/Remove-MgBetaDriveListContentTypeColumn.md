@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaDriveListContentTypeColumn
 
 ## SYNOPSIS
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgBetaDriveListContentTypeColumn -InputObject <IFilesIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

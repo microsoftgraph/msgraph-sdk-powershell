@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an itemPhone object from the user's profile.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfilePhone -InputObject <IPeopleIdentity> [-IfMatch <String>]
 
 ## DESCRIPTION
 Delete an itemPhone object from the user's profile.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

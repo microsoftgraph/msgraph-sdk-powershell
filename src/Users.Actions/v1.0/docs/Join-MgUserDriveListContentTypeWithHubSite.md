@@ -8,7 +8,8 @@ schema: 2.0.0
 # Join-MgUserDriveListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Associate a published content type][contentType] present in a content type hub with a list of hub sites.
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Join-MgUserDriveListContentTypeWithHubSite -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Associate a published content type][contentType] present in a content type hub with a list of hub sites.
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

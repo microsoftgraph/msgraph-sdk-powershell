@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Follow a driveItem.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Invoke-MgFollowGroupDriveItem -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf
 
 ## DESCRIPTION
 Follow a driveItem.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

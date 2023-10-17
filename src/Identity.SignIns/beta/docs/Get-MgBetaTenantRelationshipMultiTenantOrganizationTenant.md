@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a tenant and its properties in the multi-tenant organization.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaTenantRelationshipMultiTenantOrganizationTenant -InputObject <IIdentit
 
 ## DESCRIPTION
 Get a tenant and its properties in the multi-tenant organization.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

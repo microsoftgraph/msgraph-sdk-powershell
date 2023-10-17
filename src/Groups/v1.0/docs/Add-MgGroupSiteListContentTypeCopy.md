@@ -8,7 +8,8 @@ schema: 2.0.0
 # Add-MgGroupSiteListContentTypeCopy
 
 ## SYNOPSIS
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Add a copy of a content type][contentType] from a [site][site] to a [list][list].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Add-MgGroupSiteListContentTypeCopy -InputObject <IGroupsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Add a copy of a content type][contentType] from a [site][site] to a [list][list].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

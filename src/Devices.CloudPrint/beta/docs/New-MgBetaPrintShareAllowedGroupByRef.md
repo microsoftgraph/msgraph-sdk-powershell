@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Grant the specified group access to submit print jobs to the associated printerShare.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ New-MgBetaPrintShareAllowedGroupByRef -InputObject <IDevicesCloudPrintIdentity> 
 
 ## DESCRIPTION
 Grant the specified group access to submit print jobs to the associated printerShare.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

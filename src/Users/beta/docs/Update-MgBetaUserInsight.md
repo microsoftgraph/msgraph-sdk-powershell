@@ -268,7 +268,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Address <String>]`: The email address of the user who shared the item.
       - `[DisplayName <String>]`: The display name of the user who shared the item.
-      - `[Id <String>]`: The id of the user who shared the item.
+      - `[Id <String>]`: The ID of the user who shared the item.
     - `[SharedDateTime <DateTime?>]`: The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[SharingReference <IMicrosoftGraphResourceReference>]`: resourceReference
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -287,11 +287,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ContainerDisplayName <String>]`: A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
     - `[ContainerType <String>]`: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
     - `[ContainerWebUrl <String>]`: A path leading to the folder in which the item is stored.
-    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
     - `[PreviewImageUrl <String>]`: A URL leading to the preview image for the item.
     - `[PreviewText <String>]`: A preview text for the item.
     - `[Title <String>]`: The item's title text.
-    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.
   - `[SharingHistory <IMicrosoftGraphSharingDetail[]>]`: 
 
 `TRENDING <IMicrosoftGraphTrending[]>`: Access this property from the derived type itemInsights.
@@ -310,11 +310,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ContainerDisplayName <String>]`: A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
     - `[ContainerType <String>]`: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
     - `[ContainerWebUrl <String>]`: A path leading to the folder in which the item is stored.
-    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
     - `[PreviewImageUrl <String>]`: A URL leading to the preview image for the item.
     - `[PreviewText <String>]`: A preview text for the item.
     - `[Title <String>]`: The item's title text.
-    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.
   - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 
 `USED <IMicrosoftGraphUsedInsight[]>`: Access this property from the derived type itemInsights.
@@ -336,11 +336,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ContainerDisplayName <String>]`: A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
     - `[ContainerType <String>]`: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
     - `[ContainerWebUrl <String>]`: A path leading to the folder in which the item is stored.
-    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
     - `[PreviewImageUrl <String>]`: A URL leading to the preview image for the item.
     - `[PreviewText <String>]`: A preview text for the item.
     - `[Title <String>]`: The item's title text.
-    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.
 
 ## RELATED LINKS
 

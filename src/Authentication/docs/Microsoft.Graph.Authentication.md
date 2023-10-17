@@ -1,6 +1,6 @@
 ﻿---
 Module Name: Microsoft.Graph.Authentication
-Module Guid: e02d0639-6606-4204-9e67-c2af9fed5bab
+Module Guid: 8429e3f2-9f5b-4865-b31d-c226bec16c8e
 Download Help Link: https://learn.microsoft.com/powershell/module/Microsoft.Graph.Authentication
 Help Version: 1.0.0.0
 Locale: en-US

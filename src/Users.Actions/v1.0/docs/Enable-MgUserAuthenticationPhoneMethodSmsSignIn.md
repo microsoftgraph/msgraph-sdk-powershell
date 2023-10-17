@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Enable SMS sign-in for an existing mobile phone number registered to a user.
-To be successfully enabled:
+To be successfully enabled: This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Enable-MgUserAuthenticationPhoneMethodSmsSignIn -InputObject <IUsersActionsIdent
 
 ## DESCRIPTION
 Enable SMS sign-in for an existing mobile phone number registered to a user.
-To be successfully enabled:
+To be successfully enabled: This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

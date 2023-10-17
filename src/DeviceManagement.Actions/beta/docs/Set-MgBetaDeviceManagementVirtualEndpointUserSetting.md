@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign a cloudPcUserSetting to user groups.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Set-MgBetaDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManage
 
 ## DESCRIPTION
 Assign a cloudPcUserSetting to user groups.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

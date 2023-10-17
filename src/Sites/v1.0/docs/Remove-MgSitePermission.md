@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a permission object on a site.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgSitePermission -InputObject <ISitesIdentity> [-IfMatch <String>] [-Pass
 
 ## DESCRIPTION
 Delete a permission object on a site.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPrivilegedAccessResourceRoleDefinition
 
 ## SYNOPSIS
-The collection of role defintions for the resource.
+The collection of role definitions for the resource.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgBetaPrivilegedAccessResourceRoleDefinition -InputObject <IIdentityGovernan
 ```
 
 ## DESCRIPTION
-The collection of role defintions for the resource.
+The collection of role definitions for the resource.
 
 ## EXAMPLES
 
@@ -337,6 +337,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

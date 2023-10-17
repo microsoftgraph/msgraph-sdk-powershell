@@ -316,7 +316,7 @@ Accept wildcard characters: False
 
 ### -Status
 The status of this subscription.
-Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
 
 ```yaml
 Type: System.String
@@ -416,7 +416,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ServicePlanName <String>]`: The name of the service plan.
   - `[SkuId <String>]`: The object ID of the SKU associated with this subscription.
   - `[SkuPartNumber <String>]`: The SKU associated with this subscription.
-  - `[Status <String>]`: The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.
+  - `[Status <String>]`: The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
   - `[TotalLicenses <Int32?>]`: The number of seats included in this subscription.
 
 `INPUTOBJECT <IIdentityDirectoryManagementIdentity>`: Identity Parameter

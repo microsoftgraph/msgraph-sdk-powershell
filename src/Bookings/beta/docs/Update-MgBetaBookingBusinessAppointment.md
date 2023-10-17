@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a bookingAppointment object in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -60,6 +61,7 @@ Update-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-Addit
 
 ## DESCRIPTION
 Update the properties of a bookingAppointment object in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

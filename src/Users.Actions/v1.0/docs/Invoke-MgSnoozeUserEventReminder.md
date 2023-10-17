@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Postpone a reminder for an event in a user calendar until a new time.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity> [-Addition
 
 ## DESCRIPTION
 Postpone a reminder for an event in a user calendar until a new time.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

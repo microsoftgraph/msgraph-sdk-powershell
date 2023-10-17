@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an updatePolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaWindowsUpdatesPolicy -InputObject <IWindowsUpdatesIdentity> [-IfMat
 
 ## DESCRIPTION
 Delete an updatePolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the app installed in the personal scope of the specified user.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaUserTeamworkInstalledApp -InputObject <ITeamsIdentity> [-ExpandPropert
 
 ## DESCRIPTION
 Retrieve the app installed in the personal scope of the specified user.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

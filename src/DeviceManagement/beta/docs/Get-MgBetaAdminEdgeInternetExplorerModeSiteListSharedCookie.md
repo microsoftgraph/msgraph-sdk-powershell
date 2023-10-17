@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaAdminEdgeInternetExplorerModeSiteListSharedCookie -InputObject <IDevic
 
 ## DESCRIPTION
 Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

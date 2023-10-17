@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new contactFolder as a child of a specified folder.
 You can also create a new contactFolder under the user's default contact folder.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,6 +51,7 @@ New-MgBetaUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
 ## DESCRIPTION
 Create a new contactFolder as a child of a specified folder.
 You can also create a new contactFolder under the user's default contact folder.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

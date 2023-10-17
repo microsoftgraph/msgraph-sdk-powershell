@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupSiteAnalyticTime
 
 ## SYNOPSIS
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgGroupSiteAnalyticTime -InputObject <ISitesIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

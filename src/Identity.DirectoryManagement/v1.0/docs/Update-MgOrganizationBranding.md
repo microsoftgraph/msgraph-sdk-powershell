@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of the default branding object specified by the organizationalBranding resource.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -65,6 +66,7 @@ Update-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity
 
 ## DESCRIPTION
 Update the properties of the default branding object specified by the organizationalBranding resource.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -814,6 +816,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
+  - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
   - `[ScopedRoleMembershipId <String>]`: The unique identifier of scopedRoleMembership
   - `[SubscribedSkuId <String>]`: The unique identifier of subscribedSku

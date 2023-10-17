@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ### -Decisions
 Determines which review decisions will be included in the fetched review history data if specified.
 Optional on create.
-All decisions will be included by default if no decisions are provided on create.
+All decisions are included by default if no decisions are provided on create.
 Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
 
 ```yaml
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 
 ### -Instances
 If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence.
-A definition that does not recur will have exactly one instance.
+A definition that doesn't recur will have exactly one instance.
 To construct, see NOTES section for INSTANCES properties and create a hash table.
 
 ```yaml
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ### -ReviewHistoryPeriodStartDateTime
 A timestamp.
 Reviews starting on or before this date will be included in the fetched history data.
-Only required if scheduleSettings is not defined.
+Only required if scheduleSettings isn't defined.
 
 ```yaml
 Type: System.DateTime
@@ -402,21 +402,21 @@ To create the parameters described below, construct a hash table containing the 
     - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[CreatedDateTime <DateTime?>]`: Timestamp when the access review definition was created.
-  - `[Decisions <String[]>]`: Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+  - `[Decisions <String[]>]`: Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
   - `[DisplayName <String>]`: Name for the access review history data collection. Required.
   - `[DownloadUri <String>]`: 
   - `[FulfilledDateTime <DateTime?>]`: 
-  - `[Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>]`: If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
+  - `[Instances <IMicrosoftGraphAccessReviewHistoryInstance[]>]`: If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DownloadUri <String>]`: Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+    - `[DownloadUri <String>]`: Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
     - `[ExpirationDateTime <DateTime?>]`: Timestamp when this instance and associated data expires and the history is deleted. Required.
     - `[FulfilledDateTime <DateTime?>]`: Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
-    - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: Timestamp, reviews ending on or before this date will be included in the fetched history data.
-    - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: Timestamp, reviews starting on or after this date will be included in the fetched history data.
+    - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: Timestamp, reviews ending on or before this date are in the fetched history data.
+    - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: Timestamp, reviews starting on or after this date are in the fetched history data.
     - `[RunDateTime <DateTime?>]`: Timestamp when the instance's history data is scheduled to be generated.
     - `[Status <String>]`: accessReviewHistoryStatus
   - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-  - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+  - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
   - `[ScheduleSettings <IMicrosoftGraphAccessReviewHistoryScheduleSettings>]`: accessReviewHistoryScheduleSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
@@ -437,7 +437,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[RecurrenceTimeZone <String>]`: Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
         - `[StartDate <DateTime?>]`: The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
         - `[Type <String>]`: recurrenceRangeType
-    - `[ReportRange <String>]`: A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
+    - `[ReportRange <String>]`: A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the first of every month, the reportRange is P1M. In this case, on the first of every month, access review history data is collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
   - `[Scopes <IMicrosoftGraphAccessReviewScope[]>]`: Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
   - `[Status <String>]`: accessReviewHistoryStatus
 
@@ -500,6 +500,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest
@@ -546,13 +547,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkflowTemplateId <String>]`: The unique identifier of workflowTemplate
   - `[WorkflowVersionNumber <Int32?>]`: The unique identifier of workflowVersion
 
-`INSTANCES <IMicrosoftGraphAccessReviewHistoryInstance[]>`: If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
+`INSTANCES <IMicrosoftGraphAccessReviewHistoryInstance[]>`: If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DownloadUri <String>]`: Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+  - `[DownloadUri <String>]`: Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
   - `[ExpirationDateTime <DateTime?>]`: Timestamp when this instance and associated data expires and the history is deleted. Required.
   - `[FulfilledDateTime <DateTime?>]`: Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
-  - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: Timestamp, reviews ending on or before this date will be included in the fetched history data.
-  - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: Timestamp, reviews starting on or after this date will be included in the fetched history data.
+  - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: Timestamp, reviews ending on or before this date are in the fetched history data.
+  - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: Timestamp, reviews starting on or after this date are in the fetched history data.
   - `[RunDateTime <DateTime?>]`: Timestamp when the instance's history data is scheduled to be generated.
   - `[Status <String>]`: accessReviewHistoryStatus
 
@@ -576,7 +577,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[RecurrenceTimeZone <String>]`: Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
       - `[StartDate <DateTime?>]`: The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
       - `[Type <String>]`: recurrenceRangeType
-  - `[ReportRange <String>]`: A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the 1st of every month, the reportRange is P1M. In this case, on the first of every month, access review history data will be collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
+  - `[ReportRange <String>]`: A duration string in ISO 8601 duration format specifying the lookback period of the generated review history data. For example, if a history definition is scheduled to run on the first of every month, the reportRange is P1M. In this case, on the first of every month, access review history data is collected containing only the previous month's review data. Note: Only years, months, and days ISO 8601 properties are supported. Required.
 
 ## RELATED LINKS
 

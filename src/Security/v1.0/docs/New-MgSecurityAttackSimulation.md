@@ -17,9 +17,15 @@ Create new navigation property to simulations for security
 New-MgSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackTechnique <String>]
  [-AttackType <String>] [-AutomationId <String>] [-CompletionDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphEmailIdentity>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DisplayName <String>] [-Id <String>] [-IsAutomated] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
- [-LastModifiedDateTime <DateTime>] [-LaunchDateTime <DateTime>] [-PayloadDeliveryPlatform <String>]
- [-Report <IMicrosoftGraphSimulationReport>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-DurationInDays <Int32>]
+ [-EndUserNotificationSetting <IMicrosoftGraphEndUserNotificationSetting>]
+ [-ExcludedAccountTarget <IMicrosoftGraphAccountTargetContent>] [-Id <String>]
+ [-IncludedAccountTarget <IMicrosoftGraphAccountTargetContent>] [-IsAutomated]
+ [-LandingPage <IMicrosoftGraphLandingPage>] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
+ [-LastModifiedDateTime <DateTime>] [-LaunchDateTime <DateTime>] [-LoginPage <IMicrosoftGraphLoginPage>]
+ [-OAuthConsentAppDetail <IMicrosoftGraphOAuthConsentAppDetail>] [-Payload <IMicrosoftGraphPayload>]
+ [-PayloadDeliveryPlatform <String>] [-Report <IMicrosoftGraphSimulationReport>] [-Status <String>]
+ [-TrainingSetting <IMicrosoftGraphTrainingSetting>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -203,6 +209,53 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DurationInDays
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndUserNotificationSetting
+endUserNotificationSetting
+To construct, see NOTES section for ENDUSERNOTIFICATIONSETTING properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndUserNotificationSetting
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExcludedAccountTarget
+accountTargetContent
+To construct, see NOTES section for EXCLUDEDACCOUNTTARGET properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccountTargetContent
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 The unique identifier for an entity.
 Read-only.
@@ -219,12 +272,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IncludedAccountTarget
+accountTargetContent
+To construct, see NOTES section for INCLUDEDACCOUNTTARGET properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccountTargetContent
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IsAutomated
 Flag that represents if the attack simulation and training campaign was created from a simulation automation flow.
 Supports $filter and $orderby.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LandingPage
+landingPage
+To construct, see NOTES section for LANDINGPAGE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLandingPage
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -282,6 +367,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LoginPage
+loginPage
+To construct, see NOTES section for LOGINPAGE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLoginPage
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OAuthConsentAppDetail
+oAuthConsentAppDetail
+To construct, see NOTES section for OAUTHCONSENTAPPDETAIL properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOAuthConsentAppDetail
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Payload
+payload
+To construct, see NOTES section for PAYLOAD properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPayload
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PayloadDeliveryPlatform
 payloadDeliveryPlatform
 
@@ -318,6 +451,22 @@ simulationStatus
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TrainingSetting
+trainingSetting
+To construct, see NOTES section for TRAININGSETTING properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTrainingSetting
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -388,16 +537,125 @@ To create the parameters described below, construct a hash table containing the 
   - `[CompletionDateTime <DateTime?>]`: Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
   - `[Description <String>]`: Description of the attack simulation and training campaign.
   - `[DisplayName <String>]`: Display name of the attack simulation and training campaign. Supports $filter and $orderby.
+  - `[DurationInDays <Int32?>]`: 
+  - `[EndUserNotificationSetting <IMicrosoftGraphEndUserNotificationSetting>]`: endUserNotificationSetting
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[NotificationPreference <String>]`: endUserNotificationPreference
+    - `[PositiveReinforcement <IMicrosoftGraphPositiveReinforcementNotification>]`: positiveReinforcementNotification
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DefaultLanguage <String>]`: 
+      - `[EndUserNotification <IMicrosoftGraphEndUserNotification>]`: endUserNotification
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+        - `[CreatedDateTime <DateTime?>]`: 
+        - `[Description <String>]`: 
+        - `[Details <IMicrosoftGraphEndUserNotificationDetail[]>]`: 
+          - `[Id <String>]`: The unique identifier for an entity. Read-only.
+          - `[EmailContent <String>]`: 
+          - `[IsDefaultLangauge <Boolean?>]`: 
+          - `[Language <String>]`: 
+          - `[Locale <String>]`: 
+          - `[SentFrom <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+          - `[Subject <String>]`: 
+        - `[DisplayName <String>]`: 
+        - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+        - `[LastModifiedDateTime <DateTime?>]`: 
+        - `[NotificationType <String>]`: endUserNotificationType
+        - `[Source <String>]`: simulationContentSource
+        - `[Status <String>]`: simulationContentStatus
+        - `[SupportedLocales <String[]>]`: 
+      - `[DeliveryPreference <String>]`: notificationDeliveryPreference
+    - `[SettingType <String>]`: endUserNotificationSettingType
+  - `[ExcludedAccountTarget <IMicrosoftGraphAccountTargetContent>]`: accountTargetContent
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Type <String>]`: accountTargetContentType
+  - `[IncludedAccountTarget <IMicrosoftGraphAccountTargetContent>]`: accountTargetContent
   - `[IsAutomated <Boolean?>]`: Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+  - `[LandingPage <IMicrosoftGraphLandingPage>]`: landingPage
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[Content <String>]`: 
+      - `[IsDefaultLangauge <Boolean?>]`: 
+      - `[Language <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Locale <String>]`: 
+    - `[Source <String>]`: simulationContentSource
+    - `[Status <String>]`: simulationContentStatus
+    - `[SupportedLocales <String[]>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
   - `[LastModifiedDateTime <DateTime?>]`: Date and time of the most recent modification of the attack simulation and training campaign.
   - `[LaunchDateTime <DateTime?>]`: Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
+  - `[LoginPage <IMicrosoftGraphLoginPage>]`: loginPage
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[Content <String>]`: 
+    - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Language <String>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Source <String>]`: simulationContentSource
+    - `[Status <String>]`: simulationContentStatus
+  - `[OAuthConsentAppDetail <IMicrosoftGraphOAuthConsentAppDetail>]`: oAuthConsentAppDetail
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AppScope <String>]`: oAuthAppScope
+    - `[DisplayLogo <String>]`: 
+    - `[DisplayName <String>]`: 
+  - `[Payload <IMicrosoftGraphPayload>]`: payload
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[Brand <String>]`: payloadBrand
+    - `[Complexity <String>]`: payloadComplexity
+    - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[Detail <IMicrosoftGraphPayloadDetail>]`: payloadDetail
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Coachmarks <IMicrosoftGraphPayloadCoachmark[]>]`: 
+        - `[CoachmarkLocation <IMicrosoftGraphCoachmarkLocation>]`: coachmarkLocation
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Length <Int32?>]`: 
+          - `[Offset <Int32?>]`: 
+          - `[Type <String>]`: coachmarkLocationType
+        - `[Description <String>]`: 
+        - `[Indicator <String>]`: 
+        - `[IsValid <Boolean?>]`: 
+        - `[Language <String>]`: 
+        - `[Order <String>]`: 
+      - `[Content <String>]`: 
+      - `[PhishingUrl <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Industry <String>]`: payloadIndustry
+    - `[IsAutomated <Boolean?>]`: 
+    - `[IsControversial <Boolean?>]`: 
+    - `[IsCurrentEvent <Boolean?>]`: 
+    - `[Language <String>]`: 
+    - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[PayloadTags <String[]>]`: 
+    - `[Platform <String>]`: payloadDeliveryPlatform
+    - `[PredictedCompromiseRate <Double?>]`: 
+    - `[SimulationAttackType <String>]`: simulationAttackType
+    - `[Source <String>]`: simulationContentSource
+    - `[Status <String>]`: simulationContentStatus
+    - `[Technique <String>]`: simulationAttackTechnique
+    - `[Theme <String>]`: payloadTheme
   - `[PayloadDeliveryPlatform <String>]`: payloadDeliveryPlatform
   - `[Report <IMicrosoftGraphSimulationReport>]`: simulationReport
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -452,18 +710,154 @@ To create the parameters described below, construct a hash table containing the 
         - `[TrainingCompletedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
         - `[TrainingUpdatedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
   - `[Status <String>]`: simulationStatus
+  - `[TrainingSetting <IMicrosoftGraphTrainingSetting>]`: trainingSetting
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[SettingType <String>]`: trainingSettingType
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
+`ENDUSERNOTIFICATIONSETTING <IMicrosoftGraphEndUserNotificationSetting>`: endUserNotificationSetting
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[NotificationPreference <String>]`: endUserNotificationPreference
+  - `[PositiveReinforcement <IMicrosoftGraphPositiveReinforcementNotification>]`: positiveReinforcementNotification
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DefaultLanguage <String>]`: 
+    - `[EndUserNotification <IMicrosoftGraphEndUserNotification>]`: endUserNotification
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
+        - `[Email <String>]`: Email address of the user.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Description <String>]`: 
+      - `[Details <IMicrosoftGraphEndUserNotificationDetail[]>]`: 
+        - `[Id <String>]`: The unique identifier for an entity. Read-only.
+        - `[EmailContent <String>]`: 
+        - `[IsDefaultLangauge <Boolean?>]`: 
+        - `[Language <String>]`: 
+        - `[Locale <String>]`: 
+        - `[SentFrom <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+        - `[Subject <String>]`: 
+      - `[DisplayName <String>]`: 
+      - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+      - `[LastModifiedDateTime <DateTime?>]`: 
+      - `[NotificationType <String>]`: endUserNotificationType
+      - `[Source <String>]`: simulationContentSource
+      - `[Status <String>]`: simulationContentStatus
+      - `[SupportedLocales <String[]>]`: 
+    - `[DeliveryPreference <String>]`: notificationDeliveryPreference
+  - `[SettingType <String>]`: endUserNotificationSettingType
+
+`EXCLUDEDACCOUNTTARGET <IMicrosoftGraphAccountTargetContent>`: accountTargetContent
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Type <String>]`: accountTargetContentType
+
+`INCLUDEDACCOUNTTARGET <IMicrosoftGraphAccountTargetContent>`: accountTargetContent
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Type <String>]`: accountTargetContentType
+
+`LANDINGPAGE <IMicrosoftGraphLandingPage>`: landingPage
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
+    - `[Email <String>]`: Email address of the user.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[Content <String>]`: 
+    - `[IsDefaultLangauge <Boolean?>]`: 
+    - `[Language <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Locale <String>]`: 
+  - `[Source <String>]`: simulationContentSource
+  - `[Status <String>]`: simulationContentStatus
+  - `[SupportedLocales <String[]>]`: 
+
 `LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
+
+`LOGINPAGE <IMicrosoftGraphLoginPage>`: loginPage
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[Content <String>]`: 
+  - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
+    - `[Email <String>]`: Email address of the user.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[Language <String>]`: 
+  - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Source <String>]`: simulationContentSource
+  - `[Status <String>]`: simulationContentStatus
+
+`OAUTHCONSENTAPPDETAIL <IMicrosoftGraphOAuthConsentAppDetail>`: oAuthConsentAppDetail
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AppScope <String>]`: oAuthAppScope
+  - `[DisplayLogo <String>]`: 
+  - `[DisplayName <String>]`: 
+
+`PAYLOAD <IMicrosoftGraphPayload>`: payload
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[Brand <String>]`: payloadBrand
+  - `[Complexity <String>]`: payloadComplexity
+  - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
+    - `[Email <String>]`: Email address of the user.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[Detail <IMicrosoftGraphPayloadDetail>]`: payloadDetail
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Coachmarks <IMicrosoftGraphPayloadCoachmark[]>]`: 
+      - `[CoachmarkLocation <IMicrosoftGraphCoachmarkLocation>]`: coachmarkLocation
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Length <Int32?>]`: 
+        - `[Offset <Int32?>]`: 
+        - `[Type <String>]`: coachmarkLocationType
+      - `[Description <String>]`: 
+      - `[Indicator <String>]`: 
+      - `[IsValid <Boolean?>]`: 
+      - `[Language <String>]`: 
+      - `[Order <String>]`: 
+    - `[Content <String>]`: 
+    - `[PhishingUrl <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[Industry <String>]`: payloadIndustry
+  - `[IsAutomated <Boolean?>]`: 
+  - `[IsControversial <Boolean?>]`: 
+  - `[IsCurrentEvent <Boolean?>]`: 
+  - `[Language <String>]`: 
+  - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[PayloadTags <String[]>]`: 
+  - `[Platform <String>]`: payloadDeliveryPlatform
+  - `[PredictedCompromiseRate <Double?>]`: 
+  - `[SimulationAttackType <String>]`: simulationAttackType
+  - `[Source <String>]`: simulationContentSource
+  - `[Status <String>]`: simulationContentStatus
+  - `[Technique <String>]`: simulationAttackTechnique
+  - `[Theme <String>]`: payloadTheme
 
 `REPORT <IMicrosoftGraphSimulationReport>`: simulationReport
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -517,6 +911,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[PotentialScoreImpact <Double?>]`: Potential improvement in the tenant security posture after completion of the training by the user.
       - `[TrainingCompletedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
       - `[TrainingUpdatedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
+
+`TRAININGSETTING <IMicrosoftGraphTrainingSetting>`: trainingSetting
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[SettingType <String>]`: trainingSettingType
 
 ## RELATED LINKS
 

@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ### -DefaultDomainName
 A copy of the customer tenant's default domain name.
 The copy is made when the partnership with the customer is established.
-It is not automatically updated if the customer tenant's default domain name changes.
+It isn't automatically updated if the customer tenant's default domain name changes.
 
 ```yaml
 Type: System.String
@@ -225,7 +225,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ContractType <String>]`: Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
   - `[CustomerId <String>]`: The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
-  - `[DefaultDomainName <String>]`: A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
+  - `[DefaultDomainName <String>]`: A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It isn't automatically updated if the customer tenant's default domain name changes.
   - `[DisplayName <String>]`: A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
 
 ## RELATED LINKS

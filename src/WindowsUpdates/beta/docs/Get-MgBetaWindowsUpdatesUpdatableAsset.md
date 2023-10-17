@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Read the properties of an azureADDevice object.
+Read the properties and relationships of an updatableAsset object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity> [-
 ```
 
 ## DESCRIPTION
-Read the properties of an azureADDevice object.
+Read the properties and relationships of an updatableAsset object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

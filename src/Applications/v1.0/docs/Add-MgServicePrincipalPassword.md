@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a strong password or secret to a servicePrincipal object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Add-MgServicePrincipalPassword -InputObject <IApplicationsIdentity> [-Additional
 
 ## DESCRIPTION
 Add a strong password or secret to a servicePrincipal object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

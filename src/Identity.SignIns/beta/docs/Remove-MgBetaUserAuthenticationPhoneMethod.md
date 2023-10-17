@@ -9,10 +9,11 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a user's phone authentication method.
-Remember that a user cannot have an alternateMobile number without a mobile number.
+Remember that a user may not have an alternateMobile number without a mobile number.
 If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
-If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted.
+If the phone number is the user's default Azure multifactor authentication (MFA) authentication method, it cannot be deleted.
 Have the user change their default authentication method, and then delete the number.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,10 +31,11 @@ Remove-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentit
 
 ## DESCRIPTION
 Delete a user's phone authentication method.
-Remember that a user cannot have an alternateMobile number without a mobile number.
+Remember that a user may not have an alternateMobile number without a mobile number.
 If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
-If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted.
+If the phone number is the user's default Azure multifactor authentication (MFA) authentication method, it cannot be deleted.
 Have the user change their default authentication method, and then delete the number.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

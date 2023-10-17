@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-Module Guid: fbdf8e66-2e0f-4a26-aa9a-8b8c0c686b73
+Module Guid: dc91ed59-186e-41da-87ff-5ffa1f7dd712
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -14,6 +14,7 @@ Microsoft Graph PowerShell Cmdlets
 ### [Get-MgServiceAnnouncementHealthOverview](Get-MgServiceAnnouncementHealthOverview.md)
 Retrieve the properties and relationships of a serviceHealth object.
 This operation provides the health information of a specified service for a tenant.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgServiceAnnouncementHealthOverviewCount](Get-MgServiceAnnouncementHealthOverviewCount.md)
 Get the number of the resource
@@ -28,6 +29,7 @@ Get the number of the resource
 Retrieve the properties and relationships of a serviceHealthIssue object.
 This operation retrieves a specified service health issue for tenant.
 The operation returns an error if the issue does not exist for the tenant.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgServiceAnnouncementIssueCount](Get-MgServiceAnnouncementIssueCount.md)
 Get the number of the resource
@@ -36,9 +38,11 @@ Get the number of the resource
 Retrieve the properties and relationships of a serviceUpdateMessage object.
 This operation retrieves a specified service update message for the tenant.
 The operation returns an error if the message does not exist for the tenant.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgServiceAnnouncementMessageAttachment](Get-MgServiceAnnouncementMessageAttachment.md)
 Read the properties and relationships of a serviceAnnouncementAttachment object.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgServiceAnnouncementMessageAttachmentArchive](Get-MgServiceAnnouncementMessageAttachmentArchive.md)
 The zip file that contains all attachments for a message.
@@ -54,15 +58,19 @@ Get the number of the resource
 
 ### [Invoke-MgArchiveServiceAnnouncementMessage](Invoke-MgArchiveServiceAnnouncementMessage.md)
 Archive a list of serviceUpdateMessages for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgFavoriteServiceAnnouncementMessage](Invoke-MgFavoriteServiceAnnouncementMessage.md)
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgMarkServiceAnnouncementMessageRead](Invoke-MgMarkServiceAnnouncementMessageRead.md)
 Mark a list of serviceUpdateMessages as read for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgMarkServiceAnnouncementMessageUnread](Invoke-MgMarkServiceAnnouncementMessageUnread.md)
 Mark a list of serviceUpdateMessages as unread for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident.md)
 Invoke function incidentReport
@@ -72,9 +80,11 @@ Invoke function incidentReport
 
 ### [Invoke-MgUnarchiveServiceAnnouncementMessage](Invoke-MgUnarchiveServiceAnnouncementMessage.md)
 Unarchive a list of serviceUpdateMessages for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ### [Invoke-MgUnfavoriteServiceAnnouncementMessage](Invoke-MgUnfavoriteServiceAnnouncementMessage.md)
 Remove the favorite status of serviceUpdateMessages for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ### [New-MgServiceAnnouncementHealthOverview](New-MgServiceAnnouncementHealthOverview.md)
 Create new navigation property to healthOverviews for admin

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a class from a school.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgEducationSchoolClassByRef -InputObject <IEducationIdentity> [-Id <Strin
 
 ## DESCRIPTION
 Delete a class from a school.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

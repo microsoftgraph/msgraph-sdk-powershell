@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a plannerTaskConfiguration object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Update-MgBetaBusinessScenarioPlannerTaskConfiguration -InputObject <IBookingsIde
 
 ## DESCRIPTION
 Update the properties of a plannerTaskConfiguration object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -211,7 +213,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[EditPolicy <IMicrosoftGraphPlannerTaskPolicy>]`: plannerTaskPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+    - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
       - `[DefaultRule <String>]`: Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
       - `[PropertyRule <IMicrosoftGraphPlannerTaskPropertyRule>]`: plannerTaskPropertyRule
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -242,7 +244,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `EDITPOLICY <IMicrosoftGraphPlannerTaskPolicy>`: plannerTaskPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
+  - `[Rules <IMicrosoftGraphPlannerTaskRoleBasedRule[]>]`: The rules that should be enforced on the tasks when they're being changed outside of the scenario, based on the role of the caller.
     - `[DefaultRule <String>]`: Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
     - `[PropertyRule <IMicrosoftGraphPlannerTaskPropertyRule>]`: plannerTaskPropertyRule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

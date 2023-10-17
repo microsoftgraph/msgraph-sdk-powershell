@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a personCertification object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfileCertification -InputObject <IPeopleIdentity> [-IfMatch <
 
 ## DESCRIPTION
 Deletes a personCertification object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

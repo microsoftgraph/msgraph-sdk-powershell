@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrivacySubjectRightsRequestNote
 
 ## SYNOPSIS
-List of notes associcated with the request.
+List of notes associated with the request.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgPrivacySubjectRightsRequestNote -InputObject <IComplianceIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-List of notes associcated with the request.
+List of notes associated with the request.
 
 ## EXAMPLES
 
@@ -272,6 +272,7 @@ To create the parameters described below, construct a hash table containing the 
 `INPUTOBJECT <IComplianceIdentity>`: Identity Parameter
   - `[AuthoredNoteId <String>]`: The unique identifier of authoredNote
   - `[SubjectRightsRequestId <String>]`: The unique identifier of subjectRightsRequest
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

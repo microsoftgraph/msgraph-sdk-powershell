@@ -8,7 +8,8 @@ schema: 2.0.0
 # Publish-MgBetaGroupSiteListContentType
 
 ## SYNOPSIS
-Publishes a [contentType][] present in a content type hub site.
+Publishes a contentType][] present in a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Publish-MgBetaGroupSiteListContentType -InputObject <IGroupsIdentity> [-PassThru
 ```
 
 ## DESCRIPTION
-Publishes a [contentType][] present in a content type hub site.
+Publishes a contentType][] present in a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

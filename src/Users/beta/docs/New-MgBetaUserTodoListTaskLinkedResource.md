@@ -11,6 +11,7 @@ schema: 2.0.0
 Create a linkedResource object to associate a specified task with an item in a partner application.
 For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association.
 You can also create a linkedResource object while creating a todoTask.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ New-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-Additio
 Create a linkedResource object to associate a specified task with an item in a partner application.
 For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association.
 You can also create a linkedResource object while creating a todoTask.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

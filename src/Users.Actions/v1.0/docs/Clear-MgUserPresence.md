@@ -11,6 +11,7 @@ schema: 2.0.0
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to Offline/Offline.
 For details about presences sessions, see presence: setPresence.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Clear-MgUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to Offline/Offline.
 For details about presences sessions, see presence: setPresence.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

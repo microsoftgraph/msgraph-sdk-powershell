@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retry the group service provisioning.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Invoke-MgBetaRetryGroupServiceProvisioning -InputObject <IGroupsIdentity> [-Pass
 
 ## DESCRIPTION
 Retry the group service provisioning.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

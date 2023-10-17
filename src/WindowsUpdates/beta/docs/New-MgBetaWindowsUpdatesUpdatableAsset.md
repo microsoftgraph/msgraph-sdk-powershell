@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new updatableAssetGroup object.
 The updatableAssetGroup resource inherits from updatableAsset.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ New-MgBetaWindowsUpdatesUpdatableAsset -BodyParameter <Hashtable> [-Confirm] [-W
 ## DESCRIPTION
 Create a new updatableAssetGroup object.
 The updatableAssetGroup resource inherits from updatableAsset.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the privacy settings for itemInsights and meeting hours insights of a user.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ Update-MgBetaUserSettingItemInsight -InputObject <IUsersIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Update the privacy settings for itemInsights and meeting hours insights of a user.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

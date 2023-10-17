@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a printConnector object.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Update-MgPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Update the properties of a printConnector object.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

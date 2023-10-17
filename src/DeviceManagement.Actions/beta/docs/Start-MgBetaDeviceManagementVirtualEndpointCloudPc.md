@@ -12,6 +12,7 @@ Power on a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
 After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately.
 Only IT admin users can perform this action.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Power on a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
 After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately.
 Only IT admin users can perform this action.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

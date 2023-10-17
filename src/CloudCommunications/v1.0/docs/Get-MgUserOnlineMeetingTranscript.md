@@ -8,7 +8,11 @@ schema: 2.0.0
 # Get-MgUserOnlineMeetingTranscript
 
 ## SYNOPSIS
-Get transcripts from users
+Retrieve a callTranscript object associated with a scheduled onlineMeeting.
+This API doesn't support getting call transcripts from channel meetings.
+Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
+Retrieving the content of the transcript returns the stream of text associated with the transcript.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +36,11 @@ Get-MgUserOnlineMeetingTranscript -InputObject <ICloudCommunicationsIdentity> [-
 ```
 
 ## DESCRIPTION
-Get transcripts from users
+Retrieve a callTranscript object associated with a scheduled onlineMeeting.
+This API doesn't support getting call transcripts from channel meetings.
+Retrieving the transcript returns the metadata of the single transcript associated with the online meeting.
+Retrieving the content of the transcript returns the stream of text associated with the transcript.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

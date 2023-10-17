@@ -8,7 +8,8 @@ schema: 2.0.0
 # Publish-MgDriveListContentType
 
 ## SYNOPSIS
-Publishes a [contentType][] present in the content type hub site.
+Publishes a contentType][] present in the content type hub site.
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Publish-MgDriveListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Publishes a [contentType][] present in the content type hub site.
+Publishes a contentType][] present in the content type hub site.
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

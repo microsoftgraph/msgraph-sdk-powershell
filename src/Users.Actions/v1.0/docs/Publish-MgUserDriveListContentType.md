@@ -8,7 +8,8 @@ schema: 2.0.0
 # Publish-MgUserDriveListContentType
 
 ## SYNOPSIS
-Publishes a [contentType][] present in the content type hub site.
+Publishes a contentType][] present in the content type hub site.
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Publish-MgUserDriveListContentType -InputObject <IUsersActionsIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-Publishes a [contentType][] present in the content type hub site.
+Publishes a contentType][] present in the content type hub site.
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

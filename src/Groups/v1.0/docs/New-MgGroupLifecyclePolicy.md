@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Creates a new groupLifecyclePolicy.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,6 +54,7 @@ New-MgGroupLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalProperties
 
 ## DESCRIPTION
 Creates a new groupLifecyclePolicy.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

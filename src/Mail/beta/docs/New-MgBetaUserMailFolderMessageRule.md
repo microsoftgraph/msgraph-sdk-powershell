@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a messageRule object by specifying a set of conditions and actions.
 Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ New-MgBetaUserMailFolderMessageRule -InputObject <IMailIdentity>
 ## DESCRIPTION
 Create a messageRule object by specifying a set of conditions and actions.
 Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

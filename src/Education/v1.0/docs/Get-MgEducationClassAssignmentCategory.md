@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve an educationCategory object.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -Educatio
 ## DESCRIPTION
 Retrieve an educationCategory object.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

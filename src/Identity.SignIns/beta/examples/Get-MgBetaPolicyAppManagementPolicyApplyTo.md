@@ -1,14 +1,22 @@
-### Example 1: Using the Get-MgBetaPolicyAppManagementPolicyApplyTo Cmdlet
+### Example 1: Get applications and service principal objects applied to an app management policy
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
 Get-MgBetaPolicyAppManagementPolicyApplyTo -AppManagementPolicyId $appManagementPolicyId
+
 ```
-This example shows how to use the Get-MgBetaPolicyAppManagementPolicyApplyTo Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaPolicyAppManagementPolicyApplyTo Cmdlet
+This example will get applications and service principal objects applied to an app management policy
+
+### Example 2: Get specific properties of applications and service principal objects applied to an app management policy using $select query option
+
 ```powershell
+
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+
 Get-MgBetaPolicyAppManagementPolicyApplyTo -AppManagementPolicyId $appManagementPolicyId -Property "id,appId,displayName,createdDateTime" 
+
 ```
-This example shows how to use the Get-MgBetaPolicyAppManagementPolicyApplyTo Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example will get specific properties of applications and service principal objects applied to an app management policy using $select query option
+

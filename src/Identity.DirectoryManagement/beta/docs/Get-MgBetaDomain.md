@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of domain object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ Get-MgBetaDomain -InputObject <IIdentityDirectoryManagementIdentity> [-ExpandPro
 
 ## DESCRIPTION
 Retrieve the properties and relationships of domain object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

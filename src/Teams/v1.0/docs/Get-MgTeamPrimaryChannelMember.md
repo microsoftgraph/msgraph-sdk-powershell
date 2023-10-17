@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a conversationMember from a channel.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-ExpandProperty <S
 
 ## DESCRIPTION
 Get a conversationMember from a channel.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

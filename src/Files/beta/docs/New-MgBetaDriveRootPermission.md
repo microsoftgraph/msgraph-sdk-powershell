@@ -117,7 +117,7 @@ Accept wildcard characters: False
 
 ### -ExpirationDateTime
 A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission.
-DateTime.MinValue indicates there is no expiration set for this permission.
+DateTime.MinValue indicates there's no expiration set for this permission.
 Optional.
 
 ```yaml
@@ -298,7 +298,7 @@ Accept wildcard characters: False
 
 ### -Roles
 The type of permission, for example, read.
-See below for the full list of roles.
+See the Roles property values section for the full list of roles.
 Read-only.
 
 ```yaml
@@ -385,7 +385,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphPermission>`: permission
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+  - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
   - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -441,7 +441,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Type <String>]`: The type of the link created.
     - `[WebHtml <String>]`: For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
     - `[WebUrl <String>]`: A URL that opens the item in the browser on the OneDrive website.
-  - `[Roles <String[]>]`: The type of permission, for example, read. See below for the full list of roles. Read-only.
+  - `[Roles <String[]>]`: The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.
   - `[ShareId <String>]`: A unique token that can be used to access this shared item via the [shares API][]. Read-only.
 
 `GRANTEDTO <IMicrosoftGraphIdentitySet>`: identitySet

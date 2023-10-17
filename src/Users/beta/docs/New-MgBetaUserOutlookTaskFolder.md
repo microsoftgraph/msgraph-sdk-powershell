@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a task folder in the default task group (My Tasks) of the user's mailbox.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ New-MgBetaUserOutlookTaskFolder -InputObject <IUsersIdentity> [-AdditionalProper
 
 ## DESCRIPTION
 Create a task folder in the default task group (My Tasks) of the user's mailbox.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

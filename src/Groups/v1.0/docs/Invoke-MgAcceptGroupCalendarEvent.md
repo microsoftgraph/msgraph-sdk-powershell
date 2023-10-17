@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Accept the specified event in a user calendar.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Invoke-MgAcceptGroupCalendarEvent -InputObject <IGroupsIdentity> [-AdditionalPro
 
 ## DESCRIPTION
 Accept the specified event in a user calendar.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

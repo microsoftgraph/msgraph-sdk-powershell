@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
 A tenant has only one cloudPcOrganizationSettings object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,6 +22,7 @@ Get-MgBetaDeviceManagementVirtualEndpointOrganizationSetting [-ExpandProperty <S
 ## DESCRIPTION
 Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
 A tenant has only one cloudPcOrganizationSettings object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

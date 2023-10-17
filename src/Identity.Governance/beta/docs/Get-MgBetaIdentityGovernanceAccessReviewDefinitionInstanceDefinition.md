@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDefinition
 
 ## SYNOPSIS
-There is exactly one accessReviewScheduleDefinition associated with each instance.
-It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+There's exactly one accessReviewScheduleDefinition associated with each instance.
+It's the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 
 ## SYNTAX
 
@@ -28,8 +28,8 @@ Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDefinition
 ```
 
 ## DESCRIPTION
-There is exactly one accessReviewScheduleDefinition associated with each instance.
-It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+There's exactly one accessReviewScheduleDefinition associated with each instance.
+It's the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
 
 ## EXAMPLES
 
@@ -197,6 +197,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

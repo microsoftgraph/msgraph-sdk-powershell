@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgBetaOnPremisePublishingProfilePublishedResource
 
 ## SYNOPSIS
-Update the properties of publishedresource  publishedResource object.
+Update the properties of published resource  publishedResource object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +43,8 @@ Update-MgBetaOnPremisePublishingProfilePublishedResource -InputObject <IApplicat
 ```
 
 ## DESCRIPTION
-Update the properties of publishedresource  publishedResource object.
+Update the properties of published resource  publishedResource object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -277,7 +279,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]`: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
     - `[ExternalIP <String>]`: The external IP address as detected by the service for the agent machine. Read-only
-    - `[MachineName <String>]`: The name of the machine that the aggent is running on. Read-only
+    - `[MachineName <String>]`: The name of the machine that the agent is running on. Read-only
     - `[Status <String>]`: agentStatus
     - `[SupportedPublishingTypes <String[]>]`: 
   - `[DisplayName <String>]`: Display name of the onPremisesAgentGroup.
@@ -299,7 +301,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AgentGroups <IMicrosoftGraphOnPremisesAgentGroup[]>]`: List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
       - `[ExternalIP <String>]`: The external IP address as detected by the service for the agent machine. Read-only
-      - `[MachineName <String>]`: The name of the machine that the aggent is running on. Read-only
+      - `[MachineName <String>]`: The name of the machine that the agent is running on. Read-only
       - `[Status <String>]`: agentStatus
       - `[SupportedPublishingTypes <String[]>]`: 
     - `[DisplayName <String>]`: Display name of the onPremisesAgentGroup.
@@ -337,6 +339,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application

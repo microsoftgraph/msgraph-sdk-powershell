@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Complete an impactedResource object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Complete-MgBetaDirectoryRecommendationImpactedResource -InputObject <IIdentityDi
 
 ## DESCRIPTION
 Complete an impactedResource object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

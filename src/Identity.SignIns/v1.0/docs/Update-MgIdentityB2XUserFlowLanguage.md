@@ -109,7 +109,7 @@ Accept wildcard characters: False
 
 ### -DefaultPages
 Collection of pages with the default content to display in a user flow for a specified language.
-This collection does not allow any kind of modification.
+This collection doesn't allow any kind of modification.
 To construct, see NOTES section for DEFAULTPAGES properties and create a hash table.
 
 ```yaml
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 
 ### -OverridesPages
 Collection of pages with the overrides messages to display in a user flow for a specified language.
-This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 To construct, see NOTES section for OVERRIDESPAGES properties and create a hash table.
 
 ```yaml
@@ -275,13 +275,13 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserFlowLanguageConfiguration>`: userFlowLanguageConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+  - `[DefaultPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The language name to display. This property is read-only.
   - `[IsEnabled <Boolean?>]`: Indicates whether the language is enabled within the user flow.
-  - `[OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+  - `[OverridesPages <IMicrosoftGraphUserFlowLanguagePage[]>]`: Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
 
-`DEFAULTPAGES <IMicrosoftGraphUserFlowLanguagePage[]>`: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+`DEFAULTPAGES <IMicrosoftGraphUserFlowLanguagePage[]>`: Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter
@@ -341,7 +341,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
   - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: The unique identifier of windowsHelloForBusinessAuthenticationMethod
 
-`OVERRIDESPAGES <IMicrosoftGraphUserFlowLanguagePage[]>`: Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+`OVERRIDESPAGES <IMicrosoftGraphUserFlowLanguagePage[]>`: Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
 
 ## RELATED LINKS

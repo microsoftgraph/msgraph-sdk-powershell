@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaShareListContentTypeColumn
 
 ## SYNOPSIS
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaShareListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

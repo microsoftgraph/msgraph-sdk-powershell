@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSiteListColumn
 
 ## SYNOPSIS
-Get columns from sites
+The collection of field definitions for this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSiteListColumn -InputObject <ISitesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get columns from sites
+The collection of field definitions for this list.
 
 ## EXAMPLES
 
@@ -308,6 +308,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

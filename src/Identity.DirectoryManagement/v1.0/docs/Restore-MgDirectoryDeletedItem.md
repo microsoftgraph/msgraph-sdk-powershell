@@ -10,9 +10,10 @@ schema: 2.0.0
 ## SYNOPSIS
 Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
+However, security groups cannot be restored.
+A recently deleted item remains available for up to 30 days.
 After 30 days, the item is permanently deleted.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,9 +31,10 @@ Restore-MgDirectoryDeletedItem -InputObject <IIdentityDirectoryManagementIdentit
 ## DESCRIPTION
 Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
+However, security groups cannot be restored.
+A recently deleted item remains available for up to 30 days.
 After 30 days, the item is permanently deleted.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -147,6 +149,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
+  - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
   - `[ScopedRoleMembershipId <String>]`: The unique identifier of scopedRoleMembership
   - `[SubscribedSkuId <String>]`: The unique identifier of subscribedSku

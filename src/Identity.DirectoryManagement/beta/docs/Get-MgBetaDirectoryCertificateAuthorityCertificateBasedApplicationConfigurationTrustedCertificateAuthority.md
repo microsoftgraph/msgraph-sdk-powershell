@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority
 
 ## SYNOPSIS
-Get trustedCertificateAuthorities from directory
+Collection of trusted certificate authorities.
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationT
 ```
 
 ## DESCRIPTION
-Get trustedCertificateAuthorities from directory
+Collection of trusted certificate authorities.
 
 ## EXAMPLES
 

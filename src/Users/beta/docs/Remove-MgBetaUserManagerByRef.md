@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a user's manager.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserManagerByRef -InputObject <IUsersIdentity> [-IfMatch <String>] 
 
 ## DESCRIPTION
 Remove a user's manager.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

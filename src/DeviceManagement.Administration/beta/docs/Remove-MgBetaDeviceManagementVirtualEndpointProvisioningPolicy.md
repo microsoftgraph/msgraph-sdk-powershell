@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a cloudPcProvisioningPolicy object.
 You can’t delete a policy that’s in use.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Remove-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy
 ## DESCRIPTION
 Delete a cloudPcProvisioningPolicy object.
 You can’t delete a policy that’s in use.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

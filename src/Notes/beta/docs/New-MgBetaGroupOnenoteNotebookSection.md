@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new section in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,6 +48,7 @@ New-MgBetaGroupOnenoteNotebookSection -InputObject <INotesIdentity> [-Additional
 
 ## DESCRIPTION
 Create a new section in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

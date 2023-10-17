@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the hosted content in an app's icon.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ Get-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent -InputObject <ITeams
 
 ## DESCRIPTION
 Retrieve the hosted content in an app's icon.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

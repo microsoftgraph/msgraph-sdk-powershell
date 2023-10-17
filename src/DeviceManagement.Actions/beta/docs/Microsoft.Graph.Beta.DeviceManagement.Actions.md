@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 67a98b2f-3c89-46e4-96f4-0407f54afbad
+Module Guid: 057753ed-f600-4381-ad49-70399b05e30e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -335,23 +335,39 @@ Invoke action getZebraFotaDeploymentReport
 Invoke action getRoleScopeTagsById
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport](Get-MgBetaDeviceManagementVirtualEndpointReportConnectionQualityReport.md)
-Invoke action getConnectionQualityReports
+Get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage.
+Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
 Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
+This API is available in the following national cloud deployments.
+
+### [Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport](Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport.md)
+Get the Windows 365 Frontline reports, such as real-time or historical data reports.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport](Get-MgBetaDeviceManagementVirtualEndpointReportInaccessibleCloudPcReport.md)
 Get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status.
 An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
+This API is available in the following national cloud deployments.
+
+### [Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport.md)
+Get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
 Get the remote connection history records of a Cloud PC during a given period.
+This report contains data such as signInDateTime, signOutDateTime, usageInHour, remoteSignInTimeInSec and roundTripTimeInMsP50, and so on.
+This data is aggregated hourly for a specified time period, such as the last seven days.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport](Get-MgBetaDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport.md)
 Get a usage report on shared-use licenses, such as servicePlanId, licenseCount, and claimedLicenseCount, for real-time, 7 days, or 28 days trend.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
 Get the total aggregated remote connection usage of a Cloud PC during a given time span.
+This API is available in the following national cloud deployments.
 
 ### [Import-MgBetaDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList](Import-MgBetaDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList.md)
 Invoke action importAppleDeviceIdentityList
@@ -389,26 +405,33 @@ Must be coupled with the appropriate TeamViewer account information
 
 ### [Invoke-MgBetaBulkDeviceManagementComanagedDeviceSetCloudPcReviewStatus](Invoke-MgBetaBulkDeviceManagementComanagedDeviceSetCloudPcReviewStatus.md)
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus](Invoke-MgBetaBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus.md)
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize](Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize.md)
 Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
-If any devices cannot be resized, those devices will indicate 'resize failed'.
-The remaining devices will be provisioned for the resize process.
+If any devices can't be resized, those devices indicate 'resize failed'.
+The remaining devices are provisioned for the resize process.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBulkReprovisionDeviceManagementManagedDeviceCloudPc](Invoke-MgBetaBulkReprovisionDeviceManagementManagedDeviceCloudPc.md)
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBulkRestoreDeviceManagementComanagedDeviceCloudPc](Invoke-MgBetaBulkRestoreDeviceManagementComanagedDeviceCloudPc.md)
 Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc](Invoke-MgBetaBulkRestoreDeviceManagementManagedDeviceCloudPc.md)
 Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowsDevice](Invoke-MgBetaCleanDeviceManagementComanagedDeviceWindowsDevice.md)
 Clean Windows device
@@ -526,12 +549,15 @@ Invoke action reorder
 
 ### [Invoke-MgBetaReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBetaReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Reprovision a Cloud PC with an Intune managed device ID.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc](Invoke-MgBetaReprovisionDeviceManagementManagedDeviceCloudPc.md)
 Reprovision a Cloud PC with an Intune managed device ID.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc](Invoke-MgBetaReprovisionDeviceManagementVirtualEndpointCloudPc.md)
 Reprovision a specific Cloud PC.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRetireDeviceManagementComanagedDevice](Invoke-MgBetaRetireDeviceManagementComanagedDevice.md)
 Retire a device
@@ -540,11 +566,13 @@ Retire a device
 Retire a device
 
 ### [Invoke-MgBetaRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation](Invoke-MgBetaRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation.md)
-Retry installation for the partner agents which failed to install on the Cloud PC.
-Service side will check which agent installation failed firstly and retry.
+Retry installation for the partner agents that failed to install on the Cloud PC.
+Service side checks which agent installation failed firstly and retry.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage](Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage.md)
 Reupload a cloudPcDeviceImage object that failed to upload.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRotateDeviceManagementComanagedDeviceBitLockerKey](Invoke-MgBetaRotateDeviceManagementComanagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
@@ -582,6 +610,7 @@ Invoke action terminate
 ### [Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc](Invoke-MgBetaTroubleshootDeviceManagementVirtualEndpointCloudPc.md)
 Troubleshoot a specific Cloud PC.
 Use this API to check the health status of the Cloud PC and the session host.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaUnassignDeviceManagementWindowsAutopilotDeploymentProfileAssignedDeviceUserFromDevice](Invoke-MgBetaUnassignDeviceManagementWindowsAutopilotDeploymentProfileAssignedDeviceUserFromDevice.md)
 Unassigns the user from an Autopilot device.
@@ -670,6 +699,9 @@ Invoke action createInstance
 ### [New-MgBetaDeviceManagementTemplateMigratableToInstance](New-MgBetaDeviceManagementTemplateMigratableToInstance.md)
 Invoke action createInstance
 
+### [New-MgBetaDeviceManagementVirtualEndpointCloudPcSnapshot](New-MgBetaDeviceManagementVirtualEndpointCloudPcSnapshot.md)
+Invoke action createSnapshot
+
 ### [Remove-MgBetaDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement](Remove-MgBetaDeviceManagementComanagedDeviceFirmwareConfigurationInterfaceManagement.md)
 Remove device from Device Firmware Configuration Interface management
 
@@ -691,9 +723,11 @@ Delete user from shared Apple device
 ### [Rename-MgBetaDeviceManagementVirtualEndpointCloudPc](Rename-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Rename a specific Cloud PC.
 Use this API to update the displayName for the Cloud PC entity.
+This API is available in the following national cloud deployments.
 
 ### [Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType](Rename-MgBetaDeviceManagementVirtualEndpointCloudPcUserAccountType.md)
 Change the account type of the user on a specific Cloud PC.
+This API is available in the following national cloud deployments.
 
 ### [Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl](Request-MgBetaDeviceManagementAndroidForWorkSettingSignupUrl.md)
 Invoke action requestSignupUrl
@@ -718,9 +752,14 @@ Reset passcode
 
 ### [Resize-MgBetaDeviceManagementComanagedDeviceCloudPc](Resize-MgBetaDeviceManagementComanagedDeviceCloudPc.md)
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+This API is available in the following national cloud deployments.
 
 ### [Resize-MgBetaDeviceManagementManagedDeviceCloudPc](Resize-MgBetaDeviceManagementManagedDeviceCloudPc.md)
 Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+This API is available in the following national cloud deployments.
+
+### [Resize-MgBetaDeviceManagementVirtualEndpointCloudPc](Resize-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
+Invoke action resize
 
 ### [Restart-MgBetaDeviceManagementComanagedDeviceNow](Restart-MgBetaDeviceManagementComanagedDeviceNow.md)
 Reboot device
@@ -730,15 +769,18 @@ Reboot device
 
 ### [Restart-MgBetaDeviceManagementVirtualEndpointCloudPc](Restart-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Reboot a specific Cloud PC.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDeviceManagementComanagedDeviceCloudPc](Restore-MgBetaDeviceManagementComanagedDeviceCloudPc.md)
 Restore a Cloud PC device to a previous state with an Intune managed device ID.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDeviceManagementComanagedDevicePasscode](Restore-MgBetaDeviceManagementComanagedDevicePasscode.md)
 Recover passcode
 
 ### [Restore-MgBetaDeviceManagementManagedDeviceCloudPc](Restore-MgBetaDeviceManagementManagedDeviceCloudPc.md)
 Restore a Cloud PC device to a previous state with an Intune managed device ID.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDeviceManagementManagedDevicePasscode](Restore-MgBetaDeviceManagementManagedDevicePasscode.md)
 Recover passcode
@@ -746,6 +788,7 @@ Recover passcode
 ### [Restore-MgBetaDeviceManagementVirtualEndpointCloudPc](Restore-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Restore a specific Cloud PC.
 Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+This API is available in the following national cloud deployments.
 
 ### [Revoke-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken](Revoke-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken.md)
 Invoke action revokeToken
@@ -784,6 +827,7 @@ Invoke action setPriority
 Set the review status of a specific Cloud PC device.
 Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
 After the review is completed, use this API again to set the Cloud PC back to a normal state.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaDeviceManagementComanagedDeviceName](Set-MgBetaDeviceManagementComanagedDeviceName.md)
 Set device name of the device.
@@ -843,12 +887,14 @@ Invoke action assign
 Set the review status of a specific Cloud PC device.
 Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
 After the review is completed, use this API again to set the Cloud PC back to a normal state.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaDeviceManagementManagedDeviceName](Set-MgBetaDeviceManagementManagedDeviceName.md)
 Set device name of the device.
 
 ### [Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgBetaDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
 Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the isPortalNotificationSent property of the portal notification to true.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaDeviceManagementResourceAccessProfile](Set-MgBetaDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -861,9 +907,11 @@ Invoke action assign
 
 ### [Set-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy](Set-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Assign cloudPcProvisioningPolicy to user groups.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaDeviceManagementVirtualEndpointUserSetting](Set-MgBetaDeviceManagementVirtualEndpointUserSetting.md)
 Assign a cloudPcUserSetting to user groups.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaDeviceManagementWindowsAutopilotDeploymentProfile](Set-MgBetaDeviceManagementWindowsAutopilotDeploymentProfile.md)
 Invoke action assign
@@ -903,22 +951,26 @@ Power on a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
 After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately.
 Only IT admin users can perform this action.
+This API is available in the following national cloud deployments.
 
 ### [Start-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck](Start-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck.md)
 Run health checks on the cloudPcOnPremisesConnection object.
 This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaDeviceManagementVirtualEndpointCloudPc](Stop-MgBetaDeviceManagementVirtualEndpointCloudPc.md)
 Power off a Windows 365 Frontline Cloud PC.
 This action supports Microsoft Endpoint Manager (MEM) admin scenarios.
-After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately.
+After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately.
 Only IT admin users can perform this action.
+This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgBetaDeviceManagementVirtualEndpointCloudPcGracePeriod.md)
 End the grace period for a specific Cloud PC.
 The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
+It allows users to access Cloud PCs for up to seven days before deprovisioning occurs.
 Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaDeviceManagementZebraFotaDeployment](Stop-MgBetaDeviceManagementZebraFotaDeployment.md)
 Invoke action cancel
@@ -958,6 +1010,7 @@ Invoke action validateComplianceScript
 
 ### [Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize](Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize.md)
 Validate that a set of cloudPC devices meet the requirements to be bulk resized.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment](Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment.md)
 Invoke action updateDeviceProfileAssignment
@@ -986,6 +1039,7 @@ Invoke action updateWindowsDeviceAccount
 ### [Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword](Update-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionAdDomainPassword.md)
 Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
 This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty](Update-MgBetaDeviceManagementWindowsAutopilotDeviceIdentityDeviceProperty.md)
 Updates properties on Autopilot devices.

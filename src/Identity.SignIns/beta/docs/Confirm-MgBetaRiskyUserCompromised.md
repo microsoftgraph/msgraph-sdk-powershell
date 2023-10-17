@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Confirm one or more riskyUser objects as compromised.
 This action sets the targeted user's risk level to high.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Confirm-MgBetaRiskyUserCompromised
 ## DESCRIPTION
 Confirm one or more riskyUser objects as compromised.
 This action sets the targeted user's risk level to high.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

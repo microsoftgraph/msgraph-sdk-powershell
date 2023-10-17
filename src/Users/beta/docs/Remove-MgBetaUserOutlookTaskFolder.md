@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the specified Outlook task folder.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserOutlookTaskFolder -InputObject <IUsersIdentity> [-IfMatch <Stri
 
 ## DESCRIPTION
 Delete the specified Outlook task folder.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

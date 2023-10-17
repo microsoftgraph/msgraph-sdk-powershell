@@ -11,8 +11,9 @@ schema: 2.0.0
 Deletes a group.
 When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
-This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
+This isn't applicable to Security groups and Distribution groups that are permanently deleted immediately.
 To learn more, see deletedItems.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,8 +32,9 @@ Remove-MgBetaGroup -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru
 Deletes a group.
 When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days.
 After that time, they are permanently deleted.
-This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
+This isn't applicable to Security groups and Distribution groups that are permanently deleted immediately.
 To learn more, see deletedItems.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an updatePolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaWindowsUpdatesPolicy -InputObject <IWindowsUpdatesIdentity> [-ExpandPr
 
 ## DESCRIPTION
 Read the properties and relationships of an updatePolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

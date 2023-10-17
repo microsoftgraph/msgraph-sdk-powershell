@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
 
 ## DESCRIPTION
 An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

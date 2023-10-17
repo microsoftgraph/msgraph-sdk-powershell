@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the specified permissions object of a user or group calendar that has been shared.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,6 +50,7 @@ Get-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-Filter <Str
 
 ## DESCRIPTION
 Get the specified permissions object of a user or group calendar that has been shared.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

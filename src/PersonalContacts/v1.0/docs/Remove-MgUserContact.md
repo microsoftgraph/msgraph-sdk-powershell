@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a contact.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgUserContact -InputObject <IPersonalContactsIdentity> [-IfMatch <String>
 
 ## DESCRIPTION
 Delete a contact.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

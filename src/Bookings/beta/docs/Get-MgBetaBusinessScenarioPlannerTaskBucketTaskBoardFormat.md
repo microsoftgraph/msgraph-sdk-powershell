@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Get-MgBetaBusinessScenarioPlannerTaskBucketTaskBoardFormat -InputObject <IBookin
 
 ## DESCRIPTION
 Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

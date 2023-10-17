@@ -11,6 +11,7 @@ schema: 2.0.0
 Add an instance of an application from the Azure AD application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Invoke-MgInstantiateApplicationTemplate -InputObject <IApplicationsIdentity>
 Add an instance of an application from the Azure AD application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

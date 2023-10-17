@@ -11,6 +11,7 @@ schema: 2.0.0
 Create a new profileCardProperty for an organization.
 The new property is identified by its directoryPropertyName property.
 For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,6 +32,7 @@ New-MgBetaAdminPeopleProfileCardProperty -BodyParameter <IMicrosoftGraphProfileC
 Create a new profileCardProperty for an organization.
 The new property is identified by its directoryPropertyName property.
 For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

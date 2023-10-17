@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,6 +20,7 @@ Get-MgGroupAcceptedSender -GroupId <String> [-Filter <String>] [-Property <Strin
 
 ## DESCRIPTION
 Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

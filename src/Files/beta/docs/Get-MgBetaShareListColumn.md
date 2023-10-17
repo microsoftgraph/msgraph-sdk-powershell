@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaShareListColumn
 
 ## SYNOPSIS
-Get columns from shares
+The collection of field definitions for this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaShareListColumn -InputObject <IFilesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get columns from shares
+The collection of field definitions for this list.
 
 ## EXAMPLES
 

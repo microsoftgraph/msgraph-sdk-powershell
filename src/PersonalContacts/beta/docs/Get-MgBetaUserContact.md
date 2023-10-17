@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of contact object.
-There are two scenarios where an app can get a contact in another user's contact folder:
+There are two scenarios where an app can get a contact in another user's contact folder: This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaUserContact -InputObject <IPersonalContactsIdentity> [-ExpandProperty 
 
 ## DESCRIPTION
 Retrieve the properties and relationships of contact object.
-There are two scenarios where an app can get a contact in another user's contact folder:
+There are two scenarios where an app can get a contact in another user's contact folder: This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

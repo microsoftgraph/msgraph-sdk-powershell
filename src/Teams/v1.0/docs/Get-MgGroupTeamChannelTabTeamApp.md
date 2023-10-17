@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The application that is linked to the tab.
-This cannot be changed after tab creation.
+This can't be changed after tab creation.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgGroupTeamChannelTabTeamApp -InputObject <ITeamsIdentity> [-ExpandProperty 
 
 ## DESCRIPTION
 The application that is linked to the tab.
-This cannot be changed after tab creation.
+This can't be changed after tab creation.
 
 ## EXAMPLES
 

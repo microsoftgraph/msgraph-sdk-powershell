@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Enable the user to update their password.
 Any user can update their password without belonging to any administrator role.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Update-MgUserPassword -InputObject <IUsersActionsIdentity> [-AdditionalPropertie
 ## DESCRIPTION
 Enable the user to update their password.
 Any user can update their password without belonging to any administrator role.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

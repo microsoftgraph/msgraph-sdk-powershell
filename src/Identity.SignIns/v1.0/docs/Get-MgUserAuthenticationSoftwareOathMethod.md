@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a user's single Software OATH token authentication method object and its properties.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgUserAuthenticationSoftwareOathMethod -InputObject <IIdentitySignInsIdentit
 
 ## DESCRIPTION
 Retrieve a user's single Software OATH token authentication method object and its properties.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

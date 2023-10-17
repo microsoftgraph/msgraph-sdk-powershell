@@ -137,7 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+The date time representing when the file was created.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
@@ -233,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsDefault
-If none of the languages matches the client preference, indicates whether this is the default agreement file .
+If none of the languages matches the client preference, indicates whether this is the default agreement file.
 If none of the files are marked as default, the first one is treated as the default.
 Read-only.
 
@@ -393,6 +394,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

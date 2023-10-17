@@ -38,17 +38,10 @@ The policy that controls Azure AD authorization settings.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBetaPolicyAuthorizationPolicy
 
 ## PARAMETERS
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgCommunicationOnlineMeetingTranscriptMetadataContent
 
 ## SYNOPSIS
-Get metadataContent for the navigation property transcripts from communications
+The time-aligned metadata of the utterances in the transcript.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Get-MgCommunicationOnlineMeetingTranscriptMetadataContent -InputObject <ICloudCo
 ```
 
 ## DESCRIPTION
-Get metadataContent for the navigation property transcripts from communications
+The time-aligned metadata of the utterances in the transcript.
+Read-only.
 
 ## EXAMPLES
 

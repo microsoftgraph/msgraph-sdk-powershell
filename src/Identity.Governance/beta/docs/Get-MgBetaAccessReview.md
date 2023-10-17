@@ -14,6 +14,7 @@ To retrieve the decisions of the access review, use the list accessReview decisi
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
 Instead, use the instances relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
 Each past and current instance will have decisions.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,6 +44,7 @@ To retrieve the decisions of the access review, use the list accessReview decisi
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
 Instead, use the instances relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review.
 Each past and current instance will have decisions.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -318,6 +320,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

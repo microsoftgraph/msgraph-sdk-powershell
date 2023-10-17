@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a webAccount object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfileWebAccount -InputObject <IPeopleIdentity> [-IfMatch <Str
 
 ## DESCRIPTION
 Delete a webAccount object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

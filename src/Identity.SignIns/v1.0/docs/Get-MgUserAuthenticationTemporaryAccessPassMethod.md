@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignIns
 
 ## DESCRIPTION
 Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

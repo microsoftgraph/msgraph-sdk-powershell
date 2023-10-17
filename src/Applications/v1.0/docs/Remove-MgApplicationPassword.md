@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a password from an application.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Remove-MgApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Remove a password from an application.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

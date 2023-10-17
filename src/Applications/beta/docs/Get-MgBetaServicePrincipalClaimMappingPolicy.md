@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgBetaServicePrincipalClaimMappingPolicy -ServicePrincipalId <String> [-Expa
 
 ## DESCRIPTION
 List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

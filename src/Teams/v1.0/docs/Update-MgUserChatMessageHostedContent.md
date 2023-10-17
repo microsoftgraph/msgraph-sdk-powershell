@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ### -ContentType
 Write only.
 Content type.
-sicj as image/png, image/jpg.
+such as image/png, image/jpg.
 
 ```yaml
 Type: System.String

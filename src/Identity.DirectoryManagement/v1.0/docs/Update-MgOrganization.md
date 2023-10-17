@@ -8,7 +8,10 @@ schema: 2.0.0
 # Update-MgOrganization
 
 ## SYNOPSIS
-Update the properties of a organization object.
+Update the properties of the currently authenticated organization.
+In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
+The ID is also known as the tenantId of the organization.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -59,7 +62,10 @@ Update-MgOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the properties of a organization object.
+Update the properties of the currently authenticated organization.
+In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
+The ID is also known as the tenantId of the organization.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -901,6 +907,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
+  - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
   - `[ScopedRoleMembershipId <String>]`: The unique identifier of scopedRoleMembership
   - `[SubscribedSkuId <String>]`: The unique identifier of subscribedSku

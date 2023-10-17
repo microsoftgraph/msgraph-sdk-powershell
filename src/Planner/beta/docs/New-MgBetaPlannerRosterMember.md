@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a member to the plannerRoster object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,6 +40,7 @@ New-MgBetaPlannerRosterMember -InputObject <IPlannerIdentity> [-AdditionalProper
 
 ## DESCRIPTION
 Add a member to the plannerRoster object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

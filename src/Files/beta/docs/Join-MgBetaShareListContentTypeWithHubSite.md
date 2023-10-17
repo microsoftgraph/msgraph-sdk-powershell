@@ -8,7 +8,8 @@ schema: 2.0.0
 # Join-MgBetaShareListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a [content type][contentType] with a list of hub sites.
+Associate a content type][contentType] with a list of hub sites.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ Join-MgBetaShareListContentTypeWithHubSite -InputObject <IFilesIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Associate a [content type][contentType] with a list of hub sites.
+Associate a content type][contentType] with a list of hub sites.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

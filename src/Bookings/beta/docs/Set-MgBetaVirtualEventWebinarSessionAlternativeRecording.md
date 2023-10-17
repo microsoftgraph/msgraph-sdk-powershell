@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgBetaVirtualEventWebinarSessionAlternativeRecording
 
 ## SYNOPSIS
-The content stream of the alternative recording of a Microsoft Teams live event.
-Read-only.
+Update alternativeRecording for the navigation property sessions in solutions
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Set-MgBetaVirtualEventWebinarSessionAlternativeRecording -InputObject <IBookings
 ```
 
 ## DESCRIPTION
-The content stream of the alternative recording of a Microsoft Teams live event.
-Read-only.
+Update alternativeRecording for the navigation property sessions in solutions
 
 ## EXAMPLES
 

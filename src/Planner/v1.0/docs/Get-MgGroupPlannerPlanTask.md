@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgGroupPlannerPlanTask -GroupId <String> -PlannerPlanId <String> [-ExpandPro
 
 ## DESCRIPTION
 Retrieve a list of plannerTask objects associated with a plannerPlan object.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

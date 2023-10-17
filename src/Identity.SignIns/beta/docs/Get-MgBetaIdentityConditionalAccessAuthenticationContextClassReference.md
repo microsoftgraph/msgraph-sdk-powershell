@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a authenticationContextClassReference object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,6 +35,7 @@ Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -InputObj
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a authenticationContextClassReference object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

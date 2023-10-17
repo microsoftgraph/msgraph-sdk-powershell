@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgPolicyFeatureRolloutPolicyApplyToByRef -InputObject <IIdentitySignInsId
 
 ## DESCRIPTION
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

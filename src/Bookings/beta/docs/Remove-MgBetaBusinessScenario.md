@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a businessScenario object.
 The deletion of a scenario causes all data associated with the scenario to be deleted.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgBetaBusinessScenario -InputObject <IBookingsIdentity> [-IfMatch <String
 ## DESCRIPTION
 Delete a businessScenario object.
 The deletion of a scenario causes all data associated with the scenario to be deleted.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

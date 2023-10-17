@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgBetaAuditLogSignIn
 
 ## SYNOPSIS
-Get a signIn object that contains a specific user sign-in event for your tenant.
-This includes sign-ins where a user is asked to enter a username or password, and session tokens.
+Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,8 +33,8 @@ Get-MgBetaAuditLogSignIn -InputObject <IReportsIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get a signIn object that contains a specific user sign-in event for your tenant.
-This includes sign-ins where a user is asked to enter a username or password, and session tokens.
+Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

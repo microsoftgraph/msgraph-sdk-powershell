@@ -11,6 +11,7 @@ schema: 2.0.0
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ New-MgGroupEventInstanceAttachment -InputObject <ICalendarIdentity> [-Additional
 Use this API to add an attachment to an existing event.
 This operation limits the size of the attachment you can add to under 3 MB.
 If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an externalConnection object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgExternalConnection -InputObject <ISearchIdentity> [-IfMatch <String>] [
 
 ## DESCRIPTION
 Deletes an externalConnection object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

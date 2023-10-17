@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the status of an operation that adds the large gallery view to a call.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
 
 ## DESCRIPTION
 Get the status of an operation that adds the large gallery view to a call.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

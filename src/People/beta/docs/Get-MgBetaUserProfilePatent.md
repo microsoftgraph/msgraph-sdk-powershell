@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an itemPatent object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaUserProfilePatent -InputObject <IPeopleIdentity> [-ExpandProperty <Str
 
 ## DESCRIPTION
 Read the properties and relationships of an itemPatent object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

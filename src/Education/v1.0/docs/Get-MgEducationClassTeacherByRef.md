@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgEducationClassTeacherByRef
 
 ## SYNOPSIS
-Retrieve a list teachers for a class.
+Retrieve a list of teachers for a class.
 Delegated tokens must be members of the class to get the teacher list.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,8 +21,9 @@ Get-MgEducationClassTeacherByRef -EducationClassId <String> [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Retrieve a list teachers for a class.
+Retrieve a list of teachers for a class.
 Delegated tokens must be members of the class to get the teacher list.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

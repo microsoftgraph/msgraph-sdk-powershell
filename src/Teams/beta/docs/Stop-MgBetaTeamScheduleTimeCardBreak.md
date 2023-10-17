@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 End the open break in a specific timeCard.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Stop-MgBetaTeamScheduleTimeCardBreak -InputObject <ITeamsIdentity> [-AdditionalP
 
 ## DESCRIPTION
 End the open break in a specific timeCard.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

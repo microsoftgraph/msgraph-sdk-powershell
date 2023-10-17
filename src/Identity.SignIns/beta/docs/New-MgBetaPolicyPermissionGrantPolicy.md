@@ -11,6 +11,7 @@ schema: 2.0.0
 Creates a permissionGrantPolicy.
 A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent).
 After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ New-MgBetaPolicyPermissionGrantPolicy -BodyParameter <IMicrosoftGraphPermissionG
 Creates a permissionGrantPolicy.
 A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent).
 After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -131,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -Excludes
-Condition sets which are excluded in this permission grant policy.
+Condition sets that are excluded in this permission grant policy.
 Automatically expanded on GET.
 To construct, see NOTES section for EXCLUDES properties and create a hash table.
 
@@ -164,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -Includes
-Condition sets which are included in this permission grant policy.
+Condition sets that are included in this permission grant policy.
 Automatically expanded on GET.
 To construct, see NOTES section for INCLUDES properties and create a hash table.
 
@@ -237,7 +239,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Excludes <IMicrosoftGraphPermissionGrantConditionSet[]>]`: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+  - `[Excludes <IMicrosoftGraphPermissionGrantConditionSet[]>]`: Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CertifiedClientApplicationsOnly <Boolean?>]`: Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
     - `[ClientApplicationIds <String[]>]`: A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
@@ -248,9 +250,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[PermissionType <String>]`: permissionType
     - `[Permissions <String[]>]`: The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's servicePrincipal object. The id of application permissions can be found in the appRoles property of the API's servicePrincipal object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's servicePrincipal object. Default is the single value all.
     - `[ResourceApplication <String>]`: The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
-  - `[Includes <IMicrosoftGraphPermissionGrantConditionSet[]>]`: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+  - `[Includes <IMicrosoftGraphPermissionGrantConditionSet[]>]`: Condition sets that are included in this permission grant policy. Automatically expanded on GET.
 
-`EXCLUDES <IMicrosoftGraphPermissionGrantConditionSet[]>`: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+`EXCLUDES <IMicrosoftGraphPermissionGrantConditionSet[]>`: Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CertifiedClientApplicationsOnly <Boolean?>]`: Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
   - `[ClientApplicationIds <String[]>]`: A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
@@ -262,7 +264,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Permissions <String[]>]`: The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the publishedPermissionScopes property of the API's servicePrincipal object. The id of application permissions can be found in the appRoles property of the API's servicePrincipal object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's servicePrincipal object. Default is the single value all.
   - `[ResourceApplication <String>]`: The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
 
-`INCLUDES <IMicrosoftGraphPermissionGrantConditionSet[]>`: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+`INCLUDES <IMicrosoftGraphPermissionGrantConditionSet[]>`: Condition sets that are included in this permission grant policy. Automatically expanded on GET.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CertifiedClientApplicationsOnly <Boolean?>]`: Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
   - `[ClientApplicationIds <String[]>]`: A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.

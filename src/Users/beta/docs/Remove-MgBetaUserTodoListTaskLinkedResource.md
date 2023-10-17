@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a linkedResource object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Remove-MgBetaUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-IfMa
 
 ## DESCRIPTION
 Deletes a linkedResource object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

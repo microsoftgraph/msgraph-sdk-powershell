@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a bookingService object in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBookingBusinessService -InputObject <IBookingsIdentity> [-IfMatch <Stri
 
 ## DESCRIPTION
 Delete a bookingService object in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

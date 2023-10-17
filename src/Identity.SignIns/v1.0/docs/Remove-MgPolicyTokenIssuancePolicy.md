@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a tokenIssuancePolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-IfM
 
 ## DESCRIPTION
 Delete a tokenIssuancePolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

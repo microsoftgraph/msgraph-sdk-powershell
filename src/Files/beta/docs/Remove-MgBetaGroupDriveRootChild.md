@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaGroupDriveRootChild
 
 ## SYNOPSIS
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgBetaGroupDriveRootChild -InputObject <IFilesIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

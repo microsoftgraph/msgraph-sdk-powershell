@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of place object, which can be a room, workspace, or roomList.
 You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Update-MgBetaPlace -InputObject <ICalendarIdentity> [-AdditionalProperties <Hash
 ## DESCRIPTION
 Update the properties of place object, which can be a room, workspace, or roomList.
 You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

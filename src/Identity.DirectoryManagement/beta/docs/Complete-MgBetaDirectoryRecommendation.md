@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Complete a recommendation object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Complete-MgBetaDirectoryRecommendation -InputObject <IIdentityDirectoryManagemen
 
 ## DESCRIPTION
 Complete a recommendation object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

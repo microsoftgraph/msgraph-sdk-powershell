@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgAppCatalogTeamApp
 
 ## SYNOPSIS
-Delete teamsApp
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgAppCatalogTeamApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Delete teamsApp
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

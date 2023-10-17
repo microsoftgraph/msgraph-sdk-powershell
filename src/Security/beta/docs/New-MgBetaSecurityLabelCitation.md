@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new citationTemplate object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ New-MgBetaSecurityLabelCitation -BodyParameter <IMicrosoftGraphSecurityCitationT
 
 ## DESCRIPTION
 Create a new citationTemplate object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

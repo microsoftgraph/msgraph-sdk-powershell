@@ -11,6 +11,7 @@ schema: 2.0.0
 Redirect a print job to a different printer.
 Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ Invoke-MgBetaRedirectPrintShareJob -InputObject <IDevicesCloudPrintIdentity>
 Redirect a print job to a different printer.
 Redirecting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -230,7 +232,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Configuration <IMicrosoftGraphPrintJobConfiguration>]`: printJobConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+    - `[Collate <Boolean?>]`: Whether the printer should collate pages when printing multiple copies of a multi-page document.
     - `[ColorMode <String>]`: printColorMode
     - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
     - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
@@ -262,7 +264,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `CONFIGURATION <IMicrosoftGraphPrintJobConfiguration>`: printJobConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+  - `[Collate <Boolean?>]`: Whether the printer should collate pages when printing multiple copies of a multi-page document.
   - `[ColorMode <String>]`: printColorMode
   - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
   - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.

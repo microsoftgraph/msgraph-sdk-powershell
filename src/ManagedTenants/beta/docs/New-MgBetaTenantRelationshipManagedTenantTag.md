@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new tenantTag object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ New-MgBetaTenantRelationshipManagedTenantTag -BodyParameter <IMicrosoftGraphMana
 
 ## DESCRIPTION
 Create a new tenantTag object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

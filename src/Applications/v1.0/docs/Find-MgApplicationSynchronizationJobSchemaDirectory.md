@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Discover the latest schema definition for provisioning to an application.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Find-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsI
 
 ## DESCRIPTION
 Discover the latest schema definition for provisioning to an application.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

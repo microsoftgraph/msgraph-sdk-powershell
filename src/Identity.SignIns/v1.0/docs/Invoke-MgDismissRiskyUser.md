@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Dismiss the risk of one or more riskyUser objects.
 This action sets the targeted user's risk level to none.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Invoke-MgDismissRiskyUser
 ## DESCRIPTION
 Dismiss the risk of one or more riskyUser objects.
 This action sets the targeted user's risk level to none.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

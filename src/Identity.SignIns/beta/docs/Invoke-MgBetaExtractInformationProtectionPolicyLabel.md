@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Invoke-MgBetaExtractInformationProtectionPolicyLabel
 ## DESCRIPTION
 Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

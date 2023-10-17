@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport
 
 ## SYNOPSIS
-Invoke action getFrontlineReport
+Get the Windows 365 Frontline reports, such as real-time or historical data reports.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +29,8 @@ Get-MgBetaDeviceManagementVirtualEndpointReportFrontlineReport
 ```
 
 ## DESCRIPTION
-Invoke action getFrontlineReport
+Get the Windows 365 Frontline reports, such as real-time or historical data reports.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

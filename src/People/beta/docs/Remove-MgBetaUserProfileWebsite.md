@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a personWebsite object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfileWebsite -InputObject <IPeopleIdentity> [-IfMatch <String
 
 ## DESCRIPTION
 Deletes a personWebsite object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

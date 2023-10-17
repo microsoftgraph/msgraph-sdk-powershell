@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the specified bookingCustomQuestion object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-If
 
 ## DESCRIPTION
 Delete the specified bookingCustomQuestion object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

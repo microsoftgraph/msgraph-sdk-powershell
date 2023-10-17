@@ -88,7 +88,7 @@ Accept wildcard characters: False
 
 ### -AssociatedHubsUrls
 List of canonical URLs for hub sites with which this content type is associated to.
-This will contain all hubsites where this content type is queued to be enforced or is already enforced.
+This contains all hub sites where this content type is queued to be enforced or is already enforced.
 Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
 
 ```yaml
@@ -417,7 +417,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReadOnly
-If true, the content type cannot be modified unless this value is first set to false.
+If true, the content type can't be modified unless this value is first set to false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -432,7 +432,7 @@ Accept wildcard characters: False
 ```
 
 ### -Sealed
-If true, the content type cannot be modified by users or through push-down operations.
+If true, the content type can't be modified by users or through push-down operations.
 Only site collection administrators can seal or unseal content types.
 
 ```yaml
@@ -518,7 +518,7 @@ To create the parameters described below, construct a hash table containing the 
 `BASE <IMicrosoftGraphContentType>`: contentType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
   - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
@@ -594,7 +594,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -700,12 +700,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
   - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-  - `[ReadOnly <Boolean?>]`: If true, the content type cannot be modified unless this value is first set to false.
-  - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+  - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
+  - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 `BASETYPES <IMicrosoftGraphContentType[]>`: The collection of content types that are ancestors of this content type.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
   - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
@@ -781,7 +781,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -887,13 +887,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
   - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-  - `[ReadOnly <Boolean?>]`: If true, the content type cannot be modified unless this value is first set to false.
-  - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+  - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
+  - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 `BODYPARAMETER <IMicrosoftGraphContentType>`: contentType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+  - `[AssociatedHubsUrls <String[]>]`: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
   - `[Base <IMicrosoftGraphContentType>]`: contentType
   - `[BaseTypes <IMicrosoftGraphContentType[]>]`: The collection of content types that are ancestors of this content type.
   - `[ColumnLinks <IMicrosoftGraphColumnLink[]>]`: The collection of columns that are required by this content type
@@ -969,7 +969,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1075,8 +1075,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
   - `[ParentId <String>]`: The unique identifier of the content type.
   - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-  - `[ReadOnly <Boolean?>]`: If true, the content type cannot be modified unless this value is first set to false.
-  - `[Sealed <Boolean?>]`: If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
+  - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
+  - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
 
 `COLUMNLINKS <IMicrosoftGraphColumnLink[]>`: The collection of columns that are required by this content type
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1152,7 +1152,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1286,7 +1286,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -1427,7 +1427,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+      - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column allows more than one value
       - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.

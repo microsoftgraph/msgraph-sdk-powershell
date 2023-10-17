@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgBetaExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Update the properties of an inboundFlow object.
+Update the properties of an inboundFileFlow object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +43,8 @@ Update-MgBetaExternalIndustryDataInboundFlow -InputObject <ISearchIdentity>
 ```
 
 ## DESCRIPTION
-Update the properties of an inboundFlow object.
+Update the properties of an inboundFileFlow object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -391,6 +393,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[AcronymId <String>]`: The unique identifier of acronym
+  - `[AuthorizationSystemId <String>]`: The unique identifier of authorizationSystem
   - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity

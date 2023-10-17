@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Invoke-MgBetaFavoriteServiceAnnouncementMessage
 
 ## DESCRIPTION
 Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

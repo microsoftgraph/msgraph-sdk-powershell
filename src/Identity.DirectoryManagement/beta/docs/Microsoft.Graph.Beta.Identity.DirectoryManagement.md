@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: 23cdb549-a7f6-4a93-b100-dfbd4bd6a66f
+Module Guid: 484fe87d-be5d-49e0-b910-e4e0dad36998
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,16 +17,20 @@ Invoke action addUserInputLog
 ### [Add-MgBetaTenantRelationshipManagedTenantManagementAction](Add-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 Applies a management action against a specific managed tenant.
 By performing this operation the appropriate configurations will be made and policies created.
-As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
+As example when applying the require multifactor authentication for admins management action creates an Azure Active Directory conditional access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
+This API is available in the following national cloud deployments.
 
 ### [Complete-MgBetaDirectoryImpactedResource](Complete-MgBetaDirectoryImpactedResource.md)
 Complete an impactedResource object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ### [Complete-MgBetaDirectoryRecommendation](Complete-MgBetaDirectoryRecommendation.md)
 Complete a recommendation object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ### [Complete-MgBetaDirectoryRecommendationImpactedResource](Complete-MgBetaDirectoryRecommendationImpactedResource.md)
 Complete an impactedResource object and update its status to completedByUser.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaAdministrativeUnitMemberGroup](Confirm-MgBetaAdministrativeUnitMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -34,6 +38,7 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaAdministrativeUnitMemberObject](Confirm-MgBetaAdministrativeUnitMemberObject.md)
 Invoke action checkMemberObjects
@@ -44,6 +49,7 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaContactMemberObject](Confirm-MgBetaContactMemberObject.md)
 Invoke action checkMemberObjects
@@ -54,6 +60,7 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaContractMemberObject](Confirm-MgBetaContractMemberObject.md)
 Invoke action checkMemberObjects
@@ -64,18 +71,9 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaDeviceMemberObject](Confirm-MgBetaDeviceMemberObject.md)
-Invoke action checkMemberObjects
-
-### [Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup](Confirm-MgBetaDirectoryAdministrativeUnitMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-
-### [Confirm-MgBetaDirectoryAdministrativeUnitMemberObject](Confirm-MgBetaDirectoryAdministrativeUnitMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgBetaDirectoryDeletedItemMemberGroup](Confirm-MgBetaDirectoryDeletedItemMemberGroup.md)
@@ -84,6 +82,7 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaDirectoryDeletedItemMemberObject](Confirm-MgBetaDirectoryDeletedItemMemberObject.md)
 Invoke action checkMemberObjects
@@ -94,6 +93,7 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaDirectoryRoleMemberObject](Confirm-MgBetaDirectoryRoleMemberObject.md)
 Invoke action checkMemberObjects
@@ -104,6 +104,7 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaDirectoryRoleTemplateMemberObject](Confirm-MgBetaDirectoryRoleTemplateMemberObject.md)
 Invoke action checkMemberObjects
@@ -114,12 +115,14 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaDirectorySettingTemplateMemberObject](Confirm-MgBetaDirectorySettingTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgBetaDomain](Confirm-MgBetaDomain.md)
 Validates the ownership of the domain.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaOrganizationMemberGroup](Confirm-MgBetaOrganizationMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -127,20 +130,23 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaOrganizationMemberObject](Confirm-MgBetaOrganizationMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Export-MgBetaDirectoryInboundSharedUserProfilePersonalData](Export-MgBetaDirectoryInboundSharedUserProfilePersonalData.md)
 Create a request to export the personal data for an inboundSharedUserProfile.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdministrativeUnit](Get-MgBetaAdministrativeUnit.md)
 Retrieve the properties and relationships of an administrativeUnit object.
 Since the administrativeUnit resource supports extensions, you can also use the GET operation to get custom properties and extension data in an administrativeUnit instance.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdministrativeUnitById](Get-MgBetaAdministrativeUnitById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdministrativeUnitCount](Get-MgBetaAdministrativeUnitCount.md)
 Get the number of the resource
@@ -208,12 +214,14 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdministrativeUnitMemberObject](Get-MgBetaAdministrativeUnitMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgBetaAdministrativeUnitScopedRoleMember](Get-MgBetaAdministrativeUnitScopedRoleMember.md)
 Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdministrativeUnitScopedRoleMemberCount](Get-MgBetaAdministrativeUnitScopedRoleMemberCount.md)
 Get the number of the resource
@@ -221,13 +229,16 @@ Get the number of the resource
 ### [Get-MgBetaAdministrativeUnitUserOwnedObject](Get-MgBetaAdministrativeUnitUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminPeople](Get-MgBetaAdminPeople.md)
 Retrieve the properties and relationships of a peopleAdminSettings object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminPeopleProfileCardProperty](Get-MgBetaAdminPeopleProfileCardProperty.md)
 Retrieve the properties of a profileCardProperty entity.
 The profileCardProperty is identified by its directoryPropertyName property.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminPeopleProfileCardPropertyCount](Get-MgBetaAdminPeopleProfileCardPropertyCount.md)
 Get the number of the resource
@@ -235,13 +246,15 @@ Get the number of the resource
 ### [Get-MgBetaAdminPeoplePronoun](Get-MgBetaAdminPeoplePronoun.md)
 Get the properties of the pronounsSettings resource for an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContact](Get-MgBetaContact.md)
 Get the properties and relationships of an organizational contact object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContactById](Get-MgBetaContactById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContactCount](Get-MgBetaContactCount.md)
 Get the number of the resource
@@ -271,7 +284,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaContactManager](Get-MgBetaContactManager.md)
-Get the contact's manager
+Get the contact's manager This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContactMemberGroup](Get-MgBetaContactMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
@@ -279,6 +292,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContactMemberObject](Get-MgBetaContactMemberObject.md)
 Invoke action getMemberObjects
@@ -302,6 +316,13 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaContactMemberOfCountAsGroup](Get-MgBetaContactMemberOfCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaContactServiceProvisioningError](Get-MgBetaContactServiceProvisioningError.md)
+Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object .
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaContactServiceProvisioningErrorCount](Get-MgBetaContactServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaContactTransitiveMemberOf](Get-MgBetaContactTransitiveMemberOf.md)
@@ -332,13 +353,15 @@ Get the number of the resource
 ### [Get-MgBetaContactUserOwnedObject](Get-MgBetaContactUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContract](Get-MgBetaContract.md)
 Retrieve the properties and relationships of contract object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContractById](Get-MgBetaContractById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContractCount](Get-MgBetaContractCount.md)
 Get the number of the resource
@@ -352,6 +375,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaContractMemberObject](Get-MgBetaContractMemberObject.md)
 Invoke action getMemberObjects
@@ -359,18 +383,21 @@ Invoke action getMemberObjects
 ### [Get-MgBetaContractUserOwnedObject](Get-MgBetaContractUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDevice](Get-MgBetaDevice.md)
 Get the properties and relationships of a device object.
 Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceByDeviceId](Get-MgBetaDeviceByDeviceId.md)
 Get the properties and relationships of a device object.
 Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceById](Get-MgBetaDeviceById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceCommand](Get-MgBetaDeviceCommand.md)
 Set of commands sent to this device.
@@ -401,6 +428,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceMemberObject](Get-MgBetaDeviceMemberObject.md)
 Invoke action getMemberObjects
@@ -525,16 +553,13 @@ Get the number of the resource
 ### [Get-MgBetaDeviceUserOwnedObject](Get-MgBetaDeviceUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectory](Get-MgBetaDirectory.md)
 Get directory
 
 ### [Get-MgBetaDirectoryAdministrativeUnit](Get-MgBetaDirectoryAdministrativeUnit.md)
 Conceptual container for user and group directory objects.
-
-### [Get-MgBetaDirectoryAdministrativeUnitById](Get-MgBetaDirectoryAdministrativeUnitById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
 
 ### [Get-MgBetaDirectoryAdministrativeUnitCount](Get-MgBetaDirectoryAdministrativeUnitCount.md)
 Get the number of the resource
@@ -596,28 +621,16 @@ Get the number of the resource
 ### [Get-MgBetaDirectoryAdministrativeUnitMemberCountAsUser](Get-MgBetaDirectoryAdministrativeUnitMemberCountAsUser.md)
 Get the number of the resource
 
-### [Get-MgBetaDirectoryAdministrativeUnitMemberGroup](Get-MgBetaDirectoryAdministrativeUnitMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
-This API returns up to 11,000 group IDs.
-If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
-As a workaround, use the List group transitive memberOf API.
-
-### [Get-MgBetaDirectoryAdministrativeUnitMemberObject](Get-MgBetaDirectoryAdministrativeUnitMemberObject.md)
-Invoke action getMemberObjects
-
 ### [Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryAdministrativeUnitScopedRoleMemberCount](Get-MgBetaDirectoryAdministrativeUnitScopedRoleMemberCount.md)
 Get the number of the resource
 
-### [Get-MgBetaDirectoryAdministrativeUnitUserOwnedObject](Get-MgBetaDirectoryAdministrativeUnitUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
-
 ### [Get-MgBetaDirectoryAttributeSet](Get-MgBetaDirectoryAttributeSet.md)
 Read the properties and relationships of an attributeSet object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryAttributeSetCount](Get-MgBetaDirectoryAttributeSetCount.md)
 Get the number of the resource
@@ -626,22 +639,25 @@ Get the number of the resource
 Get certificateAuthorities from directory
 
 ### [Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration](Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration.md)
-Get certificateBasedApplicationConfigurations from directory
+Read the properties and relationships of a certificateBasedApplicationConfiguration object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationCount](Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority](Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority.md)
-Get trustedCertificateAuthorities from directory
+Collection of trusted certificate authorities.
 
 ### [Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthorityCount](Get-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthorityCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryCustomSecurityAttributeDefinition](Get-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Read the properties and relationships of a customSecurityAttributeDefinition object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Read the properties and relationships of an allowedValue object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValueCount](Get-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValueCount.md)
 Get the number of the resource
@@ -672,7 +688,7 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgBetaDirectoryDeletedItemById](Get-MgBetaDirectoryDeletedItemById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryDeletedItemCountAsAdministrativeUnit](Get-MgBetaDirectoryDeletedItemCountAsAdministrativeUnit.md)
 Get the number of the resource
@@ -698,13 +714,10 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryDeletedItemMemberObject](Get-MgBetaDirectoryDeletedItemMemberObject.md)
 Invoke action getMemberObjects
-
-### [Get-MgBetaDirectoryDeletedItemUserOwnedObject](Get-MgBetaDirectoryDeletedItemUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgBetaDirectoryFeatureRolloutPolicy](Get-MgBetaDirectoryFeatureRolloutPolicy.md)
 Get featureRolloutPolicies from directory
@@ -713,23 +726,12 @@ Get featureRolloutPolicies from directory
 Nullable.
 Specifies a list of directoryObjects that feature is enabled for.
 
-### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToById](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
-
 ### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Nullable.
 Specifies a list of directoryObjects that feature is enabled for.
 
 ### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToCount](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToCount.md)
 Get the number of the resource
-
-### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToDelta](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToDelta.md)
-Invoke function delta
-
-### [Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject](Get-MgBetaDirectoryFeatureRolloutPolicyApplyToUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgBetaDirectoryFeatureRolloutPolicyCount](Get-MgBetaDirectoryFeatureRolloutPolicyCount.md)
 Get the number of the resource
@@ -748,18 +750,21 @@ Get the number of the resource
 
 ### [Get-MgBetaDirectoryInboundSharedUserProfile](Get-MgBetaDirectoryInboundSharedUserProfile.md)
 Read the properties of an inboundSharedUserProfile.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryInboundSharedUserProfileCount](Get-MgBetaDirectoryInboundSharedUserProfileCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryOnPremiseSynchronization](Get-MgBetaDirectoryOnPremiseSynchronization.md)
 Read the properties and relationships of an onPremisesDirectorySynchronization object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryOnPremiseSynchronizationCount](Get-MgBetaDirectoryOnPremiseSynchronizationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryOutboundSharedUserProfile](Get-MgBetaDirectoryOutboundSharedUserProfile.md)
 Get the details of an outboundSharedUserProfile.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryOutboundSharedUserProfileCount](Get-MgBetaDirectoryOutboundSharedUserProfileCount.md)
 Get the number of the resource
@@ -773,6 +778,7 @@ Get the number of the resource
 
 ### [Get-MgBetaDirectoryRecommendation](Get-MgBetaDirectoryRecommendation.md)
 Read the properties and relationships of a recommendation object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRecommendationCount](Get-MgBetaDirectoryRecommendationCount.md)
 Get the number of the resource
@@ -786,18 +792,20 @@ Get the number of the resource
 ### [Get-MgBetaDirectoryRole](Get-MgBetaDirectoryRole.md)
 Retrieve the properties of a directoryRole object.
 You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleById](Get-MgBetaDirectoryRoleById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleByRoleTemplateId](Get-MgBetaDirectoryRoleByRoleTemplateId.md)
 Retrieve the properties of a directoryRole object.
 You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleCount](Get-MgBetaDirectoryRoleCount.md)
 Get the number of the resource
@@ -864,6 +872,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleMemberObject](Get-MgBetaDirectoryRoleMemberObject.md)
 Invoke action getMemberObjects
@@ -878,10 +887,11 @@ Get the number of the resource
 
 ### [Get-MgBetaDirectoryRoleTemplate](Get-MgBetaDirectoryRoleTemplate.md)
 Retrieve the properties and relationships of a directoryroletemplate object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleTemplateById](Get-MgBetaDirectoryRoleTemplateById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleTemplateCount](Get-MgBetaDirectoryRoleTemplateCount.md)
 Get the number of the resource
@@ -895,6 +905,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleTemplateMemberObject](Get-MgBetaDirectoryRoleTemplateMemberObject.md)
 Invoke action getMemberObjects
@@ -902,21 +913,25 @@ Invoke action getMemberObjects
 ### [Get-MgBetaDirectoryRoleTemplateUserOwnedObject](Get-MgBetaDirectoryRoleTemplateUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryRoleUserOwnedObject](Get-MgBetaDirectoryRoleUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySetting](Get-MgBetaDirectorySetting.md)
 Retrieve the properties of a specific directory setting object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySettingTemplate](Get-MgBetaDirectorySettingTemplate.md)
 A directory setting template represents a template of settings from which settings may be created within a tenant.
 This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySettingTemplateById](Get-MgBetaDirectorySettingTemplateById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySettingTemplateCount](Get-MgBetaDirectorySettingTemplateCount.md)
 Get the number of the resource
@@ -930,6 +945,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySettingTemplateMemberObject](Get-MgBetaDirectorySettingTemplateMemberObject.md)
 Invoke action getMemberObjects
@@ -937,6 +953,7 @@ Invoke action getMemberObjects
 ### [Get-MgBetaDirectorySettingTemplateUserOwnedObject](Get-MgBetaDirectorySettingTemplateUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySharedEmailDomain](Get-MgBetaDirectorySharedEmailDomain.md)
 Get sharedEmailDomains from directory
@@ -946,18 +963,21 @@ Get the number of the resource
 
 ### [Get-MgBetaDirectorySubscription](Get-MgBetaDirectorySubscription.md)
 Get a specific commercial subscription that an organization has acquired.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectorySubscriptionCount](Get-MgBetaDirectorySubscriptionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDomain](Get-MgBetaDomain.md)
 Retrieve the properties and relationships of domain object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDomainCount](Get-MgBetaDomainCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDomainFederationConfiguration](Get-MgBetaDomainFederationConfiguration.md)
 Read the properties and relationships of an internalDomainFederation object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDomainFederationConfigurationCount](Get-MgBetaDomainFederationConfigurationCount.md)
 Get the number of the resource
@@ -996,6 +1016,7 @@ Get the number of the resource
 ### [Get-MgBetaOrganization](Get-MgBetaOrganization.md)
 Get the properties and relationships of the currently authenticated organization.
 Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationBranding](Get-MgBetaOrganizationBranding.md)
 Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default.
@@ -1003,6 +1024,7 @@ If no default organizational branding object exists, this method returns a 404 N
 If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale.
 This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText.
 To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationBrandingBackgroundImage](Get-MgBetaOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1029,6 +1051,7 @@ We recommend using a transparent image with no padding around the logo.
 ### [Get-MgBetaOrganizationBrandingLocalization](Get-MgBetaOrganizationBrandingLocalization.md)
 Read the properties and relationships of an organizationalBrandingLocalization object.
 To retrieve a localization branding object, specify the value of id in the URL.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationBrandingLocalizationBackgroundImage](Get-MgBetaOrganizationBrandingLocalizationBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1077,7 +1100,7 @@ We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgBetaOrganizationById](Get-MgBetaOrganizationById.md)
 Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationCount](Get-MgBetaOrganizationCount.md)
 Get the number of the resource
@@ -1095,6 +1118,7 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationMemberObject](Get-MgBetaOrganizationMemberObject.md)
 Invoke action getMemberObjects
@@ -1108,36 +1132,33 @@ Nullable.
 
 ### [Get-MgBetaOrganizationSettingContactInsight](Get-MgBetaOrganizationSettingContactInsight.md)
 Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationSettingItemInsight](Get-MgBetaOrganizationSettingItemInsight.md)
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
 To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess](Get-MgBetaOrganizationSettingMicrosoftApplicationDataAccess.md)
 Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationSettingPersonInsight](Get-MgBetaOrganizationSettingPersonInsight.md)
 Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
 To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph.
-
-### [Get-MgBetaOrganizationSettingProfileCardProperty](Get-MgBetaOrganizationSettingProfileCardProperty.md)
-Get profileCardProperties from organization
-
-### [Get-MgBetaOrganizationSettingProfileCardPropertyCount](Get-MgBetaOrganizationSettingProfileCardPropertyCount.md)
-Get the number of the resource
-
-### [Get-MgBetaOrganizationSettingPronoun](Get-MgBetaOrganizationSettingPronoun.md)
-Get pronouns from organization
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaOrganizationUserOwnedObject](Get-MgBetaOrganizationUserOwnedObject.md)
 Retrieve a list of recently deleted application and group objects owned by the specified user.
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSettingCount](Get-MgBetaSettingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSubscribedSku](Get-MgBetaSubscribedSku.md)
 Get a specific commercial subscription that an organization has acquired.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserScopedRoleMemberOf](Get-MgBetaUserScopedRoleMemberOf.md)
 The scoped-role administrative unit memberships for this user.
@@ -1152,12 +1173,15 @@ Invoke function availableProviderTypes
 
 ### [Invoke-MgBetaDismissDirectoryImpactedResource](Invoke-MgBetaDismissDirectoryImpactedResource.md)
 Dismiss an impactedResources object and update its status to dismissed.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaDismissDirectoryRecommendation](Invoke-MgBetaDismissDirectoryRecommendation.md)
 Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaDismissDirectoryRecommendationImpactedResource](Invoke-MgBetaDismissDirectoryRecommendationImpactedResource.md)
 Dismiss an impactedResources object and update its status to dismissed.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaForceDomainDelete](Invoke-MgBetaForceDomainDelete.md)
 Deletes a domain using an asynchronous operation.
@@ -1165,22 +1189,27 @@ Prior to calling forceDelete, you must update or remove any references to Exchan
 The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code.
 To verify deletion of a domain, you can perform a get domain.
 If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPostponeDirectoryImpactedResource](Invoke-MgBetaPostponeDirectoryImpactedResource.md)
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
 On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPostponeDirectoryRecommendation](Invoke-MgBetaPostponeDirectoryRecommendation.md)
 Postpone action on a recommendation object to a specified future date and time by marking its status as postponed.
 On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource](Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource.md)
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
 On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPromoteDomain](Invoke-MgBetaPromoteDomain.md)
 Promote a verified subdomain to the root domain.
 A verified domain has its isVerified property set to true.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPromoteDomainToInitial](Invoke-MgBetaPromoteDomainToInitial.md)
 Invoke action promoteToInitial
@@ -1189,33 +1218,40 @@ Invoke action promoteToInitial
 Reactivate an accidentally dismissed, completed, or postponed impactedResource object.
 This action updates the status of the resource to active.
 This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReactivateDirectoryRecommendation](Invoke-MgBetaReactivateDirectoryRecommendation.md)
 Reactivate a completed, dismissed, or postponed recommendation object.
 This action updates the status of the recommendation to active.
 This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource](Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource.md)
 Reactivate an accidentally dismissed, completed, or postponed impactedResource object.
 This action updates the status of the resource to active.
 This method is relevant only if the status of the impactedResource object is dismissed, postponed, or completedByUser.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRetryContactServiceProvisioning](Invoke-MgBetaRetryContactServiceProvisioning.md)
-Invoke action retryServiceProvisioning
+Retry the orgContact service provisioning.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaTagTenantRelationshipManagedTenantTagUnassign](Invoke-MgBetaTagTenantRelationshipManagedTenantTagUnassign.md)
 Un-assigns the tenant tag from the specified managed tenants.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaTenantRelationshipManagedTenantGroupSearch](Invoke-MgBetaTenantRelationshipManagedTenantGroupSearch.md)
 Invoke action tenantSearch
 
 ### [Invoke-MgBetaTenantRelationshipManagedTenantOffboard](Invoke-MgBetaTenantRelationshipManagedTenantOffboard.md)
-Carries out the appropriate procedures to remove a managed tenant from the multi-tenant management platform.
+Carries out the appropriate procedures to remove a managed tenant from the multitenant management platform.
 No relationships, such as commerce and delegate administrative privileges, will be impacted.
-The only change made by invoking this action is the tenant will be deprovisioned from the multi-tenant management platform.
+The only change made by invoking this action is the tenant will be deprovisioned from the multitenant management platform.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAdministrativeUnit](New-MgBetaAdministrativeUnit.md)
 Use this API to create a new administrativeUnit.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAdministrativeUnitExtension](New-MgBetaAdministrativeUnitExtension.md)
 Create new navigation property to extensions for administrativeUnits
@@ -1229,11 +1265,13 @@ Create new navigation property ref to members for administrativeUnits
 ### [New-MgBetaAdministrativeUnitScopedRoleMember](New-MgBetaAdministrativeUnitScopedRoleMember.md)
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAdminPeopleProfileCardProperty](New-MgBetaAdminPeopleProfileCardProperty.md)
 Create a new profileCardProperty for an organization.
 The new property is identified by its directoryPropertyName property.
 For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaContact](New-MgBetaContact.md)
 Add new entity to contacts
@@ -1243,6 +1281,7 @@ Add new entity to contracts
 
 ### [New-MgBetaDevice](New-MgBetaDevice.md)
 Create a new device.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDeviceCommand](New-MgBetaDeviceCommand.md)
 Create new navigation property to commands for devices
@@ -1252,9 +1291,11 @@ Create new navigation property to extensions for devices
 
 ### [New-MgBetaDeviceRegisteredOwnerByRef](New-MgBetaDeviceRegisteredOwnerByRef.md)
 Add a user as a registered owner of the device.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDeviceRegisteredUserByRef](New-MgBetaDeviceRegisteredUserByRef.md)
 Add a registered user for the device.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDeviceUsageRights](New-MgBetaDeviceUsageRights.md)
 Create new navigation property to usageRights for devices
@@ -1274,9 +1315,11 @@ Create new navigation property ref to members for directory
 ### [New-MgBetaDirectoryAdministrativeUnitScopedRoleMember](New-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryAttributeSet](New-MgBetaDirectoryAttributeSet.md)
 Create a new attributeSet object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration](New-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration.md)
 Create new navigation property to certificateBasedApplicationConfigurations for directory
@@ -1286,21 +1329,22 @@ Create new navigation property to trustedCertificateAuthorities for directory
 
 ### [New-MgBetaDirectoryCustomSecurityAttributeDefinition](New-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Create a new customSecurityAttributeDefinition object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Create a new allowedValue object.
-
-### [New-MgBetaDirectoryDeletedItem](New-MgBetaDirectoryDeletedItem.md)
-Create new navigation property to deletedItems for directory
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryFeatureRolloutPolicy](New-MgBetaDirectoryFeatureRolloutPolicy.md)
 Create new navigation property to featureRolloutPolicies for directory
 
 ### [New-MgBetaDirectoryFeatureRolloutPolicyApplyTo](New-MgBetaDirectoryFeatureRolloutPolicyApplyTo.md)
 Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](New-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryFederationConfiguration](New-MgBetaDirectoryFederationConfiguration.md)
 Create new navigation property to federationConfigurations for directory
@@ -1331,12 +1375,14 @@ Activate a directory role.
 To read a directory role or update its members, it must first be activated in the tenant.
 The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default.
 To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryRoleMemberByRef](New-MgBetaDirectoryRoleMemberByRef.md)
 Create a new directory role member.
 You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryRoleScopedMember](New-MgBetaDirectoryRoleScopedMember.md)
 Create new navigation property to scopedMembers for directoryRoles
@@ -1349,6 +1395,7 @@ Create a new setting based on the templates available in directorySettingTemplat
 These settings can be at the tenant-level or at the group level.
 Group settings apply to only Microsoft 365 groups.
 The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectorySettingTemplate](New-MgBetaDirectorySettingTemplate.md)
 Add new entity to directorySettingTemplates
@@ -1367,9 +1414,11 @@ Root domains require verification.
 For example, contoso.com requires verification.
 If a root domain is verified, subdomains of the root domain are automatically verified.
 For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDomainFederationConfiguration](New-MgBetaDomainFederationConfiguration.md)
 Create a new internalDomainFederation object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDomainServiceConfigurationRecord](New-MgBetaDomainServiceConfigurationRecord.md)
 Create new navigation property to serviceConfigurationRecords for domains
@@ -1389,12 +1438,10 @@ This creates a localized branding and at the same time, the default branding if 
 The default branding is created only once.
 It's loaded when a localized branding isn't configured for the user's browser language.
 To retrieve the default branding, see Get branding.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaOrganizationExtension](New-MgBetaOrganizationExtension.md)
 Create new navigation property to extensions for organization
-
-### [New-MgBetaOrganizationSettingProfileCardProperty](New-MgBetaOrganizationSettingProfileCardProperty.md)
-Create new navigation property to profileCardProperties for organization
 
 ### [New-MgBetaSubscribedSku](New-MgBetaSubscribedSku.md)
 Add new entity to subscribedSkus
@@ -1404,6 +1451,7 @@ Create new navigation property to scopedRoleMemberOf for users
 
 ### [Remove-MgBetaAdministrativeUnit](Remove-MgBetaAdministrativeUnit.md)
 Delete an administrativeUnit.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAdministrativeUnitExtension](Remove-MgBetaAdministrativeUnitExtension.md)
 Delete navigation property extensions for administrativeUnits
@@ -1413,12 +1461,14 @@ Delete ref of navigation property members for administrativeUnits
 
 ### [Remove-MgBetaAdministrativeUnitScopedRoleMember](Remove-MgBetaAdministrativeUnitScopedRoleMember.md)
 Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAdminPeople](Remove-MgBetaAdminPeople.md)
 Delete navigation property people for admin
 
 ### [Remove-MgBetaAdminPeopleProfileCardProperty](Remove-MgBetaAdminPeopleProfileCardProperty.md)
 Delete the profileCardProperty object specified by its directoryPropertyName from the organization's profile card, and remove any localized customizations for that property.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAdminPeoplePronoun](Remove-MgBetaAdminPeoplePronoun.md)
 Delete navigation property pronouns for admin
@@ -1431,9 +1481,11 @@ Delete entity from contracts
 
 ### [Remove-MgBetaDevice](Remove-MgBetaDevice.md)
 Delete a registered device.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceByDeviceId](Remove-MgBetaDeviceByDeviceId.md)
 Delete a registered device.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceCommand](Remove-MgBetaDeviceCommand.md)
 Delete navigation property commands for devices
@@ -1443,9 +1495,11 @@ Delete navigation property extensions for devices
 
 ### [Remove-MgBetaDeviceRegisteredOwnerByRef](Remove-MgBetaDeviceRegisteredOwnerByRef.md)
 Remove a user as a registered owner of the device.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceRegisteredUserByRef](Remove-MgBetaDeviceRegisteredUserByRef.md)
 Remove a user as a registered user of the device.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDeviceUsageRights](Remove-MgBetaDeviceUsageRights.md)
 Delete navigation property usageRights for devices
@@ -1461,6 +1515,7 @@ Delete ref of navigation property members for directory
 
 ### [Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
 Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryAttributeSet](Remove-MgBetaDirectoryAttributeSet.md)
 Delete navigation property attributeSets for directory
@@ -1469,7 +1524,8 @@ Delete navigation property attributeSets for directory
 Delete navigation property certificateAuthorities for directory
 
 ### [Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration](Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration.md)
-Delete navigation property certificateBasedApplicationConfigurations for directory
+Delete the properties and relationships of a certificateBasedApplicationConfiguration object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority](Remove-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority.md)
 Delete navigation property trustedCertificateAuthorities for directory
@@ -1480,17 +1536,16 @@ Delete navigation property customSecurityAttributeDefinitions for directory
 ### [Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Delete navigation property allowedValues for directory
 
-### [Remove-MgBetaDirectoryDeletedItem](Remove-MgBetaDirectoryDeletedItem.md)
-Delete navigation property deletedItems for directory
-
 ### [Remove-MgBetaDirectoryFeatureRolloutPolicy](Remove-MgBetaDirectoryFeatureRolloutPolicy.md)
 Delete navigation property featureRolloutPolicies for directory
 
 ### [Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef](Remove-MgBetaDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryFederationConfiguration](Remove-MgBetaDirectoryFederationConfiguration.md)
 Delete a samlOrWsFedExternalDomainFederation object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryImpactedResource](Remove-MgBetaDirectoryImpactedResource.md)
 Delete navigation property impactedResources for directory
@@ -1500,6 +1555,7 @@ Delete navigation property inboundSharedUserProfiles for directory
 
 ### [Remove-MgBetaDirectoryInboundSharedUserProfilePersonalData](Remove-MgBetaDirectoryInboundSharedUserProfilePersonalData.md)
 Create a request to remove the personal data for an inboundSharedUserProfile.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryOnPremiseSynchronization](Remove-MgBetaDirectoryOnPremiseSynchronization.md)
 Delete navigation property onPremisesSynchronization for directory
@@ -1512,6 +1568,7 @@ Delete navigation property tenants for directory
 
 ### [Remove-MgBetaDirectoryOutboundSharedUserProfileTenantPersonalData](Remove-MgBetaDirectoryOutboundSharedUserProfileTenantPersonalData.md)
 Create a request to remove the personal data for an outboundSharedUserProfile.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryRecommendation](Remove-MgBetaDirectoryRecommendation.md)
 Delete navigation property recommendations for directory
@@ -1528,8 +1585,9 @@ Delete entity from directoryRoles by roleTemplateId
 ### [Remove-MgBetaDirectoryRoleMemberByRef](Remove-MgBetaDirectoryRoleMemberByRef.md)
 Remove a member from a directoryRole.
 You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryRoleScopedMember](Remove-MgBetaDirectoryRoleScopedMember.md)
 Delete navigation property scopedMembers for directoryRoles
@@ -1539,6 +1597,7 @@ Delete entity from directoryRoleTemplates
 
 ### [Remove-MgBetaDirectorySetting](Remove-MgBetaDirectorySetting.md)
 Delete a directory setting.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectorySettingTemplate](Remove-MgBetaDirectorySettingTemplate.md)
 Delete entity from directorySettingTemplates
@@ -1551,9 +1610,11 @@ Delete navigation property subscriptions for directory
 
 ### [Remove-MgBetaDomain](Remove-MgBetaDomain.md)
 Deletes a domain from a tenant.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDomainFederationConfiguration](Remove-MgBetaDomainFederationConfiguration.md)
 Deletes an internalDomainFederation object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDomainServiceConfigurationRecord](Remove-MgBetaDomainServiceConfigurationRecord.md)
 Delete navigation property serviceConfigurationRecords for domains
@@ -1570,10 +1631,12 @@ Delete entity from organization
 ### [Remove-MgBetaOrganizationBranding](Remove-MgBetaOrganizationBranding.md)
 Delete the default organizational branding object.
 To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaOrganizationBrandingLocalization](Remove-MgBetaOrganizationBrandingLocalization.md)
 Delete a localized branding object.
 To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaOrganizationExtension](Remove-MgBetaOrganizationExtension.md)
 Delete navigation property extensions for organization
@@ -1596,12 +1659,6 @@ Delete navigation property microsoftApplicationDataAccess for organization
 ### [Remove-MgBetaOrganizationSettingPersonInsight](Remove-MgBetaOrganizationSettingPersonInsight.md)
 Delete navigation property peopleInsights for organization
 
-### [Remove-MgBetaOrganizationSettingProfileCardProperty](Remove-MgBetaOrganizationSettingProfileCardProperty.md)
-Delete navigation property profileCardProperties for organization
-
-### [Remove-MgBetaOrganizationSettingPronoun](Remove-MgBetaOrganizationSettingPronoun.md)
-Delete navigation property pronouns for organization
-
 ### [Remove-MgBetaSubscribedSku](Remove-MgBetaSubscribedSku.md)
 Delete entity from subscribedSkus
 
@@ -1612,15 +1669,17 @@ Delete navigation property scopedRoleMemberOf for users
 Invoke action changeDeploymentStatus
 
 ### [Reset-MgBetaTenantRelationshipManagedTenantOnboardingStatus](Reset-MgBetaTenantRelationshipManagedTenantOnboardingStatus.md)
-Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multi-tenant management platform using the offboardTenant action.
-By invoking this action the platform will attempt to onboard the managed tenant for management.
+Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multitenant management platform using the offboardTenant action.
+By invoking this action the platform attempts to onboard the managed tenant for management.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDirectoryDeletedItem](Restore-MgBetaDirectoryDeletedItem.md)
 Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
 If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
+This isn't applicable to security groups, which are deleted permanently.
+A recently deleted item remains available for up to 30 days.
 After 30 days, the item is permanently deleted.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaOrganizationBrandingBackgroundImage](Set-MgBetaOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1691,6 +1750,7 @@ Set mobile device management authority
 
 ### [Set-MgBetaTenantRelationshipManagedTenantTag](Set-MgBetaTenantRelationshipManagedTenantTag.md)
 Assign the tenant tag to the specified managed tenants.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaAdministrativeUnitProperty](Test-MgBetaAdministrativeUnitProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1702,6 +1762,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaContactProperty](Test-MgBetaContactProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1713,6 +1774,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaContractProperty](Test-MgBetaContractProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1724,6 +1786,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaDeviceProperty](Test-MgBetaDeviceProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1735,17 +1798,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-
-### [Test-MgBetaDirectoryAdministrativeUnitProperty](Test-MgBetaDirectoryAdministrativeUnitProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaDirectoryDeletedItemProperty](Test-MgBetaDirectoryDeletedItemProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1757,17 +1810,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-
-### [Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty](Test-MgBetaDirectoryFeatureRolloutPolicyApplyToProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaDirectoryRoleProperty](Test-MgBetaDirectoryRoleProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1779,6 +1822,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaDirectoryRoleTemplateProperty](Test-MgBetaDirectoryRoleTemplateProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1790,6 +1834,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaDirectorySettingTemplateProperty](Test-MgBetaDirectorySettingTemplateProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1801,6 +1846,7 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaOrganizationProperty](Test-MgBetaOrganizationProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -1812,9 +1858,11 @@ Validate the custom banned words policy\n3.
 Validate the mail nickname is unique This API returns with the first failure encountered.
 If one or more properties fail multiple validations, only the property with the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAdministrativeUnit](Update-MgBetaAdministrativeUnit.md)
 Update the properties of an administrativeUnit object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAdministrativeUnitExtension](Update-MgBetaAdministrativeUnitExtension.md)
 Update the navigation property extensions in administrativeUnits
@@ -1827,10 +1875,12 @@ Update the navigation property people in admin
 
 ### [Update-MgBetaAdminPeopleProfileCardProperty](Update-MgBetaAdminPeopleProfileCardProperty.md)
 Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAdminPeoplePronoun](Update-MgBetaAdminPeoplePronoun.md)
 Update the properties of a pronounsSettings in an organization.
 For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaContact](Update-MgBetaContact.md)
 Update entity in contacts
@@ -1841,10 +1891,12 @@ Update entity in contracts
 ### [Update-MgBetaDevice](Update-MgBetaDevice.md)
 Update the properties of a device.
 Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceByDeviceId](Update-MgBetaDeviceByDeviceId.md)
 Update the properties of a device.
 Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDeviceCommand](Update-MgBetaDeviceCommand.md)
 Update the navigation property commands in devices
@@ -1869,24 +1921,25 @@ Update the navigation property scopedRoleMembers in directory
 
 ### [Update-MgBetaDirectoryAttributeSet](Update-MgBetaDirectoryAttributeSet.md)
 Update the properties of an attributeSet object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDirectoryCertificateAuthority](Update-MgBetaDirectoryCertificateAuthority.md)
 Update the navigation property certificateAuthorities in directory
 
 ### [Update-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration](Update-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfiguration.md)
-Update the navigation property certificateBasedApplicationConfigurations in directory
+Update the properties of a certificateBasedApplicationConfiguration object.
+To update the trustedCertificateAuthorities within a certificateBasedApplicationConfiguration object, use the Update certificateAuthorityAsEntity operation.
 
 ### [Update-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority](Update-MgBetaDirectoryCertificateAuthorityCertificateBasedApplicationConfigurationTrustedCertificateAuthority.md)
 Update the navigation property trustedCertificateAuthorities in directory
 
 ### [Update-MgBetaDirectoryCustomSecurityAttributeDefinition](Update-MgBetaDirectoryCustomSecurityAttributeDefinition.md)
 Update the properties of a customSecurityAttributeDefinition object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Update the properties of an allowedValue object.
-
-### [Update-MgBetaDirectoryDeletedItem](Update-MgBetaDirectoryDeletedItem.md)
-Update the navigation property deletedItems in directory
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDirectoryFeatureRolloutPolicy](Update-MgBetaDirectoryFeatureRolloutPolicy.md)
 Update the navigation property featureRolloutPolicies in directory
@@ -1902,6 +1955,7 @@ Update the navigation property inboundSharedUserProfiles in directory
 
 ### [Update-MgBetaDirectoryOnPremiseSynchronization](Update-MgBetaDirectoryOnPremiseSynchronization.md)
 Update the properties of an onPremisesDirectorySynchronization object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDirectoryOutboundSharedUserProfile](Update-MgBetaDirectoryOutboundSharedUserProfile.md)
 Update the navigation property outboundSharedUserProfiles in directory
@@ -1929,6 +1983,7 @@ Update entity in directoryRoleTemplates
 
 ### [Update-MgBetaDirectorySetting](Update-MgBetaDirectorySetting.md)
 Update the properties of a specific directory setting object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDirectorySettingTemplate](Update-MgBetaDirectorySettingTemplate.md)
 Update entity in directorySettingTemplates
@@ -1941,9 +1996,11 @@ Update the navigation property subscriptions in directory
 
 ### [Update-MgBetaDomain](Update-MgBetaDomain.md)
 Update the properties of domain object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDomainFederationConfiguration](Update-MgBetaDomainFederationConfiguration.md)
 Update the properties of an internalDomainFederation object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDomainServiceConfigurationRecord](Update-MgBetaDomainServiceConfigurationRecord.md)
 Update the navigation property serviceConfigurationRecords in domains
@@ -1958,12 +2015,15 @@ Update the navigation property verificationDnsRecords in domains
 Update the properties of the currently authenticated organization.
 In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.
 The ID is also known as the tenantId of the organization.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaOrganizationBranding](Update-MgBetaOrganizationBranding.md)
 Update the properties of the default branding object specified by the organizationalBranding resource.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaOrganizationBrandingLocalization](Update-MgBetaOrganizationBrandingLocalization.md)
 Update the properties of an organizationalBrandingLocalization object for a specific localization.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaOrganizationExtension](Update-MgBetaOrganizationExtension.md)
 Update the navigation property extensions in organization
@@ -1977,26 +2037,21 @@ Update the navigation property settings in organization
 ### [Update-MgBetaOrganizationSettingContactInsight](Update-MgBetaOrganizationSettingContactInsight.md)
 Update privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaOrganizationSettingItemInsight](Update-MgBetaOrganizationSettingItemInsight.md)
 Update privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaOrganizationSettingMicrosoftApplicationDataAccess](Update-MgBetaOrganizationSettingMicrosoftApplicationDataAccess.md)
 Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaOrganizationSettingPersonInsight](Update-MgBetaOrganizationSettingPersonInsight.md)
 Update privacy settings to display or return the specified type of insights in an organization.
 The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
-
-### [Update-MgBetaOrganizationSettingProfileCardProperty](Update-MgBetaOrganizationSettingProfileCardProperty.md)
-Update the navigation property profileCardProperties in organization
-
-### [Update-MgBetaOrganizationSettingPronoun](Update-MgBetaOrganizationSettingPronoun.md)
-Update the navigation property pronouns in organization
+To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSubscribedSku](Update-MgBetaSubscribedSku.md)
 Update entity in subscribedSkus

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a messageRule object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ Get-MgBetaUserMailFolderMessageRule -InputObject <IMailIdentity> [-Property <Str
 
 ## DESCRIPTION
 Get the properties and relationships of a messageRule object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

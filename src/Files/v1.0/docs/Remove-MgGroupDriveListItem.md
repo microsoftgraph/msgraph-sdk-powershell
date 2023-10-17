@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgGroupDriveListItem
 
 ## SYNOPSIS
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgGroupDriveListItem -InputObject <IFilesIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

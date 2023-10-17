@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupDriveBundle
 
 ## SYNOPSIS
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgGroupDriveBundle -InputObject <IFilesIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

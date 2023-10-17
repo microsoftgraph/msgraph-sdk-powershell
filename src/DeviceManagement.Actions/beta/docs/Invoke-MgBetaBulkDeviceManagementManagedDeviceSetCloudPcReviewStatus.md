@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Invoke-MgBetaBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus
 
 ## DESCRIPTION
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

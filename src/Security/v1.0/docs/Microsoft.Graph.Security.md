@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: ab7effd5-4d46-4803-b726-3e1a577be1ac
+Module Guid: b1367aaa-f7e4-487f-9a29-797b9d7e455c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,48 +15,57 @@ Microsoft Graph PowerShell Cmdlets
 Start the process of applying hold on eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of applying hold on eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+The location provides a URL that returns an eDiscoveryHoldOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
 Apply tags to files in an eDiscovery review set.
 For details, see Tag documents in a review set in eDiscovery.
+This API is available in the following national cloud deployments.
 
 ### [Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet](Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet.md)
 Start the process of adding a collection from Microsoft 365 services to a review set.
 After the operation is created, you can get the status of the operation by retrieving the Location parameter from the response headers.
 The location provides a URL that will return a Add to review set operation.
+This API is available in the following national cloud deployments.
 
 ### [Clear-MgSecurityCaseEdiscoveryCaseSearchData](Clear-MgSecurityCaseEdiscoveryCaseSearchData.md)
 Delete Microsoft Teams messages contained in an eDiscovery search.
 You can collect and purge the following categories of Teams content:\n- Teams 1:1 chats - Chat messages, posts, and attachments shared in a Teams conversation between two people.
 Teams 1:1 chats are also called *conversations*.\n- Teams group chats - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
 Also called *1:N* chats or *group conversations*.\n- Teams channels - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- Private channels - Message posts, replies, and attachments shared in a private Teams channel.\n- Shared channels - Message posts, replies, and attachments shared in a shared Teams channel.
-For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams
+For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams  This API is available in the following national cloud deployments.
 
 ### [Close-MgSecurityCaseEdiscoveryCase](Close-MgSecurityCaseEdiscoveryCase.md)
 Close an eDiscovery case.
 For details, see Close a case.
+This API is available in the following national cloud deployments.
 
 ### [Export-MgSecurityCaseEdiscoveryCaseReviewSet](Export-MgSecurityCaseEdiscoveryCaseReviewSet.md)
 Initiate an export from a ediscoveryReviewSet.
 For details, see Export documents from a review set in eDiscovery (Premium).
+This API is available in the following national cloud deployments.
 
 ### [Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Export-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
 Retrieve the properties and relationships of an alert object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityAlertCount](Get-MgSecurityAlertCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAlertV2](Get-MgSecurityAlertV2.md)
 Get the properties and relationships of an alert in an organization based on the specified alert id property.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityAlertV2Count](Get-MgSecurityAlertV2Count.md)
 Get the number of the resource
@@ -66,6 +75,7 @@ Get attackSimulation from security
 
 ### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
 Get an attack simulation automation for a tenant.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityAttackSimulationAutomationCount](Get-MgSecurityAttackSimulationAutomationCount.md)
 Get the number of the resource
@@ -79,23 +89,80 @@ Get the number of the resource
 ### [Get-MgSecurityAttackSimulationCount](Get-MgSecurityAttackSimulationCount.md)
 Get the number of the resource
 
+### [Get-MgSecurityAttackSimulationEndUserNotification](Get-MgSecurityAttackSimulationEndUserNotification.md)
+Get endUserNotifications from security
+
+### [Get-MgSecurityAttackSimulationEndUserNotificationCount](Get-MgSecurityAttackSimulationEndUserNotificationCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationEndUserNotificationDetail](Get-MgSecurityAttackSimulationEndUserNotificationDetail.md)
+Get details from security
+
+### [Get-MgSecurityAttackSimulationEndUserNotificationDetailCount](Get-MgSecurityAttackSimulationEndUserNotificationDetailCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationLandingPage](Get-MgSecurityAttackSimulationLandingPage.md)
+Get landingPages from security
+
+### [Get-MgSecurityAttackSimulationLandingPageCount](Get-MgSecurityAttackSimulationLandingPageCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationLandingPageDetail](Get-MgSecurityAttackSimulationLandingPageDetail.md)
+Get details from security
+
+### [Get-MgSecurityAttackSimulationLandingPageDetailCount](Get-MgSecurityAttackSimulationLandingPageDetailCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationLoginPage](Get-MgSecurityAttackSimulationLoginPage.md)
+Get loginPages from security
+
+### [Get-MgSecurityAttackSimulationLoginPageCount](Get-MgSecurityAttackSimulationLoginPageCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationOperation](Get-MgSecurityAttackSimulationOperation.md)
+Get operations from security
+
+### [Get-MgSecurityAttackSimulationOperationCount](Get-MgSecurityAttackSimulationOperationCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationPayload](Get-MgSecurityAttackSimulationPayload.md)
+Get payloads from security
+
+### [Get-MgSecurityAttackSimulationPayloadCount](Get-MgSecurityAttackSimulationPayloadCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationTraining](Get-MgSecurityAttackSimulationTraining.md)
+Get trainings from security
+
+### [Get-MgSecurityAttackSimulationTrainingCount](Get-MgSecurityAttackSimulationTrainingCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityAttackSimulationTrainingLanguageDetail](Get-MgSecurityAttackSimulationTrainingLanguageDetail.md)
+Get languageDetails from security
+
+### [Get-MgSecurityAttackSimulationTrainingLanguageDetailCount](Get-MgSecurityAttackSimulationTrainingLanguageDetailCount.md)
+Get the number of the resource
+
 ### [Get-MgSecurityCase](Get-MgSecurityCase.md)
 Get cases from security
 
 ### [Get-MgSecurityCaseEdiscoveryCase](Get-MgSecurityCaseEdiscoveryCase.md)
 Read the properties and relationships of an ediscoveryCase object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCount](Get-MgSecurityCaseEdiscoveryCaseCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodian](Get-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Read the properties and relationships of an ediscoveryCustodian object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianCount](Get-MgSecurityCaseEdiscoveryCaseCustodianCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation](Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation.md)
 Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Data source entity for SharePoint sites associated with the custodian.
@@ -115,6 +182,12 @@ Get the number of the resource
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroup.md)
 Represents a group.
 
+### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError.md)
+Get serviceProvisioningErrors property value
+
+### [Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount](Get-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource](Get-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Data source entity for a the custodian.
 This is the container for a custodian's mailbox and OneDrive for Business site.
@@ -129,28 +202,32 @@ Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
 Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation](Get-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceLastIndexOperation.md)
-Operation entity that represents the latest indexing for the non-custodial data source.
+Operation entity that represents the latest indexing for the noncustodial data source.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseOperation](Get-MgSecurityCaseEdiscoveryCaseOperation.md)
 Read the properties and relationships of a caseOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseOperationCount](Get-MgSecurityCaseEdiscoveryCaseOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseReviewSet](Get-MgSecurityCaseEdiscoveryCaseReviewSet.md)
 Read the properties and relationships of an ediscoveryReviewSet object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseReviewSetCount](Get-MgSecurityCaseEdiscoveryCaseReviewSetCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Get-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Read the properties and relationships of an ediscoveryReviewSetQuery object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseReviewSetQueryCount](Get-MgSecurityCaseEdiscoveryCaseReviewSetQueryCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSearch](Get-MgSecurityCaseEdiscoveryCaseSearch.md)
 Read the properties and relationships of an ediscoverySearch object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Get-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Adds an additional source to the eDiscovery search.
@@ -172,6 +249,7 @@ Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation](Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation.md)
 Get the last  ediscoveryEstimateOperation objects and their properties.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
 noncustodialDataSource sources that are included in the eDiscovery search
@@ -181,9 +259,11 @@ Get the number of the resource
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSetting](Get-MgSecurityCaseEdiscoveryCaseSetting.md)
 Read the properties and relationships of an ediscoveryCaseSettings object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseTag](Get-MgSecurityCaseEdiscoveryCaseTag.md)
 Read the properties and relationships of an ediscoveryReviewTag object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseTagChildTag](Get-MgSecurityCaseEdiscoveryCaseTagChildTag.md)
 Returns the tags that are a child of a tag.
@@ -201,10 +281,14 @@ Returns the parent tag of the specified tag.
 Retrieve the properties and relationships of an incident object.
 Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects.
 Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityIncidentAlert](Get-MgSecurityIncidentAlert.md)
 The list of related alerts.
 Supports $expand.
+
+### [Get-MgSecurityIncidentAlertCommentCount](Get-MgSecurityIncidentAlertCommentCount.md)
+Get the number of the resource
 
 ### [Get-MgSecurityIncidentAlertCount](Get-MgSecurityIncidentAlertCount.md)
 Get the number of the resource
@@ -214,9 +298,11 @@ Get the number of the resource
 
 ### [Get-MgSecuritySecureScore](Get-MgSecuritySecureScore.md)
 Retrieve the properties and relationships of a secureScore object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecuritySecureScoreControlProfile](Get-MgSecuritySecureScoreControlProfile.md)
 Retrieve the properties and relationships of an securescorecontrolprofile object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecuritySecureScoreControlProfileCount](Get-MgSecuritySecureScoreControlProfileCount.md)
 Get the number of the resource
@@ -224,17 +310,75 @@ Get the number of the resource
 ### [Get-MgSecuritySecureScoreCount](Get-MgSecuritySecureScoreCount.md)
 Get the number of the resource
 
+### [Get-MgSecuritySubjectRightsRequest](Get-MgSecuritySubjectRightsRequest.md)
+Get subjectRightsRequests from security
+
+### [Get-MgSecuritySubjectRightsRequestApprover](Get-MgSecuritySubjectRightsRequestApprover.md)
+Collection of users who can approve the request.
+Currently only supported for requests of type delete.
+
+### [Get-MgSecuritySubjectRightsRequestApproverCount](Get-MgSecuritySubjectRightsRequestApproverCount.md)
+Get the number of the resource
+
+### [Get-MgSecuritySubjectRightsRequestApproverMailboxSetting](Get-MgSecuritySubjectRightsRequestApproverMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
+### [Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningError](Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningError.md)
+Get serviceProvisioningErrors property value
+
+### [Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount](Get-MgSecuritySubjectRightsRequestApproverServiceProvisioningErrorCount.md)
+Get the number of the resource
+
+### [Get-MgSecuritySubjectRightsRequestCollaborator](Get-MgSecuritySubjectRightsRequestCollaborator.md)
+Collection of users who can collaborate on the request.
+
+### [Get-MgSecuritySubjectRightsRequestCollaboratorCount](Get-MgSecuritySubjectRightsRequestCollaboratorCount.md)
+Get the number of the resource
+
+### [Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting](Get-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
+### [Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningError](Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningError.md)
+Get serviceProvisioningErrors property value
+
+### [Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount](Get-MgSecuritySubjectRightsRequestCollaboratorServiceProvisioningErrorCount.md)
+Get the number of the resource
+
+### [Get-MgSecuritySubjectRightsRequestCount](Get-MgSecuritySubjectRightsRequestCount.md)
+Get the number of the resource
+
+### [Get-MgSecuritySubjectRightsRequestFinalAttachment](Get-MgSecuritySubjectRightsRequestFinalAttachment.md)
+Invoke function getFinalAttachment
+
+### [Get-MgSecuritySubjectRightsRequestFinalReport](Get-MgSecuritySubjectRightsRequestFinalReport.md)
+Invoke function getFinalReport
+
+### [Get-MgSecuritySubjectRightsRequestNote](Get-MgSecuritySubjectRightsRequestNote.md)
+List of notes associated with the request.
+
+### [Get-MgSecuritySubjectRightsRequestNoteCount](Get-MgSecuritySubjectRightsRequestNoteCount.md)
+Get the number of the resource
+
+### [Get-MgSecuritySubjectRightsRequestTeam](Get-MgSecuritySubjectRightsRequestTeam.md)
+Information about the Microsoft Teams team that was created for the request.
+
 ### [Get-MgSecurityThreatIntelligence](Get-MgSecurityThreatIntelligence.md)
 Get threatIntelligence from security
 
 ### [Get-MgSecurityThreatIntelligenceArticle](Get-MgSecurityThreatIntelligenceArticle.md)
 Read the properties and relationships of an article object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceArticleCount](Get-MgSecurityThreatIntelligenceArticleCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligenceArticleIndicator](Get-MgSecurityThreatIntelligenceArticleIndicator.md)
 Read the properties and relationships of an articleIndicator object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceArticleIndicatorArtifact](Get-MgSecurityThreatIntelligenceArticleIndicatorArtifact.md)
 The artifact related to this indicator.
@@ -245,10 +389,17 @@ Get the number of the resource
 ### [Get-MgSecurityThreatIntelligenceHost](Get-MgSecurityThreatIntelligenceHost.md)
 Read the properties and relationships of a host object.
 The host resource is the abstract base type that returns an implementation.
-A host can be of one of the following types:
+A host can be of one of the following types: This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceHostChildHostPair](Get-MgSecurityThreatIntelligenceHostChildHostPair.md)
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+
+### [Get-MgSecurityThreatIntelligenceHostChildHostPairCount](Get-MgSecurityThreatIntelligenceHostChildHostPairCount.md)
+Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligenceHostComponent](Get-MgSecurityThreatIntelligenceHostComponent.md)
 Read the properties and relationships of a hostComponent object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceHostComponentCount](Get-MgSecurityThreatIntelligenceHostComponentCount.md)
 Get the number of the resource
@@ -260,6 +411,7 @@ When navigating to components from a host, this should be assumed to be a return
 
 ### [Get-MgSecurityThreatIntelligenceHostCookie](Get-MgSecurityThreatIntelligenceHostCookie.md)
 Read the properties and relationships of a hostCookie object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceHostCookieCount](Get-MgSecurityThreatIntelligenceHostCookieCount.md)
 Get the number of the resource
@@ -268,6 +420,25 @@ Get the number of the resource
 Indicates that a cookie of this name and domain was found related to this host.
 
 ### [Get-MgSecurityThreatIntelligenceHostCount](Get-MgSecurityThreatIntelligenceHostCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostPair](Get-MgSecurityThreatIntelligenceHostPair.md)
+Read the properties and relationships of a hostPair object.
+This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceHostPairChildHost](Get-MgSecurityThreatIntelligenceHostPairChildHost.md)
+Host reached via the parentHost.
+
+### [Get-MgSecurityThreatIntelligenceHostPairCount](Get-MgSecurityThreatIntelligenceHostPairCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostPairParentHost](Get-MgSecurityThreatIntelligenceHostPairParentHost.md)
+Host used to reach the childHost.
+
+### [Get-MgSecurityThreatIntelligenceHostParentHostPair](Get-MgSecurityThreatIntelligenceHostParentHostPair.md)
+The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
+
+### [Get-MgSecurityThreatIntelligenceHostParentHostPairCount](Get-MgSecurityThreatIntelligenceHostParentHostPairCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligenceHostPassiveDns](Get-MgSecurityThreatIntelligenceHostPassiveDns.md)
@@ -284,9 +455,27 @@ Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligenceHostReputation](Get-MgSecurityThreatIntelligenceHostReputation.md)
 Get the properties and relationships of a hostReputation object.
+This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceHostSslCertificate](Get-MgSecurityThreatIntelligenceHostSslCertificate.md)
+Get the properties and relationships of a hostSslCertificate object.
+This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceHostSslCertificateCount](Get-MgSecurityThreatIntelligenceHostSslCertificateCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostSslCertificateHost](Get-MgSecurityThreatIntelligenceHostSslCertificateHost.md)
+The host for this hostSslCertificate.
+
+### [Get-MgSecurityThreatIntelligenceHostSubdomain](Get-MgSecurityThreatIntelligenceHostSubdomain.md)
+The subdomains that are associated with this host.
+
+### [Get-MgSecurityThreatIntelligenceHostSubdomainCount](Get-MgSecurityThreatIntelligenceHostSubdomainCount.md)
+Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligenceHostTracker](Get-MgSecurityThreatIntelligenceHostTracker.md)
 Read the properties and relationships of a hostTracker object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceHostTrackerCount](Get-MgSecurityThreatIntelligenceHostTrackerCount.md)
 Get the number of the resource
@@ -295,8 +484,15 @@ Get the number of the resource
 The host related to this hostTracker.
 When navigating to a hostTracker from a host, this should be assumed to be a return reference.
 
+### [Get-MgSecurityThreatIntelligenceHostWhoi](Get-MgSecurityThreatIntelligenceHostWhoi.md)
+Get the specified whoisRecord resource.
+Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord.
+\n- Specify an id value to get the corresponding whoisRecord.
+This API is available in the following national cloud deployments.
+
 ### [Get-MgSecurityThreatIntelligenceIntelProfile](Get-MgSecurityThreatIntelligenceIntelProfile.md)
 Read the properties and relationships of a intelligenceProfile object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceIntelProfileCount](Get-MgSecurityThreatIntelligenceIntelProfileCount.md)
 Get the number of the resource
@@ -309,6 +505,7 @@ Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligencePassiveDnsRecord](Get-MgSecurityThreatIntelligencePassiveDnsRecord.md)
 Read the properties and relationships of a passiveDnsRecord object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligencePassiveDnsRecordArtifact](Get-MgSecurityThreatIntelligencePassiveDnsRecordArtifact.md)
 The artifact related to this passiveDnsRecord entry.
@@ -322,6 +519,7 @@ Generally, this is the value that you can search to discover this passiveDnsReco
 
 ### [Get-MgSecurityThreatIntelligenceProfileIndicator](Get-MgSecurityThreatIntelligenceProfileIndicator.md)
 Read the properties and relationships of a intelligenceProfileIndicator object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceProfileIndicatorArtifact](Get-MgSecurityThreatIntelligenceProfileIndicatorArtifact.md)
 The artifact related to this indicator.
@@ -329,8 +527,32 @@ The artifact related to this indicator.
 ### [Get-MgSecurityThreatIntelligenceProfileIndicatorCount](Get-MgSecurityThreatIntelligenceProfileIndicatorCount.md)
 Get the number of the resource
 
+### [Get-MgSecurityThreatIntelligenceSslCertificate](Get-MgSecurityThreatIntelligenceSslCertificate.md)
+Get the properties and relationships of an sslCertificate object.
+This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceSslCertificateCount](Get-MgSecurityThreatIntelligenceSslCertificateCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceSslCertificateRelatedHost](Get-MgSecurityThreatIntelligenceSslCertificateRelatedHost.md)
+The hosts related with this sslCertificate.
+
+### [Get-MgSecurityThreatIntelligenceSslCertificateRelatedHostCount](Get-MgSecurityThreatIntelligenceSslCertificateRelatedHostCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceSubdomain](Get-MgSecurityThreatIntelligenceSubdomain.md)
+Read the properties and relationships of a subdomain object.
+This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceSubdomainCount](Get-MgSecurityThreatIntelligenceSubdomainCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceSubdomainHost](Get-MgSecurityThreatIntelligenceSubdomainHost.md)
+The host of the subdomain.
+
 ### [Get-MgSecurityThreatIntelligenceVulnerability](Get-MgSecurityThreatIntelligenceVulnerability.md)
 Read the properties and relationships of a vulnerability object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceVulnerabilityArticle](Get-MgSecurityThreatIntelligenceVulnerabilityArticle.md)
 Articles related to this vulnerability.
@@ -340,6 +562,7 @@ Get the number of the resource
 
 ### [Get-MgSecurityThreatIntelligenceVulnerabilityComponent](Get-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
 Read the properties and relationships of a vulnerabilityComponent object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceVulnerabilityComponentCount](Get-MgSecurityThreatIntelligenceVulnerabilityComponentCount.md)
 Get the number of the resource
@@ -347,11 +570,39 @@ Get the number of the resource
 ### [Get-MgSecurityThreatIntelligenceVulnerabilityCount](Get-MgSecurityThreatIntelligenceVulnerabilityCount.md)
 Get the number of the resource
 
+### [Get-MgSecurityThreatIntelligenceWhoisHistoryRecord](Get-MgSecurityThreatIntelligenceWhoisHistoryRecord.md)
+Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
+
+### [Get-MgSecurityThreatIntelligenceWhoisHistoryRecordCount](Get-MgSecurityThreatIntelligenceWhoisHistoryRecordCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceWhoisHistoryRecordHost](Get-MgSecurityThreatIntelligenceWhoisHistoryRecordHost.md)
+The host associated to this WHOIS object.
+
+### [Get-MgSecurityThreatIntelligenceWhoisRecord](Get-MgSecurityThreatIntelligenceWhoisRecord.md)
+Get the specified whoisRecord resource.
+Specify the desired whoisRecord in one of the following two ways:\n- Identify a host and get its current whoisRecord.
+\n- Specify an id value to get the corresponding whoisRecord.
+This API is available in the following national cloud deployments.
+
+### [Get-MgSecurityThreatIntelligenceWhoisRecordCount](Get-MgSecurityThreatIntelligenceWhoisRecordCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceWhoisRecordHistory](Get-MgSecurityThreatIntelligenceWhoisRecordHistory.md)
+The collection of historical records associated to this WHOIS object.
+
+### [Get-MgSecurityThreatIntelligenceWhoisRecordHistoryCount](Get-MgSecurityThreatIntelligenceWhoisRecordHistoryCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceWhoisRecordHost](Get-MgSecurityThreatIntelligenceWhoisRecordHost.md)
+The host associated to this WHOIS object.
+
 ### [Get-MgSecurityTrigger](Get-MgSecurityTrigger.md)
 Get triggers from security
 
 ### [Get-MgSecurityTriggerRetentionEvent](Get-MgSecurityTriggerRetentionEvent.md)
 Read the properties and relationships of a retentionEvent object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityTriggerRetentionEventCount](Get-MgSecurityTriggerRetentionEventCount.md)
 Get the number of the resource
@@ -364,6 +615,7 @@ Get triggerTypes from security
 
 ### [Get-MgSecurityTriggerTypeRetentionEventType](Get-MgSecurityTriggerTypeRetentionEventType.md)
 Read the properties and relationships of a retentionEventType object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityTriggerTypeRetentionEventTypeCount](Get-MgSecurityTriggerTypeRetentionEventTypeCount.md)
 Get the number of the resource
@@ -371,17 +623,23 @@ Get the number of the resource
 ### [Initialize-MgSecurityCaseEdiscoveryCaseCustodian](Initialize-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an eDiscovery (Premium) case.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
 
+### [Invoke-MgCommentSecurityAlert](Invoke-MgCommentSecurityAlert.md)
+Get the number of the resource
+
 ### [Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
 Run an estimate of the number of emails and documents in the eDiscovery search.
 To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgReopenSecurityCaseEdiscoveryCase](Invoke-MgReopenSecurityCaseEdiscoveryCase.md)
 Reopen an eDiscovery case that was closed.
 For details, see Reopen a closed case.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
 Create new navigation property to alerts for security
@@ -398,41 +656,79 @@ Create new navigation property to simulationAutomations for security
 ### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
 Create new navigation property to runs for security
 
+### [New-MgSecurityAttackSimulationEndUserNotification](New-MgSecurityAttackSimulationEndUserNotification.md)
+Create new navigation property to endUserNotifications for security
+
+### [New-MgSecurityAttackSimulationEndUserNotificationDetail](New-MgSecurityAttackSimulationEndUserNotificationDetail.md)
+Create new navigation property to details for security
+
+### [New-MgSecurityAttackSimulationLandingPage](New-MgSecurityAttackSimulationLandingPage.md)
+Create new navigation property to landingPages for security
+
+### [New-MgSecurityAttackSimulationLandingPageDetail](New-MgSecurityAttackSimulationLandingPageDetail.md)
+Create new navigation property to details for security
+
+### [New-MgSecurityAttackSimulationLoginPage](New-MgSecurityAttackSimulationLoginPage.md)
+Create new navigation property to loginPages for security
+
+### [New-MgSecurityAttackSimulationOperation](New-MgSecurityAttackSimulationOperation.md)
+Create new navigation property to operations for security
+
+### [New-MgSecurityAttackSimulationPayload](New-MgSecurityAttackSimulationPayload.md)
+Create new navigation property to payloads for security
+
+### [New-MgSecurityAttackSimulationTraining](New-MgSecurityAttackSimulationTraining.md)
+Create new navigation property to trainings for security
+
+### [New-MgSecurityAttackSimulationTrainingLanguageDetail](New-MgSecurityAttackSimulationTrainingLanguageDetail.md)
+Create new navigation property to languageDetails for security
+
 ### [New-MgSecurityCaseEdiscoveryCase](New-MgSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodian](New-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Create a new siteSource object associated with an eDiscovery custodian.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](New-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
 Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodianUserSource](New-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
 Create a new userSource object associated with an eDiscovery custodian.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Create a new ediscoveryNoncustodialDataSource object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseOperation](New-MgSecurityCaseEdiscoveryCaseOperation.md)
 Create new navigation property to operations for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseReviewSet](New-MgSecurityCaseEdiscoveryCaseReviewSet.md)
 Create a new ediscoveryReviewSet object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseReviewSetQuery](New-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Create a new ediscoveryReviewSetQuery object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseSearch](New-MgSecurityCaseEdiscoveryCaseSearch.md)
 Create a new ediscoverySearch object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Create a new additional source associated with an eDiscovery search.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityCaseEdiscoveryCaseTag](New-MgSecurityCaseEdiscoveryCaseTag.md)
 Create a new ediscoveryReviewTag object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityIncident](New-MgSecurityIncident.md)
 Create new navigation property to incidents for security
@@ -442,6 +738,13 @@ Create new navigation property to secureScores for security
 
 ### [New-MgSecuritySecureScoreControlProfile](New-MgSecuritySecureScoreControlProfile.md)
 Create new navigation property to secureScoreControlProfiles for security
+
+### [New-MgSecuritySubjectRightsRequest](New-MgSecuritySubjectRightsRequest.md)
+Create new navigation property to subjectRightsRequests for security
+
+### [New-MgSecuritySubjectRightsRequestNote](New-MgSecuritySubjectRightsRequestNote.md)
+Create a new authoredNote object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityThreatIntelligenceArticle](New-MgSecurityThreatIntelligenceArticle.md)
 Create new navigation property to articles for security
@@ -458,6 +761,12 @@ Create new navigation property to hostComponents for security
 ### [New-MgSecurityThreatIntelligenceHostCookie](New-MgSecurityThreatIntelligenceHostCookie.md)
 Create new navigation property to hostCookies for security
 
+### [New-MgSecurityThreatIntelligenceHostPair](New-MgSecurityThreatIntelligenceHostPair.md)
+Create new navigation property to hostPairs for security
+
+### [New-MgSecurityThreatIntelligenceHostSslCertificate](New-MgSecurityThreatIntelligenceHostSslCertificate.md)
+Create new navigation property to hostSslCertificates for security
+
 ### [New-MgSecurityThreatIntelligenceHostTracker](New-MgSecurityThreatIntelligenceHostTracker.md)
 Create new navigation property to hostTrackers for security
 
@@ -470,24 +779,40 @@ Create new navigation property to passiveDnsRecords for security
 ### [New-MgSecurityThreatIntelligenceProfileIndicator](New-MgSecurityThreatIntelligenceProfileIndicator.md)
 Create new navigation property to intelligenceProfileIndicators for security
 
+### [New-MgSecurityThreatIntelligenceSslCertificate](New-MgSecurityThreatIntelligenceSslCertificate.md)
+Create new navigation property to sslCertificates for security
+
+### [New-MgSecurityThreatIntelligenceSubdomain](New-MgSecurityThreatIntelligenceSubdomain.md)
+Create new navigation property to subdomains for security
+
 ### [New-MgSecurityThreatIntelligenceVulnerability](New-MgSecurityThreatIntelligenceVulnerability.md)
 Create new navigation property to vulnerabilities for security
 
 ### [New-MgSecurityThreatIntelligenceVulnerabilityComponent](New-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
 Create new navigation property to components for security
 
+### [New-MgSecurityThreatIntelligenceWhoisHistoryRecord](New-MgSecurityThreatIntelligenceWhoisHistoryRecord.md)
+Create new navigation property to whoisHistoryRecords for security
+
+### [New-MgSecurityThreatIntelligenceWhoisRecord](New-MgSecurityThreatIntelligenceWhoisRecord.md)
+Create new navigation property to whoisRecords for security
+
 ### [New-MgSecurityTriggerRetentionEvent](New-MgSecurityTriggerRetentionEvent.md)
 Create a new retentionEvent object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSecurityTriggerTypeRetentionEventType](New-MgSecurityTriggerTypeRetentionEventType.md)
 Create a new retentionEventType object.
+This API is available in the following national cloud deployments.
 
 ### [Publish-MgSecurityCaseEdiscoveryCaseCustodian](Publish-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Release a custodian from a case.
 For details, see Release a custodian from a case.
+This API is available in the following national cloud deployments.
 
 ### [Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
 Release the non-custodial data source from the case.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityAlertV2](Remove-MgSecurityAlertV2.md)
 Delete navigation property alerts_v2 for security
@@ -501,11 +826,39 @@ Delete navigation property simulationAutomations for security
 ### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
 Delete navigation property runs for security
 
+### [Remove-MgSecurityAttackSimulationEndUserNotification](Remove-MgSecurityAttackSimulationEndUserNotification.md)
+Delete navigation property endUserNotifications for security
+
+### [Remove-MgSecurityAttackSimulationEndUserNotificationDetail](Remove-MgSecurityAttackSimulationEndUserNotificationDetail.md)
+Delete navigation property details for security
+
+### [Remove-MgSecurityAttackSimulationLandingPage](Remove-MgSecurityAttackSimulationLandingPage.md)
+Delete navigation property landingPages for security
+
+### [Remove-MgSecurityAttackSimulationLandingPageDetail](Remove-MgSecurityAttackSimulationLandingPageDetail.md)
+Delete navigation property details for security
+
+### [Remove-MgSecurityAttackSimulationLoginPage](Remove-MgSecurityAttackSimulationLoginPage.md)
+Delete navigation property loginPages for security
+
+### [Remove-MgSecurityAttackSimulationOperation](Remove-MgSecurityAttackSimulationOperation.md)
+Delete navigation property operations for security
+
+### [Remove-MgSecurityAttackSimulationPayload](Remove-MgSecurityAttackSimulationPayload.md)
+Delete navigation property payloads for security
+
+### [Remove-MgSecurityAttackSimulationTraining](Remove-MgSecurityAttackSimulationTraining.md)
+Delete navigation property trainings for security
+
+### [Remove-MgSecurityAttackSimulationTrainingLanguageDetail](Remove-MgSecurityAttackSimulationTrainingLanguageDetail.md)
+Delete navigation property languageDetails for security
+
 ### [Remove-MgSecurityCase](Remove-MgSecurityCase.md)
 Delete navigation property cases for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCase](Remove-MgSecurityCaseEdiscoveryCase.md)
 Delete an ediscoveryCase object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseCustodian](Remove-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Delete navigation property custodians for security
@@ -514,6 +867,7 @@ Delete navigation property custodians for security
 Start the process of removing hold from eDiscovery custodians.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
 The location provides a URL that will return an eDiscoveryHoldOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Delete navigation property siteSources for security
@@ -530,7 +884,8 @@ Delete navigation property noncustodialDataSources for security
 ### [Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
 Start the process of removing hold from eDiscovery non-custodial data sources.
 After the operation is created, you can get the status by retrieving the Location parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+The location provides a URL that returns an eDiscoveryHoldOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseOperation](Remove-MgSecurityCaseEdiscoveryCaseOperation.md)
 Delete navigation property operations for security
@@ -540,9 +895,11 @@ Delete navigation property reviewSets for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Remove-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Delete an ediscoveryReviewSetQuery object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseSearch](Remove-MgSecurityCaseEdiscoveryCaseSearch.md)
 Delete an ediscoverySearch object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Remove-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Delete navigation property additionalSources for security
@@ -558,6 +915,7 @@ Delete navigation property settings for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseTag](Remove-MgSecurityCaseEdiscoveryCaseTag.md)
 Remove an ediscoveryReviewTag object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityIncident](Remove-MgSecurityIncident.md)
 Delete navigation property incidents for security
@@ -567,6 +925,12 @@ Delete navigation property secureScores for security
 
 ### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
 Delete navigation property secureScoreControlProfiles for security
+
+### [Remove-MgSecuritySubjectRightsRequest](Remove-MgSecuritySubjectRightsRequest.md)
+Delete navigation property subjectRightsRequests for security
+
+### [Remove-MgSecuritySubjectRightsRequestNote](Remove-MgSecuritySubjectRightsRequestNote.md)
+Delete navigation property notes for security
 
 ### [Remove-MgSecurityThreatIntelligence](Remove-MgSecurityThreatIntelligence.md)
 Delete navigation property threatIntelligence for security
@@ -586,8 +950,14 @@ Delete navigation property hostComponents for security
 ### [Remove-MgSecurityThreatIntelligenceHostCookie](Remove-MgSecurityThreatIntelligenceHostCookie.md)
 Delete navigation property hostCookies for security
 
+### [Remove-MgSecurityThreatIntelligenceHostPair](Remove-MgSecurityThreatIntelligenceHostPair.md)
+Delete navigation property hostPairs for security
+
 ### [Remove-MgSecurityThreatIntelligenceHostReputation](Remove-MgSecurityThreatIntelligenceHostReputation.md)
 Delete navigation property reputation for security
+
+### [Remove-MgSecurityThreatIntelligenceHostSslCertificate](Remove-MgSecurityThreatIntelligenceHostSslCertificate.md)
+Delete navigation property hostSslCertificates for security
 
 ### [Remove-MgSecurityThreatIntelligenceHostTracker](Remove-MgSecurityThreatIntelligenceHostTracker.md)
 Delete navigation property hostTrackers for security
@@ -601,17 +971,30 @@ Delete navigation property passiveDnsRecords for security
 ### [Remove-MgSecurityThreatIntelligenceProfileIndicator](Remove-MgSecurityThreatIntelligenceProfileIndicator.md)
 Delete navigation property intelligenceProfileIndicators for security
 
+### [Remove-MgSecurityThreatIntelligenceSslCertificate](Remove-MgSecurityThreatIntelligenceSslCertificate.md)
+Delete navigation property sslCertificates for security
+
+### [Remove-MgSecurityThreatIntelligenceSubdomain](Remove-MgSecurityThreatIntelligenceSubdomain.md)
+Delete navigation property subdomains for security
+
 ### [Remove-MgSecurityThreatIntelligenceVulnerability](Remove-MgSecurityThreatIntelligenceVulnerability.md)
 Delete navigation property vulnerabilities for security
 
 ### [Remove-MgSecurityThreatIntelligenceVulnerabilityComponent](Remove-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
 Delete navigation property components for security
 
+### [Remove-MgSecurityThreatIntelligenceWhoisHistoryRecord](Remove-MgSecurityThreatIntelligenceWhoisHistoryRecord.md)
+Delete navigation property whoisHistoryRecords for security
+
+### [Remove-MgSecurityThreatIntelligenceWhoisRecord](Remove-MgSecurityThreatIntelligenceWhoisRecord.md)
+Delete navigation property whoisRecords for security
+
 ### [Remove-MgSecurityTrigger](Remove-MgSecurityTrigger.md)
 Delete navigation property triggers for security
 
 ### [Remove-MgSecurityTriggerRetentionEvent](Remove-MgSecurityTriggerRetentionEvent.md)
 Delete a retentionEvent object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSecurityTriggerType](Remove-MgSecurityTriggerType.md)
 Delete navigation property triggerTypes for security
@@ -621,6 +1004,13 @@ Delete a retentionEventType object.
 
 ### [Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
+This API is available in the following national cloud deployments.
+
+### [Set-MgSecurityAlert](Set-MgSecurityAlert.md)
+Sets a new value for the collection of alertComment.
+
+### [Set-MgSecurityIncidentAlertComment](Set-MgSecurityIncidentAlertComment.md)
+Sets a new value for the collection of alertComment.
 
 ### [Start-MgSecurityHuntingQuery](Start-MgSecurityHuntingQuery.md)
 Invoke action runHuntingQuery
@@ -628,9 +1018,11 @@ Invoke action runHuntingQuery
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
 Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions.
 This method updates any solution that has a record of the referenced alert ID.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityAlertV2](Update-MgSecurityAlertV2.md)
 Update the properties of an alert object in an organization based on the specified alert id property.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -638,17 +1030,46 @@ Update the navigation property simulationAutomations in security
 ### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
 Update the navigation property runs in security
 
+### [Update-MgSecurityAttackSimulationEndUserNotification](Update-MgSecurityAttackSimulationEndUserNotification.md)
+Update the navigation property endUserNotifications in security
+
+### [Update-MgSecurityAttackSimulationEndUserNotificationDetail](Update-MgSecurityAttackSimulationEndUserNotificationDetail.md)
+Update the navigation property details in security
+
+### [Update-MgSecurityAttackSimulationLandingPage](Update-MgSecurityAttackSimulationLandingPage.md)
+Update the navigation property landingPages in security
+
+### [Update-MgSecurityAttackSimulationLandingPageDetail](Update-MgSecurityAttackSimulationLandingPageDetail.md)
+Update the navigation property details in security
+
+### [Update-MgSecurityAttackSimulationLoginPage](Update-MgSecurityAttackSimulationLoginPage.md)
+Update the navigation property loginPages in security
+
+### [Update-MgSecurityAttackSimulationOperation](Update-MgSecurityAttackSimulationOperation.md)
+Update the navigation property operations in security
+
+### [Update-MgSecurityAttackSimulationPayload](Update-MgSecurityAttackSimulationPayload.md)
+Update the navigation property payloads in security
+
+### [Update-MgSecurityAttackSimulationTraining](Update-MgSecurityAttackSimulationTraining.md)
+Update the navigation property trainings in security
+
+### [Update-MgSecurityAttackSimulationTrainingLanguageDetail](Update-MgSecurityAttackSimulationTrainingLanguageDetail.md)
+Update the navigation property languageDetails in security
+
 ### [Update-MgSecurityCase](Update-MgSecurityCase.md)
 Update the navigation property cases in security
 
 ### [Update-MgSecurityCaseEdiscoveryCase](Update-MgSecurityCaseEdiscoveryCase.md)
 Update the properties of an ediscoveryCase object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityCaseEdiscoveryCaseCustodian](Update-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Update the navigation property custodians in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseCustodianIndex](Update-MgSecurityCaseEdiscoveryCaseCustodianIndex.md)
 Trigger an indexOperation to make a custodian and associated sources searchable.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Update-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Update the navigation property siteSources in security
@@ -664,6 +1085,7 @@ Update the navigation property noncustodialDataSources in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex](Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex.md)
 Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityCaseEdiscoveryCaseOperation](Update-MgSecurityCaseEdiscoveryCaseOperation.md)
 Update the navigation property operations in security
@@ -673,27 +1095,45 @@ Update the navigation property reviewSets in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery](Update-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
 Update the properties of an ediscoveryReviewSetQuery object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityCaseEdiscoveryCaseSearch](Update-MgSecurityCaseEdiscoveryCaseSearch.md)
 Update the properties of an ediscoverySearch object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](Update-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
 Update the navigation property additionalSources in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseSetting](Update-MgSecurityCaseEdiscoveryCaseSetting.md)
 Update the properties of an ediscoveryCaseSettings object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityCaseEdiscoveryCaseTag](Update-MgSecurityCaseEdiscoveryCaseTag.md)
 Update the properties of an ediscoveryReviewTag object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecurityIncident](Update-MgSecurityIncident.md)
 Update the properties of an incident object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSecuritySecureScore](Update-MgSecuritySecureScore.md)
 Update the navigation property secureScores in security
 
 ### [Update-MgSecuritySecureScoreControlProfile](Update-MgSecuritySecureScoreControlProfile.md)
 Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+This API is available in the following national cloud deployments.
+
+### [Update-MgSecuritySubjectRightsRequest](Update-MgSecuritySubjectRightsRequest.md)
+Update the navigation property subjectRightsRequests in security
+
+### [Update-MgSecuritySubjectRightsRequestApproverMailboxSetting](Update-MgSecuritySubjectRightsRequestApproverMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting](Update-MgSecuritySubjectRightsRequestCollaboratorMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgSecuritySubjectRightsRequestNote](Update-MgSecuritySubjectRightsRequestNote.md)
+Update the navigation property notes in security
 
 ### [Update-MgSecurityThreatIntelligence](Update-MgSecurityThreatIntelligence.md)
 Update the navigation property threatIntelligence in security
@@ -713,8 +1153,14 @@ Update the navigation property hostComponents in security
 ### [Update-MgSecurityThreatIntelligenceHostCookie](Update-MgSecurityThreatIntelligenceHostCookie.md)
 Update the navigation property hostCookies in security
 
+### [Update-MgSecurityThreatIntelligenceHostPair](Update-MgSecurityThreatIntelligenceHostPair.md)
+Update the navigation property hostPairs in security
+
 ### [Update-MgSecurityThreatIntelligenceHostReputation](Update-MgSecurityThreatIntelligenceHostReputation.md)
 Update the navigation property reputation in security
+
+### [Update-MgSecurityThreatIntelligenceHostSslCertificate](Update-MgSecurityThreatIntelligenceHostSslCertificate.md)
+Update the navigation property hostSslCertificates in security
 
 ### [Update-MgSecurityThreatIntelligenceHostTracker](Update-MgSecurityThreatIntelligenceHostTracker.md)
 Update the navigation property hostTrackers in security
@@ -728,11 +1174,23 @@ Update the navigation property passiveDnsRecords in security
 ### [Update-MgSecurityThreatIntelligenceProfileIndicator](Update-MgSecurityThreatIntelligenceProfileIndicator.md)
 Update the navigation property intelligenceProfileIndicators in security
 
+### [Update-MgSecurityThreatIntelligenceSslCertificate](Update-MgSecurityThreatIntelligenceSslCertificate.md)
+Update the navigation property sslCertificates in security
+
+### [Update-MgSecurityThreatIntelligenceSubdomain](Update-MgSecurityThreatIntelligenceSubdomain.md)
+Update the navigation property subdomains in security
+
 ### [Update-MgSecurityThreatIntelligenceVulnerability](Update-MgSecurityThreatIntelligenceVulnerability.md)
 Update the navigation property vulnerabilities in security
 
 ### [Update-MgSecurityThreatIntelligenceVulnerabilityComponent](Update-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
 Update the navigation property components in security
+
+### [Update-MgSecurityThreatIntelligenceWhoisHistoryRecord](Update-MgSecurityThreatIntelligenceWhoisHistoryRecord.md)
+Update the navigation property whoisHistoryRecords in security
+
+### [Update-MgSecurityThreatIntelligenceWhoisRecord](Update-MgSecurityThreatIntelligenceWhoisRecord.md)
+Update the navigation property whoisRecords in security
 
 ### [Update-MgSecurityTrigger](Update-MgSecurityTrigger.md)
 Update the navigation property triggers in security

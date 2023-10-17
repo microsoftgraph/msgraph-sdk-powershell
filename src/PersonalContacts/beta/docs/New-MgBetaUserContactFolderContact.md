@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -66,6 +67,7 @@ New-MgBetaUserContactFolderContact -InputObject <IPersonalContactsIdentity>
 
 ## DESCRIPTION
 Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

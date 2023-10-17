@@ -408,7 +408,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastSeenDateTime <DateTime?>]`: 
   - `[MalwareStates <IMicrosoftGraphMalwareState[]>]`: 
     - `[Category <String>]`: Provider-generated malware category (for example, trojan, ransomware, etc.).
-    - `[Family <String>]`: Provider-generated malware family (for example, 'wannacry', 'notpetya', etc.).
+    - `[Family <String>]`: Provider-generated malware family (for example, 'wannacry,' 'notpetya,' etc.).
     - `[Name <String>]`: Provider-generated malware variant name (for example, Trojan:Win32/Powessere.H).
     - `[Severity <String>]`: Provider-determined severity of this malware.
     - `[WasRunning <Boolean?>]`: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.
@@ -433,7 +433,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `MALWARESTATES <IMicrosoftGraphMalwareState[]>`: .
   - `[Category <String>]`: Provider-generated malware category (for example, trojan, ransomware, etc.).
-  - `[Family <String>]`: Provider-generated malware family (for example, 'wannacry', 'notpetya', etc.).
+  - `[Family <String>]`: Provider-generated malware family (for example, 'wannacry,' 'notpetya,' etc.).
   - `[Name <String>]`: Provider-generated malware variant name (for example, Trojan:Win32/Powessere.H).
   - `[Severity <String>]`: Provider-determined severity of this malware.
   - `[WasRunning <Boolean?>]`: Indicates whether the detected file (malware/vulnerability) was running at the time of detection or was detected at rest on the disk.

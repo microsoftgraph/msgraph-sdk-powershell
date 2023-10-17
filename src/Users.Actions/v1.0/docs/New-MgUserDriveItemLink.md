@@ -11,6 +11,7 @@ schema: 2.0.0
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ New-MgUserDriveItemLink -InputObject <IUsersActionsIdentity> [-AdditionalPropert
 You can use createLink action to share a DriveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

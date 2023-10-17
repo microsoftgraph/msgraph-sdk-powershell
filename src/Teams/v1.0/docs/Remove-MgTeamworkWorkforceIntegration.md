@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an instance of a workforceIntegration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-IfMatch <S
 
 ## DESCRIPTION
 Delete an instance of a workforceIntegration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

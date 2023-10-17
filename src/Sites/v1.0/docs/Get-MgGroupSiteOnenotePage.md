@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties and relationships of a page object.
 Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,6 +36,7 @@ Get-MgGroupSiteOnenotePage -InputObject <ISitesIdentity> [-ExpandProperty <Strin
 ## DESCRIPTION
 Retrieve the properties and relationships of a page object.
 Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new custom unifiedRoleDefinition object.
 This feature requires an Azure AD Premium P1 or P2 license.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,6 +32,7 @@ New-MgRoleManagementEntitlementManagementRoleDefinition -BodyParameter <IMicroso
 ## DESCRIPTION
 Create a new custom unifiedRoleDefinition object.
 This feature requires an Azure AD Premium P1 or P2 license.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

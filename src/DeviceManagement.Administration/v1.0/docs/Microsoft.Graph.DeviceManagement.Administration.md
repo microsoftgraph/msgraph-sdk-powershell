@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: ef58cca3-90a3-42d0-a590-fe0c2ab546ce
+Module Guid: 5fb16683-c725-46a2-80d0-84f31ee908fd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -141,7 +141,7 @@ Create a new resourceOperation object.
 Create a new deviceAndAppManagementRoleAssignment object.
 
 ### [New-MgDeviceManagementRoleDefinition](New-MgDeviceManagementRoleDefinition.md)
-Create a new deviceAndAppManagementRoleDefinition object.
+Create a new roleDefinition object.
 
 ### [New-MgDeviceManagementRoleDefinitionRoleAssignment](New-MgDeviceManagementRoleDefinitionRoleAssignment.md)
 Create a new roleAssignment object.
@@ -189,7 +189,7 @@ Deletes a resourceOperation.
 Deletes a deviceAndAppManagementRoleAssignment.
 
 ### [Remove-MgDeviceManagementRoleDefinition](Remove-MgDeviceManagementRoleDefinition.md)
-Deletes a deviceAndAppManagementRoleDefinition.
+Deletes a roleDefinition.
 
 ### [Remove-MgDeviceManagementRoleDefinitionRoleAssignment](Remove-MgDeviceManagementRoleDefinitionRoleAssignment.md)
 Deletes a roleAssignment.

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a plannerPlanDetails object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Get-MgBetaGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-ExpandPropert
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a plannerPlanDetails object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,6 +11,7 @@ schema: 2.0.0
 Create an identity provider object that is of the type specified in the request body.
 Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
 In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ New-MgBetaIdentityProvider -BodyParameter <IMicrosoftGraphIdentityProviderBase> 
 Create an identity provider object that is of the type specified in the request body.
 Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
 In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

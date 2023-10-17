@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of a contentSharingSession object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaCommunicationCallContentSharingSession -InputObject <ICloudCommunicati
 
 ## DESCRIPTION
 Retrieve the properties of a contentSharingSession object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

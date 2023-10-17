@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a b2cUserFlow object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaIdentityB2CUserFlow -InputObject <IIdentitySignInsIdentity> [-ExpandPr
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a b2cUserFlow object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

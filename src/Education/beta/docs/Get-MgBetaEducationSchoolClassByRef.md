@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of classes owned by a school.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgBetaEducationSchoolClassByRef -EducationSchoolId <String> [-Filter <String
 
 ## DESCRIPTION
 Retrieve a list of classes owned by a school.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

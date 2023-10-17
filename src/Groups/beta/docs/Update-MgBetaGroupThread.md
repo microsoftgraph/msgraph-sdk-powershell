@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a thread object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Update-MgBetaGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <
 
 ## DESCRIPTION
 Update a thread object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

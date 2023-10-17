@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgBetaUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdent
 ## DESCRIPTION
 Use this API to add an attachment to an outlookTask.
 The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

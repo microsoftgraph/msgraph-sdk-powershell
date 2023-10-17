@@ -129,7 +129,9 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Date and time when the training was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -144,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+The description for the training.
 
 ```yaml
 Type: System.String
@@ -159,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The display name for the training.
 
 ```yaml
 Type: System.String
@@ -174,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -DurationInMinutes
-.
+Training duration.
 
 ```yaml
 Type: System.Int32
@@ -189,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -HasEvaluation
-.
+Indicates whether the training has any evaluation.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -236,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -LanguageDetails
-.
+Language specific details on a training.
 To construct, see NOTES section for LANGUAGEDETAILS properties and create a hash table.
 
 ```yaml
@@ -268,7 +270,9 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Date and time when the training was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -298,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedLocales
-.
+Supported locales for content for the associated training.
 
 ```yaml
 Type: System.String[]
@@ -313,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-.
+Training tags.
 
 ```yaml
 Type: System.String[]
@@ -419,27 +423,27 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
     - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[DurationInMinutes <Int32?>]`: 
-  - `[HasEvaluation <Boolean?>]`: 
-  - `[LanguageDetails <IMicrosoftGraphTrainingLanguageDetail[]>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[Description <String>]`: The description for the training.
+  - `[DisplayName <String>]`: The display name for the training.
+  - `[DurationInMinutes <Int32?>]`: Training duration.
+  - `[HasEvaluation <Boolean?>]`: Indicates whether the training has any evaluation.
+  - `[LanguageDetails <IMicrosoftGraphTrainingLanguageDetail[]>]`: Language specific details on a training.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Content <String>]`: 
+    - `[Content <String>]`: Language specific content for the training.
     - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[IsDefaultLangauge <Boolean?>]`: 
+    - `[CreatedDateTime <DateTime?>]`: Date and time when the language details were created.
+    - `[Description <String>]`: Description as defined by the user.
+    - `[DisplayName <String>]`: Display name as defined by the user.
+    - `[IsDefaultLangauge <Boolean?>]`: Indicates whether the training has a default language.
     - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Locale <String>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[Locale <String>]`: Content locale for the training detail.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Source <String>]`: simulationContentSource
-  - `[SupportedLocales <String[]>]`: 
-  - `[Tags <String[]>]`: 
+  - `[SupportedLocales <String[]>]`: Supported locales for content for the associated training.
+  - `[Tags <String[]>]`: Training tags.
   - `[Type <String>]`: trainingType
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
@@ -484,6 +488,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
+  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSecurityProfileId <String>]`: The unique identifier of hostSecurityProfile
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
@@ -525,21 +530,21 @@ To create the parameters described below, construct a hash table containing the 
   - `[WhoisHistoryRecordId <String>]`: The unique identifier of whoisHistoryRecord
   - `[WhoisRecordId <String>]`: The unique identifier of whoisRecord
 
-`LANGUAGEDETAILS <IMicrosoftGraphTrainingLanguageDetail[]>`: .
+`LANGUAGEDETAILS <IMicrosoftGraphTrainingLanguageDetail[]>`: Language specific details on a training.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <String>]`: 
+  - `[Content <String>]`: Language specific content for the training.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
     - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[IsDefaultLangauge <Boolean?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Date and time when the language details were created.
+  - `[Description <String>]`: Description as defined by the user.
+  - `[DisplayName <String>]`: Display name as defined by the user.
+  - `[IsDefaultLangauge <Boolean?>]`: Indicates whether the training has a default language.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Locale <String>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[Locale <String>]`: Content locale for the training detail.
 
 `LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

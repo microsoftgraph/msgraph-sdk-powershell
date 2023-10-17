@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserDriveListContentType
 
 ## SYNOPSIS
-Get contentTypes from users
+The collection of content types present in this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaUserDriveListContentType -InputObject <IFilesIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get contentTypes from users
+The collection of content types present in this list.
 
 ## EXAMPLES
 

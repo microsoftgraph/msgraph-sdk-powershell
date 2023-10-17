@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add identity providers in a b2cIdentityUserFlow object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ New-MgBetaIdentityB2CUserFlowIdentityProviderByRef -InputObject <IIdentitySignIn
 
 ## DESCRIPTION
 Add identity providers in a b2cIdentityUserFlow object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

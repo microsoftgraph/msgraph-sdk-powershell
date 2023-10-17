@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a countryNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsI
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a countryNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

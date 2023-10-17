@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an override specified by its ID.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-IfMa
 
 ## DESCRIPTION
 Delete an override specified by its ID.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

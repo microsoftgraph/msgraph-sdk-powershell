@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update an existing entitlementManagementSettings object to change one or more of its properties.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Update-MgBetaEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitle
 
 ## DESCRIPTION
 Update an existing entitlementManagementSettings object to change one or more of its properties.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

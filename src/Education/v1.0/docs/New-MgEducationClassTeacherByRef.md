@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a teacher to a class.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ New-MgEducationClassTeacherByRef -InputObject <IEducationIdentity> -OdataId <Str
 
 ## DESCRIPTION
 Add a teacher to a class.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

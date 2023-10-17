@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a conditionalAccessPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ Update-MgBetaIdentityConditionalAccessPolicy -InputObject <IIdentitySignInsIdent
 
 ## DESCRIPTION
 Update the properties of a conditionalAccessPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -419,7 +421,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ContinuousAccessEvaluation <IMicrosoftGraphContinuousAccessEvaluationSessionControl>]`: continuousAccessEvaluationSessionControl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Mode <String>]`: continuousAccessEvaluationMode
-    - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+    - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it's acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
     - `[PersistentBrowser <IMicrosoftGraphPersistentBrowserSessionControl>]`: persistentBrowserSessionControl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
@@ -601,7 +603,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContinuousAccessEvaluation <IMicrosoftGraphContinuousAccessEvaluationSessionControl>]`: continuousAccessEvaluationSessionControl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Mode <String>]`: continuousAccessEvaluationMode
-  - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+  - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it's acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
   - `[PersistentBrowser <IMicrosoftGraphPersistentBrowserSessionControl>]`: persistentBrowserSessionControl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.

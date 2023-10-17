@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ New-MgBetaEntitlementManagementAccessPackageResourceRequest
 ## DESCRIPTION
 Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
 A resource must be included in an access package catalog before a role of that resource can be added to an access package.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -437,7 +439,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AltSecId <String>]`: Not Supported.
-    - `[CleanupScheduledDateTime <DateTime?>]`: 
+    - `[CleanupScheduledDateTime <DateTime?>]`: The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
     - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]`: connectedOrganization
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -456,7 +458,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ConnectedOrganizationId <String>]`: The identifier of the connected organization of the subject.
     - `[DisplayName <String>]`: The display name of the subject.
     - `[Email <String>]`: The email address of the subject.
-    - `[ObjectId <String>]`: The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+    - `[ObjectId <String>]`: The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
     - `[OnPremisesSecurityIdentifier <String>]`: 
     - `[PrincipalName <String>]`: The principal name, if known, of the subject.
     - `[SubjectLifecycle <String>]`: accessPackageSubjectLifecycle
@@ -466,7 +468,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AltSecId <String>]`: Not Supported.
-  - `[CleanupScheduledDateTime <DateTime?>]`: 
+  - `[CleanupScheduledDateTime <DateTime?>]`: The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
   - `[ConnectedOrganization <IMicrosoftGraphConnectedOrganization>]`: connectedOrganization
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -485,7 +487,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ConnectedOrganizationId <String>]`: The identifier of the connected organization of the subject.
   - `[DisplayName <String>]`: The display name of the subject.
   - `[Email <String>]`: The email address of the subject.
-  - `[ObjectId <String>]`: The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
+  - `[ObjectId <String>]`: The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
   - `[OnPremisesSecurityIdentifier <String>]`: 
   - `[PrincipalName <String>]`: The principal name, if known, of the subject.
   - `[SubjectLifecycle <String>]`: accessPackageSubjectLifecycle

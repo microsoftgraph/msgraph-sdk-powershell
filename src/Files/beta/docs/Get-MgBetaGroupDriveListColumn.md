@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveListColumn
 
 ## SYNOPSIS
-Get columns from groups
+The collection of field definitions for this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaGroupDriveListColumn -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get columns from groups
+The collection of field definitions for this list.
 
 ## EXAMPLES
 

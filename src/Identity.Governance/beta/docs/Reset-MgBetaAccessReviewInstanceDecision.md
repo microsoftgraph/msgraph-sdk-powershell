@@ -11,6 +11,7 @@ schema: 2.0.0
 In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ Reset-MgBetaAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdenti
 In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -213,6 +215,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

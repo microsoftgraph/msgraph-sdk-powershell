@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a conditionalAccessPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaIdentityConditionalAccessPolicy -InputObject <IIdentitySignInsIdentity
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a conditionalAccessPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

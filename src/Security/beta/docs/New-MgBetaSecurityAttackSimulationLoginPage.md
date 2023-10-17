@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -Content
-.
+The HTML content of the login page.
 
 ```yaml
 Type: System.String
@@ -111,7 +111,9 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Date and time when the login page was created.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -126,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Description about the login page.
 
 ```yaml
 Type: System.String
@@ -141,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name of the login page.
 
 ```yaml
 Type: System.String
@@ -172,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Language
-.
+The content language of the login page.
 
 ```yaml
 Type: System.String
@@ -203,7 +205,9 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Date and time when the login page was last modified.
+The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -301,18 +305,18 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphLoginPage>`: loginPage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <String>]`: 
+  - `[Content <String>]`: The HTML content of the login page.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
     - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Language <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[Description <String>]`: Description about the login page.
+  - `[DisplayName <String>]`: Display name of the login page.
+  - `[Language <String>]`: The content language of the login page.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Source <String>]`: simulationContentSource
   - `[Status <String>]`: simulationContentStatus
 

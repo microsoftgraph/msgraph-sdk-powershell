@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgGroupDriveItemChild
 
 ## SYNOPSIS
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgGroupDriveItemChild -InputObject <IFilesIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

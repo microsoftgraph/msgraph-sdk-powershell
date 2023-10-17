@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgBetaUserOnlineMeetingRecording
 
 ## SYNOPSIS
-The content stream of the recording of a Teams live event.
-Read-only.
+Update recording for the navigation property onlineMeetings in users
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Set-MgBetaUserOnlineMeetingRecording -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-The content stream of the recording of a Teams live event.
-Read-only.
+Update recording for the navigation property onlineMeetings in users
 
 ## EXAMPLES
 

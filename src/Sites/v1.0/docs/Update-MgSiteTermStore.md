@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a store object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -66,6 +67,7 @@ Update-MgSiteTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Has
 
 ## DESCRIPTION
 Update the properties of a store object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,6 +11,7 @@ schema: 2.0.0
 Retrieve the properties and relationships of a serviceUpdateMessage object.
 This operation retrieves a specified service update message for the tenant.
 The operation returns an error if the message does not exist for the tenant.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,6 +38,7 @@ Get-MgBetaServiceAnnouncementMessage -InputObject <IDevicesServiceAnnouncementId
 Retrieve the properties and relationships of a serviceUpdateMessage object.
 This operation retrieves a specified service update message for the tenant.
 The operation returns an error if the message does not exist for the tenant.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

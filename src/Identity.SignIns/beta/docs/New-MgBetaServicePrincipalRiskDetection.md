@@ -18,9 +18,10 @@ New-MgBetaServicePrincipalRiskDetection [-Activity <String>] [-ActivityDateTime 
  [-AdditionalInfo <String>] [-AdditionalProperties <Hashtable>] [-AppId <String>] [-CorrelationId <String>]
  [-DetectedDateTime <DateTime>] [-DetectionTimingType <String>] [-Id <String>] [-IPAddress <String>]
  [-KeyIds <String[]>] [-LastUpdatedDateTime <DateTime>] [-Location <IMicrosoftGraphSignInLocation>]
- [-RequestId <String>] [-RiskDetail <String>] [-RiskEventType <String>] [-RiskLevel <String>]
- [-RiskState <String>] [-ServicePrincipalDisplayName <String>] [-ServicePrincipalId <String>]
- [-Source <String>] [-TokenIssuerType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MitreTechniqueId <String>] [-RequestId <String>] [-RiskDetail <String>] [-RiskEventType <String>]
+ [-RiskLevel <String>] [-RiskState <String>] [-ServicePrincipalDisplayName <String>]
+ [-ServicePrincipalId <String>] [-Source <String>] [-TokenIssuerType <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -269,6 +270,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MitreTechniqueId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RequestId
 Request identifier of the sign-in activity associated with the risk detection.
 This property is null if the risk detection is not associated with a sign-in activity.
@@ -476,13 +492,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[Location <IMicrosoftGraphSignInLocation>]`: signInLocation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-    - `[CountryOrRegion <String>]`: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+    - `[CountryOrRegion <String>]`: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
     - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
       - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
       - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
     - `[State <String>]`: Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+  - `[MitreTechniqueId <String>]`: 
   - `[RequestId <String>]`: Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskEventType <String>]`: The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
@@ -496,7 +513,7 @@ To create the parameters described below, construct a hash table containing the 
 `LOCATION <IMicrosoftGraphSignInLocation>`: signInLocation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-  - `[CountryOrRegion <String>]`: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+  - `[CountryOrRegion <String>]`: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
   - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.

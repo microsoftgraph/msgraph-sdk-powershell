@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an administrativeUnit.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaAdministrativeUnit -InputObject <IIdentityDirectoryManagementIdenti
 
 ## DESCRIPTION
 Delete an administrativeUnit.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

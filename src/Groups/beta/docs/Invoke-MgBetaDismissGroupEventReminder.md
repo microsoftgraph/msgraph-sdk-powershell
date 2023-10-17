@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Dismiss a reminder that has been triggered for an event in a user calendar.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Invoke-MgBetaDismissGroupEventReminder -InputObject <IGroupsIdentity> [-PassThru
 
 ## DESCRIPTION
 Dismiss a reminder that has been triggered for an event in a user calendar.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

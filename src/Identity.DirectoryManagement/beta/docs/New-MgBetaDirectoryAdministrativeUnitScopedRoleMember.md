@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ New-MgBetaDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDir
 ## DESCRIPTION
 Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
 For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

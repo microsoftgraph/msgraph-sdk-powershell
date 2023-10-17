@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete plannerBucket.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgPlannerBucket -InputObject <IPlannerIdentity> [-IfMatch <String>] [-Pas
 
 ## DESCRIPTION
 Delete plannerBucket.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

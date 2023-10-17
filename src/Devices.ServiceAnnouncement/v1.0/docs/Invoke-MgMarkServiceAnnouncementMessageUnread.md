@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Mark a list of serviceUpdateMessages as unread for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Invoke-MgMarkServiceAnnouncementMessageUnread
 
 ## DESCRIPTION
 Mark a list of serviceUpdateMessages as unread for the signed in user.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

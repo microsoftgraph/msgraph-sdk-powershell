@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: a3bb4ec9-99d9-4eaf-99e8-a7a7abadd5d7
+Module Guid: c0ec343c-8c3d-447e-aaa5-b17e152af79e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -20,18 +20,21 @@ A container for Internet Explorer mode resources.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteList](Get-MgAdminEdgeInternetExplorerModeSiteList.md)
 Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListCount](Get-MgAdminEdgeInternetExplorerModeSiteListCount.md)
 Get the number of the resource
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookieCount](Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookieCount.md)
 Get the number of the resource
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSite](Get-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Get a browserSite that resides on a browserSiteList.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSiteCount](Get-MgAdminEdgeInternetExplorerModeSiteListSiteCount.md)
 Get the number of the resource
@@ -121,7 +124,7 @@ Get the number of the resource
 Read properties and relationships of the deviceComplianceUserOverview object.
 
 ### [Get-MgDeviceManagementDeviceConfiguration](Get-MgDeviceManagementDeviceConfiguration.md)
-Read properties and relationships of the iosDeviceFeaturesConfiguration object.
+Read properties and relationships of the androidGeneralDeviceConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignment](Get-MgDeviceManagementDeviceConfigurationAssignment.md)
 Read properties and relationships of the deviceConfigurationAssignment object.
@@ -356,6 +359,12 @@ User experience analytics device Startup Processes
 ### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessCount](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessCount.md)
 Get the number of the resource
 
+### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
+User experience analytics device Startup Process Performance
+
+### [Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformanceCount](Get-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformanceCount.md)
+Get the number of the resource
+
 ### [Get-MgDeviceManagementUserExperienceAnalyticMetricHistory](Get-MgDeviceManagementUserExperienceAnalyticMetricHistory.md)
 User experience analytics metric history
 
@@ -425,12 +434,15 @@ Get the number of the resource
 
 ### [New-MgAdminEdgeInternetExplorerModeSiteList](New-MgAdminEdgeInternetExplorerModeSiteList.md)
 Create a new browserSiteList object to support Internet Explorer mode.
+This API is available in the following national cloud deployments.
 
 ### [New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Create a new browserSharedCookie object in a browserSiteList.
+This API is available in the following national cloud deployments.
 
 ### [New-MgAdminEdgeInternetExplorerModeSiteListSite](New-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Create a new browserSite object in a browserSiteList.
+This API is available in the following national cloud deployments.
 
 ### [New-MgDeviceManagementDetectedApp](New-MgDeviceManagementDetectedApp.md)
 Create a new detectedApp object.
@@ -555,6 +567,9 @@ Create new navigation property to userExperienceAnalyticsDeviceStartupHistory fo
 ### [New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess](New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess.md)
 Create new navigation property to userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
 
+### [New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](New-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
+Create new navigation property to userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
+
 ### [New-MgDeviceManagementUserExperienceAnalyticMetricHistory](New-MgDeviceManagementUserExperienceAnalyticMetricHistory.md)
 Create new navigation property to userExperienceAnalyticsMetricHistory for deviceManagement
 
@@ -593,12 +608,15 @@ Delete navigation property internetExplorerMode for admin
 
 ### [Remove-MgAdminEdgeInternetExplorerModeSiteList](Remove-MgAdminEdgeInternetExplorerModeSiteList.md)
 Delete a browserSiteList object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](Remove-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Delete a browserSharedCookie from a browserSiteList.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgAdminEdgeInternetExplorerModeSiteListSite](Remove-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Delete a browserSite from a browserSiteList.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgDeviceManagementDetectedApp](Remove-MgDeviceManagementDetectedApp.md)
 Deletes a detectedApp.
@@ -607,7 +625,7 @@ Deletes a detectedApp.
 Deletes a deviceCategory.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicy](Remove-MgDeviceManagementDeviceCompliancePolicy.md)
-Deletes a windowsPhone81CompliancePolicy.
+Deletes a iosCompliancePolicy.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyAssignment](Remove-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Deletes a deviceCompliancePolicyAssignment.
@@ -643,7 +661,7 @@ Deletes a deviceComplianceUserStatus.
 Delete navigation property userStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceConfiguration](Remove-MgDeviceManagementDeviceConfiguration.md)
-Deletes a macOSGeneralDeviceConfiguration.
+Deletes a editionUpgradeConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationAssignment](Remove-MgDeviceManagementDeviceConfigurationAssignment.md)
 Deletes a deviceConfigurationAssignment.
@@ -753,6 +771,9 @@ Delete navigation property userExperienceAnalyticsDeviceStartupHistory for devic
 ### [Remove-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess](Remove-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess.md)
 Delete navigation property userExperienceAnalyticsDeviceStartupProcesses for deviceManagement
 
+### [Remove-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Remove-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
+Delete navigation property userExperienceAnalyticsDeviceStartupProcessPerformance for deviceManagement
+
 ### [Remove-MgDeviceManagementUserExperienceAnalyticMetricHistory](Remove-MgDeviceManagementUserExperienceAnalyticMetricHistory.md)
 Delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
 
@@ -797,12 +818,15 @@ Update the navigation property internetExplorerMode in admin
 
 ### [Update-MgAdminEdgeInternetExplorerModeSiteList](Update-MgAdminEdgeInternetExplorerModeSiteList.md)
 Update the properties of a browserSiteList object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](Update-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Update the properties of a browserSharedCookie object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgAdminEdgeInternetExplorerModeSiteListSite](Update-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Update the properties of a browserSite object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgDeviceManagement](Update-MgDeviceManagement.md)
 Update the properties of a deviceManagement object.
@@ -814,7 +838,7 @@ Update the properties of a detectedApp object.
 Update the properties of a deviceCategory object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicy](Update-MgDeviceManagementDeviceCompliancePolicy.md)
-Update the properties of a windows10MobileCompliancePolicy object.
+Update the properties of a windows10CompliancePolicy object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyAssignment](Update-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Update the properties of a deviceCompliancePolicyAssignment object.
@@ -850,7 +874,7 @@ Update the properties of a deviceComplianceUserStatus object.
 Update the properties of a deviceComplianceUserOverview object.
 
 ### [Update-MgDeviceManagementDeviceConfiguration](Update-MgDeviceManagementDeviceConfiguration.md)
-Update the properties of a androidWorkProfileCustomConfiguration object.
+Update the properties of a sharedPCConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationAssignment](Update-MgDeviceManagementDeviceConfigurationAssignment.md)
 Update the properties of a deviceConfigurationAssignment object.
@@ -959,6 +983,9 @@ Update the navigation property userExperienceAnalyticsDeviceStartupHistory in de
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess](Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcess.md)
 Update the navigation property userExperienceAnalyticsDeviceStartupProcesses in deviceManagement
+
+### [Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance](Update-MgDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance.md)
+Update the navigation property userExperienceAnalyticsDeviceStartupProcessPerformance in deviceManagement
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticMetricHistory](Update-MgDeviceManagementUserExperienceAnalyticMetricHistory.md)
 Update the navigation property userExperienceAnalyticsMetricHistory in deviceManagement

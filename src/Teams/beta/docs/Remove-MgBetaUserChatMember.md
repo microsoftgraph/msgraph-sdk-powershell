@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a conversationMember from a chat.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserChatMember -InputObject <ITeamsIdentity> [-IfMatch <String>] [-
 
 ## DESCRIPTION
 Remove a conversationMember from a chat.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

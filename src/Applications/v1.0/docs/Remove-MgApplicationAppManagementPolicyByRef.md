@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgApplicationAppManagementPolicyByRef -InputObject <IApplicationsIdentity
 ## DESCRIPTION
 Remove an appManagementPolicy policy object from an application or service principal object.
 When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

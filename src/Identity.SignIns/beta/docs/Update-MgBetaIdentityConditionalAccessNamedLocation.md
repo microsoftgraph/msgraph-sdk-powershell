@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Update the properties of an ipNamedLocation object.
+Update the properties of a countryNamedLocation object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Update-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignI
 ```
 
 ## DESCRIPTION
-Update the properties of an ipNamedLocation object.
+Update the properties of a countryNamedLocation object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

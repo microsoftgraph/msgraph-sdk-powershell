@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a languageProficiency object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfileLanguage -InputObject <IPeopleIdentity> [-IfMatch <Strin
 
 ## DESCRIPTION
 Delete a languageProficiency object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

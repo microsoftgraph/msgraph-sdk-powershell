@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties of a certificateBasedAuthConfiguration object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaOrganizationCertificateBasedAuthConfiguration -InputObject <IIdentityS
 
 ## DESCRIPTION
 Get the properties of a certificateBasedAuthConfiguration object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

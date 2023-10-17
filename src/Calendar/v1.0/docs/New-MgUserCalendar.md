@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new calendar for a user.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -52,6 +53,7 @@ New-MgUserCalendar -InputObject <ICalendarIdentity> [-AdditionalProperties <Hash
 
 ## DESCRIPTION
 Create a new calendar for a user.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -505,8 +507,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Address <String>]`: The email address of the person or entity.
       - `[Name <String>]`: The display name of the person or entity.
-    - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
-    - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+    - `[IsInsideOrganization <Boolean?>]`: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
+    - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
     - `[Role <String>]`: calendarRoleType
   - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
     - `[Categories <String[]>]`: The categories associated with the item
@@ -585,13 +587,13 @@ To create the parameters described below, construct a hash table containing the 
     - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConferenceId <String>]`: The ID of the conference.
-      - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+      - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
       - `[Phones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
         - `[Language <String>]`: 
         - `[Number <String>]`: The phone number.
         - `[Region <String>]`: 
         - `[Type <String>]`: phoneType
-      - `[QuickDial <String>]`: The pre-formatted quickdial for this call.
+      - `[QuickDial <String>]`: The preformatted quick dial for this call.
       - `[TollFreeNumbers <String[]>]`: The toll free numbers that can be used to join the conference.
       - `[TollNumber <String>]`: The toll number that can be used to join the conference.
     - `[OnlineMeetingProvider <String>]`: onlineMeetingProviderType
@@ -657,8 +659,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Address <String>]`: The email address of the person or entity.
     - `[Name <String>]`: The display name of the person or entity.
-  - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
-  - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+  - `[IsInsideOrganization <Boolean?>]`: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
+  - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
   - `[Role <String>]`: calendarRoleType
 
 `CALENDARVIEW <IMicrosoftGraphEvent[]>`: The calendar view for the calendar. Navigation property. Read-only.
@@ -705,8 +707,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AllowedRoles <String[]>]`: List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
-      - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
-      - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+      - `[IsInsideOrganization <Boolean?>]`: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
+      - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
       - `[Role <String>]`: calendarRoleType
     - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
     - `[CanEdit <Boolean?>]`: true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
@@ -769,13 +771,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ConferenceId <String>]`: The ID of the conference.
-    - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+    - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
     - `[Phones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
       - `[Language <String>]`: 
       - `[Number <String>]`: The phone number.
       - `[Region <String>]`: 
       - `[Type <String>]`: phoneType
-    - `[QuickDial <String>]`: The pre-formatted quickdial for this call.
+    - `[QuickDial <String>]`: The preformatted quick dial for this call.
     - `[TollFreeNumbers <String[]>]`: The toll free numbers that can be used to join the conference.
     - `[TollNumber <String>]`: The toll number that can be used to join the conference.
   - `[OnlineMeetingProvider <String>]`: onlineMeetingProviderType
@@ -861,8 +863,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AllowedRoles <String[]>]`: List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
-      - `[IsInsideOrganization <Boolean?>]`: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
-      - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+      - `[IsInsideOrganization <Boolean?>]`: True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
+      - `[IsRemovable <Boolean?>]`: True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
       - `[Role <String>]`: calendarRoleType
     - `[CalendarView <IMicrosoftGraphEvent[]>]`: The calendar view for the calendar. Navigation property. Read-only.
     - `[CanEdit <Boolean?>]`: true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
@@ -925,13 +927,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ConferenceId <String>]`: The ID of the conference.
-    - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+    - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
     - `[Phones <IMicrosoftGraphPhone[]>]`: All of the phone numbers associated with this conference.
       - `[Language <String>]`: 
       - `[Number <String>]`: The phone number.
       - `[Region <String>]`: 
       - `[Type <String>]`: phoneType
-    - `[QuickDial <String>]`: The pre-formatted quickdial for this call.
+    - `[QuickDial <String>]`: The preformatted quick dial for this call.
     - `[TollFreeNumbers <String[]>]`: The toll free numbers that can be used to join the conference.
     - `[TollNumber <String>]`: The toll number that can be used to join the conference.
   - `[OnlineMeetingProvider <String>]`: onlineMeetingProviderType

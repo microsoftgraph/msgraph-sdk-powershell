@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Check a user's password against the organization's password validation policy and report whether the password is valid.
 Use this action to provide real-time feedback on password strength while the user types their password.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Test-MgBetaUserPassword
 ## DESCRIPTION
 Check a user's password against the organization's password validation policy and report whether the password is valid.
 Use this action to provide real-time feedback on password strength while the user types their password.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

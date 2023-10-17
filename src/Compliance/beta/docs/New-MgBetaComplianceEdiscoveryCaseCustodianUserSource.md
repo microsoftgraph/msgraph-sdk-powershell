@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new custodian userSource object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ New-MgBetaComplianceEdiscoveryCaseCustodianUserSource -InputObject <IComplianceI
 
 ## DESCRIPTION
 Create a new custodian userSource object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -152,8 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the dataSource.
-This will be the name of the SharePoint site.
+The display name of the dataSource, and is the name of the SharePoint site.
 
 ```yaml
 Type: System.String
@@ -319,12 +320,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
-  - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
+  - `[DisplayName <String>]`: The display name of the dataSource, and is the name of the SharePoint site.
   - `[HoldStatus <String>]`: dataSourceHoldStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Email <String>]`: Email address of the user's mailbox.
@@ -335,8 +336,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

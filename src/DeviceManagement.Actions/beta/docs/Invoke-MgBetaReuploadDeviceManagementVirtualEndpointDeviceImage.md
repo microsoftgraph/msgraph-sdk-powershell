@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reupload a cloudPcDeviceImage object that failed to upload.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Invoke-MgBetaReuploadDeviceManagementVirtualEndpointDeviceImage
 
 ## DESCRIPTION
 Reupload a cloudPcDeviceImage object that failed to upload.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

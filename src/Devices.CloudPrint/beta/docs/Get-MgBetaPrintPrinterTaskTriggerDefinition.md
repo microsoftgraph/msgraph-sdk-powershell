@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPrintPrinterTaskTriggerDefinition
 
 ## SYNOPSIS
-An abstract definition that will be used to create a printTask when triggered by a print event.
+An abstract definition that is used to create a printTask when triggered by a print event.
 Read-only.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Get-MgBetaPrintPrinterTaskTriggerDefinition -InputObject <IDevicesCloudPrintIden
 ```
 
 ## DESCRIPTION
-An abstract definition that will be used to create a printTask when triggered by a print event.
+An abstract definition that is used to create a printTask when triggered by a print event.
 Read-only.
 
 ## EXAMPLES

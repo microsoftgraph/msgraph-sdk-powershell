@@ -31,10 +31,17 @@ Add new entity to directoryRoleTemplates
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+{{ Add code here }}
 ```
 
-Get-MgDirectoryRoleTemplate
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

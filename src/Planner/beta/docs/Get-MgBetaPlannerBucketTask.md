@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of plannerTask objects associated to a plannerBucket object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgBetaPlannerBucketTask -PlannerBucketId <String> [-ExpandProperty <String[]
 
 ## DESCRIPTION
 Retrieve a list of plannerTask objects associated to a plannerBucket object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

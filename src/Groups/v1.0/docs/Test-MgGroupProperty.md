@@ -15,6 +15,7 @@ The following policy validations are performed for the display name and mail nic
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,6 +54,7 @@ The following policy validations are performed for the display name and mail nic
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

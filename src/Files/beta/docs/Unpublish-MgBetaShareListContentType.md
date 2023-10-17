@@ -8,7 +8,8 @@ schema: 2.0.0
 # Unpublish-MgBetaShareListContentType
 
 ## SYNOPSIS
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Unpublish-MgBetaShareListContentType -InputObject <IFilesIdentity> [-PassThru] [
 ```
 
 ## DESCRIPTION
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

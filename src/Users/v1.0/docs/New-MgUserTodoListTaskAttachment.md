@@ -11,6 +11,7 @@ schema: 2.0.0
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ New-MgUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-AdditionalPrope
 Add a new taskFileAttachment object to a todoTask.
 This operation limits the size of the attachment you can add to under 3 MB.
 If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -160,7 +162,7 @@ Accept wildcard characters: False
 
 ### -Name
 The display name of the attachment.
-This does not need to be the actual file name.
+This doesn't need to be the actual file name.
 
 ```yaml
 Type: System.String
@@ -292,7 +294,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ContentType <String>]`: The MIME type.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+  - `[Name <String>]`: The display name of the attachment. This doesn't need to be the actual file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter

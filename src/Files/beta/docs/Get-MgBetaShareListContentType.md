@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaShareListContentType
 
 ## SYNOPSIS
-Get contentTypes from shares
+The collection of content types present in this list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaShareListContentType -InputObject <IFilesIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get contentTypes from shares
+The collection of content types present in this list.
 
 ## EXAMPLES
 

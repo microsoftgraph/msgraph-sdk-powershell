@@ -8,8 +8,9 @@ schema: 2.0.0
 # Reset-MgBetaPolicyCrossTenantAccessPolicyTemplateMultiTenantOrganizationPartnerConfigurationToDefaultSetting
 
 ## SYNOPSIS
-Reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization to the default values.
-In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multi-tenant organization tenant.
+Reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization to the default values.
+In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multitenant organization tenant.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,8 +20,9 @@ Reset-MgBetaPolicyCrossTenantAccessPolicyTemplateMultiTenantOrganizationPartnerC
 ```
 
 ## DESCRIPTION
-Reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization to the default values.
-In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multi-tenant organization tenant.
+Reset the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization to the default values.
+In its reset state, the template has no impact on partner configuration settings, other than that an unconfigured partner configuration is created if needed, for every multitenant organization tenant.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

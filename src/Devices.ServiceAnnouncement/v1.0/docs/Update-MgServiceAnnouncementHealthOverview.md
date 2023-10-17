@@ -241,7 +241,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Issues <IMicrosoftGraphServiceHealthIssue[]>]`: A collection of issues that happened on the service, with detailed information for each issue.
-    - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Additional details about service event. This property doesn't support filters.
+    - `[Details <IMicrosoftGraphKeyValuePair[]>]`: More details about service event. This property doesn't support filters.
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
     - `[EndDateTime <DateTime?>]`: The end time of the service event.
@@ -274,7 +274,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServiceUpdateMessageId <String>]`: The unique identifier of serviceUpdateMessage
 
 `ISSUES <IMicrosoftGraphServiceHealthIssue[]>`: A collection of issues that happened on the service, with detailed information for each issue.
-  - `[Details <IMicrosoftGraphKeyValuePair[]>]`: Additional details about service event. This property doesn't support filters.
+  - `[Details <IMicrosoftGraphKeyValuePair[]>]`: More details about service event. This property doesn't support filters.
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair
   - `[EndDateTime <DateTime?>]`: The end time of the service event.

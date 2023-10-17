@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Invoke-MgCheckoutDriveItem -InputObject <IFilesIdentity> [-PassThru] [-Confirm] 
 
 ## DESCRIPTION
 Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Removes the specified event from the containing calendar.
 If the event is a meeting, deleting the event on the organizer's calendar sends a cancellation message to the meeting attendees.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgBetaUserEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-Pa
 ## DESCRIPTION
 Removes the specified event from the containing calendar.
 If the event is a meeting, deleting the event on the organizer's calendar sends a cancellation message to the meeting attendees.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

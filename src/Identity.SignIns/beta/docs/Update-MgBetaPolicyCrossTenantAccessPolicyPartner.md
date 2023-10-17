@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -61,6 +62,7 @@ Update-MgBetaPolicyCrossTenantAccessPolicyPartner -InputObject <IIdentitySignIns
 
 ## DESCRIPTION
 Update the properties of a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -300,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsInMultiTenantOrganization
-Identifies whether a tenant is a member of a multi-tenant organization.
+Identifies whether a tenant is a member of a multitenant organization.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -490,7 +492,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsCompliantDeviceAccepted <Boolean?>]`: Specifies whether compliant devices from external Azure AD organizations are trusted.
     - `[IsHybridAzureAdJoinedDeviceAccepted <Boolean?>]`: Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
     - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Azure AD organizations is trusted.
-  - `[IsInMultiTenantOrganization <Boolean?>]`: Identifies whether a tenant is a member of a multi-tenant organization.
+  - `[IsInMultiTenantOrganization <Boolean?>]`: Identifies whether a tenant is a member of a multitenant organization.
   - `[IsServiceProvider <Boolean?>]`: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
   - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only. Key.
   - `[TenantRestrictions <IMicrosoftGraphCrossTenantAccessPolicyTenantRestrictions>]`: crossTenantAccessPolicyTenantRestrictions

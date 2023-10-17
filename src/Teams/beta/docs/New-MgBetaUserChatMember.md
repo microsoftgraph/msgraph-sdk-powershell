@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a conversationMember to a chat.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ New-MgBetaUserChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <H
 
 ## DESCRIPTION
 Add a conversationMember to a chat.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an attachment from a user calendar event, mail message, or group post.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgUserEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>
 
 ## DESCRIPTION
 Delete an attachment from a user calendar event, mail message, or group post.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

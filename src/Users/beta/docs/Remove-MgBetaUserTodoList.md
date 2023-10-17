@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a todoTaskList object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserTodoList -InputObject <IUsersIdentity> [-IfMatch <String>] [-Pa
 
 ## DESCRIPTION
 Deletes a todoTaskList object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

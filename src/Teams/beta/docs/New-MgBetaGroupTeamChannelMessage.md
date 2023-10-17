@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send a new chatMessage in the specified channel or a chat.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -58,6 +59,7 @@ New-MgBetaGroupTeamChannelMessage -InputObject <ITeamsIdentity> [-AdditionalProp
 
 ## DESCRIPTION
 Send a new chatMessage in the specified channel or a chat.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

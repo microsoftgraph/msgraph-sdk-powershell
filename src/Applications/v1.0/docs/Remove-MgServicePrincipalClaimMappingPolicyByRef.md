@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a claimsMappingPolicy from a servicePrincipal.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgServicePrincipalClaimMappingPolicyByRef -InputObject <IApplicationsIden
 
 ## DESCRIPTION
 Remove a claimsMappingPolicy from a servicePrincipal.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

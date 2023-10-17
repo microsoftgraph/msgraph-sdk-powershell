@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an event object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ Get-MgBetaGroupEvent -InputObject <ICalendarIdentity> [-Property <String[]>] [<C
 
 ## DESCRIPTION
 Get an event object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

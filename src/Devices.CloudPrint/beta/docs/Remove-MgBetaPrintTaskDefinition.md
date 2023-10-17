@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a taskDefinition.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgBetaPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-IfM
 ## DESCRIPTION
 Delete a taskDefinition.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

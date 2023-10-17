@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserMessage
 
 ## SYNOPSIS
-Update the properties of a message object.
+Update the properties of an eventMessage object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -65,7 +66,8 @@ Update-MgUserMessage -InputObject <IMailIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Update the properties of a message object.
+Update the properties of an eventMessage object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the remote connection history records of a Cloud PC during a given period.
+This report contains data such as signInDateTime, signOutDateTime, usageInHour, remoteSignInTimeInSec and roundTripTimeInMsP50, and so on.
+This data is aggregated hourly for a specified time period, such as the last seven days.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +32,9 @@ Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
 
 ## DESCRIPTION
 Get the remote connection history records of a Cloud PC during a given period.
+This report contains data such as signInDateTime, signOutDateTime, usageInHour, remoteSignInTimeInSec and roundTripTimeInMsP50, and so on.
+This data is aggregated hourly for a specified time period, such as the last seven days.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

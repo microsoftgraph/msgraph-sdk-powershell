@@ -10,11 +10,11 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
 When using JSON format:\n- Specify either a comment or the body property of the message parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
-\n- You can update the draft later to add reply content to the body or change other message properties.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft later to add reply content to the body or change other message properties.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,11 +50,11 @@ New-MgUserMailFolderChildFolderMessageReplyAll -InputObject <IUsersActionsIdenti
 ## DESCRIPTION
 Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.
 When using JSON format:\n- Specify either a comment or the body property of the message parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.
-\n- You can update the draft later to add reply content to the body or change other message properties.
+Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the replyTo property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the replyTo and toRecipients properties, and not the recipients in the from and toRecipients properties.\n- You can update the draft later to add reply content to the body or change other message properties.
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

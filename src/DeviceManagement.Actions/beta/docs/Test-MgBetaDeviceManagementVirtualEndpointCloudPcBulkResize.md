@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Validate that a set of cloudPC devices meet the requirements to be bulk resized.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize
 
 ## DESCRIPTION
 Validate that a set of cloudPC devices meet the requirements to be bulk resized.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

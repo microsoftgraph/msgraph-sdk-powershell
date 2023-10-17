@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgCommunicationOnlineMeetingTranscriptMetadataContent
 
 ## SYNOPSIS
-Update metadataContent for the navigation property transcripts in communications
+The time-aligned metadata of the utterances in the transcript.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Set-MgCommunicationOnlineMeetingTranscriptMetadataContent -InputObject <ICloudCo
 ```
 
 ## DESCRIPTION
-Update metadataContent for the navigation property transcripts in communications
+The time-aligned metadata of the utterances in the transcript.
+Read-only.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Invoke-MgBetaReauthorizeSubscription -InputObject <IChangeNotificationsIdentity>
 
 ## DESCRIPTION
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

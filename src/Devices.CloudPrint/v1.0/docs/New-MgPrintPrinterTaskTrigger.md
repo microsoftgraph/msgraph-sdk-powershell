@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new task trigger on the specified printer.
 Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ New-MgPrintPrinterTaskTrigger -InputObject <IDevicesCloudPrintIdentity> [-Additi
 ## DESCRIPTION
 Create a new task trigger on the specified printer.
 Currently, only one task trigger can be specified per printer, but this limit might be removed in the future.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -230,7 +232,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-      - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
+      - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
       - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
       - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
     - `[DisplayName <String>]`: The name of the printTaskDefinition.
@@ -251,7 +253,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-    - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
+    - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
     - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
     - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
   - `[DisplayName <String>]`: The name of the printTaskDefinition.

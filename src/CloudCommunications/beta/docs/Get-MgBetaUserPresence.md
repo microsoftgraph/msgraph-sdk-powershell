@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBetaUserPresence
 
 ## SYNOPSIS
-Get a user's presence information.
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgBetaUserPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get a user's presence information.
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -11,6 +11,7 @@ schema: 2.0.0
 Upload a plain text secret to a trustFrameworkKeyset.
 Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider.
 his method returns trustFrameworkKey.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ Invoke-MgBetaUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIden
 Upload a plain text secret to a trustFrameworkKeyset.
 Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider.
 his method returns trustFrameworkKey.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

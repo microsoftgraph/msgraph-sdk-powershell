@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new shift instance in a schedule.
 The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ New-MgBetaTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties
 ## DESCRIPTION
 Create a new shift instance in a schedule.
 The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -221,7 +223,8 @@ Accept wildcard characters: False
 ```
 
 ### -SchedulingGroupId
-.
+ID of the scheduling group the shift is part of.
+Required.
 
 ```yaml
 Type: System.String
@@ -267,7 +270,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-.
+ID of the user assigned to the shift.
+Required.
 
 ```yaml
 Type: System.String
@@ -361,9 +365,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The shift label of the shiftItem.
     - `[Notes <String>]`: The shift notes for the shiftItem.
   - `[IsStagedForDeletion <Boolean?>]`: 
-  - `[SchedulingGroupId <String>]`: 
+  - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
   - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
-  - `[UserId <String>]`: 
+  - `[UserId <String>]`: ID of the user assigned to the shift. Required.
 
 `CREATEDBY <IMicrosoftGraphIdentitySet>`: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

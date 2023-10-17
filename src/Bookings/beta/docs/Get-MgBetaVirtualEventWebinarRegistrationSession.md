@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarRegistrationSession
 
 ## SYNOPSIS
-Get sessions from solutions
+Sessions of the webinar.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaVirtualEventWebinarRegistrationSession -InputObject <IBookingsIdentity
 ```
 
 ## DESCRIPTION
-Get sessions from solutions
+Sessions of the webinar.
 
 ## EXAMPLES
 

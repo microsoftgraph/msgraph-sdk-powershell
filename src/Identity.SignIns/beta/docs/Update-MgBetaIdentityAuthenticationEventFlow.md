@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of an authenticationEventsFlow object.
 Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Update-MgBetaIdentityAuthenticationEventFlow -InputObject <IIdentitySignInsIdent
 ## DESCRIPTION
 Update the properties of an authenticationEventsFlow object.
 Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

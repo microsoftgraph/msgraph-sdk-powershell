@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 8c54f3a2-0a20-45d0-85b9-7638516d7767
+Module Guid: 2e2f1e96-fe5f-4fb2-b62f-dab36041a5ca
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,45 +12,55 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.Files Cmdlets
 ### [Add-MgBetaDriveListContentTypeCopy](Add-MgBetaDriveListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Add a copy of a content type][contentType] from a [site][site] to a [list][list].
+This API is available in the following [national cloud deployments.
 
 ### [Add-MgBetaDriveListContentTypeCopyFromContentTypeHub](Add-MgBetaDriveListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaShareListContentTypeCopy](Add-MgBetaShareListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Add a copy of a content type][contentType] from a [site][site] to a [list][list].
+This API is available in the following [national cloud deployments.
 
 ### [Add-MgBetaShareListContentTypeCopyFromContentTypeHub](Add-MgBetaShareListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaDriveItem](Copy-MgBetaDriveItem.md)
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
+This API is available in the following [national cloud deployments.
 
 ### [Copy-MgBetaDriveListContentTypeToDefaultContentLocation](Copy-MgBetaDriveListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
+Copy a file to a default content location in a content type][contentType].
 The file can then be added as a default file or template via a POST operation.
+This API is available in the following [national cloud deployments.
 
 ### [Copy-MgBetaDriveRoot](Copy-MgBetaDriveRoot.md)
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
+This API is available in the following [national cloud deployments.
 
 ### [Copy-MgBetaShareListContentTypeToDefaultContentLocation](Copy-MgBetaShareListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
+Copy a file to a default content location in a content type][contentType].
 The file can then be added as a default file or template via a POST operation.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDrive](Get-MgBetaDrive.md)
 Get entity from drives by key
 
 ### [Get-MgBetaDriveActivity](Get-MgBetaDriveActivity.md)
 List the recent activities that took place on an item or under a hierarchy.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveBundle](Get-MgBetaDriveBundle.md)
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDriveBundleContent](Get-MgBetaDriveBundleContent.md)
 The content stream, if the item represents a file.
@@ -76,6 +86,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveCreatedByUserServiceProvisioningError](Get-MgBetaDriveCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveFollowing](Get-MgBetaDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
@@ -87,7 +104,8 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Get-MgBetaDriveItem](Get-MgBetaDriveItem.md)
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDriveItemActivity](Get-MgBetaDriveItemActivity.md)
 The list of recent activities that took place on this item.
@@ -96,7 +114,8 @@ The list of recent activities that took place on this item.
 Invoke function getActivitiesByInterval
 
 ### [Get-MgBetaDriveItemAnalytic](Get-MgBetaDriveItemAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDriveItemAnalyticItemActivityStat](Get-MgBetaDriveItemAnalyticItemActivityStat.md)
 Get itemActivityStats from drives
@@ -140,6 +159,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveItemCreatedByUserServiceProvisioningError](Get-MgBetaDriveItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveItemDelta](Get-MgBetaDriveItemDelta.md)
 Invoke function delta
 
@@ -152,6 +178,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgBetaDriveItemItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveItemLastModifiedByUser](Get-MgBetaDriveItemLastModifiedByUser.md)
 Get lastModifiedByUser from drives
 
@@ -160,6 +193,13 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
+
+### [Get-MgBetaDriveItemLastModifiedByUserServiceProvisioningError](Get-MgBetaDriveItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaDriveItemListItem](Get-MgBetaDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -184,8 +224,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgBetaDriveItemListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveItemListItemDocumentSetVersion](Get-MgBetaDriveItemListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveItemListItemDocumentSetVersionCount](Get-MgBetaDriveItemListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -215,12 +263,14 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveItemPermissionCount](Get-MgBetaDriveItemPermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDriveItemRetentionLabel](Get-MgBetaDriveItemRetentionLabel.md)
-Get retentionLabel from drives
+Information about retention label and settings enforced on the driveItem.
+Read-write.
 
 ### [Get-MgBetaDriveItemSubscription](Get-MgBetaDriveItemSubscription.md)
 The set of subscriptions on the item.
@@ -240,6 +290,7 @@ Get the number of the resource
 
 ### [Get-MgBetaDriveItemVersion](Get-MgBetaDriveItemVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveItemVersionContent](Get-MgBetaDriveItemVersionContent.md)
 Get content for the navigation property versions from drives
@@ -256,6 +307,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveLastModifiedByUserServiceProvisioningError](Get-MgBetaDriveLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaDriveLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveList](Get-MgBetaDriveList.md)
 For drives in SharePoint, the underlying document library list.
 Read-only.
@@ -265,7 +323,7 @@ Nullable.
 The recent activities that took place within this list.
 
 ### [Get-MgBetaDriveListColumn](Get-MgBetaDriveListColumn.md)
-Get columns from drives
+The collection of field definitions for this list.
 
 ### [Get-MgBetaDriveListColumnCount](Get-MgBetaDriveListColumnCount.md)
 Get the number of the resource
@@ -274,10 +332,11 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaDriveListContentType](Get-MgBetaDriveListContentType.md)
-Get contentTypes from drives
+The collection of content types present in this list.
 
 ### [Get-MgBetaDriveListContentTypeColumn](Get-MgBetaDriveListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDriveListContentTypeColumnCount](Get-MgBetaDriveListContentTypeColumnCount.md)
 Get the number of the resource
@@ -312,12 +371,20 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveListCreatedByUserServiceProvisioningError](Get-MgBetaDriveListCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveListCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveListDrive](Get-MgBetaDriveListDrive.md)
+Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgBetaDriveListItem](Get-MgBetaDriveListItem.md)
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDriveListItemActivity](Get-MgBetaDriveListItemActivity.md)
 The list of recent activities that took place on this item.
@@ -340,11 +407,19 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveListItemCreatedByUserServiceProvisioningError](Get-MgBetaDriveListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveListItemDelta](Get-MgBetaDriveListItemDelta.md)
 Invoke function delta
 
 ### [Get-MgBetaDriveListItemDocumentSetVersion](Get-MgBetaDriveListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveListItemDocumentSetVersionCount](Get-MgBetaDriveListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -371,7 +446,7 @@ Get the number of the resource
 A collection of the fields and values for this version of the list item.
 
 ### [Get-MgBetaDriveListOperation](Get-MgBetaDriveListOperation.md)
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ### [Get-MgBetaDriveListOperationCount](Get-MgBetaDriveListOperationCount.md)
 Get the number of the resource
@@ -384,6 +459,7 @@ Get the number of the resource
 
 ### [Get-MgBetaDriveRoot](Get-MgBetaDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveRootActivity](Get-MgBetaDriveRootActivity.md)
 The list of recent activities that took place on this item.
@@ -392,7 +468,8 @@ The list of recent activities that took place on this item.
 Invoke function getActivitiesByInterval
 
 ### [Get-MgBetaDriveRootAnalytic](Get-MgBetaDriveRootAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaDriveRootAnalyticItemActivityStat](Get-MgBetaDriveRootAnalyticItemActivityStat.md)
 Get itemActivityStats from drives
@@ -433,6 +510,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveRootCreatedByUserServiceProvisioningError](Get-MgBetaDriveRootCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveRootCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveRootDelta](Get-MgBetaDriveRootDelta.md)
 Invoke function delta
 
@@ -445,6 +529,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgBetaDriveRootItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveRootLastModifiedByUser](Get-MgBetaDriveRootLastModifiedByUser.md)
 Get lastModifiedByUser from drives
 
@@ -453,6 +544,13 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
+
+### [Get-MgBetaDriveRootLastModifiedByUserServiceProvisioningError](Get-MgBetaDriveRootLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaDriveRootListItem](Get-MgBetaDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -477,8 +575,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgBetaDriveRootListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDriveRootListItemDocumentSetVersion](Get-MgBetaDriveRootListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveRootListItemDocumentSetVersionCount](Get-MgBetaDriveRootListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -508,12 +614,14 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveRootPermissionCount](Get-MgBetaDriveRootPermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDriveRootRetentionLabel](Get-MgBetaDriveRootRetentionLabel.md)
-Get retentionLabel from drives
+Information about retention label and settings enforced on the driveItem.
+Read-write.
 
 ### [Get-MgBetaDriveRootSubscription](Get-MgBetaDriveRootSubscription.md)
 The set of subscriptions on the item.
@@ -533,6 +641,7 @@ Get the number of the resource
 
 ### [Get-MgBetaDriveRootVersion](Get-MgBetaDriveRootVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveRootVersionContent](Get-MgBetaDriveRootVersionContent.md)
 Get content for the navigation property versions from drives
@@ -546,6 +655,7 @@ Special folders provide simple aliases to access well-known folders in OneDrive 
 If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
 Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist.
 If a user deletes one, it is recreated when written to again.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDriveSpecialContent](Get-MgBetaDriveSpecialContent.md)
 The content stream, if the item represents a file.
@@ -563,9 +673,11 @@ Read-only.
 
 ### [Get-MgBetaGroupDriveActivity](Get-MgBetaGroupDriveActivity.md)
 List the recent activities that took place on an item or under a hierarchy.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveBundle](Get-MgBetaGroupDriveBundle.md)
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupDriveBundleContent](Get-MgBetaGroupDriveBundleContent.md)
 The content stream, if the item represents a file.
@@ -594,6 +706,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveFollowing](Get-MgBetaGroupDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
@@ -605,13 +724,15 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItem](Get-MgBetaGroupDriveItem.md)
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupDriveItemActivity](Get-MgBetaGroupDriveItemActivity.md)
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaGroupDriveItemAnalytic](Get-MgBetaGroupDriveItemAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupDriveItemAnalyticItemActivityStat](Get-MgBetaGroupDriveItemAnalyticItemActivityStat.md)
 Get itemActivityStats from groups
@@ -655,6 +776,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveItemCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveItemItemLastModifiedByUser](Get-MgBetaGroupDriveItemItemLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -664,6 +792,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupDriveItemItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveItemLastModifiedByUser](Get-MgBetaGroupDriveItemLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -672,6 +807,13 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
+
+### [Get-MgBetaGroupDriveItemLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupDriveItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItemListItem](Get-MgBetaGroupDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -693,8 +835,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveItemListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveItemListItemDocumentSetVersion](Get-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveItemListItemDocumentSetVersionCount](Get-MgBetaGroupDriveItemListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -724,12 +874,14 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveItemPermissionCount](Get-MgBetaGroupDriveItemPermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItemRetentionLabel](Get-MgBetaGroupDriveItemRetentionLabel.md)
-Get retentionLabel from groups
+Information about retention label and settings enforced on the driveItem.
+Read-write.
 
 ### [Get-MgBetaGroupDriveItemSubscription](Get-MgBetaGroupDriveItemSubscription.md)
 The set of subscriptions on the item.
@@ -749,6 +901,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItemVersion](Get-MgBetaGroupDriveItemVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveItemVersionContent](Get-MgBetaGroupDriveItemVersionContent.md)
 Get content for the navigation property versions from groups
@@ -765,6 +918,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupDriveLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveList](Get-MgBetaGroupDriveList.md)
 For drives in SharePoint, the underlying document library list.
 Read-only.
@@ -774,7 +934,7 @@ Nullable.
 The recent activities that took place within this list.
 
 ### [Get-MgBetaGroupDriveListColumn](Get-MgBetaGroupDriveListColumn.md)
-Get columns from groups
+The collection of field definitions for this list.
 
 ### [Get-MgBetaGroupDriveListColumnCount](Get-MgBetaGroupDriveListColumnCount.md)
 Get the number of the resource
@@ -783,10 +943,11 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaGroupDriveListContentType](Get-MgBetaGroupDriveListContentType.md)
-Get contentTypes from groups
+The collection of content types present in this list.
 
 ### [Get-MgBetaGroupDriveListContentTypeColumn](Get-MgBetaGroupDriveListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupDriveListContentTypeColumnCount](Get-MgBetaGroupDriveListContentTypeColumnCount.md)
 Get the number of the resource
@@ -818,12 +979,20 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveListCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveListCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveListCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveListDrive](Get-MgBetaGroupDriveListDrive.md)
+Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgBetaGroupDriveListItem](Get-MgBetaGroupDriveListItem.md)
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupDriveListItemActivity](Get-MgBetaGroupDriveListItemActivity.md)
 The list of recent activities that took place on this item.
@@ -840,8 +1009,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveListItemCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveListItemDocumentSetVersion](Get-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveListItemDocumentSetVersionCount](Get-MgBetaGroupDriveListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -868,7 +1045,7 @@ Get the number of the resource
 A collection of the fields and values for this version of the list item.
 
 ### [Get-MgBetaGroupDriveListOperation](Get-MgBetaGroupDriveListOperation.md)
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ### [Get-MgBetaGroupDriveListOperationCount](Get-MgBetaGroupDriveListOperationCount.md)
 Get the number of the resource
@@ -881,12 +1058,14 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRoot](Get-MgBetaGroupDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveRootActivity](Get-MgBetaGroupDriveRootActivity.md)
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaGroupDriveRootAnalytic](Get-MgBetaGroupDriveRootAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupDriveRootAnalyticItemActivityStat](Get-MgBetaGroupDriveRootAnalyticItemActivityStat.md)
 Get itemActivityStats from groups
@@ -927,6 +1106,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveRootCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveRootCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveRootCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveRootItemLastModifiedByUser](Get-MgBetaGroupDriveRootItemLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -936,6 +1122,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupDriveRootItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveRootLastModifiedByUser](Get-MgBetaGroupDriveRootLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -944,6 +1137,13 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
+
+### [Get-MgBetaGroupDriveRootLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupDriveRootLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRootListItem](Get-MgBetaGroupDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -965,8 +1165,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgBetaGroupDriveRootListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupDriveRootListItemDocumentSetVersion](Get-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveRootListItemDocumentSetVersionCount](Get-MgBetaGroupDriveRootListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -996,12 +1204,14 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveRootPermissionCount](Get-MgBetaGroupDriveRootPermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRootRetentionLabel](Get-MgBetaGroupDriveRootRetentionLabel.md)
-Get retentionLabel from groups
+Information about retention label and settings enforced on the driveItem.
+Read-write.
 
 ### [Get-MgBetaGroupDriveRootSubscription](Get-MgBetaGroupDriveRootSubscription.md)
 The set of subscriptions on the item.
@@ -1021,6 +1231,7 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRootVersion](Get-MgBetaGroupDriveRootVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveRootVersionContent](Get-MgBetaGroupDriveRootVersionContent.md)
 Get content for the navigation property versions from groups
@@ -1034,6 +1245,7 @@ Special folders provide simple aliases to access well-known folders in OneDrive 
 If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
 Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist.
 If a user deletes one, it is recreated when written to again.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupDriveSpecialContent](Get-MgBetaGroupDriveSpecialContent.md)
 The content stream, if the item represents a file.
@@ -1062,9 +1274,17 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaShareCreatedByUserServiceProvisioningError](Get-MgBetaShareCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaShareCreatedByUserServiceProvisioningErrorCount](Get-MgBetaShareCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaShareDriveItem](Get-MgBetaShareDriveItem.md)
 Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaShareDriveItemContent](Get-MgBetaShareDriveItemContent.md)
 The content stream, if the item represents a file.
@@ -1088,6 +1308,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaShareItemLastModifiedByUserServiceProvisioningError](Get-MgBetaShareItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaShareItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaShareItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaShareLastModifiedByUser](Get-MgBetaShareLastModifiedByUser.md)
 Get lastModifiedByUser from shares
 
@@ -1097,6 +1324,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaShareLastModifiedByUserServiceProvisioningError](Get-MgBetaShareLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaShareLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaShareLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaShareList](Get-MgBetaShareList.md)
 Used to access the underlying list
 
@@ -1104,7 +1338,7 @@ Used to access the underlying list
 The recent activities that took place within this list.
 
 ### [Get-MgBetaShareListColumn](Get-MgBetaShareListColumn.md)
-Get columns from shares
+The collection of field definitions for this list.
 
 ### [Get-MgBetaShareListColumnCount](Get-MgBetaShareListColumnCount.md)
 Get the number of the resource
@@ -1113,10 +1347,11 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaShareListContentType](Get-MgBetaShareListContentType.md)
-Get contentTypes from shares
+The collection of content types present in this list.
 
 ### [Get-MgBetaShareListContentTypeColumn](Get-MgBetaShareListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaShareListContentTypeColumnCount](Get-MgBetaShareListContentTypeColumnCount.md)
 Get the number of the resource
@@ -1151,9 +1386,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaShareListCreatedByUserServiceProvisioningError](Get-MgBetaShareListCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaShareListCreatedByUserServiceProvisioningErrorCount](Get-MgBetaShareListCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaShareListDrive](Get-MgBetaShareListDrive.md)
+Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgBetaShareListItem](Get-MgBetaShareListItem.md)
 Used to access the underlying listItem
@@ -1176,11 +1418,19 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaShareListItemCreatedByUserServiceProvisioningError](Get-MgBetaShareListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaShareListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaShareListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaShareListItemDelta](Get-MgBetaShareListItemDelta.md)
 Invoke function delta
 
 ### [Get-MgBetaShareListItemDocumentSetVersion](Get-MgBetaShareListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaShareListItemDocumentSetVersionCount](Get-MgBetaShareListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1207,7 +1457,7 @@ Get the number of the resource
 A collection of the fields and values for this version of the list item.
 
 ### [Get-MgBetaShareListOperation](Get-MgBetaShareListOperation.md)
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ### [Get-MgBetaShareListOperationCount](Get-MgBetaShareListOperationCount.md)
 Get the number of the resource
@@ -1230,6 +1480,7 @@ The content stream, if the item represents a file.
 ### [Get-MgBetaShareSharedDriveItemSharedDriveItem](Get-MgBetaShareSharedDriveItemSharedDriveItem.md)
 Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL.
 To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaShareSite](Get-MgBetaShareSite.md)
 Used to access the underlying site
@@ -1237,6 +1488,7 @@ Used to access the underlying site
 ### [Get-MgBetaUserDefaultDrive](Get-MgBetaUserDefaultDrive.md)
 Retrieve the properties and relationships of a Drive resource.
 A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDrive](Get-MgBetaUserDrive.md)
 A collection of drives available for this user.
@@ -1244,9 +1496,11 @@ Read-only.
 
 ### [Get-MgBetaUserDriveActivity](Get-MgBetaUserDriveActivity.md)
 List the recent activities that took place on an item or under a hierarchy.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveBundle](Get-MgBetaUserDriveBundle.md)
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaUserDriveBundleContent](Get-MgBetaUserDriveBundleContent.md)
 The content stream, if the item represents a file.
@@ -1275,6 +1529,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveFollowing](Get-MgBetaUserDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
@@ -1286,13 +1547,15 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveItem](Get-MgBetaUserDriveItem.md)
-Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
+Retrieve the metadata for a bundle][] based on the unique ID of the bundle.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaUserDriveItemActivity](Get-MgBetaUserDriveItemActivity.md)
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaUserDriveItemAnalytic](Get-MgBetaUserDriveItemAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaUserDriveItemAnalyticItemActivityStat](Get-MgBetaUserDriveItemAnalyticItemActivityStat.md)
 Get itemActivityStats from users
@@ -1336,6 +1599,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveItemCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveItemItemLastModifiedByUser](Get-MgBetaUserDriveItemItemLastModifiedByUser.md)
 Get lastModifiedByUser from users
 
@@ -1345,6 +1615,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveItemItemLastModifiedByUserServiceProvisioningError](Get-MgBetaUserDriveItemItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveItemItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveItemItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveItemLastModifiedByUser](Get-MgBetaUserDriveItemLastModifiedByUser.md)
 Get lastModifiedByUser from users
 
@@ -1353,6 +1630,13 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
+
+### [Get-MgBetaUserDriveItemLastModifiedByUserServiceProvisioningError](Get-MgBetaUserDriveItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaUserDriveItemListItem](Get-MgBetaUserDriveItemListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -1374,8 +1658,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveItemListItemCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveItemListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveItemListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveItemListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveItemListItemDocumentSetVersion](Get-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveItemListItemDocumentSetVersionCount](Get-MgBetaUserDriveItemListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1405,12 +1697,14 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveItemPermissionCount](Get-MgBetaUserDriveItemPermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveItemRetentionLabel](Get-MgBetaUserDriveItemRetentionLabel.md)
-Get retentionLabel from users
+Information about retention label and settings enforced on the driveItem.
+Read-write.
 
 ### [Get-MgBetaUserDriveItemSubscription](Get-MgBetaUserDriveItemSubscription.md)
 The set of subscriptions on the item.
@@ -1430,6 +1724,7 @@ Get the number of the resource
 
 ### [Get-MgBetaUserDriveItemVersion](Get-MgBetaUserDriveItemVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveItemVersionContent](Get-MgBetaUserDriveItemVersionContent.md)
 Get content for the navigation property versions from users
@@ -1446,6 +1741,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveLastModifiedByUserServiceProvisioningError](Get-MgBetaUserDriveLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveList](Get-MgBetaUserDriveList.md)
 For drives in SharePoint, the underlying document library list.
 Read-only.
@@ -1455,7 +1757,7 @@ Nullable.
 The recent activities that took place within this list.
 
 ### [Get-MgBetaUserDriveListColumn](Get-MgBetaUserDriveListColumn.md)
-Get columns from users
+The collection of field definitions for this list.
 
 ### [Get-MgBetaUserDriveListColumnCount](Get-MgBetaUserDriveListColumnCount.md)
 Get the number of the resource
@@ -1464,10 +1766,11 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaUserDriveListContentType](Get-MgBetaUserDriveListContentType.md)
-Get contentTypes from users
+The collection of content types present in this list.
 
 ### [Get-MgBetaUserDriveListContentTypeColumn](Get-MgBetaUserDriveListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaUserDriveListContentTypeColumnCount](Get-MgBetaUserDriveListContentTypeColumnCount.md)
 Get the number of the resource
@@ -1499,12 +1802,20 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveListCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveListCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveListCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveListCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveListDrive](Get-MgBetaUserDriveListDrive.md)
+Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgBetaUserDriveListItem](Get-MgBetaUserDriveListItem.md)
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaUserDriveListItemActivity](Get-MgBetaUserDriveListItemActivity.md)
 The list of recent activities that took place on this item.
@@ -1521,8 +1832,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveListItemCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveListItemDocumentSetVersion](Get-MgBetaUserDriveListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveListItemDocumentSetVersionCount](Get-MgBetaUserDriveListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1549,7 +1868,7 @@ Get the number of the resource
 A collection of the fields and values for this version of the list item.
 
 ### [Get-MgBetaUserDriveListOperation](Get-MgBetaUserDriveListOperation.md)
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ### [Get-MgBetaUserDriveListOperationCount](Get-MgBetaUserDriveListOperationCount.md)
 Get the number of the resource
@@ -1562,12 +1881,14 @@ Get the number of the resource
 
 ### [Get-MgBetaUserDriveRoot](Get-MgBetaUserDriveRoot.md)
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveRootActivity](Get-MgBetaUserDriveRootActivity.md)
 The list of recent activities that took place on this item.
 
 ### [Get-MgBetaUserDriveRootAnalytic](Get-MgBetaUserDriveRootAnalytic.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaUserDriveRootAnalyticItemActivityStat](Get-MgBetaUserDriveRootAnalyticItemActivityStat.md)
 Get itemActivityStats from users
@@ -1608,6 +1929,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveRootCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveRootCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveRootCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveRootCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveRootItemLastModifiedByUser](Get-MgBetaUserDriveRootItemLastModifiedByUser.md)
 Get lastModifiedByUser from users
 
@@ -1617,6 +1945,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveRootItemLastModifiedByUserServiceProvisioningError](Get-MgBetaUserDriveRootItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveRootItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveRootItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveRootLastModifiedByUser](Get-MgBetaUserDriveRootLastModifiedByUser.md)
 Get lastModifiedByUser from users
 
@@ -1625,6 +1960,13 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
+
+### [Get-MgBetaUserDriveRootLastModifiedByUserServiceProvisioningError](Get-MgBetaUserDriveRootLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveRootLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveRootLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaUserDriveRootListItem](Get-MgBetaUserDriveRootListItem.md)
 For drives in SharePoint, the associated document library list item.
@@ -1646,8 +1988,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaUserDriveRootListItemCreatedByUserServiceProvisioningError](Get-MgBetaUserDriveRootListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaUserDriveRootListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaUserDriveRootListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDriveRootListItemDocumentSetVersion](Get-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveRootListItemDocumentSetVersionCount](Get-MgBetaUserDriveRootListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1677,12 +2027,14 @@ A collection of the fields and values for this version of the list item.
 Return the effective sharing permission for a particular permission resource.
 Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item's ancestors.
 Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.\nThis property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveRootPermissionCount](Get-MgBetaUserDriveRootPermissionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveRootRetentionLabel](Get-MgBetaUserDriveRootRetentionLabel.md)
-Get retentionLabel from users
+Information about retention label and settings enforced on the driveItem.
+Read-write.
 
 ### [Get-MgBetaUserDriveRootSubscription](Get-MgBetaUserDriveRootSubscription.md)
 The set of subscriptions on the item.
@@ -1702,6 +2054,7 @@ Get the number of the resource
 
 ### [Get-MgBetaUserDriveRootVersion](Get-MgBetaUserDriveRootVersion.md)
 Retrieve the metadata for a specific version of a DriveItem.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveRootVersionContent](Get-MgBetaUserDriveRootVersionContent.md)
 Get content for the navigation property versions from users
@@ -1715,6 +2068,7 @@ Special folders provide simple aliases to access well-known folders in OneDrive 
 If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.
 Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist.
 If a user deletes one, it is recreated when written to again.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserDriveSpecialContent](Get-MgBetaUserDriveSpecialContent.md)
 The content stream, if the item represents a file.
@@ -1723,25 +2077,32 @@ The content stream, if the item represents a file.
 Get the number of the resource
 
 ### [Grant-MgBetaDriveItemPermission](Grant-MgBetaDriveItemPermission.md)
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is available in the following [national cloud deployments.
 
 ### [Grant-MgBetaDriveRootPermission](Grant-MgBetaDriveRootPermission.md)
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is available in the following [national cloud deployments.
 
 ### [Grant-MgBetaSharePermission](Grant-MgBetaSharePermission.md)
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is available in the following [national cloud deployments.
 
 ### [Invoke-MgBetaCheckinDriveItem](Invoke-MgBetaCheckinDriveItem.md)
 Check in a checked out driveItem resource, which makes the version of the document available to others.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaCheckinDriveRoot](Invoke-MgBetaCheckinDriveRoot.md)
 Check in a checked out driveItem resource, which makes the version of the document available to others.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaCheckoutDriveItem](Invoke-MgBetaCheckoutDriveItem.md)
 Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaCheckoutDriveRoot](Invoke-MgBetaCheckoutDriveRoot.md)
 Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaExtractDriveItemSensitivityLabel](Invoke-MgBetaExtractDriveItemSensitivityLabel.md)
 Invoke action extractSensitivityLabels
@@ -1751,18 +2112,22 @@ Invoke action extractSensitivityLabels
 
 ### [Invoke-MgBetaFollowDriveItem](Invoke-MgBetaFollowDriveItem.md)
 Follow a driveItem.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaFollowDriveRoot](Invoke-MgBetaFollowDriveRoot.md)
 Follow a driveItem.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaGraphDrive](Invoke-MgBetaGraphDrive.md)
 Invoke function sharedWithMe
 
 ### [Invoke-MgBetaInviteDriveItem](Invoke-MgBetaInviteDriveItem.md)
 Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaInviteDriveRoot](Invoke-MgBetaInviteDriveRoot.md)
 Sends a sharing invitation for a DriveItem.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPreviewDriveItem](Invoke-MgBetaPreviewDriveItem.md)
 Invoke action preview
@@ -1772,30 +2137,38 @@ Invoke action preview
 
 ### [Invoke-MgBetaReauthorizeDriveItemSubscription](Invoke-MgBetaReauthorizeDriveItemSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReauthorizeDriveListSubscription](Invoke-MgBetaReauthorizeDriveListSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReauthorizeDriveRootSubscription](Invoke-MgBetaReauthorizeDriveRootSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReauthorizeShareListSubscription](Invoke-MgBetaReauthorizeShareListSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRecentDrive](Invoke-MgBetaRecentDrive.md)
 Invoke function recent
 
 ### [Invoke-MgBetaUnfollowDriveItem](Invoke-MgBetaUnfollowDriveItem.md)
 Unfollow a driveItem.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaUnfollowDriveRoot](Invoke-MgBetaUnfollowDriveRoot.md)
 Unfollow a driveItem.
+This API is available in the following national cloud deployments.
 
 ### [Join-MgBetaDriveListContentTypeWithHubSite](Join-MgBetaDriveListContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Associate a content type][contentType] with a list of hub sites.
+This API is available in the following [national cloud deployments.
 
 ### [Join-MgBetaShareListContentTypeWithHubSite](Join-MgBetaShareListContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Associate a content type][contentType] with a list of hub sites.
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaDrive](New-MgBetaDrive.md)
 Add new entity to drives
@@ -1816,14 +2189,17 @@ Create new navigation property to children for drives
 You can use createLink action to share a driveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveItemListItemDocumentSetVersion](New-MgBetaDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveItemListItemLink](New-MgBetaDriveItemListItemLink.md)
 Create a sharing link for a listItem.
 The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveItemListItemVersion](New-MgBetaDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1844,27 +2220,32 @@ Invoke action createUploadSession
 Create new navigation property to versions for drives
 
 ### [New-MgBetaDriveListColumn](New-MgBetaDriveListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaDriveListContentType](New-MgBetaDriveListContentType.md)
 Create new navigation property to contentTypes for drives
 
 ### [New-MgBetaDriveListContentTypeColumn](New-MgBetaDriveListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaDriveListContentTypeColumnLink](New-MgBetaDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for drives
 
 ### [New-MgBetaDriveListItem](New-MgBetaDriveListItem.md)
-Create a new [listItem][] in a [list][].
+Create a new listItem][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaDriveListItemDocumentSetVersion](New-MgBetaDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveListItemLink](New-MgBetaDriveListItemLink.md)
 Create a sharing link for a listItem.
 The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveListItemVersion](New-MgBetaDriveListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1885,14 +2266,17 @@ Create new navigation property to children for drives
 You can use createLink action to share a driveItem via a sharing link.
 The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
 DriveItem resources inherit sharing permissions from their ancestors.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveRootListItemDocumentSetVersion](New-MgBetaDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveRootListItemLink](New-MgBetaDriveRootListItemLink.md)
 Create a sharing link for a listItem.
 The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDriveRootListItemVersion](New-MgBetaDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1929,6 +2313,7 @@ Create new navigation property to children for groups
 
 ### [New-MgBetaGroupDriveItemListItemDocumentSetVersion](New-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupDriveItemListItemVersion](New-MgBetaGroupDriveItemListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1946,22 +2331,26 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgBetaGroupDriveListColumn](New-MgBetaGroupDriveListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupDriveListContentType](New-MgBetaGroupDriveListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgBetaGroupDriveListContentTypeColumn](New-MgBetaGroupDriveListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupDriveListContentTypeColumnLink](New-MgBetaGroupDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgBetaGroupDriveListItem](New-MgBetaGroupDriveListItem.md)
-Create a new [listItem][] in a [list][].
+Create a new listItem][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupDriveListItemDocumentSetVersion](New-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupDriveListItemVersion](New-MgBetaGroupDriveListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1980,6 +2369,7 @@ Create new navigation property to children for groups
 
 ### [New-MgBetaGroupDriveRootListItemDocumentSetVersion](New-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupDriveRootListItemVersion](New-MgBetaGroupDriveRootListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1997,22 +2387,26 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgBetaShareListColumn](New-MgBetaShareListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaShareListContentType](New-MgBetaShareListContentType.md)
 Create new navigation property to contentTypes for shares
 
 ### [New-MgBetaShareListContentTypeColumn](New-MgBetaShareListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaShareListContentTypeColumnLink](New-MgBetaShareListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for shares
 
 ### [New-MgBetaShareListItem](New-MgBetaShareListItem.md)
-Create a new [listItem][] in a [list][].
+Create a new listItem][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaShareListItemDocumentSetVersion](New-MgBetaShareListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaShareListItemVersion](New-MgBetaShareListItemVersion.md)
 Create new navigation property to versions for shares
@@ -2043,6 +2437,7 @@ Create new navigation property to children for users
 
 ### [New-MgBetaUserDriveItemListItemDocumentSetVersion](New-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserDriveItemListItemVersion](New-MgBetaUserDriveItemListItemVersion.md)
 Create new navigation property to versions for users
@@ -2060,22 +2455,26 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [New-MgBetaUserDriveListColumn](New-MgBetaUserDriveListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaUserDriveListContentType](New-MgBetaUserDriveListContentType.md)
 Create new navigation property to contentTypes for users
 
 ### [New-MgBetaUserDriveListContentTypeColumn](New-MgBetaUserDriveListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaUserDriveListContentTypeColumnLink](New-MgBetaUserDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for users
 
 ### [New-MgBetaUserDriveListItem](New-MgBetaUserDriveListItem.md)
-Create a new [listItem][] in a [list][].
+Create a new listItem][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaUserDriveListItemDocumentSetVersion](New-MgBetaUserDriveListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserDriveListItemVersion](New-MgBetaUserDriveListItemVersion.md)
 Create new navigation property to versions for users
@@ -2094,6 +2493,7 @@ Create new navigation property to children for users
 
 ### [New-MgBetaUserDriveRootListItemDocumentSetVersion](New-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserDriveRootListItemVersion](New-MgBetaUserDriveRootListItemVersion.md)
 Create new navigation property to versions for users
@@ -2111,16 +2511,19 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [Publish-MgBetaDriveListContentType](Publish-MgBetaDriveListContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Publishes a contentType][] present in a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Publish-MgBetaShareListContentType](Publish-MgBetaShareListContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Publishes a contentType][] present in a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaDrive](Remove-MgBetaDrive.md)
 Delete entity from drives
 
 ### [Remove-MgBetaDriveItem](Remove-MgBetaDriveItem.md)
-Delete a DriveItem by using its ID or path.\nNote that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveItemAnalytic](Remove-MgBetaDriveItemAnalytic.md)
 Delete navigation property analytics for drives
@@ -2129,13 +2532,15 @@ Delete navigation property analytics for drives
 Delete navigation property itemActivityStats for drives
 
 ### [Remove-MgBetaDriveItemChild](Remove-MgBetaDriveItemChild.md)
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaDriveItemListItem](Remove-MgBetaDriveItemListItem.md)
 Delete navigation property listItem for drives
 
 ### [Remove-MgBetaDriveItemListItemDocumentSetVersion](Remove-MgBetaDriveItemListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveItemListItemDocumentSetVersionField](Remove-MgBetaDriveItemListItemDocumentSetVersionField.md)
 Delete navigation property fields for drives
@@ -2155,9 +2560,12 @@ Invoke action permanentDelete
 ### [Remove-MgBetaDriveItemPermission](Remove-MgBetaDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveItemRetentionLabel](Remove-MgBetaDriveItemRetentionLabel.md)
-Delete navigation property retentionLabel for drives
+Remove a retention label from a driveItem.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveItemSubscription](Remove-MgBetaDriveItemSubscription.md)
 Delete navigation property subscriptions for drives
@@ -2178,16 +2586,19 @@ Delete navigation property columns for drives
 Delete navigation property contentTypes for drives
 
 ### [Remove-MgBetaDriveListContentTypeColumn](Remove-MgBetaDriveListContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaDriveListContentTypeColumnLink](Remove-MgBetaDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for drives
 
 ### [Remove-MgBetaDriveListItem](Remove-MgBetaDriveListItem.md)
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaDriveListItemDocumentSetVersion](Remove-MgBetaDriveListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveListItemDocumentSetVersionField](Remove-MgBetaDriveListItemDocumentSetVersionField.md)
 Delete navigation property fields for drives
@@ -2217,13 +2628,15 @@ Delete navigation property analytics for drives
 Delete navigation property itemActivityStats for drives
 
 ### [Remove-MgBetaDriveRootChild](Remove-MgBetaDriveRootChild.md)
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaDriveRootListItem](Remove-MgBetaDriveRootListItem.md)
 Delete navigation property listItem for drives
 
 ### [Remove-MgBetaDriveRootListItemDocumentSetVersion](Remove-MgBetaDriveRootListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveRootListItemDocumentSetVersionField](Remove-MgBetaDriveRootListItemDocumentSetVersionField.md)
 Delete navigation property fields for drives
@@ -2243,9 +2656,12 @@ Invoke action permanentDelete
 ### [Remove-MgBetaDriveRootPermission](Remove-MgBetaDriveRootPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveRootRetentionLabel](Remove-MgBetaDriveRootRetentionLabel.md)
-Delete navigation property retentionLabel for drives
+Remove a retention label from a driveItem.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDriveRootSubscription](Remove-MgBetaDriveRootSubscription.md)
 Delete navigation property subscriptions for drives
@@ -2260,7 +2676,8 @@ Delete navigation property versions for drives
 Delete navigation property drives for groups
 
 ### [Remove-MgBetaGroupDriveItem](Remove-MgBetaGroupDriveItem.md)
-Delete a DriveItem by using its ID or path.\nNote that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveItemAnalytic](Remove-MgBetaGroupDriveItemAnalytic.md)
 Delete navigation property analytics for groups
@@ -2269,13 +2686,15 @@ Delete navigation property analytics for groups
 Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgBetaGroupDriveItemChild](Remove-MgBetaGroupDriveItemChild.md)
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveItemListItem](Remove-MgBetaGroupDriveItemListItem.md)
 Delete navigation property listItem for groups
 
 ### [Remove-MgBetaGroupDriveItemListItemDocumentSetVersion](Remove-MgBetaGroupDriveItemListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveItemListItemDocumentSetVersionField](Remove-MgBetaGroupDriveItemListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2292,9 +2711,12 @@ Delete navigation property fields for groups
 ### [Remove-MgBetaGroupDriveItemPermission](Remove-MgBetaGroupDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveItemRetentionLabel](Remove-MgBetaGroupDriveItemRetentionLabel.md)
-Delete navigation property retentionLabel for groups
+Remove a retention label from a driveItem.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveItemSubscription](Remove-MgBetaGroupDriveItemSubscription.md)
 Delete navigation property subscriptions for groups
@@ -2315,16 +2737,19 @@ Delete navigation property columns for groups
 Delete navigation property contentTypes for groups
 
 ### [Remove-MgBetaGroupDriveListContentTypeColumn](Remove-MgBetaGroupDriveListContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveListContentTypeColumnLink](Remove-MgBetaGroupDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
 ### [Remove-MgBetaGroupDriveListItem](Remove-MgBetaGroupDriveListItem.md)
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveListItemDocumentSetVersion](Remove-MgBetaGroupDriveListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveListItemDocumentSetVersionField](Remove-MgBetaGroupDriveListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2354,13 +2779,15 @@ Delete navigation property analytics for groups
 Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgBetaGroupDriveRootChild](Remove-MgBetaGroupDriveRootChild.md)
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveRootListItem](Remove-MgBetaGroupDriveRootListItem.md)
 Delete navigation property listItem for groups
 
 ### [Remove-MgBetaGroupDriveRootListItemDocumentSetVersion](Remove-MgBetaGroupDriveRootListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveRootListItemDocumentSetVersionField](Remove-MgBetaGroupDriveRootListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2377,9 +2804,12 @@ Delete navigation property fields for groups
 ### [Remove-MgBetaGroupDriveRootPermission](Remove-MgBetaGroupDriveRootPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveRootRetentionLabel](Remove-MgBetaGroupDriveRootRetentionLabel.md)
-Delete navigation property retentionLabel for groups
+Remove a retention label from a driveItem.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupDriveRootSubscription](Remove-MgBetaGroupDriveRootSubscription.md)
 Delete navigation property subscriptions for groups
@@ -2400,7 +2830,8 @@ Delete navigation property columns for shares
 Delete navigation property contentTypes for shares
 
 ### [Remove-MgBetaShareListContentTypeColumn](Remove-MgBetaShareListContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaShareListContentTypeColumnLink](Remove-MgBetaShareListContentTypeColumnLink.md)
 Delete navigation property columnLinks for shares
@@ -2410,6 +2841,7 @@ Delete navigation property listItem for shares
 
 ### [Remove-MgBetaShareListItemDocumentSetVersion](Remove-MgBetaShareListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaShareListItemDocumentSetVersionField](Remove-MgBetaShareListItemDocumentSetVersionField.md)
 Delete navigation property fields for shares
@@ -2439,7 +2871,8 @@ Delete entity from shares
 Delete navigation property drives for users
 
 ### [Remove-MgBetaUserDriveItem](Remove-MgBetaUserDriveItem.md)
-Delete a DriveItem by using its ID or path.\nNote that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+Delete a DriveItem by using its ID or path.\nDeleting items using this method moves the items to the recycle bin instead of permanently deleting the item.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveItemAnalytic](Remove-MgBetaUserDriveItemAnalytic.md)
 Delete navigation property analytics for users
@@ -2448,13 +2881,15 @@ Delete navigation property analytics for users
 Delete navigation property itemActivityStats for users
 
 ### [Remove-MgBetaUserDriveItemChild](Remove-MgBetaUserDriveItemChild.md)
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaUserDriveItemListItem](Remove-MgBetaUserDriveItemListItem.md)
 Delete navigation property listItem for users
 
 ### [Remove-MgBetaUserDriveItemListItemDocumentSetVersion](Remove-MgBetaUserDriveItemListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveItemListItemDocumentSetVersionField](Remove-MgBetaUserDriveItemListItemDocumentSetVersionField.md)
 Delete navigation property fields for users
@@ -2471,9 +2906,12 @@ Delete navigation property fields for users
 ### [Remove-MgBetaUserDriveItemPermission](Remove-MgBetaUserDriveItemPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveItemRetentionLabel](Remove-MgBetaUserDriveItemRetentionLabel.md)
-Delete navigation property retentionLabel for users
+Remove a retention label from a driveItem.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveItemSubscription](Remove-MgBetaUserDriveItemSubscription.md)
 Delete navigation property subscriptions for users
@@ -2494,16 +2932,19 @@ Delete navigation property columns for users
 Delete navigation property contentTypes for users
 
 ### [Remove-MgBetaUserDriveListContentTypeColumn](Remove-MgBetaUserDriveListContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaUserDriveListContentTypeColumnLink](Remove-MgBetaUserDriveListContentTypeColumnLink.md)
 Delete navigation property columnLinks for users
 
 ### [Remove-MgBetaUserDriveListItem](Remove-MgBetaUserDriveListItem.md)
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaUserDriveListItemDocumentSetVersion](Remove-MgBetaUserDriveListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveListItemDocumentSetVersionField](Remove-MgBetaUserDriveListItemDocumentSetVersionField.md)
 Delete navigation property fields for users
@@ -2533,13 +2974,15 @@ Delete navigation property analytics for users
 Delete navigation property itemActivityStats for users
 
 ### [Remove-MgBetaUserDriveRootChild](Remove-MgBetaUserDriveRootChild.md)
-Remove an item from a [bundle][].
+Remove an item from a bundle][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaUserDriveRootListItem](Remove-MgBetaUserDriveRootListItem.md)
 Delete navigation property listItem for users
 
 ### [Remove-MgBetaUserDriveRootListItemDocumentSetVersion](Remove-MgBetaUserDriveRootListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveRootListItemDocumentSetVersionField](Remove-MgBetaUserDriveRootListItemDocumentSetVersionField.md)
 Delete navigation property fields for users
@@ -2556,9 +2999,12 @@ Delete navigation property fields for users
 ### [Remove-MgBetaUserDriveRootPermission](Remove-MgBetaUserDriveRootPermission.md)
 Remove access to a DriveItem.
 Only sharing permissions that are not inherited can be deleted.\nThe inheritedFrom property must be null.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveRootRetentionLabel](Remove-MgBetaUserDriveRootRetentionLabel.md)
-Delete navigation property retentionLabel for users
+Remove a retention label from a driveItem.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaUserDriveRootSubscription](Remove-MgBetaUserDriveRootSubscription.md)
 Delete navigation property subscriptions for users
@@ -2571,9 +3017,11 @@ Delete navigation property versions for users
 
 ### [Restore-MgBetaDriveItem](Restore-MgBetaDriveItem.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDriveItemListItemDocumentSetVersion](Restore-MgBetaDriveItemListItemDocumentSetVersion.md)
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDriveItemListItemVersion](Restore-MgBetaDriveItemListItemVersion.md)
 Invoke action restoreVersion
@@ -2581,18 +3029,22 @@ Invoke action restoreVersion
 ### [Restore-MgBetaDriveItemVersion](Restore-MgBetaDriveItemVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDriveListItemDocumentSetVersion](Restore-MgBetaDriveListItemDocumentSetVersion.md)
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDriveListItemVersion](Restore-MgBetaDriveListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgBetaDriveRoot](Restore-MgBetaDriveRoot.md)
 Restore a driveItem that has been deleted and is currently in the recycle bin.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDriveRootListItemDocumentSetVersion](Restore-MgBetaDriveRootListItemDocumentSetVersion.md)
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaDriveRootListItemVersion](Restore-MgBetaDriveRootListItemVersion.md)
 Invoke action restoreVersion
@@ -2600,21 +3052,26 @@ Invoke action restoreVersion
 ### [Restore-MgBetaDriveRootVersion](Restore-MgBetaDriveRootVersion.md)
 Restore a previous version of a DriveItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaShareListItemDocumentSetVersion](Restore-MgBetaShareListItemDocumentSetVersion.md)
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaShareListItemVersion](Restore-MgBetaShareListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Revoke-MgBetaDriveItemPermissionGrant](Revoke-MgBetaDriveItemPermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+This API is available in the following [national cloud deployments.
 
 ### [Revoke-MgBetaDriveRootPermissionGrant](Revoke-MgBetaDriveRootPermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+This API is available in the following [national cloud deployments.
 
 ### [Revoke-MgBetaSharePermissionGrant](Revoke-MgBetaSharePermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+This API is available in the following [national cloud deployments.
 
 ### [Search-MgBetaDrive](Search-MgBetaDrive.md)
 Invoke function search
@@ -2764,10 +3221,12 @@ Invoke action validatePermission
 Invoke function isPublished
 
 ### [Unpublish-MgBetaDriveListContentType](Unpublish-MgBetaDriveListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Unpublish-MgBetaShareListContentType](Unpublish-MgBetaShareListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaDrive](Update-MgBetaDrive.md)
 Update entity in drives
@@ -2779,6 +3238,7 @@ Update property mailboxSettings value.
 To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemAnalytic](Update-MgBetaDriveItemAnalytic.md)
 Update the navigation property analytics in drives
@@ -2805,7 +3265,8 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveItemListItemField](Update-MgBetaDriveItemListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgBetaDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2819,9 +3280,13 @@ Update the navigation property fields in drives
 ### [Update-MgBetaDriveItemPermission](Update-MgBetaDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemRetentionLabel](Update-MgBetaDriveItemRetentionLabel.md)
-Update the navigation property retentionLabel in drives
+Lock or unlock a retention label on a driveItem that classifies content as records.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemSubscription](Update-MgBetaDriveItemSubscription.md)
 Update the navigation property subscriptions in drives
@@ -2845,7 +3310,8 @@ Update the navigation property columns in drives
 Update the navigation property contentTypes in drives
 
 ### [Update-MgBetaDriveListContentTypeColumn](Update-MgBetaDriveListContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaDriveListContentTypeColumnLink](Update-MgBetaDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in drives
@@ -2866,7 +3332,8 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveListItemField](Update-MgBetaDriveListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaDriveListItemLastModifiedByUserMailboxSetting](Update-MgBetaDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2914,7 +3381,8 @@ Update the navigation property documentSetVersions in drives
 Update the navigation property fields in drives
 
 ### [Update-MgBetaDriveRootListItemField](Update-MgBetaDriveRootListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgBetaDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2928,9 +3396,13 @@ Update the navigation property fields in drives
 ### [Update-MgBetaDriveRootPermission](Update-MgBetaDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveRootRetentionLabel](Update-MgBetaDriveRootRetentionLabel.md)
-Update the navigation property retentionLabel in drives
+Lock or unlock a retention label on a driveItem that classifies content as records.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveRootSubscription](Update-MgBetaDriveRootSubscription.md)
 Update the navigation property subscriptions in drives
@@ -2951,6 +3423,7 @@ Update property mailboxSettings value.
 To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemAnalytic](Update-MgBetaGroupDriveItemAnalytic.md)
 Update the navigation property analytics in groups
@@ -2977,7 +3450,8 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveItemListItemField](Update-MgBetaGroupDriveItemListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2991,9 +3465,13 @@ Update the navigation property fields in groups
 ### [Update-MgBetaGroupDriveItemPermission](Update-MgBetaGroupDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemRetentionLabel](Update-MgBetaGroupDriveItemRetentionLabel.md)
-Update the navigation property retentionLabel in groups
+Lock or unlock a retention label on a driveItem that classifies content as records.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemSubscription](Update-MgBetaGroupDriveItemSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3017,7 +3495,8 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgBetaGroupDriveListContentTypeColumn](Update-MgBetaGroupDriveListContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupDriveListContentTypeColumnLink](Update-MgBetaGroupDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -3038,7 +3517,8 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveListItemField](Update-MgBetaGroupDriveListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupDriveListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3086,7 +3566,8 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupDriveRootListItemField](Update-MgBetaGroupDriveRootListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3100,9 +3581,13 @@ Update the navigation property fields in groups
 ### [Update-MgBetaGroupDriveRootPermission](Update-MgBetaGroupDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootRetentionLabel](Update-MgBetaGroupDriveRootRetentionLabel.md)
-Update the navigation property retentionLabel in groups
+Lock or unlock a retention label on a driveItem that classifies content as records.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootSubscription](Update-MgBetaGroupDriveRootSubscription.md)
 Update the navigation property subscriptions in groups
@@ -3129,7 +3614,8 @@ Update the navigation property columns in shares
 Update the navigation property contentTypes in shares
 
 ### [Update-MgBetaShareListContentTypeColumn](Update-MgBetaShareListContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaShareListContentTypeColumnLink](Update-MgBetaShareListContentTypeColumnLink.md)
 Update the navigation property columnLinks in shares
@@ -3150,7 +3636,8 @@ Update the navigation property documentSetVersions in shares
 Update the navigation property fields in shares
 
 ### [Update-MgBetaShareListItemField](Update-MgBetaShareListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaShareListItemLastModifiedByUserMailboxSetting](Update-MgBetaShareListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3186,6 +3673,7 @@ Update property mailboxSettings value.
 To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
 This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
 Items cannot be moved between Drives using this request.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemAnalytic](Update-MgBetaUserDriveItemAnalytic.md)
 Update the navigation property analytics in users
@@ -3212,7 +3700,8 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveItemListItemField](Update-MgBetaUserDriveItemListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemListItemLastModifiedByUserMailboxSetting](Update-MgBetaUserDriveItemListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3226,9 +3715,13 @@ Update the navigation property fields in users
 ### [Update-MgBetaUserDriveItemPermission](Update-MgBetaUserDriveItemPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemRetentionLabel](Update-MgBetaUserDriveItemRetentionLabel.md)
-Update the navigation property retentionLabel in users
+Lock or unlock a retention label on a driveItem that classifies content as records.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemSubscription](Update-MgBetaUserDriveItemSubscription.md)
 Update the navigation property subscriptions in users
@@ -3252,7 +3745,8 @@ Update the navigation property columns in users
 Update the navigation property contentTypes in users
 
 ### [Update-MgBetaUserDriveListContentTypeColumn](Update-MgBetaUserDriveListContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaUserDriveListContentTypeColumnLink](Update-MgBetaUserDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in users
@@ -3273,7 +3767,8 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveListItemField](Update-MgBetaUserDriveListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaUserDriveListItemLastModifiedByUserMailboxSetting](Update-MgBetaUserDriveListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3321,7 +3816,8 @@ Update the navigation property documentSetVersions in users
 Update the navigation property fields in users
 
 ### [Update-MgBetaUserDriveRootListItemField](Update-MgBetaUserDriveRootListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootListItemLastModifiedByUserMailboxSetting](Update-MgBetaUserDriveRootListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -3335,9 +3831,13 @@ Update the navigation property fields in users
 ### [Update-MgBetaUserDriveRootPermission](Update-MgBetaUserDriveRootPermission.md)
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootRetentionLabel](Update-MgBetaUserDriveRootRetentionLabel.md)
-Update the navigation property retentionLabel in users
+Lock or unlock a retention label on a driveItem that classifies content as records.
+For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootSubscription](Update-MgBetaUserDriveRootSubscription.md)
 Update the navigation property subscriptions in users

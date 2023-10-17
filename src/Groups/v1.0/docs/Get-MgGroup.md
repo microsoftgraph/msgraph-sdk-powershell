@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of a group object.
 This operation returns by default only a subset of all the available properties, as noted in the Properties section.
-To get properties that are not returned by default, specify them in a $select OData query option.
-The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query.
+To get properties that aren't_ returned by default, specify them in a $select OData query option.
+The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,8 +37,9 @@ Get-MgGroup -InputObject <IGroupsIdentity> [-ExpandProperty <String[]>] [-Proper
 ## DESCRIPTION
 Get the properties and relationships of a group object.
 This operation returns by default only a subset of all the available properties, as noted in the Properties section.
-To get properties that are not returned by default, specify them in a $select OData query option.
-The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query.
+To get properties that aren't_ returned by default, specify them in a $select OData query option.
+The hasMembersWithLicenseErrors and isArchived properties are an exception and aren't returned in the $select query.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

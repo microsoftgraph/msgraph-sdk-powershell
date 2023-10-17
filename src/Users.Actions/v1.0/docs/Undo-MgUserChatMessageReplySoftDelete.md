@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Undo-MgUserChatMessageReplySoftDelete -InputObject <IUsersActionsIdentity> [-Pas
 
 ## DESCRIPTION
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

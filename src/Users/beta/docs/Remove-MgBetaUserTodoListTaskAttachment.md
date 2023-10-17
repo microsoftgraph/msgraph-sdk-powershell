@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a taskFileAttachment object from a todoTask resource.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Remove-MgBetaUserTodoListTaskAttachment -InputObject <IUsersIdentity> [-IfMatch 
 
 ## DESCRIPTION
 Delete a taskFileAttachment object from a todoTask resource.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of an externalitem object.
 This API is provided for diagnostic purposes only.
-It is not intended to be used for any other purpose.
+It isn't intended to be used for any other purpose.
 Repeated requests to this API might result in 429 HTTP errors.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -37,8 +38,9 @@ Get-MgBetaExternalConnectionItem -InputObject <ISearchIdentity> [-ExpandProperty
 ## DESCRIPTION
 Get the properties and relationships of an externalitem object.
 This API is provided for diagnostic purposes only.
-It is not intended to be used for any other purpose.
+It isn't intended to be used for any other purpose.
 Repeated requests to this API might result in 429 HTTP errors.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -270,6 +272,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[AcronymId <String>]`: The unique identifier of acronym
+  - `[AuthorizationSystemId <String>]`: The unique identifier of authorizationSystem
   - `[BookmarkId <String>]`: The unique identifier of bookmark
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
   - `[ExternalActivityId <String>]`: The unique identifier of externalActivity

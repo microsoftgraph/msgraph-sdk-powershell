@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventWebinarRegistrationConfiguration
 
 ## SYNOPSIS
-Get registrationConfiguration from solutions
+Registration configuration of the webinar.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaVirtualEventWebinarRegistrationConfiguration -InputObject <IBookingsId
 ```
 
 ## DESCRIPTION
-Get registrationConfiguration from solutions
+Registration configuration of the webinar.
 
 ## EXAMPLES
 

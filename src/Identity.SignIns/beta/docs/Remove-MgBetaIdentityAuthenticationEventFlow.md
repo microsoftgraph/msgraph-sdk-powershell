@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a specific authenticationEventsFlow resource by ID.
 Only externalUsersSelfServiceSignupEventsFlow object types are available.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgBetaIdentityAuthenticationEventFlow -InputObject <IIdentitySignInsIdent
 ## DESCRIPTION
 Delete a specific authenticationEventsFlow resource by ID.
 Only externalUsersSelfServiceSignupEventsFlow object types are available.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

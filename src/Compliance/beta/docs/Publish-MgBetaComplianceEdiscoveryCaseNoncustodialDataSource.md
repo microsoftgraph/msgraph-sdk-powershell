@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Releases the non-custodial data source from the case.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Publish-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComp
 
 ## DESCRIPTION
 Releases the non-custodial data source from the case.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

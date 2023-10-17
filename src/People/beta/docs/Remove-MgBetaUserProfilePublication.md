@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an itemPublication object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfilePublication -InputObject <IPeopleIdentity> [-IfMatch <St
 
 ## DESCRIPTION
 Deletes an itemPublication object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

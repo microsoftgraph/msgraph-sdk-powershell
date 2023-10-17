@@ -12,8 +12,9 @@ Add a new phone authentication method.
 A user may only have one phone of each type, captured in the phoneType property.
 This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail.
 Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
-Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
-Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system will attempt to register the number for use in that system.
+Adding a phone number makes it available for use in both Azure multifactor authentication (MFA) and self-service password reset (SSPR), if enabled.
+Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,8 +49,9 @@ Add a new phone authentication method.
 A user may only have one phone of each type, captured in the phoneType property.
 This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail.
 Additionally, a user must always have a mobile phone before adding an alternateMobile phone.
-Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled.
-Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system will attempt to register the number for use in that system.
+Adding a phone number makes it available for use in both Azure multifactor authentication (MFA) and self-service password reset (SSPR), if enabled.
+Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -134,7 +136,7 @@ Accept wildcard characters: False
 The phone number to text or call for authentication.
 Phone numbers use the format '+\<country code\> \<number\>x\<extension\>', with extension optional.
 For example, +1 5555551234 or +1 5555551234x123 are valid.
-Numbers are rejected when creating/updating if they do not match the required format.
+Numbers are rejected when creating/updating if they don't match the required format.
 
 ```yaml
 Type: System.String
@@ -249,7 +251,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphPhoneAuthenticationMethod>`: phoneAuthenticationMethod
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[PhoneNumber <String>]`: The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.
+  - `[PhoneNumber <String>]`: The phone number to text or call for authentication. Phone numbers use the format '+<country code> <number>x<extension>', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don't match the required format.
   - `[PhoneType <String>]`: authenticationPhoneType
   - `[SmsSignInState <String>]`: authenticationMethodSignInState
 

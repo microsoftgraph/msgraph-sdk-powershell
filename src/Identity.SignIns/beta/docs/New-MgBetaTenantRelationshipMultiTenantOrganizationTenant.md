@@ -8,10 +8,11 @@ schema: 2.0.0
 # New-MgBetaTenantRelationshipMultiTenantOrganizationTenant
 
 ## SYNOPSIS
-Add a tenant to a multi-tenant organization.
-The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization.
-The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request.
-Note that a tenant can be part of only one multi-tenant organization.
+Add a tenant to a multitenant organization.
+The administrator of an owner tenant has the permissions to add tenants to the multitenant organization.
+The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request.
+A tenant can be part of only one multitenant organization.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,10 +32,11 @@ New-MgBetaTenantRelationshipMultiTenantOrganizationTenant
 ```
 
 ## DESCRIPTION
-Add a tenant to a multi-tenant organization.
-The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization.
-The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request.
-Note that a tenant can be part of only one multi-tenant organization.
+Add a tenant to a multitenant organization.
+The administrator of an owner tenant has the permissions to add tenants to the multitenant organization.
+The added tenant is in the pending state until the administrator of the added tenant joins the multitenant organization by submitting a join request.
+A tenant can be part of only one multitenant organization.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -55,7 +57,7 @@ Note that a tenant can be part of only one multi-tenant organization.
 ## PARAMETERS
 
 ### -AddedByTenantId
-Tenant ID of the tenant that added the tenant to the multi-tenant organization.
+Tenant ID of the tenant that added the tenant to the multitenant organization.
 Read-only.
 
 ```yaml
@@ -71,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -AddedDateTime
-Date and time when the tenant was added to the multi-tenant organization.
+Date and time when the tenant was added to the multitenant organization.
 Read-only.
 
 ```yaml
@@ -134,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of the tenant added to the multi-tenant organization.
+Display name of the tenant added to the multitenant organization.
 
 ```yaml
 Type: System.String
@@ -165,7 +167,7 @@ Accept wildcard characters: False
 ```
 
 ### -JoinedDateTime
-Date and time when the tenant joined the multi-tenant organization.
+Date and time when the tenant joined the multitenant organization.
 Read-only.
 
 ```yaml
@@ -211,7 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-Tenant ID of the Azure Active Directory tenant added to the multi-tenant organization.
+Tenant ID of the Azure Active Directory tenant added to the multitenant organization.
 Set at the time tenant is added.Supports $filter.
 Key.
 
@@ -298,13 +300,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AddedByTenantId <String>]`: Tenant ID of the tenant that added the tenant to the multi-tenant organization. Read-only.
-  - `[AddedDateTime <DateTime?>]`: Date and time when the tenant was added to the multi-tenant organization. Read-only.
-  - `[DisplayName <String>]`: Display name of the tenant added to the multi-tenant organization.
-  - `[JoinedDateTime <DateTime?>]`: Date and time when the tenant joined the multi-tenant organization. Read-only.
+  - `[AddedByTenantId <String>]`: Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.
+  - `[AddedDateTime <DateTime?>]`: Date and time when the tenant was added to the multitenant organization. Read-only.
+  - `[DisplayName <String>]`: Display name of the tenant added to the multitenant organization.
+  - `[JoinedDateTime <DateTime?>]`: Date and time when the tenant joined the multitenant organization. Read-only.
   - `[Role <String>]`: multiTenantOrganizationMemberRole
   - `[State <String>]`: multiTenantOrganizationMemberState
-  - `[TenantId <String>]`: Tenant ID of the Azure Active Directory tenant added to the multi-tenant organization. Set at the time tenant is added.Supports $filter. Key.
+  - `[TenantId <String>]`: Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
   - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>]`: multiTenantOrganizationMemberTransitionDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DesiredRole <String>]`: multiTenantOrganizationMemberRole

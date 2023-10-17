@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 In Azure AD entitlement management, approve or deny an approvalStage object in an approval.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStage
 
 ## DESCRIPTION
 In Azure AD entitlement management, approve or deny an approvalStage object in an approval.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

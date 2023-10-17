@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an appCredentialSignInActivity object that contains recent activity of an application credential.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaReportAppCredentialSignInActivity -InputObject <IReportsIdentity> [-Ex
 
 ## DESCRIPTION
 Get an appCredentialSignInActivity object that contains recent activity of an application credential.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
 This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:  This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Test-MgBetaGroupSiteInformationProtectionPolicyLabelApplication -InputObject <IG
 ## DESCRIPTION
 Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
 This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:  This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -242,8 +242,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[AssignmentMethod <String>]`: assignmentMethod
     - `[DowngradeJustification <IMicrosoftGraphDowngradeJustification>]`: downgradeJustification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or is not justified.
-      - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+      - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or isn't justified.
+      - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message appears in administrative logs.
     - `[ExtendedProperties <IMicrosoftGraphKeyValuePair[]>]`: Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
     - `[LabelId <String>]`: The GUID of the label that should be applied to the information.
 
@@ -304,8 +304,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[AssignmentMethod <String>]`: assignmentMethod
   - `[DowngradeJustification <IMicrosoftGraphDowngradeJustification>]`: downgradeJustification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or is not justified.
-    - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message will appear in administrative logs.
+    - `[IsDowngradeJustified <Boolean?>]`: Indicates whether the downgrade is or isn't justified.
+    - `[JustificationMessage <String>]`: Message that indicates why a downgrade is justified. The message appears in administrative logs.
   - `[ExtendedProperties <IMicrosoftGraphKeyValuePair[]>]`: Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.
     - `[Name <String>]`: Name for this key-value pair
     - `[Value <String>]`: Value for this key-value pair

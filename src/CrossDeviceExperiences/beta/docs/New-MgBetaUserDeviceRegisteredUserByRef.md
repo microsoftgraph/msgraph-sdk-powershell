@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a registered user for the device.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ New-MgBetaUserDeviceRegisteredUserByRef -InputObject <ICrossDeviceExperiencesIde
 
 ## DESCRIPTION
 Add a registered user for the device.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

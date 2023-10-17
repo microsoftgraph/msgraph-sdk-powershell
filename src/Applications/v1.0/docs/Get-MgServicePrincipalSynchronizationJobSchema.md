@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the schema for a given synchronization job or template.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Get-MgServicePrincipalSynchronizationJobSchema -InputObject <IApplicationsIdenti
 
 ## DESCRIPTION
 Retrieve the schema for a given synchronization job or template.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

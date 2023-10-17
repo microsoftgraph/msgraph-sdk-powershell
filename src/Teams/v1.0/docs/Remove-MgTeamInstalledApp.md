@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Uninstalls an app from the specified team.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgTeamInstalledApp -InputObject <ITeamsIdentity> [-IfMatch <String>] [-Pa
 
 ## DESCRIPTION
 Uninstalls an app from the specified team.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

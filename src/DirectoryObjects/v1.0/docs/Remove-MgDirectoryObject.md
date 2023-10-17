@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a directory object, for example, a group, user, application, or service principal.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-IfMatch <Str
 
 ## DESCRIPTION
 Delete a directory object, for example, a group, user, application, or service principal.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a bookingStaffMember in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ Update-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-Additiona
 
 ## DESCRIPTION
 Update the properties of a bookingStaffMember in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Revoke-MgBetaSitePermissionGrant
 
 ## SYNOPSIS
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Revoke-MgBetaSitePermissionGrant -InputObject <ISitesIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 
@@ -247,6 +249,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

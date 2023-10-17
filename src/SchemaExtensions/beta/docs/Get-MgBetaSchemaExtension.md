@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties of the specified schemaExtension definition.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaSchemaExtension -InputObject <ISchemaExtensionsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Get the properties of the specified schemaExtension definition.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

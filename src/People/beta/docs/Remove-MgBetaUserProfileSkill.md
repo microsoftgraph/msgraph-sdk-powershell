@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a skillProficiency object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfileSkill -InputObject <IPeopleIdentity> [-IfMatch <String>]
 
 ## DESCRIPTION
 Delete a skillProficiency object from a user's profile.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

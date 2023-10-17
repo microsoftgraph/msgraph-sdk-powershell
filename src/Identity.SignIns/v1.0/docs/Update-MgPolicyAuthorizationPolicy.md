@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an authorizationPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationP
 
 ## DESCRIPTION
 Update the properties of an authorizationPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -126,7 +128,7 @@ Accept wildcard characters: False
 
 ### -AllowUserConsentForRiskyApps
 Indicates whether user consent for risky apps is allowed.
-We recommend to keep this as false.
+We recommend keeping allowUserConsentForRiskyApps as false.
 Default value is false.
 
 ```yaml
@@ -144,7 +146,7 @@ Accept wildcard characters: False
 ### -BlockMsolPowerShell
 To disable the use of MSOL PowerShell, set this property to true.
 This also disables user-based access to the legacy service endpoint used by MSOL PowerShell.
-This does not affect Azure Active Directory Connect or Microsoft Graph.
+This doesn't affect Azure Active Directory Connect or Microsoft Graph.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -329,15 +331,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
-  - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
+  - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend keeping allowUserConsentForRiskyApps as false. Default value is false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
   - `[AllowedToUseSspr <Boolean?>]`: Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Azure Active Directory Connect or Microsoft Graph.
   - `[DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>]`: defaultUserRolePermissions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Azure portal.
-    - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Azure portal:  The Users can create security groups in Azure portals, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
-    - `[AllowedToCreateTenants <Boolean?>]`: Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Azure portal.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
+    - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Microsoft Entra admin center.
+    - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Microsoft Entra admin center:  The Users can create security groups in Microsoft Entra admin centers, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
+    - `[AllowedToCreateTenants <Boolean?>]`: Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Microsoft Entra admin center.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
     - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
     - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users. DO NOT SET THIS VALUE TO false.
     - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
@@ -345,9 +347,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `DEFAULTUSERROLEPERMISSIONS <IMicrosoftGraphDefaultUserRolePermissions>`: defaultUserRolePermissions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Azure portal.
-  - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Azure portal:  The Users can create security groups in Azure portals, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
-  - `[AllowedToCreateTenants <Boolean?>]`: Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Azure portal.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
+  - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Microsoft Entra admin center.
+  - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Microsoft Entra admin center:  The Users can create security groups in Microsoft Entra admin centers, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
+  - `[AllowedToCreateTenants <Boolean?>]`: Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Microsoft Entra admin center.  When this setting is false, users assigned the Tenant Creator role can still create tenants.
   - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
   - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users. DO NOT SET THIS VALUE TO false.
   - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.

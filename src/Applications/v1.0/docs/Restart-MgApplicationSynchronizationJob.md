@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
 Optionally clears existing the synchronization state and previous errors.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,6 +45,7 @@ Restart-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity>
 ## DESCRIPTION
 Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory.
 Optionally clears existing the synchronization state and previous errors.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a teamsAppSettings object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -18,6 +19,7 @@ Get-MgBetaTeamworkTeamAppSetting [-ExpandProperty <String[]>] [-Property <String
 
 ## DESCRIPTION
 Read the properties and relationships of a teamsAppSettings object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

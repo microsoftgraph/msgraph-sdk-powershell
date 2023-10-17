@@ -8,7 +8,8 @@ schema: 2.0.0
 # Grant-MgDriveRootPermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Grant-MgDriveRootPermission -InputObject <IFilesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

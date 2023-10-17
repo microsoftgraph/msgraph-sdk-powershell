@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a crossTenantAccessPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -18,6 +19,7 @@ Get-MgPolicyCrossTenantAccessPolicy [-ExpandProperty <String[]>] [-Property <Str
 
 ## DESCRIPTION
 Read the properties and relationships of a crossTenantAccessPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

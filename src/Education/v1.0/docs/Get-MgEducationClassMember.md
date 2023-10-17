@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieves the educationUser members of an educationClass.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgEducationClassMember -EducationClassId <String> [-ExpandProperty <String[]
 
 ## DESCRIPTION
 Retrieves the educationUser members of an educationClass.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

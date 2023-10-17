@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a specific commercial subscription that an organization has acquired.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaDirectorySubscription -InputObject <IIdentityDirectoryManagementIdenti
 
 ## DESCRIPTION
 Get a specific commercial subscription that an organization has acquired.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

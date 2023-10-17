@@ -11,6 +11,7 @@ schema: 2.0.0
 Clear a presence session of an application for a user.
 If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,6 +46,7 @@ Clear-MgBetaCommunicationPresence -InputObject <ICloudCommunicationsIdentity>
 Clear a presence session of an application for a user.
 If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline.
 Read more about presence sessions and their time-out and expiration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

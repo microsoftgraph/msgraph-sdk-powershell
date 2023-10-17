@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
 To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Get-MgBetaOrganizationSettingItemInsight -InputObject <IIdentityDirectoryManagem
 ## DESCRIPTION
 Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
 To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

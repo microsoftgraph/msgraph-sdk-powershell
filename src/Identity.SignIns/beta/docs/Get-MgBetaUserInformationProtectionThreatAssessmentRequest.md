@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a specified threatAssessmentRequest object.
-A threat assessment request can be one of the following types:
+A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgBetaUserInformationProtectionThreatAssessmentRequest -InputObject <IIdenti
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a specified threatAssessmentRequest object.
-A threat assessment request can be one of the following types:
+A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

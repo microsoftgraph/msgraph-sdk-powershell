@@ -512,8 +512,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastUpdatedDateTime <DateTime?>]`: Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
   - `[Location <IMicrosoftGraphSignInLocation>]`: signInLocation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[City <String>]`: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-    - `[CountryOrRegion <String>]`: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+    - `[City <String>]`: Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
+    - `[CountryOrRegion <String>]`: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
     - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
@@ -590,8 +590,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `LOCATION <IMicrosoftGraphSignInLocation>`: signInLocation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[City <String>]`: Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
-  - `[CountryOrRegion <String>]`: Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+  - `[City <String>]`: Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
+  - `[CountryOrRegion <String>]`: Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
   - `[GeoCoordinates <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.

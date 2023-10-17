@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
-Pre-configured synchronization settings for a particular application.
+Preconfigured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentit
 ```
 
 ## DESCRIPTION
-Pre-configured synchronization settings for a particular application.
+Preconfigured synchronization settings for a particular application.
 
 ## EXAMPLES
 

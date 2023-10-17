@@ -12,6 +12,7 @@ Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ Send an existing draft message.
 The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft.
 This method saves the message in the Sent Items folder.
 Alternatively, send a new message in a single operation.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

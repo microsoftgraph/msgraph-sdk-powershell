@@ -14,6 +14,7 @@ Preferred presence takes effect only when there is at least one presence session
 Otherwise, the user's presence stays as Offline.
 A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.
 Read more about presence sessions and their time-out and expiration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -52,6 +53,7 @@ Preferred presence takes effect only when there is at least one presence session
 Otherwise, the user's presence stays as Offline.
 A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.
 Read more about presence sessions and their time-out and expiration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

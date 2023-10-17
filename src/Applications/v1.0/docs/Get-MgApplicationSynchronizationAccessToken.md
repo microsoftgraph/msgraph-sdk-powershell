@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Get-MgApplicationSynchronizationAccessToken -InputObject <IApplicationsIdentity>
 
 ## DESCRIPTION
 Acquire an OAuth access token to authorize the Azure AD provisioning service to provision users into an application.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

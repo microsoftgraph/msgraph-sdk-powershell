@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -148,6 +149,7 @@ New-MgGroupSiteTermStoreSetParentGroupSetChild -InputObject <ISitesIdentity>
 
 ## DESCRIPTION
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

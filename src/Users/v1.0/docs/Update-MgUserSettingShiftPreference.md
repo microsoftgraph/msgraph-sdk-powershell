@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties and relationships of a shiftPreferences object.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgUserSettingShiftPreference -InputObject <IUsersIdentity> [-AdditionalPr
 
 ## DESCRIPTION
 Update the properties and relationships of a shiftPreferences object.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

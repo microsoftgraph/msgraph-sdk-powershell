@@ -8,7 +8,8 @@ schema: 2.0.0
 # Unpublish-MgUserDriveListContentType
 
 ## SYNOPSIS
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is supported in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Unpublish-MgUserDriveListContentType -InputObject <IUsersActionsIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is supported in the following [national cloud deployments.
 
 ## EXAMPLES
 

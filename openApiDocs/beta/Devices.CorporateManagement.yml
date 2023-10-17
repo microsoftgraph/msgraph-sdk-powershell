@@ -32715,6 +32715,10 @@ components:
               description: The list of apps expected to be installed by the .pkg.
             minimumSupportedOperatingSystem:
               $ref: '#/components/schemas/microsoft.graph.macOSMinimumOperatingSystem'
+            postInstallScript:
+              $ref: '#/components/schemas/microsoft.graph.macOSAppScript'
+            preInstallScript:
+              $ref: '#/components/schemas/microsoft.graph.macOSAppScript'
             primaryBundleId:
               type: string
               description: The primary CFBundleIdentifier of the .pkg.
@@ -33369,26 +33373,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -33412,7 +33416,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -35845,7 +35849,6 @@ components:
       description: Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: androidTargetedPlatforms
         modelAsString: false
@@ -35912,6 +35915,9 @@ components:
         v16_0:
           type: boolean
           description: 'When TRUE, only Version 16.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.'
+        v17_0:
+          type: boolean
+          description: 'When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.'
         v8_0:
           type: boolean
           description: 'When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.'
@@ -36080,6 +36086,9 @@ components:
         v13_0:
           type: boolean
           description: 'When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.'
+        v14_0:
+          type: boolean
+          description: 'When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.'
       additionalProperties:
         type: object
       description: The minimum operating system required for a macOS app.
@@ -36102,6 +36111,16 @@ components:
       additionalProperties:
         type: object
       description: Contains properties of a macOS .app in the package
+    microsoft.graph.macOSAppScript:
+      title: macOSAppScript
+      type: object
+      properties:
+        scriptContent:
+          type: string
+          description: The base64 encoded shell script (.sh) that assists managing macOS apps.
+      additionalProperties:
+        type: object
+      description: Shell script used to assist installation of a macOS app. These scripts are used to perform additional tasks to help the app successfully be configured.
     microsoft.graph.managedApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mobileApp'
@@ -36182,7 +36201,6 @@ components:
       description: Contains properties for Windows architecture.
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsArchitecture
         modelAsString: false
@@ -36357,7 +36375,6 @@ components:
       description: Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDeviceType
         modelAsString: false
@@ -36576,7 +36593,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
           nullable: true
       additionalProperties:
         type: object
@@ -41512,7 +41529,6 @@ components:
       description: Contains properties for detection operator.
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: win32LobAppDetectionOperator
         modelAsString: false
@@ -42221,7 +42237,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -42664,7 +42680,7 @@ components:
               nullable: true
             appId:
               type: string
-              description: 'The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).'
+              description: 'The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).'
               nullable: true
             applicationTemplateId:
               type: string
@@ -44988,7 +45004,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of hostNames for the device.
+              description: List of host names for the device.
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -44999,7 +45015,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -45021,6 +45037,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -45056,27 +45073,27 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
               nullable: true
             kind:
               type: string
-              description: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             model:
               type: string
-              description: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             name:
               type: string
-              description: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             platform:
               type: string
-              description: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             status:
               type: string
@@ -51656,11 +51673,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties of an activityBasedTimeoutPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaPolicyActivityBasedTimeoutPolicy -InputObject <IIdentitySignInsIdentit
 
 ## DESCRIPTION
 Get the properties of an activityBasedTimeoutPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

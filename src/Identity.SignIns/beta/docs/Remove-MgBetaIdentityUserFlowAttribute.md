@@ -8,8 +8,8 @@ schema: 2.0.0
 # Remove-MgBetaIdentityUserFlowAttribute
 
 ## SYNOPSIS
-Delete an identityUserFlowAttribute.
-Only custom user flow attributes can be deleted.
+Delete a custom identityUserFlowAttribute.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Remove-MgBetaIdentityUserFlowAttribute -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Delete an identityUserFlowAttribute.
-Only custom user flow attributes can be deleted.
+Delete a custom identityUserFlowAttribute.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

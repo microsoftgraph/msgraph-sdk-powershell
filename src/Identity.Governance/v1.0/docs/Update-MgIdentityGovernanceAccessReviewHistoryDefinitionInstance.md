@@ -126,7 +126,7 @@ Accept wildcard characters: False
 ```
 
 ### -DownloadUri
-Uri which can be used to retrieve review history data.
+Uri that can be used to retrieve review history data.
 This URI will be active for 24 hours after being generated.
 Required.
 
@@ -159,8 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -FulfilledDateTime
-Timestamp when all of the available data for this instance was collected.
-This will be set after this instance's status is set to done.
+Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done.
 Required.
 
 ```yaml
@@ -208,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReviewHistoryPeriodEndDateTime
-Timestamp, reviews ending on or before this date will be included in the fetched history data.
+Timestamp reviews ending on or before this date will be included in the fetched history data.
 
 ```yaml
 Type: System.DateTime
@@ -223,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReviewHistoryPeriodStartDateTime
-Timestamp, reviews starting on or after this date will be included in the fetched history data.
+Timestamp reviews starting on or after this date will be included in the fetched history data.
 
 ```yaml
 Type: System.DateTime
@@ -323,11 +322,11 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphAccessReviewHistoryInstance>`: accessReviewHistoryInstance
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DownloadUri <String>]`: Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+  - `[DownloadUri <String>]`: Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
   - `[ExpirationDateTime <DateTime?>]`: Timestamp when this instance and associated data expires and the history is deleted. Required.
-  - `[FulfilledDateTime <DateTime?>]`: Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
-  - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: Timestamp, reviews ending on or before this date will be included in the fetched history data.
-  - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: Timestamp, reviews starting on or after this date will be included in the fetched history data.
+  - `[FulfilledDateTime <DateTime?>]`: Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done. Required.
+  - `[ReviewHistoryPeriodEndDateTime <DateTime?>]`: Timestamp reviews ending on or before this date will be included in the fetched history data.
+  - `[ReviewHistoryPeriodStartDateTime <DateTime?>]`: Timestamp reviews starting on or after this date will be included in the fetched history data.
   - `[RunDateTime <DateTime?>]`: Timestamp when the instance's history data is scheduled to be generated.
   - `[Status <String>]`: accessReviewHistoryStatus
 
@@ -371,6 +370,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: The unique identifier of group
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[On <String>]`: Usage: on='{on}'
+  - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
+  - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
+  - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest
+  - `[PrivilegedAccessGroupEligibilityScheduleId <String>]`: The unique identifier of privilegedAccessGroupEligibilitySchedule
+  - `[PrivilegedAccessGroupEligibilityScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupEligibilityScheduleInstance
+  - `[PrivilegedAccessGroupEligibilityScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupEligibilityScheduleRequest
   - `[RunId <String>]`: The unique identifier of run
   - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
   - `[TaskDefinitionId <String>]`: The unique identifier of taskDefinition

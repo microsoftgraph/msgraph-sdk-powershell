@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new userFlow object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ New-MgBetaIdentityUserFlow -BodyParameter <IMicrosoftGraphIdentityUserFlow> [-Co
 
 ## DESCRIPTION
 Create a new userFlow object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

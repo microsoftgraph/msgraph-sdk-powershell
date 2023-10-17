@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the user synchronization policy for a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -InputObjec
 
 ## DESCRIPTION
 Delete the user synchronization policy for a partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

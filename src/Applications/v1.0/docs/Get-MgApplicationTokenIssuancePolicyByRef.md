@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 List the tokenIssuancePolicy objects that are assigned to an application.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-Filter <Stri
 
 ## DESCRIPTION
 List the tokenIssuancePolicy objects that are assigned to an application.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

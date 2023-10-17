@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a specific cloudPcDeviceImage object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaDeviceManagementVirtualEndpointDeviceImage -InputObject <IDeviceManage
 
 ## DESCRIPTION
 Read the properties and relationships of a specific cloudPcDeviceImage object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

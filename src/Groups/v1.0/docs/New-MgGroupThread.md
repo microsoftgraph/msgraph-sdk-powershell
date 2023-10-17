@@ -11,6 +11,7 @@ schema: 2.0.0
 Start a new group conversation by first creating a thread.
 A new conversation, conversation thread, and post are created in the group.\nUse reply thread or reply post to further post to that thread.
 Note: You can also start a new thread in an existing conversation.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,6 +49,7 @@ New-MgGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtab
 Start a new group conversation by first creating a thread.
 A new conversation, conversation thread, and post are created in the group.\nUse reply thread or reply post to further post to that thread.
 Note: You can also start a new thread in an existing conversation.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a tokenLifetimePolicy from an application.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgApplicationTokenLifetimePolicyByRef -InputObject <IApplicationsIdentity
 
 ## DESCRIPTION
 Remove a tokenLifetimePolicy from an application.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

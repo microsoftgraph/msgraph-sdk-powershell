@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Postpone action on a recommendation object to a specified future date and time by marking its status as postponed.
 On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,6 +44,7 @@ Invoke-MgBetaPostponeDirectoryRecommendation -InputObject <IIdentityDirectoryMan
 ## DESCRIPTION
 Postpone action on a recommendation object to a specified future date and time by marking its status as postponed.
 On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

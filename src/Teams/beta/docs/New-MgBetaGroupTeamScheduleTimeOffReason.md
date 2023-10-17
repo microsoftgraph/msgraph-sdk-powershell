@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new timeOffReason.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ New-MgBetaGroupTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-Additio
 
 ## DESCRIPTION
 Create a new timeOffReason.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

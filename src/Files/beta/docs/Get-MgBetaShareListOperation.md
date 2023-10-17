@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaShareListOperation
 
 ## SYNOPSIS
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaShareListOperation -InputObject <IFilesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ## EXAMPLES
 

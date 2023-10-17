@@ -8,7 +8,8 @@ schema: 2.0.0
 # Copy-MgBetaDriveRoot
 
 ## SYNOPSIS
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Copy-MgBetaDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hasht
 ```
 
 ## DESCRIPTION
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Asynchronously creates a copy of an driveItem][item-resource] (including any children), under a new parent item or with a new name.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

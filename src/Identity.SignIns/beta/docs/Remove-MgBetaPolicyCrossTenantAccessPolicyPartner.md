@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a partner-specific configuration in a cross-tenant access policy.
 If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ Remove-MgBetaPolicyCrossTenantAccessPolicyPartner -InputObject <IIdentitySignIns
 ## DESCRIPTION
 Delete a partner-specific configuration in a cross-tenant access policy.
 If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

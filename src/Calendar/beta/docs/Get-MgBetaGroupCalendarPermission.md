@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the specified permissions object of a user or group calendar that has been shared.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,6 +32,7 @@ Get-MgBetaGroupCalendarPermission -InputObject <ICalendarIdentity> [-Property <S
 
 ## DESCRIPTION
 Get the specified permissions object of a user or group calendar that has been shared.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

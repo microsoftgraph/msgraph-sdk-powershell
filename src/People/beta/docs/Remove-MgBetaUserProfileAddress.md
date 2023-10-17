@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes an itemAddress object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserProfileAddress -InputObject <IPeopleIdentity> [-IfMatch <String
 
 ## DESCRIPTION
 Deletes an itemAddress object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

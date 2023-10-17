@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a bookingAppointment in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaBookingBusinessAppointment -InputObject <IBookingsIdentity> [-IfMat
 
 ## DESCRIPTION
 Delete a bookingAppointment in the specified bookingBusiness.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

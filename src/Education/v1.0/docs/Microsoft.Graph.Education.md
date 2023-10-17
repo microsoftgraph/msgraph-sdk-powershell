@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: f03989d9-9d17-449c-9c6e-ecb42f016f70
+Module Guid: 550710c3-d01e-4d7a-927e-0203ad55baa0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,19 +16,23 @@ Retrieve a class from the system.
 A class is a universal group with a special property that indicates to the system that the group is a class.
 Group members represent the students; group admins represent the teachers in the class.
 If you're using the delegated token, the user will only see classes in which they are members.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignment](Get-MgEducationClassAssignment.md)
 Get the properties and relationships of an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
 Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentCategory](Get-MgEducationClassAssignmentCategory.md)
 Retrieve an educationCategory object.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentCategoryByRef](Get-MgEducationClassAssignmentCategoryByRef.md)
 List all the categories associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentCategoryCount](Get-MgEducationClassAssignmentCategoryCount.md)
 Get the number of the resource
@@ -44,6 +48,7 @@ Read the properties and relationships of an educationAssignmentDefaults object.
 These are the class-level assignment defaults respected by new assignments created in the class.
 Callers can continue to specify custom values on each assignment creation if they don't want the default behaviors.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentDelta](Get-MgEducationClassAssignmentDelta.md)
 Invoke function delta
@@ -51,6 +56,7 @@ Invoke function delta
 ### [Get-MgEducationClassAssignmentResource](Get-MgEducationClassAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentResourceCount](Get-MgEducationClassAssignmentResourceCount.md)
 Get the number of the resource
@@ -58,10 +64,12 @@ Get the number of the resource
 ### [Get-MgEducationClassAssignmentRubric](Get-MgEducationClassAssignmentRubric.md)
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentRubricByRef](Get-MgEducationClassAssignmentRubricByRef.md)
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentSetting](Get-MgEducationClassAssignmentSetting.md)
 Specifies class-level assignments settings.
@@ -76,6 +84,7 @@ A teacher or application with application permissions has full access to all sub
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
 Students will not see the grade or feedback until the assignment has been released.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentSubmissionCount](Get-MgEducationClassAssignmentSubmissionCount.md)
 Get the number of the resource
@@ -91,6 +100,7 @@ Retrieve the properties of a specific resource associated with a submission.
 Only teachers, students, and applications with application permissions can perform this operation.
 This resource is in the 'working' resource list and should be considered work in process by a student.
 This resource is wrapped with a possible pointer back to the assignment resource if it was copied from the assignment.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentSubmissionResourceCount](Get-MgEducationClassAssignmentSubmissionResourceCount.md)
 Get the number of the resource
@@ -99,7 +109,8 @@ Get the number of the resource
 Retrieve a submitted resource.
 Only teachers, students, and applications with application permissions can perform this operation.
 Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
-Note that teachers can leave notes in some resources.
+Teachers can leave notes in some resources.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassAssignmentSubmissionSubmittedResourceCount](Get-MgEducationClassAssignmentSubmissionSubmittedResourceCount.md)
 Get the number of the resource
@@ -113,11 +124,19 @@ Invoke function delta
 ### [Get-MgEducationClassGroup](Get-MgEducationClassGroup.md)
 The underlying Microsoft 365 group object.
 
+### [Get-MgEducationClassGroupServiceProvisioningError](Get-MgEducationClassGroupServiceProvisioningError.md)
+Get serviceProvisioningErrors property value
+
+### [Get-MgEducationClassGroupServiceProvisioningErrorCount](Get-MgEducationClassGroupServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgEducationClassMember](Get-MgEducationClassMember.md)
 Retrieves the educationUser members of an educationClass.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassMemberByRef](Get-MgEducationClassMemberByRef.md)
 Retrieves the educationUser members of an educationClass.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassMemberCount](Get-MgEducationClassMemberCount.md)
 Get the number of the resource
@@ -130,12 +149,14 @@ Nullable.
 Get the number of the resource
 
 ### [Get-MgEducationClassTeacher](Get-MgEducationClassTeacher.md)
-Retrieve a list teachers for a class.
+Retrieve a list of teachers for a class.
 Delegated tokens must be members of the class to get the teacher list.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassTeacherByRef](Get-MgEducationClassTeacherByRef.md)
-Retrieve a list teachers for a class.
+Retrieve a list of teachers for a class.
 Delegated tokens must be members of the class to get the teacher list.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationClassTeacherCount](Get-MgEducationClassTeacherCount.md)
 Get the number of the resource
@@ -149,10 +170,12 @@ Assignments belonging to the user.
 ### [Get-MgEducationMeAssignmentCategory](Get-MgEducationMeAssignmentCategory.md)
 List all the categories associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentCategoryByRef](Get-MgEducationMeAssignmentCategoryByRef.md)
 List all the categories associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentCategoryCount](Get-MgEducationMeAssignmentCategoryCount.md)
 Get the number of the resource
@@ -169,6 +192,7 @@ Invoke function delta
 ### [Get-MgEducationMeAssignmentResource](Get-MgEducationMeAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentResourceCount](Get-MgEducationMeAssignmentResourceCount.md)
 Get the number of the resource
@@ -176,10 +200,12 @@ Get the number of the resource
 ### [Get-MgEducationMeAssignmentRubric](Get-MgEducationMeAssignmentRubric.md)
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentRubricByRef](Get-MgEducationMeAssignmentRubricByRef.md)
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentSubmission](Get-MgEducationMeAssignmentSubmission.md)
 Retrieve a particular submission.
@@ -191,6 +217,7 @@ A teacher or application with application permissions has full access to all sub
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
 Students will not see the grade or feedback until the assignment has been released.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentSubmissionCount](Get-MgEducationMeAssignmentSubmissionCount.md)
 Get the number of the resource
@@ -206,6 +233,7 @@ Retrieve the properties of a specific resource associated with a submission.
 Only teachers, students, and applications with application permissions can perform this operation.
 This resource is in the 'working' resource list and should be considered work in process by a student.
 This resource is wrapped with a possible pointer back to the assignment resource if it was copied from the assignment.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentSubmissionResourceCount](Get-MgEducationMeAssignmentSubmissionResourceCount.md)
 Get the number of the resource
@@ -214,7 +242,8 @@ Get the number of the resource
 Retrieve a submitted resource.
 Only teachers, students, and applications with application permissions can perform this operation.
 Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
-Note that teachers can leave notes in some resources.
+Teachers can leave notes in some resources.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeAssignmentSubmissionSubmittedResourceCount](Get-MgEducationMeAssignmentSubmissionSubmittedResourceCount.md)
 Get the number of the resource
@@ -229,6 +258,7 @@ Get the number of the resource
 ### [Get-MgEducationMeRubric](Get-MgEducationMeRubric.md)
 Retrieve the properties and relationships of an educationRubric object.
 Only teachers and students can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeRubricCount](Get-MgEducationMeRubricCount.md)
 Get the number of the resource
@@ -248,26 +278,37 @@ Get the number of the resource
 
 ### [Get-MgEducationMeUser](Get-MgEducationMeUser.md)
 Retrieve the simple directory user that corresponds to this educationUser.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationMeUserMailboxSetting](Get-MgEducationMeUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
+### [Get-MgEducationMeUserServiceProvisioningError](Get-MgEducationMeUserServiceProvisioningError.md)
+Get serviceProvisioningErrors property value
+
+### [Get-MgEducationMeUserServiceProvisioningErrorCount](Get-MgEducationMeUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgEducationRoot](Get-MgEducationRoot.md)
 Get education
 
 ### [Get-MgEducationSchool](Get-MgEducationSchool.md)
 Read the properties and relationships of an educationSchool object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationSchoolAdministrativeUnit](Get-MgEducationSchoolAdministrativeUnit.md)
 Get a list of administrativeUnits associated with an educationSchool object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationSchoolClass](Get-MgEducationSchoolClass.md)
 Get the educationClass resources owned by an educationSchool.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationSchoolClassByRef](Get-MgEducationSchoolClassByRef.md)
 Get the educationClass resources owned by an educationSchool.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationSchoolClassCount](Get-MgEducationSchoolClassCount.md)
 Get the number of the resource
@@ -280,15 +321,18 @@ Invoke function delta
 
 ### [Get-MgEducationSchoolUser](Get-MgEducationSchoolUser.md)
 Get the educationUser resources associated with an educationSchool.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationSchoolUserByRef](Get-MgEducationSchoolUserByRef.md)
 Get the educationUser resources associated with an educationSchool.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationSchoolUserCount](Get-MgEducationSchoolUserCount.md)
 Get the number of the resource
 
 ### [Get-MgEducationUser](Get-MgEducationUser.md)
 Read the properties and relationships of an educationUser object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignment](Get-MgEducationUserAssignment.md)
 Assignments belonging to the user.
@@ -296,10 +340,12 @@ Assignments belonging to the user.
 ### [Get-MgEducationUserAssignmentCategory](Get-MgEducationUserAssignmentCategory.md)
 List all the categories associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentCategoryByRef](Get-MgEducationUserAssignmentCategoryByRef.md)
 List all the categories associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentCategoryCount](Get-MgEducationUserAssignmentCategoryCount.md)
 Get the number of the resource
@@ -316,6 +362,7 @@ Invoke function delta
 ### [Get-MgEducationUserAssignmentResource](Get-MgEducationUserAssignmentResource.md)
 Get the properties of an education assignment resource associated with an assignment.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentResourceCount](Get-MgEducationUserAssignmentResourceCount.md)
 Get the number of the resource
@@ -323,10 +370,12 @@ Get the number of the resource
 ### [Get-MgEducationUserAssignmentRubric](Get-MgEducationUserAssignmentRubric.md)
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentRubricByRef](Get-MgEducationUserAssignmentRubricByRef.md)
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentSubmission](Get-MgEducationUserAssignmentSubmission.md)
 Retrieve a particular submission.
@@ -338,6 +387,7 @@ A teacher or application with application permissions has full access to all sub
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
 Students will not see the grade or feedback until the assignment has been released.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentSubmissionCount](Get-MgEducationUserAssignmentSubmissionCount.md)
 Get the number of the resource
@@ -353,6 +403,7 @@ Retrieve the properties of a specific resource associated with a submission.
 Only teachers, students, and applications with application permissions can perform this operation.
 This resource is in the 'working' resource list and should be considered work in process by a student.
 This resource is wrapped with a possible pointer back to the assignment resource if it was copied from the assignment.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentSubmissionResourceCount](Get-MgEducationUserAssignmentSubmissionResourceCount.md)
 Get the number of the resource
@@ -361,7 +412,8 @@ Get the number of the resource
 Retrieve a submitted resource.
 Only teachers, students, and applications with application permissions can perform this operation.
 Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
-Note that teachers can leave notes in some resources.
+Teachers can leave notes in some resources.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserAssignmentSubmissionSubmittedResourceCount](Get-MgEducationUserAssignmentSubmissionSubmittedResourceCount.md)
 Get the number of the resource
@@ -387,6 +439,7 @@ Returned only on $select.
 ### [Get-MgEducationUserRubric](Get-MgEducationUserRubric.md)
 Retrieve the properties and relationships of an educationRubric object.
 Only teachers and students can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgEducationUserRubricCount](Get-MgEducationUserRubricCount.md)
 Get the number of the resource
@@ -396,6 +449,12 @@ Schools to which the user belongs.
 Nullable.
 
 ### [Get-MgEducationUserSchoolCount](Get-MgEducationUserSchoolCount.md)
+Get the number of the resource
+
+### [Get-MgEducationUserServiceProvisioningError](Get-MgEducationUserServiceProvisioningError.md)
+Get serviceProvisioningErrors property value
+
+### [Get-MgEducationUserServiceProvisioningErrorCount](Get-MgEducationUserServiceProvisioningErrorCount.md)
 Get the number of the resource
 
 ### [Get-MgEducationUserTaughtClass](Get-MgEducationUserTaughtClass.md)
@@ -411,6 +470,7 @@ Include the Prefer: include-unknown-enum-members header when you call this metho
 This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgReassignEducationMeAssignmentSubmission](Invoke-MgReassignEducationMeAssignmentSubmission.md)
 Reassign the submission to the student with feedback for review.
@@ -419,6 +479,7 @@ Include the Prefer: include-unknown-enum-members header when you call this metho
 This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgReassignEducationUserAssignmentSubmission](Invoke-MgReassignEducationUserAssignmentSubmission.md)
 Reassign the submission to the student with feedback for review.
@@ -427,21 +488,25 @@ Include the Prefer: include-unknown-enum-members header when you call this metho
 This means that the reassigned status will be mapped to the returned status, and reassignedDateTime and reassignedBy properties will be mapped to returnedDateTime and returnedBy respectively.
 If the header Prefer: include-unknown-enum-members is provided, a reassigned submission retains the reassigned status.
 For details, see the examples section.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgReturnEducationClassAssignmentSubmission](Invoke-MgReturnEducationClassAssignmentSubmission.md)
 Make the grade and feedback associated with this submission available to the student.
 This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
 This action can only be done by the teacher.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgReturnEducationMeAssignmentSubmission](Invoke-MgReturnEducationMeAssignmentSubmission.md)
 Make the grade and feedback associated with this submission available to the student.
 This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
 This action can only be done by the teacher.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgReturnEducationUserAssignmentSubmission](Invoke-MgReturnEducationUserAssignmentSubmission.md)
 Make the grade and feedback associated with this submission available to the student.
 This action changes the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
 This action can only be done by the teacher.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgUnsubmitEducationClassAssignmentSubmission](Invoke-MgUnsubmitEducationClassAssignmentSubmission.md)
 Indicate that a student wants to work on the submission of the assignment after it was turned in.
@@ -450,6 +515,7 @@ This method changes the status of the submission from submitted to working.
 During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgUnsubmitEducationMeAssignmentSubmission](Invoke-MgUnsubmitEducationMeAssignmentSubmission.md)
 Indicate that a student wants to work on the submission of the assignment after it was turned in.
@@ -458,6 +524,7 @@ This method changes the status of the submission from submitted to working.
 During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgUnsubmitEducationUserAssignmentSubmission](Invoke-MgUnsubmitEducationUserAssignmentSubmission.md)
 Indicate that a student wants to work on the submission of the assignment after it was turned in.
@@ -466,27 +533,33 @@ This method changes the status of the submission from submitted to working.
 During the submit process, all the resources are copied from submittedResources to  workingResources.
 The teacher will be looking at the working resources list for grading.
 A teacher can also unsubmit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClass](New-MgEducationClass.md)
 Create a new educationClass object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignment](New-MgEducationClassAssignment.md)
 Create a new assignment.
 Only teachers in a class can create an assignment.
 Assignments start in the Draft state, which means that students will not see the assignment until publication.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignmentCategory](New-MgEducationClassAssignmentCategory.md)
-Creates a new educationCategory on an educationClass.
+Create a new educationCategory on an educationClass.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignmentCategoryByRef](New-MgEducationClassAssignmentCategoryByRef.md)
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignmentResource](New-MgEducationClassAssignmentResource.md)
 Create an assignment resource.
 Only teachers can perform this operation.
 You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignmentSubmission](New-MgEducationClassAssignmentSubmission.md)
 Create new navigation property to submissions for education
@@ -496,6 +569,7 @@ Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
 If the file doesn't exist or isn't in that folder, the POST request will fail.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignmentSubmissionResource](New-MgEducationClassAssignmentSubmissionResource.md)
 Add an educationSubmissionResource to a submission resource list.
@@ -503,15 +577,18 @@ Only teachers and students can perform this operation.
 The operation will not succeed if the allowStudentsToAddResources flag is not set to true.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassAssignmentSubmissionSubmittedResource](New-MgEducationClassAssignmentSubmissionSubmittedResource.md)
 Create new navigation property to submittedResources for education
 
 ### [New-MgEducationClassMemberByRef](New-MgEducationClassMemberByRef.md)
 Add an educationUser member to an educationClass.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationClassTeacherByRef](New-MgEducationClassTeacherByRef.md)
 Add a teacher to a class.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationMeAssignment](New-MgEducationMeAssignment.md)
 Create new navigation property to assignments for education
@@ -519,15 +596,18 @@ Create new navigation property to assignments for education
 ### [New-MgEducationMeAssignmentCategory](New-MgEducationMeAssignmentCategory.md)
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationMeAssignmentCategoryByRef](New-MgEducationMeAssignmentCategoryByRef.md)
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationMeAssignmentResource](New-MgEducationMeAssignmentResource.md)
 Create an assignment resource.
 Only teachers can perform this operation.
 You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationMeAssignmentSubmission](New-MgEducationMeAssignmentSubmission.md)
 Create new navigation property to submissions for education
@@ -537,6 +617,7 @@ Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
 If the file doesn't exist or isn't in that folder, the POST request will fail.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationMeAssignmentSubmissionResource](New-MgEducationMeAssignmentSubmissionResource.md)
 Add an educationSubmissionResource to a submission resource list.
@@ -544,24 +625,30 @@ Only teachers and students can perform this operation.
 The operation will not succeed if the allowStudentsToAddResources flag is not set to true.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationMeAssignmentSubmissionSubmittedResource](New-MgEducationMeAssignmentSubmissionSubmittedResource.md)
 Create new navigation property to submittedResources for education
 
 ### [New-MgEducationMeRubric](New-MgEducationMeRubric.md)
 Create a new educationRubric object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationSchool](New-MgEducationSchool.md)
 Create a new educationSchool object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationSchoolClassByRef](New-MgEducationSchoolClassByRef.md)
 Add a class to a school.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationSchoolUserByRef](New-MgEducationSchoolUserByRef.md)
 Add a user to a school.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUser](New-MgEducationUser.md)
 Create a new educationUser object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUserAssignment](New-MgEducationUserAssignment.md)
 Create new navigation property to assignments for education
@@ -569,15 +656,18 @@ Create new navigation property to assignments for education
 ### [New-MgEducationUserAssignmentCategory](New-MgEducationUserAssignmentCategory.md)
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUserAssignmentCategoryByRef](New-MgEducationUserAssignmentCategoryByRef.md)
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUserAssignmentResource](New-MgEducationUserAssignmentResource.md)
 Create an assignment resource.
 Only teachers can perform this operation.
 You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUserAssignmentSubmission](New-MgEducationUserAssignmentSubmission.md)
 Create new navigation property to submissions for education
@@ -587,6 +677,7 @@ Create a new feedback resource for a submission.
 Only a teacher can perform this operation.
 To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
 If the file doesn't exist or isn't in that folder, the POST request will fail.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUserAssignmentSubmissionResource](New-MgEducationUserAssignmentSubmissionResource.md)
 Add an educationSubmissionResource to a submission resource list.
@@ -594,12 +685,14 @@ Only teachers and students can perform this operation.
 The operation will not succeed if the allowStudentsToAddResources flag is not set to true.
 To create a new file-based resource, upload the file to the resources folder associated with the submission.
 If the file doesn't exist or is not in that folder, the POST request will fail.
+This API is available in the following national cloud deployments.
 
 ### [New-MgEducationUserAssignmentSubmissionSubmittedResource](New-MgEducationUserAssignmentSubmissionSubmittedResource.md)
 Create new navigation property to submittedResources for education
 
 ### [New-MgEducationUserRubric](New-MgEducationUserRubric.md)
 Create a new educationRubric object.
+This API is available in the following national cloud deployments.
 
 ### [Publish-MgEducationClassAssignment](Publish-MgEducationClassAssignment.md)
 Publish an education assignment.
@@ -610,6 +703,7 @@ When an assignment is in draft status, students will not see the assignment, nor
 Calling this API creates educationSubmission objects and displays the assignment in each student's list.
 The state of the assignment goes back to draft if there is any backend failure during publish process.
 To update the properties of a published assignment, see update an assignment.
+This API is available in the following national cloud deployments.
 
 ### [Publish-MgEducationMeAssignment](Publish-MgEducationMeAssignment.md)
 Publish an education assignment.
@@ -620,6 +714,7 @@ When an assignment is in draft status, students will not see the assignment, nor
 Calling this API creates educationSubmission objects and displays the assignment in each student's list.
 The state of the assignment goes back to draft if there is any backend failure during publish process.
 To update the properties of a published assignment, see update an assignment.
+This API is available in the following national cloud deployments.
 
 ### [Publish-MgEducationUserAssignment](Publish-MgEducationUserAssignment.md)
 Publish an education assignment.
@@ -630,22 +725,27 @@ When an assignment is in draft status, students will not see the assignment, nor
 Calling this API creates educationSubmission objects and displays the assignment in each student's list.
 The state of the assignment goes back to draft if there is any backend failure during publish process.
 To update the properties of a published assignment, see update an assignment.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClass](Remove-MgEducationClass.md)
 Delete an educationClass.
 Because a class is also a universal group, deleting a class deletes the group.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignment](Remove-MgEducationClassAssignment.md)
 Delete an existing assignment.
 Only teachers within a class can delete assignments.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentCategory](Remove-MgEducationClassAssignmentCategory.md)
 Delete an existing category.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentCategoryByRef](Remove-MgEducationClassAssignmentCategoryByRef.md)
 Remove an educationCategory from an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentDefault](Remove-MgEducationClassAssignmentDefault.md)
 Delete navigation property assignmentDefaults for education
@@ -653,15 +753,18 @@ Delete navigation property assignmentDefaults for education
 ### [Remove-MgEducationClassAssignmentResource](Remove-MgEducationClassAssignmentResource.md)
 Delete a specific educationAssignmentResource attached to an assignment.
 In general, only teachers in the class can remove a resource.
-However, teachers cannot remove resources marked as 'distributeToStudents', after the assignment has been published to students.
+However, teachers can't remove resources marked as 'distributeToStudents', after the assignment has been published to students.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentRubric](Remove-MgEducationClassAssignmentRubric.md)
 Remove an educationRubric from an educationAssignment.
-This method does not delete the rubric itself and can only be performed by teachers.
+This method doesn't delete the rubric itself and can only be performed by teachers.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentRubricByRef](Remove-MgEducationClassAssignmentRubricByRef.md)
 Remove an educationRubric from an educationAssignment.
-This method does not delete the rubric itself and can only be performed by teachers.
+This method doesn't delete the rubric itself and can only be performed by teachers.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentSetting](Remove-MgEducationClassAssignmentSetting.md)
 Delete navigation property assignmentSettings for education
@@ -672,22 +775,26 @@ Delete navigation property submissions for education
 ### [Remove-MgEducationClassAssignmentSubmissionOutcome](Remove-MgEducationClassAssignmentSubmissionOutcome.md)
 Delete a feedback resource from a submission.
 This can only be done by a teacher.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentSubmissionResource](Remove-MgEducationClassAssignmentSubmissionResource.md)
 Delete an educationSubmissionResource from the submission.
 Only teachers and students can perform this operation.
 If the resource was copied from the assignment, a new copy of the resource will be created after the current copy is deleted.
 This allows you to 'reset' the resource to its original state.
-If the resource was not copied from the assignment but was added from the student, the resource is simply deleted.
+If the resource wasn't copied from the assignment but was added from the student, the resource is deleted.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassAssignmentSubmissionSubmittedResource](Remove-MgEducationClassAssignmentSubmissionSubmittedResource.md)
 Delete navigation property submittedResources for education
 
 ### [Remove-MgEducationClassMemberByRef](Remove-MgEducationClassMemberByRef.md)
 Remove an educationUser from an educationClass.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationClassTeacherByRef](Remove-MgEducationClassTeacherByRef.md)
-Remove teacher from an educationClass.
+Remove a teacher from an educationClass.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMe](Remove-MgEducationMe.md)
 Delete navigation property me for education
@@ -698,19 +805,23 @@ Delete navigation property assignments for education
 ### [Remove-MgEducationMeAssignmentCategoryByRef](Remove-MgEducationMeAssignmentCategoryByRef.md)
 Remove an educationCategory from an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMeAssignmentResource](Remove-MgEducationMeAssignmentResource.md)
 Delete a specific educationAssignmentResource attached to an assignment.
 In general, only teachers in the class can remove a resource.
-However, teachers cannot remove resources marked as 'distributeToStudents', after the assignment has been published to students.
+However, teachers can't remove resources marked as 'distributeToStudents', after the assignment has been published to students.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMeAssignmentRubric](Remove-MgEducationMeAssignmentRubric.md)
 Remove an educationRubric from an educationAssignment.
-This method does not delete the rubric itself and can only be performed by teachers.
+This method doesn't delete the rubric itself and can only be performed by teachers.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMeAssignmentRubricByRef](Remove-MgEducationMeAssignmentRubricByRef.md)
 Remove an educationRubric from an educationAssignment.
-This method does not delete the rubric itself and can only be performed by teachers.
+This method doesn't delete the rubric itself and can only be performed by teachers.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMeAssignmentSubmission](Remove-MgEducationMeAssignmentSubmission.md)
 Delete navigation property submissions for education
@@ -718,13 +829,15 @@ Delete navigation property submissions for education
 ### [Remove-MgEducationMeAssignmentSubmissionOutcome](Remove-MgEducationMeAssignmentSubmissionOutcome.md)
 Delete a feedback resource from a submission.
 This can only be done by a teacher.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMeAssignmentSubmissionResource](Remove-MgEducationMeAssignmentSubmissionResource.md)
 Delete an educationSubmissionResource from the submission.
 Only teachers and students can perform this operation.
 If the resource was copied from the assignment, a new copy of the resource will be created after the current copy is deleted.
 This allows you to 'reset' the resource to its original state.
-If the resource was not copied from the assignment but was added from the student, the resource is simply deleted.
+If the resource wasn't copied from the assignment but was added from the student, the resource is deleted.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationMeAssignmentSubmissionSubmittedResource](Remove-MgEducationMeAssignmentSubmissionSubmittedResource.md)
 Delete navigation property submittedResources for education
@@ -732,18 +845,23 @@ Delete navigation property submittedResources for education
 ### [Remove-MgEducationMeRubric](Remove-MgEducationMeRubric.md)
 Delete an educationRubric object.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationSchool](Remove-MgEducationSchool.md)
 Delete a school.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationSchoolClassByRef](Remove-MgEducationSchoolClassByRef.md)
 Delete a class from a school.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationSchoolUserByRef](Remove-MgEducationSchoolUserByRef.md)
 Delete a user from a school.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUser](Remove-MgEducationUser.md)
 Delete a user.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignment](Remove-MgEducationUserAssignment.md)
 Delete navigation property assignments for education
@@ -751,19 +869,23 @@ Delete navigation property assignments for education
 ### [Remove-MgEducationUserAssignmentCategoryByRef](Remove-MgEducationUserAssignmentCategoryByRef.md)
 Remove an educationCategory from an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignmentResource](Remove-MgEducationUserAssignmentResource.md)
 Delete a specific educationAssignmentResource attached to an assignment.
 In general, only teachers in the class can remove a resource.
-However, teachers cannot remove resources marked as 'distributeToStudents', after the assignment has been published to students.
+However, teachers can't remove resources marked as 'distributeToStudents', after the assignment has been published to students.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignmentRubric](Remove-MgEducationUserAssignmentRubric.md)
 Remove an educationRubric from an educationAssignment.
-This method does not delete the rubric itself and can only be performed by teachers.
+This method doesn't delete the rubric itself and can only be performed by teachers.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignmentRubricByRef](Remove-MgEducationUserAssignmentRubricByRef.md)
 Remove an educationRubric from an educationAssignment.
-This method does not delete the rubric itself and can only be performed by teachers.
+This method doesn't delete the rubric itself and can only be performed by teachers.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignmentSubmission](Remove-MgEducationUserAssignmentSubmission.md)
 Delete navigation property submissions for education
@@ -771,13 +893,15 @@ Delete navigation property submissions for education
 ### [Remove-MgEducationUserAssignmentSubmissionOutcome](Remove-MgEducationUserAssignmentSubmissionOutcome.md)
 Delete a feedback resource from a submission.
 This can only be done by a teacher.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignmentSubmissionResource](Remove-MgEducationUserAssignmentSubmissionResource.md)
 Delete an educationSubmissionResource from the submission.
 Only teachers and students can perform this operation.
 If the resource was copied from the assignment, a new copy of the resource will be created after the current copy is deleted.
 This allows you to 'reset' the resource to its original state.
-If the resource was not copied from the assignment but was added from the student, the resource is simply deleted.
+If the resource wasn't copied from the assignment but was added from the student, the resource is deleted.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgEducationUserAssignmentSubmissionSubmittedResource](Remove-MgEducationUserAssignmentSubmissionSubmittedResource.md)
 Delete navigation property submittedResources for education
@@ -785,66 +909,79 @@ Delete navigation property submittedResources for education
 ### [Remove-MgEducationUserRubric](Remove-MgEducationUserRubric.md)
 Delete an educationRubric object.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationClassAssignmentRubricByRef](Set-MgEducationClassAssignmentRubricByRef.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationClassAssignmentSubmissionUpResourceFolder](Set-MgEducationClassAssignmentSubmissionUpResourceFolder.md)
 Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
 Only teachers and students can perform this operation.
 Note that files must be located in this folder in order to be added as resources.
 Only a student in the class can determine what files to upload in a given submission-level resource folder.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationClassAssignmentUpFeedbackResourceFolder](Set-MgEducationClassAssignmentUpFeedbackResourceFolder.md)
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the feedback resources folder of a submission.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationClassAssignmentUpResourceFolder](Set-MgEducationClassAssignmentUpResourceFolder.md)
 Create a SharePoint folder to upload files for a given educationAssignment.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationMeAssignmentRubricByRef](Set-MgEducationMeAssignmentRubricByRef.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationMeAssignmentSubmissionUpResourceFolder](Set-MgEducationMeAssignmentSubmissionUpResourceFolder.md)
 Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
 Only teachers and students can perform this operation.
 Note that files must be located in this folder in order to be added as resources.
 Only a student in the class can determine what files to upload in a given submission-level resource folder.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationMeAssignmentUpFeedbackResourceFolder](Set-MgEducationMeAssignmentUpFeedbackResourceFolder.md)
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the feedback resources folder of a submission.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationMeAssignmentUpResourceFolder](Set-MgEducationMeAssignmentUpResourceFolder.md)
 Create a SharePoint folder to upload files for a given educationAssignment.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationUserAssignmentRubricByRef](Set-MgEducationUserAssignmentRubricByRef.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationUserAssignmentSubmissionUpResourceFolder](Set-MgEducationUserAssignmentSubmissionUpResourceFolder.md)
 Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
 Only teachers and students can perform this operation.
 Note that files must be located in this folder in order to be added as resources.
 Only a student in the class can determine what files to upload in a given submission-level resource folder.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationUserAssignmentUpFeedbackResourceFolder](Set-MgEducationUserAssignmentUpFeedbackResourceFolder.md)
 Create a SharePoint folder to upload feedback files for a given educationSubmission.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the feedback resources folder of a submission.
+This API is available in the following national cloud deployments.
 
 ### [Set-MgEducationUserAssignmentUpResourceFolder](Set-MgEducationUserAssignmentUpResourceFolder.md)
 Create a SharePoint folder to upload files for a given educationAssignment.
 Only teachers can perform this operation.
 The teacher determines the resources to upload in the assignment's folder.
+This API is available in the following national cloud deployments.
 
 ### [Submit-MgEducationClassAssignmentSubmission](Submit-MgEducationClassAssignmentSubmission.md)
 Indicate that a student is done with the work and is ready to hand in the assignment.
@@ -853,6 +990,7 @@ This method changes the status of the submission from working to submitted.
 During the submit process, all the resources are copied to the submittedResources bucket.
 The teacher will be looking at the submitted resources list for grading.
 A teacher can also submit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ### [Submit-MgEducationMeAssignmentSubmission](Submit-MgEducationMeAssignmentSubmission.md)
 Indicate that a student is done with the work and is ready to hand in the assignment.
@@ -861,6 +999,7 @@ This method changes the status of the submission from working to submitted.
 During the submit process, all the resources are copied to the submittedResources bucket.
 The teacher will be looking at the submitted resources list for grading.
 A teacher can also submit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ### [Submit-MgEducationUserAssignmentSubmission](Submit-MgEducationUserAssignmentSubmission.md)
 Indicate that a student is done with the work and is ready to hand in the assignment.
@@ -869,15 +1008,18 @@ This method changes the status of the submission from working to submitted.
 During the submit process, all the resources are copied to the submittedResources bucket.
 The teacher will be looking at the submitted resources list for grading.
 A teacher can also submit a student's assignment on their behalf.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClass](Update-MgEducationClass.md)
 Update the properties of an educationClass object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClassAssignment](Update-MgEducationClassAssignment.md)
 Update an educationAssignment object.
 Only teachers can perform this action.
 Alternatively, request to change the status of an assignment with publish action.
 Don't use a PATCH operation for this purpose.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClassAssignmentCategory](Update-MgEducationClassAssignmentCategory.md)
 Update the navigation property assignmentCategories in education
@@ -885,6 +1027,7 @@ Update the navigation property assignmentCategories in education
 ### [Update-MgEducationClassAssignmentDefault](Update-MgEducationClassAssignmentDefault.md)
 Update the properties of an educationAssignmentDefaults object.
 Only teachers can update these settings.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClassAssignmentResource](Update-MgEducationClassAssignmentResource.md)
 Update the navigation property resources in education
@@ -892,10 +1035,12 @@ Update the navigation property resources in education
 ### [Update-MgEducationClassAssignmentRubric](Update-MgEducationClassAssignmentRubric.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClassAssignmentSetting](Update-MgEducationClassAssignmentSetting.md)
 Update the properties of an educationAssignmentSettings object.
 Only teachers can update these settings.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClassAssignmentSubmission](Update-MgEducationClassAssignmentSubmission.md)
 Update the navigation property submissions in education
@@ -903,6 +1048,7 @@ Update the navigation property submissions in education
 ### [Update-MgEducationClassAssignmentSubmissionOutcome](Update-MgEducationClassAssignmentSubmissionOutcome.md)
 Update the properties of an educationOutcome object.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationClassAssignmentSubmissionResource](Update-MgEducationClassAssignmentSubmissionResource.md)
 Update the navigation property resources in education
@@ -922,6 +1068,7 @@ Update the navigation property resources in education
 ### [Update-MgEducationMeAssignmentRubric](Update-MgEducationMeAssignmentRubric.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationMeAssignmentSubmission](Update-MgEducationMeAssignmentSubmission.md)
 Update the navigation property submissions in education
@@ -929,6 +1076,7 @@ Update the navigation property submissions in education
 ### [Update-MgEducationMeAssignmentSubmissionOutcome](Update-MgEducationMeAssignmentSubmissionOutcome.md)
 Update the properties of an educationOutcome object.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationMeAssignmentSubmissionResource](Update-MgEducationMeAssignmentSubmissionResource.md)
 Update the navigation property resources in education
@@ -939,9 +1087,10 @@ Update the navigation property submittedResources in education
 ### [Update-MgEducationMeRubric](Update-MgEducationMeRubric.md)
 Update the properties of an educationRubric object.
 Only teachers can perform this operation.
-Updating a rubric attached to an assignment (PATCH /education/classes/acdefc6b-2dc6-4e71-b1e9-6d9810ab1793/assignments/cf6005fc-9e13-44a2-a6ac-a53322006454/rubric) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under /education/users/{id}/rubrics.
+Updating a rubric attached to an assignment (PATCH /education/classes/{class-id}/assignments/{assignment-id}/rubric) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under /education/users/{id}/rubrics.
 After the assignment is published, an immutable copy of the rubric is made that is attached to that specific assignment.
-That rubric can be retrieved using GET /education/classes/acdefc6b-2dc6-4e71-b1e9-6d9810ab1793/assignments/cf6005fc-9e13-44a2-a6ac-a53322006454/rubric, but it cannot be updated.
+That rubric can be retrieved using GET /education/classes/{class-id}/assignments/{assignment-id}/rubric, but it cannot be updated.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationMeUserMailboxSetting](Update-MgEducationMeUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -951,12 +1100,14 @@ Update education
 
 ### [Update-MgEducationSchool](Update-MgEducationSchool.md)
 Update the properties of an educationSchool object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationSchoolAdministrativeUnit](Update-MgEducationSchoolAdministrativeUnit.md)
 Update the navigation property administrativeUnit in education
 
 ### [Update-MgEducationUser](Update-MgEducationUser.md)
 Update the properties of an educationUser object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationUserAssignment](Update-MgEducationUserAssignment.md)
 Update the navigation property assignments in education
@@ -967,6 +1118,7 @@ Update the navigation property resources in education
 ### [Update-MgEducationUserAssignmentRubric](Update-MgEducationUserAssignmentRubric.md)
 Attach an existing educationRubric object to an educationAssignment.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationUserAssignmentSubmission](Update-MgEducationUserAssignmentSubmission.md)
 Update the navigation property submissions in education
@@ -974,6 +1126,7 @@ Update the navigation property submissions in education
 ### [Update-MgEducationUserAssignmentSubmissionOutcome](Update-MgEducationUserAssignmentSubmissionOutcome.md)
 Update the properties of an educationOutcome object.
 Only teachers can perform this operation.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgEducationUserAssignmentSubmissionResource](Update-MgEducationUserAssignmentSubmissionResource.md)
 Update the navigation property resources in education
@@ -987,7 +1140,8 @@ Update property mailboxSettings value.
 ### [Update-MgEducationUserRubric](Update-MgEducationUserRubric.md)
 Update the properties of an educationRubric object.
 Only teachers can perform this operation.
-Updating a rubric attached to an assignment (PATCH /education/classes/acdefc6b-2dc6-4e71-b1e9-6d9810ab1793/assignments/cf6005fc-9e13-44a2-a6ac-a53322006454/rubric) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under /education/users/{id}/rubrics.
+Updating a rubric attached to an assignment (PATCH /education/classes/{class-id}/assignments/{assignment-id}/rubric) is only possible before the assignment is published, and what is updated is actually the original rubric that exists under /education/users/{id}/rubrics.
 After the assignment is published, an immutable copy of the rubric is made that is attached to that specific assignment.
-That rubric can be retrieved using GET /education/classes/acdefc6b-2dc6-4e71-b1e9-6d9810ab1793/assignments/cf6005fc-9e13-44a2-a6ac-a53322006454/rubric, but it cannot be updated.
+That rubric can be retrieved using GET /education/classes/{class-id}/assignments/{assignment-id}/rubric, but it cannot be updated.
+This API is available in the following national cloud deployments.
 

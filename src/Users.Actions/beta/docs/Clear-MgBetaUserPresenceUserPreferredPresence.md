@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Clear the preferred availability and activity status for a user.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Clear-MgBetaUserPresenceUserPreferredPresence -InputObject <IUsersActionsIdentit
 
 ## DESCRIPTION
 Clear the preferred availability and activity status for a user.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -34,10 +36,7 @@ Clear the preferred availability and activity status for a user.
 Import-Module Microsoft.Graph.Beta.Users.Actions
 ```
 
-$params = @{
-}
-
-Clear-MgBetaUserPresenceUserPreferredPresence -UserId $userId -BodyParameter $params
+Clear-MgBetaUserPresenceUserPreferredPresence -UserId $userId
 
 ## PARAMETERS
 
@@ -150,7 +149,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CloudPcId <String>]`: The unique identifier of cloudPC
   - `[ContentTypeId <String>]`: The unique identifier of contentType
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: The unique identifier of device
   - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
   - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
   - `[DriveId <String>]`: The unique identifier of drive
@@ -172,7 +170,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OutlookTaskGroupId <String>]`: The unique identifier of outlookTaskGroup
   - `[OutlookTaskId <String>]`: The unique identifier of outlookTask
   - `[PermissionId <String>]`: The unique identifier of permission
-  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation

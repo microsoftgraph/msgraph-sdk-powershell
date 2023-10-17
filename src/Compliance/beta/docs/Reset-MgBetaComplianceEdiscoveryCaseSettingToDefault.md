@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reset a caseSettings object to the default values.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Reset-MgBetaComplianceEdiscoveryCaseSettingToDefault -InputObject <IComplianceId
 
 ## DESCRIPTION
 Reset a caseSettings object to the default values.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

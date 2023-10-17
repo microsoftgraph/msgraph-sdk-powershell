@@ -291,11 +291,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[ContainerDisplayName <String>]`: A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
     - `[ContainerType <String>]`: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
     - `[ContainerWebUrl <String>]`: A path leading to the folder in which the item is stored.
-    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+    - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
     - `[PreviewImageUrl <String>]`: A URL leading to the preview image for the item.
     - `[PreviewText <String>]`: A preview text for the item.
     - `[Title <String>]`: The item's title text.
-    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+    - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.
   - `[Weight <Double?>]`: Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
 
 `INPUTOBJECT <IUsersIdentity>`: Identity Parameter
@@ -337,11 +337,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContainerDisplayName <String>]`: A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
   - `[ContainerType <String>]`: Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
   - `[ContainerWebUrl <String>]`: A path leading to the folder in which the item is stored.
-  - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+  - `[MediaType <String>]`: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
   - `[PreviewImageUrl <String>]`: A URL leading to the preview image for the item.
   - `[PreviewText <String>]`: A preview text for the item.
   - `[Title <String>]`: The item's title text.
-  - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+  - `[Type <String>]`: The item's media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.
 
 ## RELATED LINKS
 

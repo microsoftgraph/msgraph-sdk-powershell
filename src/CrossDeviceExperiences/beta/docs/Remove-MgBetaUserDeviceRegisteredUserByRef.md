@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a user as a registered user of the device.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserDeviceRegisteredUserByRef -InputObject <ICrossDeviceExperiences
 
 ## DESCRIPTION
 Remove a user as a registered user of the device.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

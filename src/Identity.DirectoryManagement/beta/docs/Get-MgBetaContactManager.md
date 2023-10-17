@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaContactManager
 
 ## SYNOPSIS
-Get the contact's manager
+Get the contact's manager This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaContactManager -InputObject <IIdentityDirectoryManagementIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get the contact's manager
+Get the contact's manager This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

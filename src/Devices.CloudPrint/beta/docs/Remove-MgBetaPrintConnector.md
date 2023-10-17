@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete (unregister) a printConnector.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-IfMatch 
 
 ## DESCRIPTION
 Delete (unregister) a printConnector.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

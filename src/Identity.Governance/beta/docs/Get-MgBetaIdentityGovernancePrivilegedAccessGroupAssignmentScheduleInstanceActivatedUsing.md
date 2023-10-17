@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group.
-Otherwise, it is null.
+Otherwise, it's null.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Get-MgBetaIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstanceActiv
 
 ## DESCRIPTION
 When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group.
-Otherwise, it is null.
+Otherwise, it's null.
 
 ## EXAMPLES
 
@@ -182,6 +182,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
+  - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance
   - `[PrivilegedAccessGroupAssignmentScheduleRequestId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleRequest

@@ -10,9 +10,10 @@ schema: 2.0.0
 ## SYNOPSIS
 Restore an archived team.
 This restores users' ability to send messages and edit the team, abiding by tenant and team settings.
-Teams are archived using the archive API.
+A Team is archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,9 +30,10 @@ Invoke-MgUnarchiveTeam -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-Wh
 ## DESCRIPTION
 Restore an archived team.
 This restores users' ability to send messages and edit the team, abiding by tenant and team settings.
-Teams are archived using the archive API.
+A Team is archived using the archive API.
 Unarchiving is an async operation.
 A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPolicyPermissionGrantPolicyInclude
 
 ## SYNOPSIS
-Condition sets which are included in this permission grant policy.
+Condition sets that are included in this permission grant policy.
 Automatically expanded on GET.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdent
 ```
 
 ## DESCRIPTION
-Condition sets which are included in this permission grant policy.
+Condition sets that are included in this permission grant policy.
 Automatically expanded on GET.
 
 ## EXAMPLES

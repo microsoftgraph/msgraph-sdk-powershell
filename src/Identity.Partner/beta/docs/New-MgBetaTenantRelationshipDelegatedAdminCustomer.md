@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ### -DisplayName
 The Azure AD display name of the customer tenant.
 Read-only.
-Supports $orderBy.
+Supports $orderby.
 
 ```yaml
 Type: System.String
@@ -196,7 +196,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphDelegatedAdminCustomer>`: delegatedAdminCustomer
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+  - `[DisplayName <String>]`: The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
   - `[ServiceManagementDetails <IMicrosoftGraphDelegatedAdminServiceManagementDetail[]>]`: Contains the management details of a service in the customer tenant that's managed by delegated administration.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ServiceManagementUrl <String>]`: The URL of the management portal for the managed service. Read-only.

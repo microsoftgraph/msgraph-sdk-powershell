@@ -9,10 +9,14 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a copy of a team.
-This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen.
-\n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'.
-\nYou should continue to GET until the status is not 'running'.
-\nThe recommended delay between GETs is 5 seconds.
+This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured.
+The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen.
+\nIf the user who opens the tab doesn't have permission to configure apps, they'll see a message that says that the tab isn't configured.
+Cloning is a long-running operation.
+After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed.
+You should continue to GET until the status isn't running.
+The recommended delay between GETs is 5 seconds.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,10 +50,14 @@ Copy-MgTeam -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-
 
 ## DESCRIPTION
 Create a copy of a team.
-This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen.
-\n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'.
-\nYou should continue to GET until the status is not 'running'.
-\nThe recommended delay between GETs is 5 seconds.
+This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they aren't configured.
+The tabs are displayed on the tab bar in Microsoft Teams, and the first time a user opens them, they must go through the configuration screen.
+\nIf the user who opens the tab doesn't have permission to configure apps, they'll see a message that says that the tab isn't configured.
+Cloning is a long-running operation.
+After the POST clone returns, you need to GET the operation returned by the Location: header to see if it's running, succeeded, or failed.
+You should continue to GET until the status isn't running.
+The recommended delay between GETs is 5 seconds.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

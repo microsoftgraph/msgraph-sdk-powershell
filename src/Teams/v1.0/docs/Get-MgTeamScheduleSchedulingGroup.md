@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a schedulingGroup by ID.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ Get-MgTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Property <Stri
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a schedulingGroup by ID.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

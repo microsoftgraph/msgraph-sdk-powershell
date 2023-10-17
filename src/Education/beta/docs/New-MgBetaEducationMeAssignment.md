@@ -537,6 +537,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotificationChannelUrl <String>]`: Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
   - `[Resources <IMicrosoftGraphEducationAssignmentResource[]>]`: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[DependentResources <IMicrosoftGraphEducationAssignmentResource[]>]`: 
     - `[DistributeForStudentWork <Boolean?>]`: Indicates whether this resource should be copied to each student submission for modification and submission. Required
     - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -575,7 +576,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Resources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+      - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.
+      - `[DependentResources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
       - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[ReturnedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Status <String>]`: educationSubmissionStatus
@@ -618,6 +620,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `RESOURCES <IMicrosoftGraphEducationAssignmentResource[]>`: Learning objects that are associated with this assignment. Only teachers can modify this list. Nullable.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
+  - `[DependentResources <IMicrosoftGraphEducationAssignmentResource[]>]`: 
   - `[DistributeForStudentWork <Boolean?>]`: Indicates whether this resource should be copied to each student submission for modification and submission. Required
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -682,7 +685,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Resources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+    - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.
+    - `[DependentResources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
     - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet

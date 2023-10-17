@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new activityBasedTimeoutPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ New-MgBetaPolicyActivityBasedTimeoutPolicy -BodyParameter <Hashtable> [-Confirm]
 
 ## DESCRIPTION
 Create a new activityBasedTimeoutPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

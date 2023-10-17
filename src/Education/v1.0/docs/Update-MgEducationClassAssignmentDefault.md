@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of an educationAssignmentDefaults object.
 Only teachers can update these settings.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Update-MgEducationClassAssignmentDefault -InputObject <IEducationIdentity> [-Add
 ## DESCRIPTION
 Update the properties of an educationAssignmentDefaults object.
 Only teachers can update these settings.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

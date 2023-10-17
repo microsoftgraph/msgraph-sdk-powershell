@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties of an identityApiConnector object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgIdentityApiConnector -InputObject <IIdentitySignInsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Read the properties of an identityApiConnector object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

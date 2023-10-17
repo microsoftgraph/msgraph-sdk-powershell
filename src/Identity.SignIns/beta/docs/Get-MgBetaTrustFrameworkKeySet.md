@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and associations for a Trustframeworkkeyset.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaTrustFrameworkKeySet -InputObject <IIdentitySignInsIdentity> [-ExpandP
 
 ## DESCRIPTION
 Retrieve the properties and associations for a Trustframeworkkeyset.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Uninstall an app from the personal scope of the specified user.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaUserTeamworkInstalledApp -InputObject <ITeamsIdentity> [-IfMatch <S
 
 ## DESCRIPTION
 Uninstall an app from the personal scope of the specified user.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

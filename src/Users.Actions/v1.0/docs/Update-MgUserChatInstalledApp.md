@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Upgrade an app installation within a chat.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Update-MgUserChatInstalledApp -InputObject <IUsersActionsIdentity> [-AdditionalP
 
 ## DESCRIPTION
 Upgrade an app installation within a chat.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

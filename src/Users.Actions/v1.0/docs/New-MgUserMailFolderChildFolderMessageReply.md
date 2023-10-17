@@ -14,6 +14,7 @@ Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is spec
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply to a message in a single operation.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,6 +54,7 @@ Specifying both will return an HTTP 400 Bad Request error.\n- If replyTo is spec
 When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
 Send the draft message in a subsequent operation.
 Alternatively, reply to a message in a single operation.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

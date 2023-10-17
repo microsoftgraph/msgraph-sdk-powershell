@@ -108,7 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The display name of the front-line service plan.
+For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 
 ```yaml
 Type: System.String
@@ -155,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -TotalCount
-.
+The total number of front-line service plans purchased by the customer.
 
 ```yaml
 Type: System.Int32
@@ -170,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -UsedCount
-.
+The number of service plans that have been used for the account.
 
 ```yaml
 Type: System.Int32
@@ -240,9 +241,9 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphCloudPcFrontLineServicePlan>`: cloudPcFrontLineServicePlan
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: 
-  - `[TotalCount <Int32?>]`: 
-  - `[UsedCount <Int32?>]`: 
+  - `[DisplayName <String>]`: The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
+  - `[TotalCount <Int32?>]`: The total number of front-line service plans purchased by the customer.
+  - `[UsedCount <Int32?>]`: The number of service plans that have been used for the account.
 
 `INPUTOBJECT <IDeviceManagementAdministrationIdentity>`: Identity Parameter
   - `[AuditEventId <String>]`: The unique identifier of auditEvent

@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new cloudPcDeviceImage object.
 Upload a custom OS image that you can later provision on Cloud PCs.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ New-MgBetaDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftG
 ## DESCRIPTION
 Create a new cloudPcDeviceImage object.
 Upload a custom OS image that you can later provision on Cloud PCs.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

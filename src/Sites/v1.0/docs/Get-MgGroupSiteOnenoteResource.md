@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -36,7 +36,7 @@ Get-MgGroupSiteOnenoteResource -InputObject <ISitesIdentity> [-ExpandProperty <S
 
 ## DESCRIPTION
 The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 

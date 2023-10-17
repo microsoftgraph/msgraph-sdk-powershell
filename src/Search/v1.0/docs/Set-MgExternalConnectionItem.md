@@ -277,7 +277,7 @@ To create the parameters described below, construct a hash table containing the 
 `ACL <IMicrosoftGraphExternalConnectorsAcl[]>`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
   - `[AccessType <String>]`: accessType
   - `[Type <String>]`: aclType
-  - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
+  - `[Value <String>]`: The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup
 
 `ACTIVITIES <IMicrosoftGraphExternalConnectorsExternalActivity[]>`: Returns a list of activities performed on the item. Write-only.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -294,7 +294,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Acl <IMicrosoftGraphExternalConnectorsAcl[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     - `[AccessType <String>]`: accessType
     - `[Type <String>]`: aclType
-    - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
+    - `[Value <String>]`: The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup
   - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Returns a list of activities performed on the item. Write-only.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity

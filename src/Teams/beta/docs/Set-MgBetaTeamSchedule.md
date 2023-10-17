@@ -594,9 +594,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: The shift label of the shiftItem.
       - `[Notes <String>]`: The shift notes for the shiftItem.
     - `[IsStagedForDeletion <Boolean?>]`: 
-    - `[SchedulingGroupId <String>]`: 
+    - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
     - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
-    - `[UserId <String>]`: 
+    - `[UserId <String>]`: ID of the user assigned to the shift. Required.
   - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
     - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
     - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
@@ -826,9 +826,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The shift label of the shiftItem.
     - `[Notes <String>]`: The shift notes for the shiftItem.
   - `[IsStagedForDeletion <Boolean?>]`: 
-  - `[SchedulingGroupId <String>]`: 
+  - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
   - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
-  - `[UserId <String>]`: 
+  - `[UserId <String>]`: ID of the user assigned to the shift. Required.
 
 `SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest[]>`: The swap requests for shifts in the schedule.
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.

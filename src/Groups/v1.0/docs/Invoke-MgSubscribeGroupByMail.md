@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Invoke-MgSubscribeGroupByMail -InputObject <IGroupsIdentity> [-PassThru] [-Confi
 ## DESCRIPTION
 Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
 Supported for Microsoft 365 groups only.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

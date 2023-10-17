@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Check in a checked out driveItem resource, which makes the version of the document available to others.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,6 +42,7 @@ Invoke-MgCheckinGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProper
 
 ## DESCRIPTION
 Check in a checked out driveItem resource, which makes the version of the document available to others.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

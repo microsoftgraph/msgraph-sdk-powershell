@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an authenticationMethodsPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,6 +33,7 @@ Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAut
 
 ## DESCRIPTION
 Update the properties of an authenticationMethodsPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -354,7 +356,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The object identifier of an Azure AD user or group.
         - `[TargetType <String>]`: authenticationMethodTargetType
         - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-      - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+      - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
       - `[State <String>]`: advancedConfigState
   - `[ReportSuspiciousActivitySettings <IMicrosoftGraphReportSuspiciousActivitySettings>]`: reportSuspiciousActivitySettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -363,7 +365,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The ID of the entity targeted.
       - `[TargetType <String>]`: authenticationMethodTargetType
     - `[State <String>]`: advancedConfigState
-    - `[VoiceReportingCode <Int32?>]`: Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.
+    - `[VoiceReportingCode <Int32?>]`: Specifies the number the user enters on their phone to report the MFA prompt as suspicious.
   - `[SystemCredentialPreferences <IMicrosoftGraphSystemCredentialPreferences>]`: systemCredentialPreferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups excluded from the preferred authentication method experience of the system.
@@ -381,7 +383,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The object identifier of an Azure AD user or group.
       - `[TargetType <String>]`: authenticationMethodTargetType
       - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-    - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is '0' – The user is prompted during every MFA attempt.
+    - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
     - `[State <String>]`: advancedConfigState
 
 `REPORTSUSPICIOUSACTIVITYSETTINGS <IMicrosoftGraphReportSuspiciousActivitySettings>`: reportSuspiciousActivitySettings
@@ -391,7 +393,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The ID of the entity targeted.
     - `[TargetType <String>]`: authenticationMethodTargetType
   - `[State <String>]`: advancedConfigState
-  - `[VoiceReportingCode <Int32?>]`: Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.
+  - `[VoiceReportingCode <Int32?>]`: Specifies the number the user enters on their phone to report the MFA prompt as suspicious.
 
 `SYSTEMCREDENTIALPREFERENCES <IMicrosoftGraphSystemCredentialPreferences>`: systemCredentialPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

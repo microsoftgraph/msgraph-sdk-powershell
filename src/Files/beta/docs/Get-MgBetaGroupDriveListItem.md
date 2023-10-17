@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaGroupDriveListItem
 
 ## SYNOPSIS
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaGroupDriveListItem -InputObject <IFilesIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

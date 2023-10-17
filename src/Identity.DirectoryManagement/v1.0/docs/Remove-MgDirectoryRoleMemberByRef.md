@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove a member from a directoryRole.
 You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,8 +31,9 @@ Remove-MgDirectoryRoleMemberByRef -InputObject <IIdentityDirectoryManagementIden
 ## DESCRIPTION
 Remove a member from a directoryRole.
 You can use both the object ID and template ID of the directoryRole with this API.
-The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal.
+The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center.
 For details, see Role template IDs.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -205,6 +207,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OrgContactId <String>]`: The unique identifier of orgContact
   - `[OrganizationId <String>]`: The unique identifier of organization
   - `[OrganizationalBrandingLocalizationId <String>]`: The unique identifier of organizationalBrandingLocalization
+  - `[ProfileCardPropertyId <String>]`: The unique identifier of profileCardProperty
   - `[RoleTemplateId <String>]`: Alternate key of directoryRole
   - `[ScopedRoleMembershipId <String>]`: The unique identifier of scopedRoleMembership
   - `[SubscribedSkuId <String>]`: The unique identifier of subscribedSku

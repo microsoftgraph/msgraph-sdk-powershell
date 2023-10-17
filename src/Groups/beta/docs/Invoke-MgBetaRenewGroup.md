@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Invoke-MgBetaRenewGroup -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-
 ## DESCRIPTION
 Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

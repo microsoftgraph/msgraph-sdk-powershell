@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 461fc21b-bc26-4ed2-8714-03b54d11e7ed
+Module Guid: a9ede8dd-dfb7-4963-b0a3-0245c1a285e8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,96 +15,117 @@ Microsoft Graph PowerShell Cmdlets
 Follow a user's site or multiple sites.
 
 ### [Add-MgBetaSiteContentTypeCopy](Add-MgBetaSiteContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Add a copy of a content type][contentType] from a [site][site] to a [list][list].
+This API is available in the following [national cloud deployments.
 
 ### [Add-MgBetaSiteContentTypeCopyFromContentTypeHub](Add-MgBetaSiteContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaSiteListContentTypeCopy](Add-MgBetaSiteListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Add a copy of a content type][contentType] from a [site][site] to a [list][list].
+This API is available in the following [national cloud deployments.
 
 ### [Add-MgBetaSiteListContentTypeCopyFromContentTypeHub](Add-MgBetaSiteListContentTypeCopyFromContentTypeHub.md)
 Add or sync a copy of a published content type from the content type hub to a target site or a list.
 This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
 The method allows users to pull content types directly from the content type hub to a site or list.
 For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgBetaSiteInformationProtectionSignature](Confirm-MgBetaSiteInformationProtectionSignature.md)
 Invoke action verifySignature
 
 ### [Copy-MgBetaSiteContentTypeToDefaultContentLocation](Copy-MgBetaSiteContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
+Copy a file to a default content location in a content type][contentType].
 The file can then be added as a default file or template via a POST operation.
+This API is available in the following [national cloud deployments.
 
 ### [Copy-MgBetaSiteListContentTypeToDefaultContentLocation](Copy-MgBetaSiteListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
+Copy a file to a default content location in a content type][contentType].
 The file can then be added as a default file or template via a POST operation.
+This API is available in the following [national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebook](Copy-MgBetaSiteOnenoteNotebook.md)
 Copies a notebook to the Notebooks folder in the destination Documents library.
 The folder is created if it doesn't exist.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebookSectionGroupSectionPageToSection](Copy-MgBetaSiteOnenoteNotebookSectionGroupSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebookSectionGroupSectionToNotebook](Copy-MgBetaSiteOnenoteNotebookSectionGroupSectionToNotebook.md)
 Copies a section to a specific notebook.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebookSectionGroupSectionToSectionGroup](Copy-MgBetaSiteOnenoteNotebookSectionGroupSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebookSectionPageToSection](Copy-MgBetaSiteOnenoteNotebookSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebookSectionToNotebook](Copy-MgBetaSiteOnenoteNotebookSectionToNotebook.md)
 Copies a section to a specific notebook.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteNotebookSectionToSectionGroup](Copy-MgBetaSiteOnenoteNotebookSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenotePageToSection](Copy-MgBetaSiteOnenotePageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteSectionGroupSectionPageToSection](Copy-MgBetaSiteOnenoteSectionGroupSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteSectionGroupSectionToNotebook](Copy-MgBetaSiteOnenoteSectionGroupSectionToNotebook.md)
 Copies a section to a specific notebook.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteSectionGroupSectionToSectionGroup](Copy-MgBetaSiteOnenoteSectionGroupSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteSectionPageToSection](Copy-MgBetaSiteOnenoteSectionPageToSection.md)
 Copy a page to a specific section.
 For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteSectionToNotebook](Copy-MgBetaSiteOnenoteSectionToNotebook.md)
 Copies a section to a specific notebook.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Copy-MgBetaSiteOnenoteSectionToSectionGroup](Copy-MgBetaSiteOnenoteSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdminSharepoint](Get-MgBetaAdminSharepoint.md)
 Get sharepoint from admin
 
 ### [Get-MgBetaAdminSharepointSetting](Get-MgBetaAdminSharepointSetting.md)
 Get the tenant-level settings for SharePoint and OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAllSite](Get-MgBetaAllSite.md)
 Invoke function getAllSites
@@ -150,7 +171,8 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaGroupSiteContentType](Get-MgBetaGroupSiteContentType.md)
-Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupSiteContentTypeBase](Get-MgBetaGroupSiteContentTypeBase.md)
 Parent contentType from which this content type is derived.
@@ -162,7 +184,8 @@ The collection of content types that are ancestors of this content type.
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteContentTypeColumn](Get-MgBetaGroupSiteContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupSiteContentTypeColumnCount](Get-MgBetaGroupSiteContentTypeColumnCount.md)
 Get the number of the resource
@@ -197,6 +220,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSiteCreatedByUserServiceProvisioningError](Get-MgBetaGroupSiteCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSiteDefaultDrive](Get-MgBetaGroupSiteDefaultDrive.md)
 The default drive (document library) for this site.
 
@@ -224,6 +254,7 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 You can find the log in Azure AD audit logs under the KeyManagement category.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKeyCount.md)
 Get the number of the resource
@@ -239,6 +270,7 @@ Get policy from groups
 
 ### [Get-MgBetaGroupSiteInformationProtectionPolicyLabel](Get-MgBetaGroupSiteInformationProtectionPolicyLabel.md)
 Retrieve the properties and relationships of an informationProtectionLabel object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteInformationProtectionPolicyLabelCount](Get-MgBetaGroupSiteInformationProtectionPolicyLabelCount.md)
 Get the number of the resource
@@ -260,7 +292,7 @@ Get sensitivityPolicySettings from groups
 
 ### [Get-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest](Get-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest.md)
 Retrieve the properties and relationships of a specified threatAssessmentRequest object.
-A threat assessment request can be one of the following types:
+A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteInformationProtectionThreatAssessmentRequestCount](Get-MgBetaGroupSiteInformationProtectionThreatAssessmentRequestCount.md)
 Get the number of the resource
@@ -289,6 +321,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSiteItemLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupSiteItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSiteLastModifiedByUser](Get-MgBetaGroupSiteLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -298,14 +337,22 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSiteLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupSiteLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
 
 ### [Get-MgBetaGroupSiteListColumn](Get-MgBetaGroupSiteListColumn.md)
-Get columns from groups
+The collection of field definitions for this list.
 
 ### [Get-MgBetaGroupSiteListColumnCount](Get-MgBetaGroupSiteListColumnCount.md)
 Get the number of the resource
@@ -314,10 +361,11 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaGroupSiteListContentType](Get-MgBetaGroupSiteListContentType.md)
-Get contentTypes from groups
+The collection of content types present in this list.
 
 ### [Get-MgBetaGroupSiteListContentTypeColumn](Get-MgBetaGroupSiteListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupSiteListContentTypeColumnCount](Get-MgBetaGroupSiteListContentTypeColumnCount.md)
 Get the number of the resource
@@ -352,12 +400,20 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSiteListCreatedByUserServiceProvisioningError](Get-MgBetaGroupSiteListCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteListCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSiteListDrive](Get-MgBetaGroupSiteListDrive.md)
+Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgBetaGroupSiteListItem](Get-MgBetaGroupSiteListItem.md)
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupSiteListItemActivity](Get-MgBetaGroupSiteListItemActivity.md)
 The list of recent activities that took place on this item.
@@ -386,8 +442,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSiteListItemCreatedByUserServiceProvisioningError](Get-MgBetaGroupSiteListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSiteListItemDocumentSetVersion](Get-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteListItemDocumentSetVersionCount](Get-MgBetaGroupSiteListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -414,7 +478,7 @@ Get the number of the resource
 A collection of the fields and values for this version of the list item.
 
 ### [Get-MgBetaGroupSiteListOperation](Get-MgBetaGroupSiteListOperation.md)
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ### [Get-MgBetaGroupSiteListOperationCount](Get-MgBetaGroupSiteListOperationCount.md)
 Get the number of the resource
@@ -430,6 +494,7 @@ Get onenote from groups
 
 ### [Get-MgBetaGroupSiteOnenoteNotebook](Get-MgBetaGroupSiteOnenoteNotebook.md)
 Retrieve the properties and relationships of a notebook object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteOnenoteNotebookCount](Get-MgBetaGroupSiteOnenoteNotebookCount.md)
 Get the number of the resource
@@ -522,10 +587,11 @@ Read-only.
 
 ### [Get-MgBetaGroupSiteOnenoteOperation](Get-MgBetaGroupSiteOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
-This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.
+The status applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.
   You can poll the Operation-Location endpoint until the status property returns completed or failed.
 If the status is completed, the resourceLocation property contains the resource endpoint URI.
 If the status is failed, the error and @api.diagnostics properties provide error information.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteOnenoteOperationCount](Get-MgBetaGroupSiteOnenoteOperationCount.md)
 Get the number of the resource
@@ -551,7 +617,7 @@ Read-only.
 
 ### [Get-MgBetaGroupSiteOnenoteResource](Get-MgBetaGroupSiteOnenoteResource.md)
 The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -563,12 +629,14 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupSiteOnenoteSection](Get-MgBetaGroupSiteOnenoteSection.md)
 Retrieve the properties and relationships of a section object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteOnenoteSectionCount](Get-MgBetaGroupSiteOnenoteSectionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteOnenoteSectionGroup](Get-MgBetaGroupSiteOnenoteSectionGroup.md)
 Retrieve the properties and relationships of a sectionGroup object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteOnenoteSectionGroupCount](Get-MgBetaGroupSiteOnenoteSectionGroupCount.md)
 Get the number of the resource
@@ -645,12 +713,14 @@ Read-only.
 
 ### [Get-MgBetaGroupSiteOperation](Get-MgBetaGroupSiteOperation.md)
 Read the properties of a richLongRunningOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteOperationCount](Get-MgBetaGroupSiteOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupSitePage](Get-MgBetaGroupSitePage.md)
-Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
+Get the metadata for a baseSitePage][] in the site pages [list][] in a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaGroupSitePageCount](Get-MgBetaGroupSitePageCount.md)
 Get the number of the resource
@@ -664,6 +734,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSitePageCreatedByUserServiceProvisioningError](Get-MgBetaGroupSitePageCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSitePageCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSitePageLastModifiedByUser](Get-MgBetaGroupSitePageLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -673,17 +750,100 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaGroupSitePageLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupSitePageLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSitePermission](Get-MgBetaGroupSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSitePermissionCount](Get-MgBetaGroupSitePermissionCount.md)
 Get the number of the resource
 
+### [Get-MgBetaGroupSiteRecycleBin](Get-MgBetaGroupSiteRecycleBin.md)
+The collection of recycleBinItems under this site.
+
+### [Get-MgBetaGroupSiteRecycleBinCreatedByUser](Get-MgBetaGroupSiteRecycleBinCreatedByUser.md)
+Get createdByUser from groups
+
+### [Get-MgBetaGroupSiteRecycleBinCreatedByUserMailboxSetting](Get-MgBetaGroupSiteRecycleBinCreatedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
+### [Get-MgBetaGroupSiteRecycleBinCreatedByUserServiceProvisioningError](Get-MgBetaGroupSiteRecycleBinCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteRecycleBinCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteRecycleBinCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupSiteRecycleBinItem](Get-MgBetaGroupSiteRecycleBinItem.md)
+List of the recycleBinItems deleted by a user.
+
+### [Get-MgBetaGroupSiteRecycleBinItemCount](Get-MgBetaGroupSiteRecycleBinItemCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupSiteRecycleBinItemCreatedByUser](Get-MgBetaGroupSiteRecycleBinItemCreatedByUser.md)
+Get createdByUser from groups
+
+### [Get-MgBetaGroupSiteRecycleBinItemCreatedByUserMailboxSetting](Get-MgBetaGroupSiteRecycleBinItemCreatedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
+### [Get-MgBetaGroupSiteRecycleBinItemCreatedByUserServiceProvisioningError](Get-MgBetaGroupSiteRecycleBinItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteRecycleBinItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteRecycleBinItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUser](Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUser.md)
+Get lastModifiedByUser from groups
+
+### [Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUserMailboxSetting](Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
+### [Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteRecycleBinItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupSiteRecycleBinLastModifiedByUser](Get-MgBetaGroupSiteRecycleBinLastModifiedByUser.md)
+Get lastModifiedByUser from groups
+
+### [Get-MgBetaGroupSiteRecycleBinLastModifiedByUserMailboxSetting](Get-MgBetaGroupSiteRecycleBinLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
+### [Get-MgBetaGroupSiteRecycleBinLastModifiedByUserServiceProvisioningError](Get-MgBetaGroupSiteRecycleBinLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaGroupSiteRecycleBinLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaGroupSiteRecycleBinLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupSiteTermStore](Get-MgBetaGroupSiteTermStore.md)
 Read the properties and relationships of a store object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteTermStoreGroup](Get-MgBetaGroupSiteTermStoreGroup.md)
 Read the properties and relationships of a term store group object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteTermStoreGroupCount](Get-MgBetaGroupSiteTermStoreGroupCount.md)
 Get the number of the resource
@@ -744,6 +904,7 @@ The term to which the relationship is defined.
 
 ### [Get-MgBetaGroupSiteTermStoreGroupSetTerm](Get-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 Read the properties and relationships of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteTermStoreGroupSetTermChild](Get-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Children of current term.
@@ -798,6 +959,7 @@ The [set] in which the term is created.
 
 ### [Get-MgBetaGroupSiteTermStoreSet](Get-MgBetaGroupSiteTermStoreSet.md)
 Read the properties and relationships of a set object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteTermStoreSetChild](Get-MgBetaGroupSiteTermStoreSetChild.md)
 Children terms of set in term [store].
@@ -885,6 +1047,7 @@ The term to which the relationship is defined.
 
 ### [Get-MgBetaGroupSiteTermStoreSetParentGroupSetTerm](Get-MgBetaGroupSiteTermStoreSetParentGroupSetTerm.md)
 Read the properties and relationships of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteTermStoreSetParentGroupSetTermChild](Get-MgBetaGroupSiteTermStoreSetParentGroupSetTermChild.md)
 Children of current term.
@@ -957,6 +1120,7 @@ The term to which the relationship is defined.
 
 ### [Get-MgBetaGroupSiteTermStoreSetTerm](Get-MgBetaGroupSiteTermStoreSetTerm.md)
 Read the properties and relationships of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteTermStoreSetTermChild](Get-MgBetaGroupSiteTermStoreSetTermChild.md)
 Children of current term.
@@ -1064,7 +1228,8 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaSiteContentType](Get-MgBetaSiteContentType.md)
-Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+Retrieve the metadata for a content type][contentType] in a [site][] or a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaSiteContentTypeBase](Get-MgBetaSiteContentTypeBase.md)
 Parent contentType from which this content type is derived.
@@ -1076,7 +1241,8 @@ The collection of content types that are ancestors of this content type.
 Get the number of the resource
 
 ### [Get-MgBetaSiteContentTypeColumn](Get-MgBetaSiteContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaSiteContentTypeColumnCount](Get-MgBetaSiteContentTypeColumnCount.md)
 Get the number of the resource
@@ -1132,6 +1298,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaSiteItemLastModifiedByUserServiceProvisioningError](Get-MgBetaSiteItemLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaSiteItemLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaSiteItemLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSiteLastModifiedByUser](Get-MgBetaSiteLastModifiedByUser.md)
 Get lastModifiedByUser from sites
 
@@ -1141,14 +1314,22 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaSiteLastModifiedByUserServiceProvisioningError](Get-MgBetaSiteLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaSiteLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaSiteLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
 
 ### [Get-MgBetaSiteListColumn](Get-MgBetaSiteListColumn.md)
-Get columns from sites
+The collection of field definitions for this list.
 
 ### [Get-MgBetaSiteListColumnCount](Get-MgBetaSiteListColumnCount.md)
 Get the number of the resource
@@ -1157,10 +1338,11 @@ Get the number of the resource
 The source column for content type column.
 
 ### [Get-MgBetaSiteListContentType](Get-MgBetaSiteListContentType.md)
-Get contentTypes from sites
+The collection of content types present in this list.
 
 ### [Get-MgBetaSiteListContentTypeColumn](Get-MgBetaSiteListContentTypeColumn.md)
-Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+Retrieve the metadata for a site][], [list][] or [contentType][] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaSiteListContentTypeColumnCount](Get-MgBetaSiteListContentTypeColumnCount.md)
 Get the number of the resource
@@ -1198,12 +1380,20 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaSiteListCreatedByUserServiceProvisioningError](Get-MgBetaSiteListCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaSiteListCreatedByUserServiceProvisioningErrorCount](Get-MgBetaSiteListCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSiteListDrive](Get-MgBetaSiteListDrive.md)
+Allows access to the list as a drive resource with driveItems.
 Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
 
 ### [Get-MgBetaSiteListItem](Get-MgBetaSiteListItem.md)
-Returns the metadata for an [item][] in a [list][].
+Returns the metadata for an item][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaSiteListItemActivity](Get-MgBetaSiteListItemActivity.md)
 The list of recent activities that took place on this item.
@@ -1235,11 +1425,19 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaSiteListItemCreatedByUserServiceProvisioningError](Get-MgBetaSiteListItemCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaSiteListItemCreatedByUserServiceProvisioningErrorCount](Get-MgBetaSiteListItemCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSiteListItemDelta](Get-MgBetaSiteListItemDelta.md)
 Invoke function delta
 
 ### [Get-MgBetaSiteListItemDocumentSetVersion](Get-MgBetaSiteListItemDocumentSetVersion.md)
 Read the properties and relationships of a documentSetVersion object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteListItemDocumentSetVersionCount](Get-MgBetaSiteListItemDocumentSetVersionCount.md)
 Get the number of the resource
@@ -1266,7 +1464,7 @@ Get the number of the resource
 A collection of the fields and values for this version of the list item.
 
 ### [Get-MgBetaSiteListOperation](Get-MgBetaSiteListOperation.md)
-The collection of long running operations for the list.
+The collection of long-running operations on the list.
 
 ### [Get-MgBetaSiteListOperationCount](Get-MgBetaSiteListOperationCount.md)
 Get the number of the resource
@@ -1280,15 +1478,18 @@ Get the number of the resource
 ### [Get-MgBetaSiteOnenoteNotebookFromWebUrl](Get-MgBetaSiteOnenoteNotebookFromWebUrl.md)
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteOperation](Get-MgBetaSiteOperation.md)
 Read the properties of a richLongRunningOperation object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteOperationCount](Get-MgBetaSiteOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSitePage](Get-MgBetaSitePage.md)
-Get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
+Get the metadata for a baseSitePage][] in the site pages [list][] in a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [Get-MgBetaSitePageCount](Get-MgBetaSitePageCount.md)
 Get the number of the resource
@@ -1302,6 +1503,13 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaSitePageCreatedByUserServiceProvisioningError](Get-MgBetaSitePageCreatedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaSitePageCreatedByUserServiceProvisioningErrorCount](Get-MgBetaSitePageCreatedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSitePageLastModifiedByUser](Get-MgBetaSitePageLastModifiedByUser.md)
 Get lastModifiedByUser from sites
 
@@ -1311,8 +1519,16 @@ You can get or update settings for sending automatic replies to incoming message
 For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
+### [Get-MgBetaSitePageLastModifiedByUserServiceProvisioningError](Get-MgBetaSitePageLastModifiedByUserServiceProvisioningError.md)
+Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+Supports $filter (eq, not, for isResolved and serviceInstance).
+
+### [Get-MgBetaSitePageLastModifiedByUserServiceProvisioningErrorCount](Get-MgBetaSitePageLastModifiedByUserServiceProvisioningErrorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSitePermission](Get-MgBetaSitePermission.md)
 Retrieve the properties and relationships of a permission object on a site.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSitePermissionCount](Get-MgBetaSitePermissionCount.md)
 Get the number of the resource
@@ -1322,9 +1538,11 @@ Invoke function getRecentNotebooks
 
 ### [Get-MgBetaSiteTermStore](Get-MgBetaSiteTermStore.md)
 Read the properties and relationships of a store object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteTermStoreGroup](Get-MgBetaSiteTermStoreGroup.md)
 Read the properties and relationships of a term store group object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteTermStoreGroupCount](Get-MgBetaSiteTermStoreGroupCount.md)
 Get the number of the resource
@@ -1385,6 +1603,7 @@ The term to which the relationship is defined.
 
 ### [Get-MgBetaSiteTermStoreGroupSetTerm](Get-MgBetaSiteTermStoreGroupSetTerm.md)
 Read the properties and relationships of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteTermStoreGroupSetTermChild](Get-MgBetaSiteTermStoreGroupSetTermChild.md)
 Children of current term.
@@ -1439,6 +1658,7 @@ The [set] in which the term is created.
 
 ### [Get-MgBetaSiteTermStoreSet](Get-MgBetaSiteTermStoreSet.md)
 Read the properties and relationships of a set object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteTermStoreSetChild](Get-MgBetaSiteTermStoreSetChild.md)
 Children terms of set in term [store].
@@ -1526,6 +1746,7 @@ The term to which the relationship is defined.
 
 ### [Get-MgBetaSiteTermStoreSetParentGroupSetTerm](Get-MgBetaSiteTermStoreSetParentGroupSetTerm.md)
 Read the properties and relationships of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteTermStoreSetParentGroupSetTermChild](Get-MgBetaSiteTermStoreSetParentGroupSetTermChild.md)
 Children of current term.
@@ -1598,6 +1819,7 @@ The term to which the relationship is defined.
 
 ### [Get-MgBetaSiteTermStoreSetTerm](Get-MgBetaSiteTermStoreSetTerm.md)
 Read the properties and relationships of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaSiteTermStoreSetTermChild](Get-MgBetaSiteTermStoreSetTermChild.md)
 Children of current term.
@@ -1663,7 +1885,8 @@ Get followedSites from users
 Get the number of the resource
 
 ### [Grant-MgBetaSitePermission](Grant-MgBetaSitePermission.md)
-Grant users access to a link represented by a [permission][].
+Grant users access to a link represented by a permission][].
+This API is available in the following [national cloud deployments.
 
 ### [Invoke-MgBetaBufferSiteInformationProtectionDecrypt](Invoke-MgBetaBufferSiteInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
@@ -1674,6 +1897,7 @@ Invoke action encryptBuffer
 ### [Invoke-MgBetaExtractSiteInformationProtectionPolicyLabel](Invoke-MgBetaExtractSiteInformationProtectionPolicyLabel.md)
 Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
 The contentInfo input is resolved to informationProtectionContentLabel.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPreviewSiteOnenoteNotebookSectionGroupSectionPage](Invoke-MgBetaPreviewSiteOnenoteNotebookSectionGroupSectionPage.md)
 Invoke function preview
@@ -1692,15 +1916,18 @@ Invoke function preview
 
 ### [Invoke-MgBetaReauthorizeSiteListSubscription](Invoke-MgBetaReauthorizeSiteListSubscription.md)
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaSignSiteInformationProtectionDigest](Invoke-MgBetaSignSiteInformationProtectionDigest.md)
 Invoke action signDigest
 
 ### [Join-MgBetaSiteContentTypeWithHubSite](Join-MgBetaSiteContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Associate a content type][contentType] with a list of hub sites.
+This API is available in the following [national cloud deployments.
 
 ### [Join-MgBetaSiteListContentTypeWithHubSite](Join-MgBetaSiteListContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Associate a content type][contentType] with a list of hub sites.
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteAnalyticItemActivityStat](New-MgBetaGroupSiteAnalyticItemActivityStat.md)
 Create new navigation property to itemActivityStats for groups
@@ -1709,13 +1936,16 @@ Create new navigation property to itemActivityStats for groups
 Create new navigation property to activities for groups
 
 ### [New-MgBetaGroupSiteColumn](New-MgBetaGroupSiteColumn.md)
-Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+Create a column for a site][site] by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteContentType](New-MgBetaGroupSiteContentType.md)
-Create a new [contentType][] for a [site][].
+Create a new contentType][] for a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteContentTypeColumn](New-MgBetaGroupSiteContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteContentTypeColumnLink](New-MgBetaGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
@@ -1734,37 +1964,42 @@ Create new navigation property to sublabels for groups
 
 ### [New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest](New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequest.md)
 Create a new threat assessment request.
-A threat assessment request can be one of the following types:
+A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequestResult](New-MgBetaGroupSiteInformationProtectionThreatAssessmentRequestResult.md)
 Create new navigation property to results for groups
 
 ### [New-MgBetaGroupSiteList](New-MgBetaGroupSiteList.md)
-Create a new [list][] in a [site][].
+Create a new list][] in a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteListActivity](New-MgBetaGroupSiteListActivity.md)
 Create new navigation property to activities for groups
 
 ### [New-MgBetaGroupSiteListColumn](New-MgBetaGroupSiteListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteListContentType](New-MgBetaGroupSiteListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgBetaGroupSiteListContentTypeColumn](New-MgBetaGroupSiteListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteListContentTypeColumnLink](New-MgBetaGroupSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgBetaGroupSiteListItem](New-MgBetaGroupSiteListItem.md)
-Create a new [listItem][] in a [list][].
+Create a new listItem][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSiteListItemActivity](New-MgBetaGroupSiteListItemActivity.md)
 Create new navigation property to activities for groups
 
 ### [New-MgBetaGroupSiteListItemDocumentSetVersion](New-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteListItemVersion](New-MgBetaGroupSiteListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1777,15 +2012,19 @@ Create new navigation property to subscriptions for groups
 
 ### [New-MgBetaGroupSiteOnenoteNotebook](New-MgBetaGroupSiteOnenoteNotebook.md)
 Create a new OneNote notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteOnenoteNotebookSection](New-MgBetaGroupSiteOnenoteNotebookSection.md)
 Create a new section in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteOnenoteNotebookSectionGroup](New-MgBetaGroupSiteOnenoteNotebookSectionGroup.md)
 Create a new section group in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteOnenoteNotebookSectionGroupSection](New-MgBetaGroupSiteOnenoteNotebookSectionGroupSection.md)
 Create a new section in the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteOnenoteNotebookSectionGroupSectionPage](New-MgBetaGroupSiteOnenoteNotebookSectionGroupSectionPage.md)
 Create new navigation property to pages for groups
@@ -1810,6 +2049,7 @@ Create new navigation property to sectionGroups for groups
 
 ### [New-MgBetaGroupSiteOnenoteSectionGroupSection](New-MgBetaGroupSiteOnenoteSectionGroupSection.md)
 Create a new section in the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteOnenoteSectionGroupSectionPage](New-MgBetaGroupSiteOnenoteSectionGroupSectionPage.md)
 Create new navigation property to pages for groups
@@ -1821,19 +2061,26 @@ Create new navigation property to pages for groups
 Create new navigation property to operations for groups
 
 ### [New-MgBetaGroupSitePage](New-MgBetaGroupSitePage.md)
-Create a new [sitePage][] in the site pages [list][] in a [site][].
+Create a new sitePage][] in the site pages [list][] in a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaGroupSitePermission](New-MgBetaGroupSitePermission.md)
 Create a new permission object on a site.
+This API is available in the following national cloud deployments.
+
+### [New-MgBetaGroupSiteRecycleBinItem](New-MgBetaGroupSiteRecycleBinItem.md)
+Create new navigation property to items for groups
 
 ### [New-MgBetaGroupSiteTermStoreGroup](New-MgBetaGroupSiteTermStoreGroup.md)
 Create a new group object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteTermStoreGroupSet](New-MgBetaGroupSiteTermStoreGroupSet.md)
 Create new navigation property to sets for groups
 
 ### [New-MgBetaGroupSiteTermStoreGroupSetChild](New-MgBetaGroupSiteTermStoreGroupSetChild.md)
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteTermStoreGroupSetChildRelation](New-MgBetaGroupSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -1858,6 +2105,7 @@ Create new navigation property to sets for groups
 
 ### [New-MgBetaGroupSiteTermStoreSetChild](New-MgBetaGroupSiteTermStoreSetChild.md)
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteTermStoreSetChildRelation](New-MgBetaGroupSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -1867,6 +2115,7 @@ Create new navigation property to sets for groups
 
 ### [New-MgBetaGroupSiteTermStoreSetParentGroupSetChild](New-MgBetaGroupSiteTermStoreSetParentGroupSetChild.md)
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation](New-MgBetaGroupSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -1908,48 +2157,57 @@ Create new navigation property to itemActivityStats for sites
 Create new navigation property to activities for sites
 
 ### [New-MgBetaSiteColumn](New-MgBetaSiteColumn.md)
-Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+Create a column for a site][site] by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteContentType](New-MgBetaSiteContentType.md)
-Create a new [contentType][] for a [site][].
+Create a new contentType][] for a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteContentTypeColumn](New-MgBetaSiteContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteContentTypeColumnLink](New-MgBetaSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgBetaSiteList](New-MgBetaSiteList.md)
-Create a new [list][] in a [site][].
+Create a new list][] in a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteListActivity](New-MgBetaSiteListActivity.md)
 Create new navigation property to activities for sites
 
 ### [New-MgBetaSiteListColumn](New-MgBetaSiteListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteListContentType](New-MgBetaSiteListContentType.md)
 Create new navigation property to contentTypes for sites
 
 ### [New-MgBetaSiteListContentTypeColumn](New-MgBetaSiteListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+Add a column to a content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteListContentTypeColumnLink](New-MgBetaSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgBetaSiteListItem](New-MgBetaSiteListItem.md)
-Create a new [listItem][] in a [list][].
+Create a new listItem][] in a [list][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSiteListItemActivity](New-MgBetaSiteListItemActivity.md)
 Create new navigation property to activities for sites
 
 ### [New-MgBetaSiteListItemDocumentSetVersion](New-MgBetaSiteListItemDocumentSetVersion.md)
 Create a new version of a document set item in a list.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteListItemLink](New-MgBetaSiteListItemLink.md)
 Create a sharing link for a listItem.
 The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
 listItem resources inherit sharing permissions from the list the item resides in.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteListItemVersion](New-MgBetaSiteListItemVersion.md)
 Create new navigation property to versions for sites
@@ -1964,19 +2222,23 @@ Create new navigation property to subscriptions for sites
 Create new navigation property to operations for sites
 
 ### [New-MgBetaSitePage](New-MgBetaSitePage.md)
-Create a new [sitePage][] in the site pages [list][] in a [site][].
+Create a new sitePage][] in the site pages [list][] in a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [New-MgBetaSitePermission](New-MgBetaSitePermission.md)
 Create a new permission object on a site.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteTermStoreGroup](New-MgBetaSiteTermStoreGroup.md)
 Create a new group object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteTermStoreGroupSet](New-MgBetaSiteTermStoreGroupSet.md)
 Create new navigation property to sets for sites
 
 ### [New-MgBetaSiteTermStoreGroupSetChild](New-MgBetaSiteTermStoreGroupSetChild.md)
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteTermStoreGroupSetChildRelation](New-MgBetaSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -2001,6 +2263,7 @@ Create new navigation property to sets for sites
 
 ### [New-MgBetaSiteTermStoreSetChild](New-MgBetaSiteTermStoreSetChild.md)
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteTermStoreSetChildRelation](New-MgBetaSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -2010,6 +2273,7 @@ Create new navigation property to sets for sites
 
 ### [New-MgBetaSiteTermStoreSetParentGroupSetChild](New-MgBetaSiteTermStoreSetParentGroupSetChild.md)
 Create a new term object.
+This API is available in the following national cloud deployments.
 
 ### [New-MgBetaSiteTermStoreSetParentGroupSetChildRelation](New-MgBetaSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -2045,10 +2309,12 @@ Create new navigation property to relations for sites
 Create new navigation property to relations for sites
 
 ### [Publish-MgBetaSiteContentType](Publish-MgBetaSiteContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Publishes a contentType][] present in a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Publish-MgBetaSiteListContentType](Publish-MgBetaSiteListContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Publishes a contentType][] present in a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaAdminSharepoint](Remove-MgBetaAdminSharepoint.md)
 Delete navigation property sharepoint for admin
@@ -2069,10 +2335,12 @@ Delete navigation property activities for groups
 Delete navigation property columns for groups
 
 ### [Remove-MgBetaGroupSiteContentType](Remove-MgBetaGroupSiteContentType.md)
-Remove a [content type][contentType] from a [list][] or a [site][].
+Remove a content type][contentType] from a [list][] or a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteContentTypeColumn](Remove-MgBetaGroupSiteContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteContentTypeColumnLink](Remove-MgBetaGroupSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
@@ -2114,19 +2382,22 @@ Delete navigation property columns for groups
 Delete navigation property contentTypes for groups
 
 ### [Remove-MgBetaGroupSiteListContentTypeColumn](Remove-MgBetaGroupSiteListContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteListContentTypeColumnLink](Remove-MgBetaGroupSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for groups
 
 ### [Remove-MgBetaGroupSiteListItem](Remove-MgBetaGroupSiteListItem.md)
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteListItemActivity](Remove-MgBetaGroupSiteListItemActivity.md)
 Delete navigation property activities for groups
 
 ### [Remove-MgBetaGroupSiteListItemDocumentSetVersion](Remove-MgBetaGroupSiteListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteListItemDocumentSetVersionField](Remove-MgBetaGroupSiteListItemDocumentSetVersionField.md)
 Delete navigation property fields for groups
@@ -2172,6 +2443,7 @@ Delete navigation property operations for groups
 
 ### [Remove-MgBetaGroupSiteOnenotePage](Remove-MgBetaGroupSiteOnenotePage.md)
 Delete a OneNote page.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteOnenoteResource](Remove-MgBetaGroupSiteOnenoteResource.md)
 Delete navigation property resources for groups
@@ -2200,11 +2472,18 @@ Delete navigation property pages for groups
 ### [Remove-MgBetaGroupSitePermission](Remove-MgBetaGroupSitePermission.md)
 Delete navigation property permissions for groups
 
+### [Remove-MgBetaGroupSiteRecycleBin](Remove-MgBetaGroupSiteRecycleBin.md)
+Delete navigation property recycleBin for groups
+
+### [Remove-MgBetaGroupSiteRecycleBinItem](Remove-MgBetaGroupSiteRecycleBinItem.md)
+Delete navigation property items for groups
+
 ### [Remove-MgBetaGroupSiteTermStore](Remove-MgBetaGroupSiteTermStore.md)
 Delete navigation property termStore for groups
 
 ### [Remove-MgBetaGroupSiteTermStoreGroup](Remove-MgBetaGroupSiteTermStoreGroup.md)
-Delete a group object in a term [store].
+Delete a group object in a term store].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteTermStoreGroupSet](Remove-MgBetaGroupSiteTermStoreGroupSet.md)
 Delete navigation property sets for groups
@@ -2223,6 +2502,7 @@ Delete navigation property relations for groups
 
 ### [Remove-MgBetaGroupSiteTermStoreGroupSetTerm](Remove-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteTermStoreGroupSetTermChild](Remove-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Delete navigation property children for groups
@@ -2235,6 +2515,7 @@ Delete navigation property relations for groups
 
 ### [Remove-MgBetaGroupSiteTermStoreSet](Remove-MgBetaGroupSiteTermStoreSet.md)
 Delete a set object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteTermStoreSetChild](Remove-MgBetaGroupSiteTermStoreSetChild.md)
 Delete navigation property children for groups
@@ -2259,6 +2540,7 @@ Delete navigation property relations for groups
 
 ### [Remove-MgBetaGroupSiteTermStoreSetParentGroupSetTerm](Remove-MgBetaGroupSiteTermStoreSetParentGroupSetTerm.md)
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteTermStoreSetParentGroupSetTermChild](Remove-MgBetaGroupSiteTermStoreSetParentGroupSetTermChild.md)
 Delete navigation property children for groups
@@ -2274,6 +2556,7 @@ Delete navigation property relations for groups
 
 ### [Remove-MgBetaGroupSiteTermStoreSetTerm](Remove-MgBetaGroupSiteTermStoreSetTerm.md)
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaGroupSiteTermStoreSetTermChild](Remove-MgBetaGroupSiteTermStoreSetTermChild.md)
 Delete navigation property children for groups
@@ -2297,10 +2580,12 @@ Delete navigation property activities for sites
 Delete navigation property columns for sites
 
 ### [Remove-MgBetaSiteContentType](Remove-MgBetaSiteContentType.md)
-Remove a [content type][contentType] from a [list][] or a [site][].
+Remove a content type][contentType] from a [list][] or a [site][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaSiteContentTypeColumn](Remove-MgBetaSiteContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaSiteContentTypeColumnLink](Remove-MgBetaSiteContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
@@ -2315,19 +2600,22 @@ Delete navigation property columns for sites
 Delete navigation property contentTypes for sites
 
 ### [Remove-MgBetaSiteListContentTypeColumn](Remove-MgBetaSiteListContentTypeColumn.md)
-Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+Remove a column][columndefinition] from a [site][], [list][] or [content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaSiteListContentTypeColumnLink](Remove-MgBetaSiteListContentTypeColumnLink.md)
 Delete navigation property columnLinks for sites
 
 ### [Remove-MgBetaSiteListItem](Remove-MgBetaSiteListItem.md)
-Removes an item from a [list][].
+Removes an item from a list][].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaSiteListItemActivity](Remove-MgBetaSiteListItemActivity.md)
 Delete navigation property activities for sites
 
 ### [Remove-MgBetaSiteListItemDocumentSetVersion](Remove-MgBetaSiteListItemDocumentSetVersion.md)
 Delete a version of a document set in a list.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSiteListItemDocumentSetVersionField](Remove-MgBetaSiteListItemDocumentSetVersionField.md)
 Delete navigation property fields for sites
@@ -2360,7 +2648,8 @@ Delete navigation property permissions for sites
 Delete navigation property termStore for sites
 
 ### [Remove-MgBetaSiteTermStoreGroup](Remove-MgBetaSiteTermStoreGroup.md)
-Delete a group object in a term [store].
+Delete a group object in a term store].
+This API is available in the following [national cloud deployments.
 
 ### [Remove-MgBetaSiteTermStoreGroupSet](Remove-MgBetaSiteTermStoreGroupSet.md)
 Delete navigation property sets for sites
@@ -2379,6 +2668,7 @@ Delete navigation property relations for sites
 
 ### [Remove-MgBetaSiteTermStoreGroupSetTerm](Remove-MgBetaSiteTermStoreGroupSetTerm.md)
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSiteTermStoreGroupSetTermChild](Remove-MgBetaSiteTermStoreGroupSetTermChild.md)
 Delete navigation property children for sites
@@ -2391,6 +2681,7 @@ Delete navigation property relations for sites
 
 ### [Remove-MgBetaSiteTermStoreSet](Remove-MgBetaSiteTermStoreSet.md)
 Delete a set object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSiteTermStoreSetChild](Remove-MgBetaSiteTermStoreSetChild.md)
 Delete navigation property children for sites
@@ -2415,6 +2706,7 @@ Delete navigation property relations for sites
 
 ### [Remove-MgBetaSiteTermStoreSetParentGroupSetTerm](Remove-MgBetaSiteTermStoreSetParentGroupSetTerm.md)
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSiteTermStoreSetParentGroupSetTermChild](Remove-MgBetaSiteTermStoreSetParentGroupSetTermChild.md)
 Delete navigation property children for sites
@@ -2430,6 +2722,7 @@ Delete navigation property relations for sites
 
 ### [Remove-MgBetaSiteTermStoreSetTerm](Remove-MgBetaSiteTermStoreSetTerm.md)
 Delete a term object.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaSiteTermStoreSetTermChild](Remove-MgBetaSiteTermStoreSetTermChild.md)
 Delete navigation property children for sites
@@ -2442,12 +2735,14 @@ Delete navigation property relations for sites
 
 ### [Restore-MgBetaSiteListItemDocumentSetVersion](Restore-MgBetaSiteListItemDocumentSetVersion.md)
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaSiteListItemVersion](Restore-MgBetaSiteListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Revoke-MgBetaSitePermissionGrant](Revoke-MgBetaSitePermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+This API is available in the following [national cloud deployments.
 
 ### [Set-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContent](Set-MgBetaGroupSiteAnalyticItemActivityStatActivityDriveItemContent.md)
 The content stream, if the item represents a file.
@@ -2494,17 +2789,17 @@ Invoke action evaluate
 ### [Test-MgBetaSiteInformationProtectionPolicyLabelApplication](Test-MgBetaSiteInformationProtectionPolicyLabelApplication.md)
 Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
 This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:  This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaSiteInformationProtectionPolicyLabelClassificationResult](Test-MgBetaSiteInformationProtectionPolicyLabelClassificationResult.md)
 Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
 This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
 To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results.
-The API returns an informationProtectionAction that contains one of more of the following:
+The API returns an informationProtectionAction that contains one of more of the following: This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaSiteInformationProtectionPolicyLabelRemoval](Test-MgBetaSiteInformationProtectionPolicyLabelRemoval.md)
 Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:  This API is available in the following national cloud deployments.
 
 ### [Test-MgBetaSiteInformationProtectionSensitivityLabel](Test-MgBetaSiteInformationProtectionSensitivityLabel.md)
 Invoke action evaluate
@@ -2516,16 +2811,19 @@ Invoke action evaluate
 Invoke function isPublished
 
 ### [Unpublish-MgBetaSiteContentType](Unpublish-MgBetaSiteContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Unpublish-MgBetaSiteListContentType](Unpublish-MgBetaSiteListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Unpublish a contentType][] from a content type hub site.
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaAdminSharepoint](Update-MgBetaAdminSharepoint.md)
 Update the navigation property sharepoint in admin
 
 ### [Update-MgBetaAdminSharepointSetting](Update-MgBetaAdminSharepointSetting.md)
 Update one or more tenant-level settings for SharePoint and OneDrive.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupSite](Update-MgBetaGroupSite.md)
 Update the navigation property sites in groups
@@ -2543,10 +2841,12 @@ Update the navigation property activities in groups
 Update the navigation property columns in groups
 
 ### [Update-MgBetaGroupSiteContentType](Update-MgBetaGroupSiteContentType.md)
-Update a [content type][contentType].
+Update a content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupSiteContentTypeColumn](Update-MgBetaGroupSiteContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupSiteContentTypeColumnLink](Update-MgBetaGroupSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -2594,7 +2894,8 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgBetaGroupSiteListContentTypeColumn](Update-MgBetaGroupSiteListContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupSiteListContentTypeColumnLink](Update-MgBetaGroupSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -2618,7 +2919,8 @@ Update the navigation property documentSetVersions in groups
 Update the navigation property fields in groups
 
 ### [Update-MgBetaGroupSiteListItemField](Update-MgBetaGroupSiteListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaGroupSiteListItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2697,6 +2999,25 @@ Update property mailboxSettings value.
 
 ### [Update-MgBetaGroupSitePermission](Update-MgBetaGroupSitePermission.md)
 Update the permission object on a site.
+This API is available in the following national cloud deployments.
+
+### [Update-MgBetaGroupSiteRecycleBin](Update-MgBetaGroupSiteRecycleBin.md)
+Update the navigation property recycleBin in groups
+
+### [Update-MgBetaGroupSiteRecycleBinCreatedByUserMailboxSetting](Update-MgBetaGroupSiteRecycleBinCreatedByUserMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgBetaGroupSiteRecycleBinItem](Update-MgBetaGroupSiteRecycleBinItem.md)
+Update the navigation property items in groups
+
+### [Update-MgBetaGroupSiteRecycleBinItemCreatedByUserMailboxSetting](Update-MgBetaGroupSiteRecycleBinItemCreatedByUserMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgBetaGroupSiteRecycleBinItemLastModifiedByUserMailboxSetting](Update-MgBetaGroupSiteRecycleBinItemLastModifiedByUserMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgBetaGroupSiteRecycleBinLastModifiedByUserMailboxSetting](Update-MgBetaGroupSiteRecycleBinLastModifiedByUserMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgBetaGroupSiteTermStore](Update-MgBetaGroupSiteTermStore.md)
 Update the navigation property termStore in groups
@@ -2721,6 +3042,7 @@ Update the navigation property relations in groups
 
 ### [Update-MgBetaGroupSiteTermStoreGroupSetTerm](Update-MgBetaGroupSiteTermStoreGroupSetTerm.md)
 Update the properties of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupSiteTermStoreGroupSetTermChild](Update-MgBetaGroupSiteTermStoreGroupSetTermChild.md)
 Update the navigation property children in groups
@@ -2733,6 +3055,7 @@ Update the navigation property relations in groups
 
 ### [Update-MgBetaGroupSiteTermStoreSet](Update-MgBetaGroupSiteTermStoreSet.md)
 Update the properties of a set object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupSiteTermStoreSetChild](Update-MgBetaGroupSiteTermStoreSetChild.md)
 Update the navigation property children in groups
@@ -2757,6 +3080,7 @@ Update the navigation property relations in groups
 
 ### [Update-MgBetaGroupSiteTermStoreSetParentGroupSetTerm](Update-MgBetaGroupSiteTermStoreSetParentGroupSetTerm.md)
 Update the properties of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupSiteTermStoreSetParentGroupSetTermChild](Update-MgBetaGroupSiteTermStoreSetParentGroupSetTermChild.md)
 Update the navigation property children in groups
@@ -2772,6 +3096,7 @@ Update the navigation property relations in groups
 
 ### [Update-MgBetaGroupSiteTermStoreSetTerm](Update-MgBetaGroupSiteTermStoreSetTerm.md)
 Update the properties of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupSiteTermStoreSetTermChild](Update-MgBetaGroupSiteTermStoreSetTermChild.md)
 Update the navigation property children in groups
@@ -2798,10 +3123,12 @@ Update the navigation property activities in sites
 Update the navigation property columns in sites
 
 ### [Update-MgBetaSiteContentType](Update-MgBetaSiteContentType.md)
-Update a [content type][contentType].
+Update a content type][contentType].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaSiteContentTypeColumn](Update-MgBetaSiteContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaSiteContentTypeColumnLink](Update-MgBetaSiteContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
@@ -2816,7 +3143,8 @@ Update the navigation property columns in sites
 Update the navigation property contentTypes in sites
 
 ### [Update-MgBetaSiteListContentTypeColumn](Update-MgBetaSiteListContentTypeColumn.md)
-Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+Update a site][], [list][] or [content type][contentType] [column][columnDefinition].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaSiteListContentTypeColumnLink](Update-MgBetaSiteListContentTypeColumnLink.md)
 Update the navigation property columnLinks in sites
@@ -2840,7 +3168,8 @@ Update the navigation property documentSetVersions in sites
 Update the navigation property fields in sites
 
 ### [Update-MgBetaSiteListItemField](Update-MgBetaSiteListItemField.md)
-Update the properties on a [listItem][].
+Update the properties on a listItem][].
+This API is available in the following [national cloud deployments.
 
 ### [Update-MgBetaSiteListItemLastModifiedByUserMailboxSetting](Update-MgBetaSiteListItemLastModifiedByUserMailboxSetting.md)
 Update property mailboxSettings value.
@@ -2889,6 +3218,7 @@ Update property mailboxSettings value.
 
 ### [Update-MgBetaSitePermission](Update-MgBetaSitePermission.md)
 Update the permission object on a site.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSiteTermStore](Update-MgBetaSiteTermStore.md)
 Update the navigation property termStore in sites
@@ -2913,6 +3243,7 @@ Update the navigation property relations in sites
 
 ### [Update-MgBetaSiteTermStoreGroupSetTerm](Update-MgBetaSiteTermStoreGroupSetTerm.md)
 Update the properties of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSiteTermStoreGroupSetTermChild](Update-MgBetaSiteTermStoreGroupSetTermChild.md)
 Update the navigation property children in sites
@@ -2925,6 +3256,7 @@ Update the navigation property relations in sites
 
 ### [Update-MgBetaSiteTermStoreSet](Update-MgBetaSiteTermStoreSet.md)
 Update the properties of a set object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSiteTermStoreSetChild](Update-MgBetaSiteTermStoreSetChild.md)
 Update the navigation property children in sites
@@ -2949,6 +3281,7 @@ Update the navigation property relations in sites
 
 ### [Update-MgBetaSiteTermStoreSetParentGroupSetTerm](Update-MgBetaSiteTermStoreSetParentGroupSetTerm.md)
 Update the properties of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSiteTermStoreSetParentGroupSetTermChild](Update-MgBetaSiteTermStoreSetParentGroupSetTermChild.md)
 Update the navigation property children in sites
@@ -2964,6 +3297,7 @@ Update the navigation property relations in sites
 
 ### [Update-MgBetaSiteTermStoreSetTerm](Update-MgBetaSiteTermStoreSetTerm.md)
 Update the properties of a term object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaSiteTermStoreSetTermChild](Update-MgBetaSiteTermStoreSetTermChild.md)
 Update the navigation property children in sites

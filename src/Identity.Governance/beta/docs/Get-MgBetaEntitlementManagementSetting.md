@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties of an entitlementManagementSettings object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,6 +20,7 @@ Get-MgBetaEntitlementManagementSetting [-ExpandProperty <String[]>] [-Property <
 
 ## DESCRIPTION
 Retrieve the properties of an entitlementManagementSettings object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

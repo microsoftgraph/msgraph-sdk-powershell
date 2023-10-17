@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete (unregister) a printer.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaPrintPrinter -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <S
 
 ## DESCRIPTION
 Delete (unregister) a printer.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

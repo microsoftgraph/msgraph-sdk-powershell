@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a directoryObject object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaDirectoryObject -InputObject <IDirectoryObjectsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a directoryObject object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

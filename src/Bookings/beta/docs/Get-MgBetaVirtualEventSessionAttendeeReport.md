@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventSessionAttendeeReport
 
 ## SYNOPSIS
-The content stream of the attendee report of a Teams live event.
-Read-only.
+Get attendeeReport for the navigation property sessions from solutions
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgBetaVirtualEventSessionAttendeeReport -InputObject <IBookingsIdentity> -Ou
 ```
 
 ## DESCRIPTION
-The content stream of the attendee report of a Teams live event.
-Read-only.
+Get attendeeReport for the navigation property sessions from solutions
 
 ## EXAMPLES
 

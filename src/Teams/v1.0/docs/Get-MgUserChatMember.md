@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a conversationMember from a chat.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgUserChatMember -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 
 ## DESCRIPTION
 Retrieve a conversationMember from a chat.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

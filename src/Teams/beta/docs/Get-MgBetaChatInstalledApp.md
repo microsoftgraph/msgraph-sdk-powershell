@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get an app installed in a chat.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaChatInstalledApp -InputObject <ITeamsIdentity> [-ExpandProperty <Strin
 
 ## DESCRIPTION
 Get an app installed in a chat.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

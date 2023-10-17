@@ -93,7 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -ContentInputFile
-Input File for Content (.)
+Input File for Content (The content of the transcript.
+Read-only.)
 
 ```yaml
 Type: System.String
@@ -108,7 +109,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Date and time at which the transcript was created.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -155,7 +159,8 @@ Accept wildcard characters: False
 ```
 
 ### -MeetingId
-.
+The unique identifier of the online meeting related to this transcript.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -186,7 +191,8 @@ Accept wildcard characters: False
 ```
 
 ### -MetadataContentInputFile
-Input File for MetadataContent (.)
+Input File for MetadataContent (The time-aligned metadata of the utterances in the transcript.
+Read-only.)
 
 ```yaml
 Type: System.String
@@ -216,7 +222,8 @@ Accept wildcard characters: False
 ```
 
 ### -TranscriptContentUrl
-.
+The URL that can be used to access the content of the transcript.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -286,9 +293,9 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphCallTranscript>`: callTranscript
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <Byte[]>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[MeetingId <String>]`: 
+  - `[Content <Byte[]>]`: The content of the transcript. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
   - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -297,8 +304,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[MetadataContent <Byte[]>]`: 
-  - `[TranscriptContentUrl <String>]`: 
+  - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
+  - `[TranscriptContentUrl <String>]`: The URL that can be used to access the content of the transcript. Read-only.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord

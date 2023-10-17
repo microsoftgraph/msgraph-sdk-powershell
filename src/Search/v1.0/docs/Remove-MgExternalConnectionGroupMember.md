@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an identity resource to remove the corresponding member from an externalGroup.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-IfMatch 
 
 ## DESCRIPTION
 Delete an identity resource to remove the corresponding member from an externalGroup.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

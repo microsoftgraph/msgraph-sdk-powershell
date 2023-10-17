@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of an openshift object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaGroupTeamScheduleOpenShift -InputObject <ITeamsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Retrieve the properties and relationships of an openshift object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

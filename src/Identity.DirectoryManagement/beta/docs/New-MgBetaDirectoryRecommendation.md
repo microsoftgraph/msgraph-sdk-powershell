@@ -20,8 +20,8 @@ New-MgBetaDirectoryRecommendation [-ActionSteps <IMicrosoftGraphActionStep[]>]
  [-ImpactedResources <IMicrosoftGraphImpactedResource[]>] [-ImpactStartDateTime <DateTime>]
  [-ImpactType <String>] [-Insights <String>] [-LastCheckedDateTime <DateTime>] [-LastModifiedBy <String>]
  [-LastModifiedDateTime <DateTime>] [-MaxScore <Double>] [-PostponeUntilDateTime <DateTime>]
- [-Priority <String>] [-RecommendationType <String>] [-RemediationImpact <String>] [-Status <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Priority <String>] [-RecommendationType <String>] [-ReleaseType <String>] [-RemediationImpact <String>]
+ [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -374,6 +374,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ReleaseType
+The current release type of the recommendation.
+The possible values are: preview, generallyAvailable, unknownFutureValue.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RemediationImpact
 Description of the impact on users of the remediation.
 Only applies to recommendations with category set to identitySecureScore.
@@ -460,7 +476,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: Brief title for the page that the links directs to.
-    - `[Url <String>]`: The URL to the documentation or Azure portal page.
+    - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
   - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
   - `[Text <String>]`: Friendly description of the action to take.
 

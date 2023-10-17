@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
 The properties id, type, and description cannot be modified.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,6 +31,7 @@ Update-MgPolicyAuthenticationFlowPolicy -BodyParameter <IMicrosoftGraphAuthentic
 ## DESCRIPTION
 Update the selfServiceSignUp property of an authenticationFlowsPolicy object.
 The properties id, type, and description cannot be modified.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -205,11 +207,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: Inherited property. The human-readable name of the policy. Optional. Read-only.
   - `[SelfServiceSignUp <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>]`: selfServiceSignUpAuthenticationFlowConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+    - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
 
 `SELFSERVICESIGNUP <IMicrosoftGraphSelfServiceSignUpAuthenticationFlowConfiguration>`: selfServiceSignUpAuthenticationFlowConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+  - `[IsEnabled <Boolean?>]`: Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
 
 ## RELATED LINKS
 

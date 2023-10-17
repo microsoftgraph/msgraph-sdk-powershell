@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new identityApiConnector object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ New-MgIdentityApiConnector -BodyParameter <IMicrosoftGraphIdentityApiConnector> 
 
 ## DESCRIPTION
 Create a new identityApiConnector object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

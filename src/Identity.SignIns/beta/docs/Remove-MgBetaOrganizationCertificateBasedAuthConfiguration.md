@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a certificateBasedAuthConfiguration object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgBetaOrganizationCertificateBasedAuthConfiguration -InputObject <IIdenti
 
 ## DESCRIPTION
 Delete a certificateBasedAuthConfiguration object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

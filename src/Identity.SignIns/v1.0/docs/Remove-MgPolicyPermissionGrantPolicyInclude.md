@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdenti
 
 ## DESCRIPTION
 Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

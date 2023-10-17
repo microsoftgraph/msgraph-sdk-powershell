@@ -9,11 +9,12 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a user's phone authentication method.
-This removes the phone number from the user and they will no longer be able to use the number for authentication, whether via SMS or voice calls.
-A user cannot have an alternateMobile number without a mobile number.
+This removes the phone number from the user and they'll no longer be able to use the number for authentication, whether via SMS or voice calls.
+A user can't have an alternateMobile number without a mobile number.
 If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
-If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted.
+If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it can't be deleted.
 Have the user change their default authentication method, and then delete the number.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,11 +32,12 @@ Remove-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> [
 
 ## DESCRIPTION
 Delete a user's phone authentication method.
-This removes the phone number from the user and they will no longer be able to use the number for authentication, whether via SMS or voice calls.
-A user cannot have an alternateMobile number without a mobile number.
+This removes the phone number from the user and they'll no longer be able to use the number for authentication, whether via SMS or voice calls.
+A user can't have an alternateMobile number without a mobile number.
 If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number.
-If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted.
+If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it can't be deleted.
 Have the user change their default authentication method, and then delete the number.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

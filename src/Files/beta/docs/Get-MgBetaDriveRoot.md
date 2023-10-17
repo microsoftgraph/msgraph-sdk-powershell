@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Get-MgBetaDriveRoot -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [
 
 ## DESCRIPTION
 Retrieve the metadata for a driveItem in a drive by file system path or ID.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

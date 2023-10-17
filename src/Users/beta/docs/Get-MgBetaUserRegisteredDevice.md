@@ -11,7 +11,7 @@ schema: 2.0.0
 Devices that are registered for the user.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and returns up to 100 objects.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Get-MgBetaUserRegisteredDevice -InputObject <IUsersIdentity> [-ExpandProperty <S
 Devices that are registered for the user.
 Read-only.
 Nullable.
-Supports $expand.
+Supports $expand and returns up to 100 objects.
 
 ## EXAMPLES
 

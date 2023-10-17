@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new OneNote notebook.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,6 +49,7 @@ New-MgBetaUserOnenoteNotebook -InputObject <INotesIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Create a new OneNote notebook.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

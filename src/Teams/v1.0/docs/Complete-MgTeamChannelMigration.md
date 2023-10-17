@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Complete the message migration process by removing migration mode from a channel in a team.
 Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
-After a completeMigration request is made, you cannot import additional messages into the team.
+After a completeMigration request is made, you can't import additional messages into the team.
 You can add members to the team after the request returns a successful response.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,8 +31,9 @@ Complete-MgTeamChannelMigration -InputObject <ITeamsIdentity> [-PassThru] [-Conf
 ## DESCRIPTION
 Complete the message migration process by removing migration mode from a channel in a team.
 Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process.
-After a completeMigration request is made, you cannot import additional messages into the team.
+After a completeMigration request is made, you can't import additional messages into the team.
 You can add members to the team after the request returns a successful response.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Add a new user or group to the acceptedSender list.
 Specify the user or group in @odata.id in the request body.
-Users in the accepted senders list can post to conversations of the group .
-Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+Users in the accepted senders list can post to conversations of the group.
+Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,8 +43,9 @@ New-MgBetaGroupAcceptedSenderByRef -InputObject <IGroupsIdentity> -OdataId <Stri
 ## DESCRIPTION
 Add a new user or group to the acceptedSender list.
 Specify the user or group in @odata.id in the request body.
-Users in the accepted senders list can post to conversations of the group .
-Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+Users in the accepted senders list can post to conversations of the group.
+Make sure you don't specify the same user or group in the accepted senders and rejected senders lists, otherwise you'll get an error.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

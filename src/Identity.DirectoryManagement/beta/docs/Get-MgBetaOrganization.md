@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of the currently authenticated organization.
 Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,6 +36,7 @@ Get-MgBetaOrganization -InputObject <IIdentityDirectoryManagementIdentity> [-Exp
 ## DESCRIPTION
 Get the properties and relationships of the currently authenticated organization.
 Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -43,7 +45,7 @@ Since the organization resource supports extensions, you can also use the GET op
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaOrganization
+Get-MgBetaOrganization -OrganizationId $organizationId
 
 ## PARAMETERS
 

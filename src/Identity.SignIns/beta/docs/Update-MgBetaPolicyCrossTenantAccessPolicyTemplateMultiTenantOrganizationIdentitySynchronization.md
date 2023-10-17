@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Update-MgBetaPolicyCrossTenantAccessPolicyTemplateMultiTenantOrganizationIdentit
 
 ## DESCRIPTION
 Update the cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

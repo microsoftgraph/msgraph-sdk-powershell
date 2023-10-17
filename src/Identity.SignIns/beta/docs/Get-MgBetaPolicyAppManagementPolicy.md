@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties of an appManagementPolicy object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity> [-Ex
 
 ## DESCRIPTION
 Read the properties of an appManagementPolicy object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

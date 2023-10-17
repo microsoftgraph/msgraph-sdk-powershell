@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a todoTask object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,6 +56,7 @@ Update-MgUserTodoListTask -InputObject <IUsersIdentity> [-AdditionalProperties <
 
 ## DESCRIPTION
 Update the properties of a todoTask object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -565,7 +567,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ContentType <String>]`: The MIME type.
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+  - `[Name <String>]`: The display name of the attachment. This doesn't need to be the actual file name.
   - `[Size <Int32?>]`: The length of the attachment in bytes.
 
 `ATTACHMENTSESSIONS <IMicrosoftGraphAttachmentSession[]>`: .
@@ -591,7 +593,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ContentType <String>]`: The MIME type.
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
+    - `[Name <String>]`: The display name of the attachment. This doesn't need to be the actual file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

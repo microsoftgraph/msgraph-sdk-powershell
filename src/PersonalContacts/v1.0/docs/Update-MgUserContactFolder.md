@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of contactfolder object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,6 +49,7 @@ Update-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-Additional
 
 ## DESCRIPTION
 Update the properties of contactfolder object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

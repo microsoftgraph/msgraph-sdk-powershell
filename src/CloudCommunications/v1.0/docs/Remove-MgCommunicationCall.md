@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete or hang up an active call.
 For group calls, this will only delete your call leg and the underlying group call will still continue.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-IfMatch
 ## DESCRIPTION
 Delete or hang up an active call.
 For group calls, this will only delete your call leg and the underlying group call will still continue.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -157,6 +159,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport

@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the properties and relationships of a device object.
 Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Get-MgBetaDeviceByDeviceId -InputObject <IIdentityDirectoryManagementIdentity> [
 ## DESCRIPTION
 Get the properties and relationships of a device object.
 Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

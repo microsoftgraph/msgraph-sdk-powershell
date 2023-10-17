@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Run health checks on the cloudPcOnPremisesConnection object.
 This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Start-MgBetaDeviceManagementVirtualEndpointOnPremiseConnectionHealthCheck
 ## DESCRIPTION
 Run health checks on the cloudPcOnPremisesConnection object.
 This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

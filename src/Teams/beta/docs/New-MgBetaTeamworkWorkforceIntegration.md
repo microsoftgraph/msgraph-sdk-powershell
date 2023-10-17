@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new workforceIntegration object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,6 +30,7 @@ New-MgBetaTeamworkWorkforceIntegration -BodyParameter <IMicrosoftGraphWorkforceI
 
 ## DESCRIPTION
 Create a new workforceIntegration object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -69,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApiVersion
-API version for the call back URL.
+API version for the callback URL.
 Start with 1.
 
 ```yaml
@@ -317,7 +319,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ApiVersion <Int32?>]`: API version for the call back URL. Start with 1.
+  - `[ApiVersion <Int32?>]`: API version for the callback URL. Start with 1.
   - `[DisplayName <String>]`: Name of the workforce integration.
   - `[EligibilityFilteringEnabledEntities <String>]`: eligibilityFilteringEnabledEntities
   - `[Encryption <IMicrosoftGraphWorkforceIntegrationEncryption>]`: workforceIntegrationEncryption

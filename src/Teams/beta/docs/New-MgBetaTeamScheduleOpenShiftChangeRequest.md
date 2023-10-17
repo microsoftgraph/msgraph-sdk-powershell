@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create instance of an openShiftChangeRequest object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ New-MgBetaTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity> [-Add
 
 ## DESCRIPTION
 Create instance of an openShiftChangeRequest object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

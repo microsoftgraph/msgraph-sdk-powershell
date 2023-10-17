@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Update the properties of a windowsAppX object.
+Update the properties of a win32LobApp object.
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Update-MgDeviceAppManagementMobileApp -InputObject <IDevicesCorporateManagementI
 ```
 
 ## DESCRIPTION
-Update the properties of a windowsAppX object.
+Update the properties of a win32LobApp object.
 
 ## EXAMPLES
 

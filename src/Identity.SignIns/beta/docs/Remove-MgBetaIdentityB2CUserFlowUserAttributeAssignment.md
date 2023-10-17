@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an identityUserFlowAttributeAssignment object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Remove-MgBetaIdentityB2CUserFlowUserAttributeAssignment -InputObject <IIdentityS
 
 ## DESCRIPTION
 Delete an identityUserFlowAttributeAssignment object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

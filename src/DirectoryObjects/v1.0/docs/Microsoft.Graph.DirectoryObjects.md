@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DirectoryObjects
-Module Guid: 2f85a21b-6178-4d9c-9d37-076257d07009
+Module Guid: 5ae84a65-f54c-42f5-acbd-8f6724ccf1e3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,21 +17,23 @@ This function is transitive.
 You can check up to a maximum of 20 groups per request.
 This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+This API is available in the following national cloud deployments.
 
 ### [Confirm-MgDirectoryObjectMemberObject](Confirm-MgDirectoryObjectMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Get-MgDirectoryObject](Get-MgDirectoryObject.md)
 Retrieve the properties and relationships of a directoryObject object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryObjectAvailableExtensionProperty](Get-MgDirectoryObjectAvailableExtensionProperty.md)
 Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+The following entities support extension properties: This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryObjectById](Get-MgDirectoryObjectById.md)
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to:
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryObjectCount](Get-MgDirectoryObjectCount.md)
 Get the number of the resource
@@ -45,17 +47,20 @@ This function is transitive.
 This API returns up to 11,000 group IDs.
 If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code.
 As a workaround, use the List group transitive memberOf API.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryObjectMemberObject](Get-MgDirectoryObjectMemberObject.md)
 Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
+This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryObject](New-MgDirectoryObject.md)
 Add new entity to directoryObjects
 
 ### [Remove-MgDirectoryObject](Remove-MgDirectoryObject.md)
 Delete a directory object, for example, a group, user, application, or service principal.
+This API is available in the following national cloud deployments.
 
 ### [Test-MgDirectoryObjectProperty](Test-MgDirectoryObjectProperty.md)
 Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
@@ -68,6 +73,7 @@ Validate that the mail nickname is unique This API only returns the first valida
 If the properties fail multiple validations, only the first validation failure is returned.
 However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
 To learn more about configuring naming policies, see Configure naming policy.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgDirectoryObject](Update-MgDirectoryObject.md)
 Update entity in directoryObjects

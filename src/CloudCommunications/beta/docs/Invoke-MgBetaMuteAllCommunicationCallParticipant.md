@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Mute all participants in the call.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,6 +42,7 @@ Invoke-MgBetaMuteAllCommunicationCallParticipant -InputObject <ICloudCommunicati
 
 ## DESCRIPTION
 Mute all participants in the call.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

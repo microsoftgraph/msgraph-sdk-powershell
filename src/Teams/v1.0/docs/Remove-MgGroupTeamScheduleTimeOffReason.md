@@ -10,8 +10,9 @@ schema: 2.0.0
 ## SYNOPSIS
 Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeoff reason.
-This method does not remove the specified timeOffReason instance.
+This method doesn't remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,8 +31,9 @@ Remove-MgGroupTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-IfMatch 
 ## DESCRIPTION
 Mark a timeOffReason as inactive by setting the isActive property.
 Every team must include at least one timeoff reason.
-This method does not remove the specified timeOffReason instance.
+This method doesn't remove the specified timeOffReason instance.
 timeOffItem instances that have been assigned this reason remain assigned to this reason.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

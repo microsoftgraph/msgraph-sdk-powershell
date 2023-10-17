@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 A directory setting template represents a template of settings from which settings may be created within a tenant.
 This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -35,6 +36,7 @@ Get-MgBetaDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIde
 ## DESCRIPTION
 A directory setting template represents a template of settings from which settings may be created within a tenant.
 This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

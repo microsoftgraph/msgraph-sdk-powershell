@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the availability information of staff members of a Microsoft Bookings calendar.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Get-MgBetaBookingBusinessStaffAvailability -InputObject <IBookingsIdentity>
 
 ## DESCRIPTION
 Get the availability information of staff members of a Microsoft Bookings calendar.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

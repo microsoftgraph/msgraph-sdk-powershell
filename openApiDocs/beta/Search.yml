@@ -2489,11 +2489,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties. This API is available in the following national cloud deployments.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the dataConnector navigation property. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2556,7 +2556,7 @@ paths:
       tags:
         - external.industryDataRoot
       summary: Create azureDataLakeConnector
-      description: Create a new azureDataLakeConnector object.
+      description: Create a new azureDataLakeConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
@@ -2582,11 +2582,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get industryDataConnector
-      description: Read the properties and relationships of an industryDataConnector object.
+      summary: Get azureDataLakeConnector
+      description: Read the properties and relationships of an azureDataLakeConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2637,11 +2637,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update industryDataConnector
-      description: Update the properties of an industryDataConnector object. This API is available in the following national cloud deployments.
+      summary: Update azureDataLakeConnector
+      description: Update the properties of an azureDataLakeConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2672,11 +2672,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete azureDataLakeConnector
-      description: Delete an azureDataLakeConnector object.
+      summary: Delete industryDataConnector
+      description: Delete an industryDataConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2902,11 +2902,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlow
-      description: Read the properties and relationships of an inboundFlow object.
+      summary: Get inboundFileFlow
+      description: Read the properties and relationships of an inboundFileFlow object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2963,11 +2963,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFlow
-      description: Update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -6381,13 +6381,13 @@ components:
             availabilityEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
+              description: Timestamp of when the qna stops to appear as a search result. Set as null for always available.
               format: date-time
               nullable: true
             availabilityStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp of when the qna will start to appear as a search result. Set as null for always available.
+              description: Timestamp of when the qna starts to appear as a search result. Set as null for always available.
               format: date-time
               nullable: true
             groupIds:
@@ -6398,7 +6398,7 @@ components:
               description: List of security groups able to view this qna.
             isSuggested:
               type: boolean
-              description: True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+              description: True if a user or Microsoft suggested this qna to the admin. Read-only.
               nullable: true
             keywords:
               $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
@@ -6419,7 +6419,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
-              description: 'Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.'
+              description: 'Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -6615,7 +6615,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -7570,7 +7570,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.bucketAggregationRange'
-          description: Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+          description: Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
         sortBy:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
       additionalProperties:

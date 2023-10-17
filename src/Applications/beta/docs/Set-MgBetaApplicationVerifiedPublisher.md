@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Set the the verifiedPublisher on an application.
 For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,6 +44,7 @@ Set-MgBetaApplicationVerifiedPublisher -InputObject <IApplicationsIdentity>
 ## DESCRIPTION
 Set the the verifiedPublisher on an application.
 For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -235,6 +237,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalId <String>]`: The unique identifier of servicePrincipal
   - `[SynchronizationJobId <String>]`: The unique identifier of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: The unique identifier of synchronizationTemplate
+  - `[TargetDeviceGroupId <String>]`: The unique identifier of targetDeviceGroup
   - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UniqueName <String>]`: Alternate key of application

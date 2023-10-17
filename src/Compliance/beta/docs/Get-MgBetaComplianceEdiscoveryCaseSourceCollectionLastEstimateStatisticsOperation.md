@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the last estimateStatisticsOperation object associated with a source collection.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Get-MgBetaComplianceEdiscoveryCaseSourceCollectionLastEstimateStatisticsOperatio
 
 ## DESCRIPTION
 Get the last estimateStatisticsOperation object associated with a source collection.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

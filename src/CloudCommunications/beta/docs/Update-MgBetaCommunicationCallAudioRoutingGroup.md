@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Modify sources and receivers of an audioRoutingGroup.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ Update-MgBetaCommunicationCallAudioRoutingGroup -InputObject <ICloudCommunicatio
 
 ## DESCRIPTION
 Modify sources and receivers of an audioRoutingGroup.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

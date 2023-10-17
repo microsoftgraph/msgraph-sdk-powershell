@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Notes
-Module Guid: 6ff9d647-7625-420a-b2ff-708d3d4965e3
+Module Guid: 45294835-90ba-46ea-b63f-1af6380e3250
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.notes
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,15 +13,18 @@ Microsoft Graph PowerShell Cmdlets
 ## Microsoft.Graph.Notes Cmdlets
 ### [Get-MgGroupOnenoteNotebook](Get-MgGroupOnenoteNotebook.md)
 Retrieve the properties and relationships of a notebook object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteNotebookCount](Get-MgGroupOnenoteNotebookCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupOnenoteNotebookSection](Get-MgGroupOnenoteNotebookSection.md)
 Retrieve a list of onenoteSection objects from the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteNotebookSectionGroup](Get-MgGroupOnenoteNotebookSectionGroup.md)
 Retrieve a list of section groups from the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteOperation](Get-MgGroupOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
@@ -29,6 +32,7 @@ This applies to operations that return the Operation-Location header in the resp
   You can poll the Operation-Location endpoint until the status property returns completed or failed.
 If the status is completed, the resourceLocation property contains the resource endpoint URI.
 If the status is failed, the error and @api.diagnostics properties provide error information.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteOperationCount](Get-MgGroupOnenoteOperationCount.md)
 Get the number of the resource
@@ -36,6 +40,7 @@ Get the number of the resource
 ### [Get-MgGroupOnenotePage](Get-MgGroupOnenotePage.md)
 Retrieve the properties and relationships of a page object.
 Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenotePageContent](Get-MgGroupOnenotePageContent.md)
 The page's HTML content.
@@ -45,7 +50,7 @@ Get the number of the resource
 
 ### [Get-MgGroupOnenoteResource](Get-MgGroupOnenoteResource.md)
 The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -57,33 +62,40 @@ Get the number of the resource
 
 ### [Get-MgGroupOnenoteSection](Get-MgGroupOnenoteSection.md)
 Retrieve the properties and relationships of a onenoteSection object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteSectionCount](Get-MgGroupOnenoteSectionCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupOnenoteSectionGroup](Get-MgGroupOnenoteSectionGroup.md)
 Retrieve the properties and relationships of a sectionGroup object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteSectionGroupCount](Get-MgGroupOnenoteSectionGroupCount.md)
 Get the number of the resource
 
 ### [Get-MgGroupOnenoteSectionGroupSection](Get-MgGroupOnenoteSectionGroupSection.md)
 Retrieve a list of onenoteSection objects from the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupOnenoteSectionPage](Get-MgGroupOnenoteSectionPage.md)
 Retrieve a list of page objects from the specified section.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteNotebook](Get-MgSiteOnenoteNotebook.md)
 Retrieve the properties and relationships of a notebook object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteNotebookCount](Get-MgSiteOnenoteNotebookCount.md)
 Get the number of the resource
 
 ### [Get-MgSiteOnenoteNotebookSection](Get-MgSiteOnenoteNotebookSection.md)
 Retrieve a list of onenoteSection objects from the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteNotebookSectionGroup](Get-MgSiteOnenoteNotebookSectionGroup.md)
 Retrieve a list of section groups from the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteOperation](Get-MgSiteOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
@@ -91,6 +103,7 @@ This applies to operations that return the Operation-Location header in the resp
   You can poll the Operation-Location endpoint until the status property returns completed or failed.
 If the status is completed, the resourceLocation property contains the resource endpoint URI.
 If the status is failed, the error and @api.diagnostics properties provide error information.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteOperationCount](Get-MgSiteOnenoteOperationCount.md)
 Get the number of the resource
@@ -98,6 +111,7 @@ Get the number of the resource
 ### [Get-MgSiteOnenotePage](Get-MgSiteOnenotePage.md)
 Retrieve the properties and relationships of a page object.
 Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenotePageContent](Get-MgSiteOnenotePageContent.md)
 The page's HTML content.
@@ -107,7 +121,7 @@ Get the number of the resource
 
 ### [Get-MgSiteOnenoteResource](Get-MgSiteOnenoteResource.md)
 The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -119,33 +133,40 @@ Get the number of the resource
 
 ### [Get-MgSiteOnenoteSection](Get-MgSiteOnenoteSection.md)
 Retrieve the properties and relationships of a onenoteSection object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteSectionCount](Get-MgSiteOnenoteSectionCount.md)
 Get the number of the resource
 
 ### [Get-MgSiteOnenoteSectionGroup](Get-MgSiteOnenoteSectionGroup.md)
 Retrieve the properties and relationships of a sectionGroup object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteSectionGroupCount](Get-MgSiteOnenoteSectionGroupCount.md)
 Get the number of the resource
 
 ### [Get-MgSiteOnenoteSectionGroupSection](Get-MgSiteOnenoteSectionGroupSection.md)
 Retrieve a list of onenoteSection objects from the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgSiteOnenoteSectionPage](Get-MgSiteOnenoteSectionPage.md)
 Retrieve a list of page objects from the specified section.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteNotebook](Get-MgUserOnenoteNotebook.md)
 Retrieve the properties and relationships of a notebook object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteNotebookCount](Get-MgUserOnenoteNotebookCount.md)
 Get the number of the resource
 
 ### [Get-MgUserOnenoteNotebookSection](Get-MgUserOnenoteNotebookSection.md)
 Retrieve a list of onenoteSection objects from the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteNotebookSectionGroup](Get-MgUserOnenoteNotebookSectionGroup.md)
 Retrieve a list of section groups from the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteOperation](Get-MgUserOnenoteOperation.md)
 Get the status of a long-running OneNote operation.
@@ -153,6 +174,7 @@ This applies to operations that return the Operation-Location header in the resp
   You can poll the Operation-Location endpoint until the status property returns completed or failed.
 If the status is completed, the resourceLocation property contains the resource endpoint URI.
 If the status is failed, the error and @api.diagnostics properties provide error information.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteOperationCount](Get-MgUserOnenoteOperationCount.md)
 Get the number of the resource
@@ -160,6 +182,7 @@ Get the number of the resource
 ### [Get-MgUserOnenotePage](Get-MgUserOnenotePage.md)
 Retrieve the properties and relationships of a page object.
 Getting page information Access a page's metadata by page identifier: Getting page content You can use the page's content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenotePageContent](Get-MgUserOnenotePageContent.md)
 The page's HTML content.
@@ -169,7 +192,7 @@ Get the number of the resource
 
 ### [Get-MgUserOnenoteResource](Get-MgUserOnenoteResource.md)
 The image and other file resources in OneNote pages.
-Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Getting a resources collection isn't supported, but you can get the binary content of a specific resource.
 Read-only.
 Nullable.
 
@@ -181,36 +204,44 @@ Get the number of the resource
 
 ### [Get-MgUserOnenoteSection](Get-MgUserOnenoteSection.md)
 Retrieve the properties and relationships of a onenoteSection object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteSectionCount](Get-MgUserOnenoteSectionCount.md)
 Get the number of the resource
 
 ### [Get-MgUserOnenoteSectionGroup](Get-MgUserOnenoteSectionGroup.md)
 Retrieve the properties and relationships of a sectionGroup object.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteSectionGroupCount](Get-MgUserOnenoteSectionGroupCount.md)
 Get the number of the resource
 
 ### [Get-MgUserOnenoteSectionGroupSection](Get-MgUserOnenoteSectionGroupSection.md)
 Retrieve a list of onenoteSection objects from the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [Get-MgUserOnenoteSectionPage](Get-MgUserOnenoteSectionPage.md)
 Retrieve a list of page objects from the specified section.
+This API is available in the following national cloud deployments.
 
 ### [New-MgGroupOnenoteNotebook](New-MgGroupOnenoteNotebook.md)
 Create a new OneNote notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgGroupOnenoteNotebookSection](New-MgGroupOnenoteNotebookSection.md)
 Create a new onenoteSection in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgGroupOnenoteNotebookSectionGroup](New-MgGroupOnenoteNotebookSectionGroup.md)
 Create a new section group in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgGroupOnenotePage](New-MgGroupOnenotePage.md)
 Create a new OneNote page in the default section of the default notebook.
 To create a page in a different section in the default notebook, you can use the sectionName query parameter.
 Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
+ This API is available in the following national cloud deployments.
 
 ### [New-MgGroupOnenoteSection](New-MgGroupOnenoteSection.md)
 Create new navigation property to sections for groups
@@ -220,24 +251,30 @@ Create new navigation property to sectionGroups for groups
 
 ### [New-MgGroupOnenoteSectionGroupSection](New-MgGroupOnenoteSectionGroupSection.md)
 Create a new onenoteSection in the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [New-MgGroupOnenoteSectionPage](New-MgGroupOnenoteSectionPage.md)
 Create a new page in the specified section.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSiteOnenoteNotebook](New-MgSiteOnenoteNotebook.md)
 Create a new OneNote notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSiteOnenoteNotebookSection](New-MgSiteOnenoteNotebookSection.md)
 Create a new onenoteSection in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSiteOnenoteNotebookSectionGroup](New-MgSiteOnenoteNotebookSectionGroup.md)
 Create a new section group in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSiteOnenotePage](New-MgSiteOnenotePage.md)
 Create a new OneNote page in the default section of the default notebook.
 To create a page in a different section in the default notebook, you can use the sectionName query parameter.
 Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
+ This API is available in the following national cloud deployments.
 
 ### [New-MgSiteOnenoteSection](New-MgSiteOnenoteSection.md)
 Create new navigation property to sections for sites
@@ -247,24 +284,30 @@ Create new navigation property to sectionGroups for sites
 
 ### [New-MgSiteOnenoteSectionGroupSection](New-MgSiteOnenoteSectionGroupSection.md)
 Create a new onenoteSection in the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [New-MgSiteOnenoteSectionPage](New-MgSiteOnenoteSectionPage.md)
 Create a new page in the specified section.
+This API is available in the following national cloud deployments.
 
 ### [New-MgUserOnenoteNotebook](New-MgUserOnenoteNotebook.md)
 Create a new OneNote notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgUserOnenoteNotebookSection](New-MgUserOnenoteNotebookSection.md)
 Create a new onenoteSection in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgUserOnenoteNotebookSectionGroup](New-MgUserOnenoteNotebookSectionGroup.md)
 Create a new section group in the specified notebook.
+This API is available in the following national cloud deployments.
 
 ### [New-MgUserOnenotePage](New-MgUserOnenotePage.md)
 Create a new OneNote page in the default section of the default notebook.
 To create a page in a different section in the default notebook, you can use the sectionName query parameter.
 Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user's default notebook.
 If you're targeting other notebooks, you can create pages in a specified section.
+ This API is available in the following national cloud deployments.
 
 ### [New-MgUserOnenoteSection](New-MgUserOnenoteSection.md)
 Create new navigation property to sections for users
@@ -274,15 +317,18 @@ Create new navigation property to sectionGroups for users
 
 ### [New-MgUserOnenoteSectionGroupSection](New-MgUserOnenoteSectionGroupSection.md)
 Create a new onenoteSection in the specified section group.
+This API is available in the following national cloud deployments.
 
 ### [New-MgUserOnenoteSectionPage](New-MgUserOnenoteSectionPage.md)
 Create a new page in the specified section.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupOnenoteNotebook](Remove-MgGroupOnenoteNotebook.md)
 Delete navigation property notebooks for groups
 
 ### [Remove-MgGroupOnenotePage](Remove-MgGroupOnenotePage.md)
 Delete a OneNote page.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupOnenoteSection](Remove-MgGroupOnenoteSection.md)
 Delete navigation property sections for groups
@@ -295,6 +341,7 @@ Delete navigation property notebooks for sites
 
 ### [Remove-MgSiteOnenotePage](Remove-MgSiteOnenotePage.md)
 Delete a OneNote page.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgSiteOnenoteSection](Remove-MgSiteOnenoteSection.md)
 Delete navigation property sections for sites
@@ -307,6 +354,7 @@ Delete navigation property notebooks for users
 
 ### [Remove-MgUserOnenotePage](Remove-MgUserOnenotePage.md)
 Delete a OneNote page.
+This API is available in the following national cloud deployments.
 
 ### [Remove-MgUserOnenoteSection](Remove-MgUserOnenoteSection.md)
 Delete navigation property sections for users

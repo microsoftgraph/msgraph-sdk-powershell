@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the properties and relationships of a peopleAdminSettings object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -18,6 +19,7 @@ Get-MgBetaAdminPeople [-ExpandProperty <String[]>] [-Property <String[]>] [<Comm
 
 ## DESCRIPTION
 Retrieve the properties and relationships of a peopleAdminSettings object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

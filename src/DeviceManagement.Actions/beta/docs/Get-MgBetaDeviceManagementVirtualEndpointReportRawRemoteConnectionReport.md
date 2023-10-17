@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport
 
 ## SYNOPSIS
-Invoke action getRawRemoteConnectionReports
+Get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport
 ```
 
 ## DESCRIPTION
-Invoke action getRawRemoteConnectionReports
+Get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
 
 ## EXAMPLES
 

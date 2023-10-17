@@ -14,6 +14,7 @@ This flow writes the new password to Azure Active Directory and pushes it to on-
 The admin can either provide a new password or have the system generate one.
 The user is prompted to change their password on their next sign in.
 This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,6 +51,7 @@ This flow writes the new password to Azure Active Directory and pushes it to on-
 The admin can either provide a new password or have the system generate one.
 The user is prompted to change their password on their next sign in.
 This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

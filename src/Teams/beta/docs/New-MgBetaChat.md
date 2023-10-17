@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new chat object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ New-MgBetaChat -BodyParameter <IMicrosoftGraphChat> [-Confirm] [-WhatIf] [<Commo
 
 ## DESCRIPTION
 Create a new chat object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

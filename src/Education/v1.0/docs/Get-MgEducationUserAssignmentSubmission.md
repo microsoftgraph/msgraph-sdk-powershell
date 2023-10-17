@@ -17,6 +17,7 @@ A teacher or application with application permissions has full access to all sub
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
 Students will not see the grade or feedback until the assignment has been released.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,6 +50,7 @@ A teacher or application with application permissions has full access to all sub
 The grade and feedback from a teacher are part of the educationOutcome associated with this object.
 Only teachers or applications with application permissions can add or change grades and feedback.
 Students will not see the grade or feedback until the assignment has been released.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

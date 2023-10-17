@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaAdminEdgeInternetExplorerModeSiteList -InputObject <IDeviceManagementI
 
 ## DESCRIPTION
 Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

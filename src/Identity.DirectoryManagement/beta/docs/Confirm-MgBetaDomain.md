@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Validates the ownership of the domain.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Confirm-MgBetaDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confi
 
 ## DESCRIPTION
 Validates the ownership of the domain.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

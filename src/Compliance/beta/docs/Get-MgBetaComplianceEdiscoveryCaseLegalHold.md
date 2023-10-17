@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a legalHold object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaComplianceEdiscoveryCaseLegalHold -InputObject <IComplianceIdentity> [
 
 ## DESCRIPTION
 Read the properties and relationships of a legalHold object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Restore-MgBetaDriveListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Pa
 
 ## DESCRIPTION
 Restore a document set version.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

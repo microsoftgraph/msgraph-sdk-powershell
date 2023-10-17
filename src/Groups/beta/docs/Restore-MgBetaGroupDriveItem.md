@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a driveItem that has been deleted and is currently in the recycle bin.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,6 +42,7 @@ Restore-MgBetaGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Restore a driveItem that has been deleted and is currently in the recycle bin.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

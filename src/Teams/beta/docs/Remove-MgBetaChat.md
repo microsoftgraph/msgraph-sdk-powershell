@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Soft-delete a chat.
 When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,6 +28,7 @@ Remove-MgBetaChat -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] 
 ## DESCRIPTION
 Soft-delete a chat.
 When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

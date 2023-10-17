@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Adds specific groups to a lifecycle policy.
 This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,6 +43,7 @@ Add-MgGroupToLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalProperti
 ## DESCRIPTION
 Adds specific groups to a lifecycle policy.
 This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

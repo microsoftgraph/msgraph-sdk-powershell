@@ -13,6 +13,7 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 You can find the log in Azure AD audit logs under the KeyManagement category.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,6 +42,7 @@ By default, this operation does not return the key property that represents the 
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 You can find the log in Azure AD audit logs under the KeyManagement category.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -322,6 +324,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
   - `[PermissionId <String>]`: The unique identifier of permission
+  - `[RecycleBinItemId <String>]`: The unique identifier of recycleBinItem
   - `[RelationId <String>]`: The unique identifier of relation
   - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
   - `[SectionGroupId <String>]`: The unique identifier of sectionGroup

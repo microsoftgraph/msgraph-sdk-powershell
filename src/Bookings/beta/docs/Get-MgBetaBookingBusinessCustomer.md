@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of a bookingCustomer object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,6 +34,7 @@ Get-MgBetaBookingBusinessCustomer -InputObject <IBookingsIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Get the properties and relationships of a bookingCustomer object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

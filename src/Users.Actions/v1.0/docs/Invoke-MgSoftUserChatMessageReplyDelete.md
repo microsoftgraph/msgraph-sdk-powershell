@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a single chatMessage or a chat message reply in a channel or a chat.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Invoke-MgSoftUserChatMessageReplyDelete -InputObject <IUsersActionsIdentity> [-P
 
 ## DESCRIPTION
 Delete a single chatMessage or a chat message reply in a channel or a chat.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

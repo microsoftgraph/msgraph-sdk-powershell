@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Send an activity feed notification in the scope of a team.
 For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ Send-MgTeamActivityNotification -InputObject <ITeamsIdentity> [-ActivityType <St
 ## DESCRIPTION
 Send an activity feed notification in the scope of a team.
 For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -500,7 +502,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Topic <IMicrosoftGraphTeamworkActivityTopic>]`: teamworkActivityTopic
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Source <String>]`: teamworkActivityTopicSource
-    - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+    - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the value is text, this must be a plain text value.
     - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 `INPUTOBJECT <ITeamsIdentity>`: Identity Parameter
@@ -549,7 +551,7 @@ To create the parameters described below, construct a hash table containing the 
 `TOPIC <IMicrosoftGraphTeamworkActivityTopic>`: teamworkActivityTopic
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Source <String>]`: teamworkActivityTopicSource
-  - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the vaule is text, this must be a plain text value.
+  - `[Value <String>]`: The topic value. If the value of the source property is entityUrl, this must be a Microsoft Graph URL. If the value is text, this must be a plain text value.
   - `[WebUrl <String>]`: The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
 
 ## RELATED LINKS

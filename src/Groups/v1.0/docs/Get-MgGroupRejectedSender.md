@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgGroupRejectedSender
 
 ## SYNOPSIS
-Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+Users in the rejected senders list can't post to conversations of the group (identified in the GET request URL).
+Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -19,8 +20,9 @@ Get-MgGroupRejectedSender -GroupId <String> [-Filter <String>] [-Property <Strin
 ```
 
 ## DESCRIPTION
-Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+Users in the rejected senders list can't post to conversations of the group (identified in the GET request URL).
+Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

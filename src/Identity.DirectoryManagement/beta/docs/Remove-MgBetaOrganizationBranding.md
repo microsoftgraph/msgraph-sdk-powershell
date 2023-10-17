@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete the default organizational branding object.
 To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgBetaOrganizationBranding -InputObject <IIdentityDirectoryManagementIden
 ## DESCRIPTION
 Delete the default organizational branding object.
 To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

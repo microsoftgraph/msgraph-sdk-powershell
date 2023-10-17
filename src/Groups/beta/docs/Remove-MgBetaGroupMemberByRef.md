@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Remove a member from a group via the members navigation property.
 You can't remove a member from groups with dynamic memberships.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Remove-MgBetaGroupMemberByRef -InputObject <IGroupsIdentity> [-Id <String>] [-If
 ## DESCRIPTION
 Remove a member from a group via the members navigation property.
 You can't remove a member from groups with dynamic memberships.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

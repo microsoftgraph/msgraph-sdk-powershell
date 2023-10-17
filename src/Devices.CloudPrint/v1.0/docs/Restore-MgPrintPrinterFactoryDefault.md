@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a printer's default settings to the values specified by the manufacturer.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,6 +26,7 @@ Restore-MgPrintPrinterFactoryDefault -InputObject <IDevicesCloudPrintIdentity> [
 
 ## DESCRIPTION
 Restore a printer's default settings to the values specified by the manufacturer.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: 27ce43e1-15ea-47c7-8a7c-46b1782ca5f7
+Module Guid: 8595e0c0-648c-4d81-ad4a-3f3a73501726
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Read properties and relationships of the onPremisesConditionalAccessSettings object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Read properties and relationships of the deviceEnrollmentConfiguration object.
+Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Read properties and relationships of the enrollmentConfigurationAssignment object.

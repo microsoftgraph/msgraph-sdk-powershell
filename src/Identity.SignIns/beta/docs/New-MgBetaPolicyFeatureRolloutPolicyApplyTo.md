@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -40,6 +41,7 @@ New-MgBetaPolicyFeatureRolloutPolicyApplyTo -InputObject <IIdentitySignInsIdenti
 
 ## DESCRIPTION
 Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

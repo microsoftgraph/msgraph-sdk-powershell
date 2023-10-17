@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of the default branding object specified by the organizationalBranding resource.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -66,6 +67,7 @@ Update-MgBetaOrganizationBranding -InputObject <IIdentityDirectoryManagementIden
 
 ## DESCRIPTION
 Update the properties of the default branding object specified by the organizationalBranding resource.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

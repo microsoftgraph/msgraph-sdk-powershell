@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Clear the preferred availability and activity status for a user.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Clear-MgUserPresenceUserPreferredPresence -InputObject <IUsersActionsIdentity> [
 
 ## DESCRIPTION
 Clear the preferred availability and activity status for a user.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

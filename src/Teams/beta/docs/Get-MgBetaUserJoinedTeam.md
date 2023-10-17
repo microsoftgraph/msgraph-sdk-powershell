@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the teams in Microsoft Teams that the user is a direct member of.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,6 +21,7 @@ Get-MgBetaUserJoinedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter 
 
 ## DESCRIPTION
 Get the teams in Microsoft Teams that the user is a direct member of.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

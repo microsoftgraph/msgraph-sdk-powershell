@@ -10,6 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Release a custodian from a case.
 For details, see Release a custodian from a case.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,6 +29,7 @@ Publish-MgBetaComplianceEdiscoveryCaseCustodian -InputObject <IComplianceIdentit
 ## DESCRIPTION
 Release a custodian from a case.
 For details, see Release a custodian from a case.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

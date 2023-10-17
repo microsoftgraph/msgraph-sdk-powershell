@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,6 +39,7 @@ New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -InputObject <IApplicationsI
 
 ## DESCRIPTION
 Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

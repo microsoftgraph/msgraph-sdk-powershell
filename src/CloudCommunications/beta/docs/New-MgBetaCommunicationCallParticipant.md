@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -PreferredDisplayName
-.
+The participant's preferred display name that overrides the original display name.
 
 ```yaml
 Type: System.String
@@ -379,7 +379,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[NonAnonymizedIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ParticipantId <String>]`: The participant ID of the participant. Read-only.
     - `[PlatformId <String>]`: The client platform ID of the participant. Read-only.
-    - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+    - `[Region <String>]`: The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
   - `[IsIdentityAnonymized <Boolean?>]`: 
   - `[IsInLobby <Boolean?>]`: true if the participant is in lobby.
   - `[IsMuted <Boolean?>]`: true if the participant is muted (client or server muted).
@@ -387,10 +387,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[Direction <String>]`: mediaDirection
     - `[Label <String>]`: The media stream label.
     - `[MediaType <String>]`: modality
-    - `[ServerMuted <Boolean?>]`: Indicates whether the media is muted by the server.
+    - `[ServerMuted <Boolean?>]`: Indicates whether the server has muted the media.
     - `[SourceId <String>]`: The source ID.
   - `[Metadata <String>]`: A blob of data provided by the participant in the roster.
-  - `[PreferredDisplayName <String>]`: 
+  - `[PreferredDisplayName <String>]`: The participant's preferred display name that overrides the original display name.
   - `[RecordingInfo <IMicrosoftGraphRecordingInfo>]`: recordingInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[InitiatedBy <IMicrosoftGraphParticipantInfo>]`: participantInfo
@@ -421,7 +421,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NonAnonymizedIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[ParticipantId <String>]`: The participant ID of the participant. Read-only.
   - `[PlatformId <String>]`: The client platform ID of the participant. Read-only.
-  - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+  - `[Region <String>]`: The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
 
 `INPUTOBJECT <ICloudCommunicationsIdentity>`: Identity Parameter
   - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
@@ -447,7 +447,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Direction <String>]`: mediaDirection
   - `[Label <String>]`: The media stream label.
   - `[MediaType <String>]`: modality
-  - `[ServerMuted <Boolean?>]`: Indicates whether the media is muted by the server.
+  - `[ServerMuted <Boolean?>]`: Indicates whether the server has muted the media.
   - `[SourceId <String>]`: The source ID.
 
 `RECORDINGINFO <IMicrosoftGraphRecordingInfo>`: recordingInfo
@@ -468,7 +468,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[NonAnonymizedIdentity <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[ParticipantId <String>]`: The participant ID of the participant. Read-only.
     - `[PlatformId <String>]`: The client platform ID of the participant. Read-only.
-    - `[Region <String>]`: The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location, unlike countryCode. Read-only.
+    - `[Region <String>]`: The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn't change based on the participant's current physical location, unlike countryCode. Read-only.
   - `[Initiator <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[RecordingStatus <String>]`: recordingStatus
 

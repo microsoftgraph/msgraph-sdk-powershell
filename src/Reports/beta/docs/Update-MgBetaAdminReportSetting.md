@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update tenant-level settings for Microsoft 365 reports.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Update-MgBetaAdminReportSetting -BodyParameter <IMicrosoftGraphAdminReportSettin
 
 ## DESCRIPTION
 Update tenant-level settings for Microsoft 365 reports.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
