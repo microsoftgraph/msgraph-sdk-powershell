@@ -14010,7 +14010,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List auditEvents
-      description: List all the cloudPcAuditEvent objects for the tenant. This API is supported in the following national cloud deployments.
+      description: List all the cloudPcAuditEvent objects for the tenant. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
@@ -14127,7 +14127,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcAuditEvent
-      description: Read the properties and relationships of a cloudPcAuditEvent object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcAuditEvent object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcauditevent-get?view=graph-rest-1.0
@@ -14478,7 +14478,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List cloudPCs
-      description: List the cloudPC devices in a tenant. This API is supported in the following national cloud deployments.
+      description: List the cloudPC devices in a tenant. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0
@@ -14640,7 +14640,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPC
-      description: Read the properties and relationships of a specific cloudPC object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a specific cloudPC object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpc-get?view=graph-rest-1.0
@@ -14790,7 +14790,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcCrossCloudGovernmentOrganizationMapping
-      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0
@@ -14876,7 +14876,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List deviceImages
-      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
@@ -14967,7 +14967,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcDeviceImage
-      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is supported in the following national cloud deployments.
+      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
@@ -14994,7 +14994,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcDeviceImage
-      description: Read the properties and relationships of a specific cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a specific cloudPcDeviceImage object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0
@@ -15087,7 +15087,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete cloudPcDeviceImage
-      description: Delete a cloudPcDeviceImage object. This API is supported in the following national cloud deployments.
+      description: Delete a cloudPcDeviceImage object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0
@@ -15132,7 +15132,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List cloudPcExternalPartnerSettings
-      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
@@ -15208,7 +15208,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcExternalPartnerSetting
-      description: Create a new cloudPcExternalPartnerSetting object. This API is supported in the following national cloud deployments.
+      description: Create a new cloudPcExternalPartnerSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
@@ -15235,7 +15235,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcExternalPartnerSetting
-      description: Read the properties and relationships of a cloudPcExternalPartnerSetting object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcExternalPartnerSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-1.0
@@ -15292,7 +15292,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update cloudPcExternalPartnerSetting
-      description: Update the properties of a cloudPcExternalPartnerSetting object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a cloudPcExternalPartnerSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-1.0
@@ -15367,7 +15367,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get frontLineServicePlans from deviceManagement
+      summary: List cloudPcFrontLineServicePlans
+      description: Get a list of the cloudPcFrontLineServicePlan objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint_ListFrontLineServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15456,7 +15460,11 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get frontLineServicePlans from deviceManagement
+      summary: Get cloudPcFrontLineServicePlan
+      description: Get the properties and relationships of a cloudPcFrontLineServicePlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint_GetFrontLineServicePlan
       parameters:
         - name: cloudPcFrontLineServicePlan-id
@@ -15580,7 +15588,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List galleryImages
-      description: List the properties and relationships of the cloudPcGalleryImage objects. This API is supported in the following national cloud deployments.
+      description: List the properties and relationships of the cloudPcGalleryImage objects. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
@@ -15700,7 +15708,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcGalleryImage
-      description: Read the properties and relationships of a specific cloudPcGalleryImage object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a specific cloudPcGalleryImage object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-1.0
@@ -15836,7 +15844,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List onPremisesConnections
-      description: List properties and relationships of the cloudPcOnPremisesConnection objects. This API is supported in the following national cloud deployments.
+      description: List properties and relationships of the cloudPcOnPremisesConnection objects. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
@@ -15948,7 +15956,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcOnPremisesConnection
-      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs. This API is supported in the following national cloud deployments.
+      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
@@ -15975,7 +15983,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcOnPremisesConnection
-      description: Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0
@@ -16044,7 +16052,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update cloudPcOnPremisesConnection
-      description: Update the properties of a cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0
@@ -16079,7 +16087,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete cloudPcOnPremisesConnection
-      description: 'Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it''s in use, as indicated by the inUse property. This API is supported in the following national cloud deployments.'
+      description: 'Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it''s in use, as indicated by the inUse property. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0
@@ -16124,7 +16132,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcOrganizationSettings
-      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0
@@ -16173,7 +16181,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update cloudPcOrganizationSettings
-      description: Update the properties of the cloudPcOrganizationSettings object in a tenant. This API is supported in the following national cloud deployments.
+      description: Update the properties of the cloudPcOrganizationSettings object in a tenant. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0
@@ -16218,7 +16226,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List provisioningPolicies
-      description: List properties and relationships of the cloudPcProvisioningPolicy objects. This API is supported in the following national cloud deployments.
+      description: List properties and relationships of the cloudPcProvisioningPolicy objects. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0
@@ -16341,7 +16349,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcProvisioningPolicy
-      description: Create a new cloudPcProvisioningPolicy object. This API is supported in the following national cloud deployments.
+      description: Create a new cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0
@@ -16374,7 +16382,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcProvisioningPolicy
-      description: Read the properties and relationships of a cloudPcProvisioningPolicy object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0
@@ -16452,7 +16460,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update cloudPcProvisioningPolicy
-      description: Update the properties of a cloudPcProvisioningPolicy object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-1.0
@@ -16493,7 +16501,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete cloudPcProvisioningPolicy
-      description: Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use. This API is supported in the following national cloud deployments.
+      description: Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-1.0
@@ -18000,7 +18008,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcExportJob
-      description: 'Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property. This API is supported in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property. This API is available in the following national cloud deployments.'
       operationId: deviceManagement.virtualEndpoint.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18082,7 +18090,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcExportJob
-      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report has finished downloading to the location specified by the exportUrl property. This API is supported in the following national cloud deployments.'
+      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report has finished downloading to the location specified by the exportUrl property. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0
@@ -18109,7 +18117,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcExportJob
-      description: 'Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property. This API is supported in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-1.0
@@ -18241,7 +18249,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List servicePlans
-      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise. This API is supported in the following national cloud deployments.'
+      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
@@ -18477,8 +18485,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcSharedUseServicePlans
-      description: Get a list of the cloudPcSharedUseServicePlan objects and their properties. This API is supported in the following national cloud deployments.
+      summary: List cloudPcSharedUseServicePlans (deprecated)
+      description: Get a list of the cloudPcSharedUseServicePlan objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0
@@ -18582,8 +18590,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcSharedUseServicePlan
-      description: Read the properties and relationships of a cloudPcSharedUseServicePlan object. This API is supported in the following national cloud deployments.
+      summary: Get cloudPcSharedUseServicePlan (deprecated)
+      description: Read the properties and relationships of a cloudPcSharedUseServicePlan object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-1.0
@@ -18734,7 +18742,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List snapshots
-      description: Get a list of cloudPcSnapshot objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of cloudPcSnapshot objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0
@@ -18836,7 +18844,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcSnapshot
-      description: Read the properties and relationships of a cloudPcSnapshot object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcSnapshot object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcsnapshot-get?view=graph-rest-1.0
@@ -18966,7 +18974,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List supportedRegions
-      description: List the supported regions that are available for creating Cloud PC connections. This API is supported in the following national cloud deployments.
+      description: List the supported regions that are available for creating Cloud PC connections. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
@@ -19187,7 +19195,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: List userSettings
-      description: Retrieve a list of cloudPcUserSetting objects. This API is supported in the following national cloud deployments.
+      description: Retrieve a list of cloudPcUserSetting objects. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
@@ -19271,7 +19279,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create cloudPcUserSetting
-      description: Create a new cloudPcUserSetting object. This API is supported in the following national cloud deployments.
+      description: Create a new cloudPcUserSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
@@ -19298,7 +19306,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get cloudPcUserSetting
-      description: Read the properties and relationships of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a cloudPcUserSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-1.0
@@ -19359,7 +19367,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update cloudPcUserSetting
-      description: Update the properties of a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
+      description: Update the properties of a cloudPcUserSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-1.0
@@ -19394,7 +19402,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete cloudPcUserSetting
-      description: Delete a cloudPcUserSetting object. This API is supported in the following national cloud deployments.
+      description: Delete a cloudPcUserSetting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-1.0
@@ -21447,6 +21455,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcFrontLineServicePlan'
+              description: Front-line service plans for a Cloud PC.
               x-ms-navigationProperty: true
             galleryImages:
               type: array
@@ -21480,7 +21489,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSharedUseServicePlan'
-              description: Cloud PC shared-use service plans.
               x-ms-navigationProperty: true
             snapshots:
               type: array
@@ -21751,17 +21759,20 @@ components:
           properties:
             displayName:
               type: string
+              description: 'The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.'
               nullable: true
             totalCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The total number of front-line service plans purchased by the customer.
               format: int32
               nullable: true
             usedCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of service plans that have been used for the account.
               format: int32
               nullable: true
           additionalProperties:
@@ -24583,6 +24594,9 @@ components:
       title: cloudPcPartnerAgentInstallResult
       type: object
       properties:
+        errorMessage:
+          type: string
+          nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
@@ -24749,7 +24763,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.cloudPcOnPremisesConnectionType:
       title: cloudPcOnPremisesConnectionType
       enum:
@@ -24958,7 +24971,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -25275,7 +25288,7 @@ components:
               nullable: true
             appId:
               type: string
-              description: 'The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).'
+              description: 'The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).'
               nullable: true
             applicationTemplateId:
               type: string
@@ -25488,6 +25501,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
               x-ms-navigationProperty: true
+            remoteDesktopSecurityConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.remoteDesktopSecurityConfiguration'
             tokenIssuancePolicies:
               type: array
               items:
@@ -25583,10 +25598,10 @@ components:
           properties:
             clientId:
               type: string
-              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25600,10 +25615,10 @@ components:
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
+              description: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
+              description: 'A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -28283,7 +28298,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of hostNames for the device.
+              description: List of host names for the device.
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -28294,7 +28309,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -28316,6 +28331,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -28351,27 +28367,27 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
               nullable: true
             kind:
               type: string
-              description: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Read-only.
+              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             model:
               type: string
-              description: Model of the device. Read-only.
+              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             name:
               type: string
-              description: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             platform:
               type: string
-              description: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             status:
               type: string
@@ -28457,7 +28473,6 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             anonymizeIdentityForRoles:
@@ -28467,7 +28482,6 @@ components:
               description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -28504,7 +28518,9 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              nullable: true
+            isEndToEndEncryptionEnabled:
+              type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -28531,7 +28547,6 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             shareMeetingChatHistoryDefault:
@@ -30187,7 +30202,7 @@ components:
       properties:
         additionalDetails:
           type: string
-          description: Additional details about the health check or the recommended action.
+          description: More details about the health check or the recommended action.
           nullable: true
         correlationId:
           type: string
@@ -30505,7 +30520,7 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.'
+          description: Unique role identifier inside the appRoles collection. You must specify a new GUID identifier when you create a new app role.
           format: uuid
         isEnabled:
           type: boolean
@@ -30805,6 +30820,21 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: homeRealmDiscoveryPolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.remoteDesktopSecurityConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: remoteDesktopSecurityConfiguration
+          type: object
+          properties:
+            isRemoteDesktopProtocolEnabled:
+              type: boolean
+            targetDeviceGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.tokenIssuancePolicy:
@@ -32075,11 +32105,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of field definitions for this list.
               x-ms-navigationProperty: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+              description: The collection of content types present in this list.
               x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
@@ -32093,7 +32125,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
-              description: The collection of long running operations for the list.
+              description: The collection of long-running operations on the list.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -32445,6 +32477,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recycleBinItem'
+              description: List of the recycleBinItems deleted by a user.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -34541,7 +34574,7 @@ components:
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
               nullable: true
             orderHint:
               type: string
@@ -37092,6 +37125,7 @@ components:
         - adJoinCheckCredentialsExpired
         - adJoinCheckAccountLockedOrDisabled
         - adJoinCheckAccountQuotaExceeded
+        - adJoinCheckServerNotOperational
         - adJoinCheckUnknownError
         - endpointConnectivityCheckCloudPcUrlNotAllowListed
         - endpointConnectivityCheckWVDUrlNotAllowListed
@@ -37284,7 +37318,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.applicationMode:
       title: applicationMode
       enum:
@@ -37444,11 +37477,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -37512,6 +37545,17 @@ components:
         - high
         - unknownFutureValue
       type: string
+    microsoft.graph.targetDeviceGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: targetDeviceGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSecretKeyStringValuePair:
       title: synchronizationSecretKeyStringValuePair
       type: object
@@ -39443,13 +39487,16 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             deletedFromLocation:
               type: string
+              description: Relative URL of the list or folder that originally contained the item.
               nullable: true
             size:
               type: integer
+              description: Size of the item in bytes.
               format: int64
               nullable: true
           additionalProperties:
@@ -40557,7 +40604,6 @@ components:
       description: Computer endpoint protection state
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -40613,7 +40659,6 @@ components:
       description: Product Status of Windows Defender
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -41010,7 +41055,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -42478,11 +42522,13 @@ components:
               nullable: true
             schedulingGroupId:
               type: string
+              description: ID of the scheduling group the shift is part of. Required.
               nullable: true
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             userId:
               type: string
+              description: ID of the user assigned to the shift. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -43311,6 +43357,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -44296,7 +44343,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -45106,7 +45152,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.inferenceData:
       title: inferenceData
       type: object
@@ -45365,7 +45410,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -45425,7 +45469,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -45436,7 +45479,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -45466,7 +45508,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -45477,7 +45518,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -45633,7 +45673,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.timeCardEntry:
       title: timeCardEntry
       type: object
@@ -48041,7 +48080,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -48442,7 +48480,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object

@@ -11,7 +11,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
@@ -120,7 +120,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Create bookingBusiness
-      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness.'
+      description: 'Create a new Microsoft Bookings business in a tenant. This is the first step in setting up a Bookings business where you must specify the business display name. You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the bookingBusiness. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-bookingbusinesses?view=graph-rest-1.0
@@ -147,7 +147,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get bookingBusiness
-      description: Get the properties and relationships of a bookingBusiness object.
+      description: Get the properties and relationships of a bookingBusiness object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-get?view=graph-rest-1.0
@@ -223,7 +223,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Update bookingbusiness
-      description: Update the properties of a bookingBusiness object.
+      description: Update the properties of a bookingBusiness object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-update?view=graph-rest-1.0
@@ -258,7 +258,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Delete bookingBusiness
-      description: Delete a bookingBusiness object.
+      description: Delete a bookingBusiness object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-1.0
@@ -289,7 +289,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: List appointments
-      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
+      description: Get a list of bookingAppointment objects for the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
@@ -466,7 +466,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create bookingAppointment
-      description: Create a new bookingAppointment for the specified bookingBusiness.
+      description: Create a new bookingAppointment for the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
@@ -502,7 +502,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Get bookingAppointment
-      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
@@ -598,7 +598,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update bookingAppointment
-      description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
+      description: Update the properties of a bookingAppointment object in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
@@ -641,7 +641,7 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete bookingAppointment
-      description: Delete a bookingAppointment in the specified bookingBusiness.
+      description: Delete a bookingAppointment in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
@@ -680,7 +680,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
+      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
@@ -1156,7 +1156,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
+      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
@@ -1224,7 +1224,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: List customers
-      description: Get a list of bookingCustomer objects.
+      description: Get a list of bookingCustomer objects. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
@@ -1305,7 +1305,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Create bookingCustomer
-      description: Create a new bookingCustomer object.
+      description: Create a new bookingCustomer object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
@@ -1341,7 +1341,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Get bookingCustomer
-      description: Get the properties and relationships of a bookingCustomer object.
+      description: Get the properties and relationships of a bookingCustomer object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
@@ -1405,7 +1405,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Update bookingcustomer
-      description: Update the properties of a bookingCustomer object.
+      description: Update the properties of a bookingCustomer object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
@@ -1448,7 +1448,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Delete bookingCustomer
-      description: Delete the specified bookingCustomer object.
+      description: Delete the specified bookingCustomer object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
@@ -1509,7 +1509,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: List customQuestions
-      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
+      description: Get the bookingCustomQuestion resources associated with a bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
@@ -1587,7 +1587,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Create bookingCustomQuestion
-      description: Create a new bookingCustomQuestion object.
+      description: Create a new bookingCustomQuestion object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
@@ -1623,7 +1623,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Get bookingCustomQuestion
-      description: Read the properties and relationships of a bookingCustomQuestion object.
+      description: Read the properties and relationships of a bookingCustomQuestion object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
@@ -1686,7 +1686,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Update bookingCustomQuestion
-      description: Update the properties of a bookingCustomQuestion object.
+      description: Update the properties of a bookingCustomQuestion object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
@@ -1729,7 +1729,7 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Delete bookingCustomQuestion
-      description: Delete the specified bookingCustomQuestion object.
+      description: Delete the specified bookingCustomQuestion object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
@@ -1790,7 +1790,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action getStaffAvailability
-      description: Get the availability information of staff members of a Microsoft Bookings calendar.
+      description: Get the availability information of staff members of a Microsoft Bookings calendar. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
@@ -1850,7 +1850,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
-      description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.'
+      description: 'Make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
@@ -1875,7 +1875,7 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
-      description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.'
+      description: 'Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
@@ -1900,7 +1900,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: List services
-      description: Get a list of bookingService objects in the specified bookingBusiness.
+      description: Get a list of bookingService objects in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
@@ -2032,7 +2032,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Create bookingService
-      description: Create a new bookingService for the specified bookingBusiness.
+      description: Create a new bookingService for the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
@@ -2068,7 +2068,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Get bookingService
-      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
@@ -2149,7 +2149,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Update bookingservice
-      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
+      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any, time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
@@ -2192,7 +2192,7 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Delete bookingService
-      description: Delete a bookingService object in the specified bookingBusiness.
+      description: Delete a bookingService object in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
@@ -2253,7 +2253,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: List staffMembers
-      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
+      description: Get a list of bookingStaffMember objects in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
@@ -2352,7 +2352,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Create bookingStaffMember
-      description: Create a new staff member in the specified bookingBusiness.
+      description: Create a new staff member in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
@@ -2388,7 +2388,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Get bookingStaffMember
-      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
@@ -2458,7 +2458,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Update bookingstaffmember
-      description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
+      description: Update the properties of a bookingStaffMember in the specified bookingBusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
@@ -2501,7 +2501,7 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Delete bookingStaffMember
-      description: Delete a staff member in the specified bookingbusiness.
+      description: Delete a staff member in the specified bookingbusiness. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
@@ -2576,7 +2576,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: List bookingCurrencies
-      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business.
+      description: Get a list of bookingCurrency objects available to a Microsoft Bookings business. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcurrency-list?view=graph-rest-1.0
@@ -2663,7 +2663,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get bookingCurrency
-      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency.'
+      description: 'Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the id property, which is the currency code, to specify the currency. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bookingcurrency-get?view=graph-rest-1.0
@@ -2854,7 +2854,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: List businessScenarios
-      description: Get a list of all businessScenario objects in an organization.
+      description: Get a list of all businessScenario objects in an organization. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
@@ -2938,7 +2938,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Create businessScenario
-      description: Create a new businessScenario object.
+      description: Create a new businessScenario object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
@@ -2965,7 +2965,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get businessScenario
-      description: Read the properties and relationships of a businessScenario object.
+      description: Read the properties and relationships of a businessScenario object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
@@ -3026,7 +3026,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update businessScenario
-      description: Update the properties of a businessScenario object.
+      description: Update the properties of a businessScenario object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
@@ -3061,7 +3061,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Delete businessScenario
-      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
@@ -3092,7 +3092,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get businessScenarioPlanner
-      description: Read the properties and relationships of a businessScenarioPlanner object.
+      description: Read the properties and relationships of a businessScenarioPlanner object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
@@ -3208,7 +3208,7 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action getPlan
-      description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
+      description: 'Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0
@@ -3249,7 +3249,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerPlanConfiguration
-      description: Read the properties and relationships of a plannerPlanConfiguration object.
+      description: Read the properties and relationships of a plannerPlanConfiguration object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
@@ -3309,7 +3309,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update plannerPlanConfiguration
-      description: Update the properties of a plannerPlanConfiguration object for a businessScenario.
+      description: Update the properties of a plannerPlanConfiguration object for a businessScenario. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
@@ -3371,7 +3371,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: List plannerPlanConfigurationLocalizations
-      description: Get a list of the plannerPlanConfigurationLocalization objects and their properties.
+      description: Get a list of the plannerPlanConfigurationLocalization objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
@@ -3449,7 +3449,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Create plannerPlanConfigurationLocalization
-      description: Create a new plannerPlanConfigurationLocalization object.
+      description: Create a new plannerPlanConfigurationLocalization object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
@@ -3485,7 +3485,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerPlanConfigurationLocalization
-      description: Read the properties and relationships of a plannerPlanConfigurationLocalization object.
+      description: Read the properties and relationships of a plannerPlanConfigurationLocalization object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
@@ -3548,7 +3548,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update plannerPlanConfigurationLocalization
-      description: Update the properties of a plannerPlanConfigurationLocalization object.
+      description: Update the properties of a plannerPlanConfigurationLocalization object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
@@ -3591,7 +3591,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Delete plannerPlanConfigurationLocalization
-      description: Delete a plannerPlanConfigurationLocalization object.
+      description: Delete a plannerPlanConfigurationLocalization object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
@@ -3652,7 +3652,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerTaskConfiguration
-      description: Read the properties and relationships of a plannerTaskConfiguration object.
+      description: Read the properties and relationships of a plannerTaskConfiguration object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
@@ -3705,7 +3705,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update plannerTaskConfiguration
-      description: Update the properties of a plannerTaskConfiguration object.
+      description: Update the properties of a plannerTaskConfiguration object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
@@ -3767,7 +3767,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: List businessScenarioTasks
-      description: Get a list of the businessScenarioTask objects and their properties.
+      description: Get a list of the businessScenarioTask objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
@@ -3922,7 +3922,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Create businessScenarioTask
-      description: Create a new businessScenarioTask object.
+      description: Create a new businessScenarioTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
@@ -3958,7 +3958,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get businessScenarioTask
-      description: Read the properties and relationships of a businessScenarioTask object.
+      description: Read the properties and relationships of a businessScenarioTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
@@ -4052,7 +4052,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Update businessScenarioTask
-      description: Update the properties of a businessScenarioTask object.
+      description: Update the properties of a businessScenarioTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
@@ -4095,7 +4095,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Delete businessScenarioTask
-      description: Delete a businessScenarioTask object.
+      description: Delete a businessScenarioTask object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
@@ -4134,7 +4134,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object.
+      description: Retrieve the properties and relationships of plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -4280,7 +4280,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -4425,7 +4425,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -4575,7 +4575,7 @@ paths:
       tags:
         - solutions.businessScenario
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -5392,6 +5392,8 @@ paths:
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
+                - isEndToEndEncryptionEnabled
+                - isEndToEndEncryptionEnabled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -5453,6 +5455,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -5588,6 +5591,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -5715,7 +5719,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get alternativeRecording for the navigation property sessions from solutions
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: solution.virtualEvent.event_GetSessionsAlternativeRecording
       parameters:
         - name: virtualEvent-id
@@ -5749,7 +5752,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update alternativeRecording for the navigation property sessions in solutions
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: solution.virtualEvent.event_SetSessionsAlternativeRecording
       parameters:
         - name: virtualEvent-id
@@ -5787,7 +5789,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List meetingAttendanceReports
-      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
@@ -5915,7 +5917,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -6078,7 +6080,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -6482,7 +6484,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendeeReport for the navigation property sessions from solutions
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: solution.virtualEvent.event_GetSessionsAttendeeReport
       parameters:
         - name: virtualEvent-id
@@ -6516,7 +6517,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update attendeeReport for the navigation property sessions in solutions
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: solution.virtualEvent.event_SetSessionsAttendeeReport
       parameters:
         - name: virtualEvent-id
@@ -6624,7 +6624,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -6763,7 +6763,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -7089,7 +7089,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get recording for the navigation property sessions from solutions
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: solution.virtualEvent.event_GetSessionsRecording
       parameters:
         - name: virtualEvent-id
@@ -7123,7 +7122,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update recording for the navigation property sessions in solutions
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: solution.virtualEvent.event_SetSessionsRecording
       parameters:
         - name: virtualEvent-id
@@ -7161,7 +7159,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       operationId: solution.virtualEvent.event.session_ListRecording
       parameters:
         - name: virtualEvent-id
@@ -7293,7 +7291,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -7677,7 +7675,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
@@ -7749,7 +7747,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
@@ -7792,7 +7790,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
@@ -7831,7 +7829,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
@@ -7920,7 +7918,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
@@ -7964,7 +7962,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
@@ -8036,7 +8034,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update meetingRegistrationQuestion
-      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
@@ -8087,7 +8085,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete meetingRegistrationQuestion
-      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
@@ -8467,6 +8465,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
+      description: Registration records of this virtual event session.
       operationId: solution.virtualEvent.event.session_ListRegistration
       parameters:
         - name: virtualEvent-id
@@ -8567,6 +8566,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
+      description: Registration records of this virtual event session.
       operationId: solution.virtualEvent.event.session_GetRegistration
       parameters:
         - name: virtualEvent-id
@@ -8672,7 +8672,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. '
+      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings.  This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -8810,7 +8810,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -9328,7 +9328,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventWebinar
-      description: Read the properties and relationships of a virtualEventWebinar object.
+      description: Read the properties and relationships of a virtualEventWebinar object. This API is available in the following national cloud deployments.
       operationId: solution.virtualEvent_ListWebinar
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9441,7 +9441,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get virtualEventWebinar
-      description: Read the properties and relationships of a virtualEventWebinar object.
+      description: Read the properties and relationships of a virtualEventWebinar object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/virtualeventwebinar-get?view=graph-rest-1.0
@@ -9830,6 +9830,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrationConfiguration from solutions
+      description: Registration configuration of the webinar.
       operationId: solution.virtualEvent.webinar_GetRegistrationConfiguration
       parameters:
         - name: virtualEventWebinar-id
@@ -9882,7 +9883,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
+      summary: List virtualEventRegistrations
+      description: Get a list of all registration records of a webinar. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-list?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_ListRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -10005,7 +10010,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get registrations from solutions
+      summary: Get virtualEventRegistration
+      description: Get the properties and relationships of a virtualEventRegistration object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -10146,6 +10155,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions of the webinar.
       operationId: solution.virtualEvent.webinar.registration_ListSession
       parameters:
         - name: virtualEventWebinar-id
@@ -10223,6 +10233,8 @@ paths:
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
+                - isEndToEndEncryptionEnabled
+                - isEndToEndEncryptionEnabled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -10284,6 +10296,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -10337,6 +10350,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get sessions from solutions
+      description: Sessions of the webinar.
       operationId: solution.virtualEvent.webinar.registration_GetSession
       parameters:
         - name: virtualEventWebinar-id
@@ -10395,6 +10409,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -10449,7 +10464,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get alternativeRecording for the navigation property sessions from solutions
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar.registration_GetSessionsAlternativeRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -10491,7 +10505,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update alternativeRecording for the navigation property sessions in solutions
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar.registration_SetSessionsAlternativeRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -10537,7 +10550,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendeeReport for the navigation property sessions from solutions
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar.registration_GetSessionsAttendeeReport
       parameters:
         - name: virtualEventWebinar-id
@@ -10579,7 +10591,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update attendeeReport for the navigation property sessions in solutions
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar.registration_SetSessionsAttendeeReport
       parameters:
         - name: virtualEventWebinar-id
@@ -10711,7 +10722,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get recording for the navigation property sessions from solutions
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar.registration_GetSessionsRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -10753,7 +10763,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update recording for the navigation property sessions in solutions
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar.registration_SetSessionsRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -10921,6 +10930,8 @@ paths:
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
+                - isEndToEndEncryptionEnabled
+                - isEndToEndEncryptionEnabled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -10982,6 +10993,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -11117,6 +11129,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -11244,7 +11257,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get alternativeRecording for the navigation property sessions from solutions
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar_GetSessionsAlternativeRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -11278,7 +11290,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update alternativeRecording for the navigation property sessions in solutions
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar_SetSessionsAlternativeRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -11316,7 +11327,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List meetingAttendanceReports
-      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
@@ -11444,7 +11455,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -11607,7 +11618,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -12011,7 +12022,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get attendeeReport for the navigation property sessions from solutions
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar_GetSessionsAttendeeReport
       parameters:
         - name: virtualEventWebinar-id
@@ -12045,7 +12055,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update attendeeReport for the navigation property sessions in solutions
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar_SetSessionsAttendeeReport
       parameters:
         - name: virtualEventWebinar-id
@@ -12153,7 +12162,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -12292,7 +12301,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -12618,7 +12627,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get recording for the navigation property sessions from solutions
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar_GetSessionsRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -12652,7 +12660,6 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update recording for the navigation property sessions in solutions
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: solution.virtualEvent.webinar_SetSessionsRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -12690,7 +12697,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       operationId: solution.virtualEvent.webinar.session_ListRecording
       parameters:
         - name: virtualEventWebinar-id
@@ -12822,7 +12829,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -13206,7 +13213,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
@@ -13278,7 +13285,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
@@ -13321,7 +13328,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
@@ -13360,7 +13367,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
@@ -13449,7 +13456,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
@@ -13493,7 +13500,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
@@ -13565,7 +13572,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Update meetingRegistrationQuestion
-      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
@@ -13616,7 +13623,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Delete meetingRegistrationQuestion
-      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
@@ -13996,6 +14003,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
+      description: Registration records of this virtual event session.
       operationId: solution.virtualEvent.webinar.session_ListRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -14096,6 +14104,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get registrations from solutions
+      description: Registration records of this virtual event session.
       operationId: solution.virtualEvent.webinar.session_GetRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -14201,7 +14210,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. '
+      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings.  This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -14339,7 +14348,7 @@ paths:
       tags:
         - solutions.virtualEventsRoot
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -15198,7 +15207,7 @@ components:
               description: True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.
             isHiddenFromCustomers:
               type: boolean
-              description: True means this service is not available to customers for booking.
+              description: True means this service isn't available to customers for booking.
             isLocationOnline:
               type: boolean
               description: True indicates that the appointments for the service will be held online. Default value is false.
@@ -15603,6 +15612,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of this virtual event session.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15801,35 +15811,43 @@ components:
             cancelationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             email:
               type: string
+              description: Email address of the registrant.
               nullable: true
             firstName:
               type: string
+              description: First name of the registrant.
               nullable: true
             lastName:
               type: string
+              description: Last name of the registrant.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+              description: The registrant's answer to the registration questions.
             status:
               $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
             userId:
               type: string
+              description: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
               nullable: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15890,6 +15908,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -15903,15 +15922,18 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Total capacity of the virtual event.
               format: int32
               nullable: true
             registrationWebUrl:
               type: string
+              description: Registration URL of the virtual event.
               nullable: true
             questions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestion'
+              description: Registration questions.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -16158,7 +16180,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
         serviceId:
           type: string
-          description: 'Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.'
+          description: 'Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.'
           nullable: true
         startDateTime:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
@@ -16172,10 +16194,10 @@ components:
       properties:
         isRequired:
           type: boolean
-          description: Indicates whether it is mandatory to answer the custom question.
+          description: Indicates whether it's mandatory to answer the custom question.
         questionId:
           type: string
-          description: If it is mandatory to answer the custom question.
+          description: If it's mandatory to answer the custom question.
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffMembershipStatus:
@@ -16247,7 +16269,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.plannerTaskRoleBasedRule'
-          description: 'The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.'
+          description: 'The rules that should be enforced on the tasks when they''re being changed outside of the scenario, based on the role of the caller.'
       additionalProperties:
         type: object
     microsoft.graph.plannerTask:
@@ -16312,7 +16334,7 @@ components:
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
               nullable: true
             orderHint:
               type: string
@@ -16553,7 +16575,6 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             anonymizeIdentityForRoles:
@@ -16563,7 +16584,6 @@ components:
               description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -16600,7 +16620,9 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              nullable: true
+            isEndToEndEncryptionEnabled:
+              type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -16627,7 +16649,6 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             shareMeetingChatHistoryDefault:
@@ -17287,7 +17308,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.plannerChecklistRequirement:
       title: plannerChecklistRequirement
       type: object
