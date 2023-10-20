@@ -1,4 +1,4 @@
-### Example 1: Fetch attendee report of a Teams live event
+### Example 1: Fetch attendee report of a Teams live event (deprecated)
 
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
