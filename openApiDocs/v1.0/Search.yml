@@ -577,7 +577,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
+      description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
       operationId: external.connection.group_ListMember
       parameters:
         - name: externalConnection-id
@@ -698,7 +698,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
+      description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
       operationId: external.connection.group_GetMember
       parameters:
         - name: externalConnection-id
@@ -1939,7 +1939,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create schema
-      description: Create a new schema object.
+      description: Create a new schema object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
@@ -2166,7 +2166,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
+              description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -2387,7 +2387,7 @@ components:
           items:
             type: string
             nullable: true
-          description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+          description: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.searchSettings:
@@ -2428,7 +2428,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup'
+          description: 'The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
