@@ -163,13 +163,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### This command returns a collection of items with the following fields:
 ### * Name: The name of the permission as found in Microsoft Graph permissions reference documentation. Names will typically
-### have a form like 'User.Read.All', or 'Files.ReadWrite' for instance.
+###   have a form like 'User.Read.All', or 'Files.ReadWrite' for instance.
 ### * Description: Provides a description of what access is granted by the permission
 ### * Id: The unique identifier for the permission in the form of a Guid. The unique identifier is required for using
-### certain Microsoft Graph REST API resources or Microsoft Graph-based PowerShell commands that manage application consent.
+###   certain Microsoft Graph REST API resources or Microsoft Graph-based PowerShell commands that manage application consent.
 ### * Consent: Denotes whether the specified permission requires administrator or user consent. The valid values are 'Admin' and 'User'.
 ### * PermissionType: Valid values are 'Delegated' or 'Application' depending on whether the permission is one that is delegated by
-### the user to the application ('Delegated'), or is directly assigned to the application without the consent of a user ('Application').
+###   the user to the application ('Delegated'), or is directly assigned to the application without the consent of a user ('Application').
 ## NOTES
 
 ## RELATED LINKS
