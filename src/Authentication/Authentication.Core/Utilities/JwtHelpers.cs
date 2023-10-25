@@ -26,23 +26,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         internal static void DecodeJWT(string jwToken, IAccount account, ref IAuthContext authContext)
         {
             var jwtPayload = DecodeToObject<JwtPayload>(jwToken);
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken &&
+                jwtPayload != null &&
+                jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
             {
-                if (jwtPayload == null)
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.InvalidUserProvidedToken,
-                            "AccessToken"));
-                }
-
-                if (jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
-                {
-                    throw new Exception(string.Format(
+                // Throw exception if access token is expired or is about to exprire with a 5 minutes buffer.
+                throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,
                             ErrorConstants.Message.ExpiredUserProvidedToken,
                             "AccessToken"));
-                }
             }
 
             authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
