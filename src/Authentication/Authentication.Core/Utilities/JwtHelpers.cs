@@ -74,9 +74,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         internal static JwtContent DecodeJWT(string jwtString)
         {
-            // See https://tools.ietf.org/html/rfc7519
-            if (string.IsNullOrWhiteSpace(jwtString) || !jwtString.Contains(".") || !jwtString.StartsWith("eyJ"))
+            if (string.IsNullOrWhiteSpace(jwtString))
                 throw new ArgumentException("Invalid JSON Web Token (JWT).");
+            // See JWT RFC spec: https://tools.ietf.org/html/rfc7519.
+            if (!jwtString.Contains(".") || !jwtString.StartsWith("eyJ", StringComparison.OrdinalIgnoreCase))
+                return null; // Personal account access token are not JWT and cannot be decoded. See https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2386.
 
             var jwtSegments = jwtString.Split('.');
 
