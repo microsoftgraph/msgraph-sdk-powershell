@@ -30,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 jwtPayload != null &&
                 jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
             {
-                // Throw exception if access token is expired or is about to exprire with a 5 minutes buffer.
+                // Throw exception if access token is expired or is about to expire with a 5 minutes buffer.
                 throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,
                             ErrorConstants.Message.ExpiredUserProvidedToken,
