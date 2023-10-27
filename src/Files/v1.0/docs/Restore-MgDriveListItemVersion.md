@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Restore-MgDriveListItemVersion -InputObject <IFilesIdentity> [-PassThru] [-Confi
 ## DESCRIPTION
 Restore a previous version of a ListItem to be the current version.
 This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

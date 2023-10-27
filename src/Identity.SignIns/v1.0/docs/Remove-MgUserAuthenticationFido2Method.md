@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a user's FIDO2 Security Key Authentication Method object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [
 
 ## DESCRIPTION
 Deletes a user's FIDO2 Security Key Authentication Method object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestTargetSchedule
 
 ## SYNOPSIS
-Get targetSchedule from identityGovernance
+Schedule created by this request.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleRequestTargetSch
 ```
 
 ## DESCRIPTION
-Get targetSchedule from identityGovernance
+Schedule created by this request.
 
 ## EXAMPLES
 

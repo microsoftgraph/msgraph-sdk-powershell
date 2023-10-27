@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Create a new azureDataLakeConnector object.
+Create a new industryDataConnector object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -27,7 +27,7 @@ New-MgBetaExternalIndustryDataConnector -BodyParameter <IMicrosoftGraphIndustryD
 ```
 
 ## DESCRIPTION
-Create a new azureDataLakeConnector object.
+Create a new industryDataConnector object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

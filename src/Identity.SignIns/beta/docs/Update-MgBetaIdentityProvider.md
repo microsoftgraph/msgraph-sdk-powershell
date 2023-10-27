@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of the specified identity provider configured in the tenant.
-Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently update a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -41,7 +41,7 @@ Update-MgBetaIdentityProvider -InputObject <IIdentitySignInsIdentity> [-Addition
 
 ## DESCRIPTION
 Update the properties of the specified identity provider configured in the tenant.
-Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently update a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -287,6 +287,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

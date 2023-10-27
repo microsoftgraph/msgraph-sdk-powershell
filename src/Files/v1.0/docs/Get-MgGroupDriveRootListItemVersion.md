@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgGroupDriveRootListItemVersion -InputObject <IFilesIdentity> [-ExpandProper
 
 ## DESCRIPTION
 Retrieve the metadata for a specific version of a ListItem.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

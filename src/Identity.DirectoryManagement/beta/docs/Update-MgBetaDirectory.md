@@ -396,8 +396,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
   - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 `ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>`: Group of related custom security attribute definitions.
@@ -425,8 +425,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -475,8 +475,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
     - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -571,7 +571,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
     - `[Priority <String>]`: recommendationPriority
     - `[RecommendationType <String>]`: recommendationType
-    - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+    - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview or generallyAvailable.
     - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
     - `[Status <String>]`: recommendationStatus
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -650,8 +650,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-    - `[Key <String>]`: Contains the name of the field that a value is associated with.
-    - `[Value <String>]`: Contains the corresponding value for the specified key.
+    - `[Key <String>]`: Key.
+    - `[Value <String>]`: Value.
   - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
   - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -745,8 +745,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
     - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -767,7 +767,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
   - `[Priority <String>]`: recommendationPriority
   - `[RecommendationType <String>]`: recommendationType
-  - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+  - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview or generallyAvailable.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
   - `[Status <String>]`: recommendationStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

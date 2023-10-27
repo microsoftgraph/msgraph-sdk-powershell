@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: c0ec343c-8c3d-447e-aaa5-b17e152af79e
+Module Guid: 26380e54-5198-4f2f-90bb-03e42c0b3be6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -20,21 +20,21 @@ A container for Internet Explorer mode resources.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteList](Get-MgAdminEdgeInternetExplorerModeSiteList.md)
 Get a browserSiteList that contains browserSite and browserSharedCookie resources.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListCount](Get-MgAdminEdgeInternetExplorerModeSiteListCount.md)
 Get the number of the resource
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Get a session cookie that can be shared between a Microsoft Edge process and an Internet Explorer process, while using Internet Explorer mode.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookieCount](Get-MgAdminEdgeInternetExplorerModeSiteListSharedCookieCount.md)
 Get the number of the resource
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSite](Get-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Get a browserSite that resides on a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgAdminEdgeInternetExplorerModeSiteListSiteCount](Get-MgAdminEdgeInternetExplorerModeSiteListSiteCount.md)
 Get the number of the resource
@@ -61,7 +61,7 @@ Read properties and relationships of the deviceCategory object.
 Get the number of the resource
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicy](Get-MgDeviceManagementDeviceCompliancePolicy.md)
-Read properties and relationships of the macOSCompliancePolicy object.
+Read properties and relationships of the windows81CompliancePolicy object.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyAssignment](Get-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Read properties and relationships of the deviceCompliancePolicyAssignment object.
@@ -124,7 +124,7 @@ Get the number of the resource
 Read properties and relationships of the deviceComplianceUserOverview object.
 
 ### [Get-MgDeviceManagementDeviceConfiguration](Get-MgDeviceManagementDeviceConfiguration.md)
-Read properties and relationships of the androidGeneralDeviceConfiguration object.
+Read properties and relationships of the iosGeneralDeviceConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceConfigurationAssignment](Get-MgDeviceManagementDeviceConfigurationAssignment.md)
 Read properties and relationships of the deviceConfigurationAssignment object.
@@ -434,15 +434,15 @@ Get the number of the resource
 
 ### [New-MgAdminEdgeInternetExplorerModeSiteList](New-MgAdminEdgeInternetExplorerModeSiteList.md)
 Create a new browserSiteList object to support Internet Explorer mode.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](New-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Create a new browserSharedCookie object in a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [New-MgAdminEdgeInternetExplorerModeSiteListSite](New-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Create a new browserSite object in a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [New-MgDeviceManagementDetectedApp](New-MgDeviceManagementDetectedApp.md)
 Create a new detectedApp object.
@@ -451,7 +451,7 @@ Create a new detectedApp object.
 Create a new deviceCategory object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicy](New-MgDeviceManagementDeviceCompliancePolicy.md)
-Create a new androidCompliancePolicy object.
+Create a new iosCompliancePolicy object.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyAssignment](New-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Create a new deviceCompliancePolicyAssignment object.
@@ -478,7 +478,7 @@ Create a new deviceComplianceSettingState object.
 Create a new deviceComplianceUserStatus object.
 
 ### [New-MgDeviceManagementDeviceConfiguration](New-MgDeviceManagementDeviceConfiguration.md)
-Create a new iosUpdateConfiguration object.
+Create a new macOSCustomConfiguration object.
 
 ### [New-MgDeviceManagementDeviceConfigurationAssignment](New-MgDeviceManagementDeviceConfigurationAssignment.md)
 Create a new deviceConfigurationAssignment object.
@@ -608,15 +608,15 @@ Delete navigation property internetExplorerMode for admin
 
 ### [Remove-MgAdminEdgeInternetExplorerModeSiteList](Remove-MgAdminEdgeInternetExplorerModeSiteList.md)
 Delete a browserSiteList object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Remove-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](Remove-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Delete a browserSharedCookie from a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Remove-MgAdminEdgeInternetExplorerModeSiteListSite](Remove-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Delete a browserSite from a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Remove-MgDeviceManagementDetectedApp](Remove-MgDeviceManagementDetectedApp.md)
 Deletes a detectedApp.
@@ -625,7 +625,7 @@ Deletes a detectedApp.
 Deletes a deviceCategory.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicy](Remove-MgDeviceManagementDeviceCompliancePolicy.md)
-Deletes a iosCompliancePolicy.
+Deletes a macOSCompliancePolicy.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyAssignment](Remove-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Deletes a deviceCompliancePolicyAssignment.
@@ -661,7 +661,7 @@ Deletes a deviceComplianceUserStatus.
 Delete navigation property userStatusOverview for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceConfiguration](Remove-MgDeviceManagementDeviceConfiguration.md)
-Deletes a editionUpgradeConfiguration.
+Deletes a windows10EndpointProtectionConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceConfigurationAssignment](Remove-MgDeviceManagementDeviceConfigurationAssignment.md)
 Deletes a deviceConfigurationAssignment.
@@ -818,15 +818,15 @@ Update the navigation property internetExplorerMode in admin
 
 ### [Update-MgAdminEdgeInternetExplorerModeSiteList](Update-MgAdminEdgeInternetExplorerModeSiteList.md)
 Update the properties of a browserSiteList object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Update-MgAdminEdgeInternetExplorerModeSiteListSharedCookie](Update-MgAdminEdgeInternetExplorerModeSiteListSharedCookie.md)
 Update the properties of a browserSharedCookie object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Update-MgAdminEdgeInternetExplorerModeSiteListSite](Update-MgAdminEdgeInternetExplorerModeSiteListSite.md)
 Update the properties of a browserSite object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Update-MgDeviceManagement](Update-MgDeviceManagement.md)
 Update the properties of a deviceManagement object.
@@ -838,7 +838,7 @@ Update the properties of a detectedApp object.
 Update the properties of a deviceCategory object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicy](Update-MgDeviceManagementDeviceCompliancePolicy.md)
-Update the properties of a windows10CompliancePolicy object.
+Update the properties of a androidWorkProfileCompliancePolicy object.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyAssignment](Update-MgDeviceManagementDeviceCompliancePolicyAssignment.md)
 Update the properties of a deviceCompliancePolicyAssignment object.
@@ -874,7 +874,7 @@ Update the properties of a deviceComplianceUserStatus object.
 Update the properties of a deviceComplianceUserOverview object.
 
 ### [Update-MgDeviceManagementDeviceConfiguration](Update-MgDeviceManagementDeviceConfiguration.md)
-Update the properties of a sharedPCConfiguration object.
+Update the properties of a androidCustomConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceConfigurationAssignment](Update-MgDeviceManagementDeviceConfigurationAssignment.md)
 Update the properties of a deviceConfigurationAssignment object.

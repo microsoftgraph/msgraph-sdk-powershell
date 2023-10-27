@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: be5b5222-5814-4906-95b3-2a6ea2d4712d
+Module Guid: a9b42f24-1ca4-4411-8979-34526a23846d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -414,7 +414,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
-Get the properties and relationships of a cloudPcFrontLineServicePlan object.
+Get frontLineServicePlans from deviceManagement
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlanCount](Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlanCount.md)
 Get the number of the resource

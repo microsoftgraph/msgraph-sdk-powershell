@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new namedLocation object.
 Named locations can be either ipNamedLocation or countryNamedLocation objects.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgIdentityConditionalAccessNamedLocation -BodyParameter <IMicrosoftGraphName
 ## DESCRIPTION
 Create a new namedLocation object.
 Named locations can be either ipNamedLocation or countryNamedLocation objects.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ### -BlockMsolPowerShell
 To disable the use of the MSOnline PowerShell module set this property to true.
 This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module.
-This doesn't affect Azure AD Connect or Microsoft Graph.
+This doesn't affect Microsoft Entra Connect or Microsoft Graph.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -434,7 +434,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
   - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Azure AD Connect or Microsoft Graph.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
   - `[DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[IsDefault <Boolean?>]`: 
@@ -520,6 +520,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a checklistItem object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgUserTodoListTaskChecklistItem -InputObject <IUsersIdentity> [-IfMatch <
 
 ## DESCRIPTION
 Delete a checklistItem object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

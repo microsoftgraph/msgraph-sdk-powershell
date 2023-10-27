@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Adds a strong password or secret to an application.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Add-MgApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 Adds a strong password or secret to an application.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

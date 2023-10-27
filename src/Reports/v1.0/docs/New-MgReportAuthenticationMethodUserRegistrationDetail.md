@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsMfaCapable
-Indicates whether the user has registered a strong authentication method for multifactor authentication.
+Indicates whether the user has registered a strong authentication method for multi-factor authentication.
 The method must be allowed by the authentication methods policy.
 Supports $filter (eq).
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsMfaRegistered
-Indicates whether the user has registered a strong authentication method for multifactor authentication.
+Indicates whether the user has registered a strong authentication method for multi-factor authentication.
 The method may not necessarily be allowed by the authentication methods policy.
 Supports $filter (eq).
 
@@ -396,8 +396,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[IsAdmin <Boolean?>]`: Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
-  - `[IsMfaCapable <Boolean?>]`: Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
-  - `[IsMfaRegistered <Boolean?>]`: Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+  - `[IsMfaCapable <Boolean?>]`: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+  - `[IsMfaRegistered <Boolean?>]`: Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
   - `[IsPasswordlessCapable <Boolean?>]`: Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
   - `[IsSsprCapable <Boolean?>]`: Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
   - `[IsSsprEnabled <Boolean?>]`: Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).

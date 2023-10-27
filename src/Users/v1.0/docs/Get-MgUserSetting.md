@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgUserSetting -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-P
 
 ## DESCRIPTION
 Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

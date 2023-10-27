@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementDeviceEnrollmentConfiguration
 
 ## SYNOPSIS
-Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
+Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementDeviceEnrollmentConfiguration -InputObject <IDeviceMana
 ```
 
 ## DESCRIPTION
-Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
+Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
 
 ## EXAMPLES
 

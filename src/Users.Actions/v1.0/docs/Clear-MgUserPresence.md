@@ -11,7 +11,7 @@ schema: 2.0.0
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to Offline/Offline.
 For details about presences sessions, see presence: setPresence.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Clear-MgUserPresence -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 Clear the application's presence session for a user.
 If it is the user's only presence session, the user's presence will change to Offline/Offline.
 For details about presences sessions, see presence: setPresence.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -236,7 +236,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
-  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

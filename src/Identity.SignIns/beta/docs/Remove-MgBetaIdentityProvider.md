@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete an identity provider resource that is of the type specified by the id in the request.
-Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently delete a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -29,7 +29,7 @@ Remove-MgBetaIdentityProvider -InputObject <IIdentitySignInsIdentity> [-IfMatch 
 
 ## DESCRIPTION
 Delete an identity provider resource that is of the type specified by the id in the request.
-Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently delete a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -207,6 +207,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

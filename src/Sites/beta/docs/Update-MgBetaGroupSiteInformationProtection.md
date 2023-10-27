@@ -316,7 +316,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Microsoft Entra ID.
     - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
     - `[Key <String>]`: The BitLocker recovery key.
     - `[VolumeType <String>]`: volumeType
@@ -329,7 +329,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[RecoveryKeys <IMicrosoftGraphBitlockerRecoveryKey[]>]`: The recovery keys associated with the bitlocker entity.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
+      - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Microsoft Entra ID.
       - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
       - `[Key <String>]`: The BitLocker recovery key.
       - `[VolumeType <String>]`: volumeType

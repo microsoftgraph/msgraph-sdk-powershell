@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
+Customized versions of the terms of use agreement in the Microsoft Entra tenant.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgAgreementFileLocalizationVersion -InputObject <IIdentityGovernanceIdentity
 
 ## DESCRIPTION
 Read-only.
-Customized versions of the terms of use agreement in the Azure AD tenant.
+Customized versions of the terms of use agreement in the Microsoft Entra tenant.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of an educationUser object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Get-MgEducationUser -InputObject <IEducationIdentity> [-ExpandProperty <String[]
 
 ## DESCRIPTION
 Read the properties and relationships of an educationUser object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

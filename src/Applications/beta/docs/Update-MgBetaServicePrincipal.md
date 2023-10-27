@@ -213,7 +213,6 @@ Accept wildcard characters: False
 
 ### -AppId
 The unique identifier for the associated application (its appId property).
-Alternate key.
 Supports $filter (eq, ne, not, in, startsWith).
 
 ```yaml
@@ -1223,8 +1222,8 @@ To create the parameters described below, construct a hash table containing the 
 `ADDINS <IMicrosoftGraphAddIn[]>`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
   - `[Id <String>]`: 
   - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Contains the name of the field that a value is associated with.
-    - `[Value <String>]`: Contains the corresponding value for the specified key.
+    - `[Key <String>]`: Key.
+    - `[Value <String>]`: Value.
   - `[Type <String>]`: 
 
 `APPMANAGEMENTPOLICIES <IMicrosoftGraphAppManagementPolicy[]>`: The appManagementPolicy applied to this service principal.
@@ -1285,13 +1284,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
     - `[Id <String>]`: 
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Contains the name of the field that a value is associated with.
-      - `[Value <String>]`: Contains the corresponding value for the specified key.
+      - `[Key <String>]`: Key.
+      - `[Value <String>]`: Value.
     - `[Type <String>]`: 
   - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
   - `[AppDescription <String>]`: The description exposed by the associated application.
   - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-  - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
+  - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
   - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
     - `[Description <String>]`: Description for this policy. Required.
     - `[DisplayName <String>]`: Display name for this policy. Required.

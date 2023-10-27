@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedUsing
 
 ## SYNOPSIS
-Get activatedUsing from identityGovernance
+When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group.
+Otherwise, it is null.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +29,9 @@ Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestActivatedU
 ```
 
 ## DESCRIPTION
-Get activatedUsing from identityGovernance
+When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group.
+Otherwise, it is null.
+Supports $expand.
 
 ## EXAMPLES
 

@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Copy a file to a default content location in a content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ Copy-MgGroupSiteListContentTypeToDefaultContentLocation -InputObject <IGroupsIde
 ## DESCRIPTION
 Copy a file to a default content location in a content type][contentType].
 The file can then be added as a default file or template via a POST operation.
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

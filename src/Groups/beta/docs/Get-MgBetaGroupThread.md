@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupThread
 
 ## SYNOPSIS
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -32,8 +31,7 @@ Get-MgBetaGroupThread -InputObject <IGroupsIdentity> [-Property <String[]>] [<Co
 ```
 
 ## DESCRIPTION
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

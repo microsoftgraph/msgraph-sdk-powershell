@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Reply to a thread in a group conversation and add a new post to it.
 You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Invoke-MgReplyGroupConversationThread -InputObject <IGroupsIdentity> [-Additiona
 ## DESCRIPTION
 Reply to a thread in a group conversation and add a new post to it.
 You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

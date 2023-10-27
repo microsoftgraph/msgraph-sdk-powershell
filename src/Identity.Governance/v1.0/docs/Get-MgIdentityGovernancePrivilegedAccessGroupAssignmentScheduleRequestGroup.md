@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroup
 
 ## SYNOPSIS
-Get group from identityGovernance
+References the group that is the scope of the membership or ownership assignment request through PIM for groups.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequestGroup
 ```
 
 ## DESCRIPTION
-Get group from identityGovernance
+References the group that is the scope of the membership or ownership assignment request through PIM for groups.
+Supports $expand.
 
 ## EXAMPLES
 

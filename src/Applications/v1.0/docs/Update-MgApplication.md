@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an application object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -89,7 +89,7 @@ Update-MgApplication -InputObject <IApplicationsIdentity> [-AddIns <IMicrosoftGr
 
 ## DESCRIPTION
 Update the properties of an application object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

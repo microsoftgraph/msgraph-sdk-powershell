@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppManagementMobileApp
 
 ## SYNOPSIS
-Create a new windowsUniversalAppX object.
+Create a new iosLobApp object.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgDeviceAppManagementMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-C
 ```
 
 ## DESCRIPTION
-Create a new windowsUniversalAppX object.
+Create a new iosLobApp object.
 
 ## EXAMPLES
 

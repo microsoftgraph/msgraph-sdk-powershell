@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an educationUser object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -67,7 +67,7 @@ Update-MgEducationUser -InputObject <IEducationIdentity> [-AccountEnabled] [-Add
 
 ## DESCRIPTION
 Update the properties of an educationUser object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -2612,7 +2612,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
           - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-            - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+            - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
             - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
             - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
           - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
@@ -3286,7 +3286,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
               - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
               - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-            - `[AttendeeReport <Byte[]>]`: 
+            - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
             - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -3315,7 +3315,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
             - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
             - `[ExternalId <String>]`: 
-            - `[IsBroadcast <Boolean?>]`: 
+            - `[IsBroadcast <Boolean?>]`: Indicates if this is a Teams live event.
             - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
             - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
             - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
@@ -3339,14 +3339,14 @@ To create the parameters described below, construct a hash table containing the 
             - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
-            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Content <Byte[]>]`: The content of the transcript. Read-only.
-              - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
+              - `[MeetingId <String>]`: 
               - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
-              - `[TranscriptContentUrl <String>]`: The URL that can be used to access the content of the transcript. Read-only.
+              - `[MetadataContent <Byte[]>]`: 
+              - `[TranscriptContentUrl <String>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
             - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3426,7 +3426,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[AssigneePriority <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                   - `[Assignments <IMicrosoftGraphPlannerAssignments>]`: plannerAssignments
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+                  - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
                   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -3447,7 +3447,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                  - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+                  - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
                   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                   - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
                   - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -3516,7 +3516,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Message <IMicrosoftGraphItemBody>]`: itemBody
-              - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
+              - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
           - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -5674,7 +5674,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-          - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+          - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
           - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
           - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
         - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
@@ -6348,7 +6348,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
             - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
             - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-          - `[AttendeeReport <Byte[]>]`: 
+          - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
           - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -6377,7 +6377,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
           - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
           - `[ExternalId <String>]`: 
-          - `[IsBroadcast <Boolean?>]`: 
+          - `[IsBroadcast <Boolean?>]`: Indicates if this is a Teams live event.
           - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
           - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
           - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
@@ -6401,14 +6401,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
-          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Content <Byte[]>]`: The content of the transcript. Read-only.
-            - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
+            - `[MeetingId <String>]`: 
             - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
-            - `[TranscriptContentUrl <String>]`: The URL that can be used to access the content of the transcript. Read-only.
+            - `[MetadataContent <Byte[]>]`: 
+            - `[TranscriptContentUrl <String>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
           - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -6488,7 +6488,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[AssigneePriority <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                 - `[Assignments <IMicrosoftGraphPlannerAssignments>]`: plannerAssignments
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+                - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -6509,7 +6509,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+                - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
                 - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                 - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
                 - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -6578,7 +6578,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Message <IMicrosoftGraphItemBody>]`: itemBody
-            - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
+            - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
         - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -8854,7 +8854,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
           - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-            - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+            - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
             - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
             - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
           - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
@@ -9528,7 +9528,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
               - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
               - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-            - `[AttendeeReport <Byte[]>]`: 
+            - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
             - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -9557,7 +9557,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
             - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
             - `[ExternalId <String>]`: 
-            - `[IsBroadcast <Boolean?>]`: 
+            - `[IsBroadcast <Boolean?>]`: Indicates if this is a Teams live event.
             - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
             - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
             - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
@@ -9581,14 +9581,14 @@ To create the parameters described below, construct a hash table containing the 
             - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
-            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
+            - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Content <Byte[]>]`: The content of the transcript. Read-only.
-              - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-              - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
+              - `[Content <Byte[]>]`: 
+              - `[CreatedDateTime <DateTime?>]`: 
+              - `[MeetingId <String>]`: 
               - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
-              - `[TranscriptContentUrl <String>]`: The URL that can be used to access the content of the transcript. Read-only.
+              - `[MetadataContent <Byte[]>]`: 
+              - `[TranscriptContentUrl <String>]`: 
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
             - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9668,7 +9668,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[AssigneePriority <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                   - `[Assignments <IMicrosoftGraphPlannerAssignments>]`: plannerAssignments
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+                  - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
                   - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -9689,7 +9689,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                  - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+                  - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
                   - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                   - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
                   - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -9758,7 +9758,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Message <IMicrosoftGraphItemBody>]`: itemBody
-              - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
+              - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
           - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -11911,7 +11911,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-          - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+          - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
           - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
           - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
         - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
@@ -12585,7 +12585,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
             - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
             - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-          - `[AttendeeReport <Byte[]>]`: 
+          - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
           - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -12614,7 +12614,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
           - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
           - `[ExternalId <String>]`: 
-          - `[IsBroadcast <Boolean?>]`: 
+          - `[IsBroadcast <Boolean?>]`: Indicates if this is a Teams live event.
           - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
           - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
           - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
@@ -12638,14 +12638,14 @@ To create the parameters described below, construct a hash table containing the 
           - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
           - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
           - `[Subject <String>]`: The subject of the online meeting.
-          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
+          - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Content <Byte[]>]`: The content of the transcript. Read-only.
-            - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
+            - `[Content <Byte[]>]`: 
+            - `[CreatedDateTime <DateTime?>]`: 
+            - `[MeetingId <String>]`: 
             - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
-            - `[TranscriptContentUrl <String>]`: The URL that can be used to access the content of the transcript. Read-only.
+            - `[MetadataContent <Byte[]>]`: 
+            - `[TranscriptContentUrl <String>]`: 
           - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
           - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12725,7 +12725,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[AssigneePriority <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                 - `[Assignments <IMicrosoftGraphPlannerAssignments>]`: plannerAssignments
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+                - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
                 - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -12746,7 +12746,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+                - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
                 - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
                 - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
                 - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -12815,7 +12815,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Message <IMicrosoftGraphItemBody>]`: itemBody
-            - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
+            - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
         - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
@@ -14859,7 +14859,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
   - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
-    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
+    - `[Issuer <String>]`: Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn't federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.
     - `[IssuerAssignedId <String>]`: Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must begin with alphabetical character or number, and can only contain alphanumeric characters and the following symbols: - or Supports $filter. 64 character limit.
     - `[SignInType <String>]`: Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Other validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.
   - `[ImAddresses <String[]>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
@@ -15082,7 +15082,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[AssigneePriority <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
               - `[Assignments <IMicrosoftGraphPlannerAssignments>]`: plannerAssignments
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              - `[BucketId <String>]`: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
               - `[BucketTaskBoardFormat <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat>]`: plannerBucketTaskBoardTaskFormat
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15103,7 +15103,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[DueDateTime <DateTime?>]`: Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-              - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              - `[HasDescription <Boolean?>]`: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
               - `[OrderHint <String>]`: Hint used to order items of this type in a list view. The format is defined as outlined here.
               - `[PercentComplete <Int32?>]`: Percentage of task completion. When set to 100, the task is considered completed.
               - `[PlanId <String>]`: Plan ID to which the task belongs.
@@ -15753,7 +15753,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
       - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
       - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-    - `[AttendeeReport <Byte[]>]`: 
+    - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
     - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -15782,7 +15782,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
     - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
     - `[ExternalId <String>]`: 
-    - `[IsBroadcast <Boolean?>]`: 
+    - `[IsBroadcast <Boolean?>]`: Indicates if this is a Teams live event.
     - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
     - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
     - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
@@ -15806,14 +15806,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[ShareMeetingChatHistoryDefault <String>]`: meetingChatHistoryDefaultMode
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
-    - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: The transcripts of an online meeting. Read-only.
+    - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Content <Byte[]>]`: The content of the transcript. Read-only.
-      - `[CreatedDateTime <DateTime?>]`: Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-      - `[MeetingId <String>]`: The unique identifier of the online meeting related to this transcript. Read-only.
+      - `[Content <Byte[]>]`: 
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[MeetingId <String>]`: 
       - `[MeetingOrganizer <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[MetadataContent <Byte[]>]`: The time-aligned metadata of the utterances in the transcript. Read-only.
-      - `[TranscriptContentUrl <String>]`: The URL that can be used to access the content of the transcript. Read-only.
+      - `[MetadataContent <Byte[]>]`: 
+      - `[TranscriptContentUrl <String>]`: 
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
     - `[WatermarkProtection <IMicrosoftGraphWatermarkProtectionValues>]`: watermarkProtectionValues
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -15887,7 +15887,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExpiryDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[Message <IMicrosoftGraphItemBody>]`: itemBody
-      - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
+      - `[PublishedDateTime <DateTime?>]`: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
   - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement
 
 ## SYNOPSIS
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
+In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 This API is available in the following national cloud deployments.
 
@@ -27,7 +27,7 @@ Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement -InputObject
 ```
 
 ## DESCRIPTION
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
+In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 This API is available in the following national cloud deployments.
 

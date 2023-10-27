@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: 7af42012-79b5-43eb-a348-8f90e90d19f7
+Module Guid: fbc87c4d-884e-4582-bfdd-fb513b732f68
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -62,7 +62,7 @@ Invoke action checkGrantedPermissionsForApp
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -582,8 +582,7 @@ Invoke function getActivitiesByInterval
 Invoke function delta
 
 ### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupThreadCount](Get-MgBetaGroupThreadCount.md)
@@ -899,8 +898,9 @@ When a group is renewed, the group expiration is extended by the number of days 
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupConversationThread](Invoke-MgBetaReplyGroupConversationThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupConversationThreadPost](Invoke-MgBetaReplyGroupConversationThreadPost.md)
@@ -916,8 +916,9 @@ The table in the Permissions section lists the resources that support open exten
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupThread](Invoke-MgBetaReplyGroupThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupThreadPost](Invoke-MgBetaReplyGroupThreadPost.md)
@@ -1381,7 +1382,7 @@ Invoke action assignSensitivityLabel
 ### [Set-MgBetaGroupLicense](Set-MgBetaGroupLicense.md)
 Add or remove licenses on the group.
 Licenses assigned to the group will be assigned to all users in the group.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
+To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
 To get the subscriptions available in the directory, perform a GET subscribedSkus request.
 This API is available in the following national cloud deployments.
 
@@ -1511,9 +1512,6 @@ Invoke action onenotePatchContent
 
 ### [Update-MgBetaGroupPermissionGrant](Update-MgBetaGroupPermissionGrant.md)
 Update the navigation property permissionGrants in groups
-
-### [Update-MgBetaGroupPhoto](Update-MgBetaGroupPhoto.md)
-Update the navigation property photo in groups
 
 ### [Update-MgBetaGroupSetting](Update-MgBetaGroupSetting.md)
 Update the navigation property settings in groups

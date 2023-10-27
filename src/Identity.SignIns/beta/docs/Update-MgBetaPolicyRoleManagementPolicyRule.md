@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:\n+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-MgBetaPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdenti
 
 ## DESCRIPTION
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:\n+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -326,6 +326,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

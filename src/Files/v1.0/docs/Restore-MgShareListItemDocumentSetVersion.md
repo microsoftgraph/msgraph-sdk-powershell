@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a document set version.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Restore-MgShareListItemDocumentSetVersion -InputObject <IFilesIdentity> [-PassTh
 
 ## DESCRIPTION
 Restore a document set version.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

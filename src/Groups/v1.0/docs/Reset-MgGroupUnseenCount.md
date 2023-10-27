@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Reset the unseenCount of all the posts that the current user hasn't seen since their last visit.
 Supported for Microsoft 365 groups only.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Reset-MgGroupUnseenCount -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [
 ## DESCRIPTION
 Reset the unseenCount of all the posts that the current user hasn't seen since their last visit.
 Supported for Microsoft 365 groups only.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

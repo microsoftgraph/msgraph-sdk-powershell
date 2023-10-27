@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplic
 
 ## DESCRIPTION
 Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Enrollment
-Module Guid: 8ca3d6a2-22bc-4d28-9ddb-3343d5ab00c3
+Module Guid: 61393e9a-a30f-483c-b3b0-e46e03a3a014
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -177,7 +177,7 @@ Get resourceScope from roleManagement
 
 ### [Get-MgBetaRoleManagementCloudPcRoleAssignment](Get-MgBetaRoleManagementCloudPcRoleAssignment.md)
 Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementCloudPcRoleAssignmentAppScope](Get-MgBetaRoleManagementCloudPcRoleAssignmentAppScope.md)
@@ -216,14 +216,14 @@ Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith 
 
 ### [Get-MgBetaRoleManagementCloudPcRoleDefinition](Get-MgBetaRoleManagementCloudPcRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementCloudPcRoleDefinitionCount](Get-MgBetaRoleManagementCloudPcRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom](Get-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom.md)
 Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles support this attribute.
+Only Microsoft Entra built-in roles support this attribute.
 
 ### [Get-MgBetaRoleManagementDeviceManagement](Get-MgBetaRoleManagementDeviceManagement.md)
 The RbacApplication for Device Management
@@ -249,7 +249,7 @@ Get resourceScope from roleManagement
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleAssignment](Get-MgBetaRoleManagementDeviceManagementRoleAssignment.md)
 Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleAssignmentAppScope](Get-MgBetaRoleManagementDeviceManagementRoleAssignmentAppScope.md)
@@ -288,14 +288,14 @@ Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith 
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleDefinition](Get-MgBetaRoleManagementDeviceManagementRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleDefinitionCount](Get-MgBetaRoleManagementDeviceManagementRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](Get-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles support this attribute.
+Only Microsoft Entra built-in roles support this attribute.
 
 ### [New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile](New-MgBetaDeviceManagementAndroidDeviceOwnerEnrollmentProfile.md)
 Create new navigation property to androidDeviceOwnerEnrollmentProfiles for deviceManagement
@@ -362,7 +362,7 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgBetaRoleManagementCloudPcRoleAssignment](New-MgBetaRoleManagementCloudPcRoleAssignment.md)
 Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementCloudPcRoleAssignmentAppScope](New-MgBetaRoleManagementCloudPcRoleAssignmentAppScope.md)
@@ -370,8 +370,8 @@ Create new navigation property to appScopes for roleManagement
 
 ### [New-MgBetaRoleManagementCloudPcRoleDefinition](New-MgBetaRoleManagementCloudPcRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -384,7 +384,7 @@ Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgBetaRoleManagementDeviceManagementRoleAssignment](New-MgBetaRoleManagementDeviceManagementRoleAssignment.md)
 Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDeviceManagementRoleAssignmentAppScope](New-MgBetaRoleManagementDeviceManagementRoleAssignmentAppScope.md)
@@ -392,8 +392,8 @@ Create new navigation property to appScopes for roleManagement
 
 ### [New-MgBetaRoleManagementDeviceManagementRoleDefinition](New-MgBetaRoleManagementDeviceManagementRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -484,8 +484,8 @@ Delete navigation property appScopes for roleManagement
 ### [Remove-MgBetaRoleManagementCloudPcRoleDefinition](Remove-MgBetaRoleManagementCloudPcRoleDefinition.md)
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -513,8 +513,8 @@ Delete navigation property appScopes for roleManagement
 ### [Remove-MgBetaRoleManagementDeviceManagementRoleDefinition](Remove-MgBetaRoleManagementDeviceManagementRoleDefinition.md)
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -605,8 +605,8 @@ Update the navigation property appScopes in roleManagement
 ### [Update-MgBetaRoleManagementCloudPcRoleDefinition](Update-MgBetaRoleManagementCloudPcRoleDefinition.md)
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementCloudPcRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
@@ -634,8 +634,8 @@ Update the navigation property appScopes in roleManagement
 ### [Update-MgBetaRoleManagementDeviceManagementRoleDefinition](Update-MgBetaRoleManagementDeviceManagementRoleDefinition.md)
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement

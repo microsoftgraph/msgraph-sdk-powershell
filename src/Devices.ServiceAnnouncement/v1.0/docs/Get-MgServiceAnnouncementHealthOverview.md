@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties and relationships of a serviceHealth object.
 This operation provides the health information of a specified service for a tenant.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgServiceAnnouncementHealthOverview -InputObject <IDevicesServiceAnnouncemen
 ## DESCRIPTION
 Retrieve the properties and relationships of a serviceHealth object.
 This operation provides the health information of a specified service for a tenant.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

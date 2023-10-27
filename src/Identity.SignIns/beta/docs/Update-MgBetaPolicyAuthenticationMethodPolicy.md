@@ -328,7 +328,7 @@ To create the parameters described below, construct a hash table containing the 
 `AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfiguration[]>`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
-    - `[Id <String>]`: The object identifier of an Azure AD group.
+    - `[Id <String>]`: The object identifier of a Microsoft Entra group.
     - `[TargetType <String>]`: authenticationMethodTargetType
   - `[State <String>]`: authenticationMethodState
 
@@ -338,7 +338,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
-      - `[Id <String>]`: The object identifier of an Azure AD group.
+      - `[Id <String>]`: The object identifier of a Microsoft Entra group.
       - `[TargetType <String>]`: authenticationMethodTargetType
     - `[State <String>]`: authenticationMethodState
   - `[Description <String>]`: A description of the policy.
@@ -351,9 +351,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthenticationMethodsRegistrationCampaign <IMicrosoftGraphAuthenticationMethodsRegistrationCampaign>]`: authenticationMethodsRegistrationCampaign
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[EnforceRegistrationAfterAllowedSnoozes <Boolean?>]`: Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
       - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups of users that are excluded from being prompted to set up the authentication method.
       - `[IncludeTargets <IMicrosoftGraphAuthenticationMethodsRegistrationCampaignIncludeTarget[]>]`: Users and groups of users that are prompted to set up the authentication method.
-        - `[Id <String>]`: The object identifier of an Azure AD user or group.
+        - `[Id <String>]`: The object identifier of a Microsoft Entra user or group.
         - `[TargetType <String>]`: authenticationMethodTargetType
         - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
       - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
@@ -376,11 +377,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AuthenticationMethodsRegistrationCampaign <IMicrosoftGraphAuthenticationMethodsRegistrationCampaign>]`: authenticationMethodsRegistrationCampaign
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[EnforceRegistrationAfterAllowedSnoozes <Boolean?>]`: Specifies whether a user is required to perform registration after snoozing 3 times. If true, the user is required to register after 3 snoozes. If false, the user can snooze indefinitely. The default value is true.
     - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups of users that are excluded from being prompted to set up the authentication method.
-      - `[Id <String>]`: The object identifier of an Azure AD group.
+      - `[Id <String>]`: The object identifier of a Microsoft Entra group.
       - `[TargetType <String>]`: authenticationMethodTargetType
     - `[IncludeTargets <IMicrosoftGraphAuthenticationMethodsRegistrationCampaignIncludeTarget[]>]`: Users and groups of users that are prompted to set up the authentication method.
-      - `[Id <String>]`: The object identifier of an Azure AD user or group.
+      - `[Id <String>]`: The object identifier of a Microsoft Entra user or group.
       - `[TargetType <String>]`: authenticationMethodTargetType
       - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.
@@ -398,7 +400,7 @@ To create the parameters described below, construct a hash table containing the 
 `SYSTEMCREDENTIALPREFERENCES <IMicrosoftGraphSystemCredentialPreferences>`: systemCredentialPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups excluded from the preferred authentication method experience of the system.
-    - `[Id <String>]`: The object identifier of an Azure AD group.
+    - `[Id <String>]`: The object identifier of a Microsoft Entra group.
     - `[TargetType <String>]`: authenticationMethodTargetType
   - `[IncludeTargets <IMicrosoftGraphIncludeTarget[]>]`: Users and groups included in the preferred authentication method experience of the system.
     - `[Id <String>]`: The ID of the entity targeted.

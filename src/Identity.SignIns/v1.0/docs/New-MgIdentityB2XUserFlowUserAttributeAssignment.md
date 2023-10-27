@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgIdentityB2XUserFlowUserAttributeAssignment -InputObject <IIdentitySignInsI
 
 ## DESCRIPTION
 Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

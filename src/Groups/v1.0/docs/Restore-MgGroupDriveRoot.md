@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 NOTE: This functionality is currently only available for OneDrive Personal.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Restore-MgGroupDriveRoot -InputObject <IGroupsIdentity> [-AdditionalProperties <
 ## DESCRIPTION
 Restore a driveItem that has been deleted and is currently in the recycle bin.
 NOTE: This functionality is currently only available for OneDrive Personal.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

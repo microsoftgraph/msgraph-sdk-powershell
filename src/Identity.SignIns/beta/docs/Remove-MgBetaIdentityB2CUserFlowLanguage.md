@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Deletes a userFlowLanguageConfiguration object from a Azure AD B2C user flow.
-Note: You cannot delete languages from an Azure Active Directory user flow.
+Note: You cannot delete languages from an Microsoft Entra user flow.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -29,7 +29,7 @@ Remove-MgBetaIdentityB2CUserFlowLanguage -InputObject <IIdentitySignInsIdentity>
 
 ## DESCRIPTION
 Deletes a userFlowLanguageConfiguration object from a Azure AD B2C user flow.
-Note: You cannot delete languages from an Azure Active Directory user flow.
+Note: You cannot delete languages from an Microsoft Entra user flow.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -222,6 +222,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

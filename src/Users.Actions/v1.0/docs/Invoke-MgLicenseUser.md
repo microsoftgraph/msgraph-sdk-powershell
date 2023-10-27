@@ -11,7 +11,7 @@ schema: 2.0.0
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
 Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Invoke-MgLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [
 Reprocess all group-based license assignments for the user.
 To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
 Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -150,7 +150,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
-  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

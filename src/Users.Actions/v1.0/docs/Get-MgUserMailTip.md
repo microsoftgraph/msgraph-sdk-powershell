@@ -11,7 +11,7 @@ schema: 2.0.0
 Get the MailTips of one or more recipients as available to the signed-in user.
 Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Get-MgUserMailTip -InputObject <IUsersActionsIdentity> [-AdditionalProperties <H
 Get the MailTips of one or more recipients as available to the signed-in user.
 Note that by making a POST call to the getMailTips action, you can request specific types of MailTips to\nbe returned for more than one recipient at one time.
 The requested MailTips are returned in a mailTips collection.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -242,7 +242,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
-  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

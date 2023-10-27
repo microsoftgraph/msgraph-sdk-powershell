@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Add conditions under which a permission grant event is *excluded* in a permission grant policy.
 You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ New-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
 ## DESCRIPTION
 Add conditions under which a permission grant event is *excluded* in a permission grant policy.
 You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

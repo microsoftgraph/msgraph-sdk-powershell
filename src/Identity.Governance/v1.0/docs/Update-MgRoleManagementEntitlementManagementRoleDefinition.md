@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of a unifiedRoleDefinition object.
 You cannot update built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
+This feature requires a Microsoft Entra ID P1 or P2 license.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -48,7 +48,7 @@ Update-MgRoleManagementEntitlementManagementRoleDefinition -InputObject <IIdenti
 ## DESCRIPTION
 Update the properties of a unifiedRoleDefinition object.
 You cannot update built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
+This feature requires a Microsoft Entra ID P1 or P2 license.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 
 ### -InheritsPermissionsFrom
 Read-only collection of role definitions that the given role definition inherits from.
-Only Azure AD built-in roles (isBuiltIn is true) support this attribute.
+Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute.
 Supports $expand.
 To construct, see NOTES section for INHERITSPERMISSIONSFROM properties and create a hash table.
 
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsBuiltIn
-Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition.
+Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition.
 Read-only.
 Supports $filter (eq, in).
 
@@ -361,8 +361,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
   - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
-  - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-  - `[IsBuiltIn <Boolean?>]`: Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
+  - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+  - `[IsBuiltIn <Boolean?>]`: Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).
   - `[IsEnabled <Boolean?>]`: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
   - `[ResourceScopes <String[]>]`: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
@@ -372,12 +372,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
   - `[Version <String>]`: Indicates version of the role definition. Read-only when isBuiltIn is true.
 
-`INHERITSPERMISSIONSFROM <IMicrosoftGraphUnifiedRoleDefinition[]>`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+`INHERITSPERMISSIONSFROM <IMicrosoftGraphUnifiedRoleDefinition[]>`: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
   - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
-  - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-  - `[IsBuiltIn <Boolean?>]`: Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
+  - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+  - `[IsBuiltIn <Boolean?>]`: Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).
   - `[IsEnabled <Boolean?>]`: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
   - `[ResourceScopes <String[]>]`: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: List of permissions included in the role. Read-only when isBuiltIn is true. Required.

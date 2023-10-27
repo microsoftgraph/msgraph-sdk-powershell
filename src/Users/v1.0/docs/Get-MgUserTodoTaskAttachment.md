@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a taskFileAttachment object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgUserTodoTaskAttachment -InputObject <IUsersIdentity> [-Property <String[]>
 
 ## DESCRIPTION
 Read the properties and relationships of a taskFileAttachment object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

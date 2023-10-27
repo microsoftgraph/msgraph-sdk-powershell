@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reprocess all group-based license assignments for the user.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
-Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
+To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
+Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -27,8 +27,8 @@ Invoke-MgBetaLicenseUser -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatI
 
 ## DESCRIPTION
 Reprocess all group-based license assignments for the user.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
-Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
+To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
+Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new servicePrincipal object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ New-MgServicePrincipal -BodyParameter <IMicrosoftGraphServicePrincipal> [-Confir
 
 ## DESCRIPTION
 Create a new servicePrincipal object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

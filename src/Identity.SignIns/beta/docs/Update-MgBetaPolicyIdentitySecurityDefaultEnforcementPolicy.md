@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-If set to true, Azure Active Directory security defaults are enabled for the tenant.
+If set to true, Microsoft Entra security defaults are enabled for the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -213,7 +213,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsEnabled <Boolean?>]`: If set to true, Azure Active Directory security defaults are enabled for the tenant.
+  - `[IsEnabled <Boolean?>]`: If set to true, Microsoft Entra security defaults are enabled for the tenant.
 
 ## RELATED LINKS
 

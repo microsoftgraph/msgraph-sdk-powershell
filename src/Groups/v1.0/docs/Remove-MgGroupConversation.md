@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgGroupConversation
 
 ## SYNOPSIS
-This API is supported in the following national cloud deployments.
+Delete conversation.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgGroupConversation -InputObject <IGroupsIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-This API is supported in the following national cloud deployments.
+Delete conversation.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

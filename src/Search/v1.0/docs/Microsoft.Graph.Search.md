@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 23c46272-7024-40f3-8c30-b5d6d7262729
+Module Guid: 82624b61-d42d-4f6f-9ac3-197b7f54c1a4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -33,7 +33,7 @@ Get the number of the resource
 
 ### [Get-MgExternalConnectionGroupMember](Get-MgExternalConnectionGroupMember.md)
 A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 
 ### [Get-MgExternalConnectionGroupMemberCount](Get-MgExternalConnectionGroupMemberCount.md)
 Get the number of the resource
@@ -142,6 +142,7 @@ Update the navigation property operations in external
 
 ### [Update-MgExternalConnectionSchema](Update-MgExternalConnectionSchema.md)
 Create a new schema object.
+This API is available in the following national cloud deployments.
 
 ### [Update-MgSearchEntity](Update-MgSearchEntity.md)
 Update search

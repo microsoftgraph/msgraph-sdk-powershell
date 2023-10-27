@@ -8,7 +8,8 @@ schema: 2.0.0
 # Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest
 
 ## SYNOPSIS
-Invoke action cancel
+Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest
 ```
 
 ## DESCRIPTION
-Invoke action cancel
+Cancel an access assignment request to a group whose membership and ownership are governed by PIM.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

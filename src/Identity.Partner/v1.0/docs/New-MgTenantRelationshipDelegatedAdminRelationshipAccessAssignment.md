@@ -277,7 +277,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `ACCESSCONTAINER <IMicrosoftGraphDelegatedAdminAccessContainer>`: delegatedAdminAccessContainer
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AccessContainerId <String>]`: The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
+  - `[AccessContainerId <String>]`: The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner's tenant.
   - `[AccessContainerType <String>]`: delegatedAdminAccessContainerType
 
 `ACCESSDETAILS <IMicrosoftGraphDelegatedAdminAccessDetails>`: delegatedAdminAccessDetails
@@ -290,7 +290,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AccessContainer <IMicrosoftGraphDelegatedAdminAccessContainer>]`: delegatedAdminAccessContainer
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AccessContainerId <String>]`: The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
+    - `[AccessContainerId <String>]`: The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner's tenant.
     - `[AccessContainerType <String>]`: delegatedAdminAccessContainerType
   - `[AccessDetails <IMicrosoftGraphDelegatedAdminAccessDetails>]`: delegatedAdminAccessDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

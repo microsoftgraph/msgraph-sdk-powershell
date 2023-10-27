@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Invoke-MgInviteDriveItem -InputObject <IFilesIdentity> [-AdditionalProperties <H
 
 ## DESCRIPTION
 Sends a sharing invitation for a driveItem.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link][].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

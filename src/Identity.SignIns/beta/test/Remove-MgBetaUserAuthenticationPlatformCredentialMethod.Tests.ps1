@@ -1,11 +1,11 @@
-if(($null -eq $TestName) -or ($TestName -contains 'Update-MgBetaGroupPhoto'))
+if(($null -eq $TestName) -or ($TestName -contains 'Remove-MgBetaUserAuthenticationPlatformCredentialMethod'))
 {
   $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
   if (-Not (Test-Path -Path $loadEnvPath)) {
       $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
   }
   . ($loadEnvPath)
-  $TestRecordingFile = Join-Path $PSScriptRoot 'Update-MgBetaGroupPhoto.Recording.json'
+  $TestRecordingFile = Join-Path $PSScriptRoot 'Remove-MgBetaUserAuthenticationPlatformCredentialMethod.Recording.json'
   $currentPath = $PSScriptRoot
   while(-not $mockingPath) {
       $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
@@ -14,20 +14,12 @@ if(($null -eq $TestName) -or ($TestName -contains 'Update-MgBetaGroupPhoto'))
   . ($mockingPath | Select-Object -First 1).FullName
 }
 
-Describe 'Update-MgBetaGroupPhoto' {
-    It 'UpdateExpanded' -skip {
+Describe 'Remove-MgBetaUserAuthenticationPlatformCredentialMethod' {
+    It 'Delete' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'Update' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'UpdateViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'UpdateViaIdentity' -skip {
+    It 'DeleteViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 574758f0-fcf1-4088-8154-f4778b56569a
+Module Guid: 24ec862a-e03b-415b-bafb-8c5c13537394
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -94,7 +94,7 @@ Invoke action verifySignature
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -452,8 +452,8 @@ This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaLicenseUser](Invoke-MgBetaLicenseUser.md)
 Reprocess all group-based license assignments for the user.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
-Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
+To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
+Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaLogoutUserManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgBetaLogoutUserManagedDeviceSharedAppleDeviceActiveUser.md)
@@ -1080,8 +1080,8 @@ If this happens, the application will need to acquire a new refresh token by mak
 This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaUserChatActivityNotification](Send-MgBetaUserChatActivityNotification.md)
-Send an activity feed notification in scope of a chat.
-For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+Send an activity feed notification in the scope of a chat.
+For more information, see sending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaUserMail](Send-MgBetaUserMail.md)
@@ -1122,7 +1122,7 @@ This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaUserTeamworkActivityNotification](Send-MgBetaUserTeamworkActivityNotification.md)
 Send an activity feed notification to a user.
-For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more information, see sending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaUserChatMessageReaction](Set-MgBetaUserChatMessageReaction.md)

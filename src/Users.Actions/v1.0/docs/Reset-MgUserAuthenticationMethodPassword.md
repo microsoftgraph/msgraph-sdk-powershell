@@ -13,8 +13,8 @@ This can only be done by an administrator with appropriate permissions and canno
 This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback.
 The admin can either provide a new password or have the system generate one.
 The user is prompted to change their password on their next sign in.
-This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
-This API is supported in the following national cloud deployments.
+This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -50,8 +50,8 @@ This can only be done by an administrator with appropriate permissions and canno
 This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback.
 The admin can either provide a new password or have the system generate one.
 The user is prompted to change their password on their next sign in.
-This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
-This API is supported in the following national cloud deployments.
+This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -245,7 +245,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
-  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

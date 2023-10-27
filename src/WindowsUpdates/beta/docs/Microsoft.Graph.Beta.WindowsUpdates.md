@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 914bce4b-c962-4495-a1d2-cff235ac21c2
+Module Guid: d19a9bf5-9d4b-40de-b822-3c65ded08d6e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,7 +19,7 @@ This API is available in the following national cloud deployments.
 ### [Add-MgBetaWindowsUpdatesDeploymentAudienceMember](Add-MgBetaWindowsUpdatesDeploymentAudienceMember.md)
 Add members to an updatableAssetGroup.
 You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
+Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 This API is available in the following national cloud deployments.
 
@@ -31,7 +31,7 @@ This API is available in the following national cloud deployments.
 ### [Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember](Add-MgBetaWindowsUpdatesPolicyAudienceExclusionMember.md)
 Add members to an updatableAssetGroup.
 You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
+Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 This API is available in the following national cloud deployments.
 
@@ -43,7 +43,7 @@ This API is available in the following national cloud deployments.
 ### [Add-MgBetaWindowsUpdatesPolicyAudienceMember](Add-MgBetaWindowsUpdatesPolicyAudienceMember.md)
 Add members to an updatableAssetGroup.
 You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
+Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 This API is available in the following national cloud deployments.
 
@@ -55,7 +55,7 @@ This API is available in the following national cloud deployments.
 ### [Add-MgBetaWindowsUpdatesUpdatableAssetMember](Add-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Add members to an updatableAssetGroup.
 You can add azureADDevice resources as members, but may not add updatableAssetGroup resources as members.
-Adding an Azure AD device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
+Adding a Microsoft Entra device as a member of an updatable asset group automatically creates an azureADDevice object, if it does not already exist.
 You can also use the method addMembersById to add members.
 This API is available in the following national cloud deployments.
 
@@ -130,7 +130,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties and relationships of an updatableAsset object.
+Read the properties of an azureADDevice object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
@@ -254,11 +254,11 @@ You can also use the method removeMembers to remove members.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesPolicyComplianceChange](Remove-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Delete a complianceChange object.
+Delete a contentApproval object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
-Delete a resourceConnection object.
+Delete an operationalInsightsConnection object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
@@ -281,14 +281,14 @@ This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaWindowsUpdatesDeploymentAudience](Update-MgBetaWindowsUpdatesDeploymentAudience.md)
 Update the members and exclusions collections of a deploymentAudience.
-Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist.
+Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object, if it does not already exist.
 If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
 If all updatableAsset objects are the same type, you can also use the method updateAudienceById to update the deploymentAudience.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaWindowsUpdatesDeploymentAudienceById](Update-MgBetaWindowsUpdatesDeploymentAudienceById.md)
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
-Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
+Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist.
 If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
 You can also use the method updateAudience to update the deploymentAudience.
 This API is available in the following national cloud deployments.
@@ -302,7 +302,7 @@ Update the navigation property audience in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyAudienceById](Update-MgBetaWindowsUpdatesPolicyAudienceById.md)
 Update the members and exclusions collections of a deploymentAudience with updatableAsset resources of the same type.
-Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object if it does not already exist.
+Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates a Microsoft Entra device object if it does not already exist.
 If the same updatableAsset gets included in the exclusions and members collections of a deploymentAudience, deployment will not apply to that asset.
 You can also use the method updateAudience to update the deploymentAudience.
 This API is available in the following national cloud deployments.

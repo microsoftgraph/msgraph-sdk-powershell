@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance
 
 ## SYNOPSIS
-Get eligibilityScheduleInstances from identityGovernance
+Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +35,8 @@ Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleInstance
 ```
 
 ## DESCRIPTION
-Get eligibilityScheduleInstances from identityGovernance
+Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

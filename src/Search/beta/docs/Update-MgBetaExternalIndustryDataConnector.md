@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaExternalIndustryDataConnector
 
 ## SYNOPSIS
-Update the properties of an azureDataLakeConnector object.
+Update the properties of an industryDataConnector object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -40,7 +40,7 @@ Update-MgBetaExternalIndustryDataConnector -InputObject <ISearchIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the properties of an azureDataLakeConnector object.
+Update the properties of an industryDataConnector object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

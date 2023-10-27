@@ -11,7 +11,7 @@ schema: 2.0.0
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
 Note: Language customization is enabled by default in Azure Active Directory user flows.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Get-MgIdentityB2XUserFlowLanguage -InputObject <IIdentitySignInsIdentity> [-Expa
 Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
 Note: Language customization is enabled by default in Azure Active Directory user flows.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

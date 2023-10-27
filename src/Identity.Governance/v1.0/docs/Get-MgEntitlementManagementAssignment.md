@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAssignment
 
 ## SYNOPSIS
-In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
+In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -45,7 +45,7 @@ Get-MgEntitlementManagementAssignment -AccessPackageId <String> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
+In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

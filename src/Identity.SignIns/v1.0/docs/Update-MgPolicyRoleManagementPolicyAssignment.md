@@ -159,8 +159,8 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitionId
-For Azure AD roles policy, it's the identifier of the role definition object where the policy applies.
-For PIM for groups membership and ownership, it's either member or owner.
+The identifier of the role definition object where the policy applies.
+If not specified, the policy applies to all roles.
 Supports $filter (eq).
 
 ```yaml
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 
 ### -ScopeType
 The type of the scope where the policy is assigned.
-One of Directory, DirectoryRole, Group.
+One of Directory, DirectoryRole.
 Required.
 
 ```yaml
@@ -305,11 +305,11 @@ To create the parameters described below, construct a hash table containing the 
     - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
     - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
     - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
-    - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
+    - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
   - `[PolicyId <String>]`: The id of the policy. Inherited from entity.
-  - `[RoleDefinitionId <String>]`: For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+  - `[RoleDefinitionId <String>]`: The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
   - `[ScopeId <String>]`: The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
-  - `[ScopeType <String>]`: The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
+  - `[ScopeType <String>]`: The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
@@ -393,7 +393,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
   - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
   - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
-  - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
+  - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
 
 ## RELATED LINKS
 

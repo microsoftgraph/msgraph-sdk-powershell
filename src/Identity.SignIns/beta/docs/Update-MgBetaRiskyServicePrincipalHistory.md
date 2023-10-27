@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -History
-Represents the risk history of Azure AD service principals.
+Represents the risk history of Microsoft Entra service principals.
 To construct, see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsProcessing
-Indicates whether Azure AD is currently processing the service principal's risky state.
+Indicates whether Microsoft Entra ID Protection is currently processing the service principal's risky state.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 
 ### -ServicePrincipalType
 Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp).
-This is set by Azure AD internally and is inherited from servicePrincipal.
+This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
 
 ```yaml
 Type: System.String
@@ -439,14 +439,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false.
   - `[AppId <String>]`: The globally unique identifier for the associated application (its appId property), if any.
   - `[DisplayName <String>]`: The display name for the service principal.
-  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]`: Represents the risk history of Azure AD service principals.
+  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]`: Represents the risk history of Microsoft Entra service principals.
   - `[IsEnabled <Boolean?>]`: 
-  - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
+  - `[IsProcessing <Boolean?>]`: Indicates whether Microsoft Entra ID Protection is currently processing the service principal's risky state.
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
-  - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+  - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Activity <IMicrosoftGraphRiskServicePrincipalActivity>]`: riskServicePrincipalActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -455,18 +455,18 @@ To create the parameters described below, construct a hash table containing the 
   - `[InitiatedBy <String>]`: The identifier of the actor of the operation.
   - `[ServicePrincipalId <String>]`: The identifier of the service principal.
 
-`HISTORY <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>`: Represents the risk history of Azure AD service principals.
+`HISTORY <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>`: Represents the risk history of Microsoft Entra service principals.
   - `[AccountEnabled <Boolean?>]`: true if the service principal account is enabled; otherwise, false.
   - `[AppId <String>]`: The globally unique identifier for the associated application (its appId property), if any.
   - `[DisplayName <String>]`: The display name for the service principal.
-  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]`: Represents the risk history of Azure AD service principals.
+  - `[History <IMicrosoftGraphRiskyServicePrincipalHistoryItem[]>]`: Represents the risk history of Microsoft Entra service principals.
   - `[IsEnabled <Boolean?>]`: 
-  - `[IsProcessing <Boolean?>]`: Indicates whether Azure AD is currently processing the service principal's risky state.
+  - `[IsProcessing <Boolean?>]`: Indicates whether Microsoft Entra ID Protection is currently processing the service principal's risky state.
   - `[RiskDetail <String>]`: riskDetail
   - `[RiskLastUpdatedDateTime <DateTime?>]`: The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
   - `[RiskLevel <String>]`: riskLevel
   - `[RiskState <String>]`: riskState
-  - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+  - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Activity <IMicrosoftGraphRiskServicePrincipalActivity>]`: riskServicePrincipalActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -526,6 +526,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

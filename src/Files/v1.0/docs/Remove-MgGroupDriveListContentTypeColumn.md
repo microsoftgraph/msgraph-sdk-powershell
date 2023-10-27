@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgGroupDriveListContentTypeColumn -InputObject <IFilesIdentity> [-IfMatch
 
 ## DESCRIPTION
 Remove a column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

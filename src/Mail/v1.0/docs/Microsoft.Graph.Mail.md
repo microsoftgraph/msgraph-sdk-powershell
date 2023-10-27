@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: cc3af714-a9a6-44e1-81a6-027db3bd8cce
+Module Guid: 2b9c253e-5ad1-4491-b1d3-561425674409
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -141,7 +141,8 @@ If you intend a new folder to be hidden, you must set the isHidden property to t
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
@@ -149,8 +150,10 @@ Use this API to create a new Message in a mailfolder.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMailFolderChildFolderMessageAttachment](New-MgUserMailFolderChildFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly.
+This operation limits the size of the attachment you can add to under 3 MB.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMailFolderChildFolderMessageExtension](New-MgUserMailFolderChildFolderMessageExtension.md)
@@ -169,8 +172,10 @@ Use this API to create a new Message in a mailfolder.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMailFolderMessageAttachment](New-MgUserMailFolderMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly.
+This operation limits the size of the attachment you can add to under 3 MB.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMailFolderMessageExtension](New-MgUserMailFolderMessageExtension.md)
@@ -191,8 +196,10 @@ The table in the Permissions section lists the resources that support open exten
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or you can\nadd an attachment to a message that is being created and sent on the fly.
+This operation limits the size of the attachment you can add to under 3 MB.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserMessageExtension](New-MgUserMessageExtension.md)
@@ -245,7 +252,7 @@ Delete the specified messageRule object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgUserMessage](Remove-MgUserMessage.md)
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
+Delete eventMessage.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgUserMessageAttachment](Remove-MgUserMessageAttachment.md)
@@ -276,7 +283,7 @@ If an override exists for a sender and the sender changes his/her SMTP address, 
 This API is available in the following national cloud deployments.
 
 ### [Update-MgUserMailFolder](Update-MgUserMailFolder.md)
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailfolder object.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgUserMailFolderChildFolder](Update-MgUserMailFolderChildFolder.md)

@@ -378,13 +378,13 @@ To create the parameters described below, construct a hash table containing the 
       - `[Priority <Int32?>]`: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
   - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+    - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
   - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
   - `[Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Description <String>]`: The description of the external group. Optional.
     - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-    - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+    - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Type <String>]`: identityType
   - `[Items <IMicrosoftGraphExternalConnectorsExternalItem[]>]`: 
@@ -392,7 +392,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Acl <IMicrosoftGraphExternalConnectorsAcl[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
       - `[AccessType <String>]`: accessType
       - `[Type <String>]`: aclType
-      - `[Value <String>]`: The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup
+      - `[Value <String>]`: The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup
     - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Returns a list of activities performed on the item. Write-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
@@ -452,13 +452,13 @@ To create the parameters described below, construct a hash table containing the 
 
 `CONFIGURATION <IMicrosoftGraphExternalConnectorsConfiguration>`: configuration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+  - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
 
 `GROUPS <IMicrosoftGraphExternalConnectorsExternalGroup[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: The description of the external group. Optional.
   - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Type <String>]`: identityType
 
@@ -475,7 +475,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Acl <IMicrosoftGraphExternalConnectorsAcl[]>]`: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
     - `[AccessType <String>]`: accessType
     - `[Type <String>]`: aclType
-    - `[Value <String>]`: The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup
+    - `[Value <String>]`: The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup
   - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Returns a list of activities performed on the item. Write-only.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity

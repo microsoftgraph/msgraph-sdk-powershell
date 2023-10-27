@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DirectoryObjects
-Module Guid: 2f4f892e-b41e-4af3-85c3-0a4fdf6d95fe
+Module Guid: 0206efe4-53bf-4bc0-859c-25a7725edfb3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.directoryobjects
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
+This function supports all groups provisioned in Microsoft Entra ID.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroup
 
 ## SYNOPSIS
-Get group from identityGovernance
+A group that's governed through Privileged Identity Management (PIM).
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgIdentityGovernancePrivilegedAccessGroup [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Get group from identityGovernance
+A group that's governed through Privileged Identity Management (PIM).
 
 ## EXAMPLES
 

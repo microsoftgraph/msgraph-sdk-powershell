@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new task object in a specified todoTaskList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -55,7 +55,7 @@ New-MgUserTodoListTask -InputObject <IUsersIdentity> [-AdditionalProperties <Has
 
 ## DESCRIPTION
 Create a new task object in a specified todoTaskList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

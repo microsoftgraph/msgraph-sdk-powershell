@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete an educationClass.
 Because a class is also a universal group, deleting a class deletes the group.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Remove-MgEducationClass -InputObject <IEducationIdentity> [-IfMatch <String>] [-
 ## DESCRIPTION
 Delete an educationClass.
 Because a class is also a universal group, deleting a class deletes the group.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAssignmentPolicy
 
 ## SYNOPSIS
-In Azure AD entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
+In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -45,7 +45,7 @@ Get-MgEntitlementManagementAssignmentPolicy -InputObject <IIdentityGovernanceIde
 ```
 
 ## DESCRIPTION
-In Azure AD entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
+In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

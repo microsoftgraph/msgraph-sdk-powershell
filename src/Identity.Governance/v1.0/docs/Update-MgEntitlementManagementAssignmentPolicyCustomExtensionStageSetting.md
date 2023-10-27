@@ -250,7 +250,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>]`: customExtensionClientConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[TimeoutInMilliseconds <Int32?>]`: The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+      - `[TimeoutInMilliseconds <Int32?>]`: The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
     - `[Description <String>]`: Description for the customCalloutExtension object.
     - `[DisplayName <String>]`: Display name for the customCalloutExtension object.
     - `[EndpointConfiguration <IMicrosoftGraphCustomExtensionEndpointConfiguration>]`: customExtensionEndpointConfiguration
@@ -264,7 +264,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ClientConfiguration <IMicrosoftGraphCustomExtensionClientConfiguration>]`: customExtensionClientConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[TimeoutInMilliseconds <Int32?>]`: The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+    - `[TimeoutInMilliseconds <Int32?>]`: The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
   - `[Description <String>]`: Description for the customCalloutExtension object.
   - `[DisplayName <String>]`: Display name for the customCalloutExtension object.
   - `[EndpointConfiguration <IMicrosoftGraphCustomExtensionEndpointConfiguration>]`: customExtensionEndpointConfiguration

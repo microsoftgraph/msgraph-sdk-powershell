@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Publish-MgGroupDriveListContentType -InputObject <IGroupsIdentity> [-PassThru] [
 
 ## DESCRIPTION
 Publishes a contentType][] present in the content type hub site.
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

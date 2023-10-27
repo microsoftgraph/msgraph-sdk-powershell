@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a identityUserFlowAttributeAssignment object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgIdentityB2XUserFlowUserAttributeAssignment -InputObject <IIdentitySignI
 
 ## DESCRIPTION
 Update the properties of a identityUserFlowAttributeAssignment object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

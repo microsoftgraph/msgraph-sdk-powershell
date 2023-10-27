@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new educationRubric object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgEducationUserRubric -InputObject <IEducationIdentity> [-AdditionalProperti
 
 ## DESCRIPTION
 Create a new educationRubric object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

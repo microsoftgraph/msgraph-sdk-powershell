@@ -213,7 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-Tenant ID of the Azure Active Directory tenant added to the multitenant organization.
+Tenant ID of the Microsoft Entra tenant added to the multitenant organization.
 Set at the time tenant is added.Supports $filter.
 Key.
 
@@ -306,7 +306,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[JoinedDateTime <DateTime?>]`: Date and time when the tenant joined the multitenant organization. Read-only.
   - `[Role <String>]`: multiTenantOrganizationMemberRole
   - `[State <String>]`: multiTenantOrganizationMemberState
-  - `[TenantId <String>]`: Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
+  - `[TenantId <String>]`: Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
   - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>]`: multiTenantOrganizationMemberTransitionDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DesiredRole <String>]`: multiTenantOrganizationMemberRole

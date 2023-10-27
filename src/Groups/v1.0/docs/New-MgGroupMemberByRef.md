@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Add a member to a security or Microsoft 365 group through the members navigation property.
 The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgGroupMemberByRef -InputObject <IGroupsIdentity> -OdataId <String> [-Additi
 ## DESCRIPTION
 Add a member to a security or Microsoft 365 group through the members navigation property.
 The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

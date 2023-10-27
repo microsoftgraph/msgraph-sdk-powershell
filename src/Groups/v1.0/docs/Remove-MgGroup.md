@@ -13,7 +13,7 @@ When deleted, Microsoft 365 groups are moved to a temporary container and can be
 After that time, they're permanently deleted.
 This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
 To learn more, see deletedItems.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ When deleted, Microsoft 365 groups are moved to a temporary container and can be
 After that time, they're permanently deleted.
 This isn't applicable to Security groups and Distribution groups which are permanently deleted immediately.
 To learn more, see deletedItems.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

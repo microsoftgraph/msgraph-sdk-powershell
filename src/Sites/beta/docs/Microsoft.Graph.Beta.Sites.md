@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: a9ede8dd-dfb7-4963-b0a3-0245c1a285e8
+Module Guid: 68cefd9a-d3f6-4368-bb78-f1d8651f3f8c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -252,8 +252,8 @@ Get bitlocker from groups
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
 By default, this operation does not return the key property that represents the actual recovery key.
 To include the key property in the response, use the $select OData query parameter.
-Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
-You can find the log in Azure AD audit logs under the KeyManagement category.
+Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
+You can find the log in Microsoft Entra audit logs under the KeyManagement category.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaGroupSiteInformationProtectionBitlockerRecoveryKeyCount.md)

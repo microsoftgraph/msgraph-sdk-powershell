@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitionId
-For Azure AD roles policy, it's the identifier of the role definition object where the policy applies.
+For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies.
 For PIM for groups membership and ownership, it's either member or owner.
 Supports $filter (eq).
 
@@ -251,14 +251,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
     - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
     - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
     - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
     - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
   - `[PolicyId <String>]`: The id of the policy. Inherited from entity.
-  - `[RoleDefinitionId <String>]`: For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
+  - `[RoleDefinitionId <String>]`: For Microsoft Entra roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
   - `[ScopeId <String>]`: The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
   - `[ScopeType <String>]`: The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
 
@@ -282,8 +282,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsOrganizationDefault <Boolean?>]`: This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
   - `[LastModifiedBy <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
   - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
   - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.

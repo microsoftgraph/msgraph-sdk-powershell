@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage
 
 ## SYNOPSIS
-In Azure AD entitlement management, retrieve the properties of an approvalStage object.
+Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
 This API is available in the following national cloud deployments.
 
@@ -34,7 +34,7 @@ Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage -InputObject <II
 ```
 
 ## DESCRIPTION
-In Azure AD entitlement management, retrieve the properties of an approvalStage object.
+Retrieve the properties of an approvalStage object.
 An approval stage is contained within an approval object.
 This API is available in the following national cloud deployments.
 

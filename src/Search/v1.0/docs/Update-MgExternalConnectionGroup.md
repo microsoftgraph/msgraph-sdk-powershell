@@ -186,7 +186,7 @@ Accept wildcard characters: False
 
 ### -Members
 A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 To construct, see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
@@ -259,7 +259,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Description <String>]`: The description of the external group. Optional.
   - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+  - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Type <String>]`: identityType
 
@@ -271,7 +271,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ExternalItemId <String>]`: The unique identifier of externalItem
   - `[IdentityId <String>]`: The unique identifier of identity
 
-`MEMBERS <IMicrosoftGraphExternalConnectorsIdentity[]>`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+`MEMBERS <IMicrosoftGraphExternalConnectorsIdentity[]>`: A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Type <String>]`: identityType
 

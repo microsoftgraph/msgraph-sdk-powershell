@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a user's single FIDO2 Security Key Authentication Method object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [-Ex
 
 ## DESCRIPTION
 Retrieve a user's single FIDO2 Security Key Authentication Method object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

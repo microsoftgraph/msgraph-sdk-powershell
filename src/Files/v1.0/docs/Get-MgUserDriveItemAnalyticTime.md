@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Get-MgUserDriveItemAnalyticTime -InputObject <IFilesIdentity> [-ExpandProperty <
 
 ## DESCRIPTION
 Get [itemAnalytics][] about the views that took place under this resource.\nThe itemAnalytics resource is a convenient way to get activity stats for allTime and the lastSevenDays.\nFor a custom time range or interval, use the getActivitiesByInterval][] API.
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

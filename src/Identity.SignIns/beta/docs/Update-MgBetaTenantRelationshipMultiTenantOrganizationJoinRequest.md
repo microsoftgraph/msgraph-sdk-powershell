@@ -57,7 +57,7 @@ This API is available in the following national cloud deployments.
 ## PARAMETERS
 
 ### -AddedByTenantId
-Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization.
+Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization.
 To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000.
 Required.
 
@@ -220,7 +220,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>`: multiTenantOrganizationJoinRequestRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AddedByTenantId <String>]`: Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
+  - `[AddedByTenantId <String>]`: Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
   - `[MemberState <String>]`: multiTenantOrganizationMemberState
   - `[Role <String>]`: multiTenantOrganizationMemberRole
   - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationJoinRequestTransitionDetails>]`: multiTenantOrganizationJoinRequestTransitionDetails

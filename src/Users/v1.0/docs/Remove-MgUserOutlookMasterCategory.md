@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete the specified outlookCategory object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-IfMatch <Stri
 
 ## DESCRIPTION
 Delete the specified outlookCategory object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

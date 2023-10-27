@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is supported in the following national cloud deployments.
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Get-MgGroupSettingTemplateById
 ## DESCRIPTION
 Return the directory objects specified in a list of IDs.
 Only a subset of user properties are returned by default in v1.0.
-Some common uses for this function are to: This API is supported in the following national cloud deployments.
+Some common uses for this function are to: This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

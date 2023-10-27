@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object.
 For security, the password itself will never be returned in the object and the password property is always null.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity> [
 ## DESCRIPTION
 Retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object.
 For security, the password itself will never be returned in the object and the password property is always null.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

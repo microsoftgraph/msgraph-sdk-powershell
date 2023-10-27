@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -61,7 +61,7 @@ New-MgUserDriveListColumn -InputObject <IFilesIdentity> [-AdditionalProperties <
 
 ## DESCRIPTION
 Create a column for a list][list] with a request that specifies a [columnDefinition][columnDefinition].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a todoTaskList object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Hash
 
 ## DESCRIPTION
 Update the properties of a todoTaskList object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

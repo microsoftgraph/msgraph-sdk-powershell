@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 167fe0e7-3dc0-4d24-b39a-eac568e8f3ec
+Module Guid: 78baad85-b7cb-4af7-ae97-25ce01c374df
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -80,7 +80,7 @@ Read the properties and relationships of a userFlowLanguageConfiguration object.
 These objects represent a language available in a user flow.
 Note: To retrieve a language supported for customization, you must first enable language customization on your Azure AD B2C user flow.
 For more information, see Update b2cIdentityUserFlow.
-Language customization is enabled by default in Azure Active Directory user flows.
+Language customization is enabled by default in Microsoft Entra user flows.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityB2CUserFlowLanguageCount](Get-MgBetaIdentityB2CUserFlowLanguageCount.md)
@@ -227,7 +227,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of an ipNamedLocation object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
@@ -260,7 +260,7 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityProvider](Get-MgBetaIdentityProvider.md)
 Get the properties and relationships of the specified identity provider configured in the tenant.
-Among the types of providers derived from identityProviderBase, you can currently get a socialIdentityProvider or a builtinIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently get a socialIdentityProvider or a builtinIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently get a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -291,8 +291,8 @@ Get bitlocker from informationProtection
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
 By default, this operation does not return the key property that represents the actual recovery key.
 To include the key property in the response, use the $select OData query parameter.
-Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
-You can find the log in Azure AD audit logs under the KeyManagement category.
+Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
+You can find the log in Microsoft Entra audit logs under the KeyManagement category.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaInformationProtectionBitlockerRecoveryKeyCount.md)
@@ -446,7 +446,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaPolicyAuthorizationPolicy](Get-MgBetaPolicyAuthorizationPolicy.md)
-The policy that controls Azure AD authorization settings.
+The policy that controls Microsoft Entra authorization settings.
 
 ### [Get-MgBetaPolicyAuthorizationPolicyCount](Get-MgBetaPolicyAuthorizationPolicyCount.md)
 Get the number of the resource
@@ -483,7 +483,7 @@ This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaPolicyCrossTenantAccessPolicyDefault](Get-MgBetaPolicyCrossTenantAccessPolicyDefault.md)
 Read the default configuration of a cross-tenant access policy.
-This default configuration may be the service default assigned by Azure AD (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
+This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaPolicyCrossTenantAccessPolicyPartner](Get-MgBetaPolicyCrossTenantAccessPolicyPartner.md)
@@ -521,7 +521,7 @@ This API is available in the following national cloud deployments.
 Get directoryRoleAccessReviewPolicy from policies
 
 ### [Get-MgBetaPolicyExternalIdentityPolicy](Get-MgBetaPolicyExternalIdentityPolicy.md)
-Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaPolicyFeatureRolloutPolicy](Get-MgBetaPolicyFeatureRolloutPolicy.md)
@@ -709,7 +709,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a riskDetection object.
+Retrieve the properties of a collection of riskDetection objects.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
@@ -723,13 +723,13 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaRiskyServicePrincipalHistory](Get-MgBetaRiskyServicePrincipalHistory.md)
-Represents the risk history of Azure AD service principals.
+Represents the risk history of Microsoft Entra service principals.
 
 ### [Get-MgBetaRiskyServicePrincipalHistoryCount](Get-MgBetaRiskyServicePrincipalHistoryCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRiskyUser](Get-MgBetaRiskyUser.md)
-Users that are flagged as at-risk by Azure AD Identity Protection.
+Users that are flagged as at-risk by Microsoft Entra ID Protection.
 
 ### [Get-MgBetaRiskyUserCount](Get-MgBetaRiskyUserCount.md)
 Get the number of the resource
@@ -846,11 +846,20 @@ Get the number of the resource
 
 ### [Get-MgBetaUserAuthenticationPhoneMethod](Get-MgBetaUserAuthenticationPhoneMethod.md)
 Retrieve a single phoneAuthenticationMethod object.
-This method is available only for standard Azure AD and B2B users, but not B2C users.
+This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserAuthenticationPhoneMethodCount](Get-MgBetaUserAuthenticationPhoneMethodCount.md)
 Get the number of the resource
+
+### [Get-MgBetaUserAuthenticationPlatformCredentialMethod](Get-MgBetaUserAuthenticationPlatformCredentialMethod.md)
+Get platformCredentialMethods from users
+
+### [Get-MgBetaUserAuthenticationPlatformCredentialMethodCount](Get-MgBetaUserAuthenticationPlatformCredentialMethodCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserAuthenticationPlatformCredentialMethodDevice](Get-MgBetaUserAuthenticationPlatformCredentialMethodDevice.md)
+Get device from users
 
 ### [Get-MgBetaUserAuthenticationSoftwareOathMethod](Get-MgBetaUserAuthenticationSoftwareOathMethod.md)
 Retrieve a user's single Software OATH token authentication method object and its properties.
@@ -889,8 +898,8 @@ Get bitlocker from users
 Retrieve the properties and relationships of a bitlockerRecoveryKey object.
 By default, this operation does not return the key property that represents the actual recovery key.
 To include the key property in the response, use the $select OData query parameter.
-Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
-You can find the log in Azure AD audit logs under the KeyManagement category.
+Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log.
+You can find the log in Microsoft Entra audit logs under the KeyManagement category.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaUserInformationProtectionBitlockerRecoveryKeyCount](Get-MgBetaUserInformationProtectionBitlockerRecoveryKeyCount.md)
@@ -1009,7 +1018,7 @@ This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaUploadTrustFrameworkKeySetSecret](Invoke-MgBetaUploadTrustFrameworkKeySetSecret.md)
 Upload a plain text secret to a trustFrameworkKeyset.
-Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider.
+Examples of secrets are application secrets in Microsoft Entra ID, Google, Facebook, or any other identity provider.
 his method returns trustFrameworkKey.
 This API is available in the following national cloud deployments.
 
@@ -1108,7 +1117,7 @@ This API is available in the following national cloud deployments.
 
 ### [New-MgBetaIdentityProvider](New-MgBetaIdentityProvider.md)
 Create an identity provider object that is of the type specified in the request body.
-Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -1368,7 +1377,7 @@ This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityB2CUserFlowLanguage](Remove-MgBetaIdentityB2CUserFlowLanguage.md)
 Deletes a userFlowLanguageConfiguration object from a Azure AD B2C user flow.
-Note: You cannot delete languages from an Azure Active Directory user flow.
+Note: You cannot delete languages from an Microsoft Entra user flow.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage](Remove-MgBetaIdentityB2CUserFlowLanguageDefaultPage.md)
@@ -1440,7 +1449,7 @@ Delete an authenticationCombinationConfiguration  for a custom authenticationStr
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
@@ -1456,7 +1465,7 @@ This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityProvider](Remove-MgBetaIdentityProvider.md)
 Delete an identity provider resource that is of the type specified by the id in the request.
-Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently delete a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -1709,6 +1718,9 @@ If the phone number is the user's default Azure multifactor authentication (MFA)
 Have the user change their default authentication method, and then delete the number.
 This API is available in the following national cloud deployments.
 
+### [Remove-MgBetaUserAuthenticationPlatformCredentialMethod](Remove-MgBetaUserAuthenticationPlatformCredentialMethod.md)
+Delete navigation property platformCredentialMethods for users
+
 ### [Remove-MgBetaUserAuthenticationSoftwareOathMethod](Remove-MgBetaUserAuthenticationSoftwareOathMethod.md)
 Delete a user's Software OATH token authentication method object.
 This API is available in the following national cloud deployments.
@@ -1903,7 +1915,7 @@ In use, only fido2combinationConfigurations may be updated as they're the only t
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
@@ -1919,7 +1931,7 @@ Update the navigation property customAuthenticationExtensions in identity
 
 ### [Update-MgBetaIdentityProvider](Update-MgBetaIdentityProvider.md)
 Update the properties of the specified identity provider configured in the tenant.
-Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Azure AD.
+Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Microsoft Entra ID.
 In Azure AD B2C, this operation can currently update a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
 This API is available in the following national cloud deployments.
 
@@ -2054,7 +2066,7 @@ Represents deviceRegistrationPolicy quota restrictions, additional authenticatio
 Update the navigation property directoryRoleAccessReviewPolicy in policies
 
 ### [Update-MgBetaPolicyExternalIdentityPolicy](Update-MgBetaPolicyExternalIdentityPolicy.md)
-Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaPolicyFeatureRolloutPolicy](Update-MgBetaPolicyFeatureRolloutPolicy.md)
@@ -2101,7 +2113,7 @@ Update the navigation property effectiveRules in policies
 
 ### [Update-MgBetaPolicyRoleManagementPolicyRule](Update-MgBetaPolicyRoleManagementPolicyRule.md)
 Update a rule defined for a role management policy.
-The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:\n+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
+The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:\n+ Overview of rules for Microsoft Entra roles in PIM APIs in Microsoft Graph\n+ Use PIM APIs in Microsoft Graph to update Microsoft Entra ID rules This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaPolicyServicePrincipalCreationPolicy](Update-MgBetaPolicyServicePrincipalCreationPolicy.md)
 Update the navigation property servicePrincipalCreationPolicies in policies
@@ -2139,11 +2151,7 @@ Update the navigation property history in identityProtection
 Update the navigation property servicePrincipalRiskDetections in identityProtection
 
 ### [Update-MgBetaTenantRelationshipMultiTenantOrganization](Update-MgBetaTenantRelationshipMultiTenantOrganization.md)
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is available in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ### [Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest](Update-MgBetaTenantRelationshipMultiTenantOrganizationJoinRequest.md)
 Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending.

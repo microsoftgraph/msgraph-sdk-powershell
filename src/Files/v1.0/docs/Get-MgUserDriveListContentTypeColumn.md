@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgUserDriveListContentTypeColumn -InputObject <IFilesIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 Retrieve the metadata for a site][], a [list][], or a [contentType][] [column][columnDefinition].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 

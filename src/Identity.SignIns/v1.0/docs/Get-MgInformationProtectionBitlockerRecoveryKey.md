@@ -13,7 +13,7 @@ By default, this operation doesn't return the key property that represents the a
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Azure AD audit logs.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ By default, this operation doesn't return the key property that represents the a
 To include the key property in the response, use the $select OData query parameter.
 Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log.
 For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Azure AD audit logs.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

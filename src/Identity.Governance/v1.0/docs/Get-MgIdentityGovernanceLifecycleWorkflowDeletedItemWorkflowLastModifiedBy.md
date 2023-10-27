@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowLastModifiedBy
 
 ## SYNOPSIS
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the Microsoft Entra identity that last modified the workflow.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowLastModifiedBy
 ```
 
 ## DESCRIPTION
-The unique identifier of the Azure Active Directory identity that last modified the workflow.
+The unique identifier of the Microsoft Entra identity that last modified the workflow.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-ExpandPrope
 
 ## DESCRIPTION
 A member added to an externalGroup.
-You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
 
 ## EXAMPLES
 

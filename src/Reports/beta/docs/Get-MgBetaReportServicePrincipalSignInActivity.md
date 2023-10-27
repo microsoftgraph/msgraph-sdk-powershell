@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportServicePrincipalSignInActivity
 
 ## SYNOPSIS
-Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in an Azure Active Directory tenant.
+Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant.
 You can use a service principal as a client or resource.
 A service principal supports delegated or app-only authentication context.
 This API is available in the following national cloud deployments.
@@ -35,7 +35,7 @@ Get-MgBetaReportServicePrincipalSignInActivity -InputObject <IReportsIdentity> [
 ```
 
 ## DESCRIPTION
-Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in an Azure Active Directory tenant.
+Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant.
 You can use a service principal as a client or resource.
 A service principal supports delegated or app-only authentication context.
 This API is available in the following national cloud deployments.

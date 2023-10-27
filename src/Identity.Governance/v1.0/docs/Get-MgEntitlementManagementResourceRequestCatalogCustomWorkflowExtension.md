@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
 
 ## SYNOPSIS
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -36,7 +36,7 @@ Get-MgEntitlementManagementResourceRequestCatalogCustomWorkflowExtension
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

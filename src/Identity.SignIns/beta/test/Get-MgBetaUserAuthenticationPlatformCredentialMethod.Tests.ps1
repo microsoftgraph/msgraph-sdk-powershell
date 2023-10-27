@@ -1,11 +1,11 @@
-if(($null -eq $TestName) -or ($TestName -contains 'Get-MgGroupPermissionGrantById'))
+if(($null -eq $TestName) -or ($TestName -contains 'Get-MgBetaUserAuthenticationPlatformCredentialMethod'))
 {
   $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
   if (-Not (Test-Path -Path $loadEnvPath)) {
       $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
   }
   . ($loadEnvPath)
-  $TestRecordingFile = Join-Path $PSScriptRoot 'Get-MgGroupPermissionGrantById.Recording.json'
+  $TestRecordingFile = Join-Path $PSScriptRoot 'Get-MgBetaUserAuthenticationPlatformCredentialMethod.Recording.json'
   $currentPath = $PSScriptRoot
   while(-not $mockingPath) {
       $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
@@ -14,16 +14,12 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgGroupPermissionGrantByI
   . ($mockingPath | Select-Object -First 1).FullName
 }
 
-Describe 'Get-MgGroupPermissionGrantById' {
-    It 'GetExpanded' -skip {
+Describe 'Get-MgBetaUserAuthenticationPlatformCredentialMethod' {
+    It 'List' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
     It 'Get' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'GetViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

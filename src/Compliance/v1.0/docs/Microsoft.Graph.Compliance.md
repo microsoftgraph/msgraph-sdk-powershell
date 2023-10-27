@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Compliance
-Module Guid: 9b45a4d8-124a-4053-85c9-3f90d0a407f8
+Module Guid: af19b0c6-e50d-4d47-b4c3-0cfc4f0f0f23
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,7 +16,7 @@ Get compliance
 
 ### [Get-MgPrivacySubjectRightsRequest](Get-MgPrivacySubjectRightsRequest.md)
 Read the properties and relationships of a subjectRightsRequest object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Get-MgPrivacySubjectRightsRequestApprover](Get-MgPrivacySubjectRightsRequestApprover.md)
 Get approvers from privacy
@@ -66,11 +66,11 @@ Information about the Microsoft Teams team that was created for the request.
 
 ### [New-MgPrivacySubjectRightsRequest](New-MgPrivacySubjectRightsRequest.md)
 Create a new subjectRightsRequest object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [New-MgPrivacySubjectRightsRequestNote](New-MgPrivacySubjectRightsRequestNote.md)
 Create a new authoredNote object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Remove-MgPrivacySubjectRightsRequest](Remove-MgPrivacySubjectRightsRequest.md)
 Delete navigation property subjectRightsRequests for privacy
@@ -83,7 +83,7 @@ Update compliance
 
 ### [Update-MgPrivacySubjectRightsRequest](Update-MgPrivacySubjectRightsRequest.md)
 Update the properties of a subjectRightsRequest object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ### [Update-MgPrivacySubjectRightsRequestApproverMailboxSetting](Update-MgPrivacySubjectRightsRequestApproverMailboxSetting.md)
 Update property mailboxSettings value.

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Send an activity feed notification to a user.
-For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more information, see sending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -46,7 +46,7 @@ Send-MgBetaUserTeamworkActivityNotification -InputObject <IUsersActionsIdentity>
 
 ## DESCRIPTION
 Send an activity feed notification to a user.
-For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+For more information, see sending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

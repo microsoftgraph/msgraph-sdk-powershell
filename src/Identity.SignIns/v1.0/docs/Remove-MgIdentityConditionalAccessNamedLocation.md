@@ -8,8 +8,8 @@ schema: 2.0.0
 # Remove-MgIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Delete a namedLocation object.
-This API is available in the following national cloud deployments.
+Delete a countryNamedLocation object.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Remove-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Delete a namedLocation object.
-This API is available in the following national cloud deployments.
+Delete a countryNamedLocation object.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

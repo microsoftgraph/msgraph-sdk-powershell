@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstancePrincipal
 
 ## SYNOPSIS
-Get principal from identityGovernance
+References the principal that's in the scope of the membership or ownership assignment request through the group that's governed by PIM.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleInstancePrincipal
 ```
 
 ## DESCRIPTION
-Get principal from identityGovernance
+References the principal that's in the scope of the membership or ownership assignment request through the group that's governed by PIM.
+Supports $expand.
 
 ## EXAMPLES
 

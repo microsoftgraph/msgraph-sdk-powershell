@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Add the group to the list of the current user's favorite groups.
 Supported for Microsoft 365 groups only.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Add-MgGroupFavorite -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-What
 ## DESCRIPTION
 Add the group to the list of the current user's favorite groups.
 Supported for Microsoft 365 groups only.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

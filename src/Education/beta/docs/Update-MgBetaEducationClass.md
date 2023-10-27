@@ -570,8 +570,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[DisplayName <String>]`: Name of the assignment.
@@ -685,8 +685,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: Name of the assignment.
@@ -1119,13 +1119,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
             - `[Id <String>]`: 
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-              - `[Key <String>]`: Contains the name of the field that a value is associated with.
-              - `[Value <String>]`: Contains the corresponding value for the specified key.
+              - `[Key <String>]`: Key.
+              - `[Value <String>]`: Value.
             - `[Type <String>]`: 
           - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
           - `[AppDescription <String>]`: The description exposed by the associated application.
           - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-          - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
+          - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
           - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
             - `[Description <String>]`: Description for this policy. Required.
             - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -1553,25 +1553,25 @@ To create the parameters described below, construct a hash table containing the 
                 - `[ExtensionAttribute8 <String>]`: Eighth customizable extension attribute.
                 - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
               - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
-              - `[Hostnames <String[]>]`: List of host names for the device.
+              - `[Hostnames <String[]>]`: List of hostNames for the device.
               - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
               - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-              - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+              - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
               - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-              - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-              - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
               - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-              - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
-              - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-              - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+              - `[OnPremisesSecurityIdentifier <String>]`: 
               - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
               - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
               - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
               - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-              - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+              - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
               - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -1579,7 +1579,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
               - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
               - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-              - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+              - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
               - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
                 - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -1749,13 +1749,13 @@ To create the parameters described below, construct a hash table containing the 
                 - `[User <IMicrosoftGraphIdentity>]`: identity
                 - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                 - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[Id <String>]`: Unique identifier for the identity.
             - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
               - `[Actions <String>]`: chatMessageActions
               - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -1793,8 +1793,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
             - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-              - `[Id <String>]`: The identifier of the identity. This property is read-only.
+              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[Id <String>]`: Unique identifier for the identity.
               - `[UserIdentityType <String>]`: teamworkUserIdentityType
           - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -2292,8 +2292,8 @@ To create the parameters described below, construct a hash table containing the 
                       - `[Group <IMicrosoftGraphIdentity>]`: identity
                       - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                        - `[Id <String>]`: Unique identifier for the identity.
                         - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                       - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                     - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -4304,8 +4304,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
             - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-              - `[Id <String>]`: The identifier of the identity. This property is read-only.
+              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[Id <String>]`: Unique identifier for the identity.
               - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
               - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
             - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -5395,8 +5395,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Email <String>]`: Email address of the presenter.
               - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[TenantId <String>]`: The user's tenant ID.
               - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5726,8 +5726,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -5977,8 +5977,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -6091,13 +6091,13 @@ To create the parameters described below, construct a hash table containing the 
         - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
           - `[Id <String>]`: 
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-            - `[Key <String>]`: Contains the name of the field that a value is associated with.
-            - `[Value <String>]`: Contains the corresponding value for the specified key.
+            - `[Key <String>]`: Key.
+            - `[Value <String>]`: Value.
           - `[Type <String>]`: 
         - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
         - `[AppDescription <String>]`: The description exposed by the associated application.
         - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-        - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
+        - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
         - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
           - `[Description <String>]`: Description for this policy. Required.
           - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -6525,25 +6525,25 @@ To create the parameters described below, construct a hash table containing the 
               - `[ExtensionAttribute8 <String>]`: Eighth customizable extension attribute.
               - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
             - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
-            - `[Hostnames <String[]>]`: List of host names for the device.
+            - `[Hostnames <String[]>]`: List of hostNames for the device.
             - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
             - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-            - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+            - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
             - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-            - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+            - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-            - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+            - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
             - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-            - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
-            - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+            - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-            - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+            - `[OnPremisesSecurityIdentifier <String>]`: 
             - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
             - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
             - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-            - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+            - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
             - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
             - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -6551,7 +6551,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
             - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-            - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+            - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
             - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -6721,13 +6721,13 @@ To create the parameters described below, construct a hash table containing the 
               - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
               - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
           - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
             - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -6765,8 +6765,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
           - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-            - `[Id <String>]`: The identifier of the identity. This property is read-only.
+            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            - `[Id <String>]`: Unique identifier for the identity.
             - `[UserIdentityType <String>]`: teamworkUserIdentityType
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -7264,8 +7264,8 @@ To create the parameters described below, construct a hash table containing the 
                     - `[Group <IMicrosoftGraphIdentity>]`: identity
                     - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                      - `[Id <String>]`: Unique identifier for the identity.
                       - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                     - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                   - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -9276,8 +9276,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
           - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-            - `[Id <String>]`: The identifier of the identity. This property is read-only.
+            - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            - `[Id <String>]`: Unique identifier for the identity.
             - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
             - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
           - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -10367,8 +10367,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Email <String>]`: Email address of the presenter.
             - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-              - `[Id <String>]`: The identifier of the identity. This property is read-only.
+              - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[Id <String>]`: Unique identifier for the identity.
               - `[TenantId <String>]`: The user's tenant ID.
             - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -10626,8 +10626,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: Name of the assignment.
@@ -11079,13 +11079,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-                - `[Key <String>]`: Contains the name of the field that a value is associated with.
-                - `[Value <String>]`: Contains the corresponding value for the specified key.
+                - `[Key <String>]`: Key.
+                - `[Value <String>]`: Value.
               - `[Type <String>]`: 
             - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
             - `[AppDescription <String>]`: The description exposed by the associated application.
             - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-            - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
+            - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
             - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
               - `[Description <String>]`: Description for this policy. Required.
               - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -11509,25 +11509,25 @@ To create the parameters described below, construct a hash table containing the 
                   - `[ExtensionAttribute8 <String>]`: Eighth customizable extension attribute.
                   - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
-                - `[Hostnames <String[]>]`: List of host names for the device.
+                - `[Hostnames <String[]>]`: List of hostNames for the device.
                 - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
                 - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-                - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+                - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
                 - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-                - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-                - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
                 - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-                - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
-                - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+                - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+                - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-                - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+                - `[OnPremisesSecurityIdentifier <String>]`: 
                 - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
                 - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
                 - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
                 - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-                - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
                 - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
                 - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -11535,7 +11535,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
                 - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
                 - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
                   - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -11705,13 +11705,13 @@ To create the parameters described below, construct a hash table containing the 
                   - `[User <IMicrosoftGraphIdentity>]`: identity
                   - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                   - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[Id <String>]`: Unique identifier for the identity.
               - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
                 - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -11749,8 +11749,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
               - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[UserIdentityType <String>]`: teamworkUserIdentityType
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -12248,8 +12248,8 @@ To create the parameters described below, construct a hash table containing the 
                         - `[Group <IMicrosoftGraphIdentity>]`: identity
                         - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                          - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                          - `[Id <String>]`: Unique identifier for the identity.
                           - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                         - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                       - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -14260,8 +14260,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
               - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                 - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
               - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -15351,8 +15351,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Email <String>]`: Email address of the presenter.
                 - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[Id <String>]`: Unique identifier for the identity.
                   - `[TenantId <String>]`: The user's tenant ID.
                 - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -15669,8 +15669,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Description <String>]`: Description of the module.
@@ -15719,8 +15719,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[Classes <IMicrosoftGraphEducationClass[]>]`: Classes taught at the school. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -16177,13 +16177,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-                - `[Key <String>]`: Contains the name of the field that a value is associated with.
-                - `[Value <String>]`: Contains the corresponding value for the specified key.
+                - `[Key <String>]`: Key.
+                - `[Value <String>]`: Value.
               - `[Type <String>]`: 
             - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
             - `[AppDescription <String>]`: The description exposed by the associated application.
             - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-            - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
+            - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
             - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
               - `[Description <String>]`: Description for this policy. Required.
               - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -16611,25 +16611,25 @@ To create the parameters described below, construct a hash table containing the 
                   - `[ExtensionAttribute8 <String>]`: Eighth customizable extension attribute.
                   - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
-                - `[Hostnames <String[]>]`: List of host names for the device.
+                - `[Hostnames <String[]>]`: List of hostNames for the device.
                 - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
                 - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-                - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+                - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
                 - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-                - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-                - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
                 - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-                - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
-                - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+                - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+                - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-                - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+                - `[OnPremisesSecurityIdentifier <String>]`: 
                 - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
                 - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
                 - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
                 - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-                - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
                 - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
                 - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -16637,7 +16637,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
                 - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
                 - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
                   - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -16807,13 +16807,13 @@ To create the parameters described below, construct a hash table containing the 
                   - `[User <IMicrosoftGraphIdentity>]`: identity
                   - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                   - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[Id <String>]`: Unique identifier for the identity.
               - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
                 - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -16851,8 +16851,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
               - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[UserIdentityType <String>]`: teamworkUserIdentityType
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -17350,8 +17350,8 @@ To create the parameters described below, construct a hash table containing the 
                         - `[Group <IMicrosoftGraphIdentity>]`: identity
                         - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                          - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                          - `[Id <String>]`: Unique identifier for the identity.
                           - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                         - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                       - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -19362,8 +19362,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
               - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                 - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
               - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -20449,8 +20449,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Email <String>]`: Email address of the presenter.
                 - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[Id <String>]`: Unique identifier for the identity.
                   - `[TenantId <String>]`: The user's tenant ID.
                 - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -20778,8 +20778,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: Name of the assignment.
@@ -21231,13 +21231,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
               - `[Id <String>]`: 
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-                - `[Key <String>]`: Contains the name of the field that a value is associated with.
-                - `[Value <String>]`: Contains the corresponding value for the specified key.
+                - `[Key <String>]`: Key.
+                - `[Value <String>]`: Value.
               - `[Type <String>]`: 
             - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
             - `[AppDescription <String>]`: The description exposed by the associated application.
             - `[AppDisplayName <String>]`: The display name exposed by the associated application.
-            - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).
+            - `[AppId <String>]`: The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
             - `[AppManagementPolicies <IMicrosoftGraphAppManagementPolicy[]>]`: The appManagementPolicy applied to this service principal.
               - `[Description <String>]`: Description for this policy. Required.
               - `[DisplayName <String>]`: Display name for this policy. Required.
@@ -21661,25 +21661,25 @@ To create the parameters described below, construct a hash table containing the 
                   - `[ExtensionAttribute8 <String>]`: Eighth customizable extension attribute.
                   - `[ExtensionAttribute9 <String>]`: Ninth customizable extension attribute.
                 - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the device. Read-only. Nullable.
-                - `[Hostnames <String[]>]`: List of host names for the device.
+                - `[Hostnames <String[]>]`: List of hostNames for the device.
                 - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
                 - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-                - `[IsManagementRestricted <Boolean?>]`: Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+                - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
                 - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
-                - `[Kind <String>]`: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
-                - `[Manufacturer <String>]`: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Manufacturer <String>]`: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[MdmAppId <String>]`: Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
                 - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-                - `[Model <String>]`: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
-                - `[Name <String>]`: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+                - `[Model <String>]`: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+                - `[Name <String>]`: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[OnPremisesLastSyncDateTime <DateTime?>]`: The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-                - `[OnPremisesSecurityIdentifier <String>]`: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
+                - `[OnPremisesSecurityIdentifier <String>]`: 
                 - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
                 - `[OperatingSystem <String>]`: The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
                 - `[OperatingSystemVersion <String>]`: Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
                 - `[PhysicalIds <String[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.
-                - `[Platform <String>]`: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
+                - `[Platform <String>]`: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ProfileType <String>]`: The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
                 - `[RegisteredOwners <IMicrosoftGraphDirectoryObject[]>]`: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
                 - `[RegisteredUsers <IMicrosoftGraphDirectoryObject[]>]`: Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -21687,7 +21687,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Status <String>]`: Device is online or offline. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[SystemLabels <String[]>]`: List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
                 - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.
+                - `[TrustType <String>]`: Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
                 - `[UsageRights <IMicrosoftGraphUsageRight[]>]`: Represents the usage rights a device has been granted.
                   - `[Id <String>]`: The unique identifier for an entity. Read-only.
                   - `[CatalogId <String>]`: Product id corresponding to the usage right.
@@ -21857,13 +21857,13 @@ To create the parameters described below, construct a hash table containing the 
                   - `[User <IMicrosoftGraphIdentity>]`: identity
                   - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                   - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                    - `[Id <String>]`: Unique identifier for the identity.
               - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
                 - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -21901,8 +21901,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
               - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[UserIdentityType <String>]`: teamworkUserIdentityType
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -22400,8 +22400,8 @@ To create the parameters described below, construct a hash table containing the 
                         - `[Group <IMicrosoftGraphIdentity>]`: identity
                         - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                          - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                          - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                          - `[Id <String>]`: Unique identifier for the identity.
                           - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                         - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                       - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -24412,8 +24412,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
               - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
                 - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                 - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
               - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -25503,8 +25503,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Email <String>]`: Email address of the presenter.
                 - `[Identity <IMicrosoftGraphCommunicationsUserIdentity>]`: communicationsUserIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+                  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                  - `[Id <String>]`: Unique identifier for the identity.
                   - `[TenantId <String>]`: The user's tenant ID.
                 - `[PresenterDetails <IMicrosoftGraphVirtualEventPresenterDetails>]`: virtualEventPresenterDetails
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.

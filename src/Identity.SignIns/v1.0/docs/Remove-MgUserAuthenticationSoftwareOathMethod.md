@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a user's Software OATH token authentication method object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgUserAuthenticationSoftwareOathMethod -InputObject <IIdentitySignInsIden
 
 ## DESCRIPTION
 Delete a user's Software OATH token authentication method object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

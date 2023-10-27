@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get the properties and relationships of an application object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgApplication -InputObject <IApplicationsIdentity> [-ExpandProperty <String[
 
 ## DESCRIPTION
 Get the properties and relationships of an application object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

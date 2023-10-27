@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create an authenticationContextClassReference object, if the ID has not been used.
 If ID has been used, this call updates the authenticationContextClassReference object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObje
 ## DESCRIPTION
 Create an authenticationContextClassReference object, if the ID has not been used.
 If ID has been used, this call updates the authenticationContextClassReference object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

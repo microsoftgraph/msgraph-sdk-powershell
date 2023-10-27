@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgDriveItemPermission -InputObject <IFilesIdentity> [-AdditionalPropertie
 ## DESCRIPTION
 Update the properties of a sharing permission by patching the permission resource.
 Only the roles property can be modified this way.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

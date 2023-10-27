@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest
 
 ## SYNOPSIS
-Get assignmentScheduleRequests from identityGovernance
+Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +35,8 @@ Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest
 ```
 
 ## DESCRIPTION
-Get assignmentScheduleRequests from identityGovernance
+Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

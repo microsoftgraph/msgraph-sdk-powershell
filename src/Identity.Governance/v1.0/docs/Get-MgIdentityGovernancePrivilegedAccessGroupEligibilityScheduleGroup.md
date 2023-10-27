@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroup
 
 ## SYNOPSIS
-Get group from identityGovernance
+References the group that is the scope of the membership or ownership eligibility through PIM for groups.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgIdentityGovernancePrivilegedAccessGroupEligibilityScheduleGroup
 ```
 
 ## DESCRIPTION
-Get group from identityGovernance
+References the group that is the scope of the membership or ownership eligibility through PIM for groups.
+Supports $expand.
 
 ## EXAMPLES
 

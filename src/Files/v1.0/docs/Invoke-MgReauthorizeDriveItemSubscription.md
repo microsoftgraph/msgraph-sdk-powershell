@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Invoke-MgReauthorizeDriveItemSubscription -InputObject <IFilesIdentity> [-PassTh
 
 ## DESCRIPTION
 Reauthorize a subscription when you receive a reauthorizationRequired challenge.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

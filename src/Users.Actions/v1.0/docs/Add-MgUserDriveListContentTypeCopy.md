@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Add-MgUserDriveListContentTypeCopy -InputObject <IUsersActionsIdentity> [-Additi
 
 ## DESCRIPTION
 Add a copy of a content type][contentType] from a [site][site] to a [list][list].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 
@@ -235,7 +235,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[PermissionId <String>]`: The unique identifier of permission
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
-  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
   - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[TeamsAppInstallationId <String>]`: The unique identifier of teamsAppInstallation
   - `[TodoTaskId <String>]`: The unique identifier of todoTask

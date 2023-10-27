@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
+You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -27,7 +27,7 @@ Restore-MgIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceI
 
 ## DESCRIPTION
 Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
+You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

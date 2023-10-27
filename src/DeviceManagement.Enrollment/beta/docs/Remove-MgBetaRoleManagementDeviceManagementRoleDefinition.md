@@ -10,8 +10,8 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,8 +30,8 @@ Remove-MgBetaRoleManagementDeviceManagementRoleDefinition -InputObject <IDeviceM
 ## DESCRIPTION
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
+This feature requires a Microsoft Entra ID P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

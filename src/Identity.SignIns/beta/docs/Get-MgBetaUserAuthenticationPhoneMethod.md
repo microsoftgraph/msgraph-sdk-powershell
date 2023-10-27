@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a single phoneAuthenticationMethod object.
-This method is available only for standard Azure AD and B2B users, but not B2C users.
+This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -35,7 +35,7 @@ Get-MgBetaUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> 
 
 ## DESCRIPTION
 Retrieve a single phoneAuthenticationMethod object.
-This method is available only for standard Azure AD and B2B users, but not B2C users.
+This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -318,6 +318,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
   - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
   - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[PlatformCredentialAuthenticationMethodId <String>]`: The unique identifier of platformCredentialAuthenticationMethod
   - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
   - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
   - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal

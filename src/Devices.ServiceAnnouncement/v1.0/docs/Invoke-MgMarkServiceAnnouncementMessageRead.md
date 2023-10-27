@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Mark a list of serviceUpdateMessages as read for the signed in user.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Invoke-MgMarkServiceAnnouncementMessageRead
 
 ## DESCRIPTION
 Mark a list of serviceUpdateMessages as read for the signed in user.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

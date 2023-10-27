@@ -11,7 +11,7 @@ schema: 2.0.0
 Create new synchronization job with a default synchronization schema.
 The job is created in a disabled state.
 Call Start job to start synchronization.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ New-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-Addit
 Create new synchronization job with a default synchronization schema.
 The job is created in a disabled state.
 Call Start job to start synchronization.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

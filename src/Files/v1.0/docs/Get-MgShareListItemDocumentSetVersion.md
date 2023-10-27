@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Get-MgShareListItemDocumentSetVersion -ListItemId <String> -SharedDriveItemId <S
 
 ## DESCRIPTION
 Read the properties and relationships of a documentSetVersion object.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

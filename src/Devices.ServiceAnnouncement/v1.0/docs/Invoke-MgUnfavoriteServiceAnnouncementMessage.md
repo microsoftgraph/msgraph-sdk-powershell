@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove the favorite status of serviceUpdateMessages for the signed in user.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Invoke-MgUnfavoriteServiceAnnouncementMessage
 
 ## DESCRIPTION
 Remove the favorite status of serviceUpdateMessages for the signed in user.
-This API is supported in the following national cloud deployments.
+This API is available in the following national cloud deployments.
 
 ## EXAMPLES
 

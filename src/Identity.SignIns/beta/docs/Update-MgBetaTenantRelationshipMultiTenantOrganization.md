@@ -8,11 +8,7 @@ schema: 2.0.0
 # Update-MgBetaTenantRelationshipMultiTenantOrganization
 
 ## SYNOPSIS
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is available in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ## SYNTAX
 
@@ -31,11 +27,7 @@ Update-MgBetaTenantRelationshipMultiTenantOrganization -BodyParameter <IMicrosof
 ```
 
 ## DESCRIPTION
-Create a new multi-tenant organization.
-By default, the creator tenant becomes an owner tenant upon successful creation.
-Only owner tenants can manage a multi-tenant organization.
-To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-This API is available in the following national cloud deployments.
+Update the properties of a multi-tenant organization.
 
 ## EXAMPLES
 
@@ -255,7 +247,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[JoinRequest <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>]`: multiTenantOrganizationJoinRequestRecord
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AddedByTenantId <String>]`: Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
+    - `[AddedByTenantId <String>]`: Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
     - `[MemberState <String>]`: multiTenantOrganizationMemberState
     - `[Role <String>]`: multiTenantOrganizationMemberRole
     - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationJoinRequestTransitionDetails>]`: multiTenantOrganizationJoinRequestTransitionDetails
@@ -273,7 +265,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[JoinedDateTime <DateTime?>]`: Date and time when the tenant joined the multitenant organization. Read-only.
     - `[Role <String>]`: multiTenantOrganizationMemberRole
     - `[State <String>]`: multiTenantOrganizationMemberState
-    - `[TenantId <String>]`: Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
+    - `[TenantId <String>]`: Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
     - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>]`: multiTenantOrganizationMemberTransitionDetails
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DesiredRole <String>]`: multiTenantOrganizationMemberRole
@@ -284,7 +276,7 @@ To create the parameters described below, construct a hash table containing the 
 `JOINREQUEST <IMicrosoftGraphMultiTenantOrganizationJoinRequestRecord>`: multiTenantOrganizationJoinRequestRecord
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AddedByTenantId <String>]`: Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
+  - `[AddedByTenantId <String>]`: Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
   - `[MemberState <String>]`: multiTenantOrganizationMemberState
   - `[Role <String>]`: multiTenantOrganizationMemberRole
   - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationJoinRequestTransitionDetails>]`: multiTenantOrganizationJoinRequestTransitionDetails
@@ -302,7 +294,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[JoinedDateTime <DateTime?>]`: Date and time when the tenant joined the multitenant organization. Read-only.
   - `[Role <String>]`: multiTenantOrganizationMemberRole
   - `[State <String>]`: multiTenantOrganizationMemberState
-  - `[TenantId <String>]`: Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
+  - `[TenantId <String>]`: Tenant ID of the Microsoft Entra tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.
   - `[TransitionDetails <IMicrosoftGraphMultiTenantOrganizationMemberTransitionDetails>]`: multiTenantOrganizationMemberTransitionDetails
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DesiredRole <String>]`: multiTenantOrganizationMemberRole

@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
 An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -36,7 +36,7 @@ Get-MgOauth2PermissionGrant -InputObject <IIdentitySignInsIdentity> [-ExpandProp
 ## DESCRIPTION
 Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object.
 An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

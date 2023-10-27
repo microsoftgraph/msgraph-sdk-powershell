@@ -11,7 +11,7 @@ schema: 2.0.0
 Create a new federatedIdentityCredential object for an application.
 By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
 Maximum of 20 objects can be added to an application.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgApplicationFederatedIdentityCredential -InputObject <IApplicationsIdentity
 Create a new federatedIdentityCredential object for an application.
 By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
 Maximum of 20 objects can be added to an application.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

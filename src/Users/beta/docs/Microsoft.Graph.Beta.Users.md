@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: c50c6b93-adea-4f8f-8f15-f4a4932494e5
+Module Guid: 6ff5d5f7-d6ae-4a54-b100-4a1ba444f96f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -739,9 +739,6 @@ Update the navigation property taskFolders in users
 
 ### [Update-MgBetaUserOutlookTaskGroupTaskFolderTask](Update-MgBetaUserOutlookTaskGroupTaskFolderTask.md)
 Update the navigation property tasks in users
-
-### [Update-MgBetaUserPhoto](Update-MgBetaUserPhoto.md)
-Update the navigation property photo in users
 
 ### [Update-MgBetaUserSetting](Update-MgBetaUserSetting.md)
 Update the navigation property settings in users

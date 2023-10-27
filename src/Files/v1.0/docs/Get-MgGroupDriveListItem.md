@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgGroupDriveListItem -InputObject <IFilesIdentity> [-ExpandProperty <String[
 
 ## DESCRIPTION
 Returns the metadata for an item][] in a [list][].
-This API is supported in the following [national cloud deployments.
+This API is available in the following [national cloud deployments.
 
 ## EXAMPLES
 
