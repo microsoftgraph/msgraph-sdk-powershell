@@ -26,23 +26,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         internal static void DecodeJWT(string jwToken, IAccount account, ref IAuthContext authContext)
         {
             var jwtPayload = DecodeToObject<JwtPayload>(jwToken);
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken &&
+                jwtPayload != null &&
+                jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
             {
-                if (jwtPayload == null)
-                {
-                    throw new Exception(string.Format(
-                            CultureInfo.CurrentCulture,
-                            ErrorConstants.Message.InvalidUserProvidedToken,
-                            "AccessToken"));
-                }
-
-                if (jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
-                {
-                    throw new Exception(string.Format(
+                // Throw exception if access token is expired or is about to expire with a 5 minutes buffer.
+                throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,
                             ErrorConstants.Message.ExpiredUserProvidedToken,
                             "AccessToken"));
-                }
             }
 
             authContext.ClientId = jwtPayload?.Appid ?? authContext.ClientId;
@@ -74,9 +66,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         internal static JwtContent DecodeJWT(string jwtString)
         {
-            // See https://tools.ietf.org/html/rfc7519
-            if (string.IsNullOrWhiteSpace(jwtString) || !jwtString.Contains(".") || !jwtString.StartsWith("eyJ"))
+            if (string.IsNullOrWhiteSpace(jwtString))
                 throw new ArgumentException("Invalid JSON Web Token (JWT).");
+            // See JWT RFC spec: https://tools.ietf.org/html/rfc7519.
+            if (!jwtString.Contains(".") || !jwtString.StartsWith("eyJ", StringComparison.OrdinalIgnoreCase))
+                return null; // Personal account access token are not JWT and cannot be decoded. See https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/2386.
 
             var jwtSegments = jwtString.Split('.');
 
