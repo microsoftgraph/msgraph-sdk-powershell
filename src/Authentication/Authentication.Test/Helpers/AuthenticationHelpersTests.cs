@@ -33,8 +33,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ShouldUseDelegateAuthProviderWhenUserAccessTokenIsProvidedAsync()
         {
             // Arrange
-            string dummyAccessToken = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiVGVzdCIsIklzc3VlciI6Iklzc3VlciIsIlVzZXJuYW1lIjoiVGVzdCIsImV4cCI6MTY3ODQ4ODgxNiwiaWF0IjoxNjc4NDg4ODE2fQ.hpYypwHAV8H3jb4KuTiLpgLWy9A8H2d9HG7SxJ8Kpn0";
-            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(dummyAccessToken));
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(MockConstants.DummyAccessToken));
             AuthContext userProvidedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
@@ -48,8 +47,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             var accessToken = await authProvider.GetAuthorizationTokenAsync(requestMessage.RequestUri);
 
             // Assert
-            Assert.IsType<AzureIdentityAccessTokenProvider>(authProvider);
-            Assert.Equal(dummyAccessToken, accessToken);
+            _ = Assert.IsType<AzureIdentityAccessTokenProvider>(authProvider);
+            Assert.Equal(MockConstants.DummyAccessToken, accessToken);
             Assert.Equal(GraphEnvironmentConstants.EnvironmentName.Global, userProvidedAuthContext.Environment);
 
             // reset static instance.
@@ -72,7 +71,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<DeviceCodeCredential>(tokenCredential);
+            _ = Assert.IsType<DeviceCodeCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
@@ -93,7 +92,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<DeviceCodeCredential>(tokenCredential);
+            _ = Assert.IsType<DeviceCodeCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
@@ -113,7 +112,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
+            _ = Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
@@ -167,13 +166,13 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 ContextScope = ContextScope.Process,
                 TenantId = mockAuthRecord.TenantId
             };
-            CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateSubjectName);
+            _ = CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateSubjectName);
 
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCertificateCredential>(tokenCredential);
+            _ = Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             // reset
             DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
@@ -198,7 +197,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCertificateCredential>(tokenCredential);
+            _ = Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             GraphSession.Reset();
         }
@@ -209,7 +208,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // Arrange
             var dummyCertName = "CN=dummycert";
             var inMemoryCertName = "CN=inmemorycert";
-            CreateAndStoreSelfSignedCert(dummyCertName);
+            _ = CreateAndStoreSelfSignedCert(dummyCertName);
             var inMemoryCertificate = CreateSelfSignedCert(inMemoryCertName);
             AuthContext appOnlyAuthContext = new AuthContext
             {
@@ -225,7 +224,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCertificateCredential>(tokenCredential);
+            _ = Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             //CleanUp
             DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
@@ -254,7 +253,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCertificateCredential>(tokenCredential);
+            _ = Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             //CleanUp
             DeleteSelfSignedCertByThumbprint(appOnlyAuthContext.CertificateThumbprint);
