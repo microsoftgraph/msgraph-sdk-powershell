@@ -5357,7 +5357,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of hostNames for the device.
+              description: List of host names for the device.
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -5368,7 +5368,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -5390,6 +5390,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -5425,27 +5426,27 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
               nullable: true
             kind:
               type: string
-              description: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             model:
               type: string
-              description: Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             name:
               type: string
-              description: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             platform:
               type: string
-              description: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             status:
               type: string
@@ -6027,7 +6028,7 @@ components:
               nullable: true
             appId:
               type: string
-              description: 'The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).'
+              description: 'The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).'
               nullable: true
             applicationTemplateId:
               type: string
@@ -11166,11 +11167,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -13040,11 +13041,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object

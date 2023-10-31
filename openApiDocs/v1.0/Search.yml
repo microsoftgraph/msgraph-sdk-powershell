@@ -75,7 +75,7 @@ paths:
       tags:
         - external.externalConnection
       summary: List externalConnections
-      description: Get a list of the externalConnection objects and their properties. This API is supported in the following national cloud deployments.
+      description: Get a list of the externalConnection objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
@@ -162,7 +162,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalConnection
-      description: Create a new externalConnection object. This API is supported in the following national cloud deployments.
+      description: Create a new externalConnection object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
@@ -189,7 +189,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalConnection
-      description: Read the properties and relationships of an externalConnection object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of an externalConnection object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
@@ -255,7 +255,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update externalConnection
-      description: Update the properties of an externalConnection object. This API is supported in the following national cloud deployments.
+      description: Update the properties of an externalConnection object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
@@ -290,7 +290,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalConnection
-      description: Deletes an externalConnection object. This API is supported in the following national cloud deployments.
+      description: Deletes an externalConnection object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
@@ -321,7 +321,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalGroup
-      description: Get an externalGroup object. This API is supported in the following national cloud deployments.
+      description: Get an externalGroup object. This API is available in the following national cloud deployments.
       operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
@@ -395,7 +395,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalGroup
-      description: Create a new externalGroup object. This API is supported in the following national cloud deployments.
+      description: Create a new externalGroup object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
@@ -431,7 +431,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalGroup
-      description: Get an externalGroup object. This API is supported in the following national cloud deployments.
+      description: Get an externalGroup object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
@@ -495,7 +495,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update externalGroup
-      description: Update the properties of an externalGroup object. This API is supported in the following national cloud deployments.
+      description: Update the properties of an externalGroup object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
@@ -538,7 +538,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalGroup
-      description: Delete an externalGroup object. This API is supported in the following national cloud deployments.
+      description: Delete an externalGroup object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -577,7 +577,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
+      description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
       operationId: external.connection.group_ListMember
       parameters:
         - name: externalConnection-id
@@ -654,7 +654,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create identity
-      description: Create an identity resource for a new member in an externalGroup. This API is supported in the following national cloud deployments.
+      description: Create an identity resource for a new member in an externalGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
@@ -698,7 +698,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
+      description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
       operationId: external.connection.group_GetMember
       parameters:
         - name: externalConnection-id
@@ -811,10 +811,10 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete identity
-      description: Delete an identity resource to remove the corresponding member from an externalGroup. This API is supported in the following national cloud deployments.
+      description: Delete an identity resource to remove the corresponding member from an externalGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/externalconnectors-identity-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
       operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
@@ -910,7 +910,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Read the properties and relationships of an externalItem object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of an externalItem object. This API is available in the following national cloud deployments.
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -1019,7 +1019,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Read the properties and relationships of an externalItem object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of an externalItem object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
@@ -1123,7 +1123,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalItem
-      description: Delete an externalItem object. This API is supported in the following national cloud deployments.
+      description: Delete an externalItem object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
@@ -1623,7 +1623,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connectionOperation
-      description: Read the properties and relationships of a connectionOperation object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
       operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
@@ -1727,7 +1727,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connectionOperation
-      description: Read the properties and relationships of a connectionOperation object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
@@ -1885,7 +1885,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get schema
-      description: Read the properties and relationships of a schema object. This API is supported in the following national cloud deployments.
+      description: Read the properties and relationships of a schema object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
@@ -1938,7 +1938,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property schema in external
+      summary: Create schema
+      description: Create a new schema object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2048,7 +2052,7 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
-      description: Runs the query specified in the request body. Search results are provided in the response. This API is supported in the following national cloud deployments.
+      description: Runs the query specified in the request body. Search results are provided in the response. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
@@ -2162,7 +2166,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
+              description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -2383,7 +2387,7 @@ components:
           items:
             type: string
             nullable: true
-          description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+          description: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.searchSettings:
@@ -2424,7 +2428,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup'
+          description: 'The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups value is set to the ID of the externalGroup'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -2517,7 +2521,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, iconUrl, unknownFutureValue. Optional.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: iconUrl.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -2938,7 +2942,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.searchAggregation:
       title: searchAggregation
       type: object
