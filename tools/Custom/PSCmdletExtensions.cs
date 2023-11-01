@@ -24,7 +24,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
         // Converts a string to its unescaped form. The method also replaces '+' with spaces.
         internal static string UnescapeString(this PSCmdlet cmdlet, string value)
         {
-            WriteDebug(cmdlet, $"Unescaping string: {value}");
+            cmdlet.WriteDebug($"Unescaping string: {value}");
             if (value == null)
                 return null;
 
