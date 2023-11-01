@@ -4,7 +4,7 @@
 using Azure.Core;
 using Azure.Core.Diagnostics;
 using Azure.Identity;
-using Azure.Identity.BrokeredAuthentication;
+using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
