@@ -19,7 +19,6 @@ namespace NamespacePrefixPlaceholder.PowerShell
     internal static class PSCmdletExtensions
     {
         private static readonly char[] PathSeparators = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
-        private static readonly Regex EnclosedStringRegex = new Regex(@"'.*?'| "".*?""", RegexOptions.Compiled, TimeSpan.FromSeconds(1));
         
         // Converts a string to its unescaped form. The method also replaces '+' with spaces.
         internal static string UnescapeString(this PSCmdlet cmdlet, string value)
@@ -30,7 +29,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             try
             {
                 var unescapedString = Uri.UnescapeDataString(value);
-                return EnclosedStringRegex.IsMatch(value) ? unescapedString: unescapedString.Replace('+', ' ');
+                return value.EndsWith("'") ? unescapedString: unescapedString.Replace('+', ' ');
             }
             catch (UriFormatException ex)
             {
