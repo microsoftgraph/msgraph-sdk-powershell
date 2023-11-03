@@ -133,7 +133,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 }
                 else
                 {
-                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+                    authRecord = await Task.Run(() =>
+                    {
+                        // Run the thread in MTA.
+                        return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                    });
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;
