@@ -69,7 +69,7 @@ New-MgChatMember -ChatId $chatId -BodyParameter $params
 This example shows how to use the New-MgChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 5: Add an in-tenant guest user to a chat, sharing no chat history
+### Example 5: Add an in-tenant guest to a chat, sharing no chat history
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
@@ -86,7 +86,7 @@ New-MgChatMember -ChatId $chatId -BodyParameter $params
 This example shows how to use the New-MgChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 6: Add a out-of-tenant external user to a chat, sharing no chat history
+### Example 6: Add an out-of-tenant external user to a chat, sharing no chat history
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
