@@ -17,9 +17,9 @@ SignInAudience : AzureADMultipleOrgs
 
 This example retrieves all service principals from the directory.
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Application permissions reference](/graph/permissions-reference#applicationreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 2: Get the service principal by display name
 
@@ -36,9 +36,9 @@ SignInAudience : AzureADMultipleOrgs
 
 This example gets the service principal by display name.
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Application permissions reference](/graph/permissions-reference#applicationreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 3: Get a count of the service principals
 
@@ -54,11 +54,11 @@ Id                                   DisplayName                                
 020ada9b-60b7-436f-8f00-22b198c2996a O365SBRM Service                                               9d06afd9-66c9-49a6-b385-ea7509332b0b AzureADMultipleOrgs                Microsoft Service
 ```
 
-This example returns a list of all the service principals. $spCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns a list of all the service principals. $spCount variable contains the count of the objects in the result. The advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Application permissions reference](/graph/permissions-reference#applicationreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 4: Use -Filter and -Top to get five service principals with a display name that starts with 'a' including a count of returned objects
 
@@ -75,11 +75,11 @@ Id                                   DisplayName                       AppId    
 1d322ee1-7cf7-442a-b480-d6d4bbe6ec54 App Protection                    c6e44401-4d0a-4542-ab22-ecd4c90d28d7 AzureADMultipleOrgs Microsoft Services
 ```
 
-This example filters service principals whose display name starts with 'a' and continues to return  the top 5. $spCount variable contains the count of the objects in the result before the *Top* filter. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example filters service principals whose display name starts with 'a' and continues to return  the top 5. $spCount variable contains the count of the objects in the result before the *Top* filter. The advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Application permissions reference](/graph/permissions-reference#applicationreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 5: Use -Search to get service principals with display names that contain the letters 'Team' including a count of returned objects
 
@@ -98,8 +98,8 @@ Id                                   DisplayName                                
 349be45f-663d-428e-bdab-b4ac26393614 Microsoft Teams AuthSvc                                     a164aee5-7d0a-46bb-9404-37421d58bdf7 AzureADMultipleOrgs                Microsoft Services
 ```
 
-This example returns all service principals whose display name contains the word 'team'. $spCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all service principals whose display name contains the word 'team'. $spCount variable contains the count of the objects in the result. The advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Application permissions reference](/graph/permissions-reference#applicationreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
