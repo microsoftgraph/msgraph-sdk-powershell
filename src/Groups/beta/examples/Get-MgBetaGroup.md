@@ -16,11 +16,11 @@ Description : Welcome to the BizDev team.
 GroupTypes  : {Unified}
 ```
 
-This examples retrieves a list of groups.
+This example retrieves a list of groups.
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about the permissions for this resource, see the [Group permissions reference](/graph/permissions-reference#groupmemberreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 2: Get a group by the display name
 
@@ -37,9 +37,9 @@ GroupTypes  : {Unified}
 
 This example gets a group by the specified display name.
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about the permissions for this resource, see the [Group permissions reference](/graph/permissions-reference#groupmemberreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 3: Get a count of all groups
 
@@ -58,11 +58,11 @@ Id                                   DisplayName          Description           
 4d5f57a1-85e0-41dd-8282-ff995ad5e1c3 Business Development Welcome to the BizDev team.                                            {Unified}
 ```
 
-The example gets a list of all groups. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+The example gets a list of all groups. The $groupCount variable contains the count of the objects in the result. The advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about the permissions for this resource, see the [Group permissions reference](/graph/permissions-reference#groupmemberreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 4: Use -Search to get all the groups whose display name contains 'Market' including a count of the returned users
 
@@ -77,9 +77,9 @@ Id                                   DisplayName         Description            
 74a7bfca-7fbc-4a67-b4bb-3ef115b114f1 Sales & Marketing   This is the sales and marketing team                                   {}
 ```
 
-This example returns all groups whose display name contains 'Market'. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all groups whose display name contains 'Market'. The $groupCount variable contains the count of the objects in the result. The advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Group permissions reference](/graph/permissions-reference#groupmemberreadall).
 
 To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
@@ -96,8 +96,8 @@ f07a8d78-f18c-4c02-b339-9ebace025122 All Employees                              
 bbfa9226-a965-47e1-9db2-bcfcb2c202e6 All Users
 ```
 
-This example returns all groups whose display name starts with 'A'. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all groups whose display name starts with 'A'. The $groupCount variable contains the count of the objects in the result. The advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
-To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [Group permissions reference](/graph/permissions-reference#groupmemberreadall).
 
-To consent to any of these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+To consent to these permissions run `Connect-MgBetaGraph -Scopes Permission`. For example, `Connect-MgBetaGraph -Scopes GroupMember.Read.All, Group.Read.All`.
