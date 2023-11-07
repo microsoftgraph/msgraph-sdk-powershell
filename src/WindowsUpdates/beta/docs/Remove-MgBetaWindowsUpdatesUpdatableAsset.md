@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Delete an updatableAssetGroup object.
-When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+Delete an updatableAsset object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -27,8 +26,7 @@ Remove-MgBetaWindowsUpdatesUpdatableAsset -InputObject <IWindowsUpdatesIdentity>
 ```
 
 ## DESCRIPTION
-Delete an updatableAssetGroup object.
-When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+Delete an updatableAsset object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

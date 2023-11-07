@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 79438357-7699-4954-a5d8-9c5942760a43
+Module Guid: 34a5596d-7ea6-4074-916d-530882de6ba5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -90,7 +90,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationEndUserNotification](Get-MgSecurityAttackSimulationEndUserNotification.md)
-Represents an end user's notification for an attack simulation training.
+Get endUserNotifications from security
 
 ### [Get-MgSecurityAttackSimulationEndUserNotificationCount](Get-MgSecurityAttackSimulationEndUserNotificationCount.md)
 Get the number of the resource
@@ -102,43 +102,43 @@ Get details from security
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationLandingPage](Get-MgSecurityAttackSimulationLandingPage.md)
-Represents an attack simulation training landing page.
+Get landingPages from security
 
 ### [Get-MgSecurityAttackSimulationLandingPageCount](Get-MgSecurityAttackSimulationLandingPageCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationLandingPageDetail](Get-MgSecurityAttackSimulationLandingPageDetail.md)
-The detail information for a landing page associated with a simulation during its creation.
+Get details from security
 
 ### [Get-MgSecurityAttackSimulationLandingPageDetailCount](Get-MgSecurityAttackSimulationLandingPageDetailCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationLoginPage](Get-MgSecurityAttackSimulationLoginPage.md)
-Represents an attack simulation training login page.
+Get loginPages from security
 
 ### [Get-MgSecurityAttackSimulationLoginPageCount](Get-MgSecurityAttackSimulationLoginPageCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationOperation](Get-MgSecurityAttackSimulationOperation.md)
-Get an attack simulation operation to track a long-running operation request for a tenant.
+Get operations from security
 
 ### [Get-MgSecurityAttackSimulationOperationCount](Get-MgSecurityAttackSimulationOperationCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationPayload](Get-MgSecurityAttackSimulationPayload.md)
-Represents an attack simulation training campaign payload in a tenant.
+Get payloads from security
 
 ### [Get-MgSecurityAttackSimulationPayloadCount](Get-MgSecurityAttackSimulationPayloadCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationTraining](Get-MgSecurityAttackSimulationTraining.md)
-Represents details about attack simulation trainings.
+Get trainings from security
 
 ### [Get-MgSecurityAttackSimulationTrainingCount](Get-MgSecurityAttackSimulationTrainingCount.md)
 Get the number of the resource
 
 ### [Get-MgSecurityAttackSimulationTrainingLanguageDetail](Get-MgSecurityAttackSimulationTrainingLanguageDetail.md)
-Language specific details on a training.
+Get languageDetails from security
 
 ### [Get-MgSecurityAttackSimulationTrainingLanguageDetailCount](Get-MgSecurityAttackSimulationTrainingLanguageDetailCount.md)
 Get the number of the resource
@@ -392,7 +392,7 @@ The host resource is the abstract base type that returns an implementation.
 A host can be of one of the following types: This API is available in the following national cloud deployments.
 
 ### [Get-MgSecurityThreatIntelligenceHostChildHostPair](Get-MgSecurityThreatIntelligenceHostChildHostPair.md)
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 
 ### [Get-MgSecurityThreatIntelligenceHostChildHostPairCount](Get-MgSecurityThreatIntelligenceHostChildHostPairCount.md)
 Get the number of the resource
@@ -452,20 +452,6 @@ Reverse passive DNS retrieval about this host.
 
 ### [Get-MgSecurityThreatIntelligenceHostPassiveDnsReverseCount](Get-MgSecurityThreatIntelligenceHostPassiveDnsReverseCount.md)
 Get the number of the resource
-
-### [Get-MgSecurityThreatIntelligenceHostPort](Get-MgSecurityThreatIntelligenceHostPort.md)
-Read the properties and relationships of a hostPort object.
-
-### [Get-MgSecurityThreatIntelligenceHostPortCount](Get-MgSecurityThreatIntelligenceHostPortCount.md)
-Get the number of the resource
-
-### [Get-MgSecurityThreatIntelligenceHostPortHost](Get-MgSecurityThreatIntelligenceHostPortHost.md)
-The host related to this hostPort.
-This is a reverse navigation property.
-When you navigate to hostPorts from a host, assume that this is a return reference.
-
-### [Get-MgSecurityThreatIntelligenceHostPortMostRecentSslCertificate](Get-MgSecurityThreatIntelligenceHostPortMostRecentSslCertificate.md)
-The most recent sslCertificate used to communicate on the port.
 
 ### [Get-MgSecurityThreatIntelligenceHostReputation](Get-MgSecurityThreatIntelligenceHostReputation.md)
 Get the properties and relationships of a hostReputation object.
@@ -662,7 +648,7 @@ Create new navigation property to alerts for security
 Create new navigation property to alerts_v2 for security
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
-Create an attack simulation campaign for a tenant.
+Create new navigation property to simulations for security
 
 ### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
 Create new navigation property to simulationAutomations for security
@@ -777,9 +763,6 @@ Create new navigation property to hostCookies for security
 
 ### [New-MgSecurityThreatIntelligenceHostPair](New-MgSecurityThreatIntelligenceHostPair.md)
 Create new navigation property to hostPairs for security
-
-### [New-MgSecurityThreatIntelligenceHostPort](New-MgSecurityThreatIntelligenceHostPort.md)
-Create new navigation property to hostPorts for security
 
 ### [New-MgSecurityThreatIntelligenceHostSslCertificate](New-MgSecurityThreatIntelligenceHostSslCertificate.md)
 Create new navigation property to hostSslCertificates for security
@@ -969,9 +952,6 @@ Delete navigation property hostCookies for security
 
 ### [Remove-MgSecurityThreatIntelligenceHostPair](Remove-MgSecurityThreatIntelligenceHostPair.md)
 Delete navigation property hostPairs for security
-
-### [Remove-MgSecurityThreatIntelligenceHostPort](Remove-MgSecurityThreatIntelligenceHostPort.md)
-Delete navigation property hostPorts for security
 
 ### [Remove-MgSecurityThreatIntelligenceHostReputation](Remove-MgSecurityThreatIntelligenceHostReputation.md)
 Delete navigation property reputation for security
@@ -1175,9 +1155,6 @@ Update the navigation property hostCookies in security
 
 ### [Update-MgSecurityThreatIntelligenceHostPair](Update-MgSecurityThreatIntelligenceHostPair.md)
 Update the navigation property hostPairs in security
-
-### [Update-MgSecurityThreatIntelligenceHostPort](Update-MgSecurityThreatIntelligenceHostPort.md)
-Update the navigation property hostPorts in security
 
 ### [Update-MgSecurityThreatIntelligenceHostReputation](Update-MgSecurityThreatIntelligenceHostReputation.md)
 Update the navigation property reputation in security

@@ -341,7 +341,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastActionByUserId <String>]`: The identifier for the account that lasted on the tenant tag. Optional. Read-only.
   - `[LastActionDateTime <DateTime?>]`: The date and time the last action was performed against the tenant tag. Optional. Read-only.
   - `[Tenants <IMicrosoftGraphManagedTenantsTenantInfo[]>]`: The collection of managed tenants associated with the tenant tag. Optional.
-    - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+    - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
 
 `INPUTOBJECT <IManagedTenantsIdentity>`: Identity Parameter
   - `[AggregatedPolicyComplianceId <String>]`: The unique identifier of aggregatedPolicyCompliance
@@ -384,7 +384,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsProtectionStateId <String>]`: The unique identifier of windowsProtectionState
 
 `TENANTS <IMicrosoftGraphManagedTenantsTenantInfo[]>`: The collection of managed tenants associated with the tenant tag. Optional.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
 
 ## RELATED LINKS
 

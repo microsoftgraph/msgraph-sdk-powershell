@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Compliance
-Module Guid: ddf7ede2-e3e2-49da-ba9d-18508320c03f
+Module Guid: 54843944-5097-491b-865b-0dc58d848a9c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -88,7 +88,7 @@ Get the number of the resource
 The group associated with the unifiedGroupSource.
 
 ### [Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError](Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
+Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
 Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount](Get-MgBetaComplianceEdiscoveryCaseCustodianUnifiedGroupSourceGroupServiceProvisioningErrorCount.md)
@@ -127,7 +127,7 @@ Get the number of the resource
 The group associated with the unifiedGroupSource.
 
 ### [Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroupServiceProvisioningError](Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
+Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
 Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroupServiceProvisioningErrorCount](Get-MgBetaComplianceEdiscoveryCaseLegalHoldUnifiedGroupSourceGroupServiceProvisioningErrorCount.md)
@@ -159,9 +159,6 @@ Nullable.
 
 ### [Get-MgBetaComplianceEdiscoveryCaseOperationAsCaseExportOperation](Get-MgBetaComplianceEdiscoveryCaseOperationAsCaseExportOperation.md)
 Get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation
-
-### [Get-MgBetaComplianceEdiscoveryCaseOperationAsCaseExportOperationReviewSet](Get-MgBetaComplianceEdiscoveryCaseOperationAsCaseExportOperationReviewSet.md)
-The review set the content is being exported from.
 
 ### [Get-MgBetaComplianceEdiscoveryCaseOperationCount](Get-MgBetaComplianceEdiscoveryCaseOperationCount.md)
 Get the number of the resource

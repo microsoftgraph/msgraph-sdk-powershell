@@ -1972,11 +1972,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -6465,11 +6465,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -6740,11 +6740,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -11871,11 +11871,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -12114,11 +12114,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -19166,11 +19166,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -19505,11 +19505,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -25939,11 +25939,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -26238,11 +26238,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -33969,11 +33969,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -34308,11 +34308,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -40021,11 +40021,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -44244,11 +44244,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMember
       parameters:
         - name: user-id
@@ -44551,11 +44551,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMessage
       parameters:
         - name: user-id
@@ -50410,11 +50410,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMember
       parameters:
         - name: user-id
@@ -50685,11 +50685,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMessage
       parameters:
         - name: user-id

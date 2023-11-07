@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDomainVerificationDnsRecord
 
 ## SYNOPSIS
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID.
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
 Read-only, Nullable.
 Supports $expand.
 
@@ -34,7 +34,7 @@ Get-MgDomainVerificationDnsRecord -InputObject <IIdentityDirectoryManagementIden
 ```
 
 ## DESCRIPTION
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID.
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
 Read-only, Nullable.
 Supports $expand.
 
@@ -273,7 +273,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

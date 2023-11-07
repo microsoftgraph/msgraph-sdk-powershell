@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Get a browserSite that resides on a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgAdminEdgeInternetExplorerModeSiteListSite -InputObject <IDeviceManagementI
 
 ## DESCRIPTION
 Get a browserSite that resides on a browserSiteList.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 9cb35bfd-adf2-41db-b935-778f90c9ff57
+Module Guid: d47d0881-af0f-4936-b18c-9482834ebfe5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,13 +72,13 @@ Get the number of the resource
 Read properties and relationships of the managedAppPolicyDeploymentSummary object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicy](Get-MgDeviceAppManagementManagedAppPolicy.md)
-Read properties and relationships of the targetedManagedAppProtection object.
+Read properties and relationships of the managedAppProtection object.
 
 ### [Get-MgDeviceAppManagementManagedAppPolicyCount](Get-MgDeviceAppManagementManagedAppPolicyCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedAppRegistration](Get-MgDeviceAppManagementManagedAppRegistration.md)
-Read properties and relationships of the androidManagedAppRegistration object.
+Read properties and relationships of the iosManagedAppRegistration object.
 
 ### [Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy](Get-MgDeviceAppManagementManagedAppRegistrationAppliedPolicy.md)
 Zero or more policys already applied on the registered app when it last synchronized with managment service.
@@ -105,16 +105,16 @@ Get the number of the resource
 Invoke function getUserIdsWithFlaggedAppRegistration
 
 ### [Get-MgDeviceAppManagementManagedAppStatus](Get-MgDeviceAppManagementManagedAppStatus.md)
-Read properties and relationships of the managedAppStatus object.
+Read properties and relationships of the managedAppStatusRaw object.
 
 ### [Get-MgDeviceAppManagementManagedAppStatusCount](Get-MgDeviceAppManagementManagedAppStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedEBook](Get-MgDeviceAppManagementManagedEBook.md)
-Read properties and relationships of the iosVppEBook object.
+Read properties and relationships of the managedEBook object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignment](Get-MgDeviceAppManagementManagedEBookAssignment.md)
-Read properties and relationships of the iosVppEBookAssignment object.
+Read properties and relationships of the managedEBookAssignment object.
 
 ### [Get-MgDeviceAppManagementManagedEBookAssignmentCount](Get-MgDeviceAppManagementManagedEBookAssignmentCount.md)
 Get the number of the resource
@@ -168,7 +168,7 @@ Another way to input protected apps through xml files
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileApp](Get-MgDeviceAppManagementMobileApp.md)
-Read properties and relationships of the win32LobApp object.
+Read properties and relationships of the macOSOfficeSuiteApp object.
 
 ### [Get-MgDeviceAppManagementMobileAppAsAndroidLobApp](Get-MgDeviceAppManagementMobileAppAsAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
@@ -230,12 +230,6 @@ Read properties and relationships of the mobileAppCategory object.
 ### [Get-MgDeviceAppManagementMobileAppCategoryCount](Get-MgDeviceAppManagementMobileAppCategoryCount.md)
 Get the number of the resource
 
-### [Get-MgDeviceAppManagementMobileAppCommittedContainedApp](Get-MgDeviceAppManagementMobileAppCommittedContainedApp.md)
-The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
-
-### [Get-MgDeviceAppManagementMobileAppCommittedContainedAppCount](Get-MgDeviceAppManagementMobileAppCommittedContainedAppCount.md)
-Get the number of the resource
-
 ### [Get-MgDeviceAppManagementMobileAppConfiguration](Get-MgDeviceAppManagementMobileAppConfiguration.md)
 Read properties and relationships of the managedDeviceMobileAppConfiguration object.
 
@@ -265,24 +259,6 @@ Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Get-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
-
-### [Get-MgDeviceAppManagementMobileAppContentVersion](Get-MgDeviceAppManagementMobileAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgDeviceAppManagementMobileAppContentVersionContainedApp](Get-MgDeviceAppManagementMobileAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgDeviceAppManagementMobileAppContentVersionContainedAppCount](Get-MgDeviceAppManagementMobileAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppContentVersionCount](Get-MgDeviceAppManagementMobileAppContentVersionCount.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementMobileAppContentVersionFile](Get-MgDeviceAppManagementMobileAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgDeviceAppManagementMobileAppContentVersionFileCount](Get-MgDeviceAppManagementMobileAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementMobileAppCount](Get-MgDeviceAppManagementMobileAppCount.md)
 Get the number of the resource
@@ -437,72 +413,6 @@ Read properties and relationships of the windowsDeviceMalwareState object.
 ### [Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareStateCount](Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareStateCount.md)
 Get the number of the resource
 
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFile](Invoke-MgCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFileUpload](Invoke-MgRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
 ### [Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp](Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp.md)
 Not yet documented
 
@@ -585,16 +495,13 @@ Create new navigation property to exemptAppLockerFiles for deviceAppManagement
 Create new navigation property to protectedAppLockerFiles for deviceAppManagement
 
 ### [New-MgDeviceAppManagementMobileApp](New-MgDeviceAppManagementMobileApp.md)
-Create a new managedIOSLobApp object.
+Create a new iosLobApp object.
 
 ### [New-MgDeviceAppManagementMobileAppAssignment](New-MgDeviceAppManagementMobileAppAssignment.md)
 Create a new mobileAppAssignment object.
 
 ### [New-MgDeviceAppManagementMobileAppCategory](New-MgDeviceAppManagementMobileAppCategory.md)
 Create a new mobileAppCategory object.
-
-### [New-MgDeviceAppManagementMobileAppCommittedContainedApp](New-MgDeviceAppManagementMobileAppCommittedContainedApp.md)
-Create new navigation property to committedContainedApps for deviceAppManagement
 
 ### [New-MgDeviceAppManagementMobileAppConfiguration](New-MgDeviceAppManagementMobileAppConfiguration.md)
 Create a new iosMobileAppConfiguration object.
@@ -607,15 +514,6 @@ Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
 
 ### [New-MgDeviceAppManagementMobileAppConfigurationUserStatus](New-MgDeviceAppManagementMobileAppConfigurationUserStatus.md)
 Create a new managedDeviceMobileAppConfigurationUserStatus object.
-
-### [New-MgDeviceAppManagementMobileAppContentVersion](New-MgDeviceAppManagementMobileAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgDeviceAppManagementMobileAppContentVersionContainedApp](New-MgDeviceAppManagementMobileAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgDeviceAppManagementMobileAppContentVersionFile](New-MgDeviceAppManagementMobileAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
 
 ### [New-MgDeviceAppManagementTargetedManagedAppConfiguration](New-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
 Create a new targetedManagedAppConfiguration object.
@@ -741,16 +639,13 @@ Delete navigation property exemptAppLockerFiles for deviceAppManagement
 Delete navigation property protectedAppLockerFiles for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMobileApp](Remove-MgDeviceAppManagementMobileApp.md)
-Deletes a windowsMicrosoftEdgeApp.
+Deletes a windowsMobileMSI.
 
 ### [Remove-MgDeviceAppManagementMobileAppAssignment](Remove-MgDeviceAppManagementMobileAppAssignment.md)
 Deletes a mobileAppAssignment.
 
 ### [Remove-MgDeviceAppManagementMobileAppCategory](Remove-MgDeviceAppManagementMobileAppCategory.md)
 Deletes a mobileAppCategory.
-
-### [Remove-MgDeviceAppManagementMobileAppCommittedContainedApp](Remove-MgDeviceAppManagementMobileAppCommittedContainedApp.md)
-Delete navigation property committedContainedApps for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementMobileAppConfiguration](Remove-MgDeviceAppManagementMobileAppConfiguration.md)
 Deletes a iosMobileAppConfiguration.
@@ -769,15 +664,6 @@ Deletes a managedDeviceMobileAppConfigurationUserStatus.
 
 ### [Remove-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Remove-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Delete navigation property userStatusSummary for deviceAppManagement
-
-### [Remove-MgDeviceAppManagementMobileAppContentVersion](Remove-MgDeviceAppManagementMobileAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgDeviceAppManagementMobileAppContentVersionContainedApp](Remove-MgDeviceAppManagementMobileAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgDeviceAppManagementMobileAppContentVersionFile](Remove-MgDeviceAppManagementMobileAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
 
 ### [Remove-MgDeviceAppManagementTargetedManagedAppConfiguration](Remove-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
 Deletes a targetedManagedAppConfiguration.
@@ -906,7 +792,7 @@ Update the navigation property managedAppStatuses in deviceAppManagement
 Update the properties of a iosVppEBook object.
 
 ### [Update-MgDeviceAppManagementManagedEBookAssignment](Update-MgDeviceAppManagementManagedEBookAssignment.md)
-Update the properties of a managedEBookAssignment object.
+Update the properties of a iosVppEBookAssignment object.
 
 ### [Update-MgDeviceAppManagementManagedEBookDeviceState](Update-MgDeviceAppManagementManagedEBookDeviceState.md)
 Update the properties of a deviceInstallState object.
@@ -933,16 +819,13 @@ Update the navigation property exemptAppLockerFiles in deviceAppManagement
 Update the navigation property protectedAppLockerFiles in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementMobileApp](Update-MgDeviceAppManagementMobileApp.md)
-Update the properties of a managedIOSStoreApp object.
+Update the properties of a windowsMobileMSI object.
 
 ### [Update-MgDeviceAppManagementMobileAppAssignment](Update-MgDeviceAppManagementMobileAppAssignment.md)
 Update the properties of a mobileAppAssignment object.
 
 ### [Update-MgDeviceAppManagementMobileAppCategory](Update-MgDeviceAppManagementMobileAppCategory.md)
 Update the properties of a mobileAppCategory object.
-
-### [Update-MgDeviceAppManagementMobileAppCommittedContainedApp](Update-MgDeviceAppManagementMobileAppCommittedContainedApp.md)
-Update the navigation property committedContainedApps in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementMobileAppConfiguration](Update-MgDeviceAppManagementMobileAppConfiguration.md)
 Update the properties of a iosMobileAppConfiguration object.
@@ -961,15 +844,6 @@ Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
 
 ### [Update-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary](Update-MgDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
-
-### [Update-MgDeviceAppManagementMobileAppContentVersion](Update-MgDeviceAppManagementMobileAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgDeviceAppManagementMobileAppContentVersionContainedApp](Update-MgDeviceAppManagementMobileAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgDeviceAppManagementMobileAppContentVersionFile](Update-MgDeviceAppManagementMobileAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
 
 ### [Update-MgDeviceAppManagementTargetedManagedAppConfiguration](Update-MgDeviceAppManagementTargetedManagedAppConfiguration.md)
 Update the properties of a targetedManagedAppConfiguration object.

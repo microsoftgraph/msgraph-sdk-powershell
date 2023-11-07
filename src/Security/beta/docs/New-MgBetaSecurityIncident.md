@@ -375,7 +375,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant in which the alert was created.
+The Azure Active Directory tenant in which the alert was created.
 
 ```yaml
 Type: System.String
@@ -473,7 +473,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
   - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
   - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-  - `[ProductName <String>]`: 
   - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
   - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
   - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
@@ -481,7 +480,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: alertStatus
   - `[SystemTags <String[]>]`: 
-  - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
+  - `[TenantId <String>]`: The Azure Active Directory tenant the alert was created in.
   - `[ThreatDisplayName <String>]`: The threat associated with this alert.
   - `[ThreatFamilyName <String>]`: Threat family associated with this alert.
   - `[Title <String>]`: Brief identifying string value describing the alert.
@@ -522,7 +521,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
     - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
     - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-    - `[ProductName <String>]`: 
     - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
     - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
     - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
@@ -530,7 +528,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Severity <String>]`: alertSeverity
     - `[Status <String>]`: alertStatus
     - `[SystemTags <String[]>]`: 
-    - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
+    - `[TenantId <String>]`: The Azure Active Directory tenant the alert was created in.
     - `[ThreatDisplayName <String>]`: The threat associated with this alert.
     - `[ThreatFamilyName <String>]`: Threat family associated with this alert.
     - `[Title <String>]`: Brief identifying string value describing the alert.
@@ -552,7 +550,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: incidentStatus
   - `[SystemTags <String[]>]`: 
-  - `[TenantId <String>]`: The Microsoft Entra tenant in which the alert was created.
+  - `[TenantId <String>]`: The Azure Active Directory tenant in which the alert was created.
 
 `COMMENTS <IMicrosoftGraphSecurityAlertComment[]>`: Array of comments created by the Security Operations (SecOps) team when the incident is managed.
   - `[Comment <String>]`: The comment text.

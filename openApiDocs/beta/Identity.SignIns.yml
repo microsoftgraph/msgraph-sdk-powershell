@@ -9232,11 +9232,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete countryNamedLocation
-      description: Delete a countryNamedLocation object. This API is available in the following national cloud deployments.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9872,11 +9872,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get authenticationEventListener
-      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. This API is available in the following national cloud deployments.
+      summary: Get customAuthenticationExtension
+      description: Read the properties and relationships of a customAuthenticationExtension object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -40883,7 +40883,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string

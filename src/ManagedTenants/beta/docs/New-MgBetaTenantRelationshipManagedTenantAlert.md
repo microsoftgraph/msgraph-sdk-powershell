@@ -491,7 +491,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Targets <IMicrosoftGraphManagedTenantsNotificationTarget[]>]`: 
         - `[DisplayName <String>]`: 
       - `[TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>]`: 
-        - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+        - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
     - `[AlertRuleDisplayName <String>]`: 
     - `[ApiNotifications <IMicrosoftGraphManagedTenantsManagedTenantApiNotification[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -617,7 +617,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Targets <IMicrosoftGraphManagedTenantsNotificationTarget[]>]`: 
     - `[DisplayName <String>]`: 
   - `[TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>]`: 
-    - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+    - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
 
 `APINOTIFICATIONS <IMicrosoftGraphManagedTenantsManagedTenantApiNotification[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -669,7 +669,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Targets <IMicrosoftGraphManagedTenantsNotificationTarget[]>]`: 
         - `[DisplayName <String>]`: 
       - `[TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>]`: 
-        - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+        - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
     - `[AlertRuleDisplayName <String>]`: 
     - `[ApiNotifications <IMicrosoftGraphManagedTenantsManagedTenantApiNotification[]>]`: 
     - `[AssignedToUserId <String>]`: 
@@ -752,7 +752,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Targets <IMicrosoftGraphManagedTenantsNotificationTarget[]>]`: 
       - `[DisplayName <String>]`: 
     - `[TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>]`: 
-      - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+      - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
   - `[AlertRuleDisplayName <String>]`: 
   - `[ApiNotifications <IMicrosoftGraphManagedTenantsManagedTenantApiNotification[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -839,7 +839,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Targets <IMicrosoftGraphManagedTenantsNotificationTarget[]>]`: 
         - `[DisplayName <String>]`: 
       - `[TenantIds <IMicrosoftGraphManagedTenantsTenantInfo[]>]`: 
-        - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional.
+        - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional.
     - `[AlertRuleDisplayName <String>]`: 
     - `[ApiNotifications <IMicrosoftGraphManagedTenantsManagedTenantApiNotification[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.

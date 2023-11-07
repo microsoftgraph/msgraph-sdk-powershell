@@ -8,12 +8,12 @@ schema: 2.0.0
 # Add-MgBetaAccessReviewInstanceDecision
 
 ## SYNOPSIS
-In the Microsoft Entra access reviews feature, apply the decisions of a completed accessReview.
+In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
  After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
 Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
 By calling apply, the outcome of the review is implemented by updating the group or application.
-If a user's access was denied in the review, when an administrator calls this API, Microsoft Entra ID removes their membership or application assignment.
+If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
 After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
@@ -35,12 +35,12 @@ Add-MgBetaAccessReviewInstanceDecision -InputObject <IIdentityGovernanceIdentity
 ```
 
 ## DESCRIPTION
-In the Microsoft Entra access reviews feature, apply the decisions of a completed accessReview.
+In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
  After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
 Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
 By calling apply, the outcome of the review is implemented by updating the group or application.
-If a user's access was denied in the review, when an administrator calls this API, Microsoft Entra ID removes their membership or application assignment.
+If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
 After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
@@ -219,7 +219,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomTaskExtensionId <String>]`: The unique identifier of customTaskExtension
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[FindingId <String>]`: The unique identifier of finding
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
   - `[GovernanceResourceId <String>]`: The unique identifier of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: The unique identifier of governanceRoleAssignment
@@ -230,7 +229,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
-  - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance

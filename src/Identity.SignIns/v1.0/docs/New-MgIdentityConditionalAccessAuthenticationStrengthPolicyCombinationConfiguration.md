@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Create a new authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgIdentityConditionalAccessAuthenticationStrengthPolicyCombinationConfigurat
 ## DESCRIPTION
 Create a new authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

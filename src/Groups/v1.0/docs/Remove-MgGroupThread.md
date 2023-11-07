@@ -8,6 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupThread
 
 ## SYNOPSIS
+Delete conversationThread.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -25,6 +26,7 @@ Remove-MgGroupThread -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
+Delete conversationThread.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

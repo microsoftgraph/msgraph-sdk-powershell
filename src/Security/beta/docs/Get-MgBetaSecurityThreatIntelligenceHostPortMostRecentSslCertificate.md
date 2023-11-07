@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostPortMostRecentSslCertificate
 
 ## SYNOPSIS
-The most recent sslCertificate used to communicate on the port.
+Get mostRecentSslCertificate from security
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaSecurityThreatIntelligenceHostPortMostRecentSslCertificate -InputObjec
 ```
 
 ## DESCRIPTION
-The most recent sslCertificate used to communicate on the port.
+Get mostRecentSslCertificate from security
 
 ## EXAMPLES
 

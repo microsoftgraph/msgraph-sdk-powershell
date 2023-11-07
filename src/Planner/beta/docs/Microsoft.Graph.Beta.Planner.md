@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Planner
-Module Guid: efd5eee3-b3e2-4d53-9749-3994ea3f9f5a
+Module Guid: a47a1fac-50a3-4b99-94a5-efa273d2ac4b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -160,9 +160,6 @@ Get the number of the resource
 ### [Get-MgBetaUserPlannerTask](Get-MgBetaUserPlannerTask.md)
 Retrieve a list of plannertask objects assigned to a User.
 This API is available in the following national cloud deployments.
-
-### [Move-MgBetaPlannerPlanToContainer](Move-MgBetaPlannerPlanToContainer.md)
-Invoke action moveToContainer
 
 ### [New-MgBetaPlannerBucket](New-MgBetaPlannerBucket.md)
 Create a new plannerBucket object.

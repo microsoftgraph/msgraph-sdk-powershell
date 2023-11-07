@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrivacySubjectRightsRequestCollaborator
 
 ## SYNOPSIS
-Collection of users who can collaborate on the request.
+Get collaborators from privacy
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgPrivacySubjectRightsRequestCollaborator -InputObject <IComplianceIdentity>
 ```
 
 ## DESCRIPTION
-Collection of users who can collaborate on the request.
+Get collaborators from privacy
 
 ## EXAMPLES
 

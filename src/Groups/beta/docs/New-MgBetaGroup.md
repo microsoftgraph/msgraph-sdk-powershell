@@ -1157,7 +1157,7 @@ Accept wildcard characters: False
 ### -PreferredDataLocation
 The preferred data location for the Microsoft 365 group.
 By default, the group inherits the group creator's preferred data location.
-To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles: Global Administrator User Account Administrator Directory Writer Exchange Administrator SharePoint Administrator For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL.
+To set this property, the calling user must be assigned one of the following Microsoft Entra roles: Global Administrator User Account Administrator Directory Writer Exchange Administrator SharePoint Administrator For more information about this property, see OneDrive Online Multi-Geo.
 Nullable.
 Returned by default.
 
@@ -1993,8 +1993,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
           - `[Id <String>]`: 
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-            - `[Key <String>]`: Contains the name of the field that a value is associated with.
-            - `[Value <String>]`: Contains the corresponding value for the specified key.
+            - `[Key <String>]`: Key.
+            - `[Value <String>]`: Value.
           - `[Type <String>]`: 
         - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
         - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -5972,7 +5972,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
             - `[DisplayName <String>]`: Name of the person.
             - `[Relationship <String>]`: personRelationship
-            - `[UserId <String>]`: 
             - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
           - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5987,8 +5986,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[Description <String>]`: Description of the position in question.
             - `[EndMonthYear <DateTime?>]`: When the position ended.
             - `[JobTitle <String>]`: The title held when in that position.
-            - `[Layer <Int32?>]`: 
-            - `[Level <String>]`: 
             - `[Role <String>]`: The role the position entailed.
             - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
             - `[Summary <String>]`: Short summary of the position.
@@ -6458,7 +6455,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerPlans owned by the group.
-  - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+  - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
   - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
   - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
@@ -7006,8 +7003,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Contains the name of the field that a value is associated with.
-          - `[Value <String>]`: Contains the corresponding value for the specified key.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -9587,7 +9584,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[AccessLevel <String>]`: plannerPlanAccessLevel
           - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
           - `[Title <String>]`: Required. Title of the plan.
-      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
       - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
       - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
@@ -11313,7 +11310,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
           - `[DisplayName <String>]`: Name of the person.
           - `[Relationship <String>]`: personRelationship
-          - `[UserId <String>]`: 
           - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
         - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11328,8 +11324,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Description <String>]`: Description of the position in question.
           - `[EndMonthYear <DateTime?>]`: When the position ended.
           - `[JobTitle <String>]`: The title held when in that position.
-          - `[Layer <Int32?>]`: 
-          - `[Level <String>]`: 
           - `[Role <String>]`: The role the position entailed.
           - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
           - `[Summary <String>]`: Short summary of the position.
@@ -11863,8 +11857,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Contains the name of the field that a value is associated with.
-          - `[Value <String>]`: Contains the corresponding value for the specified key.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -14444,7 +14438,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[AccessLevel <String>]`: plannerPlanAccessLevel
           - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
           - `[Title <String>]`: Required. Title of the plan.
-      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
       - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
       - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
@@ -16170,7 +16164,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
           - `[DisplayName <String>]`: Name of the person.
           - `[Relationship <String>]`: personRelationship
-          - `[UserId <String>]`: 
           - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
         - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -16185,8 +16178,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Description <String>]`: Description of the position in question.
           - `[EndMonthYear <DateTime?>]`: When the position ended.
           - `[JobTitle <String>]`: The title held when in that position.
-          - `[Layer <Int32?>]`: 
-          - `[Level <String>]`: 
           - `[Role <String>]`: The role the position entailed.
           - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
           - `[Summary <String>]`: Short summary of the position.
@@ -17232,8 +17223,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Contains the name of the field that a value is associated with.
-          - `[Value <String>]`: Contains the corresponding value for the specified key.
+          - `[Key <String>]`: Key.
+          - `[Value <String>]`: Value.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -19744,7 +19735,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[AccessLevel <String>]`: plannerPlanAccessLevel
           - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
           - `[Title <String>]`: Required. Title of the plan.
-      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+      - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
       - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
       - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
@@ -21470,7 +21461,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
           - `[DisplayName <String>]`: Name of the person.
           - `[Relationship <String>]`: personRelationship
-          - `[UserId <String>]`: 
           - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
         - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21485,8 +21475,6 @@ To create the parameters described below, construct a hash table containing the 
           - `[Description <String>]`: Description of the position in question.
           - `[EndMonthYear <DateTime?>]`: When the position ended.
           - `[JobTitle <String>]`: The title held when in that position.
-          - `[Layer <Int32?>]`: 
-          - `[Level <String>]`: 
           - `[Role <String>]`: The role the position entailed.
           - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
           - `[Summary <String>]`: Short summary of the position.
@@ -22101,8 +22089,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
             - `[Id <String>]`: 
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-              - `[Key <String>]`: Contains the name of the field that a value is associated with.
-              - `[Value <String>]`: Contains the corresponding value for the specified key.
+              - `[Key <String>]`: Key.
+              - `[Value <String>]`: Value.
             - `[Type <String>]`: 
           - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
           - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -24260,7 +24248,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[AccessLevel <String>]`: plannerPlanAccessLevel
               - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
               - `[Title <String>]`: Required. Title of the plan.
-          - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+          - `[PreferredDataLocation <String>]`: The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
           - `[PreferredLanguage <String>]`: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[ProxyAddresses <String[]>]`: Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
           - `[RejectedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
@@ -25725,7 +25713,6 @@ To create the parameters described below, construct a hash table containing the 
             - `[Colleagues <IMicrosoftGraphRelatedPerson[]>]`: Colleagues that are associated with this position.
               - `[DisplayName <String>]`: Name of the person.
               - `[Relationship <String>]`: personRelationship
-              - `[UserId <String>]`: 
               - `[UserPrincipalName <String>]`: Email address or reference to person within organization.
             - `[Detail <IMicrosoftGraphPositionDetail>]`: positionDetail
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -25740,8 +25727,6 @@ To create the parameters described below, construct a hash table containing the 
               - `[Description <String>]`: Description of the position in question.
               - `[EndMonthYear <DateTime?>]`: When the position ended.
               - `[JobTitle <String>]`: The title held when in that position.
-              - `[Layer <Int32?>]`: 
-              - `[Level <String>]`: 
               - `[Role <String>]`: The role the position entailed.
               - `[StartMonthYear <DateTime?>]`: The start month and year of the position.
               - `[Summary <String>]`: Short summary of the position.

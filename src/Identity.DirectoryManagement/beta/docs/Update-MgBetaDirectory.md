@@ -19,7 +19,6 @@ Update-MgBetaDirectory [-AdditionalProperties <Hashtable>]
  [-CertificateAuthorities <IMicrosoftGraphCertificateAuthorityPath>]
  [-CustomSecurityAttributeDefinitions <IMicrosoftGraphCustomSecurityAttributeDefinition[]>]
  [-DeletedItems <IMicrosoftGraphDirectoryObject[]>]
- [-DeviceLocalCredentials <IMicrosoftGraphDeviceLocalCredentialInfo[]>]
  [-FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]
  [-FederationConfigurations <IMicrosoftGraphIdentityProviderBase[]>] [-Id <String>]
  [-ImpactedResources <IMicrosoftGraphImpactedResource[]>]
@@ -158,22 +157,6 @@ To construct, see NOTES section for DELETEDITEMS properties and create a hash ta
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceLocalCredentials
-The credentials of the device's local administrator account backed up to Microsoft Entra ID.
-To construct, see NOTES section for DEVICELOCALCREDENTIALS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphDeviceLocalCredentialInfo[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -403,7 +386,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for this administrative unit. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsMemberManagementRestricted <Boolean?>]`: true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
+  - `[IsMemberManagementRestricted <Boolean?>]`: true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
   - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -413,8 +396,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
   - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 `ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>`: Group of related custom security attribute definitions.
@@ -432,7 +415,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for this administrative unit. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[IsMemberManagementRestricted <Boolean?>]`: true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
+    - `[IsMemberManagementRestricted <Boolean?>]`: true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
     - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -442,8 +425,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -477,17 +460,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Type <String>]`: Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
     - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
   - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: 
-  - `[DeviceLocalCredentials <IMicrosoftGraphDeviceLocalCredentialInfo[]>]`: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Credentials <IMicrosoftGraphDeviceLocalCredential[]>]`: The credentials of the device's local administrator account backed up to Azure Active Directory.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[AccountName <String>]`: The name of the local admin account for which LAPS is enabled.
-      - `[AccountSid <String>]`: The SID of the local admin account for which LAPS is enabled.
-      - `[BackupDateTime <DateTime?>]`: When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
-      - `[PasswordBase64 <String>]`: The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
-    - `[DeviceName <String>]`: Display name of the device that the local credentials are associated with.
-    - `[LastBackupDateTime <DateTime?>]`: When the local administrator account credential was backed up to Microsoft Entra ID.
-    - `[RefreshDateTime <DateTime?>]`: When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
   - `[FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -505,16 +477,16 @@ To create the parameters described below, construct a hash table containing the 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
       - `[Key <String>]`: Key.
       - `[Value <String>]`: Value.
-    - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
-    - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
+    - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+    - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
     - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
     - `[Owner <String>]`: The user responsible for maintaining the resource.
-    - `[PortalUrl <String>]`: The URL link to the corresponding Microsoft Entra admin center page of the resource.
+    - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
     - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
     - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
     - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
-    - `[ResourceType <String>]`: Indicates the type of Microsoft Entra resource. Examples include user, application.
+    - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
     - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
   - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
@@ -553,16 +525,16 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[BlockCloudObjectTakeoverThroughHardMatchEnabled <Boolean?>]`: Used to block cloud object takeover via source anchor hard match if enabled.
       - `[BlockSoftMatchEnabled <Boolean?>]`: Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
-      - `[BypassDirSyncOverridesEnabled <Boolean?>]`: When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
+      - `[BypassDirSyncOverridesEnabled <Boolean?>]`: When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
       - `[CloudPasswordPolicyForPasswordSyncedUsersEnabled <Boolean?>]`: Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
       - `[ConcurrentCredentialUpdateEnabled <Boolean?>]`: Used to enable concurrent user credentials update in OrgId.
       - `[ConcurrentOrgIdProvisioningEnabled <Boolean?>]`: Used to enable concurrent user creation in OrgId.
       - `[DeviceWritebackEnabled <Boolean?>]`: Used to indicate that device write-back is enabled.
-      - `[DirectoryExtensionsEnabled <Boolean?>]`: Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.
+      - `[DirectoryExtensionsEnabled <Boolean?>]`: Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
       - `[FopeConflictResolutionEnabled <Boolean?>]`: Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
       - `[GroupWriteBackEnabled <Boolean?>]`: Used to enable object-level group writeback feature for additional group types.
       - `[PasswordSyncEnabled <Boolean?>]`: Used to indicate on-premise password synchronization is enabled.
-      - `[PasswordWritebackEnabled <Boolean?>]`: Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
+      - `[PasswordWritebackEnabled <Boolean?>]`: Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
       - `[QuarantineUponProxyAddressesConflictEnabled <Boolean?>]`: Used to indicate that we should quarantine objects with conflicting proxy address.
       - `[QuarantineUponUpnConflictEnabled <Boolean?>]`: Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
       - `[SoftMatchOnUpnEnabled <Boolean?>]`: Used to indicate that we should soft match objects based on userPrincipalName.
@@ -571,8 +543,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[UserForcePasswordChangeOnLogonEnabled <Boolean?>]`: Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
       - `[UserWritebackEnabled <Boolean?>]`: Used to indicate that user writeback is enabled.
   - `[OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]`: 
-    - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
-      - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
+    - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+      - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
     - `[UserId <String>]`: The object id of the external user. Read-only.
   - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: List of recommended improvements to improve tenant posture.
     - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
@@ -582,7 +554,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
       - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
       - `[Text <String>]`: Friendly description of the action to take.
-    - `[Benefits <String>]`: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
+    - `[Benefits <String>]`: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
     - `[Category <String>]`: recommendationCategory
     - `[CreatedDateTime <DateTime?>]`: The date and time when the recommendation was detected as applicable to your directory.
     - `[CurrentScore <Double?>]`: The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
@@ -591,7 +563,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ImpactStartDateTime <DateTime?>]`: The future date and time when a recommendation should be completed.
     - `[ImpactType <String>]`: Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
     - `[ImpactedResources <IMicrosoftGraphImpactedResource[]>]`: The list of directory objects associated with the recommendation.
-    - `[Insights <String>]`: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
+    - `[Insights <String>]`: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
     - `[LastCheckedDateTime <DateTime?>]`: The most recent date and time a recommendation was deemed applicable to your directory.
     - `[LastModifiedBy <String>]`: Name of the user who last updated the status of the recommendation.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the status of a recommendation was last updated.
@@ -599,7 +571,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
     - `[Priority <String>]`: recommendationPriority
     - `[RecommendationType <String>]`: recommendationType
-    - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+    - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview or generallyAvailable.
     - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
     - `[Status <String>]`: recommendationStatus
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -659,18 +631,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-`DEVICELOCALCREDENTIALS <IMicrosoftGraphDeviceLocalCredentialInfo[]>`: The credentials of the device's local administrator account backed up to Microsoft Entra ID.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Credentials <IMicrosoftGraphDeviceLocalCredential[]>]`: The credentials of the device's local administrator account backed up to Azure Active Directory.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[AccountName <String>]`: The name of the local admin account for which LAPS is enabled.
-    - `[AccountSid <String>]`: The SID of the local admin account for which LAPS is enabled.
-    - `[BackupDateTime <DateTime?>]`: When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.
-    - `[PasswordBase64 <String>]`: The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.
-  - `[DeviceName <String>]`: Display name of the device that the local credentials are associated with.
-  - `[LastBackupDateTime <DateTime?>]`: When the local administrator account credential was backed up to Microsoft Entra ID.
-  - `[RefreshDateTime <DateTime?>]`: When the local administrator account credential will be refreshed and backed up to Microsoft Entra ID.
-
 `FEATUREROLLOUTPOLICIES <IMicrosoftGraphFeatureRolloutPolicy[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -692,16 +652,16 @@ To create the parameters described below, construct a hash table containing the 
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
     - `[Key <String>]`: Key.
     - `[Value <String>]`: Value.
-  - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
-  - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
+  - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+  - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
   - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
   - `[Owner <String>]`: The user responsible for maintaining the resource.
-  - `[PortalUrl <String>]`: The URL link to the corresponding Microsoft Entra admin center page of the resource.
+  - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
   - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
   - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
   - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
-  - `[ResourceType <String>]`: Indicates the type of Microsoft Entra resource. Examples include user, application.
+  - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
   - `[Status <String>]`: recommendationStatus
   - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
@@ -742,16 +702,16 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BlockCloudObjectTakeoverThroughHardMatchEnabled <Boolean?>]`: Used to block cloud object takeover via source anchor hard match if enabled.
     - `[BlockSoftMatchEnabled <Boolean?>]`: Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
-    - `[BypassDirSyncOverridesEnabled <Boolean?>]`: When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
+    - `[BypassDirSyncOverridesEnabled <Boolean?>]`: When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
     - `[CloudPasswordPolicyForPasswordSyncedUsersEnabled <Boolean?>]`: Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
     - `[ConcurrentCredentialUpdateEnabled <Boolean?>]`: Used to enable concurrent user credentials update in OrgId.
     - `[ConcurrentOrgIdProvisioningEnabled <Boolean?>]`: Used to enable concurrent user creation in OrgId.
     - `[DeviceWritebackEnabled <Boolean?>]`: Used to indicate that device write-back is enabled.
-    - `[DirectoryExtensionsEnabled <Boolean?>]`: Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.
+    - `[DirectoryExtensionsEnabled <Boolean?>]`: Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
     - `[FopeConflictResolutionEnabled <Boolean?>]`: Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
     - `[GroupWriteBackEnabled <Boolean?>]`: Used to enable object-level group writeback feature for additional group types.
     - `[PasswordSyncEnabled <Boolean?>]`: Used to indicate on-premise password synchronization is enabled.
-    - `[PasswordWritebackEnabled <Boolean?>]`: Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
+    - `[PasswordWritebackEnabled <Boolean?>]`: Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
     - `[QuarantineUponProxyAddressesConflictEnabled <Boolean?>]`: Used to indicate that we should quarantine objects with conflicting proxy address.
     - `[QuarantineUponUpnConflictEnabled <Boolean?>]`: Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
     - `[SoftMatchOnUpnEnabled <Boolean?>]`: Used to indicate that we should soft match objects based on userPrincipalName.
@@ -761,8 +721,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[UserWritebackEnabled <Boolean?>]`: Used to indicate that user writeback is enabled.
 
 `OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>`: .
-  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
-    - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
+  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+    - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
   - `[UserId <String>]`: The object id of the external user. Read-only.
 
 `RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>`: List of recommended improvements to improve tenant posture.
@@ -773,7 +733,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Url <String>]`: The URL to the documentation or Microsoft Entra admin center page.
     - `[StepNumber <Int64?>]`: Indicates the position for this action in the order of the collection of actions to be taken.
     - `[Text <String>]`: Friendly description of the action to take.
-  - `[Benefits <String>]`: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Microsoft Entra admin center.
+  - `[Benefits <String>]`: An explanation of why completing the recommendation will benefit you. Corresponds to the Value section of a recommendation shown in the Azure AD portal.
   - `[Category <String>]`: recommendationCategory
   - `[CreatedDateTime <DateTime?>]`: The date and time when the recommendation was detected as applicable to your directory.
   - `[CurrentScore <Double?>]`: The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
@@ -787,19 +747,19 @@ To create the parameters described below, construct a hash table containing the 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
       - `[Key <String>]`: Key.
       - `[Value <String>]`: Value.
-    - `[ApiUrl <String>]`: The URL link to the corresponding Microsoft Entra resource.
-    - `[DisplayName <String>]`: Friendly name of the Microsoft Entra resource.
+    - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
+    - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
     - `[LastModifiedDateTime <String>]`: The date and time when the status was last updated.
     - `[Owner <String>]`: The user responsible for maintaining the resource.
-    - `[PortalUrl <String>]`: The URL link to the corresponding Microsoft Entra admin center page of the resource.
+    - `[PortalUrl <String>]`: The URL link to the corresponding Azure AD portal page of the resource.
     - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed impactedResource will be active again.
     - `[Rank <Int32?>]`: Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
     - `[RecommendationId <String>]`: The unique identifier of the recommendation that the resource is associated with.
-    - `[ResourceType <String>]`: Indicates the type of Microsoft Entra resource. Examples include user, application.
+    - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
     - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
-  - `[Insights <String>]`: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Microsoft Entra admin center.
+  - `[Insights <String>]`: Describes why a recommendation uniquely applies to your directory. Corresponds to the Description section of a recommendation shown in the Azure AD portal.
   - `[LastCheckedDateTime <DateTime?>]`: The most recent date and time a recommendation was deemed applicable to your directory.
   - `[LastModifiedBy <String>]`: Name of the user who last updated the status of the recommendation.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the status of a recommendation was last updated.
@@ -807,7 +767,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[PostponeUntilDateTime <DateTime?>]`: The future date and time when the status of a postponed recommendation will be active again.
   - `[Priority <String>]`: recommendationPriority
   - `[RecommendationType <String>]`: recommendationType
-  - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.
+  - `[ReleaseType <String>]`: The current release type of the recommendation. The possible values are: preview or generallyAvailable.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
   - `[Status <String>]`: recommendationStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

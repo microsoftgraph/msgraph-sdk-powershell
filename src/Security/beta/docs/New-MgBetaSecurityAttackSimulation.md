@@ -539,8 +539,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[CompletionDateTime <DateTime?>]`: Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
   - `[Description <String>]`: Description of the attack simulation and training campaign.
@@ -586,7 +586,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[CreatedDateTime <DateTime?>]`: Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Description <String>]`: Description of the landing page as defined by the user.
-    - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: The detail information for a landing page associated with a simulation during its creation.
+    - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <String>]`: Landing page detail content.
       - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
@@ -625,7 +625,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Brand <String>]`: payloadBrand
     - `[Complexity <String>]`: payloadComplexity
     - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload.
     - `[Description <String>]`: Description of the attack simulation and training campaign payload.
     - `[Detail <IMicrosoftGraphPayloadDetail>]`: payloadDetail
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -649,7 +649,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsCurrentEvent <Boolean?>]`: Indicates whether the payload is from any recent event.
     - `[Language <String>]`: Payload language.
     - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[PayloadTags <String[]>]`: Free text tags for a payload.
     - `[Platform <String>]`: payloadDeliveryPlatform
     - `[PredictedCompromiseRate <Double?>]`: Predicted probability for a payload to phish a targeted user.
@@ -700,7 +700,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: Display name of the user.
         - `[Email <String>]`: Email address of the user.
         - `[OutOfOfficeDays <Int32?>]`: Number of days the user is OOF during a simulation journey/course of a campaign.
-        - `[UserId <String>]`: The id property value of the user resource that represents the user in the Microsoft Entra tenant.
+        - `[UserId <String>]`: The id property value of the user resource that represents the user in the Azure Active Directory tenant.
       - `[TrainingEvents <IMicrosoftGraphUserTrainingEventInfo[]>]`: List of training events of a user in the attack simulation and training campaign.
         - `[DisplayName <String>]`: Display name of the training.
         - `[LatestTrainingStatus <String>]`: trainingStatus
@@ -720,8 +720,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
 `ENDUSERNOTIFICATIONSETTING <IMicrosoftGraphEndUserNotificationSetting>`: endUserNotificationSetting
@@ -735,8 +735,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
         - `[Email <String>]`: Email address of the user.
       - `[CreatedDateTime <DateTime?>]`: Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Description <String>]`: Description of the notification as defined by the user.
@@ -771,12 +771,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Description <String>]`: Description of the landing page as defined by the user.
-  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: The detail information for a landing page associated with a simulation during its creation.
+  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <String>]`: Landing page detail content.
     - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
@@ -791,8 +791,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
 `LOGINPAGE <IMicrosoftGraphLoginPage>`: loginPage
@@ -801,8 +801,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Content <String>]`: The HTML content of the login page.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Description <String>]`: Description about the login page.
@@ -826,10 +826,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Complexity <String>]`: payloadComplexity
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload. The timestamp represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload.
   - `[Description <String>]`: Description of the attack simulation and training campaign payload.
   - `[Detail <IMicrosoftGraphPayloadDetail>]`: payloadDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -853,7 +853,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsCurrentEvent <Boolean?>]`: Indicates whether the payload is from any recent event.
   - `[Language <String>]`: Payload language.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[PayloadTags <String[]>]`: Free text tags for a payload.
   - `[Platform <String>]`: payloadDeliveryPlatform
   - `[PredictedCompromiseRate <Double?>]`: Predicted probability for a payload to phish a targeted user.
@@ -904,7 +904,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: Display name of the user.
       - `[Email <String>]`: Email address of the user.
       - `[OutOfOfficeDays <Int32?>]`: Number of days the user is OOF during a simulation journey/course of a campaign.
-      - `[UserId <String>]`: The id property value of the user resource that represents the user in the Microsoft Entra tenant.
+      - `[UserId <String>]`: The id property value of the user resource that represents the user in the Azure Active Directory tenant.
     - `[TrainingEvents <IMicrosoftGraphUserTrainingEventInfo[]>]`: List of training events of a user in the attack simulation and training campaign.
       - `[DisplayName <String>]`: Display name of the training.
       - `[LatestTrainingStatus <String>]`: trainingStatus

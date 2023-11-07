@@ -401,7 +401,7 @@ Accept wildcard characters: False
 ```
 
 ### -FaviconInputFile
-Input File for Favicon (A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.)
+Input File for Favicon (A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.)
 
 ```yaml
 Type: System.String
@@ -717,7 +717,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

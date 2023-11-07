@@ -19,320 +19,16 @@ Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandPrope
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### List (Default)
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
 ### Get
 ```
 Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get
+### GetViaIdentity
 ```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
+Get-MgDeviceAppManagementMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get10
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get10
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get11
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get11
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get12
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get12
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get13
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get13
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get14
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get14
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get15
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get15
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get16
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get16
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get2
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get2
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get3
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get3
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get4
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get4
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get5
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get5
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get6
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get6
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get7
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get7
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get8
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get8
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get9
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### Get9
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### List11
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List12
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List13
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List14
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List15
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List16
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List2
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List3
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List4
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List5
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List6
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List7
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List8
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List9
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### List9
-```
-Get-MgDeviceAppManagementMobileAppAssignment -MobileAppId <String> [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -361,7 +57,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -377,7 +73,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -407,7 +103,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -417,12 +113,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -MobileAppAssignmentId
 The unique identifier of mobileAppAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get, Get1, Get1, Get10, Get10, Get11, Get11, Get12, Get12, Get13, Get13, Get14, Get14, Get15, Get15, Get16, Get16, Get2, Get2, Get3, Get3, Get4, Get4, Get5, Get5, Get6, Get6, Get7, Get7, Get8, Get8, Get9, Get9
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -437,7 +149,7 @@ The unique identifier of mobileApp
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -452,7 +164,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -482,7 +194,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -497,7 +209,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -512,7 +224,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -527,7 +239,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List, List11, List12, List13, List14, List15, List16, List2, List3, List4, List5, List6, List7, List8, List9, List9
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -553,6 +265,45 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ALIASES
 
 Get-MgDeviceAppMgtMobileAppAssignment
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+`INPUTOBJECT <IDevicesCorporateManagementIdentity>`: Identity Parameter
+  - `[AndroidManagedAppProtectionId <String>]`: The unique identifier of androidManagedAppProtection
+  - `[DefaultManagedAppProtectionId <String>]`: The unique identifier of defaultManagedAppProtection
+  - `[DeviceCompliancePolicyStateId <String>]`: The unique identifier of deviceCompliancePolicyState
+  - `[DeviceConfigurationStateId <String>]`: The unique identifier of deviceConfigurationState
+  - `[DeviceInstallStateId <String>]`: The unique identifier of deviceInstallState
+  - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
+  - `[DeviceManagementTroubleshootingEventId <String>]`: The unique identifier of deviceManagementTroubleshootingEvent
+  - `[IosManagedAppProtectionId <String>]`: The unique identifier of iosManagedAppProtection
+  - `[ManagedAppOperationId <String>]`: The unique identifier of managedAppOperation
+  - `[ManagedAppPolicyId <String>]`: The unique identifier of managedAppPolicy
+  - `[ManagedAppRegistrationId <String>]`: The unique identifier of managedAppRegistration
+  - `[ManagedAppStatusId <String>]`: The unique identifier of managedAppStatus
+  - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
+  - `[ManagedDeviceMobileAppConfigurationAssignmentId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationAssignment
+  - `[ManagedDeviceMobileAppConfigurationDeviceStatusId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus
+  - `[ManagedDeviceMobileAppConfigurationId <String>]`: The unique identifier of managedDeviceMobileAppConfiguration
+  - `[ManagedDeviceMobileAppConfigurationUserStatusId <String>]`: The unique identifier of managedDeviceMobileAppConfigurationUserStatus
+  - `[ManagedEBookAssignmentId <String>]`: The unique identifier of managedEBookAssignment
+  - `[ManagedEBookId <String>]`: The unique identifier of managedEBook
+  - `[ManagedMobileAppId <String>]`: The unique identifier of managedMobileApp
+  - `[MdmWindowsInformationProtectionPolicyId <String>]`: The unique identifier of mdmWindowsInformationProtectionPolicy
+  - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
+  - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
+  - `[MobileAppId <String>]`: The unique identifier of mobileApp
+  - `[TargetedManagedAppConfigurationId <String>]`: The unique identifier of targetedManagedAppConfiguration
+  - `[TargetedManagedAppPolicyAssignmentId <String>]`: The unique identifier of targetedManagedAppPolicyAssignment
+  - `[UserId <String>]`: The unique identifier of user
+  - `[UserInstallStateSummaryId <String>]`: The unique identifier of userInstallStateSummary
+  - `[VppTokenId <String>]`: The unique identifier of vppToken
+  - `[WindowsDeviceMalwareStateId <String>]`: The unique identifier of windowsDeviceMalwareState
+  - `[WindowsInformationProtectionAppLockerFileId <String>]`: The unique identifier of windowsInformationProtectionAppLockerFile
+  - `[WindowsInformationProtectionPolicyId <String>]`: The unique identifier of windowsInformationProtectionPolicy
 
 ## RELATED LINKS
 

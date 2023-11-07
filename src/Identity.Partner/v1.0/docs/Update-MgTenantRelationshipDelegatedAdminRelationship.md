@@ -9,8 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of a delegatedAdminRelationship object.
-You can only update a relationship when it's in the created status.
-However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
+A relationship can only be updated if it's in the created status.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -55,8 +54,7 @@ Update-MgTenantRelationshipDelegatedAdminRelationship -InputObject <IIdentityPar
 
 ## DESCRIPTION
 Update the properties of a delegatedAdminRelationship object.
-You can only update a relationship when it's in the created status.
-However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
+A relationship can only be updated if it's in the created status.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -141,10 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoExtendDuration
-The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format.
-Supported values are: P0D, PT0S, P180D.
-The default value is PT0S.
-PT0S indicates that the relationship expires when the endDateTime is reached and it isn't automatically extended.
+.
 
 ```yaml
 Type: System.TimeSpan
@@ -456,7 +451,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Status <String>]`: delegatedAdminAccessAssignmentStatus
   - `[AccessDetails <IMicrosoftGraphDelegatedAdminAccessDetails>]`: delegatedAdminAccessDetails
   - `[ActivatedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
-  - `[AutoExtendDuration <TimeSpan?>]`: The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn't automatically extended.
+  - `[AutoExtendDuration <TimeSpan?>]`: 
   - `[CreatedDateTime <DateTime?>]`: The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
   - `[Customer <IMicrosoftGraphDelegatedAdminRelationshipCustomerParticipant>]`: delegatedAdminRelationshipCustomerParticipant
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

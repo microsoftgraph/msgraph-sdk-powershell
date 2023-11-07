@@ -220,7 +220,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[ValuesJoinedBy <String>]`: binaryOperator
     - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+      - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
     - `[ConnectorId <String>]`: The Teams App ID. Optional.
     - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
     - `[EnabledContentExperiences <String>]`: contentExperienceType
@@ -228,7 +228,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Description <String>]`: The description of the external group. Optional.
       - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-      - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or other externalGroups as members.
+      - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[Type <String>]`: identityType
     - `[IngestedItemsCount <Int64?>]`: The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
@@ -238,7 +238,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[AccessType <String>]`: accessType
         - `[IdentitySource <String>]`: identitySourceType
         - `[Type <String>]`: aclType
-        - `[Value <String>]`: The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
+        - `[Value <String>]`: The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
       - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Returns a list of activities performed on the item. Write-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
@@ -284,7 +284,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[IsRefinable <Boolean?>]`: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
         - `[IsRetrievable <Boolean?>]`: Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
         - `[IsSearchable <Boolean?>]`: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
-        - `[Labels <String[]>]`: Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
+        - `[Labels <String[]>]`: Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.
         - `[Name <String>]`: The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
         - `[RankingHint <IMicrosoftGraphExternalConnectorsRankingHint>]`: rankingHint
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -391,7 +391,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ValuesJoinedBy <String>]`: binaryOperator
   - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+    - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
   - `[ConnectorId <String>]`: The Teams App ID. Optional.
   - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
   - `[EnabledContentExperiences <String>]`: contentExperienceType
@@ -399,7 +399,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Description <String>]`: The description of the external group. Optional.
     - `[DisplayName <String>]`: The friendly name of the external group. Optional.
-    - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or other externalGroups as members.
+    - `[Members <IMicrosoftGraphExternalConnectorsIdentity[]>]`: A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Type <String>]`: identityType
   - `[IngestedItemsCount <Int64?>]`: The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
@@ -409,7 +409,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[AccessType <String>]`: accessType
       - `[IdentitySource <String>]`: identitySourceType
       - `[Type <String>]`: aclType
-      - `[Value <String>]`: The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
+      - `[Value <String>]`: The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.
     - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Returns a list of activities performed on the item. Write-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
@@ -455,7 +455,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsRefinable <Boolean?>]`: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
       - `[IsRetrievable <Boolean?>]`: Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
       - `[IsSearchable <Boolean?>]`: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
-      - `[Labels <String[]>]`: Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
+      - `[Labels <String[]>]`: Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.
       - `[Name <String>]`: The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
       - `[RankingHint <IMicrosoftGraphExternalConnectorsRankingHint>]`: rankingHint
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -20,7 +20,7 @@ Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault [-PassThru] [-Confir
 
 ## DESCRIPTION
 Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

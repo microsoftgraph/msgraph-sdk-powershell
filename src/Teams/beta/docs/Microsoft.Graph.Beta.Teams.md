@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Teams
-Module Guid: 90b37d3b-a557-4654-83f5-a69212679f8d
+Module Guid: 1b7c343a-9f76-4e3e-aa10-7a6187821812
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -2140,18 +2140,18 @@ A device is restarted after the async operation completes successfully, which mi
 This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaChatActivityNotification](Send-MgBetaChatActivityNotification.md)
-Send an activity feed notification in the scope of a chat.
-For more information, see sending Teams activity notifications.
+Send an activity feed notification in scope of a chat.
+For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaTeamActivityNotification](Send-MgBetaTeamActivityNotification.md)
 Send an activity feed notification in the scope of a team.
-For more information, see sending Teams activity notifications.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaTeamworkActivityNotificationToRecipient](Send-MgBetaTeamworkActivityNotificationToRecipient.md)
-Send activity feed notifications to multiple users in bulk.
-For more information, see sending Teams activity notifications.
+Send activity feed notifications to multiple users, in bulk.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 This API is available in the following national cloud deployments.
 
 ### [Set-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent](Set-MgBetaAppCatalogTeamAppDefinitionColorIconHostedContent.md)

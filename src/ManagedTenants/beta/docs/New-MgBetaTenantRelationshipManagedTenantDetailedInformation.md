@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 
 ```yaml
 Type: System.String
@@ -323,7 +323,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IndustryName <String>]`: The business industry associated with the managed tenant. Optional. Read-only.
   - `[Region <String>]`: The region where the managed tenant is located. Optional. Read-only.
   - `[SegmentName <String>]`: The business segment associated with the managed tenant. Optional. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant.
   - `[VerticalName <String>]`: The vertical associated with the managed tenant. Optional. Read-only.
 
 ## RELATED LINKS

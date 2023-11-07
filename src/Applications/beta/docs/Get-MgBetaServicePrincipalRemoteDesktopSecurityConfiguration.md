@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration
 
 ## SYNOPSIS
-Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal.
-Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
-Additionally you can view any targetDeviceGroups that have been configured for SSO.
+Get remoteDesktopSecurityConfiguration from servicePrincipals
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration -InputObject <IAppl
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal.
-Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
-Additionally you can view any targetDeviceGroups that have been configured for SSO.
+Get remoteDesktopSecurityConfiguration from servicePrincipals
 
 ## EXAMPLES
 

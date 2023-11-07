@@ -588,7 +588,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
       - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the webinar.
       - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-      - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+      - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
   - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <String>]`: virtualEventStatus
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -651,8 +651,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MeetingRegistrantBaseId <String>]`: The unique identifier of meetingRegistrantBase
   - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
   - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
-  - `[Role <String>]`: Usage: role='{role}'
-  - `[UserId <String>]`: Usage: userId='{userId}'
   - `[VirtualEventId <String>]`: The unique identifier of virtualEvent
   - `[VirtualEventPresenterId <String>]`: The unique identifier of virtualEventPresenter
   - `[VirtualEventRegistrationId <String>]`: The unique identifier of virtualEventRegistration
@@ -852,7 +850,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Registrations <IMicrosoftGraphVirtualEventRegistration[]>]`: Registration records of this virtual event session.
   - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-  - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+  - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
 
 `SESSIONS <IMicrosoftGraphVirtualEventSession[]>`: Sessions of the virtual event.
   - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
@@ -1015,7 +1013,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Value <String>]`: Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
     - `[Sessions <IMicrosoftGraphVirtualEventSession[]>]`: Sessions of the webinar.
     - `[Status <String>]`: virtualEventAttendeeRegistrationStatus
-    - `[UserId <String>]`: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
+    - `[UserId <String>]`: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
 
 `STARTDATETIME <IMicrosoftGraphDateTimeZone>`: dateTimeTimeZone
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

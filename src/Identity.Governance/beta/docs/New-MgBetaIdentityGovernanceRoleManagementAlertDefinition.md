@@ -142,7 +142,7 @@ Accept wildcard characters: False
 
 ### -IsConfigurable
 true if the alert configuration can be customized in the tenant, and false otherwise.
-For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
+For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 
 ### -ScopeType
 The type of scope where the alert is created.
-DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
+DirectoryRole is the only currently supported scope type for Azure AD Roles.
 
 ```yaml
 Type: System.String
@@ -308,11 +308,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Description <String>]`: The description of the alert.
   - `[DisplayName <String>]`: The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
   - `[HowToPrevent <String>]`: Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
-  - `[IsConfigurable <Boolean?>]`: true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
+  - `[IsConfigurable <Boolean?>]`: true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Azure AD Premium P2' can't be configured, because the criteria are restricted.
   - `[IsRemediatable <Boolean?>]`: true if the alert can be remediated, and false otherwise.
   - `[MitigationSteps <String>]`: The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.
   - `[ScopeId <String>]`: The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
-  - `[ScopeType <String>]`: The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
+  - `[ScopeType <String>]`: The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
   - `[SecurityImpact <String>]`: Security impact of the alert. For example, it could be information leaks or unauthorized access.
   - `[SeverityLevel <String>]`: alertSeverity
 

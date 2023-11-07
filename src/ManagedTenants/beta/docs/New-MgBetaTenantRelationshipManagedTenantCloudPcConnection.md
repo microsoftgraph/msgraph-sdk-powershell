@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Required.
 Read-only.
 
@@ -237,7 +237,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[HealthCheckStatus <String>]`: The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
   - `[LastRefreshedDateTime <DateTime?>]`: Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 
 ## RELATED LINKS
 

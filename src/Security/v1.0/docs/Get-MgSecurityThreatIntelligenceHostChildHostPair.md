@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityThreatIntelligenceHostChildHostPair
 
 ## SYNOPSIS
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityThreatIntelligenceHostChildHostPair -InputObject <ISecurityIdentit
 ```
 
 ## DESCRIPTION
-The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 
 ## EXAMPLES
 
@@ -291,7 +291,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new tokenIssuancePolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 
 ## DESCRIPTION
 Create a new tokenIssuancePolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

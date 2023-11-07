@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId1
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Optional.
 Read-only.
 
@@ -305,7 +305,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CreatedDateTime <DateTime?>]`: The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.
   - `[DisplayName <String>]`: The display name for the tenant. Required. Read-only.
   - `[LastUpdatedDateTime <DateTime?>]`: The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
   - `[TenantStatusInformation <IMicrosoftGraphManagedTenantsTenantStatusInformation>]`: tenantStatusInformation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DelegatedPrivilegeStatus <String>]`: delegatedPrivilegeStatus

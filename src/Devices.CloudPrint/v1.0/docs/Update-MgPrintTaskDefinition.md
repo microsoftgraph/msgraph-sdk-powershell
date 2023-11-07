@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Update a task definition.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgPrintTaskDefinition -InputObject <IDevicesCloudPrintIdentity> [-Additio
 ## DESCRIPTION
 Update a task definition.
 For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -248,9 +248,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AppId <String>]`: Refers to the unique ID representing application in Microsoft Entra ID.
+    - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
     - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-    - `[ServicePrincipalId <String>]`: Refers to the unique ID for the service principal in Microsoft Entra ID.
+    - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
     - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
   - `[DisplayName <String>]`: The name of the printTaskDefinition.
   - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
@@ -269,9 +269,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `CREATEDBY <IMicrosoftGraphAppIdentity>`: appIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AppId <String>]`: Refers to the unique ID representing application in Microsoft Entra ID.
+  - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
   - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-  - `[ServicePrincipalId <String>]`: Refers to the unique ID for the service principal in Microsoft Entra ID.
+  - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
   - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
 
 `INPUTOBJECT <IDevicesCloudPrintIdentity>`: Identity Parameter
@@ -296,9 +296,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AppId <String>]`: Refers to the unique ID representing application in Microsoft Entra ID.
+      - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
       - `[DisplayName <String>]`: Refers to the application name displayed in the Microsoft Entra admin center.
-      - `[ServicePrincipalId <String>]`: Refers to the unique ID for the service principal in Microsoft Entra ID.
+      - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
       - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
     - `[DisplayName <String>]`: The name of the printTaskDefinition.
     - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.

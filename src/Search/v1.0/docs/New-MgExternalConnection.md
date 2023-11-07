@@ -17,8 +17,8 @@ This API is available in the following national cloud deployments.
 ```
 New-MgExternalConnection [-ActivitySettings <IMicrosoftGraphExternalConnectorsActivitySettings>]
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]
- [-ConnectorId <String>] [-Description <String>] [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]
- [-Id <String>] [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
+ [-Description <String>] [-Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>] [-Id <String>]
+ [-Items <IMicrosoftGraphExternalConnectorsExternalItem[]>] [-Name <String>]
  [-Operations <IMicrosoftGraphExternalConnectorsConnectionOperation[]>]
  [-Schema <IMicrosoftGraphExternalConnectorsSchema>]
  [-SearchSettings <IMicrosoftGraphExternalConnectorsSearchSettings>] [-State <String>] [-Confirm] [-WhatIf]
@@ -105,22 +105,6 @@ To construct, see NOTES section for CONFIGURATION properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsConfiguration
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConnectorId
-The Teams app ID.
-Optional.
-
-```yaml
-Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -341,7 +325,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
-  - `[ConnectorId <String>]`: The Teams app ID. Optional.
   - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
   - `[Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.

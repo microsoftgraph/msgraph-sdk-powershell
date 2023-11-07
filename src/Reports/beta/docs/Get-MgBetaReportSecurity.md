@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaReportSecurity
 
 ## SYNOPSIS
-Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
+Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgBetaReportSecurity [-ExpandProperty <String[]>] [-Property <String[]>] [<C
 ```
 
 ## DESCRIPTION
-Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
+Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 
 ## EXAMPLES
 

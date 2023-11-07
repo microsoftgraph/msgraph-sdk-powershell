@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Partner
-Module Guid: f53836b9-29a3-43ee-a256-30baa5470a47
+Module Guid: 8e0bd735-7113-472c-9bcf-f024a2afec41
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.partner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -102,8 +102,7 @@ Update the navigation property serviceManagementDetails in tenantRelationships
 
 ### [Update-MgTenantRelationshipDelegatedAdminRelationship](Update-MgTenantRelationshipDelegatedAdminRelationship.md)
 Update the properties of a delegatedAdminRelationship object.
-You can only update a relationship when it's in the created status.
-However, you can update the autoExtendDuration property when the relationship is in either the created or active status.
+A relationship can only be updated if it's in the created status.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgTenantRelationshipDelegatedAdminRelationshipAccessAssignment](Update-MgTenantRelationshipDelegatedAdminRelationshipAccessAssignment.md)

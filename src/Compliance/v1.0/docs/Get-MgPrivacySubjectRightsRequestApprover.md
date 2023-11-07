@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgPrivacySubjectRightsRequestApprover
 
 ## SYNOPSIS
-Collection of users who can approve the request.
-Currently only supported for requests of type delete.
+Get approvers from privacy
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgPrivacySubjectRightsRequestApprover -InputObject <IComplianceIdentity> [-E
 ```
 
 ## DESCRIPTION
-Collection of users who can approve the request.
-Currently only supported for requests of type delete.
+Get approvers from privacy
 
 ## EXAMPLES
 

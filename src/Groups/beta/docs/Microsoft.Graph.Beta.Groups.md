@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: eaa8cbd0-f377-447b-b83a-18b3fd2738e7
+Module Guid: fbc87c4d-884e-4582-bfdd-fb513b732f68
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -170,7 +170,7 @@ Get the free/busy availability information for a collection of users, distributi
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupConversation](Get-MgBetaGroupConversation.md)
-Get a conversation object.
+Retrieve the properties and relationships of conversation object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaGroupConversationCount](Get-MgBetaGroupConversationCount.md)
@@ -519,6 +519,9 @@ The group's profile photo.
 
 ### [Get-MgBetaGroupPhotoContent](Get-MgBetaGroupPhotoContent.md)
 Get media content for the navigation property photo from groups
+
+### [Get-MgBetaGroupPhotoCount](Get-MgBetaGroupPhotoCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaGroupPlannerPlanBucketDelta](Get-MgBetaGroupPlannerPlanBucketDelta.md)
 Invoke function delta
@@ -895,33 +898,39 @@ When a group is renewed, the group expiration is extended by the number of days 
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupConversationThread](Invoke-MgBetaReplyGroupConversationThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupConversationThreadPost](Invoke-MgBetaReplyGroupConversationThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupConversationThreadPostInReplyTo](Invoke-MgBetaReplyGroupConversationThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupThread](Invoke-MgBetaReplyGroupThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Add an attachment when creating a group post.
+This operation limits the size of the attachment you can add to under 3 MB.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupThreadPost](Invoke-MgBetaReplyGroupThreadPost.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaReplyGroupThreadPostInReplyTo](Invoke-MgBetaReplyGroupThreadPostInReplyTo.md)
-Reply to a post and add a new post to the specified thread in a group conversation.
-You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaRetryGroupServiceProvisioning](Invoke-MgBetaRetryGroupServiceProvisioning.md)
@@ -964,9 +973,6 @@ This API is available in the following [national cloud deployments.
 Associate a content type][contentType] with a list of hub sites.
 This API is available in the following [national cloud deployments.
 
-### [Move-MgBetaGroupPlannerPlanToContainer](Move-MgBetaGroupPlannerPlanToContainer.md)
-Invoke action moveToContainer
-
 ### [New-MgBetaGroup](New-MgBetaGroup.md)
 Create a new group as specified in the request body.
 You can create one of the following groups: This operation returns by default only a subset of the properties for each group.
@@ -983,8 +989,9 @@ Make sure you don't specify the same user or group in the accepted senders and r
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+The table in the Permissions section lists the resources that support open extensions.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)

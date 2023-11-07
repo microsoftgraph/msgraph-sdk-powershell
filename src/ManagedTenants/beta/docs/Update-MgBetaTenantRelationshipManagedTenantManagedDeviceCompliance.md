@@ -371,7 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Optional.
 Read-only.
 
@@ -456,7 +456,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[OSVersion <String>]`: The version of the operating system for the managed device. Optional. Read-only.
   - `[OwnerType <String>]`: The type of owner for the managed device. Optional. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Optional. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 
 `INPUTOBJECT <IManagedTenantsIdentity>`: Identity Parameter
   - `[AggregatedPolicyComplianceId <String>]`: The unique identifier of aggregatedPolicyCompliance

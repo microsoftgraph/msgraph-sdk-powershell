@@ -8,8 +8,8 @@ schema: 2.0.0
 # New-MgBetaDirectoryAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
-Assign a Microsoft Entra role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
+Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
+For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -41,8 +41,8 @@ New-MgBetaDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDir
 ```
 
 ## DESCRIPTION
-Assign a Microsoft Entra role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
+Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
+For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -247,8 +247,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
 
 `INPUTOBJECT <IIdentityDirectoryManagementIdentity>`: Identity Parameter
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
@@ -261,7 +261,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate
@@ -297,8 +296,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `ROLEMEMBERINFO <IMicrosoftGraphIdentity>`: identity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
 
 ## RELATED LINKS
 

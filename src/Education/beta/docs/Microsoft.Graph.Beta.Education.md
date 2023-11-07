@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: 5eeebaea-d529-48a8-8a6c-76f96f01a30a
+Module Guid: 40954ac5-1203-43c6-9788-d943608f9c0c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -154,7 +154,7 @@ Retrieve the Microsoft 365 group that corresponds to this educationClass.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEducationClassGroupServiceProvisioningError](Get-MgBetaEducationClassGroupServiceProvisioningError.md)
-Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.
+Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .
 Supports $filter (eq, not, for isResolved and serviceInstance).
 
 ### [Get-MgBetaEducationClassGroupServiceProvisioningErrorCount](Get-MgBetaEducationClassGroupServiceProvisioningErrorCount.md)

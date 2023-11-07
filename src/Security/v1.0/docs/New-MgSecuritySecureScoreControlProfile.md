@@ -290,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -Service
-Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
+Service that owns the control (Exchange, Sharepoint, Azure AD).
 
 ```yaml
 Type: System.String
@@ -456,7 +456,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Rank <Int32?>]`: Microsoft's stack ranking of control.
   - `[Remediation <String>]`: Description of what the control will help remediate.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation.
-  - `[Service <String>]`: Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
+  - `[Service <String>]`: Service that owns the control (Exchange, Sharepoint, Azure AD).
   - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
   - `[Tier <String>]`: 
   - `[Title <String>]`: 

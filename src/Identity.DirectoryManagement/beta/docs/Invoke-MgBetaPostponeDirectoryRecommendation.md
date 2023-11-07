@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Postpone action on a recommendation object to a specified future date and time by marking its status as postponed.
-On the date and time provided, Microsoft Entra ID will automatically update the status of the recommendation object to active again.
+On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -43,7 +43,7 @@ Invoke-MgBetaPostponeDirectoryRecommendation -InputObject <IIdentityDirectoryMan
 
 ## DESCRIPTION
 Postpone action on a recommendation object to a specified future date and time by marking its status as postponed.
-On the date and time provided, Microsoft Entra ID will automatically update the status of the recommendation object to active again.
+On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -209,7 +209,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

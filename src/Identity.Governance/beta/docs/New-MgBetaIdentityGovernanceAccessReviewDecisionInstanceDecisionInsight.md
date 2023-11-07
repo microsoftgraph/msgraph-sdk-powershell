@@ -270,7 +270,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomTaskExtensionId <String>]`: The unique identifier of customTaskExtension
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[FindingId <String>]`: The unique identifier of finding
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
   - `[GovernanceResourceId <String>]`: The unique identifier of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: The unique identifier of governanceRoleAssignment
@@ -281,7 +280,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
-  - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance

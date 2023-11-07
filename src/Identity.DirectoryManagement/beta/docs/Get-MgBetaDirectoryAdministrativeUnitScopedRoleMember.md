@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
-Get a Microsoft Entra role assignment with administrative unit scope.
+Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember -InputObject <IIdentityDir
 ```
 
 ## DESCRIPTION
-Get a Microsoft Entra role assignment with administrative unit scope.
+Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -275,7 +275,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

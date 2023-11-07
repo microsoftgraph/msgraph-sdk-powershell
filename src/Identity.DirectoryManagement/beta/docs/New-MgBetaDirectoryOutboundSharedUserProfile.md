@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tenants
-The collection of external Microsoft Entra tenants that the user has shared profile data with.
+The collection of external Azure AD tenants that the user has shared profile data with.
 Read-only.
 To construct, see NOTES section for TENANTS properties and create a hash table.
 
@@ -162,12 +162,12 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphOutboundSharedUserProfile>`: outboundSharedUserProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
-    - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
+  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+    - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
   - `[UserId <String>]`: The object id of the external user. Read-only.
 
-`TENANTS <IMicrosoftGraphTenantReference[]>`: The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
-  - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
+`TENANTS <IMicrosoftGraphTenantReference[]>`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+  - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
 
 ## RELATED LINKS
 

@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Content
-Landing page detail content.
+.
 
 ```yaml
 Type: System.String
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsDefaultLangauge
-Indicates whether this language detail is default for the landing page.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -Language
-The content language for the landing page.
+.
 
 ```yaml
 Type: System.String
@@ -238,9 +238,9 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphLandingPageDetail>`: landingPageDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <String>]`: Landing page detail content.
-  - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
-  - `[Language <String>]`: The content language for the landing page.
+  - `[Content <String>]`: 
+  - `[IsDefaultLangauge <Boolean?>]`: 
+  - `[Language <String>]`: 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
@@ -264,7 +264,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

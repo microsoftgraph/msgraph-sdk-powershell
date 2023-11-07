@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the properties and relationships of a servicePrincipalRiskDetection object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgServicePrincipalRiskDetection -InputObject <IIdentitySignInsIdentity> [-Ex
 
 ## DESCRIPTION
 Read the properties and relationships of a servicePrincipalRiskDetection object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

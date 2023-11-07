@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: e14a9dd3-8d10-42a8-9929-4dc4bb3b6688
+Module Guid: cbd1a5cf-1283-46f9-b090-39c5a6930743
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -26,7 +26,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -37,7 +37,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -48,7 +48,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -59,7 +59,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -70,7 +70,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -85,7 +85,7 @@ This API is available in the following national cloud deployments.
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -463,7 +463,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgDirectoryAdministrativeUnitScopedRoleMember](Get-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Get a Microsoft Entra role assignment with administrative unit scope.
+Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgDirectoryAdministrativeUnitScopedRoleMemberCount](Get-MgDirectoryAdministrativeUnitScopedRoleMemberCount.md)
@@ -548,12 +548,6 @@ Return all IDs for the groups, administrative units, and directory roles that a 
 This function is transitive.
 Note: Only users and role-enabled groups can be members of directory roles.
 This API is available in the following national cloud deployments.
-
-### [Get-MgDirectoryDeviceLocalCredential](Get-MgDirectoryDeviceLocalCredential.md)
-Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
-
-### [Get-MgDirectoryDeviceLocalCredentialCount](Get-MgDirectoryDeviceLocalCredentialCount.md)
-Get the number of the resource
 
 ### [Get-MgDirectoryFederationConfiguration](Get-MgDirectoryFederationConfiguration.md)
 Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
@@ -731,7 +725,7 @@ Supports $expand.
 Get the number of the resource
 
 ### [Get-MgDomainVerificationDnsRecord](Get-MgDomainVerificationDnsRecord.md)
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID.
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
 Read-only, Nullable.
 Supports $expand.
 
@@ -764,7 +758,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Get-MgOrganizationBrandingFavicon](Get-MgOrganizationBrandingFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Get-MgOrganizationBrandingHeaderLogo](Get-MgOrganizationBrandingHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -794,7 +788,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Get-MgOrganizationBrandingLocalizationFavicon](Get-MgOrganizationBrandingLocalizationFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Get-MgOrganizationBrandingLocalizationHeaderLogo](Get-MgOrganizationBrandingLocalizationHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -917,8 +911,8 @@ Create new navigation property to members for directory
 Create new navigation property ref to members for directory
 
 ### [New-MgDirectoryAdministrativeUnitScopedRoleMember](New-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Assign a Microsoft Entra role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
+Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
+For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [New-MgDirectoryAttributeSet](New-MgDirectoryAttributeSet.md)
@@ -932,9 +926,6 @@ This API is available in the following national cloud deployments.
 ### [New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Create a new allowedValue object.
 This API is available in the following national cloud deployments.
-
-### [New-MgDirectoryDeviceLocalCredential](New-MgDirectoryDeviceLocalCredential.md)
-Create new navigation property to deviceLocalCredentials for directory
 
 ### [New-MgDirectoryFederationConfiguration](New-MgDirectoryFederationConfiguration.md)
 Create new navigation property to federationConfigurations for directory
@@ -964,7 +955,7 @@ Add new entity to directoryRoleTemplates
 
 ### [New-MgDomain](New-MgDomain.md)
 Adds a domain to the tenant.
-Important: You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified.
+Important: You cannot use an associated domain with your Azure AD tenant until ownership is verified.
 See List verificationDnsRecords for details.
 Root domains require verification.
 For example, contoso.com requires verification.
@@ -1042,7 +1033,7 @@ Use this API to remove a member (user, group, or device) from an administrative 
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryAdministrativeUnitScopedRoleMember](Remove-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Remove a Microsoft Entra role assignment with administrative unit scope.
+Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgDirectoryAttributeSet](Remove-MgDirectoryAttributeSet.md)
@@ -1060,9 +1051,6 @@ After an item is permanently deleted, it cannot be restored.
 Administrative units cannot be permanently deleted by using the deletedItems API.
 Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
 This API is available in the following national cloud deployments.
-
-### [Remove-MgDirectoryDeviceLocalCredential](Remove-MgDirectoryDeviceLocalCredential.md)
-Delete navigation property deviceLocalCredentials for directory
 
 ### [Remove-MgDirectoryFederationConfiguration](Remove-MgDirectoryFederationConfiguration.md)
 Delete a samlOrWsFedExternalDomainFederation object.
@@ -1149,7 +1137,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Set-MgOrganizationBrandingFavicon](Set-MgOrganizationBrandingFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Set-MgOrganizationBrandingHeaderLogo](Set-MgOrganizationBrandingHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -1171,7 +1159,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Set-MgOrganizationBrandingLocalizationFavicon](Set-MgOrganizationBrandingLocalizationFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Set-MgOrganizationBrandingLocalizationHeaderLogo](Set-MgOrganizationBrandingLocalizationHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -1341,9 +1329,6 @@ This API is available in the following national cloud deployments.
 ### [Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](Update-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Update the properties of an allowedValue object.
 This API is available in the following national cloud deployments.
-
-### [Update-MgDirectoryDeviceLocalCredential](Update-MgDirectoryDeviceLocalCredential.md)
-Update the navigation property deviceLocalCredentials in directory
 
 ### [Update-MgDirectoryFederationConfiguration](Update-MgDirectoryFederationConfiguration.md)
 Update the navigation property federationConfigurations in directory

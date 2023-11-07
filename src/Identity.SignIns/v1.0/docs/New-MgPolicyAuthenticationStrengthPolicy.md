@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new custom authenticationStrengthPolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgPolicyAuthenticationStrengthPolicy -BodyParameter <IMicrosoftGraphAuthenti
 
 ## DESCRIPTION
 Create a new custom authenticationStrengthPolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

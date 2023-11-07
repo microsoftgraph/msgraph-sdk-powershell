@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationBrandingLocalizationFavicon
 
 ## SYNOPSIS
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgOrganizationBrandingLocalizationFavicon -InputObject <IIdentityDirectoryMa
 ```
 
 ## DESCRIPTION
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ## EXAMPLES
 
@@ -148,7 +148,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

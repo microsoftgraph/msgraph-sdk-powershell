@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 4c6e42b4-9121-4c72-aff3-fd8425237863
+Module Guid: 26c1abbc-e324-4c60-9a46-f6e0d02b2060
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -50,7 +50,7 @@ This API is available in the following national cloud deployments.
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -323,8 +323,8 @@ This API is available in the following [national cloud deployments.
 
 ### [Invoke-MgLicenseUser](Invoke-MgLicenseUser.md)
 Reprocess all group-based license assignments for the user.
-To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
-Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details.
+To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
+Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser.md)
@@ -669,8 +669,8 @@ Request remote assistance
 
 ### [Reset-MgUserAuthenticationMethodPassword](Reset-MgUserAuthenticationMethodPassword.md)
 Reset a user's password, represented by a password authentication method object.
-This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account.
-This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback.
+This can only be done by an administrator with appropriate permissions and cannot be performed on a user's own account.
+This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback.
 The admin can either provide a new password or have the system generate one.
 The user is prompted to change their password on their next sign in.
 This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation.

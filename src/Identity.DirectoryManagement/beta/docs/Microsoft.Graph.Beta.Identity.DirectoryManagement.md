@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: d859778e-7c9b-47a8-90ec-da8f37030976
+Module Guid: a8442877-6ac4-415c-a0ac-f7cbca82cbcd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,7 +17,7 @@ Invoke action addUserInputLog
 ### [Add-MgBetaTenantRelationshipManagedTenantManagementAction](Add-MgBetaTenantRelationshipManagedTenantManagementAction.md)
 Applies a management action against a specific managed tenant.
 By performing this operation the appropriate configurations will be made and policies created.
-As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
+As example when applying the require multifactor authentication for admins management action creates an Azure Active Directory conditional access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
 This API is available in the following national cloud deployments.
 
 ### [Complete-MgBetaDirectoryImpactedResource](Complete-MgBetaDirectoryImpactedResource.md)
@@ -36,7 +36,7 @@ This API is available in the following national cloud deployments.
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -47,7 +47,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -58,7 +58,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -69,7 +69,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -80,7 +80,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -91,7 +91,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -102,7 +102,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -113,7 +113,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -128,7 +128,7 @@ This API is available in the following national cloud deployments.
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -220,7 +220,7 @@ This API is available in the following national cloud deployments.
 Invoke action getMemberObjects
 
 ### [Get-MgBetaAdministrativeUnitScopedRoleMember](Get-MgBetaAdministrativeUnitScopedRoleMember.md)
-Get a Microsoft Entra role assignment with administrative unit scope.
+Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaAdministrativeUnitScopedRoleMemberCount](Get-MgBetaAdministrativeUnitScopedRoleMemberCount.md)
@@ -622,7 +622,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Get-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
-Get a Microsoft Entra role assignment with administrative unit scope.
+Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDirectoryAdministrativeUnitScopedRoleMemberCount](Get-MgBetaDirectoryAdministrativeUnitScopedRoleMemberCount.md)
@@ -719,13 +719,6 @@ This API is available in the following national cloud deployments.
 ### [Get-MgBetaDirectoryDeletedItemMemberObject](Get-MgBetaDirectoryDeletedItemMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgBetaDirectoryDeviceLocalCredential](Get-MgBetaDirectoryDeviceLocalCredential.md)
-Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.
-This API is available in the following national cloud deployments.
-
-### [Get-MgBetaDirectoryDeviceLocalCredentialCount](Get-MgBetaDirectoryDeviceLocalCredentialCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaDirectoryFeatureRolloutPolicy](Get-MgBetaDirectoryFeatureRolloutPolicy.md)
 Get featureRolloutPolicies from directory
 
@@ -777,7 +770,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryOutboundSharedUserProfileTenant](Get-MgBetaDirectoryOutboundSharedUserProfileTenant.md)
-The collection of external Microsoft Entra tenants that the user has shared profile data with.
+The collection of external Azure AD tenants that the user has shared profile data with.
 Read-only.
 
 ### [Get-MgBetaDirectoryOutboundSharedUserProfileTenantCount](Get-MgBetaDirectoryOutboundSharedUserProfileTenantCount.md)
@@ -1013,7 +1006,7 @@ Get sharedEmailDomainInvitations from domains
 Get the number of the resource
 
 ### [Get-MgBetaDomainVerificationDnsRecord](Get-MgBetaDomainVerificationDnsRecord.md)
-DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID.
+DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD.
 Read-only, Nullable.
 Supports $expand.
 
@@ -1048,7 +1041,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Get-MgBetaOrganizationBrandingFavicon](Get-MgBetaOrganizationBrandingFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Get-MgBetaOrganizationBrandingHeaderLogo](Get-MgBetaOrganizationBrandingHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -1078,7 +1071,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Get-MgBetaOrganizationBrandingLocalizationFavicon](Get-MgBetaOrganizationBrandingLocalizationFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Get-MgBetaOrganizationBrandingLocalizationHeaderLogo](Get-MgBetaOrganizationBrandingLocalizationHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -1200,17 +1193,17 @@ This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPostponeDirectoryImpactedResource](Invoke-MgBetaPostponeDirectoryImpactedResource.md)
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
-On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
+On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPostponeDirectoryRecommendation](Invoke-MgBetaPostponeDirectoryRecommendation.md)
 Postpone action on a recommendation object to a specified future date and time by marking its status as postponed.
-On the date and time provided, Microsoft Entra ID will automatically update the status of the recommendation object to active again.
+On the date and time provided, Azure AD will automatically update the status of the recommendation object to active again.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource](Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource.md)
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
-On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
+On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaPromoteDomain](Invoke-MgBetaPromoteDomain.md)
@@ -1270,8 +1263,8 @@ Create new navigation property to members for administrativeUnits
 Create new navigation property ref to members for administrativeUnits
 
 ### [New-MgBetaAdministrativeUnitScopedRoleMember](New-MgBetaAdministrativeUnitScopedRoleMember.md)
-Assign a Microsoft Entra role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
+Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
+For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAdminPeopleProfileCardProperty](New-MgBetaAdminPeopleProfileCardProperty.md)
@@ -1320,8 +1313,8 @@ Create new navigation property to members for directory
 Create new navigation property ref to members for directory
 
 ### [New-MgBetaDirectoryAdministrativeUnitScopedRoleMember](New-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
-Assign a Microsoft Entra role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Microsoft Entra roles with administrative unit scope.
+Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
+For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaDirectoryAttributeSet](New-MgBetaDirectoryAttributeSet.md)
@@ -1341,9 +1334,6 @@ This API is available in the following national cloud deployments.
 ### [New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Create a new allowedValue object.
 This API is available in the following national cloud deployments.
-
-### [New-MgBetaDirectoryDeviceLocalCredential](New-MgBetaDirectoryDeviceLocalCredential.md)
-Create new navigation property to deviceLocalCredentials for directory
 
 ### [New-MgBetaDirectoryFeatureRolloutPolicy](New-MgBetaDirectoryFeatureRolloutPolicy.md)
 Create new navigation property to featureRolloutPolicies for directory
@@ -1418,7 +1408,7 @@ Create new navigation property to subscriptions for directory
 
 ### [New-MgBetaDomain](New-MgBetaDomain.md)
 Adds a domain to the tenant.
-Important: You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified.
+Important: You cannot use an associated domain with your Azure AD tenant until ownership is verified.
 See List verificationDnsRecords for details.
 Root domains require verification.
 For example, contoso.com requires verification.
@@ -1470,7 +1460,7 @@ Delete navigation property extensions for administrativeUnits
 Delete ref of navigation property members for administrativeUnits
 
 ### [Remove-MgBetaAdministrativeUnitScopedRoleMember](Remove-MgBetaAdministrativeUnitScopedRoleMember.md)
-Remove a Microsoft Entra role assignment with administrative unit scope.
+Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAdminPeople](Remove-MgBetaAdminPeople.md)
@@ -1524,7 +1514,7 @@ Delete navigation property extensions for directory
 Delete ref of navigation property members for directory
 
 ### [Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember](Remove-MgBetaDirectoryAdministrativeUnitScopedRoleMember.md)
-Remove a Microsoft Entra role assignment with administrative unit scope.
+Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaDirectoryAttributeSet](Remove-MgBetaDirectoryAttributeSet.md)
@@ -1545,9 +1535,6 @@ Delete navigation property customSecurityAttributeDefinitions for directory
 
 ### [Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Remove-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Delete navigation property allowedValues for directory
-
-### [Remove-MgBetaDirectoryDeviceLocalCredential](Remove-MgBetaDirectoryDeviceLocalCredential.md)
-Delete navigation property deviceLocalCredentials for directory
 
 ### [Remove-MgBetaDirectoryFeatureRolloutPolicy](Remove-MgBetaDirectoryFeatureRolloutPolicy.md)
 Delete navigation property featureRolloutPolicies for directory
@@ -1709,7 +1696,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Set-MgBetaOrganizationBrandingFavicon](Set-MgBetaOrganizationBrandingFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Set-MgBetaOrganizationBrandingHeaderLogo](Set-MgBetaOrganizationBrandingHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -1731,7 +1718,7 @@ CSS styling that appears on the sign-in page.
 The allowed format is .css format only and not larger than 25 KB.
 
 ### [Set-MgBetaOrganizationBrandingLocalizationFavicon](Set-MgBetaOrganizationBrandingLocalizationFavicon.md)
-A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
 
 ### [Set-MgBetaOrganizationBrandingLocalizationHeaderLogo](Set-MgBetaOrganizationBrandingLocalizationHeaderLogo.md)
 A company logo that appears in the header of the sign-in page.
@@ -1953,9 +1940,6 @@ This API is available in the following national cloud deployments.
 ### [Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue](Update-MgBetaDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
 Update the properties of an allowedValue object.
 This API is available in the following national cloud deployments.
-
-### [Update-MgBetaDirectoryDeviceLocalCredential](Update-MgBetaDirectoryDeviceLocalCredential.md)
-Update the navigation property deviceLocalCredentials in directory
 
 ### [Update-MgBetaDirectoryFeatureRolloutPolicy](Update-MgBetaDirectoryFeatureRolloutPolicy.md)
 Update the navigation property featureRolloutPolicies in directory

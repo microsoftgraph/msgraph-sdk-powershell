@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Remove a user's manager.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgUserManager -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThr
 
 ## DESCRIPTION
 Remove a user's manager.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

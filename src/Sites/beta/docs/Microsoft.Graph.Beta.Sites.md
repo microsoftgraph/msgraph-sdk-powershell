@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: aa93b4c1-c2b3-4a41-a150-b082bca0f1ea
+Module Guid: 68cefd9a-d3f6-4368-bb78-f1d8651f3f8c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -765,7 +765,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaGroupSiteRecycleBin](Get-MgBetaGroupSiteRecycleBin.md)
-A container for a collection of recycleBinItem resources in this site.
+The collection of recycleBinItems under this site.
 
 ### [Get-MgBetaGroupSiteRecycleBinCreatedByUser](Get-MgBetaGroupSiteRecycleBinCreatedByUser.md)
 Get createdByUser from groups

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamworkDeletedTeamChannelMessage
 
 ## SYNOPSIS
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -56,7 +56,7 @@ New-MgTeamworkDeletedTeamChannelMessage -InputObject <ITeamsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

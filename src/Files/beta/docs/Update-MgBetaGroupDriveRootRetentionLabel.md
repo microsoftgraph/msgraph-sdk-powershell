@@ -8,11 +8,9 @@ schema: 2.0.0
 # Update-MgBetaGroupDriveRootRetentionLabel
 
 ## SYNOPSIS
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -46,11 +44,9 @@ Update-MgBetaGroupDriveRootRetentionLabel -InputObject <IFilesIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -199,7 +195,7 @@ Accept wildcard characters: False
 
 ### -LabelAppliedDateTime
 The date and time when the label was applied on the item.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
+The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
@@ -312,7 +308,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[LabelAppliedDateTime <DateTime?>]`: The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Name <String>]`: The retention label on the document. Read-write.
   - `[RetentionSettings <IMicrosoftGraphRetentionLabelSettings>]`: retentionLabelSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

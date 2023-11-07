@@ -322,7 +322,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[CreatedDateTime <DateTime?>]`: The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Description <String>]`: The description of this object.
       - `[DisplayName <String>]`: The display name of this object.
-      - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
+      - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
       - `[ModifiedBy <String>]`: The display name of the entity that last modified this object.
       - `[ModifiedDateTime <DateTime?>]`: The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
@@ -352,9 +352,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[Description <String>]`: A description for the resource.
     - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
     - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
     - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-    - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
+    - `[ResourceType <String>]`: The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
     - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
   - `[Description <String>]`: A description for the resource role.
   - `[DisplayName <String>]`: The display name of the resource role such as the role defined by the application.
@@ -378,7 +378,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[CreatedDateTime <DateTime?>]`: The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Description <String>]`: The description of this object.
       - `[DisplayName <String>]`: The display name of this object.
-      - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
+      - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
       - `[ModifiedBy <String>]`: The display name of the entity that last modified this object.
       - `[ModifiedDateTime <DateTime?>]`: The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
@@ -405,9 +405,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[Description <String>]`: A description for the resource.
     - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
     - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
     - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-    - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
+    - `[ResourceType <String>]`: The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
     - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
   - `[Description <String>]`: The description of the scope.
   - `[DisplayName <String>]`: The display name of the scope.
@@ -437,7 +437,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[CreatedDateTime <DateTime?>]`: The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[Description <String>]`: The description of this object.
         - `[DisplayName <String>]`: The display name of this object.
-        - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
+        - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
         - `[ModifiedBy <String>]`: The display name of the entity that last modified this object.
         - `[ModifiedDateTime <DateTime?>]`: The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
@@ -467,9 +467,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[Description <String>]`: A description for the resource.
       - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
       - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment. Read-only.
-      - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
+      - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
       - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
-      - `[ResourceType <String>]`: The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
+      - `[ResourceType <String>]`: The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
       - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
     - `[Description <String>]`: A description for the resource role.
     - `[DisplayName <String>]`: The display name of the resource role such as the role defined by the application.
@@ -523,7 +523,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomTaskExtensionId <String>]`: The unique identifier of customTaskExtension
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[FindingId <String>]`: The unique identifier of finding
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
   - `[GovernanceResourceId <String>]`: The unique identifier of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: The unique identifier of governanceRoleAssignment
@@ -534,7 +533,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
-  - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance

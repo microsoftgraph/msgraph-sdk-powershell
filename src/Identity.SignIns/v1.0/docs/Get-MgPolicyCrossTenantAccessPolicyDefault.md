@@ -9,8 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Read the default configuration of a cross-tenant access policy.
-This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
-This API is available in the following national cloud deployments.
+This default configuration may be the service default assigned by Azure AD (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,8 +21,8 @@ Get-MgPolicyCrossTenantAccessPolicyDefault [-ExpandProperty <String[]>] [-Proper
 
 ## DESCRIPTION
 Read the default configuration of a cross-tenant access policy.
-This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
-This API is available in the following national cloud deployments.
+This default configuration may be the service default assigned by Azure AD (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgPolicyRoleManagementPolicyAssignment
 
 ## SYNOPSIS
-Get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.
-This API is available in the following national cloud deployments.
+Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -33,8 +33,8 @@ Get-MgPolicyRoleManagementPolicyAssignment -InputObject <IIdentitySignInsIdentit
 ```
 
 ## DESCRIPTION
-Get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.
-This API is available in the following national cloud deployments.
+Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

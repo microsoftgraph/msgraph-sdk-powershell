@@ -113,9 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-Date and time when the notification was created.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -130,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the notification as defined by the user.
+.
 
 ```yaml
 Type: System.String
@@ -161,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Name of the notification as defined by the user.
+.
 
 ```yaml
 Type: System.String
@@ -239,9 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Date and time when the notification was last modified.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -301,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedLocales
-Supported locales for endUserNotification content.
+.
 
 ```yaml
 Type: System.String[]
@@ -376,23 +372,23 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Description <String>]`: Description of the notification as defined by the user.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
   - `[Details <IMicrosoftGraphEndUserNotificationDetail[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[EmailContent <String>]`: Email HTML content.
-    - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language is default.
-    - `[Language <String>]`: Notification language.
-    - `[Locale <String>]`: Notification locale.
+    - `[EmailContent <String>]`: 
+    - `[IsDefaultLangauge <Boolean?>]`: 
+    - `[Language <String>]`: 
+    - `[Locale <String>]`: 
     - `[SentFrom <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[Subject <String>]`: Mail subject.
-  - `[DisplayName <String>]`: Name of the notification as defined by the user.
+    - `[Subject <String>]`: 
+  - `[DisplayName <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastModifiedDateTime <DateTime?>]`: 
   - `[NotificationType <String>]`: endUserNotificationType
   - `[Source <String>]`: simulationContentSource
   - `[Status <String>]`: simulationContentStatus
-  - `[SupportedLocales <String[]>]`: Supported locales for endUserNotification content.
+  - `[SupportedLocales <String[]>]`: 
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -402,16 +398,16 @@ To create the parameters described below, construct a hash table containing the 
 
 `DETAILS <IMicrosoftGraphEndUserNotificationDetail[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[EmailContent <String>]`: Email HTML content.
-  - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language is default.
-  - `[Language <String>]`: Notification language.
-  - `[Locale <String>]`: Notification locale.
+  - `[EmailContent <String>]`: 
+  - `[IsDefaultLangauge <Boolean?>]`: 
+  - `[Language <String>]`: 
+  - `[Locale <String>]`: 
   - `[SentFrom <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[Subject <String>]`: Mail subject.
+  - `[Subject <String>]`: 
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
   - `[AlertId <String>]`: The unique identifier of alert
@@ -435,7 +431,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

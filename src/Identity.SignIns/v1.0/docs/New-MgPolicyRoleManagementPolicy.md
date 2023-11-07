@@ -227,7 +227,7 @@ Accept wildcard characters: False
 
 ### -ScopeType
 The type of the scope where the policy is created.
-One of Directory, DirectoryRole, Group.
+One of Directory, DirectoryRole.
 Required.
 
 ```yaml
@@ -318,7 +318,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
   - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules. Supports $expand.
   - `[ScopeId <String>]`: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
-  - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
+  - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
 
 `EFFECTIVERULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>`: The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

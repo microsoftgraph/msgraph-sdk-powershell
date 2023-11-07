@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The identifier of the Microsoft Entra tenant.
+The identifier of the Azure AD tenant.
 Read-only.
 Key.
 
@@ -191,7 +191,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphTenantReference>`: tenantReference
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TenantId <String>]`: The identifier of the Microsoft Entra tenant. Read-only. Key.
+  - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
 
 `INPUTOBJECT <IIdentityDirectoryManagementIdentity>`: Identity Parameter
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
@@ -204,7 +204,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

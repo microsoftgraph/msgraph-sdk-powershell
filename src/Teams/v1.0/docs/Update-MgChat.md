@@ -594,11 +594,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ClientAppId <String>]`: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
-    - `[ClientId <String>]`: ID of the Microsoft Entra app that has been granted access. Read-only.
+    - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+    - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
     - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
     - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
-    - `[ResourceAppId <String>]`: ID of the Microsoft Entra app that is hosting the resource. Read-only.
+    - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
   - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo[]>]`: A collection of all the pinned messages in the chat. Nullable.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
@@ -817,11 +817,11 @@ To create the parameters described below, construct a hash table containing the 
 `PERMISSIONGRANTS <IMicrosoftGraphResourceSpecificPermissionGrant[]>`: A collection of permissions granted to apps for the chat.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ClientAppId <String>]`: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
-  - `[ClientId <String>]`: ID of the Microsoft Entra app that has been granted access. Read-only.
+  - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+  - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
   - `[Permission <String>]`: The name of the resource-specific permission. Read-only.
   - `[PermissionType <String>]`: The type of permission. Possible values are: Application, Delegated. Read-only.
-  - `[ResourceAppId <String>]`: ID of the Microsoft Entra app that is hosting the resource. Read-only.
+  - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
 
 `PINNEDMESSAGES <IMicrosoftGraphPinnedChatMessageInfo[]>`: A collection of all the pinned messages in the chat. Nullable.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

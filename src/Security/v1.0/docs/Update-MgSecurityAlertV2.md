@@ -22,10 +22,10 @@ Update-MgSecurityAlertV2 -AlertId <String> [-ActorDisplayName <String>] [-Additi
  [-Determination <String>] [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]
  [-FirstActivityDateTime <DateTime>] [-Id <String>] [-IncidentId <String>] [-IncidentWebUrl <String>]
  [-LastActivityDateTime <DateTime>] [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>]
- [-ProductName <String>] [-ProviderAlertId <String>] [-RecommendedActions <String>]
- [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>] [-Status <String>]
- [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ProviderAlertId <String>] [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>]
+ [-ServiceSource <String>] [-Severity <String>] [-Status <String>] [-TenantId <String>]
+ [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -49,11 +49,10 @@ Update-MgSecurityAlertV2 -InputObject <ISecurityIdentity> [-ActorDisplayName <St
  [-DetectionSource <String>] [-DetectorId <String>] [-Determination <String>]
  [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>] [-FirstActivityDateTime <DateTime>] [-Id <String>]
  [-IncidentId <String>] [-IncidentWebUrl <String>] [-LastActivityDateTime <DateTime>]
- [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>] [-ProductName <String>]
- [-ProviderAlertId <String>] [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>]
- [-ServiceSource <String>] [-Severity <String>] [-Status <String>] [-TenantId <String>]
- [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>] [-ProviderAlertId <String>]
+ [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>]
+ [-Status <String>] [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>]
+ [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -459,21 +458,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProductName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ProviderAlertId
 The ID of the alert as it appears in the security provider product that generated the alert.
 
@@ -565,7 +549,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant the alert was created in.
+The Azure Active Directory tenant the alert was created in.
 
 ```yaml
 Type: System.String
@@ -711,14 +695,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
   - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
   - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-  - `[ProductName <String>]`: 
   - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
   - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
   - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
   - `[ServiceSource <String>]`: serviceSource
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: alertStatus
-  - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
+  - `[TenantId <String>]`: The Azure Active Directory tenant the alert was created in.
   - `[ThreatDisplayName <String>]`: The threat associated with this alert.
   - `[ThreatFamilyName <String>]`: Threat family associated with this alert.
   - `[Title <String>]`: Brief identifying string value describing the alert.
@@ -759,7 +742,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

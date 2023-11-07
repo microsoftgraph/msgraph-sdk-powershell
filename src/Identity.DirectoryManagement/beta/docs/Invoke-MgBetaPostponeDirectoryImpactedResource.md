@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
-On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
+On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -44,7 +44,7 @@ Invoke-MgBetaPostponeDirectoryImpactedResource -InputObject <IIdentityDirectoryM
 
 ## DESCRIPTION
 Postpone action on an impactedResource object to a specified future date and time by marking its status as postponed.
-On the specified date and time, Microsoft Entra ID will automatically mark the status of the impactedResource object to active.
+On the specified date and time, Azure AD will automatically mark the status of the impactedResource object to active.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES
@@ -210,7 +210,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate

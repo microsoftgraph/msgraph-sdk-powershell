@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaWindowsUpdatesPolicyComplianceChange
 
 ## SYNOPSIS
-Update the properties of a contentApproval object.
+Update the properties of a complianceChange object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -42,7 +42,7 @@ Update-MgBetaWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesI
 ```
 
 ## DESCRIPTION
-Update the properties of a contentApproval object.
+Update the properties of a complianceChange object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

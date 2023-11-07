@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: 6090f6da-8da3-49a4-a8d4-18f924cbf956
+Module Guid: 24ec862a-e03b-415b-bafb-8c5c13537394
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -719,9 +719,6 @@ Invoke action moveDevicesToOU
 Move a message to another folder within the specified user's mailbox.
 This creates a new copy of the message in the destination folder and removes the original message.
 This API is available in the following national cloud deployments.
-
-### [Move-MgBetaUserPlannerPlanToContainer](Move-MgBetaUserPlannerPlanToContainer.md)
-Invoke action moveToContainer
 
 ### [New-MgBetaUserCloudPcSnapshot](New-MgBetaUserCloudPcSnapshot.md)
 Invoke action createSnapshot

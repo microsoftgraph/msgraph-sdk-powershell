@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportAuthenticationMethod
 
 ## SYNOPSIS
-Container for navigation properties for Microsoft Entra authentication methods resources.
+Container for navigation properties for Azure AD authentication methods resources.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgReportAuthenticationMethod [-ExpandProperty <String[]>] [-Property <String
 ```
 
 ## DESCRIPTION
-Container for navigation properties for Microsoft Entra authentication methods resources.
+Container for navigation properties for Azure AD authentication methods resources.
 
 ## EXAMPLES
 

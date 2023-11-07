@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Required.
 Read-only.
 
@@ -384,7 +384,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SettingName <String>]`: The name for the setting within the device compliance policy. Optional. Read-only.
   - `[SucceededDeviceCount <Int32?>]`: The number of devices in a succeeded state. Optional. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 
 ## RELATED LINKS
 

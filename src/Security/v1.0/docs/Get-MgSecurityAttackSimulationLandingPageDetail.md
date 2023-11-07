@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulationLandingPageDetail
 
 ## SYNOPSIS
-The detail information for a landing page associated with a simulation during its creation.
+Get details from security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityAttackSimulationLandingPageDetail -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-The detail information for a landing page associated with a simulation during its creation.
+Get details from security
 
 ## EXAMPLES
 
@@ -291,7 +291,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

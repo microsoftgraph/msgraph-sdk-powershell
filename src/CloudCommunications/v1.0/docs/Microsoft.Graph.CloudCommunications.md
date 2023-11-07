@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 7f3061a3-b361-4817-8915-a42cd43cbbe5
+Module Guid: 46e177b5-2271-4c0d-a833-b5bdc9e437f9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -184,7 +184,8 @@ The time-aligned metadata of the utterances in the transcript.
 Read-only.
 
 ### [Get-MgUserPresence](Get-MgUserPresence.md)
-Get a user's presence information.
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgAnswerCommunicationCall](Invoke-MgAnswerCommunicationCall.md)
@@ -201,8 +202,11 @@ If the external ID already exists, this API will return the onlineMeeting object
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgInviteCommunicationCallParticipant](Invoke-MgInviteCommunicationCallParticipant.md)
-Invite participants to the active call.
-For more information about how to handle operations, see commsOperation.
+Delete a specific participant in a call.
+In some situations, it is appropriate for an application to remove a participant from an active call.
+This action can be done before or after the participant answers the call.
+When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
+When an invited participant is removed, any outstanding add participant request is canceled.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgKeepCommunicationCallAlive](Invoke-MgKeepCommunicationCallAlive.md)

@@ -167,7 +167,7 @@ Accept wildcard characters: False
 
 ### -IsPerDeviceAcceptanceRequired
 This setting enables you to require end users to accept this agreement on every device that they are accessing it from.
-The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so.
+The end user will be required to register their device in Azure AD, if they haven't already done so.
 Supports $filter (eq).
 
 ```yaml
@@ -337,7 +337,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
       - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+      - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
         - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
         - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
@@ -347,7 +347,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Files <IMicrosoftGraphAgreementFileLocalization[]>]`: PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
+  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
   - `[IsViewingBeforeAcceptanceRequired <Boolean?>]`: Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
   - `[TermsExpiration <IMicrosoftGraphTermsExpiration>]`: termsExpiration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -376,7 +376,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
     - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+    - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
       - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
@@ -397,7 +397,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
   - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+  - `[Versions <IMicrosoftGraphAgreementFileVersion[]>]`: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
     - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
     - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData

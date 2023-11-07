@@ -178,7 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Required.
 Read-only.
 
@@ -268,7 +268,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[LastDeploymentDateTime <DateTime?>]`: The date and time the workload action was last deployed. Optional.
       - `[Status <String>]`: workloadActionStatus
   - `[TenantGroupId <String>]`: The identifier for the tenant group that is associated with the management action. Required. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
 
 `INPUTOBJECT <IManagedTenantsIdentity>`: Identity Parameter
   - `[AggregatedPolicyComplianceId <String>]`: The unique identifier of aggregatedPolicyCompliance

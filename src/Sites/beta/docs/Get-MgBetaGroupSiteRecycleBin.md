@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaGroupSiteRecycleBin
 
 ## SYNOPSIS
-A container for a collection of recycleBinItem resources in this site.
+The collection of recycleBinItems under this site.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaGroupSiteRecycleBin -InputObject <ISitesIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-A container for a collection of recycleBinItem resources in this site.
+The collection of recycleBinItems under this site.
 
 ## EXAMPLES
 

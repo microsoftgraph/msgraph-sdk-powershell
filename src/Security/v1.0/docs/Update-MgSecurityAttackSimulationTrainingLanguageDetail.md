@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Content
-Language specific content for the training.
+.
 
 ```yaml
 Type: System.String
@@ -127,9 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-Date and time when the language details were created.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -144,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description as defined by the user.
+.
 
 ```yaml
 Type: System.String
@@ -159,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name as defined by the user.
+.
 
 ```yaml
 Type: System.String
@@ -206,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsDefaultLangauge
-Indicates whether the training has a default language.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -237,9 +235,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Date and time when the trainingLanguageDetail was last modified.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -254,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locale
-Content locale for the training detail.
+.
 
 ```yaml
 Type: System.String
@@ -354,19 +350,19 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphTrainingLanguageDetail>`: trainingLanguageDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <String>]`: Language specific content for the training.
+  - `[Content <String>]`: 
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Description <String>]`: Description as defined by the user.
-  - `[DisplayName <String>]`: Display name as defined by the user.
-  - `[IsDefaultLangauge <Boolean?>]`: Indicates whether the training has a default language.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[IsDefaultLangauge <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Locale <String>]`: Content locale for the training detail.
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Locale <String>]`: 
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -396,7 +392,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

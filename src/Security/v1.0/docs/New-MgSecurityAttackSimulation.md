@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Create an attack simulation campaign for a tenant.
+Create new navigation property to simulations for security
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Conf
 ```
 
 ## DESCRIPTION
-Create an attack simulation campaign for a tenant.
+Create new navigation property to simulations for security
 
 ## EXAMPLES
 
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -DurationInDays
-Simulation duration in days.
+.
 
 ```yaml
 Type: System.Int32
@@ -543,34 +543,34 @@ To create the parameters described below, construct a hash table containing the 
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
   - `[Description <String>]`: Description of the attack simulation and training campaign.
   - `[DisplayName <String>]`: Display name of the attack simulation and training campaign. Supports $filter and $orderby.
-  - `[DurationInDays <Int32?>]`: Simulation duration in days.
+  - `[DurationInDays <Int32?>]`: 
   - `[EndUserNotificationSetting <IMicrosoftGraphEndUserNotificationSetting>]`: endUserNotificationSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[NotificationPreference <String>]`: endUserNotificationPreference
     - `[PositiveReinforcement <IMicrosoftGraphPositiveReinforcementNotification>]`: positiveReinforcementNotification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DefaultLanguage <String>]`: The default language for the end user notification.
+      - `[DefaultLanguage <String>]`: 
       - `[EndUserNotification <IMicrosoftGraphEndUserNotification>]`: endUserNotification
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-        - `[CreatedDateTime <DateTime?>]`: Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Description <String>]`: Description of the notification as defined by the user.
+        - `[CreatedDateTime <DateTime?>]`: 
+        - `[Description <String>]`: 
         - `[Details <IMicrosoftGraphEndUserNotificationDetail[]>]`: 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[EmailContent <String>]`: Email HTML content.
-          - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language is default.
-          - `[Language <String>]`: Notification language.
-          - `[Locale <String>]`: Notification locale.
+          - `[EmailContent <String>]`: 
+          - `[IsDefaultLangauge <Boolean?>]`: 
+          - `[Language <String>]`: 
+          - `[Locale <String>]`: 
           - `[SentFrom <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-          - `[Subject <String>]`: Mail subject.
-        - `[DisplayName <String>]`: Name of the notification as defined by the user.
+          - `[Subject <String>]`: 
+        - `[DisplayName <String>]`: 
         - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-        - `[LastModifiedDateTime <DateTime?>]`: Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[LastModifiedDateTime <DateTime?>]`: 
         - `[NotificationType <String>]`: endUserNotificationType
         - `[Source <String>]`: simulationContentSource
         - `[Status <String>]`: simulationContentStatus
-        - `[SupportedLocales <String[]>]`: Supported locales for endUserNotification content.
+        - `[SupportedLocales <String[]>]`: 
       - `[DeliveryPreference <String>]`: notificationDeliveryPreference
     - `[SettingType <String>]`: endUserNotificationSettingType
   - `[ExcludedAccountTarget <IMicrosoftGraphAccountTargetContent>]`: accountTargetContent
@@ -582,75 +582,75 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[CreatedDateTime <DateTime?>]`: Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Description <String>]`: Description of the landing page as defined by the user.
-    - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: The detail information for a landing page associated with a simulation during its creation.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Content <String>]`: Landing page detail content.
-      - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
-      - `[Language <String>]`: The content language for the landing page.
-    - `[DisplayName <String>]`: The display name of the landing page.
+      - `[Content <String>]`: 
+      - `[IsDefaultLangauge <Boolean?>]`: 
+      - `[Language <String>]`: 
+    - `[DisplayName <String>]`: 
     - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Locale <String>]`: Content locale.
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[Locale <String>]`: 
     - `[Source <String>]`: simulationContentSource
     - `[Status <String>]`: simulationContentStatus
-    - `[SupportedLocales <String[]>]`: Supported locales.
+    - `[SupportedLocales <String[]>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
   - `[LastModifiedDateTime <DateTime?>]`: Date and time of the most recent modification of the attack simulation and training campaign.
   - `[LaunchDateTime <DateTime?>]`: Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[LoginPage <IMicrosoftGraphLoginPage>]`: loginPage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Content <String>]`: The HTML content of the login page.
+    - `[Content <String>]`: 
     - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[CreatedDateTime <DateTime?>]`: Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Description <String>]`: Description about the login page.
-    - `[DisplayName <String>]`: Display name of the login page.
-    - `[Language <String>]`: The content language of the login page.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
+    - `[DisplayName <String>]`: 
+    - `[Language <String>]`: 
     - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Source <String>]`: simulationContentSource
     - `[Status <String>]`: simulationContentStatus
   - `[OAuthConsentAppDetail <IMicrosoftGraphOAuthConsentAppDetail>]`: oAuthConsentAppDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AppScope <String>]`: oAuthAppScope
-    - `[DisplayLogo <String>]`: App display logo.
-    - `[DisplayName <String>]`: App name.
+    - `[DisplayLogo <String>]`: 
+    - `[DisplayName <String>]`: 
   - `[Payload <IMicrosoftGraphPayload>]`: payload
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Brand <String>]`: payloadBrand
     - `[Complexity <String>]`: payloadComplexity
     - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Description <String>]`: Description of the attack simulation and training campaign payload.
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[Description <String>]`: 
     - `[Detail <IMicrosoftGraphPayloadDetail>]`: payloadDetail
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Coachmarks <IMicrosoftGraphPayloadCoachmark[]>]`: Payload coachmark details.
+      - `[Coachmarks <IMicrosoftGraphPayloadCoachmark[]>]`: 
         - `[CoachmarkLocation <IMicrosoftGraphCoachmarkLocation>]`: coachmarkLocation
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Length <Int32?>]`: Length of coachmark.
-          - `[Offset <Int32?>]`: Offset of coachmark.
+          - `[Length <Int32?>]`: 
+          - `[Offset <Int32?>]`: 
           - `[Type <String>]`: coachmarkLocationType
-        - `[Description <String>]`: The description about the coachmark.
-        - `[Indicator <String>]`: The coachmark indicator.
-        - `[IsValid <Boolean?>]`: Indicates whether the coachmark is valid or not.
-        - `[Language <String>]`: The coachmark language.
-        - `[Order <String>]`: The coachmark order.
-      - `[Content <String>]`: Payload content details.
-      - `[PhishingUrl <String>]`: The phishing URL used to target a user.
-    - `[DisplayName <String>]`: Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
+        - `[Description <String>]`: 
+        - `[Indicator <String>]`: 
+        - `[IsValid <Boolean?>]`: 
+        - `[Language <String>]`: 
+        - `[Order <String>]`: 
+      - `[Content <String>]`: 
+      - `[PhishingUrl <String>]`: 
+    - `[DisplayName <String>]`: 
     - `[Industry <String>]`: payloadIndustry
-    - `[IsAutomated <Boolean?>]`: Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
-    - `[IsControversial <Boolean?>]`: Indicates whether the payload is controversial.
-    - `[IsCurrentEvent <Boolean?>]`: Indicates whether the payload is from any recent event.
-    - `[Language <String>]`: Payload language.
+    - `[IsAutomated <Boolean?>]`: 
+    - `[IsControversial <Boolean?>]`: 
+    - `[IsCurrentEvent <Boolean?>]`: 
+    - `[Language <String>]`: 
     - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-    - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[PayloadTags <String[]>]`: Free text tags for a payload.
+    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[PayloadTags <String[]>]`: 
     - `[Platform <String>]`: payloadDeliveryPlatform
-    - `[PredictedCompromiseRate <Double?>]`: Predicted probability for a payload to phish a targeted user.
+    - `[PredictedCompromiseRate <Double?>]`: 
     - `[SimulationAttackType <String>]`: simulationAttackType
     - `[Source <String>]`: simulationContentSource
     - `[Status <String>]`: simulationContentStatus
@@ -696,7 +696,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[DisplayName <String>]`: Display name of the user.
         - `[Email <String>]`: Email address of the user.
-        - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
+        - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
       - `[TrainingEvents <IMicrosoftGraphUserTrainingEventInfo[]>]`: List of training events of a user in the attack simulation and training campaign.
         - `[DisplayName <String>]`: Display name of the training.
         - `[LatestTrainingStatus <String>]`: trainingStatus
@@ -725,7 +725,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NotificationPreference <String>]`: endUserNotificationPreference
   - `[PositiveReinforcement <IMicrosoftGraphPositiveReinforcementNotification>]`: positiveReinforcementNotification
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DefaultLanguage <String>]`: The default language for the end user notification.
+    - `[DefaultLanguage <String>]`: 
     - `[EndUserNotification <IMicrosoftGraphEndUserNotification>]`: endUserNotification
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -734,23 +734,23 @@ To create the parameters described below, construct a hash table containing the 
         - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
         - `[Email <String>]`: Email address of the user.
-      - `[CreatedDateTime <DateTime?>]`: Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Description <String>]`: Description of the notification as defined by the user.
+      - `[CreatedDateTime <DateTime?>]`: 
+      - `[Description <String>]`: 
       - `[Details <IMicrosoftGraphEndUserNotificationDetail[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
-        - `[EmailContent <String>]`: Email HTML content.
-        - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language is default.
-        - `[Language <String>]`: Notification language.
-        - `[Locale <String>]`: Notification locale.
+        - `[EmailContent <String>]`: 
+        - `[IsDefaultLangauge <Boolean?>]`: 
+        - `[Language <String>]`: 
+        - `[Locale <String>]`: 
         - `[SentFrom <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-        - `[Subject <String>]`: Mail subject.
-      - `[DisplayName <String>]`: Name of the notification as defined by the user.
+        - `[Subject <String>]`: 
+      - `[DisplayName <String>]`: 
       - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-      - `[LastModifiedDateTime <DateTime?>]`: Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[LastModifiedDateTime <DateTime?>]`: 
       - `[NotificationType <String>]`: endUserNotificationType
       - `[Source <String>]`: simulationContentSource
       - `[Status <String>]`: simulationContentStatus
-      - `[SupportedLocales <String[]>]`: Supported locales for endUserNotification content.
+      - `[SupportedLocales <String[]>]`: 
     - `[DeliveryPreference <String>]`: notificationDeliveryPreference
   - `[SettingType <String>]`: endUserNotificationSettingType
 
@@ -770,20 +770,20 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Description <String>]`: Description of the landing page as defined by the user.
-  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: The detail information for a landing page associated with a simulation during its creation.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Content <String>]`: Landing page detail content.
-    - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
-    - `[Language <String>]`: The content language for the landing page.
-  - `[DisplayName <String>]`: The display name of the landing page.
+    - `[Content <String>]`: 
+    - `[IsDefaultLangauge <Boolean?>]`: 
+    - `[Language <String>]`: 
+  - `[DisplayName <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Locale <String>]`: Content locale.
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Locale <String>]`: 
   - `[Source <String>]`: simulationContentSource
   - `[Status <String>]`: simulationContentStatus
-  - `[SupportedLocales <String[]>]`: Supported locales.
+  - `[SupportedLocales <String[]>]`: 
 
 `LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -794,26 +794,26 @@ To create the parameters described below, construct a hash table containing the 
 `LOGINPAGE <IMicrosoftGraphLoginPage>`: loginPage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <String>]`: The HTML content of the login page.
+  - `[Content <String>]`: 
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Description <String>]`: Description about the login page.
-  - `[DisplayName <String>]`: Display name of the login page.
-  - `[Language <String>]`: The content language of the login page.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[DisplayName <String>]`: 
+  - `[Language <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Source <String>]`: simulationContentSource
   - `[Status <String>]`: simulationContentStatus
 
 `OAUTHCONSENTAPPDETAIL <IMicrosoftGraphOAuthConsentAppDetail>`: oAuthConsentAppDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AppScope <String>]`: oAuthAppScope
-  - `[DisplayLogo <String>]`: App display logo.
-  - `[DisplayName <String>]`: App name.
+  - `[DisplayLogo <String>]`: 
+  - `[DisplayName <String>]`: 
 
 `PAYLOAD <IMicrosoftGraphPayload>`: payload
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -825,34 +825,34 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Description <String>]`: Description of the attack simulation and training campaign payload.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
   - `[Detail <IMicrosoftGraphPayloadDetail>]`: payloadDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Coachmarks <IMicrosoftGraphPayloadCoachmark[]>]`: Payload coachmark details.
+    - `[Coachmarks <IMicrosoftGraphPayloadCoachmark[]>]`: 
       - `[CoachmarkLocation <IMicrosoftGraphCoachmarkLocation>]`: coachmarkLocation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Length <Int32?>]`: Length of coachmark.
-        - `[Offset <Int32?>]`: Offset of coachmark.
+        - `[Length <Int32?>]`: 
+        - `[Offset <Int32?>]`: 
         - `[Type <String>]`: coachmarkLocationType
-      - `[Description <String>]`: The description about the coachmark.
-      - `[Indicator <String>]`: The coachmark indicator.
-      - `[IsValid <Boolean?>]`: Indicates whether the coachmark is valid or not.
-      - `[Language <String>]`: The coachmark language.
-      - `[Order <String>]`: The coachmark order.
-    - `[Content <String>]`: Payload content details.
-    - `[PhishingUrl <String>]`: The phishing URL used to target a user.
-  - `[DisplayName <String>]`: Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
+      - `[Description <String>]`: 
+      - `[Indicator <String>]`: 
+      - `[IsValid <Boolean?>]`: 
+      - `[Language <String>]`: 
+      - `[Order <String>]`: 
+    - `[Content <String>]`: 
+    - `[PhishingUrl <String>]`: 
+  - `[DisplayName <String>]`: 
   - `[Industry <String>]`: payloadIndustry
-  - `[IsAutomated <Boolean?>]`: Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
-  - `[IsControversial <Boolean?>]`: Indicates whether the payload is controversial.
-  - `[IsCurrentEvent <Boolean?>]`: Indicates whether the payload is from any recent event.
-  - `[Language <String>]`: Payload language.
+  - `[IsAutomated <Boolean?>]`: 
+  - `[IsControversial <Boolean?>]`: 
+  - `[IsCurrentEvent <Boolean?>]`: 
+  - `[Language <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[PayloadTags <String[]>]`: Free text tags for a payload.
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[PayloadTags <String[]>]`: 
   - `[Platform <String>]`: payloadDeliveryPlatform
-  - `[PredictedCompromiseRate <Double?>]`: Predicted probability for a payload to phish a targeted user.
+  - `[PredictedCompromiseRate <Double?>]`: 
   - `[SimulationAttackType <String>]`: simulationAttackType
   - `[Source <String>]`: simulationContentSource
   - `[Status <String>]`: simulationContentStatus
@@ -898,7 +898,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: Display name of the user.
       - `[Email <String>]`: Email address of the user.
-      - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
+      - `[UserId <String>]`: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
     - `[TrainingEvents <IMicrosoftGraphUserTrainingEventInfo[]>]`: List of training events of a user in the attack simulation and training campaign.
       - `[DisplayName <String>]`: Display name of the training.
       - `[LatestTrainingStatus <String>]`: trainingStatus

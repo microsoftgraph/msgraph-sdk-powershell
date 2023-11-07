@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulationTraining
 
 ## SYNOPSIS
-Represents details about attack simulation trainings.
+Get trainings from security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityAttackSimulationTraining -InputObject <ISecurityIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Represents details about attack simulation trainings.
+Get trainings from security
 
 ## EXAMPLES
 
@@ -276,7 +276,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

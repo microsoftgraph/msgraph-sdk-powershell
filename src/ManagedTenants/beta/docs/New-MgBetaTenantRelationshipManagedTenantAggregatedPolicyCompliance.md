@@ -269,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Optional.
 Read-only.
 
@@ -349,7 +349,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[NumberOfNonCompliantDevices <Int64?>]`: The number of device that are in a non-compliant status. Optional. Read-only.
   - `[PolicyModifiedDateTime <DateTime?>]`: The date and time the device policy was last modified. Optional. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Optional. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
-The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
+The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgPolicyTokenIssuancePolicy -InputObject <IIdentitySignInsIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
+The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 
 ## EXAMPLES
 

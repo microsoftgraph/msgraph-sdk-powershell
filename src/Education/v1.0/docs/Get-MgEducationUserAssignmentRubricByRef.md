@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgEducationUserAssignmentRubricByRef -InputObject <IEducationIdentity> [<Com
 ## DESCRIPTION
 Get the educationRubric object attached to an educationAssignment, if one exists.
 Only teachers, students, and applications with application permissions can perform this operation.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

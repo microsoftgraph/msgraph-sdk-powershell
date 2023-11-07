@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Optional.
 Read-only.
 
@@ -310,7 +310,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[InGracePeriodDeviceCount <Int32?>]`: The number of devices that are in a grace period status. Required. Read-only.
   - `[NoncompliantDeviceCount <Int32?>]`: The number of devices that are in a non-compliant status. Required. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Optional. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
   - `[UnknownDeviceCount <Int32?>]`: The number of devices in an unknown status. Required. Read-only.
 
 ## RELATED LINKS

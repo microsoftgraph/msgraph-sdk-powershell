@@ -8,7 +8,7 @@ schema: 2.0.0
 # Send-MgBetaAccessReviewInstanceReminder
 
 ## SYNOPSIS
-In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.
+In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 This API is available in the following national cloud deployments.
 
@@ -27,7 +27,7 @@ Send-MgBetaAccessReviewInstanceReminder -InputObject <IIdentityGovernanceIdentit
 ```
 
 ## DESCRIPTION
-In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.
+In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 This API is available in the following national cloud deployments.
 
@@ -203,7 +203,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomTaskExtensionId <String>]`: The unique identifier of customTaskExtension
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[FindingId <String>]`: The unique identifier of finding
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
   - `[GovernanceResourceId <String>]`: The unique identifier of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: The unique identifier of governanceRoleAssignment
@@ -214,7 +213,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
-  - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance

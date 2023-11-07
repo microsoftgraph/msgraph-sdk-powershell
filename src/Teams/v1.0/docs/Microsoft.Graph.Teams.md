@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 9f564442-abe1-4ce5-82af-d643cf8175c0
+Module Guid: e9a4fde5-f784-4302-a9e2-a04cf00f1557
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -161,7 +161,7 @@ Null if no messages have been sent in the chat.
 Currently, only the list chats operation supports this property.
 
 ### [Get-MgChatMember](Get-MgChatMember.md)
-Retrieve a conversationMember from a chat or channel.
+Retrieve a conversationMember from a chat.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgChatMemberCount](Get-MgChatMemberCount.md)
@@ -354,7 +354,7 @@ Get the number of the resource
 ### [Get-MgGroupTeamPhoto](Get-MgGroupTeamPhoto.md)
 Get the specified profilePhoto or its metadata (profilePhoto properties).
 The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
-Photos can be any dimension if they are stored in Microsoft Entra ID.
+Photos can be any dimension if they are stored in Azure Active Directory.
 You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
 This API is available in the following national cloud deployments.
 
@@ -657,7 +657,7 @@ Get the number of the resource
 ### [Get-MgTeamPhoto](Get-MgTeamPhoto.md)
 Get the specified profilePhoto or its metadata (profilePhoto properties).
 The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
-Photos can be any dimension if they are stored in Microsoft Entra ID.
+Photos can be any dimension if they are stored in Azure Active Directory.
 You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
 This API is available in the following national cloud deployments.
 
@@ -957,7 +957,7 @@ Null if no messages have been sent in the chat.
 Currently, only the list chats operation supports this property.
 
 ### [Get-MgUserChatMember](Get-MgUserChatMember.md)
-Retrieve a conversationMember from a chat or channel.
+Retrieve a conversationMember from a chat.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgUserChatMemberCount](Get-MgUserChatMemberCount.md)
@@ -1153,7 +1153,8 @@ Add a conversationMember to a chat.
 This API is available in the following national cloud deployments.
 
 ### [New-MgChatMessage](New-MgChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
 This API is available in the following national cloud deployments.
 
 ### [New-MgChatMessageHostedContent](New-MgChatMessageHostedContent.md)
@@ -1192,7 +1193,7 @@ This operation is allowed only for channels with a membershipType value of priva
 This API is available in the following national cloud deployments.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
@@ -1233,7 +1234,7 @@ This operation is allowed only for channels with a membershipType value of priva
 This API is available in the following national cloud deployments.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
@@ -1322,7 +1323,7 @@ This operation is allowed only for channels with a membershipType value of priva
 This API is available in the following national cloud deployments.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
@@ -1370,7 +1371,7 @@ This operation is allowed only for channels with a membershipType value of priva
 This API is available in the following national cloud deployments.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
@@ -1454,7 +1455,7 @@ This operation is allowed only for channels with a membershipType value of priva
 This API is available in the following national cloud deployments.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
@@ -1491,7 +1492,8 @@ Add a conversationMember to a chat.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserChatMessage](New-MgUserChatMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified chat.
+This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
 This API is available in the following national cloud deployments.
 
 ### [New-MgUserChatMessageHostedContent](New-MgUserChatMessageHostedContent.md)
@@ -1525,9 +1527,6 @@ Install an app in the personal scope of the specified user.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgAppCatalogTeamApp](Remove-MgAppCatalogTeamApp.md)
-Delete an app from an organization's app catalog (the tenant app catalog).
-To delete an app, the distributionMethod property for the app must be set to organization.
-You can also use this API to remove a submitted app from the review process.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgAppCatalogTeamAppDefinition](Remove-MgAppCatalogTeamAppDefinition.md)
@@ -2095,8 +2094,7 @@ Update the properties of the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupTeamChannelMember](Update-MgGroupTeamChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupTeamChannelMessage](Update-MgGroupTeamChannelMessage.md)
@@ -2141,8 +2139,7 @@ Update the navigation property photo in groups
 Update the navigation property primaryChannel in groups
 
 ### [Update-MgGroupTeamPrimaryChannelMember](Update-MgGroupTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupTeamPrimaryChannelMessage](Update-MgGroupTeamPrimaryChannelMessage.md)
@@ -2218,8 +2215,7 @@ Update the properties of the specified channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgTeamChannelMember](Update-MgTeamChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
@@ -2265,8 +2261,7 @@ Update the navigation property photo in teams
 Update the navigation property primaryChannel in teams
 
 ### [Update-MgTeamPrimaryChannelMember](Update-MgTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
@@ -2340,8 +2335,7 @@ Update the navigation property deletedTeams in teamwork
 Update the navigation property channels in teamwork
 
 ### [Update-MgTeamworkDeletedTeamChannelMember](Update-MgTeamworkDeletedTeamChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a membershipType value of private or shared.
+Update the role of a conversationMember in a team or channel.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)

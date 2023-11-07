@@ -97,9 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-Date and time when the landing page was created.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -114,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-Description of the landing page as defined by the user.
+.
 
 ```yaml
 Type: System.String
@@ -129,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -Details
-The detail information for a landing page associated with a simulation during its creation.
+.
 To construct, see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
@@ -145,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-The display name of the landing page.
+.
 
 ```yaml
 Type: System.String
@@ -192,9 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-Date and time when the landing page was last modified.
-The timestamp type represents date and time information using ISO 8601 format and is always in UTC.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+.
 
 ```yaml
 Type: System.DateTime
@@ -209,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -Locale
-Content locale.
+.
 
 ```yaml
 Type: System.String
@@ -254,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -SupportedLocales
-Supported locales.
+.
 
 ```yaml
 Type: System.String[]
@@ -327,20 +323,20 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Description <String>]`: Description of the landing page as defined by the user.
-  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: The detail information for a landing page associated with a simulation during its creation.
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[Description <String>]`: 
+  - `[Details <IMicrosoftGraphLandingPageDetail[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Content <String>]`: Landing page detail content.
-    - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
-    - `[Language <String>]`: The content language for the landing page.
-  - `[DisplayName <String>]`: The display name of the landing page.
+    - `[Content <String>]`: 
+    - `[IsDefaultLangauge <Boolean?>]`: 
+    - `[Language <String>]`: 
+  - `[DisplayName <String>]`: 
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Locale <String>]`: Content locale.
+  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[Locale <String>]`: 
   - `[Source <String>]`: simulationContentSource
   - `[Status <String>]`: simulationContentStatus
-  - `[SupportedLocales <String[]>]`: Supported locales.
+  - `[SupportedLocales <String[]>]`: 
 
 `CREATEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -348,11 +344,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
-`DETAILS <IMicrosoftGraphLandingPageDetail[]>`: The detail information for a landing page associated with a simulation during its creation.
+`DETAILS <IMicrosoftGraphLandingPageDetail[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Content <String>]`: Landing page detail content.
-  - `[IsDefaultLangauge <Boolean?>]`: Indicates whether this language detail is default for the landing page.
-  - `[Language <String>]`: The content language for the landing page.
+  - `[Content <String>]`: 
+  - `[IsDefaultLangauge <Boolean?>]`: 
+  - `[Language <String>]`: 
 
 `LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>`: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

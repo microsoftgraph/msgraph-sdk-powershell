@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 90b46cb7-a71d-4580-bd95-ed862b8d7eab
+Module Guid: ab6585ee-2cc6-4c02-8090-284c599c3bd1
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,7 +41,7 @@ Get the number of the resource
 
 ### [Get-MgBetaExternalConnectionGroupMember](Get-MgBetaExternalConnectionGroupMember.md)
 A member added to an externalGroup.
-You can add Microsoft Entra users, Microsoft Entra groups, or other externalGroups as members.
+You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
 
 ### [Get-MgBetaExternalConnectionGroupMemberCount](Get-MgBetaExternalConnectionGroupMemberCount.md)
 Get the number of the resource
@@ -94,7 +94,7 @@ Get the number of the resource
 The sourceSystemDefinition this connector is connected to.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlow](Get-MgBetaExternalIndustryDataInboundFlow.md)
-Read the properties and relationships of an inboundFileFlow object.
+Read the properties and relationships of an inboundFlow object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlowCount](Get-MgBetaExternalIndustryDataInboundFlowCount.md)
@@ -279,7 +279,7 @@ Delete navigation property operations for external
 Delete navigation property quota for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an azureDataLakeConnector object.
+Delete an industryDataConnector object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
@@ -352,10 +352,9 @@ Update the navigation property quota in external
 
 ### [Update-MgBetaExternalConnectionSchema](Update-MgBetaExternalConnectionSchema.md)
 Create the schema for a Microsoft Search connection.
-This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
-Update the properties of an azureDataLakeConnector object.
+Update the properties of an industryDataConnector object.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)

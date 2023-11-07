@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -PercentageCompleted
-Percentage of completion of the respective operation.
+.
 
 ```yaml
 Type: System.Int32
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-Tenant identifier.
+.
 
 ```yaml
 Type: System.String
@@ -326,8 +326,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Status <String>]`: longRunningOperationStatus
   - `[StatusDetail <String>]`: Details about the status of the operation.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[PercentageCompleted <Int32?>]`: Percentage of completion of the respective operation.
-  - `[TenantId <String>]`: Tenant identifier.
+  - `[PercentageCompleted <Int32?>]`: 
+  - `[TenantId <String>]`: 
   - `[Type <String>]`: attackSimulationOperationType
 
 `INPUTOBJECT <ISecurityIdentity>`: Identity Parameter
@@ -352,7 +352,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostPort
 
 ## SYNOPSIS
-Read the properties and relationships of a hostPort object.
+Get hostPorts from security
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Get-MgBetaSecurityThreatIntelligenceHostPort -HostId <String> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a hostPort object.
+Get hostPorts from security
 
 ## EXAMPLES
 

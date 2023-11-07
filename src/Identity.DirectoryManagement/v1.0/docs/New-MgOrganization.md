@@ -626,7 +626,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CustomResetItNowText <String>]`: A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
     - `[CustomTermsOfUseText <String>]`: A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
     - `[CustomTermsOfUseUrl <String>]`: A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
-    - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+    - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
     - `[FaviconRelativeUrl <String>]`: A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     - `[HeaderBackgroundColor <String>]`: The RGB color to apply to customize the color of the header.
     - `[HeaderLogo <Byte[]>]`: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
@@ -669,7 +669,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[CustomResetItNowText <String>]`: A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
       - `[CustomTermsOfUseText <String>]`: A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
       - `[CustomTermsOfUseUrl <String>]`: A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
-      - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+      - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
       - `[FaviconRelativeUrl <String>]`: A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
       - `[HeaderBackgroundColor <String>]`: The RGB color to apply to customize the color of the header.
       - `[HeaderLogo <Byte[]>]`: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
@@ -748,7 +748,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomResetItNowText <String>]`: A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
   - `[CustomTermsOfUseText <String>]`: A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
   - `[CustomTermsOfUseUrl <String>]`: A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
-  - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+  - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
   - `[FaviconRelativeUrl <String>]`: A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
   - `[HeaderBackgroundColor <String>]`: The RGB color to apply to customize the color of the header.
   - `[HeaderLogo <Byte[]>]`: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
@@ -791,7 +791,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[CustomResetItNowText <String>]`: A string to replace the default 'reset it now' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters. DO NOT USE: Customization of the 'reset it now' hyperlink text is currently not supported.
     - `[CustomTermsOfUseText <String>]`: A string to replace the the default 'Terms of Use' hyperlink text in the footer. This text must be in Unicode format and not exceed 256 characters.
     - `[CustomTermsOfUseUrl <String>]`: A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
-    - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+    - `[Favicon <Byte[]>]`: A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
     - `[FaviconRelativeUrl <String>]`: A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     - `[HeaderBackgroundColor <String>]`: The RGB color to apply to customize the color of the header.
     - `[HeaderLogo <Byte[]>]`: A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.

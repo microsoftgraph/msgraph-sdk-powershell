@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityAttackSimulationLandingPageDetail
 
 ## SYNOPSIS
-The detail information for a landing page associated with a simulation during its creation.
+Get details from security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSecurityAttackSimulationLandingPageDetail -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-The detail information for a landing page associated with a simulation during its creation.
+Get details from security
 
 ## EXAMPLES
 

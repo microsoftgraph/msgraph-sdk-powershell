@@ -8,9 +8,9 @@ schema: 2.0.0
 # Get-MgAuditLogSignIn
 
 ## SYNOPSIS
-Retrieve a specific Microsoft Entra user sign-in event for your tenant.
+Retrieve a specific Azure AD user sign-in event for your tenant.
 Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,9 +34,9 @@ Get-MgAuditLogSignIn -InputObject <IReportsIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Retrieve a specific Microsoft Entra user sign-in event for your tenant.
+Retrieve a specific Azure AD user sign-in event for your tenant.
 Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

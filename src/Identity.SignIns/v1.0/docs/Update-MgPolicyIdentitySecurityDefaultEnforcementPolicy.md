@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## DESCRIPTION
 Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-If set to true, Microsoft Entra security defaults are enabled for the tenant.
+If set to true, Azure Active Directory security defaults are enabled for the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -213,7 +213,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[IsEnabled <Boolean?>]`: If set to true, Microsoft Entra security defaults are enabled for the tenant.
+  - `[IsEnabled <Boolean?>]`: If set to true, Azure Active Directory security defaults are enabled for the tenant.
 
 ## RELATED LINKS
 

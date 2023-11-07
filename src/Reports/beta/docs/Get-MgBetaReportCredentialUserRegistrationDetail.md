@@ -249,15 +249,10 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `INPUTOBJECT <IReportsIdentity>`: Identity Parameter
-  - `[ActiveUsersBreakdownMetricId <String>]`: The unique identifier of activeUsersBreakdownMetric
-  - `[ActiveUsersMetricId <String>]`: The unique identifier of activeUsersMetric
   - `[AppCredentialSignInActivityId <String>]`: The unique identifier of appCredentialSignInActivity
   - `[ApplicationSignInDetailedSummaryId <String>]`: The unique identifier of applicationSignInDetailedSummary
-  - `[AuthenticationsMetricId <String>]`: The unique identifier of authenticationsMetric
   - `[CredentialUserRegistrationDetailsId <String>]`: The unique identifier of credentialUserRegistrationDetails
   - `[CustomSecurityAttributeAuditId <String>]`: The unique identifier of customSecurityAttributeAudit
-  - `[DailyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of dailyInactiveUsersByApplicationMetric
-  - `[DailyInactiveUsersMetricId <String>]`: The unique identifier of dailyInactiveUsersMetric
   - `[Date <DateTime?>]`: Usage: date={date}
   - `[DeviceManagementCachedReportConfigurationId <String>]`: The unique identifier of deviceManagementCachedReportConfiguration
   - `[DeviceManagementExportJobId <String>]`: The unique identifier of deviceManagementExportJob
@@ -267,10 +262,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
-  - `[InsightSummaryId <String>]`: The unique identifier of insightSummary
-  - `[MfaCompletionMetricId <String>]`: The unique identifier of mfaCompletionMetric
-  - `[MonthlyInactiveUsersByApplicationMetricId <String>]`: The unique identifier of monthlyInactiveUsersByApplicationMetric
-  - `[MonthlyInactiveUsersMetricId <String>]`: The unique identifier of monthlyInactiveUsersMetric
   - `[Period <String>]`: Usage: period='{period}'
   - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
   - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser
@@ -283,12 +274,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
   - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
   - `[Top <Int32?>]`: Usage: top={top}
-  - `[UserCountMetricId <String>]`: The unique identifier of userCountMetric
   - `[UserCredentialUsageDetailsId <String>]`: The unique identifier of userCredentialUsageDetails
   - `[UserId <String>]`: Usage: userId='{userId}'
   - `[UserRegistrationDetailsId <String>]`: The unique identifier of userRegistrationDetails
-  - `[UserRequestsMetricId <String>]`: The unique identifier of userRequestsMetric
-  - `[UserSignUpMetricId <String>]`: The unique identifier of userSignUpMetric
 
 ## RELATED LINKS
 

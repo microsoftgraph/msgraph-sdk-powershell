@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -21,7 +21,7 @@ Get-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-ExpandP
 
 ## DESCRIPTION
 Retrieve a list of plannerBucket objects contained by a plannerPlan object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Optional.
 Read-only.
 
@@ -176,7 +176,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Description <String>]`: The description for the role.
       - `[DisplayName <String>]`: The display name for the role assignment.
       - `[TemplateId <String>]`: The unique identifier for the template.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
 
 ## RELATED LINKS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Reports
-Module Guid: 03a10796-8b63-4e44-ad06-8b296751df38
+Module Guid: 2d5828dd-8563-48fb-9cc8-15eb363df8a3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -328,7 +328,7 @@ Invoke function getPrinterArchivedPrintJobs
 Invoke function getRelyingPartyDetailedSummary
 
 ### [Get-MgBetaReportSecurity](Get-MgBetaReportSecurity.md)
-Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.
+Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
 
 ### [Get-MgBetaReportSecurityAttackSimulationRepeatOffender](Get-MgBetaReportSecurityAttackSimulationRepeatOffender.md)
 Invoke function getAttackSimulationRepeatOffenders
@@ -489,120 +489,6 @@ Represents the self-service password reset (SSPR) usage for a given tenant.
 ### [Get-MgBetaReportUserCredentialUsageDetailCount](Get-MgBetaReportUserCredentialUsageDetailCount.md)
 Get the number of the resource
 
-### [Get-MgBetaReportUserInsight](Get-MgBetaReportUserInsight.md)
-Get userInsights from reports
-
-### [Get-MgBetaReportUserInsightDaily](Get-MgBetaReportUserInsightDaily.md)
-Get daily from reports
-
-### [Get-MgBetaReportUserInsightDailyActiveUser](Get-MgBetaReportUserInsightDailyActiveUser.md)
-Get activeUsers from reports
-
-### [Get-MgBetaReportUserInsightDailyActiveUserBreakdown](Get-MgBetaReportUserInsightDailyActiveUserBreakdown.md)
-Get activeUsersBreakdown from reports
-
-### [Get-MgBetaReportUserInsightDailyActiveUserBreakdownCount](Get-MgBetaReportUserInsightDailyActiveUserBreakdownCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailyActiveUserCount](Get-MgBetaReportUserInsightDailyActiveUserCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailyAuthentication](Get-MgBetaReportUserInsightDailyAuthentication.md)
-Get authentications from reports
-
-### [Get-MgBetaReportUserInsightDailyAuthenticationCount](Get-MgBetaReportUserInsightDailyAuthenticationCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailyInactiveUser](Get-MgBetaReportUserInsightDailyInactiveUser.md)
-Get inactiveUsers from reports
-
-### [Get-MgBetaReportUserInsightDailyInactiveUserByApplication](Get-MgBetaReportUserInsightDailyInactiveUserByApplication.md)
-Get inactiveUsersByApplication from reports
-
-### [Get-MgBetaReportUserInsightDailyInactiveUserByApplicationCount](Get-MgBetaReportUserInsightDailyInactiveUserByApplicationCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailyInactiveUserCount](Get-MgBetaReportUserInsightDailyInactiveUserCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailyMfaCompletion](Get-MgBetaReportUserInsightDailyMfaCompletion.md)
-Get mfaCompletions from reports
-
-### [Get-MgBetaReportUserInsightDailyMfaCompletionCount](Get-MgBetaReportUserInsightDailyMfaCompletionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailySignUp](Get-MgBetaReportUserInsightDailySignUp.md)
-Get signUps from reports
-
-### [Get-MgBetaReportUserInsightDailySignUpCount](Get-MgBetaReportUserInsightDailySignUpCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailySummary](Get-MgBetaReportUserInsightDailySummary.md)
-Get summary from reports
-
-### [Get-MgBetaReportUserInsightDailySummaryCount](Get-MgBetaReportUserInsightDailySummaryCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightDailyUserCount](Get-MgBetaReportUserInsightDailyUserCount.md)
-Get userCount from reports
-
-### [Get-MgBetaReportUserInsightMonthly](Get-MgBetaReportUserInsightMonthly.md)
-Get monthly from reports
-
-### [Get-MgBetaReportUserInsightMonthlyActiveUser](Get-MgBetaReportUserInsightMonthlyActiveUser.md)
-Get activeUsers from reports
-
-### [Get-MgBetaReportUserInsightMonthlyActiveUserBreakdown](Get-MgBetaReportUserInsightMonthlyActiveUserBreakdown.md)
-Get activeUsersBreakdown from reports
-
-### [Get-MgBetaReportUserInsightMonthlyActiveUserBreakdownCount](Get-MgBetaReportUserInsightMonthlyActiveUserBreakdownCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlyActiveUserCount](Get-MgBetaReportUserInsightMonthlyActiveUserCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlyAuthentication](Get-MgBetaReportUserInsightMonthlyAuthentication.md)
-Get authentications from reports
-
-### [Get-MgBetaReportUserInsightMonthlyAuthenticationCount](Get-MgBetaReportUserInsightMonthlyAuthenticationCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlyInactiveUser](Get-MgBetaReportUserInsightMonthlyInactiveUser.md)
-Get inactiveUsers from reports
-
-### [Get-MgBetaReportUserInsightMonthlyInactiveUserByApplication](Get-MgBetaReportUserInsightMonthlyInactiveUserByApplication.md)
-Get inactiveUsersByApplication from reports
-
-### [Get-MgBetaReportUserInsightMonthlyInactiveUserByApplicationCount](Get-MgBetaReportUserInsightMonthlyInactiveUserByApplicationCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlyInactiveUserCount](Get-MgBetaReportUserInsightMonthlyInactiveUserCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlyMfaCompletion](Get-MgBetaReportUserInsightMonthlyMfaCompletion.md)
-Get mfaCompletions from reports
-
-### [Get-MgBetaReportUserInsightMonthlyMfaCompletionCount](Get-MgBetaReportUserInsightMonthlyMfaCompletionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlyRequest](Get-MgBetaReportUserInsightMonthlyRequest.md)
-Get requests from reports
-
-### [Get-MgBetaReportUserInsightMonthlyRequestCount](Get-MgBetaReportUserInsightMonthlyRequestCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlySignUp](Get-MgBetaReportUserInsightMonthlySignUp.md)
-Get signUps from reports
-
-### [Get-MgBetaReportUserInsightMonthlySignUpCount](Get-MgBetaReportUserInsightMonthlySignUpCount.md)
-Get the number of the resource
-
-### [Get-MgBetaReportUserInsightMonthlySummary](Get-MgBetaReportUserInsightMonthlySummary.md)
-Get summary from reports
-
-### [Get-MgBetaReportUserInsightMonthlySummaryCount](Get-MgBetaReportUserInsightMonthlySummaryCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaReportYammerActivityCount](Get-MgBetaReportYammerActivityCount.md)
 Invoke function getYammerActivityCounts
 
@@ -648,12 +534,6 @@ Delete navigation property userRegistrationDetails for reports
 ### [Remove-MgBetaReportSlaAzureAdAuthentication](Remove-MgBetaReportSlaAzureAdAuthentication.md)
 Delete navigation property azureADAuthentication for reports
 
-### [Remove-MgBetaReportUserInsightDaily](Remove-MgBetaReportUserInsightDaily.md)
-Delete navigation property daily for reports
-
-### [Remove-MgBetaReportUserInsightMonthly](Remove-MgBetaReportUserInsightMonthly.md)
-Delete navigation property monthly for reports
-
 ### [Update-MgBetaAdminReportSetting](Update-MgBetaAdminReportSetting.md)
 Update tenant-level settings for Microsoft 365 reports.
 This API is available in the following national cloud deployments.
@@ -666,10 +546,4 @@ Update the navigation property userRegistrationDetails in reports
 
 ### [Update-MgBetaReportSlaAzureAdAuthentication](Update-MgBetaReportSlaAzureAdAuthentication.md)
 Update the navigation property azureADAuthentication in reports
-
-### [Update-MgBetaReportUserInsightDaily](Update-MgBetaReportUserInsightDaily.md)
-Update the navigation property daily in reports
-
-### [Update-MgBetaReportUserInsightMonthly](Update-MgBetaReportUserInsightMonthly.md)
-Update the navigation property monthly in reports
 

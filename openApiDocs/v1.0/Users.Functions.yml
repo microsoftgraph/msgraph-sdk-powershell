@@ -11,7 +11,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
-      description: 'Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a ''most recently used'' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won''t be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate. This API is available in the following national cloud deployments.'
+      description: 'Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a ''most recently used'' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won''t be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application''s activities, use the nextLink property to paginate. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/projectrome-get-recent-activities?view=graph-rest-1.0
@@ -124,7 +124,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -350,7 +350,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -568,7 +568,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -794,7 +794,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -1062,7 +1062,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -1304,7 +1304,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -1538,7 +1538,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -1780,7 +1780,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -2080,7 +2080,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -2314,7 +2314,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -2540,7 +2540,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -2774,7 +2774,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -3058,7 +3058,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -3284,7 +3284,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -3801,6 +3801,89 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/chats/{chat-id}/permissionGrants/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: user.chat.permissionGrant_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: chat-id
+          in: path
+          description: The unique identifier of chat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: chat
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/chats/microsoft.graph.getAllMessages()':
     get:
       tags:
@@ -3950,7 +4033,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.   This API is available in the following national cloud deployments."
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.   This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
@@ -4157,7 +4240,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
@@ -4251,7 +4334,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.   This API is available in the following national cloud deployments."
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.   This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
@@ -4450,7 +4533,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
@@ -4536,7 +4619,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.   This API is available in the following national cloud deployments."
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.   This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
@@ -7821,7 +7904,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -8047,7 +8130,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is available in the following national cloud deployments.'
+      description: 'Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time. This API is supported in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
@@ -8803,6 +8886,89 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/joinedTeams/{team-id}/permissionGrants/microsoft.graph.delta()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function delta
+      operationId: user.joinedTeam.permissionGrant_delta
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/messages/{chatMessage-id}/replies/microsoft.graph.delta()':
     get:
       tags:
@@ -9319,7 +9485,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -9505,7 +9671,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
@@ -9612,7 +9778,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -9790,7 +9956,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls,\nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize\na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
@@ -9889,7 +10055,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments."
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriately\napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in\nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without\nhaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
@@ -10614,7 +10780,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedLanguages
-      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings. This API is available in the following national cloud deployments."
+      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by\ngetting the user's mailbox settings. This API is supported in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
@@ -11638,6 +11804,20 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: Replies for a specified message. Supports $expand for channel messages.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.contact:
@@ -14925,20 +15105,6 @@ components:
         - flaggedEmails
         - unknownFutureValue
       type: string
-    microsoft.graph.directoryObject:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryObject
-          type: object
-          properties:
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-              format: date-time
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.signInActivity:
       title: signInActivity
       type: object
@@ -15046,7 +15212,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -16228,6 +16394,7 @@ components:
               nullable: true
             attendeeReport:
               type: string
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -16253,6 +16420,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -16302,7 +16470,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
-              description: The transcripts of an online meeting. Read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -16995,6 +17162,7 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -17005,6 +17173,7 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -17034,6 +17203,7 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -17044,6 +17214,7 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
+        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -19256,7 +19427,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerAssignments'
             bucketId:
               type: string
-              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
+              description: Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
               nullable: true
             checklistItemCount:
               maximum: 2147483647
@@ -19293,7 +19464,7 @@ components:
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
               nullable: true
             orderHint:
               type: string
@@ -19811,29 +19982,24 @@ components:
           properties:
             content:
               type: string
-              description: The content of the transcript. Read-only.
               format: base64url
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             meetingId:
               type: string
-              description: The unique identifier of the online meeting related to this transcript. Read-only.
               nullable: true
             meetingOrganizer:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             metadataContent:
               type: string
-              description: The time-aligned metadata of the utterances in the transcript. Read-only.
               format: base64url
               nullable: true
             transcriptContentUrl:
               type: string
-              description: The URL that can be used to access the content of the transcript. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -19848,7 +20014,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
+          description: Time in which the status message was published.Read-only.publishedDateTime is not available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -21921,6 +22087,7 @@ components:
       description: Computer endpoint protection state
       x-ms-enum-flags:
         isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -21976,6 +22143,7 @@ components:
       description: Product Status of Windows Defender
       x-ms-enum-flags:
         isFlags: true
+        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false

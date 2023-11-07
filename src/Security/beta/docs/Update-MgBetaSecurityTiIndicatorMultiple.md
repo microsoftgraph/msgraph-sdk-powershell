@@ -159,7 +159,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Action <String>]`: tiAction
     - `[ActivityGroupNames <String[]>]`: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
     - `[AdditionalInformation <String>]`: A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
-    - `[AzureTenantId <String>]`: Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
+    - `[AzureTenantId <String>]`: Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
     - `[Confidence <Int32?>]`: An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
     - `[Description <String>]`: Brief description (100 characters or less) of the threat represented by the indicator. Required.
     - `[DiamondModel <String>]`: diamondModel
@@ -220,7 +220,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Action <String>]`: tiAction
   - `[ActivityGroupNames <String[]>]`: The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
   - `[AdditionalInformation <String>]`: A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
-  - `[AzureTenantId <String>]`: Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
+  - `[AzureTenantId <String>]`: Stamped by the system when the indicator is ingested. The Azure Active Directory tenant id of submitting client. Required.
   - `[Confidence <Int32?>]`: An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
   - `[Description <String>]`: Brief description (100 characters or less) of the threat represented by the indicator. Required.
   - `[DiamondModel <String>]`: diamondModel

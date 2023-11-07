@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new conditionalAccessPolicy.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ New-MgIdentityConditionalAccessPolicy -BodyParameter <IMicrosoftGraphConditional
 
 ## DESCRIPTION
 Create a new conditionalAccessPolicy.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -504,7 +504,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ApplicationFilter <IMicrosoftGraphConditionalAccessFilter>]`: conditionalAccessFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Mode <String>]`: filterMode
-        - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Microsoft Entra ID. For details, see rules with multiple expressions
+        - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
       - `[ExcludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
       - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
       - `[IncludeAuthenticationContextClassReferences <String[]>]`: 
@@ -576,7 +576,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
       - `[CloudAppSecurityType <String>]`: cloudAppSecuritySessionControlType
-    - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
+    - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
     - `[PersistentBrowser <IMicrosoftGraphPersistentBrowserSessionControl>]`: persistentBrowserSessionControl
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
@@ -598,7 +598,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[ApplicationFilter <IMicrosoftGraphConditionalAccessFilter>]`: conditionalAccessFilter
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Mode <String>]`: filterMode
-      - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Microsoft Entra ID. For details, see rules with multiple expressions
+      - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
     - `[ExcludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     - `[IncludeApplications <String[]>]`: Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
     - `[IncludeAuthenticationContextClassReferences <String[]>]`: 
@@ -668,7 +668,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.
     - `[CloudAppSecurityType <String>]`: cloudAppSecuritySessionControlType
-  - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
+  - `[DisableResilienceDefaults <Boolean?>]`: Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
   - `[PersistentBrowser <IMicrosoftGraphPersistentBrowserSessionControl>]`: persistentBrowserSessionControl
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsEnabled <Boolean?>]`: Specifies whether the session control is enabled.

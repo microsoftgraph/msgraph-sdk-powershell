@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Update the properties of an authorizationPolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationP
 
 ## DESCRIPTION
 Update the properties of an authorizationPolicy object.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedToUseSspr
-Indicates whether users can use the Self-Service Password Reset feature on the tenant.
+Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ### -BlockMsolPowerShell
 To disable the use of MSOL PowerShell, set this property to true.
 This also disables user-based access to the legacy service endpoint used by MSOL PowerShell.
-This doesn't affect Microsoft Entra Connect or Microsoft Graph.
+This doesn't affect Azure Active Directory Connect or Microsoft Graph.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -333,8 +333,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
   - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend keeping allowUserConsentForRiskyApps as false. Default value is false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
-  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether users can use the Self-Service Password Reset feature on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Microsoft Entra Connect or Microsoft Graph.
+  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This doesn't affect Azure Active Directory Connect or Microsoft Graph.
   - `[DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>]`: defaultUserRolePermissions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Microsoft Entra admin center.

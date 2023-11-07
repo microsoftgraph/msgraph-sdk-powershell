@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: abeeb059-0ba3-49bb-af23-85afce2004c7
+Module Guid: 78baad85-b7cb-4af7-ae97-25ce01c374df
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -49,43 +49,8 @@ Retrieve the properties and relationships of a specific authenticationEventsFlow
 Only externalUsersSelfServiceSignupEventsFlow object types are available.
 This API is available in the following national cloud deployments.
 
-### [Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlow](Get-MgBetaIdentityAuthenticationEventFlowAsExternalUserSelfServiceSignUpEventFlow.md)
-Get the item of type microsoft.graph.authenticationEventsFlow as microsoft.graph.externalUsersSelfServiceSignUpEventsFlow
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAttribute](Get-MgBetaIdentityAuthenticationEventFlowAttribute.md)
-Get attributes from identity
-
-### [Get-MgBetaIdentityAuthenticationEventFlowAttributeCount](Get-MgBetaIdentityAuthenticationEventFlowAttributeCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaIdentityAuthenticationEventFlowCount](Get-MgBetaIdentityAuthenticationEventFlowCount.md)
 Get the number of the resource
-
-### [Get-MgBetaIdentityAuthenticationEventFlowCountAsExternalUserSelfServiceSignUpEventFlow](Get-MgBetaIdentityAuthenticationEventFlowCountAsExternalUserSelfServiceSignUpEventFlow.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityAuthenticationEventFlowIdentityProvider](Get-MgBetaIdentityAuthenticationEventFlowIdentityProvider.md)
-Get identityProviders from identity
-
-### [Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef](Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef.md)
-Get ref of identityProviders from identity
-
-### [Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderCount](Get-MgBetaIdentityAuthenticationEventFlowIdentityProviderCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollection](Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollection.md)
-The configuration for what to invoke when attributes are ready to be collected from the user.
-
-### [Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp](Get-MgBetaIdentityAuthenticationEventFlowOnAttributeCollectionAsOnAttributeCollectionExternalUserSelfServiceSignUp.md)
-Get the items of type microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp in the microsoft.graph.onAttributeCollectionHandler collection
-
-### [Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStart](Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStart.md)
-Required.
-The configuration for what to invoke when authentication methods are ready to be presented to the user.
-Must have at least one identity provider linked.
-
-### [Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp](Get-MgBetaIdentityAuthenticationEventFlowOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUserSelfServiceSignUp.md)
-Get the items of type microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp in the microsoft.graph.onAuthenticationMethodLoadStartHandler collection
 
 ### [Get-MgBetaIdentityAuthenticationEventListener](Get-MgBetaIdentityAuthenticationEventListener.md)
 Get authenticationEventListeners from identity
@@ -287,8 +252,7 @@ Read the properties and relationships of a continuousAccessEvaluationPolicy obje
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of an authenticationEventListener object.
-The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+Read the properties and relationships of a customAuthenticationExtension object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
@@ -1076,9 +1040,6 @@ Create a new authenticationEventsFlow object that is of the type specified in th
 You can create only an externalUsersSelfServiceSignupEventsFlow object type.
 This API is available in the following national cloud deployments.
 
-### [New-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef](New-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef.md)
-Create new navigation property ref to identityProviders for identity
-
 ### [New-MgBetaIdentityAuthenticationEventListener](New-MgBetaIdentityAuthenticationEventListener.md)
 Create a new authenticationEventListener object.
 You can create one of the following subtypes that are derived from authenticationEventListener.
@@ -1182,9 +1143,9 @@ A threat assessment request can be one of the following types: This API is avail
 Create new navigation property to results for informationProtection
 
 ### [New-MgBetaInvitation](New-MgBetaInvitation.md)
-Create a new invitation.
-The invitation adds an external user to the organization.
-The following options are available for creating an invitation: This API is available in the following national cloud deployments.
+Use this API to create a new invitation.
+Invitation adds an external user to the organization.
+When creating a new invitation, you have several options available: This API is available in the following national cloud deployments.
 
 ### [New-MgBetaOauth2PermissionGrant](New-MgBetaOauth2PermissionGrant.md)
 Create a delegated permission grant, represented by an oAuth2PermissionGrant object.
@@ -1401,9 +1362,6 @@ Delete a specific authenticationEventsFlow resource by ID.
 Only externalUsersSelfServiceSignupEventsFlow object types are available.
 This API is available in the following national cloud deployments.
 
-### [Remove-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef](Remove-MgBetaIdentityAuthenticationEventFlowIdentityProviderByRef.md)
-Delete ref of navigation property identityProviders for identity
-
 ### [Remove-MgBetaIdentityAuthenticationEventListener](Remove-MgBetaIdentityAuthenticationEventListener.md)
 Deletes an authenticationEventListener object.
 This API is available in the following national cloud deployments.
@@ -1491,7 +1449,7 @@ Delete an authenticationCombinationConfiguration  for a custom authenticationStr
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a countryNamedLocation object.
+Delete an ipNamedLocation object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrollment
-Module Guid: 679b82c6-9720-40e8-b2c7-5bc6abd2508a
+Module Guid: 0ec021fe-1026-466f-9e2f-441aa16ad52b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,7 +15,7 @@ Microsoft Graph PowerShell Cmdlets
 Read properties and relationships of the onPremisesConditionalAccessSettings object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfiguration](Get-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Read properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration object.
+Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
 
 ### [Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Get-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Read properties and relationships of the enrollmentConfigurationAssignment object.
@@ -42,7 +42,7 @@ Get the number of the resource
 Get roleManagement
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfiguration](New-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
+Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ### [New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](New-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Create a new enrollmentConfigurationAssignment object.
@@ -57,7 +57,7 @@ Create a new windowsAutopilotDeviceIdentity object.
 Delete navigation property conditionalAccessSettings for deviceManagement
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfiguration](Remove-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Deletes a deviceEnrollmentLimitConfiguration.
+Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
 
 ### [Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Remove-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Deletes a enrollmentConfigurationAssignment.
@@ -72,7 +72,7 @@ Deletes a windowsAutopilotDeviceIdentity.
 Update the properties of a onPremisesConditionalAccessSettings object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfiguration](Update-MgDeviceManagementDeviceEnrollmentConfiguration.md)
-Update the properties of a deviceEnrollmentLimitConfiguration object.
+Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
 
 ### [Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment](Update-MgDeviceManagementDeviceEnrollmentConfigurationAssignment.md)
 Update the properties of a enrollmentConfigurationAssignment object.

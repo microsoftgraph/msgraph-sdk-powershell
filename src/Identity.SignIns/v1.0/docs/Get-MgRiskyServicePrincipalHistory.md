@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRiskyServicePrincipalHistory
 
 ## SYNOPSIS
-Represents the risk history of Microsoft Entra service principals.
+Represents the risk history of Azure AD service principals.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgRiskyServicePrincipalHistory -InputObject <IIdentitySignInsIdentity> [-Exp
 ```
 
 ## DESCRIPTION
-Represents the risk history of Microsoft Entra service principals.
+Represents the risk history of Azure AD service principals.
 
 ## EXAMPLES
 

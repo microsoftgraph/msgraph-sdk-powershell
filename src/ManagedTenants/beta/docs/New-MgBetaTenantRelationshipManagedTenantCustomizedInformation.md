@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Optional.
 Read-only.
 
@@ -222,7 +222,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Phone <String>]`: The phone number for the contact. Optional.
     - `[Title <String>]`: The title for the contact. Required.
   - `[DisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
   - `[Website <String>]`: The website for the managed tenant. Required.
 
 `CONTACTS <IMicrosoftGraphManagedTenantsTenantContactInformation[]>`: The collection of contacts for the managed tenant. Optional.

@@ -279,7 +279,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChildHost <IMicrosoftGraphSecurityHost>]`: host
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+    - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
     - `[Components <IMicrosoftGraphSecurityHostComponent[]>]`: The hostComponents that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Category <String>]`: The type of component that was detected (for example, Operating System, Framework, Remote Access, or Server).
@@ -310,19 +310,26 @@ To create the parameters described below, construct a hash table containing the 
       - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
       - `[RecordType <String>]`: The DNS record type for this passiveDnsRecord entry.
     - `[PassiveDnsReverse <IMicrosoftGraphSecurityPassiveDnsRecord[]>]`: Reverse passive DNS retrieval about this host.
-    - `[Ports <IMicrosoftGraphSecurityHostPort[]>]`: The hostPorts associated with a host.
+    - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Banners <IMicrosoftGraphSecurityHostPortBanner[]>]`: The hostPortBanners retrieved from scanning the port.
-        - `[Banner <String>]`: The text response received from a web component when scanning a hostPort.
-        - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-        - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-        - `[ScanProtocol <String>]`: The specific protocol used to scan the hostPort.
-        - `[TimesObserved <Int32?>]`: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+      - `[Classification <String>]`: hostReputationClassification
+      - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
+        - `[Description <String>]`: The description of the rule that gives more context.
+        - `[Name <String>]`: The name of the rule.
+        - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
+        - `[Severity <String>]`: hostReputationRuleSeverity
+      - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
+    - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
+      - `[Id <String>]`: The unique identifier for an entity. Read-only.
+      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[Host <IMicrosoftGraphSecurityHost>]`: host
-      - `[LastScanDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence scanned the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
+      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
+        - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[Port <Int32?>]`: The port number.
+      - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ExpirationDateTime <DateTime?>]`: The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -351,35 +358,6 @@ To create the parameters described below, construct a hash table containing the 
         - `[SerialNumber <String>]`: The serial number associated with an SSL certificate.
         - `[Sha1 <String>]`: A SHA-1 hash of the certificate. Note: This is not the signature.
         - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
-      - `[Port <Int32?>]`: The numerical identifier of the port which is standardized across the internet.
-      - `[Protocol <String>]`: hostPortProtocol
-      - `[Services <IMicrosoftGraphSecurityHostPortComponent[]>]`: The hostPortComponents retrieved from scanning the port.
-        - `[Component <IMicrosoftGraphSecurityHostComponent>]`: hostComponent
-        - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-        - `[IsRecent <Boolean?>]`: Indicates whether this hostPortComponent is recent, which is determined by whether the hostPortComponent was observed either at the same time or after the latest hostPortBanner in the scan history, or within two days of the latest scan of the hostPort when there are no hostPortBanners in the scan history.
-        - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[Status <String>]`: hostPortStatus
-      - `[TimesObserved <Int32?>]`: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.
-    - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[Classification <String>]`: hostReputationClassification
-      - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
-        - `[Description <String>]`: The description of the rule that gives more context.
-        - `[Name <String>]`: The name of the rule.
-        - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
-        - `[Severity <String>]`: hostReputationRuleSeverity
-      - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
-    - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Host <IMicrosoftGraphSecurityHost>]`: host
-      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
-        - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Port <Int32?>]`: The port number.
-      - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
     - `[Subdomains <IMicrosoftGraphSecuritySubdomain[]>]`: The subdomains that are associated with this host.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[FirstSeenDateTime <DateTime?>]`: The date and time when Microsoft Defender Threat Intelligence first observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -450,7 +428,7 @@ To create the parameters described below, construct a hash table containing the 
 `CHILDHOST <IMicrosoftGraphSecurityHost>`: host
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+  - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ChildHost <IMicrosoftGraphSecurityHost>]`: host
     - `[FirstSeenDateTime <DateTime?>]`: The date and time when Microsoft Defender Threat Intelligence first observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -487,19 +465,26 @@ To create the parameters described below, construct a hash table containing the 
     - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
     - `[RecordType <String>]`: The DNS record type for this passiveDnsRecord entry.
   - `[PassiveDnsReverse <IMicrosoftGraphSecurityPassiveDnsRecord[]>]`: Reverse passive DNS retrieval about this host.
-  - `[Ports <IMicrosoftGraphSecurityHostPort[]>]`: The hostPorts associated with a host.
+  - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Banners <IMicrosoftGraphSecurityHostPortBanner[]>]`: The hostPortBanners retrieved from scanning the port.
-      - `[Banner <String>]`: The text response received from a web component when scanning a hostPort.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[ScanProtocol <String>]`: The specific protocol used to scan the hostPort.
-      - `[TimesObserved <Int32?>]`: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
-    - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+    - `[Classification <String>]`: hostReputationClassification
+    - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
+      - `[Description <String>]`: The description of the rule that gives more context.
+      - `[Name <String>]`: The name of the rule.
+      - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
+      - `[Severity <String>]`: hostReputationRuleSeverity
+    - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
+  - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Host <IMicrosoftGraphSecurityHost>]`: host
-    - `[LastScanDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence scanned the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
+    - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
+      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Port <Int32?>]`: The port number.
+    - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ExpirationDateTime <DateTime?>]`: The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -528,35 +513,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[SerialNumber <String>]`: The serial number associated with an SSL certificate.
       - `[Sha1 <String>]`: A SHA-1 hash of the certificate. Note: This is not the signature.
       - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
-    - `[Port <Int32?>]`: The numerical identifier of the port which is standardized across the internet.
-    - `[Protocol <String>]`: hostPortProtocol
-    - `[Services <IMicrosoftGraphSecurityHostPortComponent[]>]`: The hostPortComponents retrieved from scanning the port.
-      - `[Component <IMicrosoftGraphSecurityHostComponent>]`: hostComponent
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[IsRecent <Boolean?>]`: Indicates whether this hostPortComponent is recent, which is determined by whether the hostPortComponent was observed either at the same time or after the latest hostPortBanner in the scan history, or within two days of the latest scan of the hostPort when there are no hostPortBanners in the scan history.
-      - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[Status <String>]`: hostPortStatus
-    - `[TimesObserved <Int32?>]`: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.
-  - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Classification <String>]`: hostReputationClassification
-    - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
-      - `[Description <String>]`: The description of the rule that gives more context.
-      - `[Name <String>]`: The name of the rule.
-      - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
-      - `[Severity <String>]`: hostReputationRuleSeverity
-    - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
-  - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Host <IMicrosoftGraphSecurityHost>]`: host
-    - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Port <Int32?>]`: The port number.
-    - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
   - `[Subdomains <IMicrosoftGraphSecuritySubdomain[]>]`: The subdomains that are associated with this host.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[FirstSeenDateTime <DateTime?>]`: The date and time when Microsoft Defender Threat Intelligence first observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -642,7 +598,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HostCookieId <String>]`: The unique identifier of hostCookie
   - `[HostId <String>]`: The unique identifier of host
   - `[HostPairId <String>]`: The unique identifier of hostPair
-  - `[HostPortId <String>]`: The unique identifier of hostPort
   - `[HostSslCertificateId <String>]`: The unique identifier of hostSslCertificate
   - `[HostTrackerId <String>]`: The unique identifier of hostTracker
   - `[IncidentId <String>]`: The unique identifier of incident
@@ -677,7 +632,7 @@ To create the parameters described below, construct a hash table containing the 
 `PARENTHOST <IMicrosoftGraphSecurityHost>`: host
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.
+  - `[ChildHostPairs <IMicrosoftGraphSecurityHostPair[]>]`: The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[ChildHost <IMicrosoftGraphSecurityHost>]`: host
     - `[FirstSeenDateTime <DateTime?>]`: The date and time when Microsoft Defender Threat Intelligence first observed the hostPair. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -714,19 +669,26 @@ To create the parameters described below, construct a hash table containing the 
     - `[ParentHost <IMicrosoftGraphSecurityHost>]`: host
     - `[RecordType <String>]`: The DNS record type for this passiveDnsRecord entry.
   - `[PassiveDnsReverse <IMicrosoftGraphSecurityPassiveDnsRecord[]>]`: Reverse passive DNS retrieval about this host.
-  - `[Ports <IMicrosoftGraphSecurityHostPort[]>]`: The hostPorts associated with a host.
+  - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Banners <IMicrosoftGraphSecurityHostPortBanner[]>]`: The hostPortBanners retrieved from scanning the port.
-      - `[Banner <String>]`: The text response received from a web component when scanning a hostPort.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[ScanProtocol <String>]`: The specific protocol used to scan the hostPort.
-      - `[TimesObserved <Int32?>]`: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
-    - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
+    - `[Classification <String>]`: hostReputationClassification
+    - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
+      - `[Description <String>]`: The description of the rule that gives more context.
+      - `[Name <String>]`: The name of the rule.
+      - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
+      - `[Severity <String>]`: hostReputationRuleSeverity
+    - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
+  - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
+    - `[Id <String>]`: The unique identifier for an entity. Read-only.
+    - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[Host <IMicrosoftGraphSecurityHost>]`: host
-    - `[LastScanDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence scanned the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[MostRecentSslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
+    - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
+      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Port <Int32?>]`: The port number.
+    - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ExpirationDateTime <DateTime?>]`: The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -755,35 +717,6 @@ To create the parameters described below, construct a hash table containing the 
       - `[SerialNumber <String>]`: The serial number associated with an SSL certificate.
       - `[Sha1 <String>]`: A SHA-1 hash of the certificate. Note: This is not the signature.
       - `[Subject <IMicrosoftGraphSecuritySslCertificateEntity>]`: sslCertificateEntity
-    - `[Port <Int32?>]`: The numerical identifier of the port which is standardized across the internet.
-    - `[Protocol <String>]`: hostPortProtocol
-    - `[Services <IMicrosoftGraphSecurityHostPortComponent[]>]`: The hostPortComponents retrieved from scanning the port.
-      - `[Component <IMicrosoftGraphSecurityHostComponent>]`: hostComponent
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-      - `[IsRecent <Boolean?>]`: Indicates whether this hostPortComponent is recent, which is determined by whether the hostPortComponent was observed either at the same time or after the latest hostPortBanner in the scan history, or within two days of the latest scan of the hostPort when there are no hostPortBanners in the scan history.
-      - `[LastSeenDateTime <DateTime?>]`: The last date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
-    - `[Status <String>]`: hostPortStatus
-    - `[TimesObserved <Int32?>]`: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.
-  - `[Reputation <IMicrosoftGraphSecurityHostReputation>]`: hostReputation
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[Classification <String>]`: hostReputationClassification
-    - `[Rules <IMicrosoftGraphSecurityHostReputationRule[]>]`: A collection of rules that have been used to calculate the classification and score.
-      - `[Description <String>]`: The description of the rule that gives more context.
-      - `[Name <String>]`: The name of the rule.
-      - `[RelatedDetailsUrl <String>]`: Link to a web page with details related to this rule.
-      - `[Severity <String>]`: hostReputationRuleSeverity
-    - `[Score <Int32?>]`: The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.
-  - `[SslCertificates <IMicrosoftGraphSecurityHostSslCertificate[]>]`: The hostSslCertificates that are associated with this host.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Host <IMicrosoftGraphSecurityHost>]`: host
-    - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this hostSslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Ports <IMicrosoftGraphSecurityHostSslCertificatePort[]>]`: The ports related with this hostSslCertificate.
-      - `[FirstSeenDateTime <DateTime?>]`: The first date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[LastSeenDateTime <DateTime?>]`: The most recent date and time when this port was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Port <Int32?>]`: The port number.
-    - `[SslCertificate <IMicrosoftGraphSecuritySslCertificate>]`: sslCertificate
   - `[Subdomains <IMicrosoftGraphSecuritySubdomain[]>]`: The subdomains that are associated with this host.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[FirstSeenDateTime <DateTime?>]`: The date and time when Microsoft Defender Threat Intelligence first observed the subdomain. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

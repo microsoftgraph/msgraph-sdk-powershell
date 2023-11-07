@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant identifier for the managed tenant.
+The Azure Active Directory tenant identifier for the managed tenant.
 Required.
 Read-only.
 
@@ -365,7 +365,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePlanName <String>]`: The service plan name of the cloud PC device. Required. Read-only.
   - `[ServicePlanType <String>]`: The service plan type of the cloud PC device. Required. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
-  - `[TenantId <String>]`: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
+  - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
   - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.
 
 ## RELATED LINKS

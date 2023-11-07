@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete contactFolder other than the default contactFolder.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-IfMatch <S
 
 ## DESCRIPTION
 Delete contactFolder other than the default contactFolder.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

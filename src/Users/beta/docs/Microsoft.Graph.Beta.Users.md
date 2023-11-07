@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 1588263d-7eee-47ed-b335-199871ee9825
+Module Guid: 6ff5d5f7-d6ae-4a54-b100-4a1ba444f96f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -301,6 +301,9 @@ Read-only.
 
 ### [Get-MgBetaUserPhotoContent](Get-MgBetaUserPhotoContent.md)
 Get media content for the navigation property photo from users
+
+### [Get-MgBetaUserPhotoCount](Get-MgBetaUserPhotoCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaUserRegisteredDevice](Get-MgBetaUserRegisteredDevice.md)
 Devices that are registered for the user.

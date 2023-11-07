@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 606cacb1-d99e-4f34-9c53-f11d3e207c8f
+Module Guid: 13d9d484-d676-4d11-8f2f-a59aed5e3194
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -64,7 +64,7 @@ Invoke action checkGrantedPermissionsForApp
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -75,7 +75,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -485,6 +485,9 @@ The group's profile photo
 ### [Get-MgGroupPhotoContent](Get-MgGroupPhotoContent.md)
 Get media content for the navigation property photo from groups
 
+### [Get-MgGroupPhotoCount](Get-MgGroupPhotoCount.md)
+Get the number of the resource
+
 ### [Get-MgGroupRejectedSender](Get-MgGroupRejectedSender.md)
 Users in the rejected senders list can't post to conversations of the group (identified in the GET request URL).
 Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
@@ -548,9 +551,6 @@ Invoke function getByPath
 ### [Get-MgGroupSiteContentTypeCompatibleHubContentType](Get-MgGroupSiteContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
-### [Get-MgGroupSiteDelta](Get-MgGroupSiteDelta.md)
-Invoke function delta
-
 ### [Get-MgGroupSiteListContentTypeCompatibleHubContentType](Get-MgGroupSiteListContentTypeCompatibleHubContentType.md)
 Invoke function getCompatibleHubContentTypes
 
@@ -558,8 +558,7 @@ Invoke function getCompatibleHubContentTypes
 Invoke function getActivitiesByInterval
 
 ### [Get-MgGroupThread](Get-MgGroupThread.md)
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgGroupThreadCount](Get-MgGroupThreadCount.md)
@@ -1157,6 +1156,7 @@ Delete entity from groupSettingTemplates
 Unfollow a user's site or multiple sites.
 
 ### [Remove-MgGroupThread](Remove-MgGroupThread.md)
+Delete conversationThread.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgGroupThreadPostAttachment](Remove-MgGroupThreadPostAttachment.md)
@@ -1258,7 +1258,7 @@ Invoke action assignSensitivityLabel
 ### [Set-MgGroupLicense](Set-MgGroupLicense.md)
 Add or remove licenses on the group.
 Licenses assigned to the group will be assigned to all users in the group.
-To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID.
+To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
 To get the subscriptions available in the directory, perform a GET subscribedSkus request.
 This API is available in the following national cloud deployments.
 
@@ -1332,8 +1332,7 @@ Unpublish a contentType][] from a content type hub site.
 This API is available in the following [national cloud deployments.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Add a member to a security or Microsoft 365 group through the members navigation property.
-The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+Update the properties of a group object.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)

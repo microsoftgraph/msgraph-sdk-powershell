@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaAccessReview
 
 ## SYNOPSIS
-In the Microsoft Entra access reviews feature, retrieve an accessReview object.
+In the Azure AD access reviews feature, retrieve an accessReview object.
  To retrieve the reviewers of the access review, use the list accessReview reviewers API.
 To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
@@ -38,7 +38,7 @@ Get-MgBetaAccessReview -InputObject <IIdentityGovernanceIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-In the Microsoft Entra access reviews feature, retrieve an accessReview object.
+In the Azure AD access reviews feature, retrieve an accessReview object.
  To retrieve the reviewers of the access review, use the list accessReview reviewers API.
 To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
@@ -310,7 +310,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[CustomTaskExtensionId <String>]`: The unique identifier of customTaskExtension
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
-  - `[FindingId <String>]`: The unique identifier of finding
   - `[GovernanceInsightId <String>]`: The unique identifier of governanceInsight
   - `[GovernanceResourceId <String>]`: The unique identifier of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: The unique identifier of governanceRoleAssignment
@@ -321,7 +320,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[IncompatibleAccessPackageId <String>]`: Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[On <String>]`: Usage: on='{on}'
-  - `[PermissionsCreepIndexDistributionId <String>]`: The unique identifier of permissionsCreepIndexDistribution
   - `[PermissionsRequestChangeId <String>]`: The unique identifier of permissionsRequestChange
   - `[PrivilegedAccessGroupAssignmentScheduleId <String>]`: The unique identifier of privilegedAccessGroupAssignmentSchedule
   - `[PrivilegedAccessGroupAssignmentScheduleInstanceId <String>]`: The unique identifier of privilegedAccessGroupAssignmentScheduleInstance

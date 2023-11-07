@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementCatalogCustomWorkflowExtension
 
 ## SYNOPSIS
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgEntitlementManagementCatalogCustomWorkflowExtension -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Retrieve the details of a role management policy.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity> [-Expan
 
 ## DESCRIPTION
 Retrieve the details of a role management policy.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

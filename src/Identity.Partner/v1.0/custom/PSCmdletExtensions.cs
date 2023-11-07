@@ -14,7 +14,6 @@ namespace Microsoft.Graph.PowerShell
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
-    using System.Text.RegularExpressions;
 
     internal static class PSCmdletExtensions
     {
@@ -29,7 +28,7 @@ namespace Microsoft.Graph.PowerShell
             try
             {
                 var unescapedString = Uri.UnescapeDataString(value);
-                return value.EndsWith("'") ? unescapedString: unescapedString.Replace('+', ' ');
+                return unescapedString.Replace('+', ' ');
             }
             catch (UriFormatException ex)
             {

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSecurityThreatIntelligenceHostPortHost
 
 ## SYNOPSIS
-The host related to this hostPort.
-This is a reverse navigation property.
-When you navigate to hostPorts from a host, assume that this is a return reference.
+Get host from security
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Get-MgBetaSecurityThreatIntelligenceHostPortHost -InputObject <ISecurityIdentity
 ```
 
 ## DESCRIPTION
-The host related to this hostPort.
-This is a reverse navigation property.
-When you navigate to hostPorts from a host, assume that this is a return reference.
+Get host from security
 
 ## EXAMPLES
 

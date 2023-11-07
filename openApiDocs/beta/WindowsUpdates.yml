@@ -4396,11 +4396,11 @@ paths:
     get:
       tags:
         - admin.adminWindows
-      summary: Get updatableAsset
-      description: Read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
+      summary: Get azureADDevice
+      description: Read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0
       operationId: admin.window.update_GetUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6648,11 +6648,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update contentApproval
-      description: Update the properties of a contentApproval object. This API is available in the following national cloud deployments.
+      summary: Update complianceChange
+      description: Update the properties of a complianceChange object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -6691,11 +6691,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete complianceChange
-      description: Delete a complianceChange object. This API is available in the following national cloud deployments.
+      summary: Delete contentApproval
+      description: Delete a contentApproval object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_DeleteComplianceChange
       parameters:
         - name: updatePolicy-id

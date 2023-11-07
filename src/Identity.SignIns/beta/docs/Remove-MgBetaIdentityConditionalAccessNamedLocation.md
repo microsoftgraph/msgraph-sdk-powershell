@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Delete a countryNamedLocation object.
+Delete an ipNamedLocation object.
 This API is available in the following national cloud deployments.
 
 ## SYNTAX
@@ -26,7 +26,7 @@ Remove-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignI
 ```
 
 ## DESCRIPTION
-Delete a countryNamedLocation object.
+Delete an ipNamedLocation object.
 This API is available in the following national cloud deployments.
 
 ## EXAMPLES

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 8c2a400e-d837-4831-9791-46eefda76338
+Module Guid: d19a9bf5-9d4b-40de-b822-3c65ded08d6e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -110,7 +110,7 @@ Specifies the assets to include in the audience.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChange](Get-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Read the properties and relationships of a contentApproval object.
+Read the properties and relationships of a complianceChange object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount](Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount.md)
@@ -130,7 +130,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties and relationships of an updatableAsset object.
+Read the properties of an azureADDevice object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
@@ -254,7 +254,7 @@ You can also use the method removeMembers to remove members.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesPolicyComplianceChange](Remove-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Delete a complianceChange object.
+Delete a contentApproval object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
@@ -262,8 +262,7 @@ Delete an operationalInsightsConnection object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
-Delete an updatableAssetGroup object.
-When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+Delete an updatableAsset object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAssetMember](Remove-MgBetaWindowsUpdatesUpdatableAssetMember.md)
@@ -315,7 +314,7 @@ Update the navigation property exclusions in admin
 Update the navigation property members in admin
 
 ### [Update-MgBetaWindowsUpdatesPolicyComplianceChange](Update-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Update the properties of a contentApproval object.
+Update the properties of a complianceChange object.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaWindowsUpdatesResourceConnection](Update-MgBetaWindowsUpdatesResourceConnection.md)

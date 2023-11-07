@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 2a73b698-157f-48a3-9648-d9567e873fb9
+Module Guid: 08628d1f-abb3-45bd-b65d-4c63f0082a8f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,12 +12,12 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.Identity.Governance Cmdlets
 ### [Add-MgBetaAccessReviewDecision](Add-MgBetaAccessReviewDecision.md)
-In the Microsoft Entra access reviews feature, apply the decisions of a completed accessReview.
+In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
  After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
 Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
 By calling apply, the outcome of the review is implemented by updating the group or application.
-If a user's access was denied in the review, when an administrator calls this API, Microsoft Entra ID removes their membership or application assignment.
+If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
 After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
@@ -25,12 +25,12 @@ If you want to change a group that originates on-premises, download the results 
 This API is available in the following national cloud deployments.
 
 ### [Add-MgBetaAccessReviewInstanceDecision](Add-MgBetaAccessReviewInstanceDecision.md)
-In the Microsoft Entra access reviews feature, apply the decisions of a completed accessReview.
+In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
  After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
 Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
 By calling apply, the outcome of the review is implemented by updating the group or application.
-If a user's access was denied in the review, when an administrator calls this API, Microsoft Entra ID removes their membership or application assignment.
+If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
 After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
 You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
 A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
@@ -54,7 +54,7 @@ Invoke function export
 Invoke function export
 
 ### [Get-MgBetaAccessReview](Get-MgBetaAccessReview.md)
-In the Microsoft Entra access reviews feature, retrieve an accessReview object.
+In the Azure AD access reviews feature, retrieve an accessReview object.
  To retrieve the reviewers of the access review, use the list accessReview reviewers API.
 To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API.
 If this is a recurring access review, no decisions will be associated with the recurring access review series.
@@ -133,14 +133,14 @@ Get the number of the resource
 
 ### [Get-MgBetaAgreementFileLocalizationVersion](Get-MgBetaAgreementFileLocalizationVersion.md)
 Read-only.
-Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+Customized versions of the terms of use agreement in the Azure AD tenant.
 
 ### [Get-MgBetaAgreementFileLocalizationVersionCount](Get-MgBetaAgreementFileLocalizationVersionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaAgreementFileVersion](Get-MgBetaAgreementFileVersion.md)
 Read-only.
-Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+Customized versions of the terms of use agreement in the Azure AD tenant.
 
 ### [Get-MgBetaAgreementFileVersionCount](Get-MgBetaAgreementFileVersionCount.md)
 Get the number of the resource
@@ -156,7 +156,7 @@ Retrieve the properties and relationships of an accessPackage object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
-In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
+In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
 Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
 This API is available in the following national cloud deployments.
 
@@ -176,7 +176,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
-In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
+In Azure AD entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCount](Get-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCount.md)
@@ -191,7 +191,7 @@ The collection of stages when to execute one or more custom access package workf
 Supports $expand.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Get-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageAssignmentRequestCount](Get-MgBetaEntitlementManagementAccessPackageAssignmentRequestCount.md)
@@ -209,7 +209,7 @@ Retrieve the properties and relationships of an accessPackageCatalog object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
@@ -327,7 +327,7 @@ Nullable.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecision](Get-MgBetaIdentityGovernanceAccessReviewDecision.md)
-Represents a Microsoft Entra access review decision on an instance of a review.
+Represents an Azure AD access review decision on an instance of a review.
 
 ### [Get-MgBetaIdentityGovernanceAccessReviewDecisionCount](Get-MgBetaIdentityGovernanceAccessReviewDecisionCount.md)
 Get the number of the resource
@@ -539,7 +539,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy.md)
-The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -555,7 +555,7 @@ Supports $filter (eq, not, for isResolved and serviceInstance).
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy.md)
-The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -584,7 +584,7 @@ Get the number of the resource
 The user who created the workflow.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope.md)
-The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowLastModifiedBy](Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowLastModifiedBy.md)
 The user who last modified the workflow.
@@ -607,7 +607,7 @@ Read the properties and relationships of a workflowVersion object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScope.md)
-The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+The unique identifier of the Azure AD identity that last modified the workflow object.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeCount.md)
 Get the number of the resource
@@ -642,7 +642,7 @@ The related taskProcessingResults.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject.md)
-The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -710,7 +710,7 @@ The result of processing the task.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubject.md)
-The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -747,7 +747,7 @@ The related lifecycle workflow taskProcessingResults.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject.md)
-The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -786,7 +786,7 @@ The result of processing the task.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject.md)
-The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -881,7 +881,7 @@ The result of processing the task.
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubject](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubject.md)
-The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.
+The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -898,63 +898,6 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultTask](Get-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultTask.md)
 The related workflow task
-
-### [Get-MgBetaIdentityGovernancePermissionAnalytic](Get-MgBetaIdentityGovernancePermissionAnalytic.md)
-Get permissionsAnalytics from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAw](Get-MgBetaIdentityGovernancePermissionAnalyticAw.md)
-Get aws from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAwFinding](Get-MgBetaIdentityGovernancePermissionAnalyticAwFinding.md)
-Get findings from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAwFindingCount](Get-MgBetaIdentityGovernancePermissionAnalyticAwFindingCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution](Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution.md)
-Get permissionsCreepIndexDistributions from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionAuthorizationSystem](Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionAuthorizationSystem.md)
-Get authorizationSystem from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionCount](Get-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistributionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAzure](Get-MgBetaIdentityGovernancePermissionAnalyticAzure.md)
-Get azure from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAzureFinding](Get-MgBetaIdentityGovernancePermissionAnalyticAzureFinding.md)
-Get findings from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAzureFindingCount](Get-MgBetaIdentityGovernancePermissionAnalyticAzureFindingCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution](Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution.md)
-Get permissionsCreepIndexDistributions from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionAuthorizationSystem](Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionAuthorizationSystem.md)
-Get authorizationSystem from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionCount](Get-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistributionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticGcp](Get-MgBetaIdentityGovernancePermissionAnalyticGcp.md)
-Get gcp from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpFinding](Get-MgBetaIdentityGovernancePermissionAnalyticGcpFinding.md)
-Get findings from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpFindingCount](Get-MgBetaIdentityGovernancePermissionAnalyticGcpFindingCount.md)
-Get the number of the resource
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution](Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution.md)
-Get permissionsCreepIndexDistributions from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionAuthorizationSystem](Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionAuthorizationSystem.md)
-Get authorizationSystem from identityGovernance
-
-### [Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionCount](Get-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistributionCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernancePermissionManagement](Get-MgBetaIdentityGovernancePermissionManagement.md)
 Get permissionsManagement from identityGovernance
@@ -1141,7 +1084,7 @@ Schedule created by this request.
 Represents the alert entity.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertConfiguration](Get-MgBetaIdentityGovernanceRoleManagementAlertConfiguration.md)
-The various configurations of an alert for Microsoft Entra roles.
+The various configurations of an alert for Azure AD roles.
 The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition](Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition.md)
@@ -1203,14 +1146,14 @@ Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileLocalizationVersion.md)
 Read-only.
-Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+Customized versions of the terms of use agreement in the Azure AD tenant.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileLocalizationVersionCount](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileLocalizationVersionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileVersion](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileVersion.md)
 Read-only.
-Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+Customized versions of the terms of use agreement in the Azure AD tenant.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileVersionCount](Get-MgBetaIdentityGovernanceTermsOfUseAgreementFileVersionCount.md)
 Get the number of the resource
@@ -1646,14 +1589,14 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgBetaRoleManagementDirectoryRoleDefinition](Get-MgBetaRoleManagementDirectoryRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleDefinitionCount](Get-MgBetaRoleManagementDirectoryRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Get-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Read-only collection of role definitions that the given role definition inherits from.
-Only Microsoft Entra built-in roles support this attribute.
+Only Azure AD built-in roles support this attribute.
 
 ### [Get-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFromCount](Get-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFromCount.md)
 Get the number of the resource
@@ -1913,14 +1856,14 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleDefinition](Get-MgBetaRoleManagementEnterpriseAppRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionCount](Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Read-only collection of role definitions that the given role definition inherits from.
-Only Microsoft Entra built-in roles support this attribute.
+Only Azure AD built-in roles support this attribute.
 
 ### [Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFromCount](Get-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFromCount.md)
 Get the number of the resource
@@ -2177,14 +2120,14 @@ Detailed information for the roleDefinition object that is referenced through th
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleDefinition](Get-MgBetaRoleManagementEntitlementManagementRoleDefinition.md)
 Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
+The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionCount](Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Read-only collection of role definitions that the given role definition inherits from.
-Only Microsoft Entra built-in roles support this attribute.
+Only Azure AD built-in roles support this attribute.
 
 ### [Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFromCount](Get-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFromCount.md)
 Get the number of the resource
@@ -2602,12 +2545,12 @@ Invoke function summary
 Invoke function summary
 
 ### [Move-MgBetaEntitlementManagementAccessPackageToCatalog](Move-MgBetaEntitlementManagementAccessPackageToCatalog.md)
-In Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
+In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
 The resources in the access package must be present in the target catalog.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaAccessReview](New-MgBetaAccessReview.md)
-In the Microsoft Entra access reviews feature, create a new accessReview object.
+In the Azure AD access reviews feature, create a new accessReview object.
 Before making this request, the caller must have previously retrieved the list of business flow templates, to have the value of businessFlowTemplateId to include in the request.
 After making this request, the caller should create a programControl, to link the access review to a program.
  This API is available in the following national cloud deployments.
@@ -2625,7 +2568,7 @@ Create new navigation property to decisions for accessReviews
 Create new navigation property to myDecisions for accessReviews
 
 ### [New-MgBetaAccessReviewInstanceReviewer](New-MgBetaAccessReviewInstanceReviewer.md)
-In the Microsoft Entra access reviews feature, update an existing accessReview object to add another user as a reviewer.
+In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
 This API is available in the following national cloud deployments.
@@ -2634,7 +2577,7 @@ This API is available in the following national cloud deployments.
 Create new navigation property to myDecisions for accessReviews
 
 ### [New-MgBetaAccessReviewReviewer](New-MgBetaAccessReviewReviewer.md)
-In the Microsoft Entra access reviews feature, update an existing accessReview object to add another user as a reviewer.
+In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
 This API is available in the following national cloud deployments.
@@ -2671,7 +2614,7 @@ This API is available in the following national cloud deployments.
 Create a new entitlement management accessPackageAssignment
 
 ### [New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](New-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
-In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.
+In Azure AD entitlement management, create a new accessPackageAssignmentPolicy object.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](New-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
@@ -2681,7 +2624,7 @@ Create new navigation property to customExtensionHandlers for identityGovernance
 Create new navigation property to customExtensionStageSettings for identityGovernance
 
 ### [New-MgBetaEntitlementManagementAccessPackageAssignmentRequest](New-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.
+In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.
 This operation is used to assign a user to an access package, or to remove an access package assignment.
 This API is available in the following national cloud deployments.
 
@@ -2829,24 +2772,6 @@ Create new navigation property to tasks for identityGovernance
 ### [New-MgBetaIdentityGovernanceLifecycleWorkflowVersionTask](New-MgBetaIdentityGovernanceLifecycleWorkflowVersionTask.md)
 Create new navigation property to tasks for identityGovernance
 
-### [New-MgBetaIdentityGovernancePermissionAnalyticAwFinding](New-MgBetaIdentityGovernancePermissionAnalyticAwFinding.md)
-Create new navigation property to findings for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution](New-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution.md)
-Create new navigation property to permissionsCreepIndexDistributions for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionAnalyticAzureFinding](New-MgBetaIdentityGovernancePermissionAnalyticAzureFinding.md)
-Create new navigation property to findings for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution](New-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution.md)
-Create new navigation property to permissionsCreepIndexDistributions for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionAnalyticGcpFinding](New-MgBetaIdentityGovernancePermissionAnalyticGcpFinding.md)
-Create new navigation property to findings for identityGovernance
-
-### [New-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution](New-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution.md)
-Create new navigation property to permissionsCreepIndexDistributions for identityGovernance
-
 ### [New-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange](New-MgBetaIdentityGovernancePermissionManagementPermissionRequestChange.md)
 Create new navigation property to permissionsRequestChanges for identityGovernance
 
@@ -2968,11 +2893,11 @@ Invoke action makePermanent
 Add new entity to privilegedRoleAssignmentRequests
 
 ### [New-MgBetaProgram](New-MgBetaProgram.md)
-In the Microsoft Entra access reviews feature, create a new program object.
+In the Azure AD access reviews feature, create a new program object.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaProgramControl](New-MgBetaProgramControl.md)
-In the Microsoft Entra access reviews feature, create a new programControl object.
+In the Azure AD access reviews feature, create a new programControl object.
 This links an access review to a program.
 Prior to making this request, the caller must have previously This API is available in the following national cloud deployments.
 
@@ -3004,14 +2929,14 @@ Create new navigation property to roleAssignmentScheduleInstances for roleManage
 ### [New-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgBetaRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
 Create a new unifiedRoleAssignmentScheduleRequest object.
 This operation allows both admins and users to add, remove, extend, or renew assignments.
-To run this request, the calling user must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
+To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
+See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDirectoryRoleDefinition](New-MgBetaRoleManagementDirectoryRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -3058,14 +2983,14 @@ Create new navigation property to roleAssignmentScheduleInstances for roleManage
 ### [New-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest](New-MgBetaRoleManagementEnterpriseAppRoleAssignmentScheduleRequest.md)
 Create a new unifiedRoleAssignmentScheduleRequest object.
 This operation allows both admins and users to add, remove, extend, or renew assignments.
-To run this request, the calling user must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
+To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
+See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEnterpriseAppRoleDefinition](New-MgBetaRoleManagementEnterpriseAppRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -3109,14 +3034,14 @@ Create new navigation property to roleAssignmentScheduleInstances for roleManage
 ### [New-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgBetaRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
 Create a new unifiedRoleAssignmentScheduleRequest object.
 This operation allows both admins and users to add, remove, extend, or renew assignments.
-To run this request, the calling user must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events.
+To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
+See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEntitlementManagementRoleDefinition](New-MgBetaRoleManagementEntitlementManagementRoleDefinition.md)
 Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) This API is available in the following national cloud deployments.
 
 ### [New-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -3139,7 +3064,7 @@ Create new navigation property to transitiveRoleAssignments for roleManagement
 Invoke action register
 
 ### [Remove-MgBetaAccessReview](Remove-MgBetaAccessReview.md)
-In the Microsoft Entra access reviews feature, delete an accessReview object.
+In the Azure AD access reviews feature, delete an accessReview object.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaAccessReviewDecision](Remove-MgBetaAccessReviewDecision.md)
@@ -3155,7 +3080,7 @@ Delete navigation property decisions for accessReviews
 Delete navigation property myDecisions for accessReviews
 
 ### [Remove-MgBetaAccessReviewInstanceReviewer](Remove-MgBetaAccessReviewInstanceReviewer.md)
-In the Microsoft Entra access reviews feature, update an existing accessReview object to remove a user as a reviewer.
+In the Azure AD access reviews feature, update an existing accessReview object to remove a user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
 This API is available in the following national cloud deployments.
@@ -3164,7 +3089,7 @@ This API is available in the following national cloud deployments.
 Delete navigation property myDecisions for accessReviews
 
 ### [Remove-MgBetaAccessReviewReviewer](Remove-MgBetaAccessReviewReviewer.md)
-In the Microsoft Entra access reviews feature, update an existing accessReview object to remove a user as a reviewer.
+In the Azure AD access reviews feature, update an existing accessReview object to remove a user as a reviewer.
 This operation is only permitted for an access review that isn't yet completed, and only for an access review where the reviewers are explicitly specified.
 This operation isn't permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
 This API is available in the following national cloud deployments.
@@ -3207,7 +3132,7 @@ Delete navigation property accessPackageAssignmentApprovals for identityGovernan
 Delete navigation property steps for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicy.md)
-In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy.
+In Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](Remove-MgBetaEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
@@ -3375,36 +3300,6 @@ Delete navigation property tasks for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersionTask](Remove-MgBetaIdentityGovernanceLifecycleWorkflowVersionTask.md)
 Delete navigation property tasks for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalytic](Remove-MgBetaIdentityGovernancePermissionAnalytic.md)
-Delete navigation property permissionsAnalytics for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticAw](Remove-MgBetaIdentityGovernancePermissionAnalyticAw.md)
-Delete navigation property aws for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticAwFinding](Remove-MgBetaIdentityGovernancePermissionAnalyticAwFinding.md)
-Delete navigation property findings for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution](Remove-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution.md)
-Delete navigation property permissionsCreepIndexDistributions for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticAzure](Remove-MgBetaIdentityGovernancePermissionAnalyticAzure.md)
-Delete navigation property azure for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticAzureFinding](Remove-MgBetaIdentityGovernancePermissionAnalyticAzureFinding.md)
-Delete navigation property findings for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution](Remove-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution.md)
-Delete navigation property permissionsCreepIndexDistributions for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticGcp](Remove-MgBetaIdentityGovernancePermissionAnalyticGcp.md)
-Delete navigation property gcp for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticGcpFinding](Remove-MgBetaIdentityGovernancePermissionAnalyticGcpFinding.md)
-Delete navigation property findings for identityGovernance
-
-### [Remove-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution](Remove-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution.md)
-Delete navigation property permissionsCreepIndexDistributions for identityGovernance
 
 ### [Remove-MgBetaIdentityGovernancePermissionManagement](Remove-MgBetaIdentityGovernancePermissionManagement.md)
 Delete navigation property permissionsManagement for identityGovernance
@@ -3585,13 +3480,13 @@ Delete navigation property settings for privilegedRoles
 Delete navigation property summary for privilegedRoles
 
 ### [Remove-MgBetaProgram](Remove-MgBetaProgram.md)
-In the Microsoft Entra access reviews feature, delete a program object.
+In the Azure AD access reviews feature, delete a program object.
 Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.
 Also, please note that the built-in default program cannot be deleted.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaProgramControl](Remove-MgBetaProgramControl.md)
-In the Microsoft Entra access reviews feature, delete a programControl object.
+In the Azure AD access reviews feature, delete a programControl object.
 This unlinks an access review from a program.
 This API is available in the following national cloud deployments.
 
@@ -3638,8 +3533,8 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 ### [Remove-MgBetaRoleManagementDirectoryRoleDefinition](Remove-MgBetaRoleManagementDirectoryRoleDefinition.md)
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -3696,8 +3591,8 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 ### [Remove-MgBetaRoleManagementEnterpriseAppRoleDefinition](Remove-MgBetaRoleManagementEnterpriseAppRoleDefinition.md)
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -3754,8 +3649,8 @@ Delete navigation property roleAssignmentScheduleRequests for roleManagement
 ### [Remove-MgBetaRoleManagementEntitlementManagementRoleDefinition](Remove-MgBetaRoleManagementEntitlementManagementRoleDefinition.md)
 Delete a unifiedRoleDefinition object for an RBAC provider.
 You cannot delete built-in roles.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Remove-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Delete navigation property inheritsPermissionsFrom for roleManagement
@@ -3779,13 +3674,13 @@ Delete navigation property appScope for roleManagement
 Invoke function myRequests
 
 ### [Reset-MgBetaAccessReviewDecision](Reset-MgBetaAccessReviewDecision.md)
-In the Microsoft Entra access reviews feature, reset the decisions of a currently active accessReview.
+In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 This API is available in the following national cloud deployments.
 
 ### [Reset-MgBetaAccessReviewInstanceDecision](Reset-MgBetaAccessReviewInstanceDecision.md)
-In the Microsoft Entra access reviews feature, reset the decisions of a currently active accessReview.
+In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 This API is available in the following national cloud deployments.
@@ -3800,16 +3695,16 @@ This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaIdentityGovernanceLifecycleWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflow.md)
 Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
+You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
 This API is available in the following national cloud deployments.
 
 ### [Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Restore-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
 Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it.
+You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
 This API is available in the following national cloud deployments.
 
 ### [Resume-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Resume-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
+In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
 It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 This API is available in the following national cloud deployments.
 
@@ -3850,12 +3745,12 @@ Select matching entitlement management accessPackage
 Select matching entitlement management accessPackageAssignmentPolicy
 
 ### [Send-MgBetaAccessReviewInstanceReminder](Send-MgBetaAccessReviewInstanceReminder.md)
-In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.
+In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 This API is available in the following national cloud deployments.
 
 ### [Send-MgBetaAccessReviewReminder](Send-MgBetaAccessReviewReminder.md)
-In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.
+In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 This API is available in the following national cloud deployments.
 
@@ -3874,21 +3769,21 @@ Update the navigation property accessPackageAssignmentPolicies in identityGovern
 Split elements of a connectedOrganization
 
 ### [Stop-MgBetaAccessReview](Stop-MgBetaAccessReview.md)
-In the Microsoft Entra access reviews feature, stop a currently active accessReview.
+In the Azure AD access reviews feature, stop a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 (To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaAccessReviewInstance](Stop-MgBetaAccessReviewInstance.md)
-In the Microsoft Entra access reviews feature, stop a currently active accessReview.
+In the Azure AD access reviews feature, stop a currently active accessReview.
 The target object can be either a one-time access review, or an instance of a recurring access review.
 (To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
 After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
 This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest](Stop-MgBetaEntitlementManagementAccessPackageAssignmentRequest.md)
-In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
+In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancelable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated.
 This API is available in the following national cloud deployments.
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstance.md)
@@ -3976,7 +3871,7 @@ After calling this action, the status of the cancelled unifiedRoleEligibilitySch
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaAccessReview](Update-MgBetaAccessReview.md)
-In the Microsoft Entra access reviews feature, update an existing accessReview object to change one or more of its properties.
+In the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties.
 This API is not intended to change the reviewers or decisions of a review.
 To change the reviewers, use the addReviewer or removeReviewer APIs.
 To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API.
@@ -4233,36 +4128,6 @@ Update the navigation property tasks in identityGovernance
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailboxSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResultSubjectMailboxSetting.md)
 Update property mailboxSettings value.
 
-### [Update-MgBetaIdentityGovernancePermissionAnalytic](Update-MgBetaIdentityGovernancePermissionAnalytic.md)
-Update the navigation property permissionsAnalytics in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticAw](Update-MgBetaIdentityGovernancePermissionAnalyticAw.md)
-Update the navigation property aws in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticAwFinding](Update-MgBetaIdentityGovernancePermissionAnalyticAwFinding.md)
-Update the navigation property findings in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution](Update-MgBetaIdentityGovernancePermissionAnalyticAwPermissionCreepIndexDistribution.md)
-Update the navigation property permissionsCreepIndexDistributions in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticAzure](Update-MgBetaIdentityGovernancePermissionAnalyticAzure.md)
-Update the navigation property azure in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticAzureFinding](Update-MgBetaIdentityGovernancePermissionAnalyticAzureFinding.md)
-Update the navigation property findings in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution](Update-MgBetaIdentityGovernancePermissionAnalyticAzurePermissionCreepIndexDistribution.md)
-Update the navigation property permissionsCreepIndexDistributions in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticGcp](Update-MgBetaIdentityGovernancePermissionAnalyticGcp.md)
-Update the navigation property gcp in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticGcpFinding](Update-MgBetaIdentityGovernancePermissionAnalyticGcpFinding.md)
-Update the navigation property findings in identityGovernance
-
-### [Update-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution](Update-MgBetaIdentityGovernancePermissionAnalyticGcpPermissionCreepIndexDistribution.md)
-Update the navigation property permissionsCreepIndexDistributions in identityGovernance
-
 ### [Update-MgBetaIdentityGovernancePermissionManagement](Update-MgBetaIdentityGovernancePermissionManagement.md)
 Update the navigation property permissionsManagement in identityGovernance
 
@@ -4444,7 +4309,7 @@ Update the navigation property settings in privilegedRoles
 Update the navigation property summary in privilegedRoles
 
 ### [Update-MgBetaProgram](Update-MgBetaProgram.md)
-In the Microsoft Entra access reviews feature, update an existing program object.
+In the Azure AD access reviews feature, update an existing program object.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaProgramControl](Update-MgBetaProgramControl.md)
@@ -4493,8 +4358,8 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 ### [Update-MgBetaRoleManagementDirectoryRoleDefinition](Update-MgBetaRoleManagementDirectoryRoleDefinition.md)
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
@@ -4551,8 +4416,8 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 ### [Update-MgBetaRoleManagementEnterpriseAppRoleDefinition](Update-MgBetaRoleManagementEnterpriseAppRoleDefinition.md)
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementEnterpriseAppRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement
@@ -4609,8 +4474,8 @@ Update the navigation property roleAssignmentScheduleRequests in roleManagement
 ### [Update-MgBetaRoleManagementEntitlementManagementRoleDefinition](Update-MgBetaRoleManagementEntitlementManagementRoleDefinition.md)
 Update the properties of a unifiedRoleDefinition object for an RBAC provider.
 You cannot update built-in roles.
-This feature requires a Microsoft Entra ID P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments.
+This feature requires an Azure AD Premium P1 or P2 license.
+The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)  This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](Update-MgBetaRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Update the navigation property inheritsPermissionsFrom in roleManagement

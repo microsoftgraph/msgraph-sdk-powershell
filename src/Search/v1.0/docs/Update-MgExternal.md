@@ -155,7 +155,6 @@ To create the parameters described below, construct a hash table containing the 
     - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
-    - `[ConnectorId <String>]`: The Teams app ID. Optional.
     - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
     - `[Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -236,7 +235,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[Configuration <IMicrosoftGraphExternalConnectorsConfiguration>]`: configuration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AuthorizedAppIds <String[]>]`: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
-  - `[ConnectorId <String>]`: The Teams app ID. Optional.
   - `[Description <String>]`: Description of the connection displayed in the Microsoft 365 admin center. Optional.
   - `[Groups <IMicrosoftGraphExternalConnectorsExternalGroup[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.

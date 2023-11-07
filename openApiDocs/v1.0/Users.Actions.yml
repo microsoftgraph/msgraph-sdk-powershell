@@ -11,7 +11,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action resetPassword
-      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and can''t be performed on a user''s own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation. This API is available in the following national cloud deployments.'
+      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and cannot be performed on a user''s own account. This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and returns a Location header with a link where the caller can periodically check for the status of the reset operation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
@@ -15131,7 +15131,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct. This API is available in the following national cloud deployments.'
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
@@ -15460,7 +15460,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reprocessLicenseAssignment
-      description: 'Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. Also see Identify and resolve license assignment problems for a group in Microsoft Entra ID for more details. This API is available in the following national cloud deployments.'
+      description: 'Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0
@@ -18537,11 +18537,9 @@ components:
             dataType:
               type: string
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-            isMultiValued:
-              type: boolean
             isSyncedFromOnPremises:
               type: boolean
-              description: Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
               nullable: true
             name:
               type: string
@@ -22113,7 +22111,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string

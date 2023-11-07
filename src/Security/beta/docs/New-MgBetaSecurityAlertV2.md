@@ -21,10 +21,10 @@ New-MgBetaSecurityAlertV2 [-ActorDisplayName <String>] [-AdditionalData <Hashtab
  [-Determination <String>] [-Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]
  [-FirstActivityDateTime <DateTime>] [-Id <String>] [-IncidentId <String>] [-IncidentWebUrl <String>]
  [-LastActivityDateTime <DateTime>] [-LastUpdateDateTime <DateTime>] [-MitreTechniques <String[]>]
- [-ProductName <String>] [-ProviderAlertId <String>] [-RecommendedActions <String>]
- [-ResolvedDateTime <DateTime>] [-ServiceSource <String>] [-Severity <String>] [-Status <String>]
- [-SystemTags <String[]>] [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>]
- [-Title <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ProviderAlertId <String>] [-RecommendedActions <String>] [-ResolvedDateTime <DateTime>]
+ [-ServiceSource <String>] [-Severity <String>] [-Status <String>] [-SystemTags <String[]>]
+ [-TenantId <String>] [-ThreatDisplayName <String>] [-ThreatFamilyName <String>] [-Title <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -404,21 +404,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProductName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ProviderAlertId
 The ID of the alert as it appears in the security provider product that generated the alert.
 
@@ -525,7 +510,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-The Microsoft Entra tenant the alert was created in.
+The Azure Active Directory tenant the alert was created in.
 
 ```yaml
 Type: System.String
@@ -669,7 +654,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[LastActivityDateTime <DateTime?>]`: The oldest activity associated with the alert.
   - `[LastUpdateDateTime <DateTime?>]`: Time when the alert was last updated at Microsoft 365 Defender.
   - `[MitreTechniques <String[]>]`: The attack techniques, as aligned with the MITRE ATT&CK framework.
-  - `[ProductName <String>]`: 
   - `[ProviderAlertId <String>]`: The ID of the alert as it appears in the security provider product that generated the alert.
   - `[RecommendedActions <String>]`: Recommended response and remediation actions to take in the event this alert was generated.
   - `[ResolvedDateTime <DateTime?>]`: Time when the alert was resolved.
@@ -677,7 +661,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: alertStatus
   - `[SystemTags <String[]>]`: 
-  - `[TenantId <String>]`: The Microsoft Entra tenant the alert was created in.
+  - `[TenantId <String>]`: The Azure Active Directory tenant the alert was created in.
   - `[ThreatDisplayName <String>]`: The threat associated with this alert.
   - `[ThreatFamilyName <String>]`: Threat family associated with this alert.
   - `[Title <String>]`: Brief identifying string value describing the alert.

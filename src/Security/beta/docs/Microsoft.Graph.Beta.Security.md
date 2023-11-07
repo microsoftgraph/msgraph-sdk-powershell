@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: e6789dbe-5e19-41a8-b5ef-f511a922c521
+Module Guid: f147284b-6671-4545-a975-5a7ea4f85bbd
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -55,12 +55,6 @@ This API is available in the following national cloud deployments.
 Initiate an export from a ediscoveryReviewSetQuery.
 For details, see Export documents from a review set in eDiscovery (Premium).
 This API is available in the following national cloud deployments.
-
-### [Export-MgBetaSecurityCaseEdiscoveryCaseSearchReport](Export-MgBetaSecurityCaseEdiscoveryCaseSearchReport.md)
-Invoke action exportReport
-
-### [Export-MgBetaSecurityCaseEdiscoveryCaseSearchResult](Export-MgBetaSecurityCaseEdiscoveryCaseSearchResult.md)
-Invoke action exportResult
 
 ### [Get-MgBetaSecurityAction](Get-MgBetaSecurityAction.md)
 Retrieve the properties and relationships of a securityAction object.
@@ -121,7 +115,7 @@ Represents an attack simulation training landing page.
 Get the number of the resource
 
 ### [Get-MgBetaSecurityAttackSimulationLandingPageDetail](Get-MgBetaSecurityAttackSimulationLandingPageDetail.md)
-The detail information for a landing page associated with a simulation during its creation.
+Get details from security
 
 ### [Get-MgBetaSecurityAttackSimulationLandingPageDetailCount](Get-MgBetaSecurityAttackSimulationLandingPageDetailCount.md)
 Get the number of the resource
@@ -644,18 +638,16 @@ Reverse passive DNS retrieval about this host.
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostPort](Get-MgBetaSecurityThreatIntelligenceHostPort.md)
-Read the properties and relationships of a hostPort object.
+Get hostPorts from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostPortCount](Get-MgBetaSecurityThreatIntelligenceHostPortCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostPortHost](Get-MgBetaSecurityThreatIntelligenceHostPortHost.md)
-The host related to this hostPort.
-This is a reverse navigation property.
-When you navigate to hostPorts from a host, assume that this is a return reference.
+Get host from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostPortMostRecentSslCertificate](Get-MgBetaSecurityThreatIntelligenceHostPortMostRecentSslCertificate.md)
-The most recent sslCertificate used to communicate on the port.
+Get mostRecentSslCertificate from security
 
 ### [Get-MgBetaSecurityThreatIntelligenceHostReputation](Get-MgBetaSecurityThreatIntelligenceHostReputation.md)
 Get the properties and relationships of a hostReputation object.

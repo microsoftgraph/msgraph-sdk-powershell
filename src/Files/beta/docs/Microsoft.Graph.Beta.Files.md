@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: d8df6757-a515-4947-8986-8982f5828ff3
+Module Guid: 1c548edd-bc60-4757-9f75-7a370dc77a60
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -280,8 +280,8 @@ Only supported on the root of a drive.
 Get the number of the resource
 
 ### [Get-MgBetaDriveItemThumbnail](Get-MgBetaDriveItemThumbnail.md)
-Collection of [thumbnailSet][] objects associated with the item.
-For more information, see [getting thumbnails][].
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -631,8 +631,8 @@ Only supported on the root of a drive.
 Get the number of the resource
 
 ### [Get-MgBetaDriveRootThumbnail](Get-MgBetaDriveRootThumbnail.md)
-Collection of [thumbnailSet][] objects associated with the item.
-For more information, see [getting thumbnails][].
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -891,8 +891,8 @@ Only supported on the root of a drive.
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveItemThumbnail](Get-MgBetaGroupDriveItemThumbnail.md)
-Collection of [thumbnailSet][] objects associated with the item.
-For more information, see [getting thumbnails][].
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -1221,8 +1221,8 @@ Only supported on the root of a drive.
 Get the number of the resource
 
 ### [Get-MgBetaGroupDriveRootThumbnail](Get-MgBetaGroupDriveRootThumbnail.md)
-Collection of [thumbnailSet][] objects associated with the item.
-For more information, see [getting thumbnails][].
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -1714,8 +1714,8 @@ Only supported on the root of a drive.
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveItemThumbnail](Get-MgBetaUserDriveItemThumbnail.md)
-Collection of [thumbnailSet][] objects associated with the item.
-For more information, see [getting thumbnails][].
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -2044,8 +2044,8 @@ Only supported on the root of a drive.
 Get the number of the resource
 
 ### [Get-MgBetaUserDriveRootThumbnail](Get-MgBetaUserDriveRootThumbnail.md)
-Collection of [thumbnailSet][] objects associated with the item.
-For more information, see [getting thumbnails][].
+Collection containing [ThumbnailSet][] objects associated with the item.
+For more info, see [getting thumbnails][].
 Read-only.
 Nullable.
 
@@ -3235,8 +3235,9 @@ Update entity in drives
 Update property mailboxSettings value.
 
 ### [Update-MgBetaDriveItem](Update-MgBetaDriveItem.md)
-Update the metadata for a DriveItem by ID or path.
-You can also use update to move an item to another parent by updating the item's parentReference property.
+To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
+This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
+Items cannot be moved between Drives using this request.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemAnalytic](Update-MgBetaDriveItemAnalytic.md)
@@ -3282,11 +3283,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemRetentionLabel](Update-MgBetaDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemSubscription](Update-MgBetaDriveItemSubscription.md)
@@ -3400,11 +3399,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveRootRetentionLabel](Update-MgBetaDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveRootSubscription](Update-MgBetaDriveRootSubscription.md)
@@ -3423,8 +3420,9 @@ Update the navigation property drives in groups
 Update property mailboxSettings value.
 
 ### [Update-MgBetaGroupDriveItem](Update-MgBetaGroupDriveItem.md)
-Update the metadata for a DriveItem by ID or path.
-You can also use update to move an item to another parent by updating the item's parentReference property.
+To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
+This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
+Items cannot be moved between Drives using this request.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemAnalytic](Update-MgBetaGroupDriveItemAnalytic.md)
@@ -3470,11 +3468,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemRetentionLabel](Update-MgBetaGroupDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemSubscription](Update-MgBetaGroupDriveItemSubscription.md)
@@ -3588,11 +3584,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootRetentionLabel](Update-MgBetaGroupDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootSubscription](Update-MgBetaGroupDriveRootSubscription.md)
@@ -3676,8 +3670,9 @@ Update the navigation property drives in users
 Update property mailboxSettings value.
 
 ### [Update-MgBetaUserDriveItem](Update-MgBetaUserDriveItem.md)
-Update the metadata for a DriveItem by ID or path.
-You can also use update to move an item to another parent by updating the item's parentReference property.
+To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move.
+This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
+Items cannot be moved between Drives using this request.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemAnalytic](Update-MgBetaUserDriveItemAnalytic.md)
@@ -3723,11 +3718,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemRetentionLabel](Update-MgBetaUserDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemSubscription](Update-MgBetaUserDriveItemSubscription.md)
@@ -3841,11 +3834,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootRetentionLabel](Update-MgBetaUserDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-For information about conflict resolution for retention labels, see Will an existing label be overridden or removed.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootSubscription](Update-MgBetaUserDriveRootSubscription.md)

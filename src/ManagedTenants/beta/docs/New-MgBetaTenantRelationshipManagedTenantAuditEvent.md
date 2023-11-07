@@ -283,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantIds
-The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values.
+The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values.
 Required.
 Read-only.
 
@@ -381,7 +381,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[InitiatedByUserId <String>]`: The identifier of the user who initiated the activity. Required. Read-only.
   - `[RequestBody <String>]`: The raw HTTP request body. Some sensitive information may be removed.
   - `[RequestUrl <String>]`: The raw HTTP request URL. Required. Read-only.
-  - `[TenantIds <String>]`: The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
+  - `[TenantIds <String>]`: The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
   - `[TenantNames <String>]`: The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
 
 ## RELATED LINKS

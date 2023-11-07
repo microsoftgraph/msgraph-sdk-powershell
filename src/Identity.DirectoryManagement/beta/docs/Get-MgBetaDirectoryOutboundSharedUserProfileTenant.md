@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectoryOutboundSharedUserProfileTenant
 
 ## SYNOPSIS
-The collection of external Microsoft Entra tenants that the user has shared profile data with.
+The collection of external Azure AD tenants that the user has shared profile data with.
 Read-only.
 
 ## SYNTAX
@@ -33,7 +33,7 @@ Get-MgBetaDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirect
 ```
 
 ## DESCRIPTION
-The collection of external Microsoft Entra tenants that the user has shared profile data with.
+The collection of external Azure AD tenants that the user has shared profile data with.
 Read-only.
 
 ## EXAMPLES
@@ -284,7 +284,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: The unique identifier of device
-  - `[DeviceLocalCredentialInfoId <String>]`: The unique identifier of deviceLocalCredentialInfo
   - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
   - `[DirectoryRoleId <String>]`: The unique identifier of directoryRole
   - `[DirectoryRoleTemplateId <String>]`: The unique identifier of directoryRoleTemplate
