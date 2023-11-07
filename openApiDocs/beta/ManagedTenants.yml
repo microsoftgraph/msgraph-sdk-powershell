@@ -1688,7 +1688,7 @@ paths:
       tags:
         - tenantRelationships.managedTenant
       summary: List conditionalAccessPolicyCoverages
-      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
+      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
@@ -12254,7 +12254,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -12364,7 +12364,7 @@ components:
               nullable: true
             tenantIds:
               type: string
-              description: 'The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.'
+              description: 'The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.'
               nullable: true
             tenantNames:
               type: string
@@ -12398,7 +12398,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -12452,7 +12452,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
               nullable: true
             userPrincipalName:
               type: string
@@ -12686,7 +12686,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
               nullable: true
             tenantLicenseType:
               type: string
@@ -12847,7 +12847,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -12980,7 +12980,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -13035,7 +13035,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
               nullable: true
             unknownDeviceCount:
               maximum: 2147483647
@@ -13401,7 +13401,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -13848,7 +13848,7 @@ components:
           description: A collection of role assignments for the managed tenant.
         tenantId:
           type: string
-          description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+          description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.managedTenants.tenantGroup:
@@ -13908,7 +13908,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
               nullable: true
             tenantStatusInformation:
               $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantStatusInformation'
@@ -13931,7 +13931,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
             website:
               type: string
               description: The website for the managed tenant. Required.
@@ -13978,7 +13978,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant.
+              description: The Microsoft Entra tenant identifier for the managed tenant.
               nullable: true
             verticalName:
               type: string
@@ -14110,7 +14110,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -14228,7 +14228,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              description: The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -14327,7 +14327,7 @@ components:
       properties:
         tenantId:
           type: string
-          description: The Azure Active Directory tenant identifier for the managed tenant. Optional.
+          description: The Microsoft Entra tenant identifier for the managed tenant. Optional.
           nullable: true
       additionalProperties:
         type: object

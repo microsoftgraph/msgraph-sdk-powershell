@@ -1046,12 +1046,647 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the item of type microsoft.graph.authenticationEventsFlow as microsoft.graph.externalUsersSelfServiceSignUpEventsFlow
+      operationId: identity_GetAuthenticationEventsFlowAsExternalUsersSelfServiceSignUpEventsFlow
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - conditions
+                - description
+                - displayName
+                - priority
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get onAttributeCollection property value
+      description: The configuration for what to invoke when attributes are ready to be collected from the user.
+      operationId: identity.authenticationEventsFlow_GetOnAttributeCollection
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionHandler'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the items of type microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp in the microsoft.graph.onAttributeCollectionHandler collection
+      operationId: identity.authenticationEventsFlow_GetOnAttributeCollectionAsOnAttributeCollectionExternalUsersSelfServiceSignUp
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+      responses:
+        2XX:
+          description: ''
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get attributes from identity
+      operationId: identity.authenticationEventsFlow_ListAttribute
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - dataType
+                - dataType desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - userFlowAttributeType
+                - userFlowAttributeType desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataType
+                - description
+                - displayName
+                - userFlowAttributeType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.identityUserFlowAttributeCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/{identityUserFlowAttribute-id}':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get attributes from identity
+      operationId: identity.authenticationEventsFlow_GetAttribute
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: identityUserFlowAttribute-id
+          in: path
+          description: The unique identifier of identityUserFlowAttribute
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityUserFlowAttribute
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - dataType
+                - description
+                - displayName
+                - userFlowAttributeType
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection/microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp/attributes/$count':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the number of the resource
+      operationId: identity.authenticationEventsFlow.attribute_GetCount
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get onAuthenticationMethodLoadStart property value
+      description: Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
+      operationId: identity.authenticationEventsFlow_GetOnAuthenticationMethodLoadStart
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onAuthenticationMethodLoadStartHandler'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the items of type microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp in the microsoft.graph.onAuthenticationMethodLoadStartHandler collection
+      operationId: identity.authenticationEventsFlow_GetOnAuthenticationMethodLoadStartAsOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+      responses:
+        2XX:
+          description: ''
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get identityProviders from identity
+      operationId: identity.authenticationEventsFlow_ListIdentityProvider
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/{identityProviderBase-id}/$ref':
+    delete:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Delete ref of navigation property identityProviders for identity
+      operationId: identity.authenticationEventsFlow_DeleteIdentityProviderGraphBPreRef
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - name: identityProviderBase-id
+          in: path
+          description: The unique identifier of identityProviderBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          style: form
+          explode: false
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$count':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the number of the resource
+      operationId: identity.authenticationEventsFlow.identityProvider_GetCount
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/identity/authenticationEventsFlows/{authenticationEventsFlow-id}/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/onAuthenticationMethodLoadStart/microsoft.graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp/identityProviders/$ref':
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get ref of identityProviders from identity
+      operationId: identity.authenticationEventsFlow_ListIdentityProviderGraphBPreRef
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Create new navigation property ref to identityProviders for identity
+      operationId: identity.authenticationEventsFlow_CreateIdentityProviderGraphBPreRef
+      parameters:
+        - name: authenticationEventsFlow-id
+          in: path
+          description: The unique identifier of authenticationEventsFlow
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: authenticationEventsFlow
+      requestBody:
+        $ref: '#/components/requestBodies/refPostBody'
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /identity/authenticationEventsFlows/$count:
     get:
       tags:
         - identity.authenticationEventsFlow
       summary: Get the number of the resource
       operationId: identity.authenticationEventsFlow_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /identity/authenticationEventsFlows/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow:
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the items of type microsoft.graph.externalUsersSelfServiceSignUpEventsFlow in the microsoft.graph.authenticationEventsFlow collection
+      operationId: identity_ListAuthenticationEventsFlowAsExternalUsersSelfServiceSignUpEventsFlow
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - conditions
+                - conditions desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - priority
+                - priority desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - conditions
+                - description
+                - displayName
+                - priority
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.externalUsersSelfServiceSignUpEventsFlowCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /identity/authenticationEventsFlows/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow/$count:
+    get:
+      tags:
+        - identity.authenticationEventsFlow
+      summary: Get the number of the resource
+      operationId: identity.AuthenticationEventsFlow_GetCountAsExternalUsersSelfServiceSignUpEventsFlow
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -8597,11 +9232,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete ipNamedLocation
-      description: Delete an ipNamedLocation object. This API is available in the following national cloud deployments.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -9237,11 +9872,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get customAuthenticationExtension
-      description: Read the properties and relationships of a customAuthenticationExtension object. This API is available in the following national cloud deployments.
+      summary: Get authenticationEventListener
+      description: Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -14916,7 +15551,7 @@ paths:
       tags:
         - invitations.invitation
       summary: Create invitation
-      description: 'Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available: This API is available in the following national cloud deployments.'
+      description: 'Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation: This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0
@@ -34211,6 +34846,52 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.externalUsersSelfServiceSignUpEventsFlow:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationEventsFlow'
+        - title: externalUsersSelfServiceSignUpEventsFlow
+          type: object
+          properties:
+            onAttributeCollection:
+              $ref: '#/components/schemas/microsoft.graph.onAttributeCollectionHandler'
+            onAuthenticationMethodLoadStart:
+              $ref: '#/components/schemas/microsoft.graph.onAuthenticationMethodLoadStartHandler'
+            onInteractiveAuthFlowStart:
+              $ref: '#/components/schemas/microsoft.graph.onInteractiveAuthFlowStartHandler'
+            onUserCreateStart:
+              $ref: '#/components/schemas/microsoft.graph.onUserCreateStartHandler'
+          additionalProperties:
+            type: object
+    microsoft.graph.onAttributeCollectionHandler:
+      title: onAttributeCollectionHandler
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityUserFlowAttribute:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityUserFlowAttribute
+          type: object
+          properties:
+            dataType:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeDataType'
+            description:
+              type: string
+              description: The description of the user flow attribute that's shown to the user at the time of sign-up.
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name of the user flow attribute.  Supports $filter (eq, ne).'
+              nullable: true
+            userFlowAttributeType:
+              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeType'
+          additionalProperties:
+            type: object
+    microsoft.graph.onAuthenticationMethodLoadStartHandler:
+      title: onAuthenticationMethodLoadStartHandler
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.b2cIdentityUserFlow:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identityUserFlow'
@@ -34309,26 +34990,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeInputType'
             userAttribute:
               $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
-          additionalProperties:
-            type: object
-    microsoft.graph.identityUserFlowAttribute:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: identityUserFlowAttribute
-          type: object
-          properties:
-            dataType:
-              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeDataType'
-            description:
-              type: string
-              description: The description of the user flow attribute that's shown to the user at the time of sign-up.
-              nullable: true
-            displayName:
-              type: string
-              description: 'The display name of the user flow attribute.  Supports $filter (eq, ne).'
-              nullable: true
-            userFlowAttributeType:
-              $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeType'
           additionalProperties:
             type: object
     microsoft.graph.assignmentOrder:
@@ -36695,7 +37356,7 @@ components:
               description: Indicates whether users can sign up for email based subscriptions.
             allowedToUseSSPR:
               type: boolean
-              description: Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
+              description: Indicates whether users can use the Self-Service Password Reset feature on the tenant.
             allowEmailVerifiedUsersToJoinOrganization:
               type: boolean
               description: Indicates whether a user can join the tenant by email validation.
@@ -38086,6 +38747,34 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationConditionsApplications'
       additionalProperties:
         type: object
+    microsoft.graph.onInteractiveAuthFlowStartHandler:
+      title: onInteractiveAuthFlowStartHandler
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.onUserCreateStartHandler:
+      title: onUserCreateStartHandler
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.identityUserFlowAttributeDataType:
+      title: identityUserFlowAttributeDataType
+      enum:
+        - string
+        - boolean
+        - int64
+        - stringCollection
+        - dateTime
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identityUserFlowAttributeType:
+      title: identityUserFlowAttributeType
+      enum:
+        - builtIn
+        - custom
+        - required
+        - unknownFutureValue
+      type: string
     microsoft.graph.userAttributeValuesItem:
       title: userAttributeValuesItem
       type: object
@@ -38112,24 +38801,6 @@ components:
         - dropdownSingleSelect
         - emailBox
         - checkboxMultiSelect
-      type: string
-    microsoft.graph.identityUserFlowAttributeDataType:
-      title: identityUserFlowAttributeDataType
-      enum:
-        - string
-        - boolean
-        - int64
-        - stringCollection
-        - dateTime
-        - unknownFutureValue
-      type: string
-    microsoft.graph.identityUserFlowAttributeType:
-      title: identityUserFlowAttributeType
-      enum:
-        - builtIn
-        - custom
-        - required
-        - unknownFutureValue
       type: string
     microsoft.graph.baseAuthenticationMethod:
       title: baseAuthenticationMethod
@@ -40212,7 +40883,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -43523,6 +44194,58 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.identityUserFlowAttributeCollectionResponse:
+      title: Collection of identityUserFlowAttribute
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.identityProviderBaseCollectionResponse:
+      title: Collection of identityProviderBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.externalUsersSelfServiceSignUpEventsFlowCollectionResponse:
+      title: Collection of externalUsersSelfServiceSignUpEventsFlow
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalUsersSelfServiceSignUpEventsFlow'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.b2cIdentityUserFlowCollectionResponse:
       title: Collection of b2cIdentityUserFlow
       type: object
@@ -43544,19 +44267,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.identityProvider'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    StringCollectionResponse:
-      title: Collection of string
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            type: string
         '@odata.nextLink':
           type: string
           nullable: true
@@ -43596,19 +44306,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignment'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.identityProviderBaseCollectionResponse:
-      title: Collection of identityProviderBase
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -43726,19 +44423,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtension'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.identityUserFlowAttributeCollectionResponse:
-      title: Collection of identityUserFlowAttribute
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttribute'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -52159,11 +52843,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -56151,6 +56835,9 @@ components:
           nullable: true
         relationship:
           $ref: '#/components/schemas/microsoft.graph.personRelationship'
+        userId:
+          type: string
+          nullable: true
         userPrincipalName:
           type: string
           description: Email address or reference to person within organization.
@@ -56176,6 +56863,15 @@ components:
         jobTitle:
           type: string
           description: The title held when in that position.
+          nullable: true
+        layer:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        level:
+          type: string
           nullable: true
         role:
           type: string
@@ -59354,6 +60050,7 @@ components:
         - roster
         - project
         - driveItem
+        - user
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -63605,6 +64302,30 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.authenticationEventsFlowCollectionResponse'
+    microsoft.graph.identityUserFlowAttributeCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeCollectionResponse'
+    microsoft.graph.identityProviderBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBaseCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
+    microsoft.graph.externalUsersSelfServiceSignUpEventsFlowCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.externalUsersSelfServiceSignUpEventsFlowCollectionResponse'
     microsoft.graph.b2cIdentityUserFlowCollectionResponse:
       description: Retrieved collection
       content:
@@ -63617,12 +64338,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.identityProviderCollectionResponse'
-    StringCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/StringCollectionResponse'
     microsoft.graph.userFlowLanguageConfigurationCollectionResponse:
       description: Retrieved collection
       content:
@@ -63641,12 +64356,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeAssignmentCollectionResponse'
-    microsoft.graph.identityProviderBaseCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.identityProviderBaseCollectionResponse'
     microsoft.graph.b2xIdentityUserFlowCollectionResponse:
       description: Retrieved collection
       content:
@@ -63701,12 +64410,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.customAuthenticationExtensionCollectionResponse'
-    microsoft.graph.identityUserFlowAttributeCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.identityUserFlowAttributeCollectionResponse'
     microsoft.graph.identityUserFlowCollectionResponse:
       description: Retrieved collection
       content:

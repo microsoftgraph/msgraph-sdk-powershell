@@ -360,6 +360,8 @@ paths:
                 - lastUpdateDateTime desc
                 - mitreTechniques
                 - mitreTechniques desc
+                - productName
+                - productName desc
                 - providerAlertId
                 - providerAlertId desc
                 - recommendedActions
@@ -412,6 +414,7 @@ paths:
                 - lastActivityDateTime
                 - lastUpdateDateTime
                 - mitreTechniques
+                - productName
                 - providerAlertId
                 - recommendedActions
                 - resolvedDateTime
@@ -516,6 +519,7 @@ paths:
                 - lastActivityDateTime
                 - lastUpdateDateTime
                 - mitreTechniques
+                - productName
                 - providerAlertId
                 - recommendedActions
                 - resolvedDateTime
@@ -929,7 +933,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get endUserNotifications from security
+      summary: List endUserNotifications
+      description: Get a list of endUserNotification objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0
       operationId: security.attackSimulation_ListEndUserNotification
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1042,6 +1050,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get endUserNotifications from security
+      description: Represents an end user's notification for an attack simulation training.
       operationId: security.attackSimulation_GetEndUserNotification
       parameters:
         - name: endUserNotification-id
@@ -1446,7 +1455,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get landingPages from security
+      summary: List landingPages
+      description: Get a list of the landingPage objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-landingpage?view=graph-rest-1.0
       operationId: security.attackSimulation_ListLandingPage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1559,6 +1572,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get landingPages from security
+      description: Represents an attack simulation training landing page.
       operationId: security.attackSimulation_GetLandingPage
       parameters:
         - name: landingPage-id
@@ -1677,6 +1691,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get details from security
+      description: The detail information for a landing page associated with a simulation during its creation.
       operationId: security.attackSimulation.landingPage_ListDetail
       parameters:
         - name: landingPage-id
@@ -1783,6 +1798,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get details from security
+      description: The detail information for a landing page associated with a simulation during its creation.
       operationId: security.attackSimulation.landingPage_GetDetail
       parameters:
         - name: landingPage-id
@@ -1951,7 +1967,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get loginPages from security
+      summary: List loginPages
+      description: Get a list of the loginPage objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-loginpage?view=graph-rest-1.0
       operationId: security.attackSimulation_ListLoginPage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2062,6 +2082,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get loginPages from security
+      description: Represents an attack simulation training login page.
       operationId: security.attackSimulation_GetLoginPage
       parameters:
         - name: loginPage-id
@@ -2191,7 +2212,8 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get operations from security
+      summary: Get attackSimulationOperation
+      description: Get an attack simulation operation to track a long-running operation request for a tenant.
       operationId: security.attackSimulation_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2295,7 +2317,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get operations from security
+      summary: Get attackSimulationOperation
+      description: Get an attack simulation operation to track a long-running operation request for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationoperation-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetOperation
       parameters:
         - name: attackSimulationOperation-id
@@ -2423,7 +2449,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get payloads from security
+      summary: List payloads
+      description: Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-payloads?view=graph-rest-1.0
       operationId: security.attackSimulation_ListPayload
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2570,6 +2600,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get payloads from security
+      description: Represents an attack simulation training campaign payload in a tenant.
       operationId: security.attackSimulation_GetPayload
       parameters:
         - name: payload-id
@@ -3359,7 +3390,11 @@ paths:
     post:
       tags:
         - security.attackSimulationRoot
-      summary: Create new navigation property to simulations for security
+      summary: Create simulation
+      description: Create an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-post-simulation?view=graph-rest-1.0
       operationId: security.attackSimulation_CreateSimulation
       requestBody:
         description: New navigation property
@@ -3461,7 +3496,11 @@ paths:
     patch:
       tags:
         - security.attackSimulationRoot
-      summary: Update the navigation property simulations in security
+      summary: Update simulation
+      description: Update an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0
       operationId: security.attackSimulation_UpdateSimulation
       parameters:
         - name: simulation-id
@@ -3492,7 +3531,11 @@ paths:
     delete:
       tags:
         - security.attackSimulationRoot
-      summary: Delete navigation property simulations for security
+      summary: Delete simulation
+      description: Delete an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/simulation-delete?view=graph-rest-1.0
       operationId: security.attackSimulation_DeleteSimulation
       parameters:
         - name: simulation-id
@@ -3520,6 +3563,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get landingPage from security
+      description: The landing page associated with a simulation during its creation.
       operationId: security.attackSimulation.simulation_GetLandingPage
       parameters:
         - name: simulation-id
@@ -3581,6 +3625,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get loginPage from security
+      description: The login page associated with a simulation during its creation.
       operationId: security.attackSimulation.simulation_GetLoginPage
       parameters:
         - name: simulation-id
@@ -3640,6 +3685,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get payload from security
+      description: The payload associated with a simulation during its creation.
       operationId: security.attackSimulation.simulation_GetPayload
       parameters:
         - name: simulation-id
@@ -3724,7 +3770,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get trainings from security
+      summary: List trainings
+      description: Get a list of the training objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/attacksimulationroot-list-trainings?view=graph-rest-1.0
       operationId: security.attackSimulation_ListTraining
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3846,6 +3896,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get trainings from security
+      description: Represents details about attack simulation trainings.
       operationId: security.attackSimulation_GetTraining
       parameters:
         - name: training-id
@@ -3967,6 +4018,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get languageDetails from security
+      description: Language specific details on a training.
       operationId: security.attackSimulation.training_ListLanguageDetail
       parameters:
         - name: training-id
@@ -4091,6 +4143,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Get languageDetails from security
+      description: Language specific details on a training.
       operationId: security.attackSimulation.training_GetLanguageDetail
       parameters:
         - name: training-id
@@ -10981,6 +11034,8 @@ paths:
                 - lastUpdateDateTime desc
                 - mitreTechniques
                 - mitreTechniques desc
+                - productName
+                - productName desc
                 - providerAlertId
                 - providerAlertId desc
                 - recommendedActions
@@ -11033,6 +11088,7 @@ paths:
                 - lastActivityDateTime
                 - lastUpdateDateTime
                 - mitreTechniques
+                - productName
                 - providerAlertId
                 - recommendedActions
                 - resolvedDateTime
@@ -11120,6 +11176,7 @@ paths:
                 - lastActivityDateTime
                 - lastUpdateDateTime
                 - mitreTechniques
+                - productName
                 - providerAlertId
                 - recommendedActions
                 - resolvedDateTime
@@ -14311,6 +14368,7 @@ paths:
                 - hostComponents
                 - hostCookies
                 - hostPairs
+                - hostPorts
                 - hosts
                 - hostSslCertificates
                 - hostTrackers
@@ -14339,6 +14397,7 @@ paths:
                 - hostComponents
                 - hostCookies
                 - hostPairs
+                - hostPorts
                 - hosts
                 - hostSslCertificates
                 - hostTrackers
@@ -15317,6 +15376,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -15341,6 +15401,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -15618,6 +15679,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -15642,6 +15704,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -15919,6 +15982,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -15943,6 +16007,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -15995,6 +16060,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -16019,6 +16085,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -16041,6 +16108,394 @@ paths:
         - security.threatIntelligence
       summary: Get the number of the resource
       operationId: security.threatIntelligence.hostPair_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/threatIntelligence/hostPorts:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get hostPort
+      description: Read the properties and relationships of a hostPort object.
+      operationId: security.threatIntelligence_ListHostPort
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - banners
+                - banners desc
+                - firstSeenDateTime
+                - firstSeenDateTime desc
+                - lastScanDateTime
+                - lastScanDateTime desc
+                - lastSeenDateTime
+                - lastSeenDateTime desc
+                - port
+                - port desc
+                - protocol
+                - protocol desc
+                - services
+                - services desc
+                - status
+                - status desc
+                - timesObserved
+                - timesObserved desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - banners
+                - firstSeenDateTime
+                - lastScanDateTime
+                - lastSeenDateTime
+                - port
+                - protocol
+                - services
+                - status
+                - timesObserved
+                - host
+                - mostRecentSslCertificate
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - host
+                - mostRecentSslCertificate
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.hostPortCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.threatIntelligence
+      summary: Create new navigation property to hostPorts for security
+      operationId: security.threatIntelligence_CreateHostPort
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hostPorts/{hostPort-id}':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get hostPort
+      description: Read the properties and relationships of a hostPort object.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-hostport-get?view=graph-rest-1.0
+      operationId: security.threatIntelligence_GetHostPort
+      parameters:
+        - name: hostPort-id
+          in: path
+          description: The unique identifier of hostPort
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hostPort
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - banners
+                - firstSeenDateTime
+                - lastScanDateTime
+                - lastSeenDateTime
+                - port
+                - protocol
+                - services
+                - status
+                - timesObserved
+                - host
+                - mostRecentSslCertificate
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - host
+                - mostRecentSslCertificate
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.threatIntelligence
+      summary: Update the navigation property hostPorts in security
+      operationId: security.threatIntelligence_UpdateHostPort
+      parameters:
+        - name: hostPort-id
+          in: path
+          description: The unique identifier of hostPort
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hostPort
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.threatIntelligence
+      summary: Delete navigation property hostPorts for security
+      operationId: security.threatIntelligence_DeleteHostPort
+      parameters:
+        - name: hostPort-id
+          in: path
+          description: The unique identifier of hostPort
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hostPort
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hostPorts/{hostPort-id}/host':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get host from security
+      description: 'The host related to this hostPort. This is a reverse navigation property. When you navigate to hostPorts from a host, assume that this is a return reference.'
+      operationId: security.threatIntelligence.hostPort_GetHost
+      parameters:
+        - name: hostPort-id
+          in: path
+          description: The unique identifier of hostPort
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hostPort
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - firstSeenDateTime
+                - lastSeenDateTime
+                - childHostPairs
+                - components
+                - cookies
+                - hostPairs
+                - parentHostPairs
+                - passiveDns
+                - passiveDnsReverse
+                - ports
+                - reputation
+                - sslCertificates
+                - subdomains
+                - trackers
+                - whois
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childHostPairs
+                - components
+                - cookies
+                - hostPairs
+                - parentHostPairs
+                - passiveDns
+                - passiveDnsReverse
+                - ports
+                - reputation
+                - sslCertificates
+                - subdomains
+                - trackers
+                - whois
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.host'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hostPorts/{hostPort-id}/mostRecentSslCertificate':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get mostRecentSslCertificate from security
+      description: The most recent sslCertificate used to communicate on the port.
+      operationId: security.threatIntelligence.hostPort_GetMostRecentSslCertificate
+      parameters:
+        - name: hostPort-id
+          in: path
+          description: The unique identifier of hostPort
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hostPort
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - fingerprint
+                - firstSeenDateTime
+                - issueDateTime
+                - issuer
+                - lastSeenDateTime
+                - serialNumber
+                - sha1
+                - subject
+                - relatedHosts
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - relatedHosts
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sslCertificate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/threatIntelligence/hostPorts/$count:
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.hostPort_GetCount
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -16099,6 +16554,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -16123,6 +16579,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -16199,6 +16656,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -16223,6 +16681,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -16384,7 +16843,7 @@ paths:
       tags:
         - security.threatIntelligence
       summary: Get childHostPairs from security
-      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
+      description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.'
       operationId: security.threatIntelligence.host_GetChildHostPair
       parameters:
         - name: host-id
@@ -17498,6 +17957,200 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/security/threatIntelligence/hosts/{host-id}/ports':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: List hostPorts
+      description: Get the list of hostPort resources associated with a host.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/security-host-list-ports?view=graph-rest-1.0
+      operationId: security.threatIntelligence.host_ListPort
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - banners
+                - banners desc
+                - firstSeenDateTime
+                - firstSeenDateTime desc
+                - lastScanDateTime
+                - lastScanDateTime desc
+                - lastSeenDateTime
+                - lastSeenDateTime desc
+                - port
+                - port desc
+                - protocol
+                - protocol desc
+                - services
+                - services desc
+                - status
+                - status desc
+                - timesObserved
+                - timesObserved desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - banners
+                - firstSeenDateTime
+                - lastScanDateTime
+                - lastSeenDateTime
+                - port
+                - protocol
+                - services
+                - status
+                - timesObserved
+                - host
+                - mostRecentSslCertificate
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - host
+                - mostRecentSslCertificate
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.security.hostPortCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/ports/{hostPort-id}':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get ports from security
+      description: The hostPorts associated with a host.
+      operationId: security.threatIntelligence.host_GetPort
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - name: hostPort-id
+          in: path
+          description: The unique identifier of hostPort
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: hostPort
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - banners
+                - firstSeenDateTime
+                - lastScanDateTime
+                - lastSeenDateTime
+                - port
+                - protocol
+                - services
+                - status
+                - timesObserved
+                - host
+                - mostRecentSslCertificate
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - host
+                - mostRecentSslCertificate
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/hosts/{host-id}/ports/$count':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get the number of the resource
+      operationId: security.threatIntelligence.host.port_GetCount
+      parameters:
+        - name: host-id
+          in: path
+          description: The unique identifier of host
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: host
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/threatIntelligence/hosts/{host-id}/reputation':
     get:
       tags:
@@ -18444,6 +19097,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -18468,6 +19122,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -18806,6 +19461,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -18830,6 +19486,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -19846,6 +20503,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -19870,6 +20528,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -20192,6 +20851,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -20216,6 +20876,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -20275,6 +20936,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -20299,6 +20961,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -20586,6 +21249,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -20610,6 +21274,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -21653,6 +22318,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -21677,6 +22343,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -22235,6 +22902,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -22259,6 +22927,7 @@ paths:
                 - parentHostPairs
                 - passiveDns
                 - passiveDnsReverse
+                - ports
                 - reputation
                 - sslCertificates
                 - subdomains
@@ -23091,7 +23760,7 @@ components:
               nullable: true
             azureTenantId:
               type: string
-              description: Azure Active Directory tenant ID. Required.
+              description: Microsoft Entra tenant ID. Required.
             category:
               type: string
               description: 'Category of the alert (for example, credentialTheft, ransomware, etc.).'
@@ -23346,6 +24015,9 @@ components:
                 type: string
                 nullable: true
               description: 'The attack techniques, as aligned with the MITRE ATT&CK framework.'
+            productName:
+              type: string
+              nullable: true
             providerAlertId:
               type: string
               description: The ID of the alert as it appears in the security provider product that generated the alert.
@@ -23368,7 +24040,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.alertStatus'
             tenantId:
               type: string
-              description: The Azure Active Directory tenant the alert was created in.
+              description: The Microsoft Entra tenant the alert was created in.
               nullable: true
             threatDisplayName:
               type: string
@@ -23413,26 +24085,31 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.endUserNotification'
+              description: Represents an end user's notification for an attack simulation training.
               x-ms-navigationProperty: true
             landingPages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.landingPage'
+              description: Represents an attack simulation training landing page.
               x-ms-navigationProperty: true
             loginPages:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.loginPage'
+              description: Represents an attack simulation training login page.
               x-ms-navigationProperty: true
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attackSimulationOperation'
+              description: Represents an attack simulation training operation.
               x-ms-navigationProperty: true
             payloads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.payload'
+              description: Represents an attack simulation training campaign payload in a tenant.
               x-ms-navigationProperty: true
             simulationAutomations:
               type: array
@@ -23450,6 +24127,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.training'
+              description: Represents details about attack simulation trainings.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23464,19 +24142,23 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description of the notification as defined by the user.
               nullable: true
             displayName:
               type: string
+              description: Name of the notification as defined by the user.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             notificationType:
@@ -23490,6 +24172,7 @@ components:
               items:
                 type: string
                 nullable: true
+              description: Supported locales for endUserNotification content.
             details:
               type: array
               items:
@@ -23505,17 +24188,22 @@ components:
           properties:
             emailContent:
               type: string
+              description: Email HTML content.
             isDefaultLangauge:
               type: boolean
+              description: Indicates whether this language is default.
               nullable: true
             language:
               type: string
+              description: Notification language.
             locale:
               type: string
+              description: Notification locale.
             sentFrom:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             subject:
               type: string
+              description: Mail subject.
           additionalProperties:
             type: object
     microsoft.graph.landingPage:
@@ -23529,23 +24217,28 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the landing page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description of the landing page as defined by the user.
               nullable: true
             displayName:
               type: string
+              description: The display name of the landing page.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the landing page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             locale:
               type: string
+              description: Content locale.
               nullable: true
             source:
               $ref: '#/components/schemas/microsoft.graph.simulationContentSource'
@@ -23556,10 +24249,12 @@ components:
               items:
                 type: string
                 nullable: true
+              description: Supported locales.
             details:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.landingPageDetail'
+              description: The detail information for a landing page associated with a simulation during its creation.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23571,11 +24266,14 @@ components:
           properties:
             content:
               type: string
+              description: Landing page detail content.
             isDefaultLangauge:
               type: boolean
+              description: Indicates whether this language detail is default for the landing page.
               nullable: true
             language:
               type: string
+              description: The content language for the landing page.
           additionalProperties:
             type: object
     microsoft.graph.loginPage:
@@ -23586,28 +24284,34 @@ components:
           properties:
             content:
               type: string
+              description: The HTML content of the login page.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the login page was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description about the login page.
               nullable: true
             displayName:
               type: string
+              description: Display name of the login page.
               nullable: true
             language:
               type: string
+              description: The content language of the login page.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the login page was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             source:
@@ -23626,9 +24330,11 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Percentage of completion of the respective operation.
               format: int32
             tenantId:
               type: string
+              description: Tenant identifier.
               nullable: true
             type:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationOperationType'
@@ -23649,35 +24355,43 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the attack simulation and training campaign payload. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description of the attack simulation and training campaign payload.
               nullable: true
             detail:
               $ref: '#/components/schemas/microsoft.graph.payloadDetail'
             displayName:
               type: string
+              description: Display name of the attack simulation and training campaign payload. Supports $filter and $orderby.
               nullable: true
             industry:
               $ref: '#/components/schemas/microsoft.graph.payloadIndustry'
             isAutomated:
               type: boolean
+              description: Indicates whether the attack simulation and training campaign payload was created from an automation flow. Supports $filter and $orderby.
               nullable: true
             isControversial:
               type: boolean
+              description: Indicates whether the payload is controversial.
               nullable: true
             isCurrentEvent:
               type: boolean
+              description: Indicates whether the payload is from any recent event.
               nullable: true
             language:
               type: string
+              description: Payload language.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the attack simulation and training campaign payload was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             payloadTags:
@@ -23685,10 +24399,12 @@ components:
               items:
                 type: string
                 nullable: true
+              description: Free text tags for a payload.
             platform:
               $ref: '#/components/schemas/microsoft.graph.payloadDeliveryPlatform'
             predictedCompromiseRate:
               type: number
+              description: Predicted probability for a payload to phish a targeted user.
               format: double
               nullable: true
             simulationAttackType:
@@ -23821,6 +24537,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Simulation duration in days.
               format: int32
               nullable: true
             endUserNotificationSetting:
@@ -23878,28 +24595,34 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: The description for the training.
               nullable: true
             displayName:
               type: string
+              description: The display name for the training.
               nullable: true
             durationInMinutes:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Training duration.
               format: int32
               nullable: true
             hasEvaluation:
               type: boolean
+              description: Indicates whether the training has any evaluation.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             source:
@@ -23909,17 +24632,20 @@ components:
               items:
                 type: string
                 nullable: true
+              description: Supported locales for content for the associated training.
             tags:
               type: array
               items:
                 type: string
                 nullable: true
+              description: Training tags.
             type:
               $ref: '#/components/schemas/microsoft.graph.trainingType'
             languageDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trainingLanguageDetail'
+              description: Language specific details on a training.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23931,31 +24657,38 @@ components:
           properties:
             content:
               type: string
+              description: Language specific content for the training.
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the language details were created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             description:
               type: string
+              description: Description as defined by the user.
               nullable: true
             displayName:
               type: string
+              description: Display name as defined by the user.
               nullable: true
             isDefaultLangauge:
               type: boolean
+              description: Indicates whether the training has a default language.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the trainingLanguageDetail was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             locale:
               type: string
+              description: Content locale for the training detail.
           additionalProperties:
             type: object
     microsoft.graph.security.casesRoot:
@@ -24237,7 +24970,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -24280,7 +25013,7 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -24292,7 +25025,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -24830,7 +25563,7 @@ components:
                 nullable: true
             tenantId:
               type: string
-              description: The Azure Active Directory tenant in which the alert was created.
+              description: The Microsoft Entra tenant in which the alert was created.
               nullable: true
             alerts:
               type: array
@@ -24923,7 +25656,7 @@ components:
               nullable: true
             service:
               type: string
-              description: 'Service that owns the control (Exchange, Sharepoint, Azure AD).'
+              description: 'Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).'
               nullable: true
             threats:
               type: array
@@ -25171,7 +25904,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -25201,7 +25934,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -25250,7 +25983,7 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
+              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -25280,17 +26013,17 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25305,7 +26038,7 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -25313,11 +26046,11 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
@@ -25326,7 +26059,7 @@ components:
               description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -25392,7 +26125,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
+              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -25770,7 +26503,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamSummary'
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
@@ -25873,6 +26606,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
               description: 'Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.'
+              x-ms-navigationProperty: true
+            hostPorts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+              description: 'Retrieve details about hostPort objects.Note: List retrieval is not yet supported.'
               x-ms-navigationProperty: true
             hosts:
               type: array
@@ -26052,7 +26791,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.hostPair'
-              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.'
+              description: 'The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.'
               x-ms-navigationProperty: true
             components:
               type: array
@@ -26089,6 +26828,12 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.passiveDnsRecord'
               description: Reverse passive DNS retrieval about this host.
+              x-ms-navigationProperty: true
+            ports:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+              description: The hostPorts associated with a host.
               x-ms-navigationProperty: true
             reputation:
               $ref: '#/components/schemas/microsoft.graph.security.hostReputation'
@@ -26166,6 +26911,117 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.host'
             parentHost:
               $ref: '#/components/schemas/microsoft.graph.security.host'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.hostPort:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hostPort
+          type: object
+          properties:
+            banners:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPortBanner'
+              description: The hostPortBanners retrieved from scanning the port.
+            firstSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The first date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            lastScanDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last date and time when Microsoft Defender Threat Intelligence scanned the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            port:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The numerical identifier of the port which is standardized across the internet.
+              format: int32
+            protocol:
+              $ref: '#/components/schemas/microsoft.graph.security.hostPortProtocol'
+            services:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.hostPortComponent'
+              description: The hostPortComponents retrieved from scanning the port.
+            status:
+              $ref: '#/components/schemas/microsoft.graph.security.hostPortStatus'
+            timesObserved:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.
+              format: int32
+              nullable: true
+            host:
+              $ref: '#/components/schemas/microsoft.graph.security.host'
+            mostRecentSslCertificate:
+              $ref: '#/components/schemas/microsoft.graph.security.sslCertificate'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.sslCertificate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.security.artifact'
+        - title: sslCertificate
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            fingerprint:
+              type: string
+              description: A hash of the certificate calculated on the data and signature.
+              nullable: true
+            firstSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            issueDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            issuer:
+              $ref: '#/components/schemas/microsoft.graph.security.sslCertificateEntity'
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            serialNumber:
+              type: string
+              description: The serial number associated with an SSL certificate.
+              nullable: true
+            sha1:
+              type: string
+              description: 'A SHA-1 hash of the certificate. Note: This is not the signature.'
+              nullable: true
+            subject:
+              $ref: '#/components/schemas/microsoft.graph.security.sslCertificateEntity'
+            relatedHosts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.host'
+              description: The hosts related with this sslCertificate.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.security.passiveDnsRecord:
@@ -26301,60 +27157,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.security.whoisHistoryRecord'
               description: The collection of historical records associated to this WHOIS object.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.security.sslCertificate:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.security.artifact'
-        - title: sslCertificate
-          type: object
-          properties:
-            expirationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            fingerprint:
-              type: string
-              description: A hash of the certificate calculated on the data and signature.
-              nullable: true
-            firstSeenDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            issueDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            issuer:
-              $ref: '#/components/schemas/microsoft.graph.security.sslCertificateEntity'
-            lastSeenDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
-              format: date-time
-              nullable: true
-            serialNumber:
-              type: string
-              description: The serial number associated with an SSL certificate.
-              nullable: true
-            sha1:
-              type: string
-              description: 'A SHA-1 hash of the certificate. Note: This is not the signature.'
-              nullable: true
-            subject:
-              $ref: '#/components/schemas/microsoft.graph.security.sslCertificateEntity'
-            relatedHosts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.security.host'
-              description: The hosts related with this sslCertificate.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -27240,6 +28042,22 @@ components:
         - appGovernanceDetection
         - unknownFutureValue
         - microsoftDefenderForCloud
+        - microsoftDefenderForIoT
+        - microsoftDefenderForServers
+        - microsoftDefenderForStorage
+        - microsoftDefenderForDNS
+        - microsoftDefenderForDatabases
+        - microsoftDefenderForContainers
+        - microsoftDefenderForNetwork
+        - microsoftDefenderForAppService
+        - microsoftDefenderForKeyVault
+        - microsoftDefenderForResourceManager
+        - microsoftDefenderForApiManagement
+        - nrtAlerts
+        - scheduledAlerts
+        - microsoftDefenderThreatIntelligenceAnalytics
+        - builtInMl
+        - microsoftSentinel
       type: string
     microsoft.graph.security.alertDetermination:
       title: alertDetermination
@@ -27311,6 +28129,7 @@ components:
         - dataLossPrevention
         - unknownFutureValue
         - microsoftDefenderForCloud
+        - microsoftSentinel
       type: string
     microsoft.graph.security.alertSeverity:
       title: alertSeverity
@@ -27450,11 +28269,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.payloadCoachmark'
+          description: Payload coachmark details.
         content:
           type: string
+          description: Payload content details.
           nullable: true
         phishingUrl:
           type: string
+          description: The phishing URL used to target a user.
           nullable: true
       additionalProperties:
         type: object
@@ -27602,9 +28424,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.oAuthAppScope'
         displayLogo:
           type: string
+          description: App display logo.
           nullable: true
         displayName:
           type: string
+          description: App name.
           nullable: true
       additionalProperties:
         type: object
@@ -28455,11 +29279,11 @@ components:
           properties:
             clientAppId:
               type: string
-              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+              description: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
               nullable: true
             clientId:
               type: string
-              description: ID of the Azure AD app that has been granted access. Read-only.
+              description: ID of the Microsoft Entra app that has been granted access. Read-only.
               nullable: true
             permission:
               type: string
@@ -28471,7 +29295,7 @@ components:
               nullable: true
             resourceAppId:
               type: string
-              description: ID of the Azure AD app that is hosting the resource. Read-only.
+              description: ID of the Microsoft Entra app that is hosting the resource. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -29364,7 +30188,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -29374,7 +30198,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -29445,7 +30269,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -31314,9 +32138,11 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             webUrl:
               type: string
@@ -31594,6 +32420,119 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.contentFormat'
       additionalProperties:
         type: object
+    microsoft.graph.security.hostPortBanner:
+      title: hostPortBanner
+      type: object
+      properties:
+        banner:
+          type: string
+          description: The text response received from a web component when scanning a hostPort.
+        firstSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        lastSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        scanProtocol:
+          type: string
+          description: The specific protocol used to scan the hostPort.
+          nullable: true
+        timesObserved:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.hostPortProtocol:
+      title: hostPortProtocol
+      enum:
+        - tcp
+        - udp
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.hostPortComponent:
+      title: hostPortComponent
+      type: object
+      properties:
+        firstSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The first date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        isRecent:
+          type: boolean
+          description: 'Indicates whether this hostPortComponent is recent, which is determined by whether the hostPortComponent was observed either at the same time or after the latest hostPortBanner in the scan history, or within two days of the latest scan of the hostPort when there are no hostPortBanners in the scan history.'
+          nullable: true
+        lastSeenDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last date and time when Microsoft Defender Threat Intelligence observed the hostPortComponent. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        component:
+          $ref: '#/components/schemas/microsoft.graph.security.hostComponent'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.hostPortStatus:
+      title: hostPortStatus
+      enum:
+        - open
+        - filtered
+        - closed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.security.sslCertificateEntity:
+      title: sslCertificateEntity
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+        alternateNames:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Alternate names for this entity that are part of the certificate.
+        commonName:
+          type: string
+          description: A common name for this entity.
+          nullable: true
+        email:
+          type: string
+          description: An email for this entity.
+          nullable: true
+        givenName:
+          type: string
+          description: 'If the entity is a person, this is the person''s given name (first name).'
+          nullable: true
+        organizationName:
+          type: string
+          description: 'If the entity is an organization, this is the name of the organization.'
+          nullable: true
+        organizationUnitName:
+          type: string
+          description: 'If the entity is an organization, this communicates if a unit in the organization is named on the entity.'
+          nullable: true
+        serialNumber:
+          type: string
+          description: A serial number assigned to the entity; usually only available if the entity is the issuer.
+          nullable: true
+        surname:
+          type: string
+          description: 'If the entity is a person, this is the person''s surname (last name).'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.hostReputationClassification:
       title: hostReputationClassification
       enum:
@@ -31719,48 +32658,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.host'
           additionalProperties:
             type: object
-    microsoft.graph.security.sslCertificateEntity:
-      title: sslCertificateEntity
-      type: object
-      properties:
-        address:
-          $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-        alternateNames:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Alternate names for this entity that are part of the certificate.
-        commonName:
-          type: string
-          description: A common name for this entity.
-          nullable: true
-        email:
-          type: string
-          description: An email for this entity.
-          nullable: true
-        givenName:
-          type: string
-          description: 'If the entity is a person, this is the person''s given name (first name).'
-          nullable: true
-        organizationName:
-          type: string
-          description: 'If the entity is an organization, this is the name of the organization.'
-          nullable: true
-        organizationUnitName:
-          type: string
-          description: 'If the entity is an organization, this communicates if a unit in the organization is named on the entity.'
-          nullable: true
-        serialNumber:
-          type: string
-          description: A serial number assigned to the entity; usually only available if the entity is the issuer.
-          nullable: true
-        surname:
-          type: string
-          description: 'If the entity is a person, this is the person''s surname (last name).'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.security.intelligenceProfileCountryOrRegionOfOrigin:
       title: intelligenceProfileCountryOrRegionOfOrigin
       type: object
@@ -32365,6 +33262,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.hostPortCollectionResponse:
+      title: Collection of hostPort
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.hostPort'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.security.hostCollectionResponse:
       title: Collection of host
       type: object
@@ -32747,18 +33657,23 @@ components:
           $ref: '#/components/schemas/microsoft.graph.coachmarkLocation'
         description:
           type: string
+          description: The description about the coachmark.
           nullable: true
         indicator:
           type: string
+          description: The coachmark indicator.
           nullable: true
         isValid:
           type: boolean
+          description: Indicates whether the coachmark is valid or not.
           nullable: true
         language:
           type: string
+          description: The coachmark language.
           nullable: true
         order:
           type: string
+          description: The coachmark order.
           nullable: true
       additionalProperties:
         type: object
@@ -36603,6 +37518,37 @@ components:
         - unknownFutureValue
         - shared
       type: string
+    microsoft.graph.channelSummary:
+      title: channelSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of guests in a channel.
+          format: int32
+          nullable: true
+        hasMembersFromOtherTenants:
+          type: boolean
+          description: Indicates whether external members are included on the channel.
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of members in a channel.
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of owners in a channel.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sharedWithChannelTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -37075,12 +38021,14 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Length of coachmark.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Offset of coachmark.
           format: int32
           nullable: true
         type:
@@ -37093,6 +38041,7 @@ components:
       properties:
         defaultLanguage:
           type: string
+          description: The default language for the end user notification.
           nullable: true
         endUserNotification:
           $ref: '#/components/schemas/microsoft.graph.endUserNotification'
@@ -37201,7 +38150,7 @@ components:
           nullable: true
         userId:
           type: string
-          description: This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+          description: This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -39547,7 +40496,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             memberOf:
               type: array
@@ -39803,7 +40752,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -43533,7 +44482,7 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          description: Refers to the unique ID representing application in Microsoft Entra ID.
           nullable: true
         displayName:
           type: string
@@ -43541,7 +44490,7 @@ components:
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          description: Refers to the unique ID for the service principal in Microsoft Entra ID.
           nullable: true
         servicePrincipalName:
           type: string
@@ -44055,6 +45004,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.hostPairCollectionResponse'
+    microsoft.graph.security.hostPortCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.security.hostPortCollectionResponse'
     microsoft.graph.security.hostCollectionResponse:
       description: Retrieved collection
       content:
