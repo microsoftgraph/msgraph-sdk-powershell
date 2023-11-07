@@ -521,7 +521,7 @@ paths:
       description: Delete an existing history item for an existing user activity. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/projectrome-put-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id

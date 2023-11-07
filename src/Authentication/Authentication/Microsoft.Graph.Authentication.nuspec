@@ -29,7 +29,7 @@
     <!-- Copy framework dependent assemblies to respective framework directory. -->
     <!-- Shared -->
     <file src="artifacts\Dependencies\Azure.Identity.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Azure.Identity.BrokeredAuthentication.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Azure.Identity.Broker.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.Broker.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.NativeInterop.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Bcl.AsyncInterfaces.dll" target="Dependencies" />

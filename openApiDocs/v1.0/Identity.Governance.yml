@@ -17086,7 +17086,7 @@ paths:
       description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -17147,11 +17147,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
+      summary: Update accessPackageAssignmentRequestWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -27832,7 +27832,7 @@ paths:
       description: Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_GetCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -27893,11 +27893,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
+      summary: Update accessPackageAssignmentRequestWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -95440,6 +95440,8 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
               description: The ID of the Microsoft Entra tenant.
@@ -99084,6 +99086,37 @@ components:
         - unknownFutureValue
         - shared
       type: string
+    microsoft.graph.channelSummary:
+      title: channelSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of guests in a channel.
+          format: int32
+          nullable: true
+        hasMembersFromOtherTenants:
+          type: boolean
+          description: Indicates whether external members are included on the channel.
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of members in a channel.
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of owners in a channel.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sharedWithChannelTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'

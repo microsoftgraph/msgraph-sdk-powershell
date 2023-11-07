@@ -184,11 +184,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Create deviceEnrollmentWindowsHelloForBusinessConfiguration
-      description: Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+      summary: Create deviceEnrollmentPlatformRestrictionsConfiguration
+      description: Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property

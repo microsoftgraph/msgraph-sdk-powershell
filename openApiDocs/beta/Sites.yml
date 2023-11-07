@@ -29315,7 +29315,7 @@ paths:
       tags:
         - groups.site
       summary: Get recycleBin from groups
-      description: The collection of recycleBinItems under this site.
+      description: A container for a collection of recycleBinItem resources in this site.
       operationId: group.site_GetRecycleBin
       parameters:
         - name: group-id
@@ -98366,11 +98366,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -108301,6 +108301,9 @@ components:
           nullable: true
         relationship:
           $ref: '#/components/schemas/microsoft.graph.personRelationship'
+        userId:
+          type: string
+          nullable: true
         userPrincipalName:
           type: string
           description: Email address or reference to person within organization.
@@ -108326,6 +108329,15 @@ components:
         jobTitle:
           type: string
           description: The title held when in that position.
+          nullable: true
+        layer:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        level:
+          type: string
           nullable: true
         role:
           type: string
@@ -111204,6 +111216,7 @@ components:
         - roster
         - project
         - driveItem
+        - user
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind

@@ -102,6 +102,8 @@ paths:
                 - activitySettings desc
                 - configuration
                 - configuration desc
+                - connectorId
+                - connectorId desc
                 - description
                 - description desc
                 - name
@@ -124,6 +126,7 @@ paths:
                 - id
                 - activitySettings
                 - configuration
+                - connectorId
                 - description
                 - name
                 - searchSettings
@@ -216,6 +219,7 @@ paths:
                 - id
                 - activitySettings
                 - configuration
+                - connectorId
                 - description
                 - name
                 - searchSettings
@@ -2117,6 +2121,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.activitySettings'
             configuration:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.configuration'
+            connectorId:
+              type: string
+              description: The Teams app ID. Optional.
+              nullable: true
             description:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
