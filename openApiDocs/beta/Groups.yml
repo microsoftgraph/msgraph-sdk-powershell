@@ -11622,11 +11622,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      summary: Create conversation
+      description: Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -11659,10 +11659,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object. This API is available in the following national cloud deployments.
+      description: Get a conversation object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -12063,10 +12063,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  This API is available in the following national cloud deployments."
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -14570,10 +14570,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -15057,10 +15057,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -32321,7 +32321,6 @@ paths:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -32483,27 +32482,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/groups/{group-id}/photos/$count':
-    get:
-      tags:
-        - groups.profilePhoto
-      summary: Get the number of the resource
-      operationId: group.photo_GetCount
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()':
     get:
       tags:
@@ -32761,6 +32739,51 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/microsoft.graph.moveToContainer':
+    post:
+      tags:
+        - groups.Actions
+      summary: Invoke action moveToContainer
+      operationId: group.planner.plan_moveToContainer
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                container:
+                  $ref: '#/components/schemas/microsoft.graph.plannerPlanContainer'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerPlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/microsoft.graph.delta()':
     get:
       tags:
@@ -41288,10 +41311,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  This API is available in the following national cloud deployments."
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -43515,10 +43538,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -43946,10 +43969,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -46883,7 +46906,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -49948,6 +49971,22 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.plannerPlanContainer:
+      title: plannerPlanContainer
+      type: object
+      properties:
+        containerId:
+          type: string
+          description: The identifier of the resource that contains the plan. Optional.
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
+        url:
+          type: string
+          description: The full canonical URL of the container. Optional.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.plannerPlan:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -52968,6 +53007,9 @@ components:
         isBackendCertificateValidationEnabled:
           type: boolean
           description: 'Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.'
+          nullable: true
+        isDnsResolutionEnabled:
+          type: boolean
           nullable: true
         isHttpOnlyCookieEnabled:
           type: boolean
@@ -56308,22 +56350,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.plannerCreationSourceKind'
       additionalProperties:
         type: object
-    microsoft.graph.plannerPlanContainer:
-      title: plannerPlanContainer
-      type: object
-      properties:
-        containerId:
-          type: string
-          description: The identifier of the resource that contains the plan. Optional.
-          nullable: true
-        type:
-          $ref: '#/components/schemas/microsoft.graph.plannerContainerType'
-        url:
-          type: string
-          description: The full canonical URL of the container. Optional.
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.plannerContainerType:
+      title: plannerContainerType
+      enum:
+        - group
+        - unknownFutureValue
+        - roster
+        - project
+        - driveItem
+        - user
+      type: string
     microsoft.graph.plannerPlanContextCollection:
       title: plannerPlanContextCollection
       type: object
@@ -59267,11 +59303,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -64034,15 +64070,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.plannerContainerType:
-      title: plannerContainerType
-      enum:
-        - group
-        - unknownFutureValue
-        - roster
-        - project
-        - driveItem
-      type: string
     microsoft.graph.plannerPlanAccessLevel:
       title: plannerPlanAccessLevel
       enum:
@@ -68030,6 +68057,9 @@ components:
           nullable: true
         relationship:
           $ref: '#/components/schemas/microsoft.graph.personRelationship'
+        userId:
+          type: string
+          nullable: true
         userPrincipalName:
           type: string
           description: Email address or reference to person within organization.
@@ -68055,6 +68085,15 @@ components:
         jobTitle:
           type: string
           description: The title held when in that position.
+          nullable: true
+        layer:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        level:
+          type: string
           nullable: true
         role:
           type: string

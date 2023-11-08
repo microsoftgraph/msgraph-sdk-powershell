@@ -3392,10 +3392,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. This API is available in the following national cloud deployments.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -5722,11 +5722,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -7685,7 +7685,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
-      description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
+      description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
       operationId: user_GetOnlineMeeting
       parameters:
         - name: user-id
@@ -9854,11 +9854,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
@@ -11353,11 +11353,11 @@ components:
           nullable: true
         userId:
           type: string
-          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
           nullable: true
         userPrincipalName:
           type: string
-          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
           nullable: true
         userTelephoneNumber:
           type: string
@@ -11406,11 +11406,11 @@ components:
           nullable: true
         userId:
           type: string
-          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
           nullable: true
         userPrincipalName:
           type: string
-          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
           nullable: true
       additionalProperties:
         type: object
@@ -11490,11 +11490,11 @@ components:
           nullable: true
         userId:
           type: string
-          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
           nullable: true
         userPrincipalName:
           type: string
-          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
           nullable: true
       additionalProperties:
         type: object
