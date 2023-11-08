@@ -4,7 +4,7 @@
 using Azure.Core;
 using Azure.Core.Diagnostics;
 using Azure.Identity;
-using Azure.Identity.BrokeredAuthentication;
+using Azure.Identity.Broker;
 using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
@@ -133,7 +133,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 }
                 else
                 {
-                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+                    authRecord = await Task.Run(() =>
+                    {
+                        // Run the thread in MTA.
+                        return interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                    });
                 }
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;

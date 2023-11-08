@@ -3729,7 +3729,7 @@ components:
           properties:
             aadDeviceId:
               type: string
-              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+              description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'

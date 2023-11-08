@@ -7789,11 +7789,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteRegistration
       parameters:
         - name: virtualEvent-id
@@ -13327,11 +13327,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteRegistration
       parameters:
         - name: virtualEventWebinar-id
@@ -14861,6 +14861,205 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/solutions/virtualEvents/webinars/microsoft.graph.getByUserIdAndRole(userId=''{userId}'',role=''{role}'')':
+    get:
+      tags:
+        - solutions.Functions
+      summary: Invoke function getByUserIdAndRole
+      operationId: solution.virtualEvent.webinar_getGraphBPreUserIdAndRole
+      parameters:
+        - name: userId
+          in: path
+          description: 'Usage: userId=''{userId}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: role
+          in: path
+          description: 'Usage: role=''{role}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - description
+                - displayName
+                - endDateTime
+                - startDateTime
+                - status
+                - audience
+                - coOrganizers
+                - presenters
+                - sessions
+                - registrationConfiguration
+                - registrations
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - endDateTime
+                - endDateTime desc
+                - startDateTime
+                - startDateTime desc
+                - status
+                - status desc
+                - audience
+                - audience desc
+                - coOrganizers
+                - coOrganizers desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of virtualEventWebinar
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/solutions/virtualEvents/webinars/microsoft.graph.getByUserRole(role=''{role}'')':
+    get:
+      tags:
+        - solutions.Functions
+      summary: Invoke function getByUserRole
+      operationId: solution.virtualEvent.webinar_getGraphBPreUserRole
+      parameters:
+        - name: role
+          in: path
+          description: 'Usage: role=''{role}'''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - description
+                - displayName
+                - endDateTime
+                - startDateTime
+                - status
+                - audience
+                - coOrganizers
+                - presenters
+                - sessions
+                - registrationConfiguration
+                - registrations
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - endDateTime
+                - endDateTime desc
+                - startDateTime
+                - startDateTime desc
+                - status
+                - status desc
+                - audience
+                - audience desc
+                - coOrganizers
+                - coOrganizers desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of virtualEventWebinar
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.virtualEventWebinar'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
 components:
   schemas:
     microsoft.graph.bookingBusiness:
@@ -15841,7 +16040,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
             userId:
               type: string
-              description: The registrant's ID in Azure Active Directory (Azure AD). Only appears when the registrant is registered in Azure AD.
+              description: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
               nullable: true
             sessions:
               type: array

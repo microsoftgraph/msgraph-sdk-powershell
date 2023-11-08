@@ -861,7 +861,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: agreement.file.localization_ListVersion
       parameters:
         - name: agreement-id
@@ -996,7 +996,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: agreement.file.localization_GetVersion
       parameters:
         - name: agreement-id
@@ -1475,7 +1475,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: agreement.file_ListVersion
       parameters:
         - name: agreement-id
@@ -1610,7 +1610,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: agreement.file_GetVersion
       parameters:
         - name: agreement-id
@@ -6841,7 +6841,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: List approval stages
-      description: 'In Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request. This API is available in the following national cloud deployments.'
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -6979,7 +6979,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get approvalStage
-      description: 'In Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.'
+      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -7054,7 +7054,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update approvalStage
-      description: 'In Azure AD entitlement management, approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.'
+      description: Approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -7495,7 +7495,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: 'In Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request. This API is available in the following national cloud deployments.'
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
       operationId: identityGovernance.entitlementManagement_ListAccessPackageAssignmentApproval
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7578,7 +7578,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approval
-      description: 'In Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request. This API is available in the following national cloud deployments.'
+      description: "Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-get?view=graph-rest-1.0
@@ -7690,7 +7690,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List approval stages
-      description: 'In Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request. This API is available in the following national cloud deployments.'
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -7812,7 +7812,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get approvalStage
-      description: 'In Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.'
+      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -7879,7 +7879,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update approvalStage
-      description: 'In Azure AD entitlement management, approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.'
+      description: Approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -8176,11 +8176,11 @@ paths:
     get:
       tags:
         - identityGovernance.entitlementManagement
-      summary: List resourceRoleScopes
-      description: Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope. This API is available in the following national cloud deployments.
+      summary: Get accessPackage
+      description: Retrieve the properties and relationships of an accessPackage object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackage-list-resourcerolescopes?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement_GetAccessPackage
       parameters:
         - name: accessPackage-id
@@ -10551,7 +10551,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action getApplicablePolicyRequirements
-      description: 'In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.  Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackage-getapplicablepolicyrequirements?view=graph-rest-1.0
@@ -14162,7 +14162,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List assignmentPolicies
-      description: 'In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentpolicies?view=graph-rest-1.0
@@ -14264,7 +14264,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create assignmentPolicies
-      description: 'In Azure AD entitlement management, create a new accessPackageAssignmentPolicy object.  The request will include a reference to the accessPackage that will contain this policy, which must already exist. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, create a new accessPackageAssignmentPolicy object.  The request will include a reference to the accessPackage that will contain this policy, which must already exist. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentpolicies?view=graph-rest-1.0
@@ -14291,7 +14291,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentPolicy
-      description: "In Azure AD entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object. This API is available in the following national cloud deployments."
+      description: "In Microsoft Entra entitlement management, retrieve the properties and relationships of an\n accessPackageAssignmentPolicy object. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-get?view=graph-rest-1.0
@@ -14393,7 +14393,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete accessPackageAssignmentPolicy
-      description: 'In Azure AD entitlement management, delete an accessPackageAssignmentPolicy. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, delete an accessPackageAssignmentPolicy. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentpolicy-delete?view=graph-rest-1.0
@@ -15165,7 +15165,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List assignmentRequests
-      description: 'In Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-1.0
@@ -15256,7 +15256,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageAssignmentRequest
-      description: 'In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0
@@ -15283,7 +15283,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignmentRequest
-      description: 'In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-get?view=graph-rest-1.0
@@ -15539,7 +15539,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action cancel
-      description: 'In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: accepted, pendingApproval, pendingNotBefore, pendingApprovalEscalated. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-cancel?view=graph-rest-1.0
@@ -15564,7 +15564,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
-      description: 'In Azure AD entitlement management, callers can automatically retry a user''s request for access to an access package. It''s performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, callers can automatically retry a user''s request for access to an access package. It''s performed on an accessPackageAssignmentRequest object whose requestState is in a DeliveryFailed or PartiallyDelivered state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-reprocess?view=graph-rest-1.0
@@ -15589,7 +15589,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action resume
-      description: 'In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0
@@ -15799,7 +15799,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: List assignments
-      description: 'In Azure AD entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: $filter=accessPackage/id eq ''a914b616-e04e-476b-aa37-91038f0b165b''. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: $filter=accessPackage/id eq ''a914b616-e04e-476b-aa37-91038f0b165b''. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0
@@ -15904,7 +15904,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackageAssignment
-      description: 'In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, retrieve the properties and relationships of an accessPackageAssignment object. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignment-get?view=graph-rest-1.0
@@ -16161,7 +16161,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
-      description: 'In Azure AD entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Azure AD entitlement management can perform this action. This API is available in the following national cloud deployments.'
+      description: 'In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/accesspackageassignment-reprocess?view=graph-rest-1.0
@@ -17147,11 +17147,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
+      summary: Update accessPackageAssignmentRequestWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -17190,11 +17190,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentRequestWorkflowExtension
-      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.'
+      summary: Delete accessPackageAssignmentWorkflowExtension
+      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageCatalog-id
@@ -27254,7 +27254,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create accessPackageResourceRequest
-      description: 'Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package. To add an Azure AD group as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource. The value of the originSystem property within the resource should be AadGroup and the value of the originId is the identifier of the group. To add an Azure AD application as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource. The value of the originSystem property within the resource should be AadApplication and the value of the originId is the identifier of the servicePrincipal. To add a SharePoint Online site an as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource. The value of the originSystem property within the resource should be SharePointOnline and the value of the originId is the URI of the site. To remove a resource from a catalog, set the requestType to be adminRemove, and the resource to contain the id of the resource object to be removed.  The resource object can be retrieved using list resources. This API is available in the following national cloud deployments.'
+      description: 'Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.  A resource must be included in an access package catalog before a role of that resource can be added to an access package. To add a Microsoft Entra group as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource. The value of the originSystem property within the resource should be AadGroup and the value of the originId is the identifier of the group. To add a Microsoft Entra application as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource. The value of the originSystem property within the resource should be AadApplication and the value of the originId is the identifier of the servicePrincipal. To add a SharePoint Online site an as a resource to a catalog, set the requestType to be adminAdd, and a resource representing the resource. The value of the originSystem property within the resource should be SharePointOnline and the value of the originId is the URI of the site. To remove a resource from a catalog, set the requestType to be adminRemove, and the resource to contain the id of the resource object to be removed.  The resource object can be retrieved using list resources. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/entitlementmanagement-post-resourcerequests?view=graph-rest-1.0
@@ -27893,11 +27893,11 @@ paths:
     patch:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Update accessPackageAssignmentWorkflowExtension
-      description: Update the properties of an accessPackageAssignmentWorkflowExtension object.
+      summary: Update accessPackageAssignmentRequestWorkflowExtension
+      description: Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_UpdateCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -27936,11 +27936,11 @@ paths:
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete accessPackageAssignmentRequestWorkflowExtension
-      description: 'Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.'
+      summary: Delete accessPackageAssignmentWorkflowExtension
+      description: 'Delete an accessPackageAssignmentWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-delete?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.resourceRequest.catalog_DeleteCustomWorkflowExtension
       parameters:
         - name: accessPackageResourceRequest-id
@@ -42268,7 +42268,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get createdBy from identityGovernance
-      description: 'The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.customTaskExtension_GetCreatedGraphBPre
       parameters:
         - name: customTaskExtension-id
@@ -42670,7 +42670,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get lastModifiedBy from identityGovernance
-      description: 'The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.customTaskExtension_GetLastModifiedGraphBPre
       parameters:
         - name: customTaskExtension-id
@@ -43771,7 +43771,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get executionScope from identityGovernance
-      description: The unique identifier of the Azure AD identity that last modified the workflow object.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow object.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_ListExecutionScope
       parameters:
         - name: workflow-id
@@ -43869,7 +43869,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get executionScope from identityGovernance
-      description: The unique identifier of the Azure AD identity that last modified the workflow object.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow object.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_GetExecutionScope
       parameters:
         - name: workflow-id
@@ -43962,7 +43962,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get lastModifiedBy from identityGovernance
-      description: The unique identifier of the Azure Active Directory identity that last modified the workflow.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow_GetLastModifiedGraphBPre
       parameters:
         - name: workflow-id
@@ -44444,7 +44444,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action restore
-      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it. This API is available in the following national cloud deployments.
+      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
@@ -44891,7 +44891,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -46407,7 +46407,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.run.userProcessingResult.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -47736,7 +47736,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.taskReport.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -48882,7 +48882,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.task.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -50337,7 +50337,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.userProcessingResult.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -51625,7 +51625,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get lastModifiedBy from identityGovernance
-      description: The unique identifier of the Azure Active Directory identity that last modified the workflow.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow.
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.version_GetLastModifiedGraphBPre
       parameters:
         - name: workflow-id
@@ -52663,7 +52663,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.deletedItem.workflow.version.task.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -54307,7 +54307,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get executionScope from identityGovernance
-      description: The unique identifier of the Azure AD identity that last modified the workflow object.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow object.
       operationId: identityGovernance.lifecycleWorkflow.workflow_ListExecutionScope
       parameters:
         - name: workflow-id
@@ -54405,7 +54405,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get executionScope from identityGovernance
-      description: The unique identifier of the Azure AD identity that last modified the workflow object.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow object.
       operationId: identityGovernance.lifecycleWorkflow.workflow_GetExecutionScope
       parameters:
         - name: workflow-id
@@ -54498,7 +54498,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get lastModifiedBy from identityGovernance
-      description: The unique identifier of the Azure Active Directory identity that last modified the workflow.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow.
       operationId: identityGovernance.lifecycleWorkflow.workflow_GetLastModifiedGraphBPre
       parameters:
         - name: workflow-id
@@ -54980,7 +54980,7 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action restore
-      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it. This API is available in the following national cloud deployments.
+      description: Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Microsoft Entra ID automatically permanently deletes it. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0
@@ -55427,7 +55427,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.run.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -56943,7 +56943,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.run.userProcessingResult.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -58272,7 +58272,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.taskReport.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -59418,7 +59418,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.task.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -60873,7 +60873,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.userProcessingResult.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -62161,7 +62161,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get lastModifiedBy from identityGovernance
-      description: The unique identifier of the Azure Active Directory identity that last modified the workflow.
+      description: The unique identifier of the Microsoft Entra identity that last modified the workflow.
       operationId: identityGovernance.lifecycleWorkflow.workflow.version_GetLastModifiedGraphBPre
       parameters:
         - name: workflow-id
@@ -63199,7 +63199,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflow.version.task.taskProcessingResult_GetSubject
       parameters:
         - name: workflow-id
@@ -64457,7 +64457,7 @@ paths:
       tags:
         - identityGovernance.lifecycleWorkflowsContainer
       summary: Get subject from identityGovernance
-      description: 'The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
+      description: 'The unique identifier of the Microsoft Entra user targeted for the task execution.Supports $filter(eq, ne) and $expand.'
       operationId: identityGovernance.lifecycleWorkflow.workflowTemplate.task.taskProcessingResult_GetSubject
       parameters:
         - name: workflowTemplate-id
@@ -65164,6 +65164,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: A group that's governed through Privileged Identity Management (PIM).
       operationId: identityGovernance.privilegedAccess_GetGroup
       parameters:
         - name: $select
@@ -65449,7 +65450,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: List approval stages
-      description: 'In Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request. This API is available in the following national cloud deployments.'
+      description: "List the approvalStage objects associated with an approval. This API request is made by an approver in the following scenarios: In Microsoft Entra entitlement management, providing the identifier of the access package assignment request.\nIn PIM for groups, providing the identifier of the assignment schedule request. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approval-list-stages?view=graph-rest-1.0
@@ -65571,7 +65572,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get approvalStage
-      description: 'In Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.'
+      description: Retrieve the properties of an approvalStage object. An approval stage is contained within an approval object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-get?view=graph-rest-1.0
@@ -65638,7 +65639,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Update approvalStage
-      description: 'In Azure AD entitlement management, approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.'
+      description: Approve or deny an approvalStage object in an approval. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/approvalstage-update?view=graph-rest-1.0
@@ -65820,7 +65821,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get assignmentScheduleInstances from identityGovernance
+      summary: List assignmentScheduleInstances
+      description: Get a list of the privilegedAccessGroupAssignmentScheduleInstance objects and their properties. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentscheduleinstances?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_ListAssignmentScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -65930,7 +65935,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get assignmentScheduleInstances from identityGovernance
+      summary: Get privilegedAccessGroupAssignmentScheduleInstance
+      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-get?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_GetAssignmentScheduleInstance
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -66051,6 +66060,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
+      description: 'When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -66111,6 +66121,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -66347,6 +66358,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get principal from identityGovernance
+      description: References the principal that's in the scope of the membership or ownership assignment request through the group that's governed by PIM. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleInstance_GetPrincipal
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleInstance-id
@@ -66505,7 +66517,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get assignmentScheduleRequests from identityGovernance
+      summary: List assignmentScheduleRequests
+      description: Get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedulerequests?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_ListAssignmentScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -66615,7 +66631,11 @@ paths:
     post:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Create new navigation property to assignmentScheduleRequests for identityGovernance
+      summary: Create assignmentScheduleRequest
+      description: Create a new privilegedAccessGroupAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-assignmentschedulerequests?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_CreateAssignmentScheduleRequest
       requestBody:
         description: New navigation property
@@ -66638,7 +66658,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get assignmentScheduleRequests from identityGovernance
+      summary: Get privilegedAccessGroupAssignmentScheduleRequest
+      description: Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-get?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_GetAssignmentScheduleRequest
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -66768,6 +66792,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
+      description: 'When the request activates a membership or ownership assignment in PIM for groups, this object represents the eligibility policy for the group. Otherwise, it is null. Supports $expand.'
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -66830,6 +66855,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: References the group that is the scope of the membership or ownership assignment request through PIM for groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -67066,6 +67092,10 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action cancel
+      description: Cancel an access assignment request to a group whose membership and ownership are governed by PIM. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_cancel
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -67087,6 +67117,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get principal from identityGovernance
+      description: References the principal that's in the scope of this membership or ownership assignment request through the group that's governed by PIM. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetPrincipal
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -67137,6 +67168,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get targetSchedule from identityGovernance
+      description: Schedule created by this request. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentScheduleRequest_GetTargetSchedule
       parameters:
         - name: privilegedAccessGroupAssignmentScheduleRequest-id
@@ -67329,7 +67361,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get assignmentSchedules from identityGovernance
+      summary: List assignmentSchedules
+      description: Get a list of the privilegedAccessGroupAssignmentSchedule objects and their properties. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-assignmentschedules?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_ListAssignmentSchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -67445,7 +67481,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get assignmentSchedules from identityGovernance
+      summary: Get privilegedAccessGroupAssignmentSchedule
+      description: Read the properties and relationships of a privilegedAccessGroupAssignmentSchedule object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedule-get?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_GetAssignmentSchedule
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -67568,6 +67608,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get activatedUsing from identityGovernance
+      description: 'When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.'
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetActivatedUsing
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -67630,6 +67671,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetGroup
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -67866,6 +67908,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get principal from identityGovernance
+      description: References the principal that's in the scope of this membership or ownership assignment request to the group that's governed by PIM. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.assignmentSchedule_GetPrincipal
       parameters:
         - name: privilegedAccessGroupAssignmentSchedule-id
@@ -68030,7 +68073,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get eligibilityScheduleInstances from identityGovernance
+      summary: List eligibilityScheduleInstances
+      description: Get a list of the privilegedAccessGroupEligibilityScheduleInstance objects and their properties. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityscheduleinstances?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_ListEligibilityScheduleInstance
       parameters:
         - $ref: '#/components/parameters/top'
@@ -68135,7 +68182,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get eligibilityScheduleInstances from identityGovernance
+      summary: Get privilegedAccessGroupEligibilityScheduleInstance
+      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityscheduleinstance-get?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_GetEligibilityScheduleInstance
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleInstance-id
@@ -68253,6 +68304,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleInstance_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleInstance-id
@@ -68489,6 +68541,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get principal from identityGovernance
+      description: References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleInstance_GetPrincipal
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleInstance-id
@@ -68643,7 +68696,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get eligibilityScheduleRequests from identityGovernance
+      summary: List eligibilityScheduleRequests
+      description: Get a list of the privilegedAccessGroupEligibilityScheduleRequest objects and their properties. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedulerequests?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_ListEligibilityScheduleRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -68751,7 +68808,11 @@ paths:
     post:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Create new navigation property to eligibilityScheduleRequests for identityGovernance
+      summary: Create eligibilityScheduleRequest
+      description: Create a new privilegedAccessGroupEligibilityScheduleRequest object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-post-eligibilityschedulerequests?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_CreateEligibilityScheduleRequest
       requestBody:
         description: New navigation property
@@ -68774,7 +68835,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get eligibilityScheduleRequests from identityGovernance
+      summary: Get privilegedAccessGroupEligibilityScheduleRequest
+      description: Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleRequest object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-get?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_GetEligibilityScheduleRequest
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -68902,6 +68967,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: References the group that is the scope of the membership or ownership eligibility request through PIM for groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -69138,6 +69204,10 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action cancel
+      description: Cancel an eligibility assignment request to a group whose membership and ownership are governed by PIM. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_cancel
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -69159,6 +69229,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get principal from identityGovernance
+      description: References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_GetPrincipal
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -69209,6 +69280,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get targetSchedule from identityGovernance
+      description: Schedule created by this request.
       operationId: identityGovernance.privilegedAccess.group.eligibilityScheduleRequest_GetTargetSchedule
       parameters:
         - name: privilegedAccessGroupEligibilityScheduleRequest-id
@@ -69400,7 +69472,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get eligibilitySchedules from identityGovernance
+      summary: List eligibilitySchedules
+      description: Get a list of the privilegedAccessGroupEligibilitySchedule objects and their properties. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-eligibilityschedules?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_ListEligibilitySchedule
       parameters:
         - $ref: '#/components/parameters/top'
@@ -69511,7 +69587,11 @@ paths:
     get:
       tags:
         - identityGovernance.privilegedAccessRoot
-      summary: Get eligibilitySchedules from identityGovernance
+      summary: Get privilegedAccessGroupEligibilitySchedule
+      description: Read the properties and relationships of a privilegedAccessGroupEligibilitySchedule object. This API is available in the following national cloud deployments.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-get?view=graph-rest-1.0
       operationId: identityGovernance.privilegedAccess.group_GetEligibilitySchedule
       parameters:
         - name: privilegedAccessGroupEligibilitySchedule-id
@@ -69631,6 +69711,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get group from identityGovernance
+      description: References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilitySchedule_GetGroup
       parameters:
         - name: privilegedAccessGroupEligibilitySchedule-id
@@ -69867,6 +69948,7 @@ paths:
       tags:
         - identityGovernance.privilegedAccessRoot
       summary: Get principal from identityGovernance
+      description: References the principal that's in the scope of this membership or ownership eligibility request to the group that's governed by PIM. Supports $expand.
       operationId: identityGovernance.privilegedAccess.group.eligibilitySchedule_GetPrincipal
       parameters:
         - name: privilegedAccessGroupEligibilitySchedule-id
@@ -70475,11 +70557,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: Get agreement
-      description: Retrieve the properties and relationships of an agreement object. This API is available in the following national cloud deployments.
+      summary: List files (terms of use agreement files)
+      description: Retrieve all files related to an agreement. This includes the default file and all localized files. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
@@ -71294,7 +71376,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_ListVersion
       parameters:
         - name: agreement-id
@@ -71429,7 +71511,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreement.file.localization_GetVersion
       parameters:
         - name: agreement-id
@@ -71908,7 +71990,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreement.file_ListVersion
       parameters:
         - name: agreement-id
@@ -72043,7 +72125,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get versions from identityGovernance
-      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+      description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
       operationId: identityGovernance.termsGraphOPreUse.agreement.file_GetVersion
       parameters:
         - name: agreement-id
@@ -72851,7 +72933,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
@@ -74146,7 +74228,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleAssignmentScheduleRequests
-      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events. This API is available in the following national cloud deployments.'
+      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
@@ -75485,7 +75567,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
@@ -75572,7 +75654,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -75661,7 +75743,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update unifiedRoleDefinition
-      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
@@ -75696,7 +75778,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete unifiedRoleDefinition
-      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
@@ -75727,7 +75809,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -75851,7 +75933,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -78479,7 +78561,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
@@ -79774,7 +79856,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleAssignmentScheduleRequests
-      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events. This API is available in the following national cloud deployments.'
+      description: 'In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object: To call this API to update, renew, and extend assignments for yourself, you must have multifactor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Microsoft Entra multifactor authentication to secure sign-in events. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
@@ -81113,7 +81195,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD) This API is available in the following national cloud deployments."
+      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Microsoft Entra ID)\n- entitlement management (Microsoft Entra Entitlement Management) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
@@ -81200,7 +81282,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Create a new custom unifiedRoleDefinition object. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -81289,7 +81371,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update unifiedRoleDefinition
-      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
@@ -81324,7 +81406,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete unifiedRoleDefinition
-      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license. This API is available in the following national cloud deployments.
+      description: Delete a unifiedRoleDefinition object. You can't delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
@@ -81355,7 +81437,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -81479,7 +81561,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -83737,7 +83819,7 @@ components:
               nullable: true
             isPerDeviceAcceptanceRequired:
               type: boolean
-              description: 'Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven''t already done so. Supports $filter (eq).'
+              description: 'Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Microsoft Entra ID, if they haven''t already done so. Supports $filter (eq).'
               nullable: true
             isViewingBeforeAcceptanceRequired:
               type: boolean
@@ -83853,7 +83935,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileVersion'
-              description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+              description: Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -84833,7 +84915,7 @@ components:
               nullable: true
             originId:
               type: string
-              description: 'The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.'
+              description: 'The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.'
               nullable: true
             originSystem:
               type: string
@@ -84877,7 +84959,7 @@ components:
               nullable: true
             isDefaultEnvironment:
               type: boolean
-              description: 'Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.'
+              description: 'Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.'
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -85265,7 +85347,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -85295,7 +85377,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -85344,7 +85426,7 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
+              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -85374,17 +85456,17 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. NOTE: The $ and _ characters can''t be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -85399,7 +85481,7 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -85407,11 +85489,11 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
@@ -85420,7 +85502,7 @@ components:
               description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property can''t contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -85486,7 +85568,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
+              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -85846,7 +85928,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityGovernance.userProcessingResult'
-              description: The unique identifier of the Azure AD identity that last modified the workflow object.
+              description: The unique identifier of the Microsoft Entra identity that last modified the workflow object.
               x-ms-navigationProperty: true
             runs:
               type: array
@@ -86388,31 +86470,37 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance'
+              description: The instances of assignment schedules to activate a just-in-time access.
               x-ms-navigationProperty: true
             assignmentScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest'
+              description: 'The schedule requests for operations to create, update, delete, extend, and renew an assignment.'
               x-ms-navigationProperty: true
             assignmentSchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentSchedule'
+              description: The assignment schedules to activate a just-in-time access.
               x-ms-navigationProperty: true
             eligibilityScheduleInstances:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance'
+              description: The instances of eligibility schedules to activate a just-in-time access.
               x-ms-navigationProperty: true
             eligibilityScheduleRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest'
+              description: 'The schedule requests for operations to create, update, delete, extend, and renew an eligibility.'
               x-ms-navigationProperty: true
             eligibilitySchedules:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
+              description: The eligibility schedules to activate a just-in-time access.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -86426,16 +86514,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             assignmentScheduleId:
               type: string
+              description: 'The identifier of the privilegedAccessGroupAssignmentSchedule from which this instance was created. Required. Supports $filter (eq, ne).'
               nullable: true
             assignmentType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentType'
             groupId:
               type: string
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Optional. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
+              description: The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance'
@@ -86455,14 +86546,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             eligibilityScheduleId:
               type: string
+              description: 'The identifier of the privilegedAccessGroupEligibilitySchedule from which this instance was created. Required. Supports $filter (eq, ne).'
               nullable: true
             groupId:
               type: string
+              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
+              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -86521,7 +86615,7 @@ components:
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -86564,7 +86658,7 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -86576,7 +86670,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -86809,12 +86903,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.
               nullable: true
             principalId:
               type: string
+              description: 'The identifier of the principal whose membership or ownership assignment to the group is managed through PIM for groups. Supports $filter (eq, ne).'
               nullable: true
             targetScheduleId:
               type: string
+              description: 'The identifier of the schedule that''s created from the membership or ownership assignment request. Supports $filter (eq, ne).'
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
@@ -86836,11 +86933,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
+              description: The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
+              description: The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -86868,11 +86967,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupAssignmentType'
             groupId:
               type: string
+              description: The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             memberType:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupMemberType'
             principalId:
               type: string
+              description: The identifier of the principal whose membership or ownership assignment is granted through PIM for groups. Required. Supports $filter (eq).
               nullable: true
             activatedUsing:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupEligibilitySchedule'
@@ -86904,12 +87005,15 @@ components:
               $ref: '#/components/schemas/microsoft.graph.privilegedAccessGroupRelationships'
             groupId:
               type: string
+              description: The identifier of the group representing the scope of the membership and ownership eligibility through PIM for groups. Required.
               nullable: true
             principalId:
               type: string
+              description: The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.
               nullable: true
             targetScheduleId:
               type: string
+              description: The identifier of the schedule that's created from the eligibility request. Optional.
               nullable: true
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
@@ -86949,7 +87053,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreement'
-              description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+              description: Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -87121,7 +87225,7 @@ components:
               nullable: true
             isBuiltIn:
               type: boolean
-              description: 'Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).'
+              description: 'Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).'
               nullable: true
             isEnabled:
               type: boolean
@@ -87149,7 +87253,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -87175,7 +87279,7 @@ components:
               nullable: true
             roleAssignmentOriginId:
               type: string
-              description: 'The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).'
+              description: 'The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).'
               nullable: true
             roleAssignmentScheduleId:
               type: string
@@ -87563,7 +87667,7 @@ components:
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.'
+          description: 'Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.'
           format: duration
           nullable: true
         recommendationsEnabled:
@@ -87601,7 +87705,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-          description: 'If provided, the fallback reviewers are asked to complete a review if the primary reviewers don''t exist. For example, if managers are selected as reviewers and a principal under review doesn''t have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.'
+          description: 'If provided, the fallback reviewers are asked to complete a review if the primary reviewers don''t exist. For example, if managers are selected as reviewers and a principal under review doesn''t have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.'
         recommendationInsightSettings:
           type: array
           items:
@@ -87916,7 +88020,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+          description: The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
           format: int32
           nullable: true
       additionalProperties:
@@ -88066,7 +88170,7 @@ components:
         timeoutDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The maximum duration in ISO 8601 format that Azure AD will wait for a resume action for the callout it sent to the logic app. The valid range for custom extensions in lifecycle workflows is five minutes to three hours. The valid range for custom extensions in entitlement management is between 5 minutes and 14 days. For example, PT3H refers to three hours, P3D refers to three days, PT10M refers to ten minutes.'
+          description: 'The maximum duration in ISO 8601 format that Microsoft Entra ID will wait for a resume action for the callout it sent to the logic app. The valid range for custom extensions in lifecycle workflows is five minutes to three hours. The valid range for custom extensions in entitlement management is between 5 minutes and 14 days. For example, PT3H refers to three hours, P3D refers to three days, PT10M refers to ten minutes.'
           format: duration
           nullable: true
       additionalProperties:
@@ -88078,7 +88182,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -88088,7 +88192,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -88178,7 +88282,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Azure AD organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -90255,7 +90359,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamSummary'
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
@@ -90593,11 +90697,13 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: When the schedule instance ends. Required.
               format: date-time
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: When this instance starts. Required.
               format: date-time
               nullable: true
           additionalProperties:
@@ -90654,11 +90760,11 @@ components:
           properties:
             clientAppId:
               type: string
-              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+              description: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
               nullable: true
             clientId:
               type: string
-              description: ID of the Azure AD app that has been granted access. Read-only.
+              description: ID of the Microsoft Entra app that has been granted access. Read-only.
               nullable: true
             permission:
               type: string
@@ -90670,7 +90776,7 @@ components:
               nullable: true
             resourceAppId:
               type: string
-              description: ID of the Azure AD app that is hosting the resource. Read-only.
+              description: ID of the Microsoft Entra app that is hosting the resource. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -90820,9 +90926,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.scheduleRequestActions'
             isValidationOnly:
               type: boolean
+              description: Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
               nullable: true
             justification:
               type: string
+              description: A message provided by users and administrators when create they create the privilegedAccessGroupAssignmentScheduleRequest object.
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
@@ -90839,20 +90947,24 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: When the schedule was created. Optional.
               format: date-time
               nullable: true
             createdUsing:
               type: string
+              description: The identifier of the access assignment or eligibility request that created this schedule. Optional.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: When the schedule was last modified. Optional.
               format: date-time
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             status:
               type: string
+              description: 'The status of the access assignment or eligibility request. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable. Optional.'
               nullable: true
           additionalProperties:
             type: object
@@ -95328,9 +95440,11 @@ components:
               nullable: true
             membershipType:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             webUrl:
               type: string
@@ -98628,7 +98742,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             memberOf:
               type: array
@@ -98972,6 +99086,37 @@ components:
         - unknownFutureValue
         - shared
       type: string
+    microsoft.graph.channelSummary:
+      title: channelSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of guests in a channel.
+          format: int32
+          nullable: true
+        hasMembersFromOtherTenants:
+          type: boolean
+          description: Indicates whether external members are included on the channel.
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of members in a channel.
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Count of owners in a channel.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sharedWithChannelTeamInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamInfo'
@@ -99240,7 +99385,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -102869,7 +103014,7 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          description: Refers to the unique ID representing application in Microsoft Entra ID.
           nullable: true
         displayName:
           type: string
@@ -102877,7 +103022,7 @@ components:
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          description: Refers to the unique ID for the service principal in Microsoft Entra ID.
           nullable: true
         servicePrincipalName:
           type: string

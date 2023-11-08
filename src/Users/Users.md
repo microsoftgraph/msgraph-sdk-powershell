@@ -30,4 +30,8 @@ directive:
       variant: List
     set:
       subject: $1List
+  - where:
+      verb: Update
+      subject: ^UserPhoto$
+    remove: true
 ```

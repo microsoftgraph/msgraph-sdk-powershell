@@ -915,7 +915,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+      description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or other externalGroups as members.'
       operationId: external.connection.group_ListMember
       parameters:
         - name: externalConnection-id
@@ -1036,7 +1036,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get members from external
-      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+      description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or other externalGroups as members.'
       operationId: external.connection.group_GetMember
       parameters:
         - name: externalConnection-id
@@ -2383,7 +2383,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create schema
-      description: Create the schema for a Microsoft Search connection.
+      description: Create the schema for a Microsoft Search connection. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
@@ -2555,11 +2555,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create azureDataLakeConnector
-      description: Create a new azureDataLakeConnector object. This API is available in the following national cloud deployments.
+      summary: Create industryDataConnector
+      description: Create a new industryDataConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2582,11 +2582,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get azureDataLakeConnector
-      description: Read the properties and relationships of an azureDataLakeConnector object. This API is available in the following national cloud deployments.
+      summary: Get industryDataConnector
+      description: Read the properties and relationships of an industryDataConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2672,11 +2672,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete industryDataConnector
-      description: Delete an industryDataConnector object. This API is available in the following national cloud deployments.
+      summary: Delete azureDataLakeConnector
+      description: Delete an azureDataLakeConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2963,11 +2963,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFileFlow
-      description: Update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
+      summary: Update inboundFlow
+      description: Update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -5755,7 +5755,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+              description: 'A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or other externalGroups as members.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -6466,7 +6466,7 @@ components:
           items:
             type: string
             nullable: true
-          description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+          description: A collection of application IDs for registered Microsoft Entra apps that are allowed to manage the externalConnection and to index content in the externalConnection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.contentExperienceType:
@@ -6518,7 +6518,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. For Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.'
+          description: 'The unique identifer of the identity. For Microsoft Entra identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. For external groups, value is set to the ID of the externalGroup.'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -6743,7 +6743,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunRoleCountMetric'
-          description: 'The aggregate count of active people matched to an Azure Active Directory user, by role.'
+          description: 'The aggregate count of active people matched to a Microsoft Entra user, by role.'
           readOnly: true
         memberships:
           maximum: 2147483647
@@ -6773,7 +6773,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.industryData.industryDataRunRoleCountMetric'
-          description: 'The aggregate count of active people not matched to an Azure Active Directory user, by role.'
+          description: 'The aggregate count of active people not matched to a Microsoft Entra user, by role.'
           readOnly: true
         warnings:
           maximum: 2147483647

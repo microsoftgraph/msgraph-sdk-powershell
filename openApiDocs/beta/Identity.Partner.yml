@@ -1613,11 +1613,11 @@ components:
           properties:
             displayName:
               type: string
-              description: The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
+              description: The Microsoft Entra ID display name of the customer tenant. Read-only. Supports $orderby.
               nullable: true
             tenantId:
               type: string
-              description: The Azure AD-assigned tenant ID of the customer. Read-only.
+              description: The Microsoft Entra ID-assigned tenant ID of the customer. Read-only.
             serviceManagementDetails:
               type: array
               items:
@@ -1657,7 +1657,7 @@ components:
             autoExtendDuration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
-              description: 'The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. Default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it is not automatically extended.'
+              description: 'The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn''t automatically extended.'
               format: duration
               nullable: true
             createdDateTime:
@@ -1811,11 +1811,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the customer tenant as set by Azure AD. Read-only
+          description: The display name of the customer tenant as set by Microsoft Entra ID. Read-only
           nullable: true
         tenantId:
           type: string
-          description: The Azure AD-assigned tenant ID of the customer tenant.
+          description: The Microsoft Entra ID-assigned tenant ID of the customer tenant.
       additionalProperties:
         type: object
     microsoft.graph.delegatedAdminRelationshipStatus:
@@ -1839,7 +1839,7 @@ components:
       properties:
         accessContainerId:
           type: string
-          description: 'The identifier of the access container (for example, a security group). For ''securityGroup'' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner''s tenant.'
+          description: 'The identifier of the access container (for example, a security group). For ''securityGroup'' access containers, this must be a valid ID of a Microsoft Entra security group in the Microsoft partner''s tenant.'
         accessContainerType:
           $ref: '#/components/schemas/microsoft.graph.delegatedAdminAccessContainerType'
       additionalProperties:
