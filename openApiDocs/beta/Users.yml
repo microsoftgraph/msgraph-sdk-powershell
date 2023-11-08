@@ -17548,7 +17548,7 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.'
               nullable: true
             kind:
               type: string
@@ -17654,7 +17654,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned by Microsoft Entra ID. Not nullable. Read-only. Alternate key. Supports $filter (eq).
+              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Alternate key. Supports $filter (eq).
               nullable: true
             appRoles:
               type: array
@@ -23740,11 +23740,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

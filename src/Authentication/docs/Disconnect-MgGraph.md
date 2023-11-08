@@ -36,9 +36,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Authentication.IAuthContext
+
 ## NOTES
 
 ## RELATED LINKS
