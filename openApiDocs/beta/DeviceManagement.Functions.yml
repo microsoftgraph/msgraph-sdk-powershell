@@ -2058,6 +2058,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getFrontlineCloudPcAccessState()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getFrontlineCloudPcAccessState
+      operationId: deviceManagement.virtualEndpoint.cloudPC_getFrontlineCloudPcAccessState
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: The unique identifier of cloudPC
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.frontlineCloudPcAccessState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getShiftWorkCloudPcAccessState()':
     get:
       tags:
@@ -2082,6 +2107,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.shiftWorkCloudPcAccessState'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-12-31T00:00:00.0000000+00:00'
+        date: '2023-09-05T00:00:00.0000000+00:00'
+        version: 2023-08/getShiftWorkCloudPcAccessState
+        description: 'The getShiftWorkCloudPcAccessState API is deprecated and will stop returning data on Dec 31, 2023. Please use the new getFrontlineCloudPcAccessState API'
       x-ms-docs-operation-type: function
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getSupportedCloudPcRemoteActions()':
     get:
@@ -3658,6 +3689,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.frontlineCloudPcAccessState:
+      title: frontlineCloudPcAccessState
+      enum:
+        - unassigned
+        - noLicensesAvailable
+        - activationFailed
+        - active
+        - activating
+        - standbyMode
+        - unknownFutureValue
+      type: string
     microsoft.graph.shiftWorkCloudPcAccessState:
       title: shiftWorkCloudPcAccessState
       enum:
@@ -3666,7 +3708,6 @@ components:
         - activationFailed
         - active
         - activating
-        - waitlisted
         - unknownFutureValue
         - standbyMode
       type: string
@@ -3688,7 +3729,7 @@ components:
           properties:
             aadDeviceId:
               type: string
-              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+              description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
@@ -3703,7 +3744,7 @@ components:
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             imageDisplayName:
@@ -4333,7 +4374,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.'
+          description: 'The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that six Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.'
           format: int32
           nullable: true
       additionalProperties:
@@ -4510,17 +4551,20 @@ components:
       title: cloudPcPartnerAgentInstallResult
       type: object
       properties:
+        errorMessage:
+          type: string
+          nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
+          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
+          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
           nullable: true
       additionalProperties:
         type: object

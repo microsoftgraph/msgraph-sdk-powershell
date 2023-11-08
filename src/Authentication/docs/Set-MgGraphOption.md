@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGraphOption
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ## SYNTAX
 
@@ -17,16 +17,16 @@ Set-MgGraphOption [-EnableLoginByWAM <Boolean>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Sets global configurations that apply to the SDK. For example, toggle Web Account Manager (WAM) support.
 
 ## EXAMPLES
 
-### Example 1
+### Example 1: Set web account manager support
 ```powershell
-PS C:\> {{ Add example code here }}
+PS C:\> Set-MgGraphOption -EnableLoginByWAM $True
 ```
 
-{{ Add example description here }}
+ Sets web account manager support
 
 ## PARAMETERS
 
@@ -51,6 +51,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
+
 ## OUTPUTS
 
 ### System.Object

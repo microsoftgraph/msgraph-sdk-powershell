@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Create an online meeting with user token
 
 ```powershell
 
@@ -14,9 +14,9 @@ $params = @{
 New-MgUserOnlineMeeting -UserId $userId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgUserOnlineMeeting Cmdlet.
+This example will create an online meeting with user token
 
-### Example 2: Code snippet
+### Example 2: Create an online meeting that requires a passcode
 
 ```powershell
 
@@ -35,9 +35,9 @@ $params = @{
 New-MgUserOnlineMeeting -UserId $userId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgUserOnlineMeeting Cmdlet.
+This example will create an online meeting that requires a passcode
 
-### Example 3: Code snippet
+### Example 3: Create an online meeting that doesn't require a passcode
 
 ```powershell
 
@@ -56,5 +56,5 @@ $params = @{
 New-MgUserOnlineMeeting -UserId $userId -BodyParameter $params
 
 ```
-This example shows how to use the New-MgUserOnlineMeeting Cmdlet.
+This example will create an online meeting that doesn't require a passcode
 

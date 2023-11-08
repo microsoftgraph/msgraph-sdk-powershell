@@ -261,7 +261,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete an activity
-      description: Delete an existing user activity for your app.
+      description: Delete an existing user activity for your app. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
@@ -515,7 +515,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete a historyItem
-      description: Delete an existing history item for an existing user activity.
+      description: Delete an existing history item for an existing user activity. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
@@ -814,6 +814,8 @@ paths:
                 - mdmAppId desc
                 - onPremisesLastSyncDateTime
                 - onPremisesLastSyncDateTime desc
+                - onPremisesSecurityIdentifier
+                - onPremisesSecurityIdentifier desc
                 - onPremisesSyncEnabled
                 - onPremisesSyncEnabled desc
                 - operatingSystem
@@ -877,6 +879,7 @@ paths:
                 - managementType
                 - mdmAppId
                 - onPremisesLastSyncDateTime
+                - onPremisesSecurityIdentifier
                 - onPremisesSyncEnabled
                 - operatingSystem
                 - operatingSystemVersion
@@ -1015,6 +1018,7 @@ paths:
                 - managementType
                 - mdmAppId
                 - onPremisesLastSyncDateTime
+                - onPremisesSecurityIdentifier
                 - onPremisesSyncEnabled
                 - operatingSystem
                 - operatingSystemVersion
@@ -2544,7 +2548,7 @@ paths:
       tags:
         - users.device
       summary: Delete registeredOwner
-      description: Remove a user as a registered owner of the device.
+      description: Remove a user as a registered owner of the device. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
@@ -2928,7 +2932,7 @@ paths:
       tags:
         - users.device
       summary: Create registeredOwner
-      description: Add a user as a registered owner of the device.
+      description: Add a user as a registered owner of the device. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
@@ -3432,7 +3436,7 @@ paths:
       tags:
         - users.device
       summary: Delete registeredUser
-      description: Remove a user as a registered user of the device.
+      description: Remove a user as a registered user of the device. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
@@ -3816,7 +3820,7 @@ paths:
       tags:
         - users.device
       summary: Create registeredUser
-      description: Add a registered user for the device.
+      description: Add a registered user for the device. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
@@ -4839,7 +4843,7 @@ paths:
       tags:
         - users.device
       summary: List device usageRights
-      description: Retrieve a list of usageRight objects for a given device.
+      description: Retrieve a list of usageRight objects for a given device. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
@@ -5336,7 +5340,7 @@ components:
               nullable: true
             domainName:
               type: string
-              description: The on-premises domain name of Hybrid Azure AD joined devices. This property is set by Intune.
+              description: The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
               nullable: true
             enrollmentProfileName:
               type: string
@@ -5353,7 +5357,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of hostNames for the device.
+              description: List of host names for the device.
             isCompliant:
               type: boolean
               description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
@@ -5364,7 +5368,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -5383,6 +5387,10 @@ components:
               type: string
               description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
+              nullable: true
+            onPremisesSecurityIdentifier:
+              type: string
+              description: The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -5418,27 +5426,27 @@ components:
               description: 'List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).'
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.'
               nullable: true
             kind:
               type: string
-              description: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             manufacturer:
               type: string
-              description: Manufacturer of the device. Read-only.
+              description: Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             model:
               type: string
-              description: Model of the device. Read-only.
+              description: Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             name:
               type: string
-              description: Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             platform:
               type: string
-              description: Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.
+              description: Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.
               nullable: true
             status:
               type: string
@@ -5565,7 +5573,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
-              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.'
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can''t be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.'
               nullable: true
             visibility:
               type: string
@@ -5651,7 +5659,7 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
@@ -5681,7 +5689,7 @@ components:
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.'
+              description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5691,7 +5699,7 @@ components:
               nullable: true
             onPremisesNetBiosName:
               type: string
-              description: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+              description: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
               nullable: true
             onPremisesProvisioningErrors:
               type: array
@@ -5700,7 +5708,7 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -5715,7 +5723,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -5970,7 +5978,7 @@ components:
           properties:
             capability:
               type: string
-              description: 'Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.) Not nullable. Read-only.'
+              description: 'Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.'
             providerId:
               type: string
               description: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -5981,7 +5989,7 @@ components:
               nullable: true
             providerResourceId:
               type: string
-              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (e.g. Yammer.FeedURL etc.). Not nullable. Read-only.'
+              description: 'For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.'
               nullable: true
             uri:
               type: string
@@ -6020,7 +6028,7 @@ components:
               nullable: true
             appId:
               type: string
-              description: 'The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).'
+              description: 'The unique identifier for the associated application (its appId property). Alternate key. Supports $filter (eq, ne, not, in, startsWith).'
               nullable: true
             applicationTemplateId:
               type: string
@@ -6029,7 +6037,7 @@ components:
             appOwnerOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).'
+              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).'
               format: uuid
               nullable: true
             appRoleAssignmentRequired:
@@ -6039,7 +6047,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
-              description: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+              description: 'The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.'
             customSecurityAttributes:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             description:
@@ -6071,7 +6079,7 @@ components:
               description: 'The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).'
             loginUrl:
               type: string
-              description: 'Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.'
+              description: 'Specifies the URL where the service provider redirects the user to Microsoft Entra ID to authenticate. Microsoft Entra ID uses the URL to launch the application from Microsoft 365 or the Microsoft Entra My Apps. When blank, Microsoft Entra ID performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Microsoft Entra My Apps, or the Microsoft Entra SSO URL.'
               nullable: true
             logoutUrl:
               type: string
@@ -6085,7 +6093,7 @@ components:
               type: array
               items:
                 type: string
-              description: Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
+              description: Specifies the list of email addresses where Microsoft Entra ID sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Microsoft Entra Gallery applications.
             passwordCredentials:
               type: array
               items:
@@ -6093,7 +6101,7 @@ components:
               description: The collection of password credentials associated with the service principal. Not nullable.
             preferredSingleSignOnMode:
               type: string
-              description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.'
+              description: 'Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.'
               nullable: true
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6112,7 +6120,7 @@ components:
               description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
-              description: The name of the Azure AD tenant that published the application.
+              description: The name of the Microsoft Entra tenant that published the application.
               nullable: true
             replyUrls:
               type: array
@@ -6129,14 +6137,14 @@ components:
               type: array
               items:
                 type: string
-              description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+              description: Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -6146,7 +6154,7 @@ components:
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
+              description: 'Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.'
               format: uuid
               nullable: true
             verifiedPublisher:
@@ -6225,14 +6233,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.'
+              description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
+            remoteDesktopSecurityConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.remoteDesktopSecurityConfiguration'
             tokenIssuancePolicies:
               type: array
               items:
@@ -6308,7 +6318,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -6342,7 +6352,7 @@ components:
             employeeLeaveDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
+              description: 'The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.'
               format: date-time
               nullable: true
             employeeOrgData:
@@ -6402,7 +6412,7 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
+              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -6432,17 +6442,17 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6457,7 +6467,7 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
@@ -6467,11 +6477,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
@@ -6480,7 +6490,7 @@ components:
               description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property can''t contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
@@ -6494,7 +6504,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example, en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             provisionedPlans:
               type: array
@@ -6553,7 +6563,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
+              description: 'A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -6689,7 +6699,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
               x-ms-navigationProperty: true
             scopedRoleMemberOf:
               type: array
@@ -7186,7 +7196,7 @@ components:
           nullable: true
         serviceInstance:
           type: string
-          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
+          description: 'Qualified service instance (for example, ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -7198,7 +7208,7 @@ components:
           properties:
             onPremisesGroupType:
               type: string
-              description: 'Indicates the target on-premise group type the cloud object will be written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Azure AD security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property is not explicitly configured: Microsoft 365 groups will be written back as universalDistributionGroup by defaultSecurity groups will be written back as universalSecurityGroup by default'
+              description: 'Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn''t explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default'
               nullable: true
           additionalProperties:
             type: object
@@ -7279,11 +7289,11 @@ components:
           properties:
             clientAppId:
               type: string
-              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+              description: ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
               nullable: true
             clientId:
               type: string
-              description: ID of the Azure AD app that has been granted access. Read-only.
+              description: ID of the Microsoft Entra app that has been granted access. Read-only.
               nullable: true
             permission:
               type: string
@@ -7295,7 +7305,7 @@ components:
               nullable: true
             resourceAppId:
               type: string
-              description: ID of the Azure AD app that is hosting the resource. Read-only.
+              description: ID of the Microsoft Entra app that is hosting the resource. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -7664,7 +7674,7 @@ components:
           properties:
             driveType:
               type: string
-              description: Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+              description: Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
               nullable: true
             owner:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -7793,6 +7803,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The permissions associated with the site. Nullable.
               x-ms-navigationProperty: true
+            recycleBin:
+              $ref: '#/components/schemas/microsoft.graph.recycleBin'
             sites:
               type: array
               items:
@@ -7858,7 +7870,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
-              description: 'The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
+              description: 'The status of OneNote operations. Getting an operations collection isn''t supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response. Read-only. Nullable.'
               x-ms-navigationProperty: true
             pages:
               type: array
@@ -7870,7 +7882,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
-              description: 'The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
+              description: 'The image and other file resources in OneNote pages. Getting a resources collection isn''t supported, but you can get the binary content of a specific resource. Read-only. Nullable.'
               x-ms-navigationProperty: true
             sectionGroups:
               type: array
@@ -7960,7 +7972,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamSummary'
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
@@ -8083,7 +8095,7 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.'
+          description: Unique role identifier inside the appRoles collection. You must specify a new GUID identifier when you create a new app role.
           format: uuid
         isEnabled:
           type: boolean
@@ -8094,7 +8106,7 @@ components:
           nullable: true
         value:
           type: string
-          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..'
+          description: 'Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren''t allowed. May not begin with ..'
           nullable: true
       additionalProperties:
         type: object
@@ -8206,7 +8218,7 @@ components:
           nullable: true
         secretText:
           type: string
-          description: Read-only; Contains the strong passwords generated by Azure AD that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
+          description: Read-only; Contains the strong passwords generated by Microsoft Entra ID that are 16-64 characters in length. The generated password value is only returned during the initial POST request to addPassword. There is no way to retrieve this password in the future.
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8235,7 +8247,7 @@ components:
           format: uuid
         isEnabled:
           type: boolean
-          description: 'When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.'
+          description: 'When you create or update a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.'
         origin:
           type: string
           nullable: true
@@ -8253,7 +8265,7 @@ components:
           nullable: true
         value:
           type: string
-          description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..'
+          description: 'Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & '' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren''t allowed. May not begin with ..'
           nullable: true
       additionalProperties:
         type: object
@@ -8323,11 +8335,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
             permissionId:
               type: string
-              description: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+              description: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
               nullable: true
             permissionName:
               type: string
-              description: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+              description: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Doesn't support $filter.
               nullable: true
           additionalProperties:
             type: object
@@ -8341,7 +8353,7 @@ components:
               type: array
               items:
                 type: string
-              description: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Azure AD. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Azure AD in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
+              description: The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
             description:
               type: string
               description: 'The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.'
@@ -8354,7 +8366,7 @@ components:
               description: 'is the unique identifier for the federated identity credential, which has a limit of 120 characters and must be URL friendly. It is immutable once created. Required. Not nullable. Supports $filter (eq).'
             subject:
               type: string
-              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Azure AD. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
+              description: 'Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).'
           additionalProperties:
             type: object
     microsoft.graph.homeRealmDiscoveryPolicy:
@@ -8395,10 +8407,10 @@ components:
           properties:
             clientId:
               type: string
-              description: The object id (not appId) of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
+              description: The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             expiryTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8412,10 +8424,10 @@ components:
               nullable: true
             resourceId:
               type: string
-              description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
+              description: The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
+              description: 'A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8423,6 +8435,23 @@ components:
               description: 'Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.'
               format: date-time
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.remoteDesktopSecurityConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: remoteDesktopSecurityConfiguration
+          type: object
+          properties:
+            isRemoteDesktopProtocolEnabled:
+              type: boolean
+              description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
+            targetDeviceGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
+              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.tokenIssuancePolicy:
@@ -8471,7 +8500,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -8481,7 +8510,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -8525,7 +8554,7 @@ components:
           items:
             type: string
             nullable: true
-          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
+          description: The collection of unique identifiers that can be associated with a user and can be used to bind the Microsoft Entra user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
       additionalProperties:
         type: object
     microsoft.graph.cloudRealtimeCommunicationInfo:
@@ -8576,7 +8605,7 @@ components:
       properties:
         issuer:
           type: string
-          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType is not federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For external users from other Azure AD organization, this will be the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
+          description: 'Specifies the issuer of the identity, for example facebook.com.For local accounts (where signInType isn''t federated), this property is the local B2C tenant default domain name, for example contoso.onmicrosoft.com.For guests from other Microsoft Entra organization, this is the domain of the federated organization, for example contoso.com.Supports $filter. 512 character limit.'
           nullable: true
         issuerAssignedId:
           type: string
@@ -8584,7 +8613,7 @@ components:
           nullable: true
         signInType:
           type: string
-          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Additional validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
+          description: 'Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Extra validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.'
           nullable: true
       additionalProperties:
         type: object
@@ -8606,7 +8635,7 @@ components:
           description: The service plans that are disabled in this assignment. Read-Only.
         error:
           type: string
-          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.'
+          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.'
           nullable: true
         lastUpdatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8748,7 +8777,7 @@ components:
           properties:
             aadDeviceId:
               type: string
-              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+              description: The Microsoft Entra device ID of the Cloud PC.
               nullable: true
             connectionSettings:
               $ref: '#/components/schemas/microsoft.graph.cloudPcConnectionSettings'
@@ -8763,7 +8792,7 @@ components:
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             imageDisplayName:
@@ -9486,7 +9515,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
+              description: 'DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.'
               format: date-time
               nullable: true
             errors:
@@ -9498,7 +9527,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. Supports $select.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn''t exist, or manager is specified as reviewer but a user''s manager doesn''t exist. Supports $select.'
             reviewers:
               type: array
               items:
@@ -10306,7 +10335,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Sets how long (in seconds) this notification content will stay in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user''s Windows Action Center.'
+              description: 'Sets how long (in seconds) this notification content stays in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user''s Windows Action Center.'
               format: int32
               nullable: true
             expirationDateTime:
@@ -10317,7 +10346,7 @@ components:
               nullable: true
             groupName:
               type: string
-              description: The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.
+              description: The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.
               nullable: true
             payload:
               $ref: '#/components/schemas/microsoft.graph.payloadTypes'
@@ -10562,7 +10591,6 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             anonymizeIdentityForRoles:
@@ -10572,7 +10600,6 @@ components:
               description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -10609,7 +10636,9 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              nullable: true
+            isEndToEndEncryptionEnabled:
+              type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -10636,7 +10665,6 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             shareMeetingChatHistoryDefault:
@@ -10689,11 +10717,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
@@ -10768,6 +10796,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
               description: Represents the phone registered to a user for authentication.
+              x-ms-navigationProperty: true
+            platformCredentialMethods:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.platformCredentialAuthenticationMethod'
               x-ms-navigationProperty: true
             softwareOathMethods:
               type: array
@@ -11141,7 +11174,7 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
@@ -11234,11 +11267,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.emailAddress'
             isInsideOrganization:
               type: boolean
-              description: True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+              description: True if the user in context (share recipient or delegate) is inside the same organization as the calendar owner.
               nullable: true
             isRemovable:
               type: boolean
-              description: 'True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You cannot remove ''My organization'' as a sharee to a calendar.'
+              description: 'True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The ''My organization'' user determines the permissions other people within your organization have to the given calendar. You can''t remove ''My organization'' as a recipient to a calendar.'
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.calendarRoleType'
@@ -11382,7 +11415,7 @@ components:
           nullable: true
         joinUrl:
           type: string
-          description: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+          description: The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
           nullable: true
         phones:
           type: array
@@ -11391,7 +11424,7 @@ components:
           description: All of the phone numbers associated with this conference.
         quickDial:
           type: string
-          description: The pre-formatted quickdial for this call.
+          description: The preformatted quick dial for this call.
           nullable: true
         tollFreeNumbers:
           type: array
@@ -11723,7 +11756,7 @@ components:
               nullable: true
             cTag:
               type: string
-              description: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+              description: An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
               nullable: true
             deleted:
               $ref: '#/components/schemas/microsoft.graph.deleted'
@@ -11846,11 +11879,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
+              description: The collection of field definitions for this list.
               x-ms-navigationProperty: true
             contentTypes:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.contentType'
+              description: The collection of content types present in this list.
               x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
@@ -11864,7 +11899,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
-              description: The collection of long running operations for the list.
+              description: The collection of long-running operations on the list.
               x-ms-navigationProperty: true
             subscriptions:
               type: array
@@ -12045,7 +12080,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+              description: List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
             description:
               type: string
               description: The descriptive text for the item.
@@ -12084,11 +12119,11 @@ components:
               nullable: true
             readOnly:
               type: boolean
-              description: 'If true, the content type cannot be modified unless this value is first set to false.'
+              description: 'If true, the content type can''t be modified unless this value is first set to false.'
               nullable: true
             sealed:
               type: boolean
-              description: 'If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.'
+              description: 'If true, the content type can''t be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.'
               nullable: true
             base:
               $ref: '#/components/schemas/microsoft.graph.contentType'
@@ -12168,7 +12203,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+              description: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
               format: date-time
               nullable: true
             grantedTo:
@@ -12199,11 +12234,25 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The type of permission, for example, read. See below for the full list of roles. Read-only.'
+              description: 'The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.'
             shareId:
               type: string
               description: 'A unique token that can be used to access this shared item via the [shares API][]. Read-only.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.recycleBin:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: recycleBin
+          type: object
+          properties:
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recycleBinItem'
+              description: List of the recycleBinItems deleted by a user.
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.termStore.store:
@@ -12656,7 +12705,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelSummary'
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             webUrl:
               type: string
@@ -12774,11 +12823,11 @@ components:
           properties:
             description:
               type: string
-              description: Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+              description: Tag description as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
               nullable: true
             displayName:
               type: string
-              description: Tag name as it will appear to the user in Microsoft Teams.
+              description: Tag name as it appears to the user in Microsoft Teams.
               nullable: true
             memberCount:
               maximum: 2147483647
@@ -12985,7 +13034,7 @@ components:
           nullable: true
         fieldId:
           type: string
-          description: 'Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.'
+          description: 'Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.'
           nullable: true
         type:
           type: string
@@ -13091,6 +13140,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.targetDeviceGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: targetDeviceGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: Display name for the target device group.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationSecretKeyStringValuePair:
       title: synchronizationSecretKeyStringValuePair
       type: object
@@ -13157,7 +13218,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationMetadataEntry'
-              description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+              description: 'Additional extension properties. Unless mentioned explicitly, metadata values shouldn''t be changed.'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
           additionalProperties:
@@ -13421,17 +13482,20 @@ components:
       title: cloudPcPartnerAgentInstallResult
       type: object
       properties:
+        errorMessage:
+          type: string
+          nullable: true
         installStatus:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallStatus'
         isThirdPartyPartner:
           type: boolean
-          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent.  When ''FALSE'', the agent is a Microsoft agent or is not known.  The default value is ''FALSE''.'
+          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known.  The default value is 'FALSE'
           nullable: true
         partnerAgentName:
           $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentName'
         retriable:
           type: boolean
-          description: 'Indicates if the partner agent is a third party. When ''TRUE'', the agent is a third-party (non-Microsoft) agent. When ''FALSE'', the agent is a Microsoft agent or is not known. The default value is ''FALSE''.'
+          description: Indicates if the partner agent is a third party. When 'TRUE' the agent is a third-party (non-Microsoft) agent and when 'FALSE' the agent is a Microsoft agent or isn't known. The default value is 'FALSE'
           nullable: true
       additionalProperties:
         type: object
@@ -14248,7 +14312,7 @@ components:
               nullable: true
             descriptionForReviewers:
               type: string
-              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
+              description: Description provided  by review creators to provide more context of the review to reviewers. Reviewers see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
               nullable: true
             displayName:
               type: string
@@ -14258,7 +14322,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn''t exist, or manager is specified as reviewer but a user''s manager doesn''t exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.'
             instanceEnumerationScope:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             lastModifiedDateTime:
@@ -14280,7 +14344,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewStageSettings'
-              description: 'Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.'
+              description: 'Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages are created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.'
             status:
               type: string
               description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -14289,7 +14353,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that don''t recur will only have one instance; otherwise, there''s an instance for each recurrence.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -14309,7 +14373,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist.'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This can occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist.'
             reviewers:
               type: array
               items:
@@ -16367,7 +16431,7 @@ components:
               nullable: true
             hasDescription:
               type: boolean
-              description: Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+              description: Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
               nullable: true
             orderHint:
               type: string
@@ -16518,11 +16582,11 @@ components:
           properties:
             ageGroup:
               type: string
-              description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and cannot be changed.'
+              description: 'Shows the age group of user. Allowed values null, minor, notAdult and adult are generated by the directory and can''t be changed.'
               nullable: true
             countryCode:
               type: string
-              description: Contains the two-character country code associated with the users account.
+              description: Contains the two-character country code associated with the users' account.
             preferredLanguageTag:
               $ref: '#/components/schemas/microsoft.graph.localeInfo'
             userPrincipalName:
@@ -17358,6 +17422,8 @@ components:
               type: string
               description: The unique identifier of the onlineMeeting related to this recording. Read-only.
               nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             meetingOrganizerId:
               type: string
               description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -17389,6 +17455,8 @@ components:
               type: string
               description: The unique identifier of the online meeting related to this transcript. Read-only.
               nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             meetingOrganizerId:
               type: string
               description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
@@ -17429,7 +17497,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+          description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -17446,13 +17514,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.communicationsUserIdentity'
-              description: Identity information of co-organizers of the webinar.
+              description: Identity information of coorganizers of the webinar.
             registrationConfiguration:
               $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationConfiguration'
             registrations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -17632,12 +17701,34 @@ components:
           properties:
             phoneNumber:
               type: string
-              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.'
+              description: 'The phone number to text or call for authentication. Phone numbers use the format ''+<country code> <number>x<extension>'', with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don''t match the required format.'
               nullable: true
             phoneType:
               $ref: '#/components/schemas/microsoft.graph.authenticationPhoneType'
             smsSignInState:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodSignInState'
+          additionalProperties:
+            type: object
+    microsoft.graph.platformCredentialAuthenticationMethod:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+        - title: platformCredentialAuthenticationMethod
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            keyStrength:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
+            platform:
+              $ref: '#/components/schemas/microsoft.graph.authenticationMethodPlatform'
+            device:
+              $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
     microsoft.graph.softwareOathAuthenticationMethod:
@@ -18865,16 +18956,19 @@ components:
           properties:
             isLabelAppliedExplicitly:
               type: boolean
+              description: 'Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.'
               nullable: true
             labelAppliedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             labelAppliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             name:
               type: string
+              description: The retention label on the document. Read-write.
               nullable: true
             retentionSettings:
               $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
@@ -18895,7 +18989,7 @@ components:
               description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.'
             clientState:
               type: string
-              description: Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+              description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
               nullable: true
             creatorId:
               type: string
@@ -18989,7 +19083,7 @@ components:
           nullable: true
         hidden:
           type: boolean
-          description: 'If true, indicates that the list is not normally visible in the SharePoint user experience.'
+          description: 'If true, indicates that the list isn''t normally visible in the SharePoint user experience.'
           nullable: true
         template:
           type: string
@@ -19228,7 +19322,7 @@ components:
       properties:
         allowMultipleValues:
           type: boolean
-          description: Specifies whether the column will allow more than one value
+          description: Specifies whether the column allows more than one value
           nullable: true
         showFullyQualifiedName:
           type: boolean
@@ -19499,6 +19593,29 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.recycleBinItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.baseItem'
+        - title: recycleBinItem
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            deletedFromLocation:
+              type: string
+              description: Relative URL of the list or folder that originally contained the item.
+              nullable: true
+            size:
+              type: integer
+              description: Size of the item in bytes.
+              format: int64
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.termStore.group:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20126,11 +20243,13 @@ components:
               nullable: true
             schedulingGroupId:
               type: string
+              description: ID of the scheduling group the shift is part of. Required.
               nullable: true
             sharedShift:
               $ref: '#/components/schemas/microsoft.graph.shiftItem'
             userId:
               type: string
+              description: ID of the user assigned to the shift. Required.
               nullable: true
           additionalProperties:
             type: object
@@ -20245,6 +20364,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Collection of GUIDs that point to the certificateBasedApplicationConfiguration that contains the collection of allowed root and intermediate certificate authorities.
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -20643,7 +20763,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
+              description: The date and time when the key was originally backed up to Microsoft Entra ID.
               format: date-time
             deviceId:
               type: string
@@ -20667,7 +20787,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.applicationMode:
       title: applicationMode
       enum:
@@ -21240,7 +21359,7 @@ components:
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.'
+          description: 'Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.'
           format: duration
           nullable: true
         recommendationsEnabled:
@@ -21262,23 +21381,23 @@ components:
           items:
             type: string
             nullable: true
-          description: 'Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.'
+          description: 'Indicate which decisions will go to the next stage. Can be a subset of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.'
         dependsOn:
           type: array
           items:
             type: string
-          description: 'Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.'
+          description: 'Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, don''t specify dependsOn. Required if stageId isn''t 1.'
         durationInDays:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: 'The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.'
+          description: 'The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Can''t exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays can''t exceed 7.'
           format: int32
         fallbackReviewers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-          description: 'If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.'
+          description: 'If provided, the fallback reviewers are asked to complete a review if the primary reviewers don''t exist. For example, if managers are selected as reviewers and a principal under review doesn''t have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.'
         recommendationInsightSettings:
           type: array
           items:
@@ -21286,20 +21405,20 @@ components:
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.'
+          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.'
           format: duration
           nullable: true
         recommendationsEnabled:
           type: boolean
-          description: 'Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.'
+          description: 'Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.'
         reviewers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
-          description: 'Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.'
+          description: 'Defines who the reviewers are. If none is specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition.'
         stageId:
           type: string
-          description: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
+          description: Unique identifier of the accessReviewStageSettings. The stageId is used in dependsOn property to indicate the stage relationship. Required.
       additionalProperties:
         type: object
     microsoft.graph.security.informationProtectionPolicySetting:
@@ -22176,7 +22295,6 @@ components:
       description: Computer endpoint protection state
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDeviceHealthState
         modelAsString: false
@@ -22232,7 +22350,6 @@ components:
       description: Product Status of Windows Defender
       x-ms-enum-flags:
         isFlags: true
-        style: simple
       x-ms-enum:
         name: windowsDefenderProductStatus
         modelAsString: false
@@ -22549,7 +22666,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -22560,7 +22676,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
             unassignedOrderHint:
               type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task isn''t assigned to anyone, or if the orderHintsByAssignee dictionary doesn''t provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
               nullable: true
           additionalProperties:
             type: object
@@ -22915,6 +23031,9 @@ components:
           nullable: true
         relationship:
           $ref: '#/components/schemas/microsoft.graph.personRelationship'
+        userId:
+          type: string
+          nullable: true
         userPrincipalName:
           type: string
           description: Email address or reference to person within organization.
@@ -22940,6 +23059,15 @@ components:
         jobTitle:
           type: string
           description: The title held when in that position.
+          nullable: true
+        layer:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        level:
+          type: string
           nullable: true
         role:
           type: string
@@ -23212,15 +23340,18 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: Total capacity of the virtual event.
               format: int32
               nullable: true
             registrationWebUrl:
               type: string
+              description: Registration URL of the virtual event.
               nullable: true
             questions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestion'
+              description: Registration questions.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23233,35 +23364,43 @@ components:
             cancelationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant cancels their registration for the virtual event. Only appears when applicable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             email:
               type: string
+              description: Email address of the registrant.
               nullable: true
             firstName:
               type: string
+              description: First name of the registrant.
               nullable: true
             lastName:
               type: string
+              description: Last name of the registrant.
               nullable: true
             registrationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             registrationQuestionAnswers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistrationQuestionAnswer'
+              description: The registrant's answer to the registration questions.
             status:
               $ref: '#/components/schemas/microsoft.graph.virtualEventAttendeeRegistrationStatus'
             userId:
               type: string
+              description: The registrant's ID in Microsoft Entra ID. Only appears when the registrant is registered in Microsoft Entra ID.
               nullable: true
             sessions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventSession'
+              description: Sessions of the webinar.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23324,6 +23463,17 @@ components:
         - normal
         - weak
         - unknown
+      type: string
+    microsoft.graph.authenticationMethodPlatform:
+      title: authenticationMethodPlatform
+      enum:
+        - unknown
+        - windows
+        - macOS
+        - iOS
+        - android
+        - linux
+        - unknownFutureValue
       type: string
     microsoft.graph.teamworkUserIdentity:
       allOf:
@@ -23520,7 +23670,7 @@ components:
               nullable: true
             tenantId:
               type: string
-              description: The ID of the Azure Active Directory tenant.
+              description: The ID of the Microsoft Entra tenant.
               nullable: true
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -24014,7 +24164,7 @@ components:
               description: Indicates whether the last column contains special formatting.
             legacyId:
               type: string
-              description: Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+              description: Legacy Id used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
               nullable: true
             name:
               type: string
@@ -24037,7 +24187,7 @@ components:
               description: Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
             style:
               type: string
-              description: 'Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
+              description: 'Constant value that represents the Table style. Possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.'
               nullable: true
             columns:
               type: array
@@ -24118,18 +24268,23 @@ components:
           $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
         isContentUpdateAllowed:
           type: boolean
+          description: Specifies whether updates to document content are allowed. Read-only.
           nullable: true
         isDeleteAllowed:
           type: boolean
+          description: Specifies whether the document deletion is allowed. Read-only.
           nullable: true
         isLabelUpdateAllowed:
           type: boolean
+          description: Specifies whether you're allowed to change the retention label on the document. Read-only.
           nullable: true
         isMetadataUpdateAllowed:
           type: boolean
+          description: 'Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.'
           nullable: true
         isRecordLocked:
           type: boolean
+          description: Specifies whether the item is locked. Read-write.
           nullable: true
       additionalProperties:
         type: object
@@ -24211,12 +24366,12 @@ components:
         missingDataBeforeDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The service does not have source data before the specified time.
+          description: The service doesn't have source data before the specified time.
           format: date-time
           nullable: true
         wasThrottled:
           type: boolean
-          description: Some data was not recorded due to excessive activity.
+          description: Some data wasn't recorded due to excessive activity.
           nullable: true
       additionalProperties:
         type: object
@@ -24400,6 +24555,7 @@ components:
         - roster
         - project
         - driveItem
+        - user
       type: string
     microsoft.graph.plannerCreationSourceKind:
       title: plannerCreationSourceKind
@@ -24596,7 +24752,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.teamsAppAuthorization:
       title: teamsAppAuthorization
       type: object
@@ -24750,7 +24905,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.timeCardEntry:
       title: timeCardEntry
       type: object
@@ -24963,7 +25117,7 @@ components:
       properties:
         key:
           type: string
-          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Microsoft Entra ID to Microsoft Entra synchronization worker to user - For Workday to Microsoft Entra synchronization.
           nullable: true
         value:
           type: integer
@@ -24979,7 +25133,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
-          description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+          description: true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
         groupFilter:
           $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
@@ -24990,7 +25144,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
-          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.'
+          description: 'Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn''t be changed.'
         name:
           type: string
           description: Human-readable name of the synchronization rule. Not nullable.
@@ -25044,7 +25198,7 @@ components:
               description: Whether this object is read-only.
             version:
               type: string
-              description: Read only value that indicates version discovered. null if discovery has not yet occurred.
+              description: Read only value that indicates version discovered. null if discovery hasn't yet occurred.
               nullable: true
           additionalProperties:
             type: object
@@ -25076,7 +25230,7 @@ components:
           description: A list of supported bottom margins(in microns) for the printer.
         collation:
           type: boolean
-          description: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          description: True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.
           nullable: true
         colorModes:
           type: array
@@ -25088,7 +25242,7 @@ components:
           items:
             type: string
             nullable: true
-          description: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+          description: A list of supported content (MIME) types that the printer supports. It isn't guaranteed that the Universal Print service supports printing all of these MIME types.
         copiesPerJob:
           $ref: '#/components/schemas/microsoft.graph.integerRange'
         dpis:
@@ -25147,7 +25301,7 @@ components:
           items:
             type: string
             nullable: true
-          description: 'The media (i.e., paper) colors supported by the printer.'
+          description: 'The media (that is, paper) colors supported by the printer.'
         mediaSizes:
           type: array
           items:
@@ -25688,7 +25842,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -26272,7 +26425,7 @@ components:
           nullable: true
         mediaType:
           type: string
-          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+          description: The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
           nullable: true
         previewImageUrl:
           type: string
@@ -26288,7 +26441,7 @@ components:
           nullable: true
         type:
           type: string
-          description: The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+          description: 'The item''s media type. Can be used for filtering for a specific file based on a specific type. See the Type property values section, for supported types.'
           nullable: true
       additionalProperties:
         type: object
@@ -26360,7 +26513,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.inferenceData:
       title: inferenceData
       type: object
@@ -26509,6 +26661,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.virtualEventRegistration'
+              description: Registration records of this virtual event session.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -26610,7 +26763,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -26621,7 +26773,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationPolicyTip:
       title: chatMessagePolicyViolationPolicyTip
       type: object
@@ -26651,7 +26802,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
       title: chatMessagePolicyViolationVerdictDetailsTypes
       enum:
@@ -26662,7 +26812,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.chatMessageReactionIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -26705,7 +26854,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The display name of the attachment. This doesn't need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -27290,7 +27439,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.objectDefinition:
       title: objectDefinition
       type: object
@@ -28362,7 +28510,7 @@ components:
       properties:
         collate:
           type: boolean
-          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          description: Whether the printer should collate pages when printing multiple copies of a multi-page document.
           nullable: true
         colorMode:
           $ref: '#/components/schemas/microsoft.graph.printColorMode'
@@ -28583,7 +28731,7 @@ components:
           nullable: true
         id:
           type: string
-          description: The id of the user who shared the item.
+          description: The ID of the user who shared the item.
           nullable: true
       additionalProperties:
         type: object
@@ -28908,7 +29056,7 @@ components:
               nullable: true
             visible:
               type: boolean
-              description: A boolean value the represents the visibility of a chart title object.
+              description: A boolean value that represents the visibility of a chart title object.
             format:
               $ref: '#/components/schemas/microsoft.graph.workbookChartTitleFormat'
           additionalProperties:
@@ -29008,7 +29156,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.objectMappingMetadataEntry:
       title: objectMappingMetadataEntry
       type: object
@@ -29034,12 +29181,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is not satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: 'Filter group set used to decide whether given object is in scope for provisioning. This is the filter which should be used in most cases. If an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter isn''t satisfied any longer, such object will get de-provisioned''. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
         inputFilterGroups:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.filterGroup'
-          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
+          description: '*Experimental* Filter group set used to filter out objects at the early stage of reading them from the directory. If an object doesn''t satisfy this filter, it will not be processed further. Important to understand is that if an object used to satisfy this filter at a given moment, and then the object or the filter was changed so that filter is no longer satisfied, such object will NOT get de-provisioned. An object is considered in scope if ANY of the groups in the collection is evaluated to true.'
       additionalProperties:
         type: object
     microsoft.graph.attributeDefinition:
@@ -29244,15 +29391,15 @@ components:
       properties:
         appId:
           type: string
-          description: Refers to the unique identifier representing Application Id in the Azure Active Directory.
+          description: Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
           nullable: true
         displayName:
           type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
+          description: Refers to the application name displayed in the Microsoft Entra admin center.
           nullable: true
         servicePrincipalId:
           type: string
-          description: Refers to the unique identifier indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          description: Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
           nullable: true
         servicePrincipalName:
           type: string
@@ -29363,7 +29510,7 @@ components:
               nullable: true
             color:
               type: string
-              description: 'HTML color code representation of the text color. E.g. #FF0000 represents Red.'
+              description: 'HTML color code representation of the text color. for example #FF0000 represents Red.'
               nullable: true
             italic:
               type: boolean
@@ -29371,11 +29518,11 @@ components:
               nullable: true
             name:
               type: string
-              description: Font name (e.g. 'Calibri')
+              description: Font name (for example 'Calibri')
               nullable: true
             size:
               type: number
-              description: Size of the font (e.g. 11)
+              description: Size of the font (for example 11)
               format: double
               nullable: true
             underline:
@@ -29463,7 +29610,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
-          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn''t Function, this property is null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:

@@ -81,7 +81,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecord
-      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.'
+      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions. This API is available in the following national cloud deployments.'
       operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -191,7 +191,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get callRecord
-      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.'
+      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
@@ -312,7 +312,7 @@ paths:
       tags:
         - communications.callRecord
       summary: List callRecord sessions
-      description: 'Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.'
+      description: 'Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
@@ -1100,7 +1100,7 @@ paths:
       tags:
         - communications.call
       summary: Get call
-      description: Retrieve the properties and relationships of a call object.
+      description: Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
       operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1244,7 +1244,7 @@ paths:
       tags:
         - communications.call
       summary: Create call
-      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.'
+      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
@@ -1271,7 +1271,7 @@ paths:
       tags:
         - communications.call
       summary: Get call
-      description: Retrieve the properties and relationships of a call object.
+      description: Retrieve the properties and relationships of a call object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-get?view=graph-rest-1.0
@@ -1388,7 +1388,7 @@ paths:
       tags:
         - communications.call
       summary: Delete call
-      description: 'Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.'
+      description: 'Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
@@ -1419,7 +1419,7 @@ paths:
       tags:
         - communications.call
       summary: List audio routing groups
-      description: Retrieve a list of audioRoutingGroup objects.
+      description: Retrieve a list of audioRoutingGroup objects. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
@@ -1497,7 +1497,7 @@ paths:
       tags:
         - communications.call
       summary: Create audio routing group
-      description: Create a new audioRoutingGroup.
+      description: Create a new audioRoutingGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
@@ -1533,7 +1533,7 @@ paths:
       tags:
         - communications.call
       summary: Get audio routing group
-      description: Retrieve the properties and relationships of an audioRoutingGroup object.
+      description: Retrieve the properties and relationships of an audioRoutingGroup object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
@@ -1596,7 +1596,7 @@ paths:
       tags:
         - communications.call
       summary: Update audio routing group
-      description: Modify sources and receivers of an audioRoutingGroup.
+      description: Modify sources and receivers of an audioRoutingGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
@@ -1639,7 +1639,7 @@ paths:
       tags:
         - communications.call
       summary: Delete audio routing group
-      description: Delete the specified audioRoutingGroup.
+      description: Delete the specified audioRoutingGroup. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
@@ -1700,7 +1700,7 @@ paths:
       tags:
         - communications.call
       summary: List contentSharingSessions
-      description: Retrieve a list of contentSharingSession objects in a call.
+      description: Retrieve a list of contentSharingSession objects in a call. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
@@ -1801,7 +1801,7 @@ paths:
       tags:
         - communications.call
       summary: Get contentSharingSession
-      description: Retrieve the properties of a contentSharingSession object.
+      description: Retrieve the properties of a contentSharingSession object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
@@ -1957,7 +1957,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action addLargeGalleryView
-      description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
+      description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
@@ -1999,7 +1999,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action answer
-      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.'
+      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification contains the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
@@ -2050,7 +2050,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
-      description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.'
+      description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
@@ -2092,7 +2092,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
-      description: Allow applications to share screen content with the participants of a group call.
+      description: Allow applications to share screen content with the participants of a group call. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
@@ -2129,7 +2129,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
-      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a 404 Not-Found error. The resources related to the call should be cleaned up on the application side.'
+      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a 404 Not-Found error. The resources related to the call should be cleaned up on the application side. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
@@ -2154,7 +2154,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
+      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
@@ -2196,7 +2196,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
-      description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
+      description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
@@ -2323,7 +2323,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
-      description: 'Record a short audio response from the caller. A bot can use this to capture a voice response from a caller after they are prompted for a response. For more information about how to handle operations, see commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that''s given in the completed notification.'
+      description: 'Record a short audio response from the caller. A bot can use this to capture a voice response from a caller after they are prompted for a response. For more information about how to handle operations, see commsOperation This action isn''t intended to record the entire call. The maximum length of recording is 2 minutes. The recording isn''t saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that''s given in the completed notification. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-1.0
@@ -2404,7 +2404,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
-      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
@@ -2462,7 +2462,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
-      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
+      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
@@ -2502,7 +2502,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
-      description: Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'Dialpad'.
+      description: Subscribe to DTMF (dual-tone multi-frequency signaling) to allow you to be notified when the user presses keys on a 'Dialpad'. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
@@ -2544,7 +2544,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
-      description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
+      description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
@@ -2583,7 +2583,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
-      description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
+      description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
@@ -2625,7 +2625,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
-      description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+      description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
@@ -2669,7 +2669,7 @@ paths:
       tags:
         - communications.call
       summary: Get addLargeGalleryViewOperation
-      description: Get the status of an operation that adds the large gallery view to a call.
+      description: Get the status of an operation that adds the large gallery view to a call. This API is available in the following national cloud deployments.
       operationId: communication.call_ListOperation
       parameters:
         - name: call-id
@@ -2776,7 +2776,7 @@ paths:
       tags:
         - communications.call
       summary: Get addLargeGalleryViewOperation
-      description: Get the status of an operation that adds the large gallery view to a call.
+      description: Get the status of an operation that adds the large gallery view to a call. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
@@ -2935,7 +2935,7 @@ paths:
       tags:
         - communications.call
       summary: List participants
-      description: Retrieve a list of participant objects in the call.
+      description: Retrieve a list of participant objects in the call. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
@@ -3069,7 +3069,7 @@ paths:
       tags:
         - communications.call
       summary: Get participant
-      description: Retrieve the properties and relationships of a participant object.
+      description: Retrieve the properties and relationships of a participant object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-get?view=graph-rest-1.0
@@ -3179,7 +3179,7 @@ paths:
       tags:
         - communications.call
       summary: Delete participant
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
@@ -3218,7 +3218,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
+      description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
@@ -3268,7 +3268,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action startHoldMusic
-      description: Put a participant on hold and play music in the background.
+      description: Put a participant on hold and play music in the background. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
@@ -3320,7 +3320,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action stopHoldMusic
-      description: Reincorporate a participant previously put on hold to the call.
+      description: Reincorporate a participant previously put on hold to the call. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
@@ -3392,7 +3392,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
@@ -3438,7 +3438,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action muteAll
-      description: Mute all participants in the call.
+      description: Mute all participants in the call. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0
@@ -3499,7 +3499,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action logTeleconferenceDeviceQuality
-      description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
+      description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
@@ -3527,7 +3527,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      description: Get the presence information for multiple users.
+      description: Get the presence information for multiple users. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
@@ -3575,7 +3575,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions.  This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -3640,6 +3640,8 @@ paths:
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
+                - isEndToEndEncryptionEnabled
+                - isEndToEndEncryptionEnabled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -3701,6 +3703,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -3816,6 +3819,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -3925,7 +3929,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -3954,7 +3957,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in communications
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: communication_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3984,7 +3986,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: List meetingAttendanceReports
-      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
@@ -4096,7 +4098,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -4235,7 +4237,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -4583,7 +4585,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -4612,7 +4613,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in communications
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: communication_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4699,7 +4699,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -4814,7 +4814,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -5123,7 +5123,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
-      description: The content stream of the recording of a Teams live event. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -5152,7 +5151,6 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in communications
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: communication_SetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -5182,7 +5180,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       operationId: communication.onlineMeeting_ListRecording
       parameters:
         - name: onlineMeeting-id
@@ -5216,6 +5214,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -5235,6 +5235,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -5295,7 +5296,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -5331,6 +5332,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -5561,6 +5563,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -5582,6 +5585,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -5619,7 +5624,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
@@ -5683,7 +5688,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
@@ -5717,11 +5722,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5749,7 +5754,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
@@ -5830,7 +5835,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
@@ -5866,7 +5871,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
@@ -5930,7 +5935,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Update meetingRegistrationQuestion
-      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
@@ -5973,7 +5978,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Delete meetingRegistrationQuestion
-      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
@@ -6289,7 +6294,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. '
+      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings.  This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -6326,6 +6331,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -6347,6 +6354,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -6408,7 +6416,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -6444,6 +6452,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -6753,6 +6762,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -6775,6 +6785,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -6828,7 +6840,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action createOrGet
-      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
+      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID.  This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
@@ -6898,6 +6910,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -6919,6 +6932,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -6974,6 +6989,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -6996,6 +7012,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -7032,7 +7050,7 @@ paths:
       tags:
         - communications.presence
       summary: Get presence
-      description: Get a user's presence information.
+      description: Get a user's presence information. This API is available in the following national cloud deployments.
       operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7125,7 +7143,7 @@ paths:
       tags:
         - communications.presence
       summary: Get presence
-      description: Get a user's presence information.
+      description: Get a user's presence information. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
@@ -7239,7 +7257,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearPresence
-      description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. '
+      description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful clearPresence changes the user''s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration.  This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
@@ -7277,7 +7295,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearUserPreferredPresence
-      description: Clear the preferred availability and activity status for a user.
+      description: Clear the preferred availability and activity status for a user. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
@@ -7302,7 +7320,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setPresence
-      description: Set the availability and activity status in a presence session of an application for a user.
+      description: Set the availability and activity status in a presence session of an application for a user. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
@@ -7349,7 +7367,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setStatusMessage
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
@@ -7386,7 +7404,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setUserPreferredPresence
-      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
+      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration.  This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
@@ -7444,7 +7462,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report (deprecated) and Teams live event recordings (deprecated) are online meeting artifacts. For details, see Online meeting artifacts and permissions.  This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -7517,6 +7535,8 @@ paths:
                 - externalId desc
                 - isBroadcast
                 - isBroadcast desc
+                - isEndToEndEncryptionEnabled
+                - isEndToEndEncryptionEnabled desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -7578,6 +7598,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -7628,7 +7649,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create onlineMeeting
-      description: Create an online meeting on behalf of a user.
+      description: Create an online meeting on behalf of a user. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
@@ -7664,7 +7685,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
-      description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
+      description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
       operationId: user_GetOnlineMeeting
       parameters:
         - name: user-id
@@ -7715,6 +7736,7 @@ paths:
                 - endDateTime
                 - externalId
                 - isBroadcast
+                - isEndToEndEncryptionEnabled
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinMeetingIdSettings
@@ -7766,7 +7788,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update onlineMeeting
-      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
@@ -7809,7 +7831,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete onlineMeeting
-      description: Delete an onlineMeeting object.
+      description: Delete an onlineMeeting object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
@@ -7848,7 +7870,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -7885,7 +7906,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update alternativeRecording for the navigation property onlineMeetings in users
-      description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       operationId: user_SetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -7923,7 +7943,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List meetingAttendanceReports
-      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
@@ -8051,7 +8071,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -8214,7 +8234,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -8618,7 +8638,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -8655,7 +8674,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update attendeeReport for the navigation property onlineMeetings in users
-      description: The content stream of the attendee report of a Teams live event. Read-only.
       operationId: user_SetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -8766,7 +8784,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
@@ -8905,7 +8923,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
+      description: Get a list of attendanceRecord objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
@@ -9231,7 +9249,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
-      description: The content stream of the recording of a Teams live event. Read-only.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -9268,7 +9285,6 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update recording for the navigation property onlineMeetings in users
-      description: The content stream of the recording of a Teams live event. Read-only.
       operationId: user_SetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -9306,7 +9322,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       operationId: user.onlineMeeting_ListRecording
       parameters:
         - name: user-id
@@ -9348,6 +9364,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - recordingContentUrl
@@ -9367,6 +9385,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -9435,7 +9454,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callRecording
-      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API does not support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.'
+      description: 'Get a callRecording object associated with a scheduled onlineMeeting. This API doesn''t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0
@@ -9479,6 +9498,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - recordingContentUrl
               type: string
@@ -9720,7 +9740,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
@@ -9792,7 +9812,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
@@ -9834,11 +9854,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
@@ -9874,7 +9894,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
@@ -9963,7 +9983,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
@@ -10007,7 +10027,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get customRegistrationQuestion
-      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
@@ -10079,7 +10099,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Update meetingRegistrationQuestion
-      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
@@ -10130,7 +10150,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Delete meetingRegistrationQuestion
-      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
@@ -10510,7 +10530,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: List transcripts
-      description: 'Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. '
+      description: Retrieve the list of callTranscript objects associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings.  This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
@@ -10555,6 +10575,8 @@ paths:
                 - createdDateTime desc
                 - meetingId
                 - meetingId desc
+                - meetingOrganizer
+                - meetingOrganizer desc
                 - meetingOrganizerId
                 - meetingOrganizerId desc
                 - metadataContent
@@ -10576,6 +10598,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -10645,7 +10668,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get callTranscript
-      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      description: Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn't support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
@@ -10689,6 +10712,7 @@ paths:
                 - content
                 - createdDateTime
                 - meetingId
+                - meetingOrganizer
                 - meetingOrganizerId
                 - metadataContent
                 - transcriptContentUrl
@@ -11047,7 +11071,7 @@ paths:
       tags:
         - users.presence
       summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
@@ -11264,7 +11288,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             segments:
               type: array
@@ -11329,11 +11353,11 @@ components:
           nullable: true
         userId:
           type: string
-          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
           nullable: true
         userPrincipalName:
           type: string
-          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
           nullable: true
         userTelephoneNumber:
           type: string
@@ -11382,11 +11406,11 @@ components:
           nullable: true
         userId:
           type: string
-          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
           nullable: true
         userPrincipalName:
           type: string
-          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
           nullable: true
       additionalProperties:
         type: object
@@ -11466,11 +11490,11 @@ components:
           nullable: true
         userId:
           type: string
-          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          description: The unique identifier (GUID) of the user in Microsoft Entra ID.
           nullable: true
         userPrincipalName:
           type: string
-          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          description: 'The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
           nullable: true
       additionalProperties:
         type: object
@@ -11768,7 +11792,7 @@ components:
           nullable: true
         region:
           type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
+          description: 'The home region of the participant, and can be a country, a continent, or a larger geographic region. The region doesn''t change based on the participant''s current physical location, unlike countryCode. Read-only.'
           nullable: true
       additionalProperties:
         type: object
@@ -11838,6 +11862,7 @@ components:
               nullable: true
             preferredDisplayName:
               type: string
+              description: The participant's preferred display name that overrides the original display name.
               nullable: true
             recordingInfo:
               $ref: '#/components/schemas/microsoft.graph.recordingInfo'
@@ -11948,11 +11973,11 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
-              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown'
+              description: 'The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.'
               nullable: true
             outOfOfficeSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfOfficeSettings'
@@ -11996,7 +12021,6 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             anonymizeIdentityForRoles:
@@ -12006,7 +12030,6 @@ components:
               description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -12043,7 +12066,9 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates whether this is a Teams live event.
+              nullable: true
+            isEndToEndEncryptionEnabled:
+              type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -12070,7 +12095,6 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             shareMeetingChatHistoryDefault:
@@ -12203,6 +12227,8 @@ components:
               type: string
               description: The unique identifier of the onlineMeeting related to this recording. Read-only.
               nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             meetingOrganizerId:
               type: string
               description: The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
@@ -12320,6 +12346,8 @@ components:
               type: string
               description: The unique identifier of the online meeting related to this transcript. Read-only.
               nullable: true
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
             meetingOrganizerId:
               type: string
               description: The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
@@ -12385,7 +12413,7 @@ components:
         publishedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
+          description: Time in which the status message was published.Read-only.publishedDateTime isn't available when you request the presence of another user.
           format: date-time
           nullable: true
       additionalProperties:
@@ -12691,7 +12719,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: Indicates whether the media is muted by the server.
+          description: Indicates whether the server has muted the media.
         sourceId:
           type: string
           description: The source ID.
@@ -13059,11 +13087,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -13833,7 +13861,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.onlineMeetingVideoDisabledReason:
       title: onlineMeetingVideoDisabledReason
       enum:
@@ -13842,7 +13869,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     ReferenceNumeric:
       enum:
         - '-INF'

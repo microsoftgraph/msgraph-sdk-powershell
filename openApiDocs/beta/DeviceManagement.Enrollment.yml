@@ -6375,7 +6375,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
+      description: Get a list of the unifiedRbacResourceAction objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
@@ -6501,7 +6501,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
+      description: Read the properties and relationships of an unifiedRbacResourceAction object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
@@ -6875,7 +6875,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
@@ -6965,7 +6965,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
@@ -6992,7 +6992,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
@@ -7059,7 +7059,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
+      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
@@ -7094,7 +7094,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
+      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
@@ -7762,7 +7762,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)\n- Exchange Online"
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
@@ -7855,7 +7855,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -7882,7 +7882,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
@@ -7946,7 +7946,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
+      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
@@ -7981,7 +7981,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
+      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
@@ -8012,7 +8012,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
       operationId: roleManagement.cloudPC.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8142,7 +8142,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
       operationId: roleManagement.cloudPC.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8603,7 +8603,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
+      description: Get a list of the unifiedRbacResourceAction objects and their properties. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
@@ -8729,7 +8729,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRbacResourceAction
-      description: Read the properties and relationships of an unifiedRbacResourceAction object.
+      description: Read the properties and relationships of an unifiedRbacResourceAction object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0
@@ -9103,7 +9103,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
@@ -9193,7 +9193,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
@@ -9220,7 +9220,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
+      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
@@ -9287,7 +9287,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleAssignmentMultiple
-      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update."
+      description: "Update an existing unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) In contrast, unifiedRoleAssignment does not support update. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-update?view=graph-rest-1.0
@@ -9322,7 +9322,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleAssignmentMultiple
-      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)"
+      description: "Delete a unifiedRoleAssignmentMultiple object of an RBAC provider.  This is applicable for a RBAC application that supports multiple principals and scopes. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-delete?view=graph-rest-1.0
@@ -9990,7 +9990,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)\n- Exchange Online"
+      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra ID) \n- entitlement management (Microsoft Entra ID)\n- Exchange Online This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
@@ -10083,7 +10083,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
+      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID) This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
@@ -10110,7 +10110,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get unifiedRoleDefinition
-      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD directory roles)\n- entitlement management (Azure AD entitlement management)\n- Exchange Online"
+      description: "Get the properties and relationships of a unifiedRoleDefinition object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Microsoft Entra directory roles)\n- entitlement management (Microsoft Entra entitlement management)\n- Exchange Online This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-get?view=graph-rest-1.0
@@ -10174,7 +10174,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update unifiedRoleDefinition
-      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
+      description: "Update the properties of a unifiedRoleDefinition object for an RBAC provider. You cannot update built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-update?view=graph-rest-1.0
@@ -10209,7 +10209,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete unifiedRoleDefinition
-      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD) "
+      description: "Delete a unifiedRoleDefinition object for an RBAC provider. You cannot delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Microsoft Entra ID)  This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0
@@ -10240,7 +10240,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
       operationId: roleManagement.deviceManagement.roleDefinition_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10370,7 +10370,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
       operationId: roleManagement.deviceManagement.roleDefinition_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11808,7 +11808,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
-              description: Operations that an authorized principal are allowed to perform.
+              description: Operations that an authorized principal is allowed to perform.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -11865,7 +11865,7 @@ components:
               nullable: true
             isAvailable:
               type: boolean
-              description: 'Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in selection UX used to tag resources with authentication context class values. It will still be shown in the Conditionall Access policy authoring experience.  Supports $filter (eq).'
+              description: 'Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it''s set to false, it shouldn''t be shown in selection UX used to tag resources with authentication context class values. It will still be shown in the Conditional Access policy authoring experience.  Supports $filter (eq).'
               nullable: true
           additionalProperties:
             type: object
@@ -11957,7 +11957,7 @@ components:
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.'
+              description: 'Describes the type of app-specific resource represented by the app scope and is provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.'
               nullable: true
           additionalProperties:
             type: object
@@ -12001,7 +12001,7 @@ components:
               nullable: true
             isPrivileged:
               type: boolean
-              description: Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+              description: Flag indicating if the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
               nullable: true
             resourceScopes:
               type: array
@@ -12025,7 +12025,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -13018,7 +13018,6 @@ components:
       type: string
       x-ms-enum-flags:
         isFlags: true
-        style: simple
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object
@@ -13887,9 +13886,15 @@ components:
       title: ticketInfo
       type: object
       properties:
+        ticketApproverIdentityId:
+          type: string
+          nullable: true
         ticketNumber:
           type: string
           description: The ticket number.
+          nullable: true
+        ticketSubmitterIdentityId:
+          type: string
           nullable: true
         ticketSystem:
           type: string
@@ -13982,11 +13987,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
