@@ -1,22 +1,12 @@
-### Example 1: {{ Add title here }}
+### Example 1: Update the tenant-wide teamsAppSettings for all Teams apps in the tenant
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.teamsAppSettings"
+	allowUserRequestsForAppAccess = "true"
+}
+
+Update-MgTeamworkTeamAppSetting -BodyParameter $params
 ```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-{{ Add code here }}
-```
-
-```output
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example updates the tenant-wide teamsAppSettings for all Teams apps in the tenant
