@@ -297,7 +297,7 @@
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToChatScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase)
-                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval }, StringComparer.OrdinalIgnoreCase);
+                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForChats }, StringComparer.OrdinalIgnoreCase);
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
                             updatedPermissionGrantPolicies,
                             this,

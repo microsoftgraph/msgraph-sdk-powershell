@@ -13,17 +13,19 @@
     /// </summary>
     internal class RscConfigurationSynthesizer
     {
-        internal const string MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-chat";
-
-        internal const string MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-group";
-
-        internal const string MicrosoftCreatedPermissionGrantPolicyForUserConsentLegacy = "ManagePermissionGrantsForSelf.microsoft-user-default-legacy";
-
         internal const string GroupConsentSettingsTemplateId = "dffd5d46-495d-40a9-8e21-954ff55e198a";
 
-        internal const string EnableGroupSpecificConsentKey = "EnableGroupSpecificConsent";
+        internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForChats = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-chat";
 
-        internal const string ConstrainGroupSpecificConsentToMembersOfGroupIdKey = "ConstrainGroupSpecificConsentToMembersOfGroupId";
+        internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForChats = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-chat";
+
+        internal const string MicrosoftCreatedPermissionGrantPolicyManagedByMicrosoftForChats = "ManagePermissionGrantsForOwnedResource.microsoft-dynamically-managed-permissions-for-chat";
+
+        internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForTeams = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-team";
+
+        internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForTeams = "ManagePermissionGrantsForOwnedResource.microsoft-all-application-permissions-for-team";
+
+        internal const string MicrosoftCreatedPermissionGrantPolicyManagedByMicrosoftForTeams = "ManagePermissionGrantsForOwnedResource.microsoft-dynamically-managed-permissions-for-team";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RscConfigurationSynthesizer"/> class.
@@ -99,7 +101,7 @@
             {
                 if (assignedPermissionGrantPoliciesApplicableToChatScope.Any(pgp => !string.Equals(
                         pgp.ManagePermissionGrantsForOwnedResourcePrefixedId,
-                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForChats,
                         StringComparison.OrdinalIgnoreCase)))
                 {
                     this.LogVerbose("Unknown chat scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
@@ -124,12 +126,10 @@
         /// Convert the given tenant settings to Team RSC configuration.
         /// </summary>
         /// <param name="permissionGrantPolicyCollection">Permission grant policy collection.</param>
-        /// <param name="tenantConsentSettingCollection">Tenant consent setting collection.</param>
         /// <param name="authorizationPolicy">Authorization policy.</param>
         /// <returns>Rsc configuration.</returns>
         internal IMicrosoftGraphRscConfiguration ConvertToTeamRscConfiguration(
             MGTeamsInternalPermissionGrantPolicyCollection permissionGrantPolicyCollection,
-            MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingCollection,
             MGTeamsInternalAuthorizationPolicy authorizationPolicy,
             Runtime.IEventListener eventListener)
         {
@@ -138,13 +138,6 @@
                 throw new MGTeamsInternalException(
                     MGTeamsInternalErrorType.ResourceNotFound,
                     "Permission grant policies were not found.");
-            }
-
-            if (tenantConsentSettingCollection?.Value == null)
-            {
-                throw new MGTeamsInternalException(
-                    MGTeamsInternalErrorType.ResourceNotFound,
-                    "Tenant consent settings were not found.");
             }
 
             if (authorizationPolicy == null)
@@ -161,57 +154,48 @@
                 State = MicrosoftGraphRscConfigurationState.Custom
             };
 
-            (string isGroupConsentSettingEnabled, string groupConsentConstrainedToGroupId) projectedGroupConsentSettings = this.GetProjectedGroupConsentSettings(
-                tenantConsentSettingCollection,
-                authorizationPolicy,
-                eventListener);
-
             IEnumerable<MGTeamsInternalPermissionGrantPolicy> assignedPermissionGrantPoliciesApplicableToGroupScope =
                 this.GetAssignedPermissionGrantPoliciesApplicableToGivenScopeType(
                     permissionGrantPolicyCollection,
                     authorizationPolicy,
                     MicrosoftGraphRscConfigurationScopeType.Team);
 
-            if (string.Equals(projectedGroupConsentSettings.isGroupConsentSettingEnabled, true.ToString(), StringComparison.OrdinalIgnoreCase))
+            int interestingPermissionGrantPolicyCount = assignedPermissionGrantPoliciesApplicableToGroupScope.Count();
+
+            if (interestingPermissionGrantPolicyCount > 1)
             {
-                if (assignedPermissionGrantPoliciesApplicableToGroupScope.Any())
+                this.LogVerbose("Multiple group scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
+                microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
+            }
+            else if (interestingPermissionGrantPolicyCount == 0)
+            {
+                this.LogVerbose("Team scope RSC is disabled.", eventListener);
+                microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.DisabledForAllApps;
+            }
+            else
+            {
+                MGTeamsInternalPermissionGrantPolicy interestingPermissionGrantPolicy = assignedPermissionGrantPoliciesApplicableToGroupScope.Single();
+                if (string.Equals(
+                        interestingPermissionGrantPolicy.ManagePermissionGrantsForOwnedResourcePrefixedId,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForTeams,
+                        StringComparison.OrdinalIgnoreCase))
                 {
-                    this.LogVerbose(
-                        "Projected group consent setting value is enabled and group scoped permission grant policies are enabled. Not a supported scenario.",
-                        eventListener);
-                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
-                }
-                else if (string.IsNullOrWhiteSpace(projectedGroupConsentSettings.groupConsentConstrainedToGroupId))
-                {
-                    this.LogVerbose("Projected group consent setting value is enabled. No constraints on users able to grant consent.", eventListener);
+                    this.LogVerbose("Authorization policy contains permission grant policy for all application permissions for teams.", eventListener);
                     microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForAllApps;
                 }
-                else
-                {
-                    this.LogVerbose($"Projected group consent setting value is enabled. Consent is constrained to users belonging to group '{projectedGroupConsentSettings.groupConsentConstrainedToGroupId}'.", eventListener);
-                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForSelectedGroupOfUsers;
-                }
-            }
-            else if (assignedPermissionGrantPoliciesApplicableToGroupScope.Any())
-            {
-                if (assignedPermissionGrantPoliciesApplicableToGroupScope.Any(pgp => !string.Equals(
-                        pgp.ManagePermissionGrantsForOwnedResourcePrefixedId,
-                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval,
-                        StringComparison.OrdinalIgnoreCase)))
-                {
-                    this.LogVerbose("Unknown group scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
-                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
-                }
-                else
+                else if (string.Equals(
+                        interestingPermissionGrantPolicy.ManagePermissionGrantsForOwnedResourcePrefixedId,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForTeams,
+                        StringComparison.OrdinalIgnoreCase))
                 {
                     this.LogVerbose("Authorization policy contains permission grant policy for team RSC preapprovals.", eventListener);
                     microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly;
                 }
-            }
-            else
-            {
-                this.LogVerbose("Team RSC is disabled.", eventListener);
-                microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.DisabledForAllApps;
+                else
+                {
+                    this.LogVerbose("Unknown group scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
+                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
+                }
             }
 
             return microsoftGraphRscConfiguration;
@@ -233,7 +217,7 @@
             switch (rscConfigurationScopeType)
             {
                 case MicrosoftGraphRscConfigurationScopeType.Team:
-                    identitySpecificScopeType = "group";
+                    identitySpecificScopeType = "team";
                     break;
 
                 case MicrosoftGraphRscConfigurationScopeType.Chat:
@@ -260,51 +244,6 @@
             }
 
             return assignedPermissionGrantPoliciesApplicableToGivenScope;
-        }
-
-        /// <summary>
-        /// Get the projected value of group consent settings. i.e.
-        /// 1. Whether group consent is enabled. This is derived from group consent and user consent settings.
-        /// 2. Specific groups that group consent is restricted to.
-        /// </summary>
-        /// <param name="tenantConsentSettingCollection">Tenant consent setting collection.</param>
-        /// <param name="authorizationPolicy">The authorization policy.</param>
-        /// <param name="eventListener">The event listener.</param>
-        /// <returns>Projected value of group consent settings.</returns>
-        private (string isGroupConsentSettingEnabled, string groupConsentConstrainedToGroupId) GetProjectedGroupConsentSettings(
-            MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingCollection,
-            MGTeamsInternalAuthorizationPolicy authorizationPolicy,
-            IEventListener eventListener)
-        {
-            MGTeamsInternalTenantConsentSettings groupConsentSettings = tenantConsentSettingCollection.Value?.FirstOrDefault(
-                v => string.Equals(v.TemplateId, RscConfigurationSynthesizer.GroupConsentSettingsTemplateId, StringComparison.OrdinalIgnoreCase));
-
-            if (groupConsentSettings == null)
-            {
-                this.LogVerbose("Group Consent settings were not found.", eventListener);
-
-                if (authorizationPolicy
-                    ?.DefaultUserRolePermissions
-                    ?.PermissionGrantPoliciesAssigned
-                    ?.Contains(
-                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForUserConsentLegacy, StringComparer.OrdinalIgnoreCase) == true)
-                {
-                    this.LogVerbose("Legacy policy for user consent was found in default user role permissions. Projecting group consent to be true.", eventListener);
-                    return (isGroupConsentSettingEnabled: true.ToString(), groupConsentConstrainedToGroupId: null);
-                }
-
-                return (isGroupConsentSettingEnabled: false.ToString(), groupConsentConstrainedToGroupId: null);
-            }
-
-            MGTeamsInternalTenantConsentSettingValue isGroupConsentEnabledSettingValue = groupConsentSettings.Values?.SingleOrDefault(
-                v => string.Equals(v.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase));
-
-            MGTeamsInternalTenantConsentSettingValue groupConsentConstrainedToGroupId = groupConsentSettings.Values?.SingleOrDefault(
-                v => string.Equals(v.Name, RscConfigurationSynthesizer.ConstrainGroupSpecificConsentToMembersOfGroupIdKey, StringComparison.OrdinalIgnoreCase));
-
-            return
-                (isGroupConsentSettingEnabled: isGroupConsentEnabledSettingValue?.Value,
-                 groupConsentConstrainedToGroupId: groupConsentConstrainedToGroupId?.Value);
         }
 
         /// <summary>

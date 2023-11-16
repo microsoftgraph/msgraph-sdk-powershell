@@ -273,15 +273,6 @@
 
                     if (this.State == MicrosoftGraphRscConfigurationState.DisabledForAllApps)
                     {
-                        // Disable group consent setting.
-                        await this.AddOrUpdateGroupConsentSettings(
-                            tenantConsentSettingsCollection,
-                            isGroupSpecificConsentEnabled: false);
-
-                        WriteVerbose($"Disabled RSC Group consent setting.");
-
-                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
                         // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope.
                         IEnumerable<string> existingPermissionGrantPoliciesExceptTeamScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
@@ -304,7 +295,7 @@
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
                                 StringComparer.OrdinalIgnoreCase)
-                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval }, StringComparer.OrdinalIgnoreCase);
+                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForTeams }, StringComparer.OrdinalIgnoreCase);
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
                             updatedPermissionGrantPolicies,
                             this,
@@ -313,32 +304,32 @@
                         WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+                    }
+                    else if (this.State == MicrosoftGraphRscConfigurationState.ManagedByMicrosoft)
+                    {
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope.
+                        IEnumerable<string> existingPermissionGrantPoliciesExceptTeamScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+                            .Except(
+                                assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
+                                StringComparer.OrdinalIgnoreCase)
+                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyManagedByMicrosoftForTeams }, StringComparer.OrdinalIgnoreCase); ;
+                        await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                            existingPermissionGrantPoliciesExceptTeamScopePolicies,
+                            this,
+                            Pipeline);
 
-                        // Disable group consent setting.
-                        await this.AddOrUpdateGroupConsentSettings(
-                            tenantConsentSettingsCollection,
-                            isGroupSpecificConsentEnabled: false);
-
-                        WriteVerbose($"Disabled RSC Group consent setting.");
+                        WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", existingPermissionGrantPoliciesExceptTeamScopePolicies)}'.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForAllApps)
                     {
-                        // Enable group consent setting.
-                        await this.AddOrUpdateGroupConsentSettings(
-                            tenantConsentSettingsCollection,
-                            isGroupSpecificConsentEnabled: true);
-
-                        WriteVerbose($"Enabled RSC Group consent setting.");
-
-                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
                         // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope.
                         IEnumerable<string> existingPermissionGrantPoliciesExceptTeamScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
-                                StringComparer.OrdinalIgnoreCase);
+                                StringComparer.OrdinalIgnoreCase)
+                            .Union(new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForTeams }, StringComparer.OrdinalIgnoreCase); ;
                         await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
                             existingPermissionGrantPoliciesExceptTeamScopePolicies,
                             this,
@@ -376,80 +367,6 @@
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletProcessRecordAsyncEnd);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Add or update group consent settings.
-        /// </summary>
-        /// <param name="tenantConsentSettingsCollection">The tenant consent settings collection.</param>
-        /// <param name="isGroupSpecificConsentEnabled">Is group specific consent enabled.</param>
-        /// <returns>Task tracking operation.</returns>
-        private async System.Threading.Tasks.Task AddOrUpdateGroupConsentSettings(
-            MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection,
-            bool isGroupSpecificConsentEnabled)
-        {
-            if (tenantConsentSettingsCollection?.Value == null)
-            {
-                throw new MGTeamsInternalException(
-                    MGTeamsInternalErrorType.ResourceNotFound,
-                    "Tenant consent settings were not found.");
-            }
-
-            MGTeamsInternalTenantConsentSettings groupConsentSettings = tenantConsentSettingsCollection.Value
-                .SingleOrDefault(v =>
-                    string.Equals(
-                        v.TemplateId,
-                        RscConfigurationSynthesizer.GroupConsentSettingsTemplateId,
-                        StringComparison.OrdinalIgnoreCase));
-
-            if (groupConsentSettings == null)
-            {
-                MGTeamsInternalDirectorySettingTemplate groupConsentSettingsTemplate = await this.Client.GetGroupConsentSettingsTemplate(this, this.Pipeline);
-
-                // Settings need to be initialized. The default values are sourced from Azure defaults.
-                MGTeamsInternalTenantConsentSettingValue[] initializedValues =
-                    groupConsentSettingsTemplate.Values
-                    .Select(s => new MGTeamsInternalTenantConsentSettingValue(s.Name, s.DefaultValue))
-                    .Where(s => !string.Equals(s.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey))
-                    .Union(new MGTeamsInternalTenantConsentSettingValue[]
-                     {
-                        new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString().ToLowerInvariant())
-                     })
-                    .ToArray();
-
-                await this.Client.CreateGroupConsentSettings(
-                    initializedValues,
-                    eventListener: this,
-                    sender: Pipeline);
-
-                WriteVerbose($"Initialized group consent settings with values: '{string.Join(", ", initializedValues.Select(i => i.ToJson().ToString()))}'.");
-            }
-            else
-            {
-                // Modify only the group consent setting.
-                MGTeamsInternalTenantConsentSettingValue isGroupConsentEnabledSettingValue = groupConsentSettings.Values.Single(
-                        v => string.Equals(v.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase));
-
-                // Preserve existing values except for group consent setting.
-                MGTeamsInternalTenantConsentSettingValue[] updatedValues =
-                    groupConsentSettings.Values
-                    .Where(v => !string.Equals(v.Name, RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase) &&
-                                !string.Equals(v.Name, RscConfigurationSynthesizer.ConstrainGroupSpecificConsentToMembersOfGroupIdKey, StringComparison.OrdinalIgnoreCase))
-                    .Union(new MGTeamsInternalTenantConsentSettingValue[]
-                     {
-                         new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString().ToLowerInvariant()),
-                         new MGTeamsInternalTenantConsentSettingValue(RscConfigurationSynthesizer.ConstrainGroupSpecificConsentToMembersOfGroupIdKey, string.Empty)
-                     })
-                    .ToArray();
-
-                await this.Client.UpdateGroupConsentSettings(
-                    groupConsentSettings.Id,
-                    updatedValues,
-                    eventListener: this,
-                    sender: Pipeline);
-
-                WriteVerbose($"Updated group consent settings with values: '{string.Join(", ", updatedValues.Select(i => i.ToJson().ToString()))}'.");
             }
         }
 
