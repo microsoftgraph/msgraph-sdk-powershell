@@ -1,6 +1,7 @@
-### Example 1: Code snippet
+### Example 1: Update the default branding
 
-```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
 $params = @{
 	signInPageText = "Default"
@@ -10,5 +11,6 @@ $params = @{
 Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 ```
 This example shows how to use the Update-MgBetaOrganizationBranding Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

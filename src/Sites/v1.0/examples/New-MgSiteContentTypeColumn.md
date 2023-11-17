@@ -1,17 +1,13 @@
-### Example 1: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Sites
+
+$params = @{
+	"sourceColumn@odata.bind" = "https://graph.microsoft.com/v1.0/sites/root/columns/99ddcf45-e2f7-4f17-82b0-6fba34445103"
+}
+
+New-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
+This example shows how to use the New-MgSiteContentTypeColumn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
