@@ -20,7 +20,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
