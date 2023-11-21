@@ -20,6 +20,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
@@ -294,6 +295,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns></returns>
         private HttpRequestMessage GetRequest(HttpClient httpClient, Uri uri)
         {
+
             var requestUri = PrepareUri(httpClient, uri);
             var httpMethod = GetHttpMethod(Method);
             // create the base WebRequest object
@@ -346,7 +348,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     request.Headers.Add(HttpKnownHeaderNames.UserAgent, GraphRequestSession.UserAgent);
                 }
             }
-
             return request;
         }
 
@@ -359,6 +360,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private Uri PrepareUri(HttpClient httpClient, Uri uri)
         {
             UriBuilder uriBuilder;
+
             // For AbsoluteUri such as /beta/groups?$count=true, Get the scheme and host from httpClient
             // Then use them to compose a new Url with the URL fragment. 
             if (uri.IsAbsoluteUri)
@@ -401,8 +403,31 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
+            return EscapeDataStrings(uriBuilder.Uri);
+        }
 
-            return uriBuilder.Uri;
+        /// <summary>
+        /// Escape data string/url encode Uris that have paths containing special characters like #.
+        /// For a path like /beta/users/first.last_foo.com#EXT#@contoso.onmicrosoft.com, the last segment contains special characters that need to be escaped
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
+        private Uri EscapeDataStrings(Uri uri)
+        {
+            int counter = 0;
+            var pathSegments = uri.OriginalString.Split('/');
+            StringBuilder sb = new StringBuilder();
+            foreach (var segment in pathSegments)
+            {
+                //Skips the left part of the uri i.e https://graph.microsoft.com
+                if (counter > 2)
+                {
+                    sb.Append("/" + Uri.EscapeDataString(segment));
+                }
+                counter++;
+            }
+            Uri escapedUri = new Uri(uri.GetLeftPart(UriPartial.Authority) + sb.ToString());
+            return escapedUri;
         }
 
         private void ThrowIfError(ErrorRecord error)
