@@ -1854,11 +1854,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is available in the following national cloud deployments."
+      summary: Update DriveItem properties
+      description: Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: drive_UpdateItem
       parameters:
         - name: drive-id
@@ -28760,11 +28760,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is available in the following national cloud deployments."
+      summary: Update DriveItem properties
+      description: Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: group.drive_UpdateItem
       parameters:
         - name: group-id
@@ -64992,11 +64992,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request. This API is available in the following national cloud deployments."
+      summary: Update DriveItem properties
+      description: Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: user.drive_UpdateItem
       parameters:
         - name: user-id
