@@ -402,31 +402,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
-            return EscapeDataStrings(uriBuilder.Uri);
-        }
-
-        /// <summary>
-        /// Escape data string/url encode Uris that have paths containing special characters like #.
-        /// For a path like /beta/users/first.last_foo.com#EXT#@contoso.onmicrosoft.com, the last segment contains special characters that need to be escaped
-        /// </summary>
-        /// <param name="uri"></param>
-        /// <returns></returns>
-        private Uri EscapeDataStrings(Uri uri)
-        {
-            int counter = 0;
-            var pathSegments = uri.OriginalString.Split('/');
-            StringBuilder sb = new StringBuilder();
-            foreach (var segment in pathSegments)
-            {
-                //Skips the left part of the uri i.e https://graph.microsoft.com
-                if (counter > 2)
-                {
-                    sb.Append("/" + Uri.EscapeDataString(segment));
-                }
-                counter++;
-            }
-            Uri escapedUri = new Uri(uri.GetLeftPart(UriPartial.Authority) + sb.ToString());
-            return escapedUri;
+            return uriBuilder.Uri.EscapeDataStrings();
         }
 
         private void ThrowIfError(ErrorRecord error)
