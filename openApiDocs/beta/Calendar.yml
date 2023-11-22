@@ -23445,7 +23445,7 @@ paths:
       tags:
         - places.room
       summary: Get rooms from places
-      operationId: place_ListRoom
+      operationId: placeAsRoomList_ListRoom
       parameters:
         - name: place-id
           in: path
@@ -23561,7 +23561,7 @@ paths:
       tags:
         - places.room
       summary: Create new navigation property to rooms for places
-      operationId: place_CreateRoom
+      operationId: placeAsRoomList_CreateRoom
       parameters:
         - name: place-id
           in: path
@@ -23593,7 +23593,7 @@ paths:
       tags:
         - places.room
       summary: Get rooms from places
-      operationId: place_GetRoom
+      operationId: placeAsRoomList_GetRoom
       parameters:
         - name: place-id
           in: path
@@ -23666,7 +23666,7 @@ paths:
       tags:
         - places.room
       summary: Update the navigation property rooms in places
-      operationId: place_UpdateRoom
+      operationId: placeAsRoomList_UpdateRoom
       parameters:
         - name: place-id
           in: path
@@ -23705,7 +23705,7 @@ paths:
       tags:
         - places.room
       summary: Delete navigation property rooms for places
-      operationId: place_DeleteRoom
+      operationId: placeAsRoomList_DeleteRoom
       parameters:
         - name: place-id
           in: path
@@ -23762,7 +23762,7 @@ paths:
       tags:
         - places.workspace
       summary: Get workspaces from places
-      operationId: place_ListWorkspace
+      operationId: placeAsRoomList_ListWorkspace
       parameters:
         - name: place-id
           in: path
@@ -23866,7 +23866,7 @@ paths:
       tags:
         - places.workspace
       summary: Create new navigation property to workspaces for places
-      operationId: place_CreateWorkspace
+      operationId: placeAsRoomList_CreateWorkspace
       parameters:
         - name: place-id
           in: path
@@ -23898,7 +23898,7 @@ paths:
       tags:
         - places.workspace
       summary: Get workspaces from places
-      operationId: place_GetWorkspace
+      operationId: placeAsRoomList_GetWorkspace
       parameters:
         - name: place-id
           in: path
@@ -23967,7 +23967,7 @@ paths:
       tags:
         - places.workspace
       summary: Update the navigation property workspaces in places
-      operationId: place_UpdateWorkspace
+      operationId: placeAsRoomList_UpdateWorkspace
       parameters:
         - name: place-id
           in: path
@@ -24006,7 +24006,7 @@ paths:
       tags:
         - places.workspace
       summary: Delete navigation property workspaces for places
-      operationId: place_DeleteWorkspace
+      operationId: placeAsRoomList_DeleteWorkspace
       parameters:
         - name: place-id
           in: path
