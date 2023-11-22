@@ -84,33 +84,54 @@
 
             if (teamsAppSettings.IsChatResourceSpecificConsentEnabled == true)
             {
-                if (assignedPermissionGrantPoliciesApplicableToChatScope.Any())
-                {
-                    this.LogVerbose(
-                        "Chat RSC is enabled in Teams App Settings and chat scoped permission grant policies are enabled. Not a supported scenario.",
-                        eventListener);
-                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
-                }
-                else
-                {
-                    this.LogVerbose("Chat RSC is enabled in Teams App Settings.", eventListener);
-                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForAllApps;
-                }
+                this.LogVerbose("Chat RSC is enabled in Teams App Settings.", eventListener);
+                microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForAllApps;
             }
             else if (assignedPermissionGrantPoliciesApplicableToChatScope.Any())
             {
-                if (assignedPermissionGrantPoliciesApplicableToChatScope.Any(pgp => !string.Equals(
-                        pgp.ManagePermissionGrantsForOwnedResourcePrefixedId,
-                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForChats,
-                        StringComparison.OrdinalIgnoreCase)))
+                int interestingPermissionGrantPolicyCount = assignedPermissionGrantPoliciesApplicableToChatScope.Count();
+
+                if (interestingPermissionGrantPolicyCount > 1)
                 {
-                    this.LogVerbose("Unknown chat scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
+                    this.LogVerbose("Multiple chat scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
                     microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
+                }
+                else if (interestingPermissionGrantPolicyCount == 0)
+                {
+                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.DisabledForAllApps;
                 }
                 else
                 {
-                    this.LogVerbose("Authorization policy contains permission grant policy for chat RSC preapprovals.", eventListener);
-                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly;
+                    MGTeamsInternalPermissionGrantPolicy interestingPermissionGrantPolicy =
+                        assignedPermissionGrantPoliciesApplicableToChatScope.Single();
+
+                    if (string.Equals(
+                        interestingPermissionGrantPolicy.ManagePermissionGrantsForOwnedResourcePrefixedId,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForChats,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        this.LogVerbose("Authorization policy contains permission grant policy for all chat RSC applications.", eventListener);
+                        microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForAllApps;
+                    }
+                    else if (string.Equals(
+                        interestingPermissionGrantPolicy.ManagePermissionGrantsForOwnedResourcePrefixedId,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForChats,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly;
+                    }
+                    else if (string.Equals(
+                        interestingPermissionGrantPolicy.ManagePermissionGrantsForOwnedResourcePrefixedId,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyManagedByMicrosoftForChats,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.ManagedByMicrosoft;
+                    }
+                    else
+                    {
+                        this.LogVerbose("Unknown chat scoped permission grant policies are enabled. Not a supported scenario.", eventListener);
+                        microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.Custom;
+                    }
                 }
             }
             else
@@ -169,7 +190,6 @@
             }
             else if (interestingPermissionGrantPolicyCount == 0)
             {
-                this.LogVerbose("Team scope RSC is disabled.", eventListener);
                 microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.DisabledForAllApps;
             }
             else
@@ -180,7 +200,6 @@
                         RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForTeams,
                         StringComparison.OrdinalIgnoreCase))
                 {
-                    this.LogVerbose("Authorization policy contains permission grant policy for all application permissions for teams.", eventListener);
                     microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForAllApps;
                 }
                 else if (string.Equals(
@@ -188,8 +207,14 @@
                         RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForTeams,
                         StringComparison.OrdinalIgnoreCase))
                 {
-                    this.LogVerbose("Authorization policy contains permission grant policy for team RSC preapprovals.", eventListener);
                     microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly;
+                }
+                else if (string.Equals(
+                        interestingPermissionGrantPolicy.ManagePermissionGrantsForOwnedResourcePrefixedId,
+                        RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyManagedByMicrosoftForTeams,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    microsoftGraphRscConfiguration.State = MicrosoftGraphRscConfigurationState.ManagedByMicrosoft;
                 }
                 else
                 {
