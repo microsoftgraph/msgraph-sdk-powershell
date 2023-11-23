@@ -17299,10 +17299,10 @@ paths:
       tags:
         - organization.organization
       summary: List organizations
-      description: Retrieve a list of organization objects. There's only one organization object in the collection. This API is available in the following national cloud deployments.
+      description: List properties and relationships of the organization objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0
       operationId: organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -26175,12 +26175,10 @@ components:
           properties:
             isRemoteDesktopProtocolEnabled:
               type: boolean
-              description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
             targetDeviceGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
-              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -31267,7 +31265,6 @@ components:
           properties:
             displayName:
               type: string
-              description: Display name for the target device group.
               nullable: true
           additionalProperties:
             type: object

@@ -2697,11 +2697,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -65598,11 +65598,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -73184,11 +73184,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. This might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -88289,11 +88289,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object

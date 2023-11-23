@@ -14,7 +14,7 @@ paths:
       description: List properties and relationships of the user objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -408,11 +408,11 @@ paths:
     post:
       tags:
         - users.user
-      summary: Create user
-      description: Create a new user object.
+      summary: Create User
+      description: "Create a new user.\nThe request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
       operationId: user_CreateUser
       requestBody:
         description: New entity
@@ -663,7 +663,7 @@ paths:
       description: Update the properties of a user object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-user-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0
       operationId: user_UpdateUser
       parameters:
         - name: user-id
@@ -14592,12 +14592,10 @@ components:
           properties:
             isRemoteDesktopProtocolEnabled:
               type: boolean
-              description: Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.
             targetDeviceGroups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetDeviceGroup'
-              description: The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -19349,7 +19347,6 @@ components:
           properties:
             displayName:
               type: string
-              description: Display name for the target device group.
               nullable: true
           additionalProperties:
             type: object

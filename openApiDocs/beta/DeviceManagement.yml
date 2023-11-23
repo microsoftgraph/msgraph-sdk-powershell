@@ -1229,7 +1229,6 @@ paths:
                 - windowsAutopilotDeploymentProfiles
                 - windowsAutopilotDeviceIdentities
                 - windowsAutopilotSettings
-                - elevationRequests
                 - zebraFotaArtifacts
                 - zebraFotaConnector
                 - zebraFotaDeployments
@@ -1403,7 +1402,6 @@ paths:
                 - windowsAutopilotDeploymentProfiles
                 - windowsAutopilotDeviceIdentities
                 - windowsAutopilotSettings
-                - elevationRequests
                 - zebraFotaArtifacts
                 - zebraFotaConnector
                 - zebraFotaDeployments
@@ -3237,8 +3235,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -3394,7 +3390,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -3570,7 +3565,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -12058,8 +12052,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -12215,7 +12207,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -12377,7 +12368,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -18741,7 +18731,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -19814,7 +19803,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -20854,7 +20842,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -21843,7 +21830,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -22883,7 +22869,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -29092,8 +29077,6 @@ paths:
                 - deviceFirmwareConfigurationInterfaceManaged desc
                 - deviceHealthAttestationState
                 - deviceHealthAttestationState desc
-                - deviceIdentityAttestationDetail
-                - deviceIdentityAttestationDetail desc
                 - deviceName
                 - deviceName desc
                 - deviceRegistrationState
@@ -29249,7 +29232,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -29425,7 +29407,6 @@ paths:
                 - deviceEnrollmentType
                 - deviceFirmwareConfigurationInterfaceManaged
                 - deviceHealthAttestationState
-                - deviceIdentityAttestationDetail
                 - deviceName
                 - deviceRegistrationState
                 - deviceType
@@ -45007,8 +44988,6 @@ paths:
                 - id desc
                 - batteryAgeInDays
                 - batteryAgeInDays desc
-                - deviceBatteriesDetails
-                - deviceBatteriesDetails desc
                 - deviceBatteryCount
                 - deviceBatteryCount desc
                 - deviceBatteryHealthScore
@@ -45042,7 +45021,6 @@ paths:
               enum:
                 - id
                 - batteryAgeInDays
-                - deviceBatteriesDetails
                 - deviceBatteryCount
                 - deviceBatteryHealthScore
                 - deviceId
@@ -45125,7 +45103,6 @@ paths:
               enum:
                 - id
                 - batteryAgeInDays
-                - deviceBatteriesDetails
                 - deviceBatteryCount
                 - deviceBatteryHealthScore
                 - deviceId
@@ -53679,12 +53656,6 @@ components:
               x-ms-navigationProperty: true
             windowsAutopilotSettings:
               $ref: '#/components/schemas/microsoft.graph.windowsAutopilotSettings'
-            elevationRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.privilegeManagementElevationRequest'
-              description: List of elevation requests
-              x-ms-navigationProperty: true
             zebraFotaArtifacts:
               type: array
               items:
@@ -54366,8 +54337,6 @@ components:
               description: 'Indicates whether the device is DFCI managed. When TRUE the device is DFCI managed. When FALSE, the device is not DFCI managed. The default value is FALSE.'
             deviceHealthAttestationState:
               $ref: '#/components/schemas/microsoft.graph.deviceHealthAttestationState'
-            deviceIdentityAttestationDetail:
-              $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationDetail'
             deviceName:
               type: string
               description: Name of the device. This property is read-only.
@@ -55410,26 +55379,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              description: Specify category in which the setting is under. Support $filters.
               nullable: true
             description:
               type: string
-              description: Description of the item
+              description: Description of the setting.
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the setting. For example: Allow Toast.'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the setting. Give more details of the setting.
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at
+              description: List of links more info for the setting can be found at.
             keywords:
               type: array
               items:
@@ -55453,7 +55422,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition if the setting is a child setting.
+              description: Root setting definition id if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -59558,11 +59527,6 @@ components:
               type: integer
               description: Estimated battery age. Unit in days. Valid values 0 to 2147483647
               format: int32
-            deviceBatteriesDetails:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsDeviceBatteryDetail'
-              description: Properties (maxCapacity and cycleCount) related to all batteries of the device.
             deviceBatteryCount:
               maximum: 2147483647
               minimum: -2147483648
@@ -63579,73 +63543,6 @@ components:
           additionalProperties:
             type: object
           description: The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
-    microsoft.graph.privilegeManagementElevationRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: privilegeManagementElevationRequest
-          type: object
-          properties:
-            applicationDetail:
-              $ref: '#/components/schemas/microsoft.graph.applicationDetail'
-            deviceName:
-              type: string
-              description: 'The device name used to initiate the elevation request. For example: ''cotonso-laptop''. Returned by default. Read-only.'
-              nullable: true
-            requestCreatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the elevation request was submitted/created. The value cannot be modified and is automatically populated when the elevation request is submitted/created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
-              format: date-time
-            requestedByUserId:
-              type: string
-              description: 'The Azure Active Directory (AAD) identifier of the end user who is requesting this elevation. For example: ''F1A57311-B9EB-45B7-9415-8555E68EDC9E''. Returned by default. Read-only.'
-              nullable: true
-            requestedByUserPrincipalName:
-              type: string
-              description: 'The User Principal Name (UPN) of the end user who requested this elevation. For example: ''user1@contoso.com''. Returned by default. Read-only.'
-              nullable: true
-            requestedOnDeviceId:
-              type: string
-              description: 'The Intune Device Identifier of the managed device used to initiate the elevation request. For example: ''90F5F6E8-CA09-4811-97F6-4D0DD532D916''. Returned by default. Read-only.'
-              nullable: true
-            requestExpiryDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Expiration set for the request when it was created, regardless of approved or denied status. For example: ''2023-08-03T14:24:22Z''. Returned by default. Returned by default. Read-only.'
-              format: date-time
-              nullable: true
-            requestJustification:
-              type: string
-              description: Justification provided by the end user for the elevation request. For example :'Need to elevate to install microsoft word'. Read-only.
-              nullable: true
-            requestLastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The date and time when the elevation request was either submitted/created or approved/denied. The value cannot be modified and is automatically populated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''. Returned by default. Read-only.'
-              format: date-time
-            reviewCompletedByUserId:
-              type: string
-              description: 'This is the Azure Active Directory (AAD) user id of the administrator who approved or denied the request. For example: ''F1A57311-B9EB-45B7-9415-8555E68EDC9E''. This field would be String.Empty before the request is either approved or denied. Read-only.'
-              nullable: true
-            reviewCompletedByUserPrincipalName:
-              type: string
-              description: 'This is the User Principal Name (UPN) of the administrator who approved or denied the request. For example: ''admin@contoso.com''. This field would be String.Empty before the request is either approved or denied. Read-only.'
-              nullable: true
-            reviewCompletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The DateTime for which the request was approved or denied. For example, midnight UTC on August 3rd, 2023 would look like this: ''2023-08-03T00:00:00Z''. Read-only.'
-              format: date-time
-              nullable: true
-            reviewerJustification:
-              type: string
-              description: 'An optional justification provided by approver at approval or denied time. This field will be String.Empty if approver decides to not provide a justification. For example: ''Run this installer today'''
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.elevationRequestState'
-          additionalProperties:
-            type: object
-          description: These are elevation approval requests for EPM support arbitrated scenario initiated by IW user that admins can take action on.
     microsoft.graph.zebraFotaArtifact:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -65660,15 +65557,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.deviceIdentityAttestationDetail:
-      title: deviceIdentityAttestationDetail
-      type: object
-      properties:
-        deviceIdentityAttestationStatus:
-          $ref: '#/components/schemas/microsoft.graph.deviceIdentityAttestationStatus'
-      additionalProperties:
-        type: object
-      description: Indicates the attestation status of the managed device
     microsoft.graph.deviceRegistrationState:
       title: deviceRegistrationState
       enum:
@@ -66311,13 +66199,13 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn''t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).'
             assignedPlans:
               type: array
               items:
@@ -66338,7 +66226,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudRealtimeCommunicationInfo'
             companyName:
               type: string
-              description: 'The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -66351,7 +66239,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
@@ -66362,7 +66250,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
-              description: 'The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
+              description: 'The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).'
               nullable: true
             deviceKeys:
               type: array
@@ -66370,12 +66258,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).'
+              description: 'The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).'
               format: date-time
               nullable: true
             employeeId:
@@ -66414,13 +66302,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
             imAddresses:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).'
             infoCatalogs:
               type: array
               items:
@@ -66432,7 +66320,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -66445,21 +66333,21 @@ components:
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
+              description: 'The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
+              description: State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user''s proxyAddresses collection to include the value as an SMTP address. This property can''t contain accent characters.  NOTE: We don''t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
@@ -66467,7 +66355,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -66475,22 +66363,22 @@ components:
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you''re using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters can''t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
@@ -66500,21 +66388,21 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
               nullable: true
             onPremisesSipInfo:
               $ref: '#/components/schemas/microsoft.graph.onPremisesSipInfo'
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
+              description: 'true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn''t being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
@@ -66537,7 +66425,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: ''en-US'', or ''es-ES''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             provisionedPlans:
               type: array
@@ -66548,11 +66436,11 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.'
               format: date-time
               nullable: true
             securityIdentifier:
@@ -66571,7 +66459,7 @@ components:
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
               format: date-time
               nullable: true
             state:
@@ -66588,11 +66476,11 @@ components:
               nullable: true
             usageLocation:
               type: string
-              description: 'A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where the domain must be present in the tenant''s verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can''t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.'
               nullable: true
             userType:
               type: string
@@ -66610,34 +66498,34 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
-              description: A freeform text entry field for users to describe themselves. Returned only on $select.
+              description: A freeform text entry field for the user to describe themselves. Returned only on $select.
               nullable: true
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.'
+              description: 'The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.'
               format: date-time
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for users to describe their interests. Returned only on $select.
+              description: A list for the user to describe their interests. Returned only on $select.
             mySite:
               type: string
-              description: The URL for the user's site. Returned only on $select.
+              description: The URL for the user's personal site. Returned only on $select.
               nullable: true
             pastProjects:
               type: array
               items:
                 type: string
                 nullable: true
-              description: A list for users to enumerate their past projects. Returned only on $select.
+              description: A list for the user to enumerate their past projects. Returned only on $select.
             preferredName:
               type: string
               description: The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
@@ -66696,7 +66584,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+              description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             licenseDetails:
               type: array
@@ -66709,7 +66597,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
+              description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
               x-ms-navigationProperty: true
             oauth2PermissionGrants:
               type: array
@@ -66720,13 +66608,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices owned by the user. Read-only. Nullable. Supports $expand.
+              description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+              description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
               x-ms-navigationProperty: true
             registeredDevices:
               type: array
@@ -66744,13 +66632,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The users and groups responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
+              description: 'The users and groups that are responsible for this guest user''s privileges in the tenant and keep the guest user''s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.'
               x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups, including nested groups and directory roles that a user is a member of. Nullable.'
+              description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
               x-ms-navigationProperty: true
             transitiveReports:
               type: array
@@ -66794,7 +66682,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.event'
-              description: The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
+              description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
               x-ms-navigationProperty: true
             inferenceClassification:
               $ref: '#/components/schemas/microsoft.graph.inferenceClassification'
@@ -66821,7 +66709,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.person'
-              description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.'
+              description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
               x-ms-navigationProperty: true
             drive:
               $ref: '#/components/schemas/microsoft.graph.drive'
@@ -66856,7 +66744,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: Navigation property to get a list of access reviews pending approval by the reviewer.
+              description: Navigation property to get list of access reviews pending approval by reviewer.
               x-ms-navigationProperty: true
             agreementAcceptances:
               type: array
@@ -66927,7 +66815,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-              description: The collection of the user's profile photos in different sizes. Read-only.
               x-ms-navigationProperty: true
             profile:
               $ref: '#/components/schemas/microsoft.graph.profile'
@@ -66946,7 +66833,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              description: 'Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -66963,7 +66850,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
-              description: The Microsoft Teams teams the user is a member of. Read-only. Nullable.
+              description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
@@ -68196,7 +68083,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -69567,7 +69454,6 @@ components:
         - launchRemoteHelp
         - revokeAppleVppLicenses
         - removeDeviceFirmwareConfigurationInterfaceManagement
-        - pauseConfigurationRefresh
       type: string
       description: Remote actions Intune supports.
       x-ms-enum:
@@ -69679,9 +69565,6 @@ components:
           - value: removeDeviceFirmwareConfigurationInterfaceManagement
             description: Indicate IT Admin initiates an action to remove devices from Device Firmware Configuration Interface management
             name: removeDeviceFirmwareConfigurationInterfaceManagement
-          - value: pauseConfigurationRefresh
-            description: Indicates an action has been initiated to pause configuration refresh for the device.
-            name: pauseConfigurationRefresh
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -70058,29 +69941,6 @@ components:
       additionalProperties:
         type: object
       description: The user experience analytics insight is the recomendation to improve the user experience analytics score.
-    microsoft.graph.userExperienceAnalyticsDeviceBatteryDetail:
-      title: userExperienceAnalyticsDeviceBatteryDetail
-      type: object
-      properties:
-        batteryId:
-          type: string
-          description: Uniquely identifies the batteries in a single device.
-          nullable: true
-        fullBatteryDrainCount:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647'
-          format: int32
-        maxCapacityPercentage:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: Ratio of current capacity and design capacity of the battery. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
-          format: int32
-      additionalProperties:
-        type: object
-      description: Collection of properties describing the current status of the battery.
     microsoft.graph.diskType:
       title: diskType
       enum:
@@ -73198,7 +73058,6 @@ components:
       enum:
         - default
         - corporateOwnedDedicatedDeviceWithAzureADSharedMode
-        - deviceStaging
       type: string
       description: The enrollment token type for an enrollment profile.
       x-ms-enum:
@@ -73211,9 +73070,6 @@ components:
           - value: corporateOwnedDedicatedDeviceWithAzureADSharedMode
             description: Token type for Azure AD shared dedicated device enrollment. It applies to CorporateOwnedDedicatedDevice enrollment mode only.
             name: corporateOwnedDedicatedDeviceWithAzureADSharedMode
-          - value: deviceStaging
-            description: Token type for Android Device Staging enrollment type. It applies to CorporateOwnedFullyManaged and CorporateOwnedWorkProfile only.
-            name: deviceStaging
     microsoft.graph.aospWifiSecurityType:
       title: aospWifiSecurityType
       enum:
@@ -74756,78 +74612,6 @@ components:
           - value: failed
             description: Sync failed.
             name: failed
-    microsoft.graph.applicationDetail:
-      title: applicationDetail
-      type: object
-      properties:
-        fileDescription:
-          type: string
-          description: 'The path of the file in the request for elevation, for example, %programfiles%\git\cmd'
-          nullable: true
-        fileHash:
-          type: string
-          description: 'The SHA256 hash of the file in the request for elevation, for example, ''18ee24150dcb1d96752a4d6dd0f20dfd8ba8c38527e40aa8509b7adecf78f9c6'''
-          nullable: true
-        fileName:
-          type: string
-          description: 'The name of the file in the request for elevation, for example, git.exe'
-          nullable: true
-        filePath:
-          type: string
-          description: 'The path of the file in the request for elevation, for example, %programfiles%\git\cmd'
-          nullable: true
-        productInternalName:
-          type: string
-          description: 'The internal name of the application for which elevation request has been made. For example, ''git'''
-          nullable: true
-        productName:
-          type: string
-          description: 'The product name of the application for which elevation request has been made. For example, ''Git'''
-          nullable: true
-        productVersion:
-          type: string
-          description: 'The product version of the application for which elevation request has been made. For example, ''2.40.1.0'''
-          nullable: true
-        publisherName:
-          type: string
-          description: 'The certificate issuer name of the certificate used to sign the application, for example, ''Sectigo Public Code Signing CA R36'''
-          nullable: true
-      additionalProperties:
-        type: object
-      description: The details of the application which the user has requested to elevate
-    microsoft.graph.elevationRequestState:
-      title: elevationRequestState
-      enum:
-        - none
-        - pending
-        - approved
-        - denied
-        - expired
-        - unknownFutureValue
-      type: string
-      description: Indicates state of elevation request
-      x-ms-enum:
-        name: elevationRequestState
-        modelAsString: false
-        values:
-          - value: none
-            description: Default Value. Indicates that elevation request status is unavailable
-            name: none
-          - value: pending
-            description: Initial state when request is submitted but no approval/denial action taken
-            name: pending
-          - value: approved
-            description: Indicates elevation request has been approved by IT Admin.
-            name: approved
-          - value: denied
-            description: Indicates elevation request has been denied by IT Admin.
-            name: denied
-          - value: expired
-            description: 'Set to expire when Approved for is elapsed or ExpireDate is elapsed, whichever is sooner.'
-            name: expired
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
     microsoft.graph.zebraFotaConnectorState:
       title: zebraFotaConnectorState
       enum:
@@ -75423,6 +75207,7 @@ components:
               type: string
               description: Time that the cached report expires. This property is read-only.
               format: date-time
+              readOnly: true
             filter:
               type: string
               description: Filters applied on report creation.
@@ -75432,6 +75217,7 @@ components:
               type: string
               description: Time that the cached report was last refreshed. This property is read-only.
               format: date-time
+              readOnly: true
             metadata:
               type: string
               description: Caller-managed metadata associated with the report
@@ -75446,6 +75232,7 @@ components:
               type: string
               description: Name of the report. This property is read-only.
               nullable: true
+              readOnly: true
             select:
               type: array
               items:
@@ -75468,6 +75255,7 @@ components:
               type: string
               description: Time that the exported report expires. This property is read-only.
               format: date-time
+              readOnly: true
             filter:
               type: string
               description: Filters applied on the report
@@ -75484,6 +75272,7 @@ components:
               type: string
               description: Time that the exported report was requested. This property is read-only.
               format: date-time
+              readOnly: true
             select:
               type: array
               items:
@@ -75500,6 +75289,7 @@ components:
               type: string
               description: Temporary location of the exported report. This property is read-only.
               nullable: true
+              readOnly: true
           additionalProperties:
             type: object
           description: Entity representing a job to export a report
@@ -76020,39 +75810,6 @@ components:
           - value: level3
             description: 'Indicates that in addition to the System Management Mode (SMM) Level 2 protections, this level reduces System Management Mode (SMM) save state capabilities. The benefit is that by design System Management Mode (SMM) cannot exploit save state to modify security of or exfiltrate secrets from the OS (including Virtualization-based security).'
             name: level3
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.deviceIdentityAttestationStatus:
-      title: deviceIdentityAttestationStatus
-      enum:
-        - unknown
-        - trusted
-        - unTrusted
-        - notSupported
-        - incompleteData
-        - unknownFutureValue
-      type: string
-      description: 'Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.'
-      x-ms-enum:
-        name: deviceIdentityAttestationStatus
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Default. Set to unknown if attestation has not yet been calculated
-            name: unknown
-          - value: trusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has passed. The device is trusted.'
-            name: trusted
-          - value: unTrusted
-            description: 'Indicates that the Device attestation is supported on the device, it was attempted on the device and the attestation has failed. The device is untrusted'
-            name: unTrusted
-          - value: notSupported
-            description: Indicates that the device does not support Attestation. This could be because of missing hardware or software support.
-            name: notSupported
-          - value: incompleteData
-            description: Indicates that the device did not provide with the data that were required to perform attestation.
-            name: incompleteData
           - value: unknownFutureValue
             description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
@@ -77620,7 +77377,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value can''t be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
               format: date-time
               nullable: true
             description:
@@ -77634,14 +77391,14 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
+              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).'
@@ -77653,11 +77410,11 @@ components:
               description: 'Identifies the info segments assigned to the group. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can''t contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -77683,17 +77440,17 @@ components:
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
+              description: 'Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
+              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
               type: string
-              description: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
+              description: Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
               nullable: true
             onPremisesProvisioningErrors:
               type: array
@@ -77702,11 +77459,11 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -77717,11 +77474,11 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             proxyAddresses:
               type: array
@@ -77731,7 +77488,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             resourceBehaviorOptions:
@@ -77743,7 +77500,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn''t normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
+              description: 'Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.'
             securityEnabled:
               type: boolean
               description: 'Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).'
@@ -77756,7 +77513,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
-              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -77766,7 +77523,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value isn''t specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             writebackConfiguration:
               $ref: '#/components/schemas/microsoft.graph.groupWritebackConfiguration'
@@ -77774,32 +77531,32 @@ components:
               $ref: '#/components/schemas/microsoft.graph.groupAccessType'
             allowExternalSenders:
               type: boolean
-              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             autoSubscribeNewMembers:
               type: boolean
-              description: 'Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don''t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromAddressLists:
               type: boolean
-              description: 'true if the group isn''t displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'true if the group isn''t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             unseenConversationsCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+              description: Count of conversations that have been delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
               format: int32
               nullable: true
             unseenCount:
@@ -77846,7 +77603,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             membersWithLicenseErrors:
               type: array
@@ -77858,13 +77615,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group who can be users or service principals. Nullable. If this property isn''t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
+              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
               x-ms-navigationProperty: true
             permissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
-              description: The permissions granted for a group to a specific application. Supports $expand.
+              description: The permissions that have been granted for a group to a specific application. Supports $expand.
               x-ms-navigationProperty: true
             settings:
               type: array
@@ -77876,7 +77633,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups a group is a member of, either directly or through nested membership. Nullable.'
+              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
               x-ms-navigationProperty: true
             transitiveMembers:
               type: array
@@ -77888,7 +77645,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.'
+              description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -77914,7 +77671,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
+              description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
               x-ms-navigationProperty: true
             threads:
               type: array
@@ -83496,7 +83253,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -86147,12 +85904,10 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that this Platform Credential Key was registered.
               format: date-time
               nullable: true
             displayName:
               type: string
-              description: The name of the device on which Platform Credential is registered.
               nullable: true
             keyStrength:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
@@ -88924,7 +88679,7 @@ components:
             labelAppliedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             name:
