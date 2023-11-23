@@ -23,7 +23,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 //Skips the left part of the uri i.e https://graph.microsoft.com
                 if (counter > 2)
                 {
-                    sb.Append("/" + Uri.EscapeDataString(segment));
+                    sb.Append('/');
+                    sb.Append(Uri.EscapeDataString(segment));
                 }
                 counter++;
             }
