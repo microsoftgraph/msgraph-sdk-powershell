@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Create an online meeting with user token
 
 ```powershellImport-Module Microsoft.Graph.CloudCommunications
 
@@ -14,7 +14,7 @@ New-MgUserOnlineMeeting -UserId $userId -BodyParameter $params
 This example shows how to use the New-MgUserOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Code snippet
+### Example 2: Create an online meeting that requires a passcode
 
 ```powershellImport-Module Microsoft.Graph.CloudCommunications
 
@@ -33,7 +33,7 @@ New-MgUserOnlineMeeting -UserId $userId -BodyParameter $params
 This example shows how to use the New-MgUserOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Code snippet
+### Example 3: Create an online meeting that doesn't require a passcode
 
 ```powershellImport-Module Microsoft.Graph.CloudCommunications
 

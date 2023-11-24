@@ -1,4 +1,4 @@
-### Example 1: Get the assignments of the logged in user
+### Example 1: Get the assignments of the signed-in user
 
 ```powershell
 Import-Module Microsoft.Graph.Education
