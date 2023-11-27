@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Calendar
-Module Guid: 8d660b4e-991e-4742-a5ed-df49491a562c
+Module Guid: bf7d57d4-bbb9-4ecb-a2b4-24d66cf29155
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -187,12 +187,6 @@ Get the item of type microsoft.graph.place as microsoft.graph.room
 ### [Get-MgBetaPlaceAsRoomList](Get-MgBetaPlaceAsRoomList.md)
 Get the item of type microsoft.graph.place as microsoft.graph.roomList
 
-### [Get-MgBetaPlaceAsRoomListRoom](Get-MgBetaPlaceAsRoomListRoom.md)
-Get rooms from places
-
-### [Get-MgBetaPlaceAsRoomListWorkspace](Get-MgBetaPlaceAsRoomListWorkspace.md)
-Get workspaces from places
-
 ### [Get-MgBetaPlaceCount](Get-MgBetaPlaceCount.md)
 Get the number of the resource
 
@@ -200,12 +194,6 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaPlaceCountAsRoomList](Get-MgBetaPlaceCountAsRoomList.md)
-Get the number of the resource
-
-### [Get-MgBetaPlaceRoomCount](Get-MgBetaPlaceRoomCount.md)
-Get the number of the resource
-
-### [Get-MgBetaPlaceWorkspaceCount](Get-MgBetaPlaceWorkspaceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserCalendar](Get-MgBetaUserCalendar.md)
@@ -422,15 +410,13 @@ Use this API to create a new event.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventAttachment](New-MgBetaGroupEventAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventExceptionOccurrenceAttachment](New-MgBetaGroupEventExceptionOccurrenceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventExceptionOccurrenceExtension](New-MgBetaGroupEventExceptionOccurrenceExtension.md)
@@ -440,9 +426,8 @@ The table in the Permissions section lists the resources that support open exten
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventExceptionOccurrenceInstanceAttachment](New-MgBetaGroupEventExceptionOccurrenceInstanceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventExceptionOccurrenceInstanceExtension](New-MgBetaGroupEventExceptionOccurrenceInstanceExtension.md)
@@ -458,15 +443,13 @@ The table in the Permissions section lists the resources that support open exten
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventInstanceAttachment](New-MgBetaGroupEventInstanceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventInstanceExceptionOccurrenceAttachment](New-MgBetaGroupEventInstanceExceptionOccurrenceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaGroupEventInstanceExceptionOccurrenceExtension](New-MgBetaGroupEventInstanceExceptionOccurrenceExtension.md)
@@ -480,12 +463,6 @@ Create an open extension (openTypeExtension object) and add custom properties in
 You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
 The table in the Permissions section lists the resources that support open extensions.
 This API is available in the following national cloud deployments.
-
-### [New-MgBetaPlaceAsRoomListRoom](New-MgBetaPlaceAsRoomListRoom.md)
-Create new navigation property to rooms for places
-
-### [New-MgBetaPlaceAsRoomListWorkspace](New-MgBetaPlaceAsRoomListWorkspace.md)
-Create new navigation property to workspaces for places
 
 ### [New-MgBetaUserCalendar](New-MgBetaUserCalendar.md)
 Create a new calendar for a user.
@@ -528,15 +505,13 @@ Another advantage of setting up a mailbox for a resource is to control schedulin
 If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource: This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventAttachment](New-MgBetaUserEventAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventExceptionOccurrenceAttachment](New-MgBetaUserEventExceptionOccurrenceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventExceptionOccurrenceExtension](New-MgBetaUserEventExceptionOccurrenceExtension.md)
@@ -546,9 +521,8 @@ The table in the Permissions section lists the resources that support open exten
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventExceptionOccurrenceInstanceAttachment](New-MgBetaUserEventExceptionOccurrenceInstanceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventExceptionOccurrenceInstanceExtension](New-MgBetaUserEventExceptionOccurrenceInstanceExtension.md)
@@ -564,15 +538,13 @@ The table in the Permissions section lists the resources that support open exten
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventInstanceAttachment](New-MgBetaUserEventInstanceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventInstanceExceptionOccurrenceAttachment](New-MgBetaUserEventInstanceExceptionOccurrenceAttachment.md)
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Use this API to create a new Attachment.
+An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaUserEventInstanceExceptionOccurrenceExtension](New-MgBetaUserEventInstanceExceptionOccurrenceExtension.md)
@@ -635,12 +607,6 @@ Delete navigation property extensions for groups
 
 ### [Remove-MgBetaPlace](Remove-MgBetaPlace.md)
 Delete entity from places
-
-### [Remove-MgBetaPlaceAsRoomListRoom](Remove-MgBetaPlaceAsRoomListRoom.md)
-Delete navigation property rooms for places
-
-### [Remove-MgBetaPlaceAsRoomListWorkspace](Remove-MgBetaPlaceAsRoomListWorkspace.md)
-Delete navigation property workspaces for places
 
 ### [Remove-MgBetaUserCalendarGroup](Remove-MgBetaUserCalendarGroup.md)
 Delete a calendar group other than the default calendar group.
@@ -720,12 +686,6 @@ Update the navigation property extensions in groups
 Update the properties of place object, which can be a room, workspace, or roomList.
 You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
 This API is available in the following national cloud deployments.
-
-### [Update-MgBetaPlaceAsRoomListRoom](Update-MgBetaPlaceAsRoomListRoom.md)
-Update the navigation property rooms in places
-
-### [Update-MgBetaPlaceAsRoomListWorkspace](Update-MgBetaPlaceAsRoomListWorkspace.md)
-Update the navigation property workspaces in places
 
 ### [Update-MgBetaUserCalendarGroup](Update-MgBetaUserCalendarGroup.md)
 Update the properties of calendargroup object.

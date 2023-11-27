@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: e53f32aa-96b1-4cd6-8843-e87d898fcc86
+Module Guid: 64f2b81c-28b1-4238-9bed-7891ef25ab51
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -218,251 +218,44 @@ The mobile apps.
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidForWorkApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidLobApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidManagedStoreApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.androidStoreApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosLobApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosStoreApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppApp](Get-MgBetaDeviceAppManagementMobileAppAsIoVppApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense.md)
-The licenses assigned to this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSDmgApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSLobApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.microsoftStoreForBusinessApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp.md)
-The collection of contained apps in a mobileApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship.md)
-List of relationships for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAssignedLicenseCount](Get-MgBetaDeviceAppManagementMobileAppAssignedLicenseCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAssignment.md)
 The list of group assignments for this mobile app.
@@ -473,133 +266,28 @@ Get the number of the resource
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobApp](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.win32LobApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppX](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppX.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsAppX
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsi](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsi.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsMobileMSI
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppX](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppX.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsUniversalAppX
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp.md)
-The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion.md)
-The list of content versions for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp.md)
-The collection of contained apps in a MobileLobApp acting as a package.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile.md)
-The list of files for this app content version.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebApp](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsWebApp
 
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship.md)
-List of relationships for this mobile app.
-
 ### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetApp](Get-MgBetaDeviceAppManagementMobileAppAsWinGetApp.md)
 Get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppCategory](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppCategory.md)
-The list of categories for this app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](Get-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
-List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCategory](Get-MgBetaDeviceAppManagementMobileAppCategory.md)
 The mobile app categories.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCategoryCount](Get-MgBetaDeviceAppManagementMobileAppCategoryCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppCommittedContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppCommittedContainedAppCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppConfiguration](Get-MgBetaDeviceAppManagementMobileAppConfiguration.md)
@@ -631,18 +319,6 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary](Get-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 App configuration user status summary.
-
-### [Get-MgBetaDeviceAppManagementMobileAppContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppContentVersionContainedAppCount](Get-MgBetaDeviceAppManagementMobileAppContentVersionContainedAppCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppContentVersionCount](Get-MgBetaDeviceAppManagementMobileAppContentVersionCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppContentVersionFileCount](Get-MgBetaDeviceAppManagementMobileAppContentVersionFileCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCount](Get-MgBetaDeviceAppManagementMobileAppCount.md)
 Get the number of the resource
@@ -987,42 +663,6 @@ Zero or more WIP device registrations that belong to the user.
 ### [Get-MgBetaUserWindowsInformationProtectionDeviceRegistrationCount](Get-MgBetaUserWindowsInformationProtectionDeviceRegistrationCount.md)
 Get the number of the resource
 
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSPkgAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphMacOSPkgAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFile.md)
-Commits a file of a given app.
-
-### [Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFile](Invoke-MgBetaCommitDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFile.md)
-Commits a file of a given app.
-
 ### [Invoke-MgBetaHasDeviceAppManagementAndroidManagedAppProtectionPayloadLink](Invoke-MgBetaHasDeviceAppManagementAndroidManagedAppProtectionPayloadLink.md)
 Invoke action hasPayloadLinks
 
@@ -1040,42 +680,6 @@ Invoke action hasPayloadLinks
 
 ### [Invoke-MgBetaHasDeviceAppManagementTargetedManagedAppConfigurationPayloadLink](Invoke-MgBetaHasDeviceAppManagementTargetedManagedAppConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphAndroidLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphiOSLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSDmgAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSPkgAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphMacOSPkgAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphManagedAndroidLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphManagediOSLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphManagedMobileLobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWin32LobAppContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsAppXContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsMobileMsiContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
-
-### [Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFileUpload](Invoke-MgBetaRenewDeviceAppManagementMobileAppMicrosoftGraphWindowsUniversalAppXContentVersionFileUpload.md)
-Renews the SAS URI for an application file upload.
 
 ### [Invoke-MgBetaTargetDeviceAppManagementManagedAppPolicyApp](Invoke-MgBetaTargetDeviceAppManagementManagedAppPolicyApp.md)
 Invoke action targetApps
@@ -1185,251 +789,8 @@ Create new navigation property to protectedAppLockerFiles for deviceAppManagemen
 ### [New-MgBetaDeviceAppManagementMobileApp](New-MgBetaDeviceAppManagementMobileApp.md)
 Create new navigation property to mobileApps for deviceAppManagement
 
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense](New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense.md)
-Create new navigation property to assignedLicenses for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp](New-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
 ### [New-MgBetaDeviceAppManagementMobileAppAssignment](New-MgBetaDeviceAppManagementMobileAppAssignment.md)
 Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion](New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment](New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion](New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship](New-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment](New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion](New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship](New-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment](New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp](New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp.md)
-Create new navigation property to committedContainedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion](New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion.md)
-Create new navigation property to contentVersions for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp](New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp.md)
-Create new navigation property to containedApps for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile](New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile.md)
-Create new navigation property to files for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship](New-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment](New-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment.md)
-Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](New-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
-Create new navigation property to relationships for deviceAppManagement
 
 ### [New-MgBetaDeviceAppManagementMobileAppCategory](New-MgBetaDeviceAppManagementMobileAppCategory.md)
 Create new navigation property to mobileAppCategories for deviceAppManagement
@@ -1665,251 +1026,8 @@ Delete navigation property protectedAppLockerFiles for deviceAppManagement
 ### [Remove-MgBetaDeviceAppManagementMobileApp](Remove-MgBetaDeviceAppManagementMobileApp.md)
 Delete navigation property mobileApps for deviceAppManagement
 
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense](Remove-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense.md)
-Delete navigation property assignedLicenses for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
 ### [Remove-MgBetaDeviceAppManagementMobileAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAssignment.md)
 Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp.md)
-Delete navigation property committedContainedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion.md)
-Delete navigation property contentVersions for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp.md)
-Delete navigation property containedApps for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile.md)
-Delete navigation property files for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment](Remove-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment.md)
-Delete navigation property assignments for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
-Delete navigation property relationships for deviceAppManagement
 
 ### [Remove-MgBetaDeviceAppManagementMobileAppCategory](Remove-MgBetaDeviceAppManagementMobileAppCategory.md)
 Delete navigation property mobileAppCategories for deviceAppManagement
@@ -2208,251 +1326,8 @@ Update the navigation property protectedAppLockerFiles in deviceAppManagement
 ### [Update-MgBetaDeviceAppManagementMobileApp](Update-MgBetaDeviceAppManagementMobileApp.md)
 Update the navigation property mobileApps in deviceAppManagement
 
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsAndroidForWorkAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsAndroidLobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsAndroidManagedStoreAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsAndroidStoreAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsiOSLobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsIoStoreAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsIoStoreAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense](Update-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignedLicense.md)
-Update the navigation property assignedLicenses in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsIoVppAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsIoVppAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsMacOSDmgAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsMacOSLobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsMacOSPkgAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsManagedAndroidLobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsManagediOSLobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsManagedMobileLobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsMicrosoftStoreForBusinessAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
 ### [Update-MgBetaDeviceAppManagementMobileAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAssignment.md)
 Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWin32LobAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWindowsAppXRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWindowsMobileMsiRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWindowStoreAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXCommittedContainedApp.md)
-Update the navigation property committedContainedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion](Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersion.md)
-Update the navigation property contentVersions in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp](Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionContainedApp.md)
-Update the navigation property containedApps in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile](Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXContentVersionFile.md)
-Update the navigation property files in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWindowsUniversalAppXRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWindowsWebAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment](Update-MgBetaDeviceAppManagementMobileAppAsWinGetAppAssignment.md)
-Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship](Update-MgBetaDeviceAppManagementMobileAppAsWinGetAppRelationship.md)
-Update the navigation property relationships in deviceAppManagement
 
 ### [Update-MgBetaDeviceAppManagementMobileAppCategory](Update-MgBetaDeviceAppManagementMobileAppCategory.md)
 Update the navigation property mobileAppCategories in deviceAppManagement

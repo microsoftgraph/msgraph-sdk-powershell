@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Delete a feedback resource from a submission.
 This can only be done by a teacher.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Remove-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity
 ## DESCRIPTION
 Delete a feedback resource from a submission.
 This can only be done by a teacher.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

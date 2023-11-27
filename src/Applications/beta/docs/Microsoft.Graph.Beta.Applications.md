@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: 204141f7-ab25-4c4b-b17a-9c020e04e16b
+Module Guid: 84a72bfe-9cd2-4cd3-8ed3-9b7ea23f59f6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -43,7 +43,7 @@ This API is available in the following national cloud deployments.
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -54,7 +54,7 @@ Invoke action checkMemberObjects
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
 This function is transitive.
 You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Microsoft Entra ID.
+This function supports all groups provisioned in Azure AD.
 Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
 This API is available in the following national cloud deployments.
 
@@ -103,11 +103,11 @@ Get the properties and relationships of an application object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaApplicationConnectorGroup](Get-MgBetaApplicationConnectorGroup.md)
-The connectorGroup the application is using with Microsoft Entra application proxy.
+The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
 
 ### [Get-MgBetaApplicationConnectorGroupByRef](Get-MgBetaApplicationConnectorGroupByRef.md)
-The connectorGroup the application is using with Microsoft Entra application proxy.
+The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
 
 ### [Get-MgBetaApplicationCount](Get-MgBetaApplicationCount.md)
@@ -189,10 +189,10 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaApplicationSynchronization](Get-MgBetaApplicationSynchronization.md)
-Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
+Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 
 ### [Get-MgBetaApplicationSynchronizationAccessToken](Get-MgBetaApplicationSynchronizationAccessToken.md)
-Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaApplicationSynchronizationJob](Get-MgBetaApplicationSynchronizationJob.md)
@@ -538,7 +538,7 @@ Get the number of the resource
 Directory objects that are owned by this service principal.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgBetaServicePrincipalOwnedObjectAsApplication](Get-MgBetaServicePrincipalOwnedObjectAsApplication.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
@@ -572,7 +572,7 @@ Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgBetaServicePrincipalOwnerAsEndpoint](Get-MgBetaServicePrincipalOwnerAsEndpoint.md)
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
@@ -588,7 +588,7 @@ Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
 Read-only.
 Nullable.
-Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 
 ### [Get-MgBetaServicePrincipalOwnerCount](Get-MgBetaServicePrincipalOwnerCount.md)
 Get the number of the resource
@@ -607,21 +607,19 @@ Get a list of single sign-on credentials using a password for a user or group.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration](Get-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration.md)
-Read the properties and relationships of a remoteDesktopSecurityConfiguration object on a servicePrincipal.
-Use this configuration to view the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
-Additionally you can view any targetDeviceGroups that have been configured for SSO.
+Get remoteDesktopSecurityConfiguration from servicePrincipals
 
 ### [Get-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](Get-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
-Read the properties and relationships of a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
+Get targetDeviceGroups from servicePrincipals
 
 ### [Get-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroupCount](Get-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroupCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaServicePrincipalSynchronization](Get-MgBetaServicePrincipalSynchronization.md)
-Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
+Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
 
 ### [Get-MgBetaServicePrincipalSynchronizationAccessToken](Get-MgBetaServicePrincipalSynchronizationAccessToken.md)
-Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaServicePrincipalSynchronizationJob](Get-MgBetaServicePrincipalSynchronizationJob.md)
@@ -740,29 +738,29 @@ Invoke function functions
 Invoke function functions
 
 ### [Invoke-MgBetaInstantiateApplicationTemplate](Invoke-MgBetaInstantiateApplicationTemplate.md)
-Add an instance of an application from the Microsoft Entra application gallery into your directory.
+Add an instance of an application from the Azure AD application gallery into your directory.
 You can also use this API to instantiate non-gallery apps.
 Use the following ID for the applicationTemplate object: 8adf8e6e-67b2-4cf2-a259-e3dc5476c621.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaParseApplicationSynchronizationJobSchemaExpression](Invoke-MgBetaParseApplicationSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaParseApplicationSynchronizationTemplateSchemaExpression](Invoke-MgBetaParseApplicationSynchronizationTemplateSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression](Invoke-MgBetaParseServicePrincipalSynchronizationJobSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 This API is available in the following national cloud deployments.
 
 ### [Invoke-MgBetaParseServicePrincipalSynchronizationTemplateSchemaExpression](Invoke-MgBetaParseServicePrincipalSynchronizationTemplateSchemaExpression.md)
 Parse a given string expression into an attributeMappingSource object.
-For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
+For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaApplication](New-MgBetaApplication.md)
@@ -781,7 +779,7 @@ This API is available in the following national cloud deployments.
 
 ### [New-MgBetaApplicationFederatedIdentityCredential](New-MgBetaApplicationFederatedIdentityCredential.md)
 Create a new federatedIdentityCredential object for an application.
-By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
+By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem.
 Maximum of 20 objects can be added to an application.
 This API is available in the following national cloud deployments.
 
@@ -917,8 +915,7 @@ Create single sign-on credentials using a password for a user or group.
 This API is available in the following national cloud deployments.
 
 ### [New-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](New-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
-Create a new targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
-You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+Create new navigation property to targetDeviceGroups for servicePrincipals
 
 ### [New-MgBetaServicePrincipalSynchronizationJob](New-MgBetaServicePrincipalSynchronizationJob.md)
 Create new synchronization job with a default synchronization schema.
@@ -1131,12 +1128,10 @@ Delete single sign-on credentials using a password for a user or group.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration](Remove-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration.md)
-Delete a remoteDesktopSecurityConfiguration object on a servicePrincipal.
-Removing remoteDesktopSecurityConfiguration object on the servicePrincipal disables the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices, and removes any target device groups that you configured for SSO.
+Delete navigation property remoteDesktopSecurityConfiguration for servicePrincipals
 
 ### [Remove-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](Remove-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
-Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
-Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that's in the removed targetDeviceGroup doesn't get SSO prompts.
+Delete navigation property targetDeviceGroups for servicePrincipals
 
 ### [Remove-MgBetaServicePrincipalSynchronization](Remove-MgBetaServicePrincipalSynchronization.md)
 Delete navigation property synchronization for servicePrincipals
@@ -1372,12 +1367,10 @@ Update single sign-on credentials using a password for a user or group.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration](Update-MgBetaServicePrincipalRemoteDesktopSecurityConfiguration.md)
-Update the properties of a remoteDesktopSecurityConfiguration object on the servicePrincipal.
-Use this configuration to enable or disable the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to authenticate a user to Microsoft Entra joined or Microsoft Entra hybrid joined devices.
+Update the navigation property remoteDesktopSecurityConfiguration in servicePrincipals
 
 ### [Update-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup](Update-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup.md)
-Update the properties of a targetDeviceGroup object for remoteDesktopSecurityConfiguration object on the servicePrincipal.
-You can configure a maximum of 10 target device groups for the remoteDesktopSecurityConfiguraiton object on the servicePrincipal.
+Update the navigation property targetDeviceGroups in servicePrincipals
 
 ### [Update-MgBetaServicePrincipalSynchronizationJob](Update-MgBetaServicePrincipalSynchronizationJob.md)
 Update the navigation property jobs in servicePrincipals

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementRoleDefinition
 
 ## SYNOPSIS
-Create a new roleDefinition object.
+Create a new deviceAndAppManagementRoleDefinition object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementRoleDefinition -BodyParameter <IMicrosoftGraphRoleDefiniti
 ```
 
 ## DESCRIPTION
-Create a new roleDefinition object.
+Create a new deviceAndAppManagementRoleDefinition object.
 
 ## EXAMPLES
 

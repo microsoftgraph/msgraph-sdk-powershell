@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Grant the specified user access to submit print jobs to the associated printerShare.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgPrintShareAllowedUserByRef -InputObject <IDevicesCloudPrintIdentity> -Odat
 
 ## DESCRIPTION
 Grant the specified user access to submit print jobs to the associated printerShare.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 

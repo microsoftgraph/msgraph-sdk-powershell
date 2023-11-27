@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## SYNTAX
 
@@ -41,23 +41,22 @@ New-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity> [-Addition
 ## DESCRIPTION
 Add one or more existing educationCategory objects to the specified  educationAssignment.
 Only teachers can perform this operation.
-This API is available in the following national cloud deployments.
+This API is supported in the following national cloud deployments.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Users
 ```
 
+$params = @{
+	displayName = "Project expenses"
+	color = "preset9"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-
+# A UPN can also be used as -UserId.
+New-MgUserOutlookMasterCategory -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

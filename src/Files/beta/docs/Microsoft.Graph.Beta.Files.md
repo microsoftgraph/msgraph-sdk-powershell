@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: 47d2301c-b168-40b0-a439-19ee736e3a98
+Module Guid: 1c548edd-bc60-4757-9f75-7a370dc77a60
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -3283,12 +3283,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemRetentionLabel](Update-MgBetaDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveItemSubscription](Update-MgBetaDriveItemSubscription.md)
@@ -3402,12 +3399,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveRootRetentionLabel](Update-MgBetaDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaDriveRootSubscription](Update-MgBetaDriveRootSubscription.md)
@@ -3474,12 +3468,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemRetentionLabel](Update-MgBetaGroupDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveItemSubscription](Update-MgBetaGroupDriveItemSubscription.md)
@@ -3593,12 +3584,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootRetentionLabel](Update-MgBetaGroupDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaGroupDriveRootSubscription](Update-MgBetaGroupDriveRootSubscription.md)
@@ -3730,12 +3718,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemRetentionLabel](Update-MgBetaUserDriveItemRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveItemSubscription](Update-MgBetaUserDriveItemSubscription.md)
@@ -3849,12 +3834,9 @@ Only the roles property can be modified this way.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootRetentionLabel](Update-MgBetaUserDriveRootRetentionLabel.md)
-Apply (set) a retention label on a driveItem (files and folders).
-Retention labels don't need to be published in a retention label policy to be applied using this method.
-When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label.
-Conflict resolution is based on the following principle: explicit wins over implicit.
-For example, if a file in the folder has already been explicitly tagged with a label, that file doesn't inherit the label of the parent.
+Lock or unlock a retention label on a driveItem that classifies content as records.
 For information about retention labels from an administrator's perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+For information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
 This API is available in the following national cloud deployments.
 
 ### [Update-MgBetaUserDriveRootSubscription](Update-MgBetaUserDriveRootSubscription.md)

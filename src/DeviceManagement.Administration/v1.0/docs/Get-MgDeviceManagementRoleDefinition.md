@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementRoleDefinition
 
 ## SYNOPSIS
-Read properties and relationships of the roleDefinition object.
+Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementRoleDefinition -InputObject <IDeviceManagementAdministrati
 ```
 
 ## DESCRIPTION
-Read properties and relationships of the roleDefinition object.
+Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup
 
 ## SYNOPSIS
-Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
-Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that's in the removed targetDeviceGroup doesn't get SSO prompts.
+Delete navigation property targetDeviceGroups for servicePrincipals
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Remove-MgBetaServicePrincipalRemoteDesktopSecurityConfigurationTargetDeviceGroup
 ```
 
 ## DESCRIPTION
-Delete a targetDeviceGroup object for the remoteDesktopSecurityConfiguration object on the servicePrincipal.
-Any user authenticating using the Microsoft Entra ID Remote Desktop Services (RDS) authentication protocol to a Microsoft Entra joined or Microsoft Entra hybrid joined device that's in the removed targetDeviceGroup doesn't get SSO prompts.
+Delete navigation property targetDeviceGroups for servicePrincipals
 
 ## EXAMPLES
 

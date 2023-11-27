@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Compliance
-Module Guid: 96cf384b-0aad-413c-b998-709a626ac841
+Module Guid: 54843944-5097-491b-865b-0dc58d848a9c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -165,9 +165,6 @@ Get the number of the resource
 
 ### [Get-MgBetaComplianceEdiscoveryCaseOperationCountAsCaseExportOperation](Get-MgBetaComplianceEdiscoveryCaseOperationCountAsCaseExportOperation.md)
 Get the number of the resource
-
-### [Get-MgBetaComplianceEdiscoveryCaseOperationReviewSet](Get-MgBetaComplianceEdiscoveryCaseOperationReviewSet.md)
-The review set the content is being exported from.
 
 ### [Get-MgBetaComplianceEdiscoveryCaseReviewSet](Get-MgBetaComplianceEdiscoveryCaseReviewSet.md)
 Retrieve the properties and relationships of a reviewSet object.

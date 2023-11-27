@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: 322ed7dd-1e1a-45c8-99db-9f43220e515b
+Module Guid: e314868a-80ef-463c-8935-f66ac7e8f8a5
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -245,12 +245,6 @@ Read-only.
 ### [Get-MgBetaVirtualEventWebinar](Get-MgBetaVirtualEventWebinar.md)
 Read the properties and relationships of a virtualEventWebinar object.
 This API is available in the following national cloud deployments.
-
-### [Get-MgBetaVirtualEventWebinarByUserIdAndRole](Get-MgBetaVirtualEventWebinarByUserIdAndRole.md)
-Invoke function getByUserIdAndRole
-
-### [Get-MgBetaVirtualEventWebinarByUserRole](Get-MgBetaVirtualEventWebinarByUserRole.md)
-Invoke function getByUserRole
 
 ### [Get-MgBetaVirtualEventWebinarCount](Get-MgBetaVirtualEventWebinarCount.md)
 Get the number of the resource
@@ -582,7 +576,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventSessionRegistration](Remove-MgBetaVirtualEventSessionRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventSessionRegistrationCustomQuestion.md)
@@ -623,7 +617,7 @@ Delete navigation property attendanceRecords for solutions
 Delete navigation property recordings for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistration](Remove-MgBetaVirtualEventWebinarSessionRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 This API is available in the following national cloud deployments.
 
 ### [Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion](Remove-MgBetaVirtualEventWebinarSessionRegistrationCustomQuestion.md)

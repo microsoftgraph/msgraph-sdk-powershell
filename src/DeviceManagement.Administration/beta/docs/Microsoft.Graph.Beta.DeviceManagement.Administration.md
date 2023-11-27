@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: 5c6d2533-e115-4bfc-bb8c-8bb38a825338
+Module Guid: a9b42f24-1ca4-4411-8979-34526a23846d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -414,8 +414,7 @@ This API is available in the following national cloud deployments.
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan](Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlan.md)
-Get the properties and relationships of a cloudPcFrontLineServicePlan object.
-This API is available in the following national cloud deployments.
+Get frontLineServicePlans from deviceManagement
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlanCount](Get-MgBetaDeviceManagementVirtualEndpointFrontLineServicePlanCount.md)
 Get the number of the resource
@@ -445,7 +444,7 @@ This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 A defined collection of provisioning policy assignments.
-Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
 Returned only on $expand.
 For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 
@@ -521,7 +520,7 @@ Read the properties and relationships of a cloudPcUserSetting object.
 This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment](Get-MgBetaDeviceManagementVirtualEndpointUserSettingAssignment.md)
-Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned.
+Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned.
 Returned only on $expand.
 For an example, see Get cloudPcUserSettingample.
 

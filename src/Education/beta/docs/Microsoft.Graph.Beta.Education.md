@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: 3b9d88be-c51d-4fca-b1d9-72895c81ee75
+Module Guid: 40954ac5-1203-43c6-9788-d943608f9c0c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US

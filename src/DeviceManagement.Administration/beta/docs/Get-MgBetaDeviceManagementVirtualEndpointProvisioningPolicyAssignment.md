@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 A defined collection of provisioning policy assignments.
-Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
 Returned only on $expand.
 For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 
@@ -38,7 +38,7 @@ Get-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyAssignment
 
 ## DESCRIPTION
 A defined collection of provisioning policy assignments.
-Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned.
+Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned.
 Returned only on $expand.
 For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 

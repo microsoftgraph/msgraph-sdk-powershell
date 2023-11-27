@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 3a8e5040-9666-42a8-9c86-0e41d66f4c9a
+Module Guid: 1fbef9f3-a593-4d0c-a1ae-99adf3c4d0d8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -354,7 +354,6 @@ This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport](Get-MgBetaDeviceManagementVirtualEndpointReportRawRemoteConnectionReport.md)
 Get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
-This API is available in the following national cloud deployments.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgBetaDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
 Get the remote connection history records of a Cloud PC during a given period.
