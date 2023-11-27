@@ -558,11 +558,11 @@ paths:
     patch:
       tags:
         - users.mailFolder
-      summary: Update mailSearchFolder
-      description: Update the writable properties of a mailSearchFolder object. This API is available in the following national cloud deployments.
+      summary: Update mailFolder
+      description: Update the properties of mailFolder object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0
       operationId: user_UpdateMailFolder
       parameters:
         - name: user-id
@@ -5333,7 +5333,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -5745,7 +5745,7 @@ paths:
       summary: Get media content for the navigation property messages from users
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
