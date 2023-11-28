@@ -17,7 +17,7 @@
 
         internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForPreapprovedAppsForChats = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-chat";
 
-        internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForChats = "ManagePermissionGrantsForOwnedResource.microsoft-pre-approval-apps-for-chat";
+        internal const string MicrosoftCreatedPermissionGrantPolicyEnabledForAllAppsForChats = "ManagePermissionGrantsForOwnedResource.microsoft-all-application-permissions-for-chat";
 
         internal const string MicrosoftCreatedPermissionGrantPolicyManagedByMicrosoftForChats = "ManagePermissionGrantsForOwnedResource.microsoft-dynamically-managed-permissions-for-chat";
 
