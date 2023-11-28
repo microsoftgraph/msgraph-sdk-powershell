@@ -307,7 +307,8 @@
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.ManagedByMicrosoft)
                     {
-                        // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope.
+                        // Remove all permission grant policies assigned to default user role permissions which are relevant to team scope and add
+                        // Microsoft managed policy for consent.
                         IEnumerable<string> existingPermissionGrantPoliciesExceptTeamScopePolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToTeamScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),

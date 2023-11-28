@@ -330,7 +330,7 @@
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
                         // Remove all permission grant policies assigned to default user role permissions which are relevant to chat scope and add
-                        // Microsoft created.policy enabling pre-approvals.
+                        // Microsoft managed policy for consent.
                         IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
                             .Except(
                                 assignedPermissionGrantPoliciesApplicableToChatScope.Select(p => p.ManagePermissionGrantsForOwnedResourcePrefixedId),
