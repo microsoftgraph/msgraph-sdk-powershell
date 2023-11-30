@@ -294,6 +294,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns></returns>
         private HttpRequestMessage GetRequest(HttpClient httpClient, Uri uri)
         {
+
             var requestUri = PrepareUri(httpClient, uri);
             var httpMethod = GetHttpMethod(Method);
             // create the base WebRequest object
@@ -346,7 +347,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     request.Headers.Add(HttpKnownHeaderNames.UserAgent, GraphRequestSession.UserAgent);
                 }
             }
-
             return request;
         }
 
@@ -359,6 +359,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private Uri PrepareUri(HttpClient httpClient, Uri uri)
         {
             UriBuilder uriBuilder;
+
             // For AbsoluteUri such as /beta/groups?$count=true, Get the scheme and host from httpClient
             // Then use them to compose a new Url with the URL fragment. 
             if (uri.IsAbsoluteUri)
@@ -401,8 +402,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
-
-            return uriBuilder.Uri;
+            return uriBuilder.Uri.EscapeDataStrings();
         }
 
         private void ThrowIfError(ErrorRecord error)

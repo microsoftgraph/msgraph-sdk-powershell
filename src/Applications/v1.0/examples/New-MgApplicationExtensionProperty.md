@@ -7,6 +7,7 @@ Import-Module Microsoft.Graph.Applications
 $params = @{
 	name = "jobGroup"
 	dataType = "String"
+	isMultiValued = $true
 	targetObjects = @(
 		"User"
 	)

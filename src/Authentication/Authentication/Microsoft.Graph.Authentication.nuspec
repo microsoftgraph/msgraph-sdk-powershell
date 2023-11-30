@@ -36,6 +36,7 @@
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Abstractions.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Buffers.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Memory.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Memory.Data.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Text.Json.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Threading.Tasks.Extensions.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Kiota.Abstractions.dll" target="Dependencies" />
