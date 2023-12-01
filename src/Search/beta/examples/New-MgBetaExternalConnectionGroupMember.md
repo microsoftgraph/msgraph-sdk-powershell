@@ -1,4 +1,4 @@
-### Example 1: Add an Azure Active Directory user as a member
+### Example 1: Add a Microsoft Entra user as a member
 
 ```powershellImport-Module Microsoft.Graph.Beta.Search
 
@@ -12,7 +12,7 @@ New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectio
 This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Add an Azure Active Directory group as a member
+### Example 2: Add a Microsoft Entra group as a member
 
 ```powershellImport-Module Microsoft.Graph.Beta.Search
 

@@ -7,7 +7,6 @@ $params = @{
 	phoneType = "mobile"
 }
 
-# A UPN can also be used as -UserId.
 Update-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
 ```
 This example shows how to use the Update-MgUserAuthenticationPhoneMethod Cmdlet.
