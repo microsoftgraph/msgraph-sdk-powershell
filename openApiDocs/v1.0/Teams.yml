@@ -1614,11 +1614,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel. This API is available in the following national cloud deployments.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -2169,7 +2169,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -2867,11 +2867,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chat.message_CreateReply
       parameters:
         - name: chat-id
@@ -3096,7 +3096,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -6145,6 +6145,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -6167,6 +6168,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -6350,11 +6352,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: group.team.channel_CreateMember
       parameters:
         - name: group-id
@@ -6465,11 +6467,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -6516,11 +6518,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: group.team.channel_DeleteMember
       parameters:
         - name: group-id
@@ -6740,11 +6742,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -6973,7 +6975,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -7593,11 +7595,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.channel.message_CreateReply
       parameters:
         - name: group-id
@@ -7854,7 +7856,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -11254,7 +11256,7 @@ paths:
       tags:
         - groups.team
       summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Microsoft Entra ID. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download. This API is available in the following national cloud deployments."
+      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
@@ -11591,6 +11593,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -11613,6 +11616,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -11772,11 +11776,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMember
       parameters:
         - name: group-id
@@ -11871,11 +11875,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -11914,11 +11918,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteMember
       parameters:
         - name: group-id
@@ -12114,11 +12118,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -12315,7 +12319,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -12863,11 +12867,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_CreateReply
       parameters:
         - name: group-id
@@ -13092,7 +13096,7 @@ paths:
       tags:
         - groups.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -18846,6 +18850,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -18868,6 +18873,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -19051,11 +19057,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -19166,11 +19172,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -19217,11 +19223,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -19505,11 +19511,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -19738,7 +19744,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -20540,11 +20546,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -20801,7 +20807,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -25322,7 +25328,7 @@ paths:
       tags:
         - teams.profilePhoto
       summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Microsoft Entra ID. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download. This API is available in the following national cloud deployments."
+      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
@@ -25659,6 +25665,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -25681,6 +25688,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -25840,11 +25848,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMember
       parameters:
         - name: team-id
@@ -25939,11 +25947,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -25982,11 +25990,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteMember
       parameters:
         - name: team-id
@@ -26238,11 +26246,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -26439,7 +26447,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -27137,11 +27145,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.primaryChannel.message_CreateReply
       parameters:
         - name: team-id
@@ -27366,7 +27374,7 @@ paths:
       tags:
         - teams.channel
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -33649,6 +33657,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -33671,6 +33680,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -33854,11 +33864,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMember
       parameters:
         - name: deletedTeam-id
@@ -33969,11 +33979,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -34020,11 +34030,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteMember
       parameters:
         - name: deletedTeam-id
@@ -34308,11 +34318,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -34541,7 +34551,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -35343,11 +35353,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_CreateReply
       parameters:
         - name: deletedTeam-id
@@ -35604,7 +35614,7 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -39679,11 +39689,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get conversationMember
-      description: Retrieve a conversationMember from a chat or channel. This API is available in the following national cloud deployments.
+      summary: Get conversationMember in a chat
+      description: Retrieve a conversationMember from a chat. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
       operationId: user.chat_GetMember
       parameters:
         - name: user-id
@@ -40250,7 +40260,7 @@ paths:
       tags:
         - users.chat
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -40870,11 +40880,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.chat.message_CreateReply
       parameters:
         - name: user-id
@@ -41131,7 +41141,7 @@ paths:
       tags:
         - users.chat
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -43884,6 +43894,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -43906,6 +43917,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -44113,11 +44125,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMember
       parameters:
         - name: user-id
@@ -44244,11 +44256,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMember
       parameters:
         - name: user-id
@@ -44303,11 +44315,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteMember
       parameters:
         - name: user-id
@@ -44551,11 +44563,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMessage
       parameters:
         - name: user-id
@@ -44816,7 +44828,7 @@ paths:
       tags:
         - users.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -45508,11 +45520,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_CreateReply
       parameters:
         - name: user-id
@@ -45801,7 +45813,7 @@ paths:
       tags:
         - users.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -49689,7 +49701,7 @@ paths:
       tags:
         - users.team
       summary: Get profilePhoto
-      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Microsoft Entra ID. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download. This API is available in the following national cloud deployments."
+      description: "Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they're stored in Microsoft Entra ID. You can get the metadata of the largest available photo or specify a size to get the metadata for that photo size.\nIf the size you request is unavailable, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of the photo is available for download. This API is available in the following national cloud deployments."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
@@ -50090,6 +50102,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -50112,6 +50125,7 @@ paths:
                 - children
                 - listItem
                 - permissions
+                - retentionLabel
                 - subscriptions
                 - thumbnails
                 - versions
@@ -50295,11 +50309,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMember
       parameters:
         - name: user-id
@@ -50410,11 +50424,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMember
       parameters:
         - name: user-id
@@ -50461,11 +50475,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared. This API is available in the following national cloud deployments.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteMember
       parameters:
         - name: user-id
@@ -50685,11 +50699,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat. This API is available in the following national cloud deployments.
+      summary: Send chatMessage in channel
+      description: Send a new chatMessage in the specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMessage
       parameters:
         - name: user-id
@@ -50918,7 +50932,7 @@ paths:
       tags:
         - users.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -51538,11 +51552,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_CreateReply
       parameters:
         - name: user-id
@@ -51799,7 +51813,7 @@ paths:
       tags:
         - users.team
       summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments. The following tables show the least privileged permission or permissions required to call this API on each supported resource type. Follow best practices to request least privileged permissions. For details about delegated and application permissions, see Permission types. To learn more about these permissions, see the permissions reference.'
+      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content This API is available in the following national cloud deployments.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
@@ -59077,7 +59091,7 @@ components:
               nullable: true
             cTag:
               type: string
-              description: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+              description: An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
               nullable: true
             deleted:
               $ref: '#/components/schemas/microsoft.graph.deleted'
@@ -59142,6 +59156,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -59152,7 +59168,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -59217,21 +59233,21 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
+              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).'
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -59274,11 +59290,11 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -59290,7 +59306,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             proxyAddresses:
               type: array
@@ -59300,7 +59316,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
@@ -59321,11 +59337,11 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
-              description: 'Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             autoSubscribeNewMembers:
               type: boolean
@@ -59337,11 +59353,11 @@ components:
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -59352,7 +59368,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
-              description: 'When a group is associated with a team this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
+              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
               nullable: true
             appRoleAssignments:
               type: array
@@ -59401,7 +59417,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
+              description: 'The groups that a group is a member of, either directly or through nested membership. Nullable.'
               x-ms-navigationProperty: true
             transitiveMembers:
               type: array
@@ -59413,7 +59429,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -59439,7 +59455,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+              description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
               x-ms-navigationProperty: true
             threads:
               type: array
@@ -61243,6 +61259,32 @@ components:
               type: string
               description: A unique token that can be used to access this shared item via the shares API. Read-only.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              description: 'Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.'
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              description: The retention label on the document. Read-write.
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
           additionalProperties:
             type: object
     microsoft.graph.subscription:
@@ -63343,6 +63385,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The collection of the user's profile photos in different sizes. Read-only.
               x-ms-navigationProperty: true
             activities:
               type: array
@@ -63793,6 +63836,34 @@ components:
         webUrl:
           type: string
           description: A URL that opens the item in the browser on the OneDrive website.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          description: Specifies whether updates to document content are allowed. Read-only.
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          description: Specifies whether the document deletion is allowed. Read-only.
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          description: Specifies whether you're allowed to change the retention label on the document. Read-only.
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          description: 'Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.'
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          description: Specifies whether the item is locked. Read-write.
           nullable: true
       additionalProperties:
         type: object
@@ -66319,40 +66390,16 @@ components:
             type: object
     microsoft.graph.onlineMeeting:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.onlineMeetingBase'
         - title: onlineMeeting
           type: object
           properties:
-            allowAttendeeToEnableCamera:
-              type: boolean
-              description: Indicates whether attendees can turn on their camera.
-              nullable: true
-            allowAttendeeToEnableMic:
-              type: boolean
-              description: Indicates whether attendees can turn on their microphone.
-              nullable: true
-            allowedPresenters:
-              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
-            allowMeetingChat:
-              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
-            allowParticipantsToChangeName:
-              type: boolean
-              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-              nullable: true
-            allowTeamworkReactions:
-              type: boolean
-              description: Indicates whether Teams reactions are enabled for the meeting.
-              nullable: true
             attendeeReport:
               type: string
               format: base64url
               nullable: true
-            audioConferencing:
-              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
-            chatInfo:
-              $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -66371,49 +66418,19 @@ components:
             isBroadcast:
               type: boolean
               nullable: true
-            isEntryExitAnnounced:
-              type: boolean
-              description: Indicates whether to announce when callers join or leave.
-              nullable: true
-            joinInformation:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            joinMeetingIdSettings:
-              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
-            joinWebUrl:
-              type: string
-              description: The join URL of the online meeting. Read-only.
-              nullable: true
-            lobbyBypassSettings:
-              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
-            recordAutomatically:
-              type: boolean
-              description: Indicates whether to record the meeting automatically.
-              nullable: true
-            shareMeetingChatHistoryDefault:
-              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The meeting start time in UTC.
               format: date-time
               nullable: true
-            subject:
-              type: string
-              description: The subject of the online meeting.
-              nullable: true
-            videoTeleconferenceId:
-              type: string
-              description: The video teleconferencing ID. Read-only.
-              nullable: true
-            watermarkProtection:
-              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            attendanceReports:
+            recordings:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-              description: The attendance reports of an online meeting. Read-only.
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -66796,6 +66813,15 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -67943,7 +67969,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -69123,55 +69149,64 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
-    microsoft.graph.onlineMeetingPresenters:
-      title: onlineMeetingPresenters
-      enum:
-        - everyone
-        - organization
-        - roleIsPresenter
-        - organizer
-        - unknownFutureValue
-      type: string
-    microsoft.graph.meetingChatMode:
-      title: meetingChatMode
-      enum:
-        - enabled
-        - disabled
-        - limited
-        - unknownFutureValue
-      type: string
-    microsoft.graph.audioConferencing:
-      title: audioConferencing
-      type: object
-      properties:
-        conferenceId:
-          type: string
-          description: The conference id of the online meeting.
-          nullable: true
-        dialinUrl:
-          type: string
-          description: A URL to the externally-accessible web page that contains dial-in information.
-          nullable: true
-        tollFreeNumber:
-          type: string
-          nullable: true
-        tollFreeNumbers:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: List of toll-free numbers that are displayed in the meeting invite.
-        tollNumber:
-          type: string
-          nullable: true
-        tollNumbers:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: List of toll numbers that are displayed in the meeting invite.
-      additionalProperties:
-        type: object
+    microsoft.graph.onlineMeetingBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onlineMeetingBase
+          type: object
+          properties:
+            allowAttendeeToEnableCamera:
+              type: boolean
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              nullable: true
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowParticipantsToChangeName:
+              type: boolean
+              nullable: true
+            allowTeamworkReactions:
+              type: boolean
+              nullable: true
+            audioConferencing:
+              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            chatInfo:
+              $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            isEntryExitAnnounced:
+              type: boolean
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
+            joinWebUrl:
+              type: string
+              nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            recordAutomatically:
+              type: boolean
+              nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
+            subject:
+              type: string
+              nullable: true
+            videoTeleconferenceId:
+              type: string
+              nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
+            attendanceReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.broadcastMeetingSettings:
       title: broadcastMeetingSettings
       type: object
@@ -69198,54 +69233,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatInfo:
-      title: chatInfo
-      type: object
-      properties:
-        messageId:
-          type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
-          nullable: true
-        replyChainMessageId:
-          type: string
-          description: The ID of the reply message.
-          nullable: true
-        threadId:
-          type: string
-          description: The unique identifier for a thread in Microsoft Teams.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.joinMeetingIdSettings:
-      title: joinMeetingIdSettings
-      type: object
-      properties:
-        isPasscodeRequired:
-          type: boolean
-          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-          nullable: true
-        joinMeetingId:
-          type: string
-          description: The meeting ID to be used to join a meeting. Optional. Read-only.
-          nullable: true
-        passcode:
-          type: string
-          description: The passcode to join a meeting.  Optional. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.lobbyBypassSettings:
-      title: lobbyBypassSettings
-      type: object
-      properties:
-        isDialInBypassEnabled:
-          type: boolean
-          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-          nullable: true
-        scope:
-          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
-      additionalProperties:
-        type: object
     microsoft.graph.meetingParticipants:
       title: meetingParticipants
       type: object
@@ -69258,58 +69245,33 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
-    microsoft.graph.meetingChatHistoryDefaultMode:
-      title: meetingChatHistoryDefaultMode
-      enum:
-        - none
-        - all
-        - unknownFutureValue
-      type: string
-    microsoft.graph.watermarkProtectionValues:
-      title: watermarkProtectionValues
-      type: object
-      properties:
-        isEnabledForContentSharing:
-          type: boolean
-          description: Indicates whether to apply a watermark to any shared content.
-          nullable: true
-        isEnabledForVideo:
-          type: boolean
-          description: Indicates whether to apply a watermark to everyone's video feed.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.meetingAttendanceReport:
+    microsoft.graph.callRecording:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingAttendanceReport
+        - title: callRecording
           type: object
           properties:
-            meetingEndDateTime:
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: UTC time when the meeting ended. Read-only.
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
-            meetingStartDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            meetingId:
               type: string
-              description: UTC time when the meeting started. Read-only.
-              format: date-time
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
               nullable: true
-            totalParticipantCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Total number of participants. Read-only.
-              format: int32
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
               nullable: true
-            attendanceRecords:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-              description: List of attendance records of an attendance report. Read-only.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -71129,6 +71091,157 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
+    microsoft.graph.audioConferencing:
+      title: audioConferencing
+      type: object
+      properties:
+        conferenceId:
+          type: string
+          description: The conference id of the online meeting.
+          nullable: true
+        dialinUrl:
+          type: string
+          description: A URL to the externally-accessible web page that contains dial-in information.
+          nullable: true
+        tollFreeNumber:
+          type: string
+          nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
+        tollNumber:
+          type: string
+          nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
+      additionalProperties:
+        type: object
+    microsoft.graph.chatInfo:
+      title: chatInfo
+      type: object
+      properties:
+        messageId:
+          type: string
+          description: The unique identifier of a message in a Microsoft Teams channel.
+          nullable: true
+        replyChainMessageId:
+          type: string
+          description: The ID of the reply message.
+          nullable: true
+        threadId:
+          type: string
+          description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+          nullable: true
+        joinMeetingId:
+          type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
+          nullable: true
+        passcode:
+          type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingAttendanceReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingAttendanceReport
+          type: object
+          properties:
+            meetingEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting ended. Read-only.
+              format: date-time
+              nullable: true
+            meetingStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting started. Read-only.
+              format: date-time
+              nullable: true
+            totalParticipantCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total number of participants. Read-only.
+              format: int32
+              nullable: true
+            attendanceRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: List of attendance records of an attendance report. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.broadcastMeetingAudience:
       title: broadcastMeetingAudience
       enum:
@@ -71157,17 +71270,6 @@ components:
           description: The translation languages (choose up to 6).
       additionalProperties:
         type: object
-    microsoft.graph.lobbyBypassScope:
-      title: lobbyBypassScope
-      enum:
-        - organizer
-        - organization
-        - organizationAndFederated
-        - everyone
-        - unknownFutureValue
-        - invited
-        - organizationExcludingGuests
-      type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
@@ -71182,36 +71284,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.attendanceRecord:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attendanceRecord
-          type: object
-          properties:
-            attendanceIntervals:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
-              description: List of time periods between joining and leaving a meeting.
-            emailAddress:
-              type: string
-              description: Email address of the user associated with this attendance record.
-              nullable: true
-            identity:
-              $ref: '#/components/schemas/microsoft.graph.identity'
-            role:
-              type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
-              nullable: true
-            totalAttendanceInSeconds:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Total duration of the attendances in seconds.
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -72582,6 +72654,47 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
+      type: string
+    microsoft.graph.attendanceRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attendanceRecord
+          type: object
+          properties:
+            attendanceIntervals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+              description: List of time periods between joining and leaving a meeting.
+            emailAddress:
+              type: string
+              description: Email address of the user associated with this attendance record.
+              nullable: true
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            role:
+              type: string
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              nullable: true
+            totalAttendanceInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total duration of the attendances in seconds.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole
       enum:
@@ -72591,31 +72704,6 @@ components:
         - producer
         - coorganizer
       type: string
-    microsoft.graph.attendanceInterval:
-      title: attendanceInterval
-      type: object
-      properties:
-        durationInSeconds:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
-          format: int32
-          nullable: true
-        joinDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time the attendee joined in UTC.
-          format: date-time
-          nullable: true
-        leaveDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time the attendee left in UTC.
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.alternativeSecurityId:
       title: alternativeSecurityId
       type: object
@@ -73933,6 +74021,31 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.attendanceInterval:
+      title: attendanceInterval
+      type: object
+      properties:
+        durationInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
+          format: int32
+          nullable: true
+        joinDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee joined in UTC.
+          format: date-time
+          nullable: true
+        leaveDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee left in UTC.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookChartGridlinesFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

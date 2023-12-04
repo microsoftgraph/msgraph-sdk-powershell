@@ -2582,11 +2582,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get industryDataConnector
-      description: Read the properties and relationships of an industryDataConnector object. This API is available in the following national cloud deployments.
+      summary: Get azureDataLakeConnector
+      description: Read the properties and relationships of an azureDataLakeConnector object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0
       operationId: external.industryData_GetDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2963,11 +2963,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFlow
-      description: Update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
+      summary: Update inboundFileFlow
+      description: Update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2998,11 +2998,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete inboundFileFlow
-      description: Delete an inboundFileFlow object. This API is available in the following national cloud deployments.
+      summary: Delete inboundFlow
+      description: Delete an inboundFlow object. This API is available in the following national cloud deployments.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
