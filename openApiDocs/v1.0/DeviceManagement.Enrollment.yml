@@ -103,11 +103,11 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List deviceEnrollmentPlatformRestrictionsConfigurations
-      description: List properties and relationships of the deviceEnrollmentPlatformRestrictionsConfiguration objects.
+      summary: List deviceEnrollmentWindowsHelloForBusinessConfigurations
+      description: List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-list?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-list?view=graph-rest-1.0
       operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -184,11 +184,11 @@ paths:
     post:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Create deviceEnrollmentPlatformRestrictionsConfiguration
-      description: Create a new deviceEnrollmentPlatformRestrictionsConfiguration object.
+      summary: Create deviceEnrollmentWindowsHelloForBusinessConfiguration
+      description: Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-create?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-create?view=graph-rest-1.0
       operationId: deviceManagement_CreateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property
@@ -271,11 +271,11 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Update deviceEnrollmentLimitConfiguration
-      description: Update the properties of a deviceEnrollmentLimitConfiguration object.
+      summary: Update deviceEnrollmentWindowsHelloForBusinessConfiguration
+      description: Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-update?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -1656,22 +1656,22 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).'
+              description: 'Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq ''/AccessPackageCatalog/{catalog id}''.'
               nullable: true
             condition:
               type: string
               nullable: true
             directoryScopeId:
               type: string
-              description: 'Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).'
+              description: 'Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).'
               nullable: true
             principalId:
               type: string
-              description: 'Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).'
+              description: 'Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).'
               nullable: true
             roleDefinitionId:
               type: string
-              description: 'Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).'
+              description: 'Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).'
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'

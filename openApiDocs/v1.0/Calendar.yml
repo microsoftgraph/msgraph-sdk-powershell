@@ -67,7 +67,7 @@ paths:
       tags:
         - groups.calendar
       summary: List calendarPermissions
-      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar. This API is available in the following national cloud deployments.'
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
@@ -138,7 +138,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
+      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
@@ -174,7 +174,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+      description: Get the specified permissions object of a user or group calendar that has been shared.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
@@ -227,7 +227,7 @@ paths:
       tags:
         - groups.calendar
       summary: Update calendarPermission
-      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is available in the following national cloud deployments.'
+      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
@@ -270,7 +270,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete calendarPermission
-      description: Delete calendarPermission. This API is available in the following national cloud deployments.
+      description: Delete calendarPermission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
@@ -637,7 +637,7 @@ paths:
       tags:
         - groups.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -728,7 +728,7 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -842,7 +842,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -982,7 +982,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.calendar.calendarView_ListExtension
       parameters:
         - name: group-id
@@ -1055,7 +1055,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -1099,7 +1099,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -1609,7 +1609,7 @@ paths:
       tags:
         - groups.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -1708,7 +1708,7 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -1838,7 +1838,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -2002,7 +2002,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.calendar.calendarView.instance_ListExtension
       parameters:
         - name: group-id
@@ -2083,7 +2083,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -2135,7 +2135,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -2404,7 +2404,7 @@ paths:
       tags:
         - groups.calendar
       summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. This API is available in the following national cloud deployments."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -2604,7 +2604,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.  This API is available in the following national cloud deployments.'
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -2749,7 +2749,7 @@ paths:
       tags:
         - groups.calendar
       summary: Update event
-      description: Update an event object. This API is available in the following national cloud deployments.
+      description: Update an event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0
@@ -2827,7 +2827,7 @@ paths:
       tags:
         - groups.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -2918,7 +2918,7 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -3032,7 +3032,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -3172,7 +3172,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.calendar.event_ListExtension
       parameters:
         - name: group-id
@@ -3245,7 +3245,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -3289,7 +3289,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -3799,7 +3799,7 @@ paths:
       tags:
         - groups.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -3898,7 +3898,7 @@ paths:
       tags:
         - groups.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -4028,7 +4028,7 @@ paths:
       tags:
         - groups.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -4192,7 +4192,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.calendar.event.instance_ListExtension
       parameters:
         - name: group-id
@@ -4273,7 +4273,7 @@ paths:
       tags:
         - groups.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -4325,7 +4325,7 @@ paths:
       tags:
         - groups.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -4901,7 +4901,7 @@ paths:
       tags:
         - groups.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -4992,7 +4992,7 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -5106,7 +5106,7 @@ paths:
       tags:
         - groups.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -5246,7 +5246,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.calendarView_ListExtension
       parameters:
         - name: group-id
@@ -5319,7 +5319,7 @@ paths:
       tags:
         - groups.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -5363,7 +5363,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -5873,7 +5873,7 @@ paths:
       tags:
         - groups.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -5972,7 +5972,7 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -6102,7 +6102,7 @@ paths:
       tags:
         - groups.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -6266,7 +6266,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.calendarView.instance_ListExtension
       parameters:
         - name: group-id
@@ -6347,7 +6347,7 @@ paths:
       tags:
         - groups.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -6399,7 +6399,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -6668,7 +6668,7 @@ paths:
       tags:
         - groups.event
       summary: List events
-      description: Retrieve a list of event objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of event objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0
@@ -6850,7 +6850,7 @@ paths:
       tags:
         - groups.event
       summary: Create event
-      description: Use this API to create a new event. This API is available in the following national cloud deployments.
+      description: Use this API to create a new event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-post-events?view=graph-rest-1.0
@@ -6886,7 +6886,7 @@ paths:
       tags:
         - groups.event
       summary: Get event
-      description: Get an event object. This API is available in the following national cloud deployments.
+      description: Get an event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0
@@ -7019,7 +7019,7 @@ paths:
       tags:
         - groups.event
       summary: Delete event
-      description: Delete an event object. This API is available in the following national cloud deployments.
+      description: Delete an event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0
@@ -7058,7 +7058,7 @@ paths:
       tags:
         - groups.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -7149,7 +7149,7 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -7263,7 +7263,7 @@ paths:
       tags:
         - groups.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -7403,7 +7403,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.event_ListExtension
       parameters:
         - name: group-id
@@ -7476,7 +7476,7 @@ paths:
       tags:
         - groups.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -7520,7 +7520,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -8030,7 +8030,7 @@ paths:
       tags:
         - groups.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -8129,7 +8129,7 @@ paths:
       tags:
         - groups.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -8259,7 +8259,7 @@ paths:
       tags:
         - groups.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -8423,7 +8423,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: group.event.instance_ListExtension
       parameters:
         - name: group-id
@@ -8504,7 +8504,7 @@ paths:
       tags:
         - groups.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -8556,7 +8556,7 @@ paths:
       tags:
         - groups.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -8825,7 +8825,7 @@ paths:
       tags:
         - places.place
       summary: Update place
-      description: 'Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0
@@ -8984,6 +8984,323 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.roomList'
+        default:
+          $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList/rooms':
+    get:
+      tags:
+        - places.room
+      summary: Get rooms from places
+      operationId: placeAsRoomList_ListRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - address
+                - address desc
+                - displayName
+                - displayName desc
+                - geoCoordinates
+                - geoCoordinates desc
+                - phone
+                - phone desc
+                - audioDeviceName
+                - audioDeviceName desc
+                - bookingType
+                - bookingType desc
+                - building
+                - building desc
+                - capacity
+                - capacity desc
+                - displayDeviceName
+                - displayDeviceName desc
+                - emailAddress
+                - emailAddress desc
+                - floorLabel
+                - floorLabel desc
+                - floorNumber
+                - floorNumber desc
+                - isWheelChairAccessible
+                - isWheelChairAccessible desc
+                - label
+                - label desc
+                - nickname
+                - nickname desc
+                - tags
+                - tags desc
+                - videoDeviceName
+                - videoDeviceName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+                - audioDeviceName
+                - bookingType
+                - building
+                - capacity
+                - displayDeviceName
+                - emailAddress
+                - floorLabel
+                - floorNumber
+                - isWheelChairAccessible
+                - label
+                - nickname
+                - tags
+                - videoDeviceName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.roomCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - places.room
+      summary: Create new navigation property to rooms for places
+      operationId: placeAsRoomList_CreateRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.room'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/{room-id}':
+    get:
+      tags:
+        - places.room
+      summary: Get rooms from places
+      operationId: placeAsRoomList_GetRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+                - audioDeviceName
+                - bookingType
+                - building
+                - capacity
+                - displayDeviceName
+                - emailAddress
+                - floorLabel
+                - floorNumber
+                - isWheelChairAccessible
+                - label
+                - nickname
+                - tags
+                - videoDeviceName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - places.room
+      summary: Update the navigation property rooms in places
+      operationId: placeAsRoomList_UpdateRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.room'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.room'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - places.room
+      summary: Delete navigation property rooms for places
+      operationId: placeAsRoomList_DeleteRoom
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: room-id
+          in: path
+          description: The unique identifier of room
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: room
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/places/{place-id}/microsoft.graph.roomList/rooms/$count':
+    get:
+      tags:
+        - places.room
+      summary: Get the number of the resource
+      operationId: place.room_GetCount
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
   /places/$count:
@@ -9171,7 +9488,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendar
-      description: "Get the properties and relationships of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar: This API is available in the following national cloud deployments."
+      description: "Get the properties and relationships of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0
@@ -9229,7 +9546,7 @@ paths:
       tags:
         - users.calendar
       summary: Update calendar
-      description: "Update the properties of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group. This API is available in the following national cloud deployments."
+      description: "Update the properties of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0
@@ -9265,7 +9582,7 @@ paths:
       tags:
         - users.calendar
       summary: List calendarPermissions
-      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar. This API is available in the following national cloud deployments.'
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
@@ -9336,7 +9653,7 @@ paths:
       tags:
         - users.calendar
       summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
+      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
@@ -9372,7 +9689,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+      description: Get the specified permissions object of a user or group calendar that has been shared.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
@@ -9425,7 +9742,7 @@ paths:
       tags:
         - users.calendar
       summary: Update calendarPermission
-      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is available in the following national cloud deployments.'
+      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
@@ -9468,7 +9785,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete calendarPermission
-      description: Delete calendarPermission. This API is available in the following national cloud deployments.
+      description: Delete calendarPermission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
@@ -9835,7 +10152,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -9926,7 +10243,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -10040,7 +10357,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -10180,7 +10497,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.calendarView_ListExtension
       parameters:
         - name: user-id
@@ -10253,7 +10570,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -10297,7 +10614,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -10807,7 +11124,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -10906,7 +11223,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -11036,7 +11353,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -11200,7 +11517,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.calendarView.instance_ListExtension
       parameters:
         - name: user-id
@@ -11281,7 +11598,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -11333,7 +11650,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -11602,7 +11919,7 @@ paths:
       tags:
         - users.calendar
       summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. This API is available in the following national cloud deployments."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -11802,7 +12119,7 @@ paths:
       tags:
         - users.calendar
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.  This API is available in the following national cloud deployments.'
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -11947,7 +12264,7 @@ paths:
       tags:
         - users.calendar
       summary: Update event
-      description: Update an event object. This API is available in the following national cloud deployments.
+      description: Update an event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0
@@ -12025,7 +12342,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -12116,7 +12433,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -12230,7 +12547,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -12370,7 +12687,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.event_ListExtension
       parameters:
         - name: user-id
@@ -12443,7 +12760,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -12487,7 +12804,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -12997,7 +13314,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -13096,7 +13413,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -13226,7 +13543,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -13390,7 +13707,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.event.instance_ListExtension
       parameters:
         - name: user-id
@@ -13471,7 +13788,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -13523,7 +13840,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -13792,7 +14109,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List calendarGroups
-      description: Get the user's calendar groups. This API is available in the following national cloud deployments.
+      description: Get the user's calendar groups.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0
@@ -13858,7 +14175,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create CalendarGroup
-      description: Use this API to create a new CalendarGroup. This API is available in the following national cloud deployments.
+      description: Use this API to create a new CalendarGroup.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0
@@ -13894,7 +14211,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarGroup
-      description: Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a calendar group object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0
@@ -13946,7 +14263,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update calendargroup
-      description: Update the properties of calendargroup object. This API is available in the following national cloud deployments.
+      description: Update the properties of calendargroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0
@@ -13989,7 +14306,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete calendarGroup
-      description: Delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
+      description: Delete a calendar group other than the default calendar group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0
@@ -14028,7 +14345,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List calendars
-      description: Retrieve a list of calendars belonging to a calendar group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of calendars belonging to a calendar group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
@@ -14136,7 +14453,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create Calendar
-      description: Use this API to create a new calendar in a calendar group for a user. This API is available in the following national cloud deployments.
+      description: Use this API to create a new calendar in a calendar group for a user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
@@ -14341,7 +14658,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List calendarPermissions
-      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar. This API is available in the following national cloud deployments.'
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
@@ -14428,7 +14745,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
+      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
@@ -14480,7 +14797,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+      description: Get the specified permissions object of a user or group calendar that has been shared.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
@@ -14549,7 +14866,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update calendarPermission
-      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is available in the following national cloud deployments.'
+      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
@@ -14608,7 +14925,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete calendarPermission
-      description: Delete calendarPermission. This API is available in the following national cloud deployments.
+      description: Delete calendarPermission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
@@ -14700,7 +15017,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List calendarView
-      description: "Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,\nfrom a user's default calendar (../me/calendarView) or some other calendar of the user's. This API is available in the following national cloud deployments."
+      description: "Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,\nfrom a user's default calendar (../me/calendarView) or some other calendar of the user's."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
@@ -15007,7 +15324,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -15114,7 +15431,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -15260,7 +15577,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -15448,7 +15765,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendarGroup.calendar.calendarView_ListExtension
       parameters:
         - name: user-id
@@ -15537,7 +15854,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -15597,7 +15914,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -16203,7 +16520,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -16318,7 +16635,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -16480,7 +16797,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -16692,7 +17009,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendarGroup.calendar.calendarView.instance_ListExtension
       parameters:
         - name: user-id
@@ -16789,7 +17106,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -16857,7 +17174,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -17222,7 +17539,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. This API is available in the following national cloud deployments."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -17438,7 +17755,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.  This API is available in the following national cloud deployments.'
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -17615,7 +17932,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Update event
-      description: Update an event object. This API is available in the following national cloud deployments.
+      description: Update an event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0
@@ -17725,7 +18042,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -17832,7 +18149,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -17978,7 +18295,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -18166,7 +18483,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendarGroup.calendar.event_ListExtension
       parameters:
         - name: user-id
@@ -18255,7 +18572,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -18315,7 +18632,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -18921,7 +19238,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -19036,7 +19353,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -19198,7 +19515,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -19410,7 +19727,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendarGroup.calendar.event.instance_ListExtension
       parameters:
         - name: user-id
@@ -19507,7 +19824,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -19575,7 +19892,7 @@ paths:
       tags:
         - users.calendarGroup
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -19990,7 +20307,7 @@ paths:
       tags:
         - users.calendar
       summary: List calendars
-      description: 'Get all the user''s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.  This API is available in the following national cloud deployments.'
+      description: 'Get all the user''s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0
@@ -20107,7 +20424,7 @@ paths:
       tags:
         - users.calendar
       summary: Create calendar
-      description: Create a new calendar for a user. This API is available in the following national cloud deployments.
+      description: Create a new calendar for a user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0
@@ -20297,7 +20614,7 @@ paths:
       tags:
         - users.calendar
       summary: List calendarPermissions
-      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar. This API is available in the following national cloud deployments.'
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
@@ -20376,7 +20693,7 @@ paths:
       tags:
         - users.calendar
       summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
+      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
@@ -20420,7 +20737,7 @@ paths:
       tags:
         - users.calendar
       summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
+      description: Get the specified permissions object of a user or group calendar that has been shared.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0
@@ -20481,7 +20798,7 @@ paths:
       tags:
         - users.calendar
       summary: Update calendarPermission
-      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar. This API is available in the following national cloud deployments.'
+      description: 'Update the permissions assigned to an existing share recipient or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0
@@ -20532,7 +20849,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete calendarPermission
-      description: Delete calendarPermission. This API is available in the following national cloud deployments.
+      description: Delete calendarPermission.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0
@@ -20931,7 +21248,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -21030,7 +21347,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -21160,7 +21477,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -21324,7 +21641,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.calendarView_ListExtension
       parameters:
         - name: user-id
@@ -21405,7 +21722,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -21457,7 +21774,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -22015,7 +22332,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -22122,7 +22439,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -22268,7 +22585,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -22456,7 +22773,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.calendarView.instance_ListExtension
       parameters:
         - name: user-id
@@ -22545,7 +22862,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -22605,7 +22922,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -22922,7 +23239,7 @@ paths:
       tags:
         - users.calendar
       summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. This API is available in the following national cloud deployments."
+      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
@@ -23130,7 +23447,7 @@ paths:
       tags:
         - users.calendar
       summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group.  This API is available in the following national cloud deployments.'
+      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
@@ -23291,7 +23608,7 @@ paths:
       tags:
         - users.calendar
       summary: Update event
-      description: Update an event object. This API is available in the following national cloud deployments.
+      description: Update an event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0
@@ -23385,7 +23702,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -23484,7 +23801,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -23614,7 +23931,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -23778,7 +24095,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.event_ListExtension
       parameters:
         - name: user-id
@@ -23859,7 +24176,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -23911,7 +24228,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -24469,7 +24786,7 @@ paths:
       tags:
         - users.calendar
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -24576,7 +24893,7 @@ paths:
       tags:
         - users.calendar
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -24722,7 +25039,7 @@ paths:
       tags:
         - users.calendar
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -24910,7 +25227,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendar.event.instance_ListExtension
       parameters:
         - name: user-id
@@ -24999,7 +25316,7 @@ paths:
       tags:
         - users.calendar
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -25059,7 +25376,7 @@ paths:
       tags:
         - users.calendar
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -25740,7 +26057,7 @@ paths:
       tags:
         - users.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -25831,7 +26148,7 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -25945,7 +26262,7 @@ paths:
       tags:
         - users.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -26085,7 +26402,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendarView_ListExtension
       parameters:
         - name: user-id
@@ -26158,7 +26475,7 @@ paths:
       tags:
         - users.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -26202,7 +26519,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -26712,7 +27029,7 @@ paths:
       tags:
         - users.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -26811,7 +27128,7 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -26941,7 +27258,7 @@ paths:
       tags:
         - users.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -27105,7 +27422,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.calendarView.instance_ListExtension
       parameters:
         - name: user-id
@@ -27186,7 +27503,7 @@ paths:
       tags:
         - users.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -27238,7 +27555,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -27507,7 +27824,7 @@ paths:
       tags:
         - users.event
       summary: List events
-      description: "Get a list of event objects in the user's mailbox. The list contains single \ninstance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. Currently, this operation returns event bodies in only HTML format. There are two scenarios where an app can get events in another user's calendar: This API is available in the following national cloud deployments."
+      description: "Get a list of event objects in the user's mailbox. The list contains single \ninstance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. Currently, this operation returns event bodies in only HTML format. There are two scenarios where an app can get events in another user's calendar:"
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-events?view=graph-rest-1.0
@@ -27706,11 +28023,11 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create event
-      description: "Create an event in the user's default calendar or specified calendar. By default, the allowNewTimeProposals property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the \nstart and end properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.  When an event is sent, the server sends invitations to all the attendees. Setting the location in an event An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment \nlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejects \nthe meeting request based on the free/busy schedule of the resource. \nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled, \nthe server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource: This API is available in the following national cloud deployments."
+      summary: Create multi-value extended property
+      description: "Create one or more multi-value extended properties in a new or existing instance of a resource. The following user resources are supported: The following group resources are supported: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties."
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/multivaluelegacyextendedproperty-post-multivalueextendedproperties?view=graph-rest-1.0
       operationId: user_CreateEvent
       parameters:
         - name: user-id
@@ -27743,7 +28060,7 @@ paths:
       tags:
         - users.event
       summary: Get event
-      description: 'Get the properties and relationships of the specified event object. Currently, this operation returns event bodies in only HTML format. There are two scenarios where an app can get an event in another user''s calendar: Since the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance. This API is available in the following national cloud deployments.'
+      description: 'Get the properties and relationships of the specified event object. Currently, this operation returns event bodies in only HTML format. There are two scenarios where an app can get an event in another user''s calendar: Since the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-get?view=graph-rest-1.0
@@ -27855,7 +28172,7 @@ paths:
       tags:
         - users.event
       summary: Update event
-      description: Update the properties of the event object. This API is available in the following national cloud deployments.
+      description: Update the properties of the event object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-update?view=graph-rest-1.0
@@ -27898,7 +28215,7 @@ paths:
       tags:
         - users.event
       summary: Delete event
-      description: 'Removes the specified event from the containing calendar.  If the event is a meeting, deleting the event on the organizer''s calendar sends a cancellation message to the meeting attendees. This API is available in the following national cloud deployments.'
+      description: 'Removes the specified event from the containing calendar.  If the event is a meeting, deleting the event on the organizer''s calendar sends a cancellation message to the meeting attendees.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-delete?view=graph-rest-1.0
@@ -27937,7 +28254,7 @@ paths:
       tags:
         - users.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -28028,7 +28345,7 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -28142,7 +28459,7 @@ paths:
       tags:
         - users.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -28282,7 +28599,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.event_ListExtension
       parameters:
         - name: user-id
@@ -28355,7 +28672,7 @@ paths:
       tags:
         - users.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -28399,7 +28716,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0
@@ -28909,7 +29226,7 @@ paths:
       tags:
         - users.event
       summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event. This API is available in the following national cloud deployments.
+      description: Retrieve a list of attachment objects attached to an event.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -29008,7 +29325,7 @@ paths:
       tags:
         - users.event
       summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well. This API is available in the following national cloud deployments.'
+      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
@@ -29138,7 +29455,7 @@ paths:
       tags:
         - users.event
       summary: Delete attachment
-      description: 'Delete an attachment from a user calendar event, mail message, or group post. This API is available in the following national cloud deployments.'
+      description: 'Delete an attachment from a user calendar event, mail message, or group post.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0
@@ -29302,7 +29619,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       operationId: user.event.instance_ListExtension
       parameters:
         - name: user-id
@@ -29383,7 +29700,7 @@ paths:
       tags:
         - users.event
       summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions. This API is available in the following national cloud deployments.'
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
@@ -29435,7 +29752,7 @@ paths:
       tags:
         - users.event
       summary: Get open extension
-      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance. This API is available in the following national cloud deployments.
+      description: Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0

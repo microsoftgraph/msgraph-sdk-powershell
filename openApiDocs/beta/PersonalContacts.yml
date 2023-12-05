@@ -11,7 +11,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List contactFolders
-      description: Get all the contact folders in the signed-in user's mailbox. This API is available in the following national cloud deployments.
+      description: Get all the contact folders in the signed-in user's mailbox.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
@@ -96,7 +96,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create ContactFolder
-      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder. This API is available in the following national cloud deployments.
+      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
@@ -132,7 +132,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolder
-      description: 'Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user''s contact folder: This API is available in the following national cloud deployments.'
+      description: 'Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user''s contact folder:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0
@@ -203,7 +203,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update contactfolder
-      description: Update the properties of contactfolder object. This API is available in the following national cloud deployments.
+      description: Update the properties of contactfolder object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0
@@ -246,7 +246,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete contactFolder
-      description: Delete contactFolder other than the default contactFolder. This API is available in the following national cloud deployments.
+      description: Delete contactFolder other than the default contactFolder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0
@@ -285,7 +285,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List childFolders
-      description: Get a collection of child folders under the specified contact folder. This API is available in the following national cloud deployments.
+      description: Get a collection of child folders under the specified contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
@@ -378,7 +378,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create ContactFolder
-      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder. This API is available in the following national cloud deployments.
+      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
@@ -588,7 +588,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.'
+      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
@@ -791,7 +791,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
@@ -1747,7 +1747,7 @@ paths:
       tags:
         - users.contactFolder
       summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder. This API is available in the following national cloud deployments.'
+      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
@@ -1942,7 +1942,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
@@ -2770,7 +2770,7 @@ paths:
       tags:
         - users.contact
       summary: List contacts
-      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder: This API is available in the following national cloud deployments.'
+      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
@@ -2958,7 +2958,7 @@ paths:
       tags:
         - users.contact
       summary: Create contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder. This API is available in the following national cloud deployments.
+      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
@@ -2994,7 +2994,7 @@ paths:
       tags:
         - users.contact
       summary: Get contact
-      description: 'Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user''s contact folder: This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user''s contact folder:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-get?view=graph-rest-1.0
@@ -3099,7 +3099,7 @@ paths:
       tags:
         - users.contact
       summary: Update contact
-      description: Update the properties of contact object. This API is available in the following national cloud deployments.
+      description: Update the properties of contact object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-update?view=graph-rest-1.0
@@ -3142,7 +3142,7 @@ paths:
       tags:
         - users.contact
       summary: Delete contact
-      description: Delete contact. This API is available in the following national cloud deployments.
+      description: Delete contact.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0

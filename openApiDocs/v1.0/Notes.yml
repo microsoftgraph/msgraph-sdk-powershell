@@ -129,7 +129,7 @@ paths:
       tags:
         - groups.onenote
       summary: List notebooks
-      description: Retrieve a list of notebook objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of notebook objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
@@ -238,7 +238,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create notebook
-      description: Create a new OneNote notebook. This API is available in the following national cloud deployments.
+      description: Create a new OneNote notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
@@ -274,7 +274,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a notebook object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
@@ -424,7 +424,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
@@ -533,7 +533,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create sectionGroup
-      description: Create a new section group in the specified notebook. This API is available in the following national cloud deployments.
+      description: Create a new section group in the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
@@ -912,7 +912,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -1158,7 +1158,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -1276,7 +1276,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -1522,7 +1522,7 @@ paths:
       tags:
         - groups.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -1652,7 +1652,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -2546,7 +2546,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified notebook. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
@@ -2656,7 +2656,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified notebook. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
@@ -2870,7 +2870,7 @@ paths:
       tags:
         - groups.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -2992,7 +2992,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -3782,7 +3782,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information. This API is available in the following national cloud deployments.'
+      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
       operationId: group.onenote_ListOperation
       parameters:
         - name: group-id
@@ -3901,7 +3901,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information. This API is available in the following national cloud deployments.'
+      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
@@ -4064,7 +4064,7 @@ paths:
       tags:
         - groups.onenote
       summary: List onenotePages
-      description: Retrieve a list of page objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
@@ -4170,7 +4170,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create onenotePage
-      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.   This API is available in the following national cloud deployments.'
+      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0
@@ -4206,7 +4206,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get page
-      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
@@ -4320,7 +4320,7 @@ paths:
       tags:
         - groups.onenote
       summary: Delete page
-      description: Delete a OneNote page. This API is available in the following national cloud deployments.
+      description: Delete a OneNote page.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
@@ -4946,7 +4946,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of sectionGroup objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
@@ -5079,7 +5079,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a sectionGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
@@ -5377,7 +5377,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -5599,7 +5599,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -5709,7 +5709,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -5923,7 +5923,7 @@ paths:
       tags:
         - groups.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -6045,7 +6045,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -6835,7 +6835,7 @@ paths:
       tags:
         - groups.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
@@ -6969,7 +6969,7 @@ paths:
       tags:
         - groups.onenote
       summary: Get section
-      description: Retrieve the properties and relationships of a onenoteSection object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a onenoteSection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
@@ -7118,7 +7118,7 @@ paths:
       tags:
         - groups.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -7232,7 +7232,7 @@ paths:
       tags:
         - groups.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -8023,7 +8023,7 @@ paths:
       tags:
         - sites.onenote
       summary: List notebooks
-      description: Retrieve a list of notebook objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of notebook objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
@@ -8132,7 +8132,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create notebook
-      description: Create a new OneNote notebook. This API is available in the following national cloud deployments.
+      description: Create a new OneNote notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
@@ -8168,7 +8168,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a notebook object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
@@ -8318,7 +8318,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
@@ -8427,7 +8427,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create sectionGroup
-      description: Create a new section group in the specified notebook. This API is available in the following national cloud deployments.
+      description: Create a new section group in the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
@@ -8806,7 +8806,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -9052,7 +9052,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -9170,7 +9170,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -9416,7 +9416,7 @@ paths:
       tags:
         - sites.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -9546,7 +9546,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -10440,7 +10440,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified notebook. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
@@ -10550,7 +10550,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified notebook. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
@@ -10764,7 +10764,7 @@ paths:
       tags:
         - sites.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -10886,7 +10886,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -11676,7 +11676,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information. This API is available in the following national cloud deployments.'
+      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
       operationId: site.onenote_ListOperation
       parameters:
         - name: site-id
@@ -11795,7 +11795,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information. This API is available in the following national cloud deployments.'
+      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
@@ -11958,7 +11958,7 @@ paths:
       tags:
         - sites.onenote
       summary: List onenotePages
-      description: Retrieve a list of page objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
@@ -12064,7 +12064,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create onenotePage
-      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.   This API is available in the following national cloud deployments.'
+      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0
@@ -12100,7 +12100,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get page
-      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
@@ -12214,7 +12214,7 @@ paths:
       tags:
         - sites.onenote
       summary: Delete page
-      description: Delete a OneNote page. This API is available in the following national cloud deployments.
+      description: Delete a OneNote page.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
@@ -12840,7 +12840,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of sectionGroup objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
@@ -12973,7 +12973,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a sectionGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
@@ -13271,7 +13271,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -13493,7 +13493,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -13603,7 +13603,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -13817,7 +13817,7 @@ paths:
       tags:
         - sites.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -13939,7 +13939,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -14729,7 +14729,7 @@ paths:
       tags:
         - sites.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
@@ -14863,7 +14863,7 @@ paths:
       tags:
         - sites.onenote
       summary: Get section
-      description: Retrieve the properties and relationships of a onenoteSection object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a onenoteSection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
@@ -15012,7 +15012,7 @@ paths:
       tags:
         - sites.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -15126,7 +15126,7 @@ paths:
       tags:
         - sites.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -15916,7 +15916,7 @@ paths:
       tags:
         - users.onenote
       summary: List notebooks
-      description: Retrieve a list of notebook objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of notebook objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
@@ -16025,7 +16025,7 @@ paths:
       tags:
         - users.onenote
       summary: Create notebook
-      description: Create a new OneNote notebook. This API is available in the following national cloud deployments.
+      description: Create a new OneNote notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
@@ -16061,7 +16061,7 @@ paths:
       tags:
         - users.onenote
       summary: Get notebook
-      description: Retrieve the properties and relationships of a notebook object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a notebook object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0
@@ -16211,7 +16211,7 @@ paths:
       tags:
         - users.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
@@ -16320,7 +16320,7 @@ paths:
       tags:
         - users.onenote
       summary: Create sectionGroup
-      description: Create a new section group in the specified notebook. This API is available in the following national cloud deployments.
+      description: Create a new section group in the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
@@ -16699,7 +16699,7 @@ paths:
       tags:
         - users.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -16945,7 +16945,7 @@ paths:
       tags:
         - users.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -17063,7 +17063,7 @@ paths:
       tags:
         - users.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -17309,7 +17309,7 @@ paths:
       tags:
         - users.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -17439,7 +17439,7 @@ paths:
       tags:
         - users.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -18333,7 +18333,7 @@ paths:
       tags:
         - users.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified notebook. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
@@ -18443,7 +18443,7 @@ paths:
       tags:
         - users.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified notebook. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified notebook.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
@@ -18657,7 +18657,7 @@ paths:
       tags:
         - users.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -18779,7 +18779,7 @@ paths:
       tags:
         - users.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -19569,7 +19569,7 @@ paths:
       tags:
         - users.onenote
       summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information. This API is available in the following national cloud deployments.'
+      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
       operationId: user.onenote_ListOperation
       parameters:
         - name: user-id
@@ -19688,7 +19688,7 @@ paths:
       tags:
         - users.onenote
       summary: Get onenoteOperation
-      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information. This API is available in the following national cloud deployments.'
+      description: 'Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenoteoperation-get?view=graph-rest-1.0
@@ -19851,7 +19851,7 @@ paths:
       tags:
         - users.onenote
       summary: List onenotePages
-      description: Retrieve a list of page objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-pages?view=graph-rest-1.0
@@ -19957,7 +19957,7 @@ paths:
       tags:
         - users.onenote
       summary: Create onenotePage
-      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.   This API is available in the following national cloud deployments.'
+      description: 'Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the sectionName query parameter.  Example: ../onenote/pages?sectionName=My%20section The POST /onenote/pages operation is used only to create pages in the current user''s default notebook. If you''re targeting other notebooks, you can create pages in a specified section.  '
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-post-pages?view=graph-rest-1.0
@@ -19993,7 +19993,7 @@ paths:
       tags:
         - users.onenote
       summary: Get page
-      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of a page object. Getting page information Access a page''s metadata by page identifier: Getting page content You can use the page''s content endpoint to get the HTML content of a page: The includeIDs=true query option is used to update pages.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-get?view=graph-rest-1.0
@@ -20107,7 +20107,7 @@ paths:
       tags:
         - users.onenote
       summary: Delete page
-      description: Delete a OneNote page. This API is available in the following national cloud deployments.
+      description: Delete a OneNote page.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0
@@ -20733,7 +20733,7 @@ paths:
       tags:
         - users.onenote
       summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of sectionGroup objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
@@ -20866,7 +20866,7 @@ paths:
       tags:
         - users.onenote
       summary: Get sectionGroup
-      description: Retrieve the properties and relationships of a sectionGroup object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a sectionGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-get?view=graph-rest-1.0
@@ -21164,7 +21164,7 @@ paths:
       tags:
         - users.onenote
       summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of section groups from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
@@ -21386,7 +21386,7 @@ paths:
       tags:
         - users.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects from the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
@@ -21496,7 +21496,7 @@ paths:
       tags:
         - users.onenote
       summary: Create section
-      description: Create a new onenoteSection in the specified section group. This API is available in the following national cloud deployments.
+      description: Create a new onenoteSection in the specified section group.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
@@ -21710,7 +21710,7 @@ paths:
       tags:
         - users.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -21832,7 +21832,7 @@ paths:
       tags:
         - users.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0
@@ -22622,7 +22622,7 @@ paths:
       tags:
         - users.onenote
       summary: List sections
-      description: Retrieve a list of onenoteSection objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of onenoteSection objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
@@ -22756,7 +22756,7 @@ paths:
       tags:
         - users.onenote
       summary: Get section
-      description: Retrieve the properties and relationships of a onenoteSection object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a onenoteSection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0
@@ -22905,7 +22905,7 @@ paths:
       tags:
         - users.onenote
       summary: List pages
-      description: Retrieve a list of page objects from the specified section. This API is available in the following national cloud deployments.
+      description: Retrieve a list of page objects from the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-list-pages?view=graph-rest-1.0
@@ -23019,7 +23019,7 @@ paths:
       tags:
         - users.onenote
       summary: Create page
-      description: Create a new page in the specified section. This API is available in the following national cloud deployments.
+      description: Create a new page in the specified section.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/section-post-pages?view=graph-rest-1.0

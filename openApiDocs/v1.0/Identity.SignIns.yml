@@ -11,7 +11,7 @@ paths:
       tags:
         - dataPolicyOperations.dataPolicyOperation
       summary: Get dataPolicyOperation
-      description: Retrieve the properties of a dataPolicyOperation object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of a dataPolicyOperation object.
       operationId: dataPolicyOperation_ListDataPolicyOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -110,7 +110,7 @@ paths:
       tags:
         - dataPolicyOperations.dataPolicyOperation
       summary: Get dataPolicyOperation
-      description: Retrieve the properties of a dataPolicyOperation object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of a dataPolicyOperation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/datapolicyoperation-get?view=graph-rest-1.0
@@ -313,7 +313,7 @@ paths:
       tags:
         - identity.identityApiConnector
       summary: List identityApiConnectors
-      description: Read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+      description: Read the properties of an identityApiConnector object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0
@@ -383,7 +383,7 @@ paths:
       tags:
         - identity.identityApiConnector
       summary: Create identityApiConnector
-      description: Create a new identityApiConnector object. This API is available in the following national cloud deployments.
+      description: Create a new identityApiConnector object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0
@@ -410,7 +410,7 @@ paths:
       tags:
         - identity.identityApiConnector
       summary: Get identityApiConnector
-      description: Read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+      description: Read the properties of an identityApiConnector object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0
@@ -465,7 +465,7 @@ paths:
       tags:
         - identity.identityApiConnector
       summary: Update identityApiConnector
-      description: Update the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+      description: Update the properties of an identityApiConnector object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0
@@ -500,7 +500,7 @@ paths:
       tags:
         - identity.identityApiConnector
       summary: Delete identityApiConnector
-      description: Delete an identityApiConnector object. This API is available in the following national cloud deployments.
+      description: Delete an identityApiConnector object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0
@@ -531,7 +531,7 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action uploadClientCertificate
-      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector. This API is available in the following national cloud deployments.
+      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
@@ -590,7 +590,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: List b2xIdentityUserFlows
-      description: Retrieve a list of b2xIdentityUserFlow objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of b2xIdentityUserFlow objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitycontainer-list-b2xuserflows?view=graph-rest-1.0
@@ -668,7 +668,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Create b2xIdentityUserFlow
-      description: Create a new b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+      description: Create a new b2xIdentityUserFlow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitycontainer-post-b2xuserflows?view=graph-rest-1.0
@@ -695,7 +695,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Get b2xIdentityUserFlow
-      description: Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a b2xIdentityUserFlow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0
@@ -789,7 +789,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Delete b2xIdentityUserFlow
-      description: Delete a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+      description: Delete a b2xIdentityUserFlow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0
@@ -1054,7 +1054,7 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action uploadClientCertificate
-      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector. This API is available in the following national cloud deployments.
+      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
@@ -1281,7 +1281,7 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action uploadClientCertificate
-      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector. This API is available in the following national cloud deployments.
+      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
@@ -1326,7 +1326,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: List identityProviders
-      description: Get the identity providers in a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+      description: Get the identity providers in a b2xIdentityUserFlow object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-identityproviders?view=graph-rest-1.0
@@ -1554,7 +1554,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: List languages
-      description: Retrieve a list of languages supported for customization in a B2X user flow. This API is available in the following national cloud deployments.
+      description: Retrieve a list of languages supported for customization in a B2X user flow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0
@@ -1665,7 +1665,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Get userFlowLanguageConfiguration
-      description: 'Read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Microsoft Entra user flows. This API is available in the following national cloud deployments.'
+      description: 'Read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Microsoft Entra user flows.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-get?view=graph-rest-1.0
@@ -2190,7 +2190,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: List overridesPages
-      description: Get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow. This API is available in the following national cloud deployments.
+      description: Get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
@@ -2603,7 +2603,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: List userAttributeAssignments
-      description: Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow. This API is available in the following national cloud deployments.
+      description: Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-userattributeassignments?view=graph-rest-1.0
@@ -2689,7 +2689,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Create userAttributeAssignments
-      description: Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow. This API is available in the following national cloud deployments.
+      description: Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/b2xidentityuserflow-post-userattributeassignments?view=graph-rest-1.0
@@ -2725,7 +2725,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Get identityUserFlowAttributeAssignment
-      description: Read the properties and relationships of an identityUserFlowAttributeAssignment object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an identityUserFlowAttributeAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-get?view=graph-rest-1.0
@@ -2792,7 +2792,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Update identityUserFlowAttributeAssignment
-      description: Update the properties of a identityUserFlowAttributeAssignment object. This API is available in the following national cloud deployments.
+      description: Update the properties of a identityUserFlowAttributeAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-update?view=graph-rest-1.0
@@ -2835,7 +2835,7 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Delete userAttributeAssignment
-      description: Delete an identityUserFlowAttributeAssignment object. This API is available in the following national cloud deployments.
+      description: Delete an identityUserFlowAttributeAssignment object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-delete?view=graph-rest-1.0
@@ -2983,7 +2983,7 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action setOrder
-      description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow. This API is available in the following national cloud deployments.
+      description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
@@ -3325,7 +3325,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List authenticationContextClassReferences
-      description: Retrieve a list of authenticationContextClassReference objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of authenticationContextClassReference objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0
@@ -3418,7 +3418,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationContextClassReference
-      description: Retrieve the properties and relationships of a authenticationContextClassReference object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a authenticationContextClassReference object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0
@@ -3473,7 +3473,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update authenticationContextClassReference
-      description: 'Create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object. This API is available in the following national cloud deployments.'
+      description: 'Create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0
@@ -3508,7 +3508,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Delete authenticationContextClassReference
-      description: Delete an authenticationContextClassReference object that's not published or used by a conditional access policy. This API is available in the following national cloud deployments.
+      description: Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0
@@ -3639,7 +3639,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List authenticationMethodModes
-      description: 'Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties. This API is available in the following national cloud deployments.'
+      description: 'Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0
@@ -4072,7 +4072,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths. This API is available in the following national cloud deployments.'
+      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
@@ -4144,7 +4144,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies. This API is available in the following national cloud deployments.'
+      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
@@ -4180,7 +4180,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationCombinationConfiguration
-      description: Read the properties and relationships of an authenticationCombinationConfiguration object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an authenticationCombinationConfiguration object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-get?view=graph-rest-1.0
@@ -4241,7 +4241,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update authenticationCombinationConfiguration
-      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0
@@ -4284,7 +4284,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Delete authenticationCombinationConfiguration
-      description: Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+      description: Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-delete-combinationconfigurations?view=graph-rest-1.0
@@ -4345,7 +4345,7 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action updateAllowedCombinations
-      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method. This API is available in the following national cloud deployments.'
+      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
@@ -4427,7 +4427,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List namedLocations
-      description: Get a list of namedLocation objects. This API is available in the following national cloud deployments.
+      description: Get a list of namedLocation objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0
@@ -4497,7 +4497,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Create namedLocation
-      description: Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects. This API is available in the following national cloud deployments.
+      description: Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0
@@ -4523,11 +4523,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object. This API is available in the following national cloud deployments.
+      summary: Get countryNamedLocation
+      description: Retrieve the properties and relationships of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/countrynamedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4579,7 +4579,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object. This API is available in the following national cloud deployments.
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
@@ -4613,11 +4613,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object. This API is available in the following national cloud deployments.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4659,7 +4659,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List policies
-      description: Retrieve a list of conditionalAccessPolicy objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of conditionalAccessPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-policies?view=graph-rest-1.0
@@ -4747,7 +4747,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Create conditionalAccessPolicy
-      description: Create a new conditionalAccessPolicy. This API is available in the following national cloud deployments.
+      description: Create a new conditionalAccessPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccessroot-post-policies?view=graph-rest-1.0
@@ -4774,7 +4774,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get conditionalAccessPolicy
-      description: Retrieve the properties and relationships of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a conditionalAccessPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-get?view=graph-rest-1.0
@@ -4835,7 +4835,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Update conditionalaccesspolicy
-      description: Update the properties of a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of a conditionalAccessPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-update?view=graph-rest-1.0
@@ -4870,7 +4870,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Delete conditionalAccessPolicy
-      description: Delete a conditionalAccessPolicy object. This API is available in the following national cloud deployments.
+      description: Delete a conditionalAccessPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-delete?view=graph-rest-1.0
@@ -4915,7 +4915,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: List conditionalAccessTemplates
-      description: Get a list of the conditionalAccessTemplate objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the conditionalAccessTemplate objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0
@@ -4989,7 +4989,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get conditionalAccessTemplate
-      description: Read the properties and relationships of a conditionalAccessTemplate object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a conditionalAccessTemplate object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/conditionalaccesstemplate-get?view=graph-rest-1.0
@@ -5060,7 +5060,7 @@ paths:
       tags:
         - identity.identityProviderBase
       summary: List identityProviders
-      description: 'Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For a Microsoft Entra tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects. This API is available in the following national cloud deployments.'
+      description: 'Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For a Microsoft Entra tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitycontainer-list-identityproviders?view=graph-rest-1.0
@@ -5124,7 +5124,7 @@ paths:
       tags:
         - identity.identityProviderBase
       summary: Create identityProvider
-      description: 'Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource. This API is available in the following national cloud deployments.'
+      description: 'Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-1.0
@@ -5151,7 +5151,7 @@ paths:
       tags:
         - identity.identityProviderBase
       summary: Get identityProvider
-      description: 'Get the properties and relationships of the specified identity provider configured in the tenant. Among the types of providers derived from identityProviderBase, you can currently get a socialIdentityProvider or a builtinIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently get a socialIdentityProvider, or an appleManagedIdentityProvider resource. This API is available in the following national cloud deployments.'
+      description: 'Get the properties and relationships of the specified identity provider configured in the tenant. Among the types of providers derived from identityProviderBase, you can currently get a socialIdentityProvider or a builtinIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently get a socialIdentityProvider, or an appleManagedIdentityProvider resource.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityproviderbase-get?view=graph-rest-1.0
@@ -5204,7 +5204,7 @@ paths:
       tags:
         - identity.identityProviderBase
       summary: Update identityProvider
-      description: 'Update the properties of the specified identity provider configured in the tenant. Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently update a socialIdentityProvider, or an appleManagedIdentityProvider resource. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of the specified identity provider configured in the tenant. Among the types of providers derived from identityProviderBase, you can currently update a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently update a socialIdentityProvider, or an appleManagedIdentityProvider resource.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityproviderbase-update?view=graph-rest-1.0
@@ -5239,7 +5239,7 @@ paths:
       tags:
         - identity.identityProviderBase
       summary: Delete identityProvider
-      description: 'Delete an identity provider resource that is of the type specified by the id in the request. Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently delete a socialIdentityProvider, or an appleManagedIdentityProvider resource. This API is available in the following national cloud deployments.'
+      description: 'Delete an identity provider resource that is of the type specified by the id in the request. Among the types of providers derived from identityProviderBase, you can currently delete a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently delete a socialIdentityProvider, or an appleManagedIdentityProvider resource.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityproviderbase-delete?view=graph-rest-1.0
@@ -5320,7 +5320,7 @@ paths:
       tags:
         - identity.identityUserFlowAttribute
       summary: List identityUserFlowAttributes
-      description: Retrieve a list of identityUserFlowAttribute objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of identityUserFlowAttribute objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattribute-list?view=graph-rest-1.0
@@ -5393,7 +5393,7 @@ paths:
       tags:
         - identity.identityUserFlowAttribute
       summary: Create identityUserFlowAttribute
-      description: Create a new custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+      description: Create a new custom identityUserFlowAttribute object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0
@@ -5420,7 +5420,7 @@ paths:
       tags:
         - identity.identityUserFlowAttribute
       summary: Get identityUserFlowAttribute
-      description: Retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a identityUserFlowAttribute object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0
@@ -5476,7 +5476,7 @@ paths:
       tags:
         - identity.identityUserFlowAttribute
       summary: Update identityUserFlowAttribute
-      description: Update the properties of a custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+      description: Update the properties of a custom identityUserFlowAttribute object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0
@@ -5511,7 +5511,7 @@ paths:
       tags:
         - identity.identityUserFlowAttribute
       summary: Delete identityUserFlowAttribute
-      description: Delete a custom identityUserFlowAttribute. This API is available in the following national cloud deployments.
+      description: Delete a custom identityUserFlowAttribute.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0
@@ -5626,7 +5626,7 @@ paths:
       tags:
         - identityProtection.riskDetection
       summary: List riskDetections
-      description: Get a list of the riskDetection objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the riskDetection objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
@@ -5767,7 +5767,7 @@ paths:
       tags:
         - identityProtection.riskDetection
       summary: Get riskDetection
-      description: Read the properties and relationships of a riskDetection object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a riskDetection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
@@ -5910,7 +5910,7 @@ paths:
       tags:
         - identityProtection.riskyServicePrincipal
       summary: List riskyServicePrincipals
-      description: Retrieve the properties and relationships of riskyServicePrincipal objects. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of riskyServicePrincipal objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprotectionroot-list-riskyserviceprincipals?view=graph-rest-1.0
@@ -6023,7 +6023,7 @@ paths:
       tags:
         - identityProtection.riskyServicePrincipal
       summary: Get riskyServicePrincipal
-      description: Read the properties and relationships of a riskyServicePrincipal object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a riskyServicePrincipal object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-get?view=graph-rest-1.0
@@ -6144,7 +6144,7 @@ paths:
       tags:
         - identityProtection.riskyServicePrincipal
       summary: List history (risk history of riskyServicePrincipal)
-      description: Get the risk history of a riskyServicePrincipal object. This API is available in the following national cloud deployments.
+      description: Get the risk history of a riskyServicePrincipal object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-list-history?view=graph-rest-1.0
@@ -6460,7 +6460,7 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action confirmCompromised
-      description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high. This API is available in the following national cloud deployments.
+      description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0
@@ -6491,7 +6491,7 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action dismiss
-      description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request. This API is available in the following national cloud deployments.
+      description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to none. You can dismiss up to 60 service principal accounts in one request.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyserviceprincipal-dismiss?view=graph-rest-1.0
@@ -6522,7 +6522,7 @@ paths:
       tags:
         - identityProtection.riskyUser
       summary: List riskyUsers
-      description: Get a list of the riskyUser objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the riskyUser objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyuser-list?view=graph-rest-1.0
@@ -6632,7 +6632,7 @@ paths:
       tags:
         - identityProtection.riskyUser
       summary: Get riskyUser
-      description: Read the properties and relationships of a riskyUser object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a riskyUser object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyuser-get?view=graph-rest-1.0
@@ -6752,7 +6752,7 @@ paths:
       tags:
         - identityProtection.riskyUser
       summary: List history
-      description: Get the riskyUserHistoryItems from the history navigation property. This API is available in the following national cloud deployments.
+      description: Get the riskyUserHistoryItems from the history navigation property.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
@@ -7068,7 +7068,7 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action confirmCompromised
-      description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high. This API is available in the following national cloud deployments.
+      description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyuser-confirmcompromised?view=graph-rest-1.0
@@ -7099,7 +7099,7 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action dismiss
-      description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none. This API is available in the following national cloud deployments.
+      description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/riskyuser-dismiss?view=graph-rest-1.0
@@ -7130,7 +7130,7 @@ paths:
       tags:
         - identityProtection.servicePrincipalRiskDetection
       summary: List servicePrincipalRiskDetections
-      description: Retrieve the properties of a collection of servicePrincipalRiskDetection objects. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprotectionroot-list-serviceprincipalriskdetections?view=graph-rest-1.0
@@ -7274,7 +7274,7 @@ paths:
       tags:
         - identityProtection.servicePrincipalRiskDetection
       summary: Get servicePrincipalRiskDetection
-      description: Read the properties and relationships of a servicePrincipalRiskDetection object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a servicePrincipalRiskDetection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/serviceprincipalriskdetection-get?view=graph-rest-1.0
@@ -7418,7 +7418,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: List identityProviders (deprecated)
-      description: Retrieve all identityProviders in the directory. This API is available in the following national cloud deployments.
+      description: Retrieve all identityProviders in the directory.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0
@@ -7497,7 +7497,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Create identityProvider (deprecated)
-      description: 'Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret. This API is available in the following national cloud deployments.'
+      description: 'Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0
@@ -7530,7 +7530,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Get identityProvider (deprecated)
-      description: Retrieve the properties of an existing identityProvider. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an existing identityProvider.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprovider-get?view=graph-rest-1.0
@@ -7592,7 +7592,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Update identityProvider (deprecated)
-      description: Update properties in an existing identityProvider. This API is available in the following national cloud deployments.
+      description: Update properties in an existing identityProvider.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprovider-update?view=graph-rest-1.0
@@ -7633,7 +7633,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Delete identityProvider (deprecated)
-      description: Delete an existing identityProvider. This API is available in the following national cloud deployments.
+      description: Delete an existing identityProvider.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identityprovider-delete?view=graph-rest-1.0
@@ -7841,7 +7841,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: List recoveryKeys
-      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the key property. For information about how to read the key property, see Get bitlockerRecoveryKey. This API is available in the following national cloud deployments.'
+      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the key property. For information about how to read the key property, see Get bitlockerRecoveryKey.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0
@@ -7915,7 +7915,7 @@ paths:
       tags:
         - informationProtection.bitlocker
       summary: Get bitlockerRecoveryKey
-      description: 'Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation doesn''t return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log. For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Microsoft Entra audit logs. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation doesn''t return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers a Microsoft Entra audit of the operation and generates an audit log. For more information on audit logs for bitlocker recovery keys, see the KeyManagement category filter of Microsoft Entra audit logs.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0
@@ -7986,7 +7986,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: List threatAssessmentRequests
-      description: 'Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0
@@ -8070,7 +8070,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Create threatAssessmentRequest
-      description: 'Create a new threat assessment request. A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.'
+      description: 'Create a new threat assessment request. A threat assessment request can be one of the following types:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0
@@ -8097,7 +8097,7 @@ paths:
       tags:
         - informationProtection.threatAssessmentRequest
       summary: Get threatAssessmentRequest
-      description: 'Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types: This API is available in the following national cloud deployments.'
+      description: 'Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0
@@ -8579,7 +8579,7 @@ paths:
       tags:
         - invitations.invitation
       summary: Create invitation
-      description: 'Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available: This API is available in the following national cloud deployments.'
+      description: 'Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0
@@ -9139,7 +9139,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: List oauth2PermissionGrants (delegated permission grants)
-      description: 'Retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-1.0
@@ -9215,7 +9215,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Create oAuth2PermissionGrant (a delegated permission grant)
-      description: 'Create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted. This API is available in the following national cloud deployments.'
+      description: 'Create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-1.0
@@ -9242,7 +9242,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Get oAuth2PermissionGrant (a delegated permission grant)
-      description: Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object. An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of a single delegated permission grant represented by an oAuth2PermissionGrant object. An oAuth2PermissionGrant represents delegated permissions which have been granted for a client application to access an API on behalf of a signed-in user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-get?view=graph-rest-1.0
@@ -9299,7 +9299,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Update a delegated permission grant (oAuth2PermissionGrant)
-      description: 'Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant. An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of oAuth2PermissionGrant object, representing a delegated permission grant. An oAuth2PermissionGrant can be updated to change which delegated permissions are granted, by adding or removing items from the list in scopes.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-update?view=graph-rest-1.0
@@ -9334,7 +9334,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Delete oAuth2PermissionGrant (a delegated permission grant)
-      description: 'Delete a delegated permission grant, represented by an oAuth2PermissionGrant object. When a delegated permission grant is deleted, the access it granted is revoked. Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant. This API is available in the following national cloud deployments.'
+      description: 'Delete a delegated permission grant, represented by an oAuth2PermissionGrant object. When a delegated permission grant is deleted, the access it granted is revoked. Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted oAuth2PermissionGrant.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-1.0
@@ -9458,7 +9458,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: List certificateBasedAuthConfigurations
-      description: Get a list of certificateBasedAuthConfiguration objects. This API is available in the following national cloud deployments.
+      description: Get a list of certificateBasedAuthConfiguration objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-list?view=graph-rest-1.0
@@ -9530,7 +9530,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Create certificateBasedAuthConfiguration
-      description: Create a new certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+      description: Create a new certificateBasedAuthConfiguration object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-post-certificatebasedauthconfiguration?view=graph-rest-1.0
@@ -9566,7 +9566,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Get certificateBasedAuthConfiguration
-      description: Get the properties of a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+      description: Get the properties of a certificateBasedAuthConfiguration object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0
@@ -9627,7 +9627,7 @@ paths:
       tags:
         - organization.certificateBasedAuthConfiguration
       summary: Delete certificateBasedAuthConfiguration
-      description: Delete a certificateBasedAuthConfiguration object. This API is available in the following national cloud deployments.
+      description: Delete a certificateBasedAuthConfiguration object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0
@@ -9789,7 +9789,7 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: List activityBasedTimeoutPolicies
-      description: Get a list of activityBasedTimeoutPolicy objects. This API is available in the following national cloud deployments.
+      description: Get a list of activityBasedTimeoutPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-list?view=graph-rest-1.0
@@ -9867,7 +9867,7 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: Create activityBasedTimeoutPolicy
-      description: Create a new activityBasedTimeoutPolicy object. This API is available in the following national cloud deployments.
+      description: Create a new activityBasedTimeoutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-post-activitybasedtimeoutpolicies?view=graph-rest-1.0
@@ -9894,7 +9894,7 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: Get activityBasedTimeoutPolicy
-      description: Get the properties of an activityBasedTimeoutPolicy object. This API is available in the following national cloud deployments.
+      description: Get the properties of an activityBasedTimeoutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-get?view=graph-rest-1.0
@@ -9953,7 +9953,7 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: Update activitybasedtimeoutpolicy
-      description: Update the properties of an activityBasedTimeoutPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of an activityBasedTimeoutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-update?view=graph-rest-1.0
@@ -9988,7 +9988,7 @@ paths:
       tags:
         - policies.activityBasedTimeoutPolicy
       summary: Delete activityBasedTimeoutPolicy
-      description: Delete an activityBasedTimeoutPolicy object. This API is available in the following national cloud deployments.
+      description: Delete an activityBasedTimeoutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/activitybasedtimeoutpolicy-delete?view=graph-rest-1.0
@@ -10182,7 +10182,7 @@ paths:
       tags:
         - policies.adminConsentRequestPolicy
       summary: Get adminConsentRequestPolicy
-      description: Read the properties and relationships of an adminConsentRequestPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an adminConsentRequestPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-1.0
@@ -10277,7 +10277,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: List appManagementPolicies
-      description: Retrieve a list of appManagementPolicy objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of appManagementPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0
@@ -10355,7 +10355,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Create appManagementPolicy
-      description: Create an appManagementPolicy object. This API is available in the following national cloud deployments.
+      description: Create an appManagementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0
@@ -10382,7 +10382,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Get appManagementPolicy
-      description: Read the properties of an appManagementPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties of an appManagementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-get?view=graph-rest-1.0
@@ -10441,7 +10441,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Update appManagementPolicy
-      description: Update an appManagementPolicy object. This API is available in the following national cloud deployments.
+      description: Update an appManagementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0
@@ -10476,7 +10476,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: Delete appManagementPolicy
-      description: Delete an appManagementPolicy object. This API is available in the following national cloud deployments.
+      description: Delete an appManagementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0
@@ -10507,7 +10507,7 @@ paths:
       tags:
         - policies.appManagementPolicy
       summary: List appliesTo
-      description: List application and service principal objects that are assigned an appManagementPolicy policy object. This API is available in the following national cloud deployments.
+      description: List application and service principal objects that are assigned an appManagementPolicy policy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/appmanagementpolicy-list-appliesto?view=graph-rest-1.0
@@ -10675,7 +10675,7 @@ paths:
       tags:
         - policies.authenticationFlowsPolicy
       summary: Get authenticationFlowsPolicy
-      description: Read the properties and relationships of an authenticationFlowsPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an authenticationFlowsPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationflowspolicy-get?view=graph-rest-1.0
@@ -10722,7 +10722,7 @@ paths:
       tags:
         - policies.authenticationFlowsPolicy
       summary: Update authenticationFlowsPolicy
-      description: 'Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified. This API is available in the following national cloud deployments.'
+      description: 'Update the selfServiceSignUp property of an authenticationFlowsPolicy object. The properties id, type, and description cannot be modified.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationflowspolicy-update?view=graph-rest-1.0
@@ -10767,7 +10767,7 @@ paths:
       tags:
         - policies.authenticationMethodsPolicy
       summary: Get authenticationMethodsPolicy
-      description: Read the properties and relationships of an authenticationMethodsPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an authenticationMethodsPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0
@@ -10820,7 +10820,7 @@ paths:
       tags:
         - policies.authenticationMethodsPolicy
       summary: Update authenticationMethodsPolicy
-      description: Update the properties of an authenticationMethodsPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of an authenticationMethodsPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethodspolicy-update?view=graph-rest-1.0
@@ -11075,7 +11075,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: List authenticationStrengthPolicies
-      description: Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies. This API is available in the following national cloud deployments.
+      description: Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0
@@ -11159,7 +11159,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Create authenticationStrengthPolicy
-      description: Create a new custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+      description: Create a new custom authenticationStrengthPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0
@@ -11186,7 +11186,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Get authenticationStrengthPolicy
-      description: Read the properties and relationships of an authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an authenticationStrengthPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-get?view=graph-rest-1.0
@@ -11247,7 +11247,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Update authenticationStrengthPolicy
-      description: 'Update the properties of an authenticationStrengthPolicy object. You cannot update the allowed auth method combinations using this request. To do so, use the Update allowed combinations action. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of an authenticationStrengthPolicy object. You cannot update the allowed auth method combinations using this request. To do so, use the Update allowed combinations action.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-update?view=graph-rest-1.0
@@ -11282,7 +11282,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Delete authenticationStrengthPolicy
-      description: Delete a custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+      description: Delete a custom authenticationStrengthPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthroot-delete-policies?view=graph-rest-1.0
@@ -11313,7 +11313,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths. This API is available in the following national cloud deployments.'
+      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
@@ -11385,7 +11385,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies. This API is available in the following national cloud deployments.'
+      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
@@ -11421,7 +11421,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Get authenticationCombinationConfiguration
-      description: Read the properties and relationships of an authenticationCombinationConfiguration object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an authenticationCombinationConfiguration object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-get?view=graph-rest-1.0
@@ -11482,7 +11482,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Update authenticationCombinationConfiguration
-      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created. This API is available in the following national cloud deployments.'
+      description: 'Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they''re the only type of authenticationCombinationConfiguration that may be created.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0
@@ -11525,7 +11525,7 @@ paths:
       tags:
         - policies.authenticationStrengthPolicy
       summary: Delete authenticationCombinationConfiguration
-      description: Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+      description: Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-delete-combinationconfigurations?view=graph-rest-1.0
@@ -11586,7 +11586,7 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action updateAllowedCombinations
-      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method. This API is available in the following national cloud deployments.'
+      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
@@ -11668,7 +11668,7 @@ paths:
       tags:
         - policies.authorizationPolicy
       summary: Get authorizationPolicy
-      description: Retrieve the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an authorizationPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-1.0
@@ -11723,7 +11723,7 @@ paths:
       tags:
         - policies.authorizationPolicy
       summary: Update authorizationPolicy
-      description: Update the properties of an authorizationPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of an authorizationPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authorizationpolicy-update?view=graph-rest-1.0
@@ -11768,7 +11768,7 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: List claimsMappingPolicies
-      description: Get a list of claimsMappingPolicy objects. This API is available in the following national cloud deployments.
+      description: Get a list of claimsMappingPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/claimsmappingpolicy-list?view=graph-rest-1.0
@@ -11846,7 +11846,7 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: Create claimsMappingPolicy
-      description: Create a new claimsMappingPolicy object. This API is available in the following national cloud deployments.
+      description: Create a new claimsMappingPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/claimsmappingpolicy-post-claimsmappingpolicies?view=graph-rest-1.0
@@ -11873,7 +11873,7 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: Get claimsMappingPolicy
-      description: Retrieve the properties and relationships of a claimsMappingPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a claimsMappingPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/claimsmappingpolicy-get?view=graph-rest-1.0
@@ -11932,7 +11932,7 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: Update claimsmappingpolicy
-      description: Update the properties of a claimsMappingPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of a claimsMappingPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/claimsmappingpolicy-update?view=graph-rest-1.0
@@ -11967,7 +11967,7 @@ paths:
       tags:
         - policies.claimsMappingPolicy
       summary: Delete claimsMappingPolicy
-      description: Delete a claimsMappingPolicy object. This API is available in the following national cloud deployments.
+      description: Delete a claimsMappingPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/claimsmappingpolicy-delete?view=graph-rest-1.0
@@ -12399,7 +12399,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get crossTenantAccessPolicy
-      description: Read the properties and relationships of a crossTenantAccessPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a crossTenantAccessPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0
@@ -12451,7 +12451,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Update crossTenantAccessPolicy
-      description: Update the properties of a cross-tenant access policy. This API is available in the following national cloud deployments.
+      description: Update the properties of a cross-tenant access policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0
@@ -12496,7 +12496,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get crossTenantAccessPolicyConfigurationDefault
-      description: Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false). This API is available in the following national cloud deployments.
+      description: Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-get?view=graph-rest-1.0
@@ -12547,7 +12547,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Update crossTenantAccessPolicyConfigurationDefault
-      description: Update the default configuration of a cross-tenant access policy. This API is available in the following national cloud deployments.
+      description: Update the default configuration of a cross-tenant access policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-1.0
@@ -12592,7 +12592,7 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action resetToSystemDefault
-      description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default. This API is available in the following national cloud deployments.
+      description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0
@@ -12608,7 +12608,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: List partners
-      description: Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations. This API is available in the following national cloud deployments.
+      description: Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-1.0
@@ -12692,7 +12692,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Create crossTenantAccessPolicyConfigurationPartner
-      description: Create a new partner configuration in a cross-tenant access policy. This API is available in the following national cloud deployments.
+      description: Create a new partner configuration in a cross-tenant access policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-post-partners?view=graph-rest-1.0
@@ -12719,7 +12719,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get crossTenantAccessPolicyConfigurationPartner
-      description: Read the properties and relationships of a partner-specific configuration. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a partner-specific configuration.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-get?view=graph-rest-1.0
@@ -12780,7 +12780,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Update crossTenantAccessPolicyConfigurationPartner
-      description: Update the properties of a partner-specific configuration. This API is available in the following national cloud deployments.
+      description: Update the properties of a partner-specific configuration.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-update?view=graph-rest-1.0
@@ -12815,7 +12815,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Delete crossTenantAccessPolicyConfigurationPartner
-      description: 'Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration. This API is available in the following national cloud deployments.'
+      description: 'Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete?view=graph-rest-1.0
@@ -12846,7 +12846,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Get crossTenantIdentitySyncPolicyPartner
-      description: Get the user synchronization policy of a partner-specific configuration. This API is available in the following national cloud deployments.
+      description: Get the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0
@@ -12931,7 +12931,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Delete crossTenantIdentitySyncPolicyPartner
-      description: Delete the user synchronization policy for a partner-specific configuration. This API is available in the following national cloud deployments.
+      description: Delete the user synchronization policy for a partner-specific configuration.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0
@@ -12976,7 +12976,7 @@ paths:
       tags:
         - policies.tenantAppManagementPolicy
       summary: Get tenantAppManagementPolicy
-      description: Read the properties of a tenantAppManagementPolicy object. This API is available in the following national cloud deployments.
+      description: Read the properties of a tenantAppManagementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0
@@ -13026,7 +13026,7 @@ paths:
       tags:
         - policies.tenantAppManagementPolicy
       summary: Update tenantAppManagementPolicy
-      description: Update the properties of a tenantAppManagementPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of a tenantAppManagementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0
@@ -13071,7 +13071,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: List featureRolloutPolicies
-      description: Retrieve a list of featureRolloutPolicy objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of featureRolloutPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicies-list?view=graph-rest-1.0
@@ -13149,7 +13149,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Create featureRolloutPolicy
-      description: Create a new featureRolloutPolicy object. This API is available in the following national cloud deployments.
+      description: Create a new featureRolloutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicies-post?view=graph-rest-1.0
@@ -13176,7 +13176,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Get featureRolloutPolicy
-      description: Retrieve the properties and relationships of a featureRolloutPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a featureRolloutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-1.0
@@ -13235,7 +13235,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Update featurerolloutpolicy
-      description: Update the properties of featureRolloutPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of featureRolloutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-1.0
@@ -13270,7 +13270,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Delete featureRolloutPolicy
-      description: Delete a featureRolloutPolicy object. This API is available in the following national cloud deployments.
+      description: Delete a featureRolloutPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-1.0
@@ -13370,7 +13370,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Assign appliesTo on a featureRolloutPolicy
-      description: Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is available in the following national cloud deployments.
+      description: Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
@@ -13406,7 +13406,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Remove appliesTo on a featureRolloutPolicy
-      description: Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+      description: Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
@@ -13518,7 +13518,7 @@ paths:
       tags:
         - policies.featureRolloutPolicy
       summary: Assign appliesTo on a featureRolloutPolicy
-      description: Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is available in the following national cloud deployments.
+      description: Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0
@@ -13559,7 +13559,7 @@ paths:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: List homeRealmDiscoveryPolicies
-      description: Get a list of homeRealmDiscoveryPolicy objects. This API is available in the following national cloud deployments.
+      description: Get a list of homeRealmDiscoveryPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0
@@ -13637,7 +13637,7 @@ paths:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: Create homeRealmDiscoveryPolicy
-      description: Create a new homeRealmDiscoveryPolicy object. This API is available in the following national cloud deployments.
+      description: Create a new homeRealmDiscoveryPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0
@@ -13664,7 +13664,7 @@ paths:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicy
-      description: Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-get?view=graph-rest-1.0
@@ -13723,7 +13723,7 @@ paths:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: Update homerealmdiscoverypolicy
-      description: Update the properties of a homeRealmDiscoveryPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of a homeRealmDiscoveryPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-update?view=graph-rest-1.0
@@ -13758,7 +13758,7 @@ paths:
       tags:
         - policies.homeRealmDiscoveryPolicy
       summary: Delete homeRealmDiscoveryPolicy
-      description: Delete a homeRealmDiscoveryPolicy object. This API is available in the following national cloud deployments.
+      description: Delete a homeRealmDiscoveryPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-delete?view=graph-rest-1.0
@@ -13952,7 +13952,7 @@ paths:
       tags:
         - policies.identitySecurityDefaultsEnforcementPolicy
       summary: Get identitySecurityDefaultsEnforcementPolicy
-      description: Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0
@@ -14000,7 +14000,7 @@ paths:
       tags:
         - policies.identitySecurityDefaultsEnforcementPolicy
       summary: Update identitySecurityDefaultsEnforcementPolicy
-      description: Update the properties of an identitySecurityDefaultsEnforcementPolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-update?view=graph-rest-1.0
@@ -14045,7 +14045,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: List permissionGrantPolicies
-      description: Retrieve the list of permissionGrantPolicy objects. This API is available in the following national cloud deployments.
+      description: Retrieve the list of permissionGrantPolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0
@@ -14119,7 +14119,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Create permissionGrantPolicy
-      description: 'Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules. This API is available in the following national cloud deployments.'
+      description: 'Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-1.0
@@ -14146,7 +14146,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Get permissionGrantPolicy
-      description: Retrieve a single permissionGrantPolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve a single permissionGrantPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0
@@ -14205,7 +14205,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Update permissionGrantPolicy
-      description: Update properties of a  permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Update properties of a  permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0
@@ -14240,7 +14240,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Delete permissionGrantPolicy
-      description: Delete a permissionGrantPolicy object. This API is available in the following national cloud deployments.
+      description: Delete a permissionGrantPolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0
@@ -14271,7 +14271,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: List excludes collection of permissionGrantPolicy
-      description: Retrieve the condition sets which are *excluded* in a permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0
@@ -14364,7 +14364,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Create permissionGrantConditionSet in excludes collection of permissionGrantPolicy
-      description: Add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-1.0
@@ -14504,7 +14504,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Delete permissionGrantConditionSet from excludes collection of permissionGrantPolicy
-      description: Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-1.0
@@ -14565,7 +14565,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: List includes collection of permissionGrantPolicy
-      description: Retrieve the condition sets which are *included* in a permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Retrieve the condition sets which are *included* in a permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0
@@ -14658,7 +14658,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Create permissionGrantConditionSet in includes collection of permissionGrantPolicy
-      description: Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the includes collection of a  permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0
@@ -14798,7 +14798,7 @@ paths:
       tags:
         - policies.permissionGrantPolicy
       summary: Delete permissionGrantConditionSet from includes collection of permissionGrantPolicy
-      description: Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
+      description: Deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-1.0
@@ -14873,7 +14873,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: List roleManagementPolicies
-      description: 'Get the details of the policies in PIM that can be applied to Microsoft Entra roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies. This API is available in the following national cloud deployments.'
+      description: 'Get the details of the policies in PIM that can be applied to Microsoft Entra roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0
@@ -14982,7 +14982,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get unifiedRoleManagementPolicy
-      description: Retrieve the details of a role management policy. This API is available in the following national cloud deployments.
+      description: Retrieve the details of a role management policy.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0
@@ -15358,7 +15358,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: List rules (for a role management policy)
-      description: 'Get the rules or settings defined for a role management policy. The rules are a collection of following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.'
+      description: 'Get the rules or settings defined for a role management policy. The rules are a collection of following types that are derived from the unifiedRoleManagementPolicyRule object:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-rules?view=graph-rest-1.0
@@ -15462,7 +15462,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Get unifiedRoleManagementPolicyRule
-      description: 'Retrieve a rule or settings defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.'
+      description: 'Retrieve a rule or settings defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-get?view=graph-rest-1.0
@@ -15523,7 +15523,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: Update unifiedRoleManagementPolicyRule
-      description: 'Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles: This API is available in the following national cloud deployments.'
+      description: 'Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Microsoft Entra roles and examples of updating rules, see the following articles:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-1.0
@@ -15637,7 +15637,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: List roleManagementPolicyAssignments
-      description: Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups. This API is available in the following national cloud deployments.
+      description: Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0
@@ -15735,7 +15735,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: Get unifiedRoleManagementPolicyAssignment
-      description: Get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership. This API is available in the following national cloud deployments.
+      description: Get the details of a policy assignment in PIM that's assigned to Microsoft Entra roles or group membership or ownership.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0
@@ -15926,7 +15926,7 @@ paths:
       tags:
         - policies.tokenIssuancePolicy
       summary: List tokenIssuancePolicy
-      description: Get a list of tokenIssuancePolicy objects. This API is available in the following national cloud deployments.
+      description: Get a list of tokenIssuancePolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenissuancepolicy-list?view=graph-rest-1.0
@@ -16004,7 +16004,7 @@ paths:
       tags:
         - policies.tokenIssuancePolicy
       summary: Create tokenIssuancePolicy
-      description: Create a new tokenIssuancePolicy object. This API is available in the following national cloud deployments.
+      description: Create a new tokenIssuancePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenissuancepolicy-post-tokenissuancepolicy?view=graph-rest-1.0
@@ -16087,7 +16087,7 @@ paths:
       tags:
         - policies.tokenIssuancePolicy
       summary: Update tokenIssuancePolicy
-      description: Update the properties of a tokenIssuancePolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of a tokenIssuancePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenissuancepolicy-update?view=graph-rest-1.0
@@ -16122,7 +16122,7 @@ paths:
       tags:
         - policies.tokenIssuancePolicy
       summary: Delete tokenIssuancePolicy
-      description: Delete a tokenIssuancePolicy object. This API is available in the following national cloud deployments.
+      description: Delete a tokenIssuancePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenissuancepolicy-delete?view=graph-rest-1.0
@@ -16316,7 +16316,7 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: List tokenLifetimePolicies
-      description: Get a list of tokenLifetimePolicy objects. This API is available in the following national cloud deployments.
+      description: Get a list of tokenLifetimePolicy objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-list?view=graph-rest-1.0
@@ -16394,7 +16394,7 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: Create tokenLifetimePolicy
-      description: Create a new tokenLifetimePolicy object. This API is available in the following national cloud deployments.
+      description: Create a new tokenLifetimePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-post-tokenlifetimepolicies?view=graph-rest-1.0
@@ -16421,7 +16421,7 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: Get tokenLifetimePolicy
-      description: Retrieve the properties and relationships of a tokenLifetimePolicy object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a tokenLifetimePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-get?view=graph-rest-1.0
@@ -16480,7 +16480,7 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: Update tokenlifetimepolicy
-      description: Update the properties of a tokenLifetimePolicy object. This API is available in the following national cloud deployments.
+      description: Update the properties of a tokenLifetimePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-update?view=graph-rest-1.0
@@ -16515,7 +16515,7 @@ paths:
       tags:
         - policies.tokenLifetimePolicy
       summary: Delete tokenLifetimePolicy
-      description: Delete a tokenLifetimePolicy object. This API is available in the following national cloud deployments.
+      description: Delete a tokenLifetimePolicy object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/tokenlifetimepolicy-delete?view=graph-rest-1.0
@@ -16836,7 +16836,7 @@ paths:
       tags:
         - users.authentication
       summary: List emailMethods
-      description: Retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a user's emailAuthenticationMethod objects and their properties. This API will return only a single object in the collection as only one email method can be set for a user.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-list-emailmethods?view=graph-rest-1.0
@@ -16908,7 +16908,7 @@ paths:
       tags:
         - users.authentication
       summary: Create emailMethod
-      description: Set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method. This API is available in the following national cloud deployments.
+      description: Set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0
@@ -16944,7 +16944,7 @@ paths:
       tags:
         - users.authentication
       summary: Get emailAuthenticationMethod
-      description: Retrieve a user's single email authentication method object. This API is available in the following national cloud deployments.
+      description: Retrieve a user's single email authentication method object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/emailauthenticationmethod-get?view=graph-rest-1.0
@@ -17005,7 +17005,7 @@ paths:
       tags:
         - users.authentication
       summary: Update emailAuthenticationMethod
-      description: Update a user's email address represented by an emailAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Update a user's email address represented by an emailAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0
@@ -17048,7 +17048,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete emailAuthenticationMethod
-      description: Deletes a user's emailAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Deletes a user's emailAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/emailauthenticationmethod-delete?view=graph-rest-1.0
@@ -17109,7 +17109,7 @@ paths:
       tags:
         - users.authentication
       summary: List fido2AuthenticationMethod
-      description: Retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0
@@ -17197,7 +17197,7 @@ paths:
       tags:
         - users.authentication
       summary: Get fido2AuthenticationMethod
-      description: Retrieve a user's single FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+      description: Retrieve a user's single FIDO2 Security Key Authentication Method object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0
@@ -17263,7 +17263,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete fido2AuthenticationMethod
-      description: Deletes a user's FIDO2 Security Key Authentication Method object. This API is available in the following national cloud deployments.
+      description: Deletes a user's FIDO2 Security Key Authentication Method object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0
@@ -17324,7 +17324,7 @@ paths:
       tags:
         - users.authentication
       summary: List methods
-      description: 'Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Microsoft Entra authentication methods API overview for a list of currently supported methods. We don''t recommend using the authentication methods APIs for scenarios where you need to iterate over your entire user population for auditing or security check purposes. For these types of scenarios, we recommend using the authentication method registration and usage reporting APIs (available on the beta endpoint only). This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Microsoft Entra authentication methods API overview for a list of currently supported methods. We don''t recommend using the authentication methods APIs for scenarios where you need to iterate over your entire user population for auditing or security check purposes. For these types of scenarios, we recommend using the authentication method registration and usage reporting APIs (available on the beta endpoint only).'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
@@ -17425,7 +17425,7 @@ paths:
       tags:
         - users.authentication
       summary: Get authenticationMethod
-      description: Retrieve the properties and relationships of an authenticationMethod object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of an authenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0
@@ -17547,7 +17547,7 @@ paths:
       tags:
         - users.authentication
       summary: List microsoftAuthenticatorAuthenticationMethods
-      description: Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-list?view=graph-rest-1.0
@@ -17631,7 +17631,7 @@ paths:
       tags:
         - users.authentication
       summary: Get microsoftAuthenticatorAuthenticationMethod
-      description: Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-get?view=graph-rest-1.0
@@ -17697,7 +17697,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete microsoftAuthenticatorAuthenticationMethod
-      description: Deletes a microsoftAuthenticatorAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Deletes a microsoftAuthenticatorAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-delete?view=graph-rest-1.0
@@ -17850,7 +17850,7 @@ paths:
       tags:
         - users.authentication
       summary: Get longRunningOperation
-      description: 'Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user''s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user''s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.'
       operationId: user.authentication_ListOperation
       parameters:
         - name: user-id
@@ -17963,7 +17963,7 @@ paths:
       tags:
         - users.authentication
       summary: Get longRunningOperation
-      description: 'Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user''s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states. This API is available in the following national cloud deployments.'
+      description: 'Retrieve the status of a long-running operation, represented by a longRunningOperation object. A long-running operation is initiated when you reset a user''s password. This resource type is also the base type for the richLongRunningOperation object that represents the status of a long-running operation on a site or a list. The possible states of the long-running operation are notStarted, running, succeeded, failed, unknownFutureValue where succeeded and failed are terminal states.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/longrunningoperation-get?view=graph-rest-1.0
@@ -18124,7 +18124,7 @@ paths:
       tags:
         - users.authentication
       summary: List passwordMethods
-      description: 'Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object, as a user can have exactly one password. For security, the password itself will never be returned in the object and the password property is always null. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object, as a user can have exactly one password. For security, the password itself will never be returned in the object and the password property is always null.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-1.0
@@ -18231,7 +18231,7 @@ paths:
       tags:
         - users.authentication
       summary: Get passwordAuthenticationMethod
-      description: 'Retrieve a password that''s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a password that''s registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/passwordauthenticationmethod-get?view=graph-rest-1.0
@@ -18316,7 +18316,7 @@ paths:
       tags:
         - users.authentication
       summary: List phoneMethods
-      description: 'Retrieve a list of phone authentication method objects for a user. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of phone authentication method objects for a user. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-list-phonemethods?view=graph-rest-1.0
@@ -18394,7 +18394,7 @@ paths:
       tags:
         - users.authentication
       summary: Create phoneMethod
-      description: 'Add a new phone authentication method for a user. A user may only have one phone of each type, captured in the phoneType property. This means, for example, adding a mobile phone to a user with a pre-existing mobile phone fails. Additionally, a user must always have a mobile phone before adding an alternateMobile phone. Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system. This API is available in the following national cloud deployments.'
+      description: 'Add a new phone authentication method for a user. A user may only have one phone of each type, captured in the phoneType property. This means, for example, adding a mobile phone to a user with a pre-existing mobile phone fails. Additionally, a user must always have a mobile phone before adding an alternateMobile phone. Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-post-phonemethods?view=graph-rest-1.0
@@ -18430,7 +18430,7 @@ paths:
       tags:
         - users.authentication
       summary: Get phoneAuthenticationMethod
-      description: 'Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Microsoft Entra ID and B2B users, but not B2C users.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-get?view=graph-rest-1.0
@@ -18493,7 +18493,7 @@ paths:
       tags:
         - users.authentication
       summary: Update phoneAuthenticationMethod
-      description: 'Update a user''s phone number associated with a phone authentication method object. You can''t change a phone''s type. To change a phone''s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system. This API is available in the following national cloud deployments.'
+      description: 'Update a user''s phone number associated with a phone authentication method object. You can''t change a phone''s type. To change a phone''s type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-update?view=graph-rest-1.0
@@ -18536,7 +18536,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete phoneAuthenticationMethod
-      description: 'Delete a user''s phone authentication method. This removes the phone number from the user and they''ll no longer be able to use the number for authentication, whether via SMS or voice calls. A user can''t have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user''s default Azure multi-factor authentication (MFA) authentication method, it can''t be deleted. Have the user change their default authentication method, and then delete the number. This API is available in the following national cloud deployments.'
+      description: 'Delete a user''s phone authentication method. This removes the phone number from the user and they''ll no longer be able to use the number for authentication, whether via SMS or voice calls. A user can''t have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user''s default Azure multi-factor authentication (MFA) authentication method, it can''t be deleted. Have the user change their default authentication method, and then delete the number.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/phoneauthenticationmethod-delete?view=graph-rest-1.0
@@ -18597,7 +18597,7 @@ paths:
       tags:
         - users.authentication
       summary: List softwareOathMethods
-      description: Retrieve a list of a user's software OATH token authentication method objects and their properties. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a user's software OATH token authentication method objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0
@@ -18670,7 +18670,7 @@ paths:
       tags:
         - users.authentication
       summary: Get softwareOathAuthenticationMethod
-      description: Retrieve a user's single Software OATH token authentication method object and its properties. This API is available in the following national cloud deployments.
+      description: Retrieve a user's single Software OATH token authentication method object and its properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-get?view=graph-rest-1.0
@@ -18731,7 +18731,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete softwareOathAuthenticationMethod
-      description: Delete a user's Software OATH token authentication method object. This API is available in the following national cloud deployments.
+      description: Delete a user's Software OATH token authentication method object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-delete?view=graph-rest-1.0
@@ -18792,7 +18792,7 @@ paths:
       tags:
         - users.authentication
       summary: List temporaryAccessPassMethods
-      description: Retrieve a list of a user's temporaryAccessPassAuthenticationMethod objects and their properties. This API will only return a single object in the collection as a user can have only one Temporary Access Pass method. This API is available in the following national cloud deployments.
+      description: Retrieve a list of a user's temporaryAccessPassAuthenticationMethod objects and their properties. This API will only return a single object in the collection as a user can have only one Temporary Access Pass method.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-list-temporaryaccesspassmethods?view=graph-rest-1.0
@@ -18882,7 +18882,7 @@ paths:
       tags:
         - users.authentication
       summary: Create temporaryAccessPassMethod
-      description: 'Create a new temporaryAccessPassAuthenticationMethod object on a user. A user can only have one Temporary Access Pass that''s usable within its specified lifetime. If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created. This API is available in the following national cloud deployments.'
+      description: 'Create a new temporaryAccessPassAuthenticationMethod object on a user. A user can only have one Temporary Access Pass that''s usable within its specified lifetime. If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/authentication-post-temporaryaccesspassmethods?view=graph-rest-1.0
@@ -18918,7 +18918,7 @@ paths:
       tags:
         - users.authentication
       summary: Get temporaryAccessPassAuthenticationMethod
-      description: Retrieve a user's single temporaryAccessPassAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-get?view=graph-rest-1.0
@@ -18985,7 +18985,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete temporaryAccessPassAuthenticationMethod
-      description: Delete a users's temporaryAccessPassAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Delete a users's temporaryAccessPassAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/temporaryaccesspassauthenticationmethod-delete?view=graph-rest-1.0
@@ -19046,7 +19046,7 @@ paths:
       tags:
         - users.authentication
       summary: List windowsHelloForBusinessAuthenticationMethods
-      description: Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-list?view=graph-rest-1.0
@@ -19127,7 +19127,7 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessAuthenticationMethod
-      description: Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0
@@ -19192,7 +19192,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete windowsHelloForBusinessAuthenticationMethod
-      description: Deletes a windowsHelloForBusinessAuthenticationMethod object. This API is available in the following national cloud deployments.
+      description: Deletes a windowsHelloForBusinessAuthenticationMethod object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-delete?view=graph-rest-1.0
@@ -20855,6 +20855,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+              description: The collection of the user's profile photos in different sizes. Read-only.
               x-ms-navigationProperty: true
             activities:
               type: array
@@ -24323,40 +24324,16 @@ components:
             type: object
     microsoft.graph.onlineMeeting:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.onlineMeetingBase'
         - title: onlineMeeting
           type: object
           properties:
-            allowAttendeeToEnableCamera:
-              type: boolean
-              description: Indicates whether attendees can turn on their camera.
-              nullable: true
-            allowAttendeeToEnableMic:
-              type: boolean
-              description: Indicates whether attendees can turn on their microphone.
-              nullable: true
-            allowedPresenters:
-              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
-            allowMeetingChat:
-              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
-            allowParticipantsToChangeName:
-              type: boolean
-              description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-              nullable: true
-            allowTeamworkReactions:
-              type: boolean
-              description: Indicates whether Teams reactions are enabled for the meeting.
-              nullable: true
             attendeeReport:
               type: string
               format: base64url
               nullable: true
-            audioConferencing:
-              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
-            chatInfo:
-              $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24375,49 +24352,19 @@ components:
             isBroadcast:
               type: boolean
               nullable: true
-            isEntryExitAnnounced:
-              type: boolean
-              description: Indicates whether to announce when callers join or leave.
-              nullable: true
-            joinInformation:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            joinMeetingIdSettings:
-              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
-            joinWebUrl:
-              type: string
-              description: The join URL of the online meeting. Read-only.
-              nullable: true
-            lobbyBypassSettings:
-              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
-            recordAutomatically:
-              type: boolean
-              description: Indicates whether to record the meeting automatically.
-              nullable: true
-            shareMeetingChatHistoryDefault:
-              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The meeting start time in UTC.
               format: date-time
               nullable: true
-            subject:
-              type: string
-              description: The subject of the online meeting.
-              nullable: true
-            videoTeleconferenceId:
-              type: string
-              description: The video teleconferencing ID. Read-only.
-              nullable: true
-            watermarkProtection:
-              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
-            attendanceReports:
+            recordings:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-              description: The attendance reports of an online meeting. Read-only.
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              description: The recordings of an online meeting. Read-only.
               x-ms-navigationProperty: true
             transcripts:
               type: array
@@ -26146,7 +26093,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn''t provisioned and is in an error state.PendingInput - The service isn''t provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn''t activated in the tenant.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -26789,7 +26736,7 @@ components:
               nullable: true
             cTag:
               type: string
-              description: An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+              description: An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
               nullable: true
             deleted:
               $ref: '#/components/schemas/microsoft.graph.deleted'
@@ -26854,6 +26801,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -26864,7 +26813,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.thumbnailSet'
-              description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
+              description: 'Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.'
               x-ms-navigationProperty: true
             versions:
               type: array
@@ -28638,55 +28587,64 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
           additionalProperties:
             type: object
-    microsoft.graph.onlineMeetingPresenters:
-      title: onlineMeetingPresenters
-      enum:
-        - everyone
-        - organization
-        - roleIsPresenter
-        - organizer
-        - unknownFutureValue
-      type: string
-    microsoft.graph.meetingChatMode:
-      title: meetingChatMode
-      enum:
-        - enabled
-        - disabled
-        - limited
-        - unknownFutureValue
-      type: string
-    microsoft.graph.audioConferencing:
-      title: audioConferencing
-      type: object
-      properties:
-        conferenceId:
-          type: string
-          description: The conference id of the online meeting.
-          nullable: true
-        dialinUrl:
-          type: string
-          description: A URL to the externally-accessible web page that contains dial-in information.
-          nullable: true
-        tollFreeNumber:
-          type: string
-          nullable: true
-        tollFreeNumbers:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: List of toll-free numbers that are displayed in the meeting invite.
-        tollNumber:
-          type: string
-          nullable: true
-        tollNumbers:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: List of toll numbers that are displayed in the meeting invite.
-      additionalProperties:
-        type: object
+    microsoft.graph.onlineMeetingBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onlineMeetingBase
+          type: object
+          properties:
+            allowAttendeeToEnableCamera:
+              type: boolean
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              nullable: true
+            allowedPresenters:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowParticipantsToChangeName:
+              type: boolean
+              nullable: true
+            allowTeamworkReactions:
+              type: boolean
+              nullable: true
+            audioConferencing:
+              $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            chatInfo:
+              $ref: '#/components/schemas/microsoft.graph.chatInfo'
+            isEntryExitAnnounced:
+              type: boolean
+              nullable: true
+            joinInformation:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
+            joinWebUrl:
+              type: string
+              nullable: true
+            lobbyBypassSettings:
+              $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
+            recordAutomatically:
+              type: boolean
+              nullable: true
+            shareMeetingChatHistoryDefault:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatHistoryDefaultMode'
+            subject:
+              type: string
+              nullable: true
+            videoTeleconferenceId:
+              type: string
+              nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
+            attendanceReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.broadcastMeetingSettings:
       title: broadcastMeetingSettings
       type: object
@@ -28713,54 +28671,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.chatInfo:
-      title: chatInfo
-      type: object
-      properties:
-        messageId:
-          type: string
-          description: The unique identifier of a message in a Microsoft Teams channel.
-          nullable: true
-        replyChainMessageId:
-          type: string
-          description: The ID of the reply message.
-          nullable: true
-        threadId:
-          type: string
-          description: The unique identifier for a thread in Microsoft Teams.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.joinMeetingIdSettings:
-      title: joinMeetingIdSettings
-      type: object
-      properties:
-        isPasscodeRequired:
-          type: boolean
-          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-          nullable: true
-        joinMeetingId:
-          type: string
-          description: The meeting ID to be used to join a meeting. Optional. Read-only.
-          nullable: true
-        passcode:
-          type: string
-          description: The passcode to join a meeting.  Optional. Read-only.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.lobbyBypassSettings:
-      title: lobbyBypassSettings
-      type: object
-      properties:
-        isDialInBypassEnabled:
-          type: boolean
-          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-          nullable: true
-        scope:
-          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
-      additionalProperties:
-        type: object
     microsoft.graph.meetingParticipants:
       title: meetingParticipants
       type: object
@@ -28773,58 +28683,33 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
-    microsoft.graph.meetingChatHistoryDefaultMode:
-      title: meetingChatHistoryDefaultMode
-      enum:
-        - none
-        - all
-        - unknownFutureValue
-      type: string
-    microsoft.graph.watermarkProtectionValues:
-      title: watermarkProtectionValues
-      type: object
-      properties:
-        isEnabledForContentSharing:
-          type: boolean
-          description: Indicates whether to apply a watermark to any shared content.
-          nullable: true
-        isEnabledForVideo:
-          type: boolean
-          description: Indicates whether to apply a watermark to everyone's video feed.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.meetingAttendanceReport:
+    microsoft.graph.callRecording:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingAttendanceReport
+        - title: callRecording
           type: object
           properties:
-            meetingEndDateTime:
+            content:
+              type: string
+              description: The content of the recording. Read-only.
+              format: base64url
+              nullable: true
+            createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: UTC time when the meeting ended. Read-only.
+              description: 'Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
-            meetingStartDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            meetingId:
               type: string
-              description: UTC time when the meeting started. Read-only.
-              format: date-time
+              description: The unique identifier of the onlineMeeting related to this recording. Read-only.
               nullable: true
-            totalParticipantCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Total number of participants. Read-only.
-              format: int32
+            meetingOrganizer:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            recordingContentUrl:
+              type: string
+              description: The URL that can be used to access the content of the recording. Read-only.
               nullable: true
-            attendanceRecords:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-              description: List of attendance records of an attendance report. Read-only.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.callTranscript:
@@ -29385,21 +29270,21 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
+              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).'
               nullable: true
             isAssignableToRole:
               type: boolean
-              description: 'Indicates whether this group can be assigned to a Microsoft Entra role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
+              description: 'Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -29442,11 +29327,11 @@ components:
               description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).'
             onPremisesSamAccountName:
               type: string
-              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+              description: Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -29458,7 +29343,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             proxyAddresses:
               type: array
@@ -29468,7 +29353,7 @@ components:
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
@@ -29489,11 +29374,11 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
+              description: 'Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can''t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.'
               nullable: true
             allowExternalSenders:
               type: boolean
-              description: 'Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             autoSubscribeNewMembers:
               type: boolean
@@ -29505,11 +29390,11 @@ components:
               nullable: true
             hideFromOutlookClients:
               type: boolean
-              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             isSubscribedByMail:
               type: boolean
-              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
+              description: 'Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).'
               nullable: true
             unseenCount:
               maximum: 2147483647
@@ -29520,7 +29405,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
-              description: 'When a group is associated with a team this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
+              description: 'When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.'
               nullable: true
             appRoleAssignments:
               type: array
@@ -29569,7 +29454,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
+              description: 'The groups that a group is a member of, either directly or through nested membership. Nullable.'
               x-ms-navigationProperty: true
             transitiveMembers:
               type: array
@@ -29581,7 +29466,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
+              description: 'The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here are allowed to post.'
               x-ms-navigationProperty: true
             calendar:
               $ref: '#/components/schemas/microsoft.graph.calendar'
@@ -29607,7 +29492,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
+              description: The list of users or groups not allowed to create posts or calendar events in this group. Nullable
               x-ms-navigationProperty: true
             threads:
               type: array
@@ -31237,6 +31122,32 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              description: 'Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.'
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              description: The retention label on the document. Read-write.
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32769,6 +32680,157 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.onlineMeetingPresenters:
+      title: onlineMeetingPresenters
+      enum:
+        - everyone
+        - organization
+        - roleIsPresenter
+        - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
+    microsoft.graph.audioConferencing:
+      title: audioConferencing
+      type: object
+      properties:
+        conferenceId:
+          type: string
+          description: The conference id of the online meeting.
+          nullable: true
+        dialinUrl:
+          type: string
+          description: A URL to the externally-accessible web page that contains dial-in information.
+          nullable: true
+        tollFreeNumber:
+          type: string
+          nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
+        tollNumber:
+          type: string
+          nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
+      additionalProperties:
+        type: object
+    microsoft.graph.chatInfo:
+      title: chatInfo
+      type: object
+      properties:
+        messageId:
+          type: string
+          description: The unique identifier of a message in a Microsoft Teams channel.
+          nullable: true
+        replyChainMessageId:
+          type: string
+          description: The ID of the reply message.
+          nullable: true
+        threadId:
+          type: string
+          description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          description: Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
+          nullable: true
+        joinMeetingId:
+          type: string
+          description: The meeting ID to be used to join a meeting. Optional. Read-only.
+          nullable: true
+        passcode:
+          type: string
+          description: The passcode to join a meeting.  Optional. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.lobbyBypassSettings:
+      title: lobbyBypassSettings
+      type: object
+      properties:
+        isDialInBypassEnabled:
+          type: boolean
+          description: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.lobbyBypassScope'
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingChatHistoryDefaultMode:
+      title: meetingChatHistoryDefaultMode
+      enum:
+        - none
+        - all
+        - unknownFutureValue
+      type: string
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingAttendanceReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingAttendanceReport
+          type: object
+          properties:
+            meetingEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting ended. Read-only.
+              format: date-time
+              nullable: true
+            meetingStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting started. Read-only.
+              format: date-time
+              nullable: true
+            totalParticipantCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total number of participants. Read-only.
+              format: int32
+              nullable: true
+            attendanceRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: List of attendance records of an attendance report. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.broadcastMeetingAudience:
       title: broadcastMeetingAudience
       enum:
@@ -32797,17 +32859,6 @@ components:
           description: The translation languages (choose up to 6).
       additionalProperties:
         type: object
-    microsoft.graph.lobbyBypassScope:
-      title: lobbyBypassScope
-      enum:
-        - organizer
-        - organization
-        - organizationAndFederated
-        - everyone
-        - unknownFutureValue
-        - invited
-        - organizationExcludingGuests
-      type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
       type: object
@@ -32822,36 +32873,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.attendanceRecord:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attendanceRecord
-          type: object
-          properties:
-            attendanceIntervals:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
-              description: List of time periods between joining and leaving a meeting.
-            emailAddress:
-              type: string
-              description: Email address of the user associated with this attendance record.
-              nullable: true
-            identity:
-              $ref: '#/components/schemas/microsoft.graph.identity'
-            role:
-              type: string
-              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
-              nullable: true
-            totalAttendanceInSeconds:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Total duration of the attendances in seconds.
-              format: int32
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -34568,6 +34589,34 @@ components:
               $ref: '#/components/schemas/microsoft.graph.fieldValueSet'
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          description: Specifies whether updates to document content are allowed. Read-only.
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          description: Specifies whether the document deletion is allowed. Read-only.
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          description: Specifies whether you're allowed to change the retention label on the document. Read-only.
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          description: 'Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.'
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          description: Specifies whether the item is locked. Read-write.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -35378,6 +35427,47 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.lobbyBypassScope:
+      title: lobbyBypassScope
+      enum:
+        - organizer
+        - organization
+        - organizationAndFederated
+        - everyone
+        - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
+      type: string
+    microsoft.graph.attendanceRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attendanceRecord
+          type: object
+          properties:
+            attendanceIntervals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+              description: List of time periods between joining and leaving a meeting.
+            emailAddress:
+              type: string
+              description: Email address of the user associated with this attendance record.
+              nullable: true
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            role:
+              type: string
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              nullable: true
+            totalAttendanceInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total duration of the attendances in seconds.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole
       enum:
@@ -35387,31 +35477,6 @@ components:
         - producer
         - coorganizer
       type: string
-    microsoft.graph.attendanceInterval:
-      title: attendanceInterval
-      type: object
-      properties:
-        durationInSeconds:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
-          format: int32
-          nullable: true
-        joinDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time the attendee joined in UTC.
-          format: date-time
-          nullable: true
-        leaveDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The time the attendee left in UTC.
-          format: date-time
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.teamworkUserIdentityType:
       title: teamworkUserIdentityType
       enum:
@@ -37174,6 +37239,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -37224,6 +37298,31 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.attendanceInterval:
+      title: attendanceInterval
+      type: object
+      properties:
+        durationInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
+          format: int32
+          nullable: true
+        joinDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee joined in UTC.
+          format: date-time
+          nullable: true
+        leaveDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee left in UTC.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppResourceSpecificPermissionType:
       title: teamsAppResourceSpecificPermissionType
       enum:

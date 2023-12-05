@@ -75,7 +75,7 @@ paths:
       tags:
         - external.externalConnection
       summary: List externalConnections
-      description: Get a list of the externalConnection objects and their properties. This API is available in the following national cloud deployments.
+      description: Get a list of the externalConnection objects and their properties.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
@@ -165,7 +165,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalConnection
-      description: Create a new externalConnection object. This API is available in the following national cloud deployments.
+      description: Create a new externalConnection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
@@ -192,7 +192,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalConnection
-      description: Read the properties and relationships of an externalConnection object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an externalConnection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
@@ -259,7 +259,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update externalConnection
-      description: Update the properties of an externalConnection object. This API is available in the following national cloud deployments.
+      description: Update the properties of an externalConnection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
@@ -294,7 +294,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalConnection
-      description: Deletes an externalConnection object. This API is available in the following national cloud deployments.
+      description: Deletes an externalConnection object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
@@ -325,7 +325,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalGroup
-      description: Get an externalGroup object. This API is available in the following national cloud deployments.
+      description: Get an externalGroup object.
       operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
@@ -399,7 +399,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create externalGroup
-      description: Create a new externalGroup object. This API is available in the following national cloud deployments.
+      description: Create a new externalGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
@@ -435,7 +435,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalGroup
-      description: Get an externalGroup object. This API is available in the following national cloud deployments.
+      description: Get an externalGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
@@ -499,7 +499,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update externalGroup
-      description: Update the properties of an externalGroup object. This API is available in the following national cloud deployments.
+      description: Update the properties of an externalGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
@@ -542,7 +542,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalGroup
-      description: Delete an externalGroup object. This API is available in the following national cloud deployments.
+      description: Delete an externalGroup object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -658,7 +658,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create identity
-      description: Create an identity resource for a new member in an externalGroup. This API is available in the following national cloud deployments.
+      description: Create an identity resource for a new member in an externalGroup.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
@@ -815,7 +815,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete identity
-      description: Delete an identity resource to remove the corresponding member from an externalGroup. This API is available in the following national cloud deployments.
+      description: Delete an identity resource to remove the corresponding member from an externalGroup.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0
@@ -914,7 +914,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Read the properties and relationships of an externalItem object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an externalItem object.
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -1023,7 +1023,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get externalItem
-      description: Read the properties and relationships of an externalItem object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of an externalItem object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
@@ -1127,7 +1127,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete externalItem
-      description: Delete an externalItem object. This API is available in the following national cloud deployments.
+      description: Delete an externalItem object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
@@ -1627,7 +1627,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connectionOperation
-      description: Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a connectionOperation object.
       operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
@@ -1731,7 +1731,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get connectionOperation
-      description: Read the properties and relationships of a connectionOperation object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a connectionOperation object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
@@ -1889,7 +1889,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get schema
-      description: Read the properties and relationships of a schema object. This API is available in the following national cloud deployments.
+      description: Read the properties and relationships of a schema object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
@@ -1943,7 +1943,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Create schema
-      description: Create a new schema object. This API is available in the following national cloud deployments.
+      description: Create a new schema object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0
@@ -2056,7 +2056,7 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
-      description: Runs the query specified in the request body. Search results are provided in the response. This API is available in the following national cloud deployments.
+      description: Runs the query specified in the request body. Search results are provided in the response.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
