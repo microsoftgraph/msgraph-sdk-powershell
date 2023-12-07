@@ -104,7 +104,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get directoryObject
-      description: Retrieve the properties and relationships of a directoryObject object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a directoryObject object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
@@ -188,7 +188,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Delete directoryObject
-      description: 'Delete a directory object, for example, a group, user, application, or service principal. This API is available in the following national cloud deployments.'
+      description: 'Delete a directory object, for example, a group, user, application, or service principal.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
@@ -219,7 +219,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct. This API is available in the following national cloud deployments.'
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
@@ -327,7 +327,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API. This API is available in the following national cloud deployments.'
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. This API returns up to 11,000 group IDs. If more than 11,000 results are available, it returns a 400 Bad Request error with the Directory_ResultSizeLimitExceeded error code. As a workaround, use the List group transitive memberOf API.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
@@ -435,7 +435,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted. This API is available in the following national cloud deployments.'
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn''t applicable to security groups, which are deleted permanently. Also, restoring an application doesn''t restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
@@ -555,7 +555,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to: This API is available in the following national cloud deployments.'
+      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -608,7 +608,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getUserOwnedObjects
-      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination. This API is available in the following national cloud deployments.'
+      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
@@ -644,7 +644,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. This API is available in the following national cloud deployments."
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0

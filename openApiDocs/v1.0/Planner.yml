@@ -127,7 +127,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: List plans
-      description: Retrieve a list of plannerPlan objects owned by a group object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerPlan objects owned by a group object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0
@@ -391,7 +391,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: List buckets
-      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
@@ -679,7 +679,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -1091,7 +1091,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -1285,7 +1285,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -1478,7 +1478,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -1674,7 +1674,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -1935,7 +1935,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of a plannerPlanDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerPlanDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -2081,7 +2081,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated with a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated with a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
@@ -2453,7 +2453,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -2623,7 +2623,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -2792,7 +2792,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -2964,7 +2964,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -3254,7 +3254,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: List buckets
-      description: Retrieve a list of plannerbucket objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerbucket objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
@@ -3326,7 +3326,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Create plannerBucket
-      description: Create a new plannerBucket object. This API is available in the following national cloud deployments.
+      description: Create a new plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
@@ -3353,7 +3353,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get plannerBucket
-      description: Retrieve the properties and relationships of a plannerBucket object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0
@@ -3451,7 +3451,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete plannerBucket
-      description: Delete plannerBucket. This API is available in the following national cloud deployments.
+      description: Delete plannerBucket.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0
@@ -3482,7 +3482,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -3814,7 +3814,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -3960,7 +3960,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -4105,7 +4105,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -4253,7 +4253,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -4434,7 +4434,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List plans
-      description: Get a list of plannerPlan objects. This API is available in the following national cloud deployments.
+      description: Get a list of plannerPlan objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
@@ -4516,7 +4516,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create plannerPlan
-      description: Use this API to create a new plannerPlan. This API is available in the following national cloud deployments.
+      description: Use this API to create a new plannerPlan.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
@@ -4543,7 +4543,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerPlan
-      description: Retrieve the properties and relationships of a plannerplan object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerplan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0
@@ -4606,7 +4606,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update plannerPlan
-      description: Update the properties of a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Update the properties of a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-update?view=graph-rest-1.0
@@ -4641,7 +4641,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete plannerPlan
-      description: Delete a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Delete a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-delete?view=graph-rest-1.0
@@ -4672,7 +4672,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List buckets
-      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
@@ -4920,7 +4920,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -5292,7 +5292,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -5462,7 +5462,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -5631,7 +5631,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -5803,7 +5803,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -6024,7 +6024,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of a plannerPlanDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerPlanDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -6146,7 +6146,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated with a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated with a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
@@ -6478,7 +6478,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -6624,7 +6624,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -6769,7 +6769,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -6917,7 +6917,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -7098,7 +7098,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: List tasks
-      description: Retrieve a list of plannertask objects. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannertask objects.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0
@@ -7230,7 +7230,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Create plannerTask
-      description: Create a new plannerTask. This API is available in the following national cloud deployments.
+      description: Create a new plannerTask.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0
@@ -7257,7 +7257,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get plannerTask
-      description: Retrieve the properties and relationships of plannerTask object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerTask object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0
@@ -7379,7 +7379,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete plannerTask
-      description: Delete a plannerTask object. This API is available in the following national cloud deployments.
+      description: Delete a plannerTask object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0
@@ -7410,7 +7410,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -7532,7 +7532,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -7653,7 +7653,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -7777,7 +7777,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -8030,7 +8030,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List plans
-      description: Retrieve a list of plannerplan objects shared with a user object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerplan objects shared with a user object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0
@@ -8294,7 +8294,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List buckets
-      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
@@ -8582,7 +8582,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -8994,7 +8994,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -9188,7 +9188,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -9381,7 +9381,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -9577,7 +9577,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -9838,7 +9838,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of a plannerPlanDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerPlanDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
@@ -9984,7 +9984,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List tasks
-      description: Retrieve a list of plannerTask objects associated with a plannerPlan object. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannerTask objects associated with a plannerPlan object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
@@ -10356,7 +10356,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -10526,7 +10526,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -10695,7 +10695,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -10867,7 +10867,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
@@ -11088,7 +11088,7 @@ paths:
       tags:
         - users.plannerUser
       summary: List tasks
-      description: Retrieve a list of plannertask objects assigned to a User. This API is available in the following national cloud deployments.
+      description: Retrieve a list of plannertask objects assigned to a User.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0
@@ -11420,7 +11420,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerAssignedToTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
@@ -11566,7 +11566,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
@@ -11711,7 +11711,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a plannerTaskDetails object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of a plannerTaskDetails object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
@@ -11859,7 +11859,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object. This API is available in the following national cloud deployments.
+      description: Retrieve the properties and relationships of plannerProgressTaskBoardTaskFormat object.
       externalDocs:
         description: Find more info here
         url: https://learn.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0

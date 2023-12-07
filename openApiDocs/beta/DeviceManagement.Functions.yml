@@ -420,6 +420,31 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.retrieveLatestUpgradeDefaultBaselinePolicy()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveLatestUpgradeDefaultBaselinePolicy
+      operationId: deviceManagement.configurationPolicy_retrieveLatestUpgradeDefaultBaselinePolicy
+      parameters:
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: The unique identifier of deviceManagementConfigurationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/depOnboardingSettings/{depOnboardingSetting-id}/enrollmentProfiles/{enrollmentProfile-id}/microsoft.graph.exportMobileConfig()':
     get:
       tags:
@@ -1464,6 +1489,39 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.retrieveLatestUpgradeDefaultBaselinePolicy()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveLatestUpgradeDefaultBaselinePolicy
+      operationId: deviceManagement.reusablePolicySetting.referencingConfigurationPolicy_retrieveLatestUpgradeDefaultBaselinePolicy
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: The unique identifier of deviceManagementReusablePolicySetting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: The unique identifier of deviceManagementConfigurationPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /deviceManagement/roleScopeTags/microsoft.graph.hasCustomRoleScopeTag():
     get:
       tags:
@@ -2215,6 +2273,7 @@ paths:
                 - provisioningPolicyId
                 - provisioningPolicyName
                 - provisioningType
+                - scopeIds
                 - servicePlanId
                 - servicePlanName
                 - servicePlanType
@@ -2273,6 +2332,8 @@ paths:
                 - provisioningPolicyName desc
                 - provisioningType
                 - provisioningType desc
+                - scopeIds
+                - scopeIds desc
                 - servicePlanId
                 - servicePlanId desc
                 - servicePlanName
@@ -2383,6 +2444,57 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /deviceManagement/virtualEndpoint/microsoft.graph.retrieveScopedPermissions():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveScopedPermissions
+      operationId: deviceManagement.virtualEndpoint_retrieveScopedPermission
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcScopedPermission'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/virtualEndpoint/microsoft.graph.retrieveTenantEncryptionSetting():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function retrieveTenantEncryptionSetting
+      operationId: deviceManagement.virtualEndpoint_retrieveTenantEncryptionSetting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcTenantEncryptionSetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/virtualEndpoint/reports/microsoft.graph.getRealTimeRemoteConnectionLatency(cloudPcId=''{cloudPcId}'')':
     get:
       tags:
@@ -2853,6 +2965,73 @@ components:
       additionalProperties:
         type: object
       description: A ConfigManager policy summary.
+    microsoft.graph.deviceManagementConfigurationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationPolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Policy creation date and time
+              format: date-time
+            creationSource:
+              type: string
+              description: Policy creation source
+              nullable: true
+            description:
+              type: string
+              description: Policy description
+              nullable: true
+            isAssigned:
+              type: boolean
+              description: Policy assignment status. This property is read-only.
+              readOnly: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Policy last modification date and time
+              format: date-time
+            name:
+              type: string
+              description: Policy name
+              nullable: true
+            platforms:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            priorityMetaData:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementPriorityMetaData'
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tags for this Entity instance.
+            settingCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of settings
+              format: int32
+            technologies:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
+            templateReference:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyTemplateReference'
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+              description: Policy assignments
+              x-ms-navigationProperty: true
+            settings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSetting'
+              description: Policy settings
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Device Management Configuration Policy
     microsoft.graph.retireScheduledManagedDevice:
       title: retireScheduledManagedDevice
       type: object
@@ -3791,6 +3970,11 @@ components:
               nullable: true
             provisioningType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningType'
+            scopeIds:
+              type: array
+              items:
+                type: string
+                nullable: true
             servicePlanId:
               type: string
               description: The service plan ID of the Cloud PC.
@@ -3833,6 +4017,33 @@ components:
           type: string
           description: The ID of subscription that hosts the source image.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcScopedPermission:
+      title: cloudPcScopedPermission
+      type: object
+      properties:
+        permission:
+          type: string
+          nullable: true
+        scopeIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcTenantEncryptionSetting:
+      title: cloudPcTenantEncryptionSetting
+      type: object
+      properties:
+        lastSyncDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        tenantDiskEncryptionType:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDiskEncryptionType'
       additionalProperties:
         type: object
     microsoft.graph.cloudPcForensicStorageAccount:
@@ -3985,6 +4196,187 @@ components:
         - conflict
         - notAssigned
       type: string
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationPlatforms:
+      title: deviceManagementConfigurationPlatforms
+      enum:
+        - none
+        - android
+        - iOS
+        - macOS
+        - windows10X
+        - windows10
+        - linux
+        - unknownFutureValue
+      type: string
+      description: Supported platform types.
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: deviceManagementConfigurationPlatforms
+        modelAsString: false
+        values:
+          - value: none
+            description: Default. No platform type specified.
+            name: none
+          - value: android
+            description: Settings for Android platform.
+            name: android
+          - value: iOS
+            description: Settings for iOS platform.
+            name: iOS
+          - value: macOS
+            description: Settings for MacOS platform.
+            name: macOS
+          - value: windows10X
+            description: Windows 10 X.
+            name: windows10X
+          - value: windows10
+            description: Settings for Windows 10 platform.
+            name: windows10
+          - value: linux
+            description: Settings for Linux platform.
+            name: linux
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.deviceManagementPriorityMetaData:
+      title: deviceManagementPriorityMetaData
+      type: object
+      properties:
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Priority of the policy. Valid values 1 to 500
+          format: int32
+      additionalProperties:
+        type: object
+      description: Priority metadata of the policy.
+    microsoft.graph.deviceManagementConfigurationTechnologies:
+      title: deviceManagementConfigurationTechnologies
+      enum:
+        - none
+        - mdm
+        - windows10XManagement
+        - configManager
+        - appleRemoteManagement
+        - microsoftSense
+        - exchangeOnline
+        - mobileApplicationManagement
+        - linuxMdm
+        - enrollment
+        - endpointPrivilegeManagement
+        - unknownFutureValue
+      type: string
+      description: Describes which technology this setting can be deployed with
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: deviceManagementConfigurationTechnologies
+        modelAsString: false
+        values:
+          - value: none
+            description: Default. Setting cannot be deployed through any channel.
+            name: none
+          - value: mdm
+            description: Setting can be deployed through the MDM channel.
+            name: mdm
+          - value: windows10XManagement
+            description: Setting can be deployed through the Windows10XManagement channel
+            name: windows10XManagement
+          - value: configManager
+            description: Setting can be deployed through the ConfigManager channel.
+            name: configManager
+          - value: appleRemoteManagement
+            description: Setting can be deployed through the AppleRemoteManagement channel.
+            name: appleRemoteManagement
+          - value: microsoftSense
+            description: Setting can be deployed through the SENSE agent channel.
+            name: microsoftSense
+          - value: exchangeOnline
+            description: Setting can be deployed through the Exchange Online agent channel.
+            name: exchangeOnline
+          - value: mobileApplicationManagement
+            description: Setting can be deployed through the Mobile Application Management (MAM) channel
+            name: mobileApplicationManagement
+          - value: linuxMdm
+            description: Setting can be deployed through the Linux Mdm channel.
+            name: linuxMdm
+          - value: enrollment
+            description: Setting can be deployed through device enrollment.
+            name: enrollment
+          - value: endpointPrivilegeManagement
+            description: Setting can be deployed using the Endpoint privilege management channel
+            name: endpointPrivilegeManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
+      title: deviceManagementConfigurationPolicyTemplateReference
+      type: object
+      properties:
+        templateDisplayName:
+          type: string
+          description: Template Display Name of the referenced template. This property is read-only.
+          nullable: true
+          readOnly: true
+        templateDisplayVersion:
+          type: string
+          description: Template Display Version of the referenced Template. This property is read-only.
+          nullable: true
+          readOnly: true
+        templateFamily:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTemplateFamily'
+        templateId:
+          type: string
+          description: Template id
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Policy template reference information
+    microsoft.graph.deviceManagementConfigurationPolicyAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationPolicyAssignment
+          type: object
+          properties:
+            source:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentSource'
+            sourceId:
+              type: string
+              description: The identifier of the source of the assignment.
+              nullable: true
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: The DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
+    microsoft.graph.deviceManagementConfigurationSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationSetting
+          type: object
+          properties:
+            settingInstance:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstance'
+            settingDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
+              description: List of related Setting Definitions. This property is read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Setting instance within policy
     microsoft.graph.deviceType:
       title: deviceType
       enum:
@@ -4263,15 +4655,6 @@ components:
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier for an entity. Read-only.
-      additionalProperties:
-        type: object
     microsoft.graph.roleScopeTagAutoAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -4492,6 +4875,10 @@ components:
         - troubleshoot
         - placeUnderReview
         - unknownFutureValue
+        - createSnapshot
+        - powerOn
+        - powerOff
+        - moveRegion
       type: string
     microsoft.graph.cloudPcConnectionSettings:
       title: cloudPcConnectionSettings
@@ -4614,6 +5001,13 @@ components:
         - administrator
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcDiskEncryptionType:
+      title: cloudPcDiskEncryptionType
+      enum:
+        - platformManagedKey
+        - customerManagedKey
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -4642,6 +5036,96 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.deviceManagementConfigurationTemplateFamily:
+      title: deviceManagementConfigurationTemplateFamily
+      enum:
+        - none
+        - endpointSecurityAntivirus
+        - endpointSecurityDiskEncryption
+        - endpointSecurityFirewall
+        - endpointSecurityEndpointDetectionAndResponse
+        - endpointSecurityAttackSurfaceReduction
+        - endpointSecurityAccountProtection
+        - endpointSecurityApplicationControl
+        - endpointSecurityEndpointPrivilegeManagement
+        - enrollmentConfiguration
+        - appQuietTime
+        - baseline
+        - unknownFutureValue
+        - deviceConfigurationScripts
+        - deviceConfigurationPolicies
+        - companyPortal
+      type: string
+      description: Describes the TemplateFamily for the Template entity
+      x-ms-enum:
+        name: deviceManagementConfigurationTemplateFamily
+        modelAsString: false
+        values:
+          - value: none
+            description: Default for Template Family when Policy is not linked to a Template
+            name: none
+          - value: endpointSecurityAntivirus
+            description: Template Family for EndpointSecurityAntivirus that manages the discrete group of antivirus settings for managed devices
+            name: endpointSecurityAntivirus
+          - value: endpointSecurityDiskEncryption
+            description: 'Template Family for EndpointSecurityDiskEncryption that provides settings that are relevant for a devices built-in encryption  method, like FileVault or BitLocker'
+            name: endpointSecurityDiskEncryption
+          - value: endpointSecurityFirewall
+            description: Template Family for EndpointSecurityFirewall that helps configure a devices built-in firewall for device that run macOS and Windows 10
+            name: endpointSecurityFirewall
+          - value: endpointSecurityEndpointDetectionAndResponse
+            description: Template Family for EndpointSecurityEndpointDetectionAndResponse that facilitates management of the EDR settings and onboard devices to Microsoft Defender for Endpoint
+            name: endpointSecurityEndpointDetectionAndResponse
+          - value: endpointSecurityAttackSurfaceReduction
+            description: 'Template Family for EndpointSecurityAttackSurfaceReduction that help reduce your attack surfaces, by minimizing the places where your organization is vulnerable to cyberthreats and attacks'
+            name: endpointSecurityAttackSurfaceReduction
+          - value: endpointSecurityAccountProtection
+            description: Template Family for EndpointSecurityAccountProtection that facilitates protecting the identity and accounts of users
+            name: endpointSecurityAccountProtection
+          - value: endpointSecurityApplicationControl
+            description: Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
+            name: endpointSecurityApplicationControl
+          - value: endpointSecurityEndpointPrivilegeManagement
+            description: Template Family for EPM Elevation Rules
+            name: endpointSecurityEndpointPrivilegeManagement
+          - value: enrollmentConfiguration
+            description: Template Family for EnrollmentConfiguration
+            name: enrollmentConfiguration
+          - value: appQuietTime
+            description: Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates
+            name: appQuietTime
+          - value: baseline
+            description: Template Family for Baseline
+            name: baseline
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+          - value: deviceConfigurationScripts
+            description: Template Family for device configuration scripts
+            name: deviceConfigurationScripts
+          - value: deviceConfigurationPolicies
+            description: Template Family for device configuration policies
+            name: deviceConfigurationPolicies
+          - value: companyPortal
+            description: Template Family for Company Portal settings
+            name: companyPortal
+    microsoft.graph.deviceAndAppManagementAssignmentSource:
+      title: deviceAndAppManagementAssignmentSource
+      enum:
+        - direct
+        - policySets
+      type: string
+      description: Represents source of assignment.
+      x-ms-enum:
+        name: deviceAndAppManagementAssignmentSource
+        modelAsString: false
+        values:
+          - value: direct
+            description: Direct indicates a direct assignment.
+            name: direct
+          - value: policySets
+            description: PolicySets indicates assignment was made via PolicySet assignment.
+            name: policySets
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -4655,6 +5139,91 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
+    microsoft.graph.deviceManagementConfigurationSettingInstance:
+      title: deviceManagementConfigurationSettingInstance
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting Definition Id
+        settingInstanceTemplateReference:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstanceTemplateReference'
+      additionalProperties:
+        type: object
+      description: Setting instance within policy
+    microsoft.graph.deviceManagementConfigurationSettingDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationSettingDefinition
+          type: object
+          properties:
+            accessTypes:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingAccessTypes'
+            applicability:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingApplicability'
+            baseUri:
+              type: string
+              description: Base CSP Path
+              nullable: true
+            categoryId:
+              type: string
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              nullable: true
+            description:
+              type: string
+              description: Description of the item
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the item
+              nullable: true
+            helpText:
+              type: string
+              description: Help text of the item
+              nullable: true
+            infoUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of links more info for the setting can be found at
+            keywords:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Tokens which to search settings on
+            name:
+              type: string
+              description: Name of the item
+              nullable: true
+            occurrence:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingOccurrence'
+            offsetUri:
+              type: string
+              description: Offset CSP Path from Base
+              nullable: true
+            referredSettingInformationList:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationReferredSettingInformation'
+              description: List of referred setting information.
+            rootDefinitionId:
+              type: string
+              description: Root setting definition if the setting is a child setting.
+              nullable: true
+            settingUsage:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
+            uxBehavior:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationControlType'
+            version:
+              type: string
+              description: Item Version
+              nullable: true
+            visibility:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingVisibility'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceManagement.aggregationType:
       title: aggregationType
       enum:
@@ -4711,6 +5280,7 @@ components:
         - citrix
         - unknownFutureValue
         - vMware
+        - hp
       type: string
     microsoft.graph.ODataErrors.MainError:
       required:
@@ -4755,6 +5325,171 @@ components:
           - value: exclude
             description: 'Indicates out-filter, rule matching will not offer the payload to devices.'
             name: exclude
+    microsoft.graph.deviceManagementConfigurationSettingInstanceTemplateReference:
+      title: deviceManagementConfigurationSettingInstanceTemplateReference
+      type: object
+      properties:
+        settingInstanceTemplateId:
+          type: string
+          description: Setting instance template id
+      additionalProperties:
+        type: object
+      description: Setting instance template reference information
+    microsoft.graph.deviceManagementConfigurationSettingAccessTypes:
+      title: deviceManagementConfigurationSettingAccessTypes
+      enum:
+        - none
+        - add
+        - copy
+        - delete
+        - get
+        - replace
+        - execute
+      type: string
+      x-ms-enum-flags:
+        isFlags: true
+    microsoft.graph.deviceManagementConfigurationSettingApplicability:
+      title: deviceManagementConfigurationSettingApplicability
+      type: object
+      properties:
+        description:
+          type: string
+          description: description of the setting
+          nullable: true
+        deviceMode:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationDeviceMode'
+        platform:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+        technologies:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationSettingOccurrence:
+      title: deviceManagementConfigurationSettingOccurrence
+      type: object
+      properties:
+        maxDeviceOccurrence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Maximum times setting can be set on device.
+          format: int32
+          nullable: true
+        minDeviceOccurrence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationReferredSettingInformation:
+      title: deviceManagementConfigurationReferredSettingInformation
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Referred setting information about reusable setting
+    microsoft.graph.deviceManagementConfigurationSettingUsage:
+      title: deviceManagementConfigurationSettingUsage
+      enum:
+        - none
+        - configuration
+        - compliance
+        - unknownFutureValue
+      type: string
+      description: Supported setting types
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: deviceManagementConfigurationSettingUsage
+        modelAsString: false
+        values:
+          - value: none
+            description: Default. No setting type specified.
+            name: none
+          - value: configuration
+            description: Configuration setting type.
+            name: configuration
+          - value: compliance
+            description: Compliance setting type.
+            name: compliance
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.deviceManagementConfigurationControlType:
+      title: deviceManagementConfigurationControlType
+      enum:
+        - default
+        - dropdown
+        - smallTextBox
+        - largeTextBox
+        - toggle
+        - multiheaderGrid
+        - contextPane
+        - unknownFutureValue
+      type: string
+      description: Setting control type representation in the UX
+      x-ms-enum:
+        name: deviceManagementConfigurationControlType
+        modelAsString: false
+        values:
+          - value: default
+            description: Default. UX uses default UX element base on setting type for the setting.
+            name: default
+          - value: dropdown
+            description: Display the setting in dropdown box.
+            name: dropdown
+          - value: smallTextBox
+            description: Display text input in small text input.
+            name: smallTextBox
+          - value: largeTextBox
+            description: Display text input in large text input.
+            name: largeTextBox
+          - value: toggle
+            description: Allow for toggle control type.
+            name: toggle
+          - value: multiheaderGrid
+            description: Allow for multiheader grid control type.
+            name: multiheaderGrid
+          - value: contextPane
+            description: Allow for context pane control type.
+            name: contextPane
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.deviceManagementConfigurationSettingVisibility:
+      title: deviceManagementConfigurationSettingVisibility
+      enum:
+        - none
+        - settingsCatalog
+        - template
+        - unknownFutureValue
+      type: string
+      description: Supported setting types
+      x-ms-enum-flags:
+        isFlags: true
+      x-ms-enum:
+        name: deviceManagementConfigurationSettingVisibility
+        modelAsString: false
+        values:
+          - value: none
+            description: Default. Not visible.
+            name: none
+          - value: settingsCatalog
+            description: Visible to setting catalog policy type.
+            name: settingsCatalog
+          - value: template
+            description: Visible to template policy type.
+            name: template
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -4775,6 +5510,23 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.deviceManagementConfigurationDeviceMode:
+      title: deviceManagementConfigurationDeviceMode
+      enum:
+        - none
+        - kiosk
+      type: string
+      description: Describes applicability for the mode the device is in
+      x-ms-enum:
+        name: deviceManagementConfigurationDeviceMode
+        modelAsString: false
+        values:
+          - value: none
+            description: No Device Mode specified
+            name: none
+          - value: kiosk
+            description: Device must be in kiosk mode for this setting to apply
+            name: kiosk
   responses:
     error:
       description: error
